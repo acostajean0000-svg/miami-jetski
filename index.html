@@ -1,0 +1,2836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jet Ski Rentals Miami Beach | Compare 21 Operators – From $99</title>
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Compare 21 jet ski rental operators in Miami Beach, Hollywood, Fort Lauderdale &amp; the Florida Keys. Instructor included on every ride. Prices from $99 — book online now!">
+  <meta name="keywords" content="jet ski rentals miami, jet ski miami beach, jetski miami, boat rentals miami, jet ski hollywood florida, jet ski fort lauderdale, jet ski pompano beach, jet ski key largo, jet ski key west, jet ski marathon florida">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://miamijetskiboatrentals.com/">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Jet Ski Rentals Miami Beach | Compare 21 Operators – From $99">
+  <meta property="og:description" content="Compare 21 jet ski operators in Miami Beach, Hollywood, Fort Lauderdale &amp; the Florida Keys. Instructor included. From $99 — book now!">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://miamijetskiboatrentals.com/">
+  <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.jpg">
+  <meta property="og:locale" content="en_US">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Jet Ski Rentals Miami Beach | Compare 21 Operators – From $99">
+  <meta name="twitter:description" content="Compare 21 jet ski operators across Miami Beach, Hollywood, Fort Lauderdale &amp; the Florida Keys. Instructor included. From $99!">
+
+  <!-- Schema: LocalBusiness -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Miami Jetski & Boat Rentals",
+    "description": "The best jet ski and boat rental directory for Miami Beach, Hollywood, Fort Lauderdale, Pompano Beach and the Florida Keys.",
+    "url": "https://miamijetskiboatrentals.com",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Miami Beach",
+      "addressRegion": "FL",
+      "postalCode": "33139",
+      "addressCountry": "US"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": "25.7907",
+      "longitude": "-80.1300"
+    },
+    "openingHours": "Mo-Su 08:00-20:00",
+    "priceRange": "$$",
+    "areaServed": ["Miami Beach","Miami","Coconut Grove","Hollywood","Fort Lauderdale","Pompano Beach","Key Largo","Marathon","Key West"]
+  }
+  </script>
+
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+  <link rel="apple-touch-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+
+
+  <!-- Google Analytics GA4 -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-09F6C7YC7B"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-09F6C7YC7B');
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <!-- Leaflet Maps -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+
+  <style>
+    /* ===== CSS VARIABLES ===== */
+    :root {
+      --dark:        #081525;
+      --dark2:       #0d1e35;
+      --dark3:       #112340;
+      --card-bg:     #0f2038;
+      --card-hover:  #132846;
+      --border:      #1c3a58;
+      --teal:        #00d4c8;
+      --teal2:       #00eedd;
+      --teal-dark:   #009e99;
+      --teal-glow:   rgba(0,212,200,0.15);
+      --white:       #ffffff;
+      --text-muted:  #7a9eba;
+      --text-light:  #c4ddf0;
+      --star:        #ffd700;
+      --badge-miami: #0066cc;
+      --badge-keys:  #007a5e;
+      --badge-broward: #6a0dad;
+      --radius:      14px;
+      --shadow:      0 8px 32px rgba(0,0,0,0.4);
+    }
+
+    /* ===== RESET & BASE ===== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Open Sans', sans-serif;
+      background: var(--dark);
+      color: var(--white);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    h1,h2,h3,h4 { font-family: 'Montserrat', sans-serif; line-height: 1.2; }
+    a { text-decoration: none; color: inherit; }
+    img { display: block; max-width: 100%; }
+    ul { list-style: none; }
+
+    /* ===== UTILITIES ===== */
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+    .section-pad { padding: 80px 0; }
+    .teal { color: var(--teal); }
+    .text-center { text-align: center; }
+    .section-tag {
+      display: inline-block;
+      background: var(--teal-glow);
+      color: var(--teal);
+      border: 1px solid var(--teal-dark);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 50px;
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(1.8rem, 3.5vw, 2.6rem);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      color: var(--text-muted);
+      font-size: 1.05rem;
+      max-width: 600px;
+      margin: 0 auto 50px;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 32px;
+      border-radius: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      transition: all 0.25s ease;
+      border: none;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--teal), var(--teal2));
+      color: var(--dark);
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(0,212,200,0.4);
+    }
+    .btn-outline {
+      background: transparent;
+      color: var(--teal);
+      border: 2px solid var(--teal);
+    }
+    .btn-outline:hover {
+      background: var(--teal-glow);
+      transform: translateY(-2px);
+    }
+
+    /* ===== NAVIGATION ===== */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      padding: 0 20px;
+      transition: all 0.3s ease;
+    }
+    .nav.scrolled {
+      background: rgba(8,21,37,0.97);
+      backdrop-filter: blur(12px);
+      box-shadow: 0 2px 20px rgba(0,0,0,0.5);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.15rem;
+    }
+    .logo-icon {
+      width: 40px; height: 40px;
+      background: linear-gradient(135deg, var(--teal), var(--teal2));
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+    }
+    .logo span { color: var(--teal); }
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+    }
+    .nav-links a {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.88rem;
+      font-weight: 600;
+      color: var(--text-light);
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--teal); }
+    .nav-cta { margin-left: 8px; padding: 10px 24px; font-size: 0.85rem; }
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--teal);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.88rem;
+    }
+    .hamburger {
+      display: none;
+      background: none;
+      border: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
+      padding: 4px;
+    }
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--white);
+      border-radius: 2px;
+      transition: all 0.3s;
+    }
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      top: 72px; left: 0; right: 0;
+      background: rgba(8,21,37,0.98);
+      backdrop-filter: blur(12px);
+      padding: 24px 20px 32px;
+      z-index: 999;
+      flex-direction: column;
+      gap: 20px;
+      border-top: 1px solid var(--border);
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      color: var(--text-light);
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background: linear-gradient(160deg, #081525 0%, #0a2540 40%, #0b3055 70%, #083a4a 100%);
+    }
+    .hero-bg-shapes {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      overflow: hidden;
+    }
+    .hero-orb {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.18;
+    }
+    .hero-orb-1 {
+      width: 600px; height: 600px;
+      background: var(--teal);
+      top: -150px; right: -100px;
+    }
+    .hero-orb-2 {
+      width: 400px; height: 400px;
+      background: #0050ff;
+      bottom: 0; left: -80px;
+    }
+    .hero-orb-3 {
+      width: 300px; height: 300px;
+      background: var(--teal2);
+      top: 50%; right: 25%;
+      opacity: 0.1;
+    }
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 120px 20px 80px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 60px;
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--teal-glow);
+      border: 1px solid var(--teal-dark);
+      color: var(--teal);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      padding: 7px 16px;
+      border-radius: 50px;
+      margin-bottom: 24px;
+    }
+    .hero h1 {
+      font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 22px;
+    }
+    .hero h1 .line-teal {
+      color: var(--teal);
+      display: block;
+    }
+    .hero-desc {
+      font-size: 1.1rem;
+      color: var(--text-light);
+      max-width: 480px;
+      margin-bottom: 36px;
+      line-height: 1.7;
+    }
+    .hero-btns {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+    .hero-stats {
+      display: flex;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+    .hero-stat { }
+    .hero-stat-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 2rem;
+      font-weight: 900;
+      color: var(--teal);
+      line-height: 1;
+    }
+    .hero-stat-label {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      letter-spacing: 0.5px;
+    }
+    .hero-visual {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .hero-card-float {
+      background: rgba(17,35,64,0.85);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(0,212,200,0.2);
+      border-radius: 20px;
+      padding: 28px 32px;
+      width: 100%;
+      max-width: 380px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .hero-card-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 20px;
+    }
+    .quick-op {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--border);
+    }
+    .quick-op:last-child { border-bottom: none; }
+    .quick-op-icon {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      font-size: 0.9rem;
+      color: var(--dark);
+    }
+    .quick-op-info { flex: 1; }
+    .quick-op-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+    }
+    .quick-op-location {
+      font-size: 0.73rem;
+      color: var(--text-muted);
+    }
+    .quick-op-price {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      color: var(--teal);
+      font-size: 0.9rem;
+    }
+    .hero-wave {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      z-index: 1;
+    }
+
+    /* ===== HOW IT WORKS ===== */
+    .how {
+      background: var(--dark2);
+      padding: 80px 0;
+    }
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 32px;
+      margin-top: 50px;
+    }
+    .how-card {
+      text-align: center;
+      padding: 40px 28px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .how-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--teal-dark);
+    }
+    .how-num {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 3rem;
+      font-weight: 900;
+      color: var(--teal);
+      opacity: 0.25;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .how-icon {
+      width: 64px; height: 64px;
+      background: var(--teal-glow);
+      border: 1px solid var(--teal-dark);
+      border-radius: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.7rem;
+      color: var(--teal);
+      margin: 0 auto 20px;
+    }
+    .how-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .how-card p {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.65;
+    }
+
+    /* ===== OPERATORS ===== */
+    .operators { padding: 90px 0; background: var(--dark); }
+    .zone-filters {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+      margin-bottom: 50px;
+    }
+    .zone-btn {
+      padding: 9px 20px;
+      border-radius: 50px;
+      border: 1.5px solid var(--border);
+      background: transparent;
+      color: var(--text-muted);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+    .zone-btn:hover, .zone-btn.active {
+      background: var(--teal-glow);
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+    .ops-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 24px;
+    }
+    .op-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .op-card:hover {
+      transform: translateY(-6px);
+      border-color: var(--teal-dark);
+      box-shadow: 0 12px 40px rgba(0,212,200,0.12);
+    }
+    .op-card-header {
+      height: 140px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: #0a1e36;
+    }
+    .op-card-zone-badge {
+      position: absolute;
+      top: 12px; left: 12px;
+      background: rgba(0,0,0,0.6);
+      backdrop-filter: blur(6px);
+      border-radius: 50px;
+      padding: 4px 12px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+      color: var(--white);
+      z-index: 2;
+    }
+    .op-card-instructor {
+      position: absolute;
+      top: 12px; right: 12px;
+      background: rgba(0,212,200,0.25);
+      border: 1px solid var(--teal);
+      color: var(--teal);
+      border-radius: 50px;
+      padding: 4px 10px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.67rem;
+      font-weight: 700;
+      z-index: 2;
+    }
+    .op-card-body {
+      padding: 20px 22px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .op-card-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .op-card-address {
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+      color: var(--text-muted);
+      font-size: 0.82rem;
+      margin-bottom: 16px;
+      line-height: 1.4;
+    }
+    .op-card-address i { color: var(--teal); margin-top: 2px; flex-shrink: 0; }
+    .op-card-features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 20px;
+    }
+    .op-feature {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      font-size: 0.75rem;
+      color: var(--text-light);
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 50px;
+      padding: 3px 10px;
+    }
+    .op-feature i { color: var(--teal); font-size: 0.7rem; }
+    .op-card-footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+      padding-top: 16px;
+      border-top: 1px solid var(--border);
+    }
+    .op-price {
+      font-family: 'Montserrat', sans-serif;
+    }
+    .op-price-from {
+      font-size: 0.7rem;
+      color: var(--text-muted);
+      display: block;
+    }
+    .op-price-num {
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--teal);
+      line-height: 1;
+    }
+    .op-price-per {
+      font-size: 0.72rem;
+      color: var(--text-muted);
+    }
+    .op-book-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 10px 20px;
+      background: linear-gradient(135deg, var(--teal), var(--teal2));
+      color: var(--dark);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border-radius: 50px;
+      transition: all 0.25s;
+      border: none;
+      cursor: pointer;
+    }
+    .op-book-btn:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 16px rgba(0,212,200,0.35);
+    }
+    .op-card[data-zone].hidden { display: none; }
+
+    /* Zone color overlays for card headers */
+    .zone-miami-beach .header-overlay  { background: linear-gradient(135deg,#003d7a,#0066cc,#00b4d8,#0077b6,#003d7a); }
+    .zone-miami-city .header-overlay   { background: linear-gradient(135deg,#0d0040,#1a0088,#0050cc,#1a0088,#0d0040); }
+    .zone-coconut-grove .header-overlay{ background: linear-gradient(135deg,#003828,#006655,#00997a,#006655,#003828); }
+    .zone-hollywood .header-overlay    { background: linear-gradient(135deg,#3a1500,#7a3000,#00668a,#7a3000,#3a1500); }
+    .zone-fort-laud .header-overlay    { background: linear-gradient(135deg,#280028,#660099,#0044aa,#660099,#280028); }
+    .zone-pompano .header-overlay      { background: linear-gradient(135deg,#002a3a,#005577,#00aacc,#005577,#002a3a); }
+    .zone-key-largo .header-overlay    { background: linear-gradient(135deg,#003020,#006644,#00cc88,#006644,#003020); }
+    .zone-marathon .header-overlay     { background: linear-gradient(135deg,#002a22,#005544,#009977,#005544,#002a22); }
+    .zone-key-west .header-overlay     { background: linear-gradient(135deg,#3a1800,#884400,#00779a,#884400,#3a1800); }
+
+    /* ===== MAP SECTION ===== */
+    .map-section {
+      background: var(--dark2);
+      padding: 80px 0;
+    }
+    .map-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 28px;
+      align-items: start;
+      margin-top: 50px;
+    }
+    .map-iframe-wrap {
+      border-radius: var(--radius);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+    .map-iframe-wrap iframe {
+      display: block;
+      width: 100%;
+      height: 680px;
+    }
+    #jetski-map {
+      width: 100%;
+      height: 680px;
+      border-radius: var(--radius);
+      border: 2px solid var(--teal);
+      box-shadow: 0 0 32px rgba(0,212,200,0.15), var(--shadow);
+    }
+    /* Custom Leaflet popup styles */
+    .leaflet-popup-content-wrapper {
+      background: #0f2038;
+      border: 1px solid #00d4c8;
+      border-radius: 12px;
+      color: #fff;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+    }
+    .leaflet-popup-tip { background: #0f2038; }
+    .leaflet-popup-content { margin: 14px 16px; min-width: 200px; }
+    .map-popup-zone {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      color: #00d4c8;
+      margin-bottom: 4px;
+    }
+    .map-popup-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.92rem;
+      font-weight: 700;
+      margin-bottom: 6px;
+      line-height: 1.3;
+    }
+    .map-popup-price {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1.1rem;
+      font-weight: 900;
+      color: #00d4c8;
+      margin-bottom: 10px;
+    }
+    .map-popup-instructor {
+      font-size: 0.73rem;
+      color: #7a9eba;
+      margin-bottom: 10px;
+    }
+    .map-popup-btn {
+      display: block;
+      text-align: center;
+      background: linear-gradient(135deg, #00d4c8, #00eedd);
+      color: #081525;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 8px 16px;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .map-popup-btn:hover { opacity: 0.85; }
+    .map-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .map-zone-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .map-zone-card:hover {
+      border-color: var(--teal-dark);
+      background: var(--card-hover);
+    }
+    .map-zone-dot {
+      width: 12px; height: 12px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+    .map-zone-info { flex: 1; }
+    .map-zone-name {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+    .map-zone-count {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+    .map-zone-arrow { color: var(--teal); font-size: 0.75rem; }
+
+    /* ===== TESTIMONIALS ===== */
+    .testimonials {
+      padding: 90px 0;
+      background: var(--dark);
+    }
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 24px;
+      margin-top: 50px;
+    }
+    .review-card {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      transition: transform 0.3s, border-color 0.3s;
+    }
+    .review-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--teal-dark);
+    }
+    .review-stars {
+      color: var(--star);
+      font-size: 0.85rem;
+      margin-bottom: 14px;
+      letter-spacing: 2px;
+    }
+    .review-text {
+      color: var(--text-light);
+      font-size: 0.92rem;
+      line-height: 1.7;
+      margin-bottom: 20px;
+      font-style: italic;
+    }
+    .review-author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .review-avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--teal-dark), var(--teal));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--dark);
+      flex-shrink: 0;
+    }
+    .review-name {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+    .review-meta {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    /* ===== FAQ ===== */
+    .faq { background: var(--dark2); padding: 80px 0; }
+    .faq-list { max-width: 760px; margin: 50px auto 0; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-align: left;
+      padding: 20px 22px;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      transition: color 0.2s;
+    }
+    .faq-q:hover { color: var(--teal); }
+    .faq-q i { color: var(--teal); flex-shrink: 0; transition: transform 0.3s; }
+    .faq-q.open i { transform: rotate(180deg); }
+    .faq-a {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease, padding 0.35s;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      line-height: 1.7;
+      padding: 0 22px;
+    }
+    .faq-a.open { max-height: 300px; padding: 0 22px 20px; }
+
+    /* ===== CTA SECTION ===== */
+    .cta-section {
+      padding: 90px 0;
+      background: linear-gradient(135deg, #081525 0%, #0a2540 50%, #083a4a 100%);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+    .cta-section::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      background: var(--teal);
+      border-radius: 50%;
+      filter: blur(120px);
+      opacity: 0.08;
+      top: 50%; left: 50%;
+      transform: translate(-50%,-50%);
+    }
+    .cta-section h2 {
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      font-weight: 900;
+      margin-bottom: 16px;
+      position: relative;
+    }
+    .cta-section p {
+      color: var(--text-light);
+      font-size: 1.05rem;
+      margin-bottom: 40px;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+      position: relative;
+    }
+    .cta-btns {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .cta-phone {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 16px 32px;
+      background: rgba(0,212,200,0.1);
+      border: 2px solid var(--teal);
+      border-radius: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--teal);
+      transition: all 0.25s;
+    }
+    .cta-phone:hover {
+      background: var(--teal);
+      color: var(--dark);
+      transform: translateY(-2px);
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      background: #050e1a;
+      border-top: 1px solid var(--border);
+      padding: 60px 0 28px;
+    }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 48px;
+    }
+    .footer-brand p {
+      color: var(--text-muted);
+      font-size: 0.88rem;
+      line-height: 1.7;
+      margin: 14px 0 20px;
+      max-width: 280px;
+    }
+    .footer-socials {
+      display: flex;
+      gap: 10px;
+    }
+    .footer-social {
+      width: 36px; height: 36px;
+      border-radius: 8px;
+      background: var(--card-bg);
+      border: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      transition: all 0.2s;
+    }
+    .footer-social:hover {
+      border-color: var(--teal);
+      color: var(--teal);
+    }
+    .footer-col h4 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 1.5px;
+      text-transform: uppercase;
+      color: var(--teal);
+      margin-bottom: 18px;
+    }
+    .footer-col ul { display: flex; flex-direction: column; gap: 10px; }
+    .footer-col a {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      transition: color 0.2s;
+    }
+    .footer-col a:hover { color: var(--white); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .footer-bottom p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+    .footer-disclaimer {
+      font-size: 0.78rem;
+      color: var(--text-muted);
+      opacity: 0.7;
+    }
+
+    /* ===== SCROLL TO TOP ===== */
+    .scroll-top {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 46px; height: 46px;
+      background: linear-gradient(135deg, var(--teal), var(--teal2));
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--dark);
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 16px rgba(0,212,200,0.35);
+      opacity: 0;
+      transform: translateY(20px);
+      transition: all 0.3s;
+      z-index: 500;
+      border: none;
+    }
+    .scroll-top.visible { opacity: 1; transform: translateY(0); }
+    .scroll-top:hover { transform: scale(1.1); }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 1024px) {
+      .hero-content { grid-template-columns: 1fr; }
+      .hero-visual { display: none; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .map-layout { grid-template-columns: 1fr; }
+      .map-sidebar { display: grid; grid-template-columns: 1fr 1fr; }
+    }
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .how-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr; }
+      .map-sidebar { grid-template-columns: 1fr; }
+      .section-pad { padding: 60px 0; }
+      .hero-stats { gap: 20px; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+    }
+    @media (max-width: 480px) {
+      .ops-grid { grid-template-columns: 1fr; }
+      .reviews-grid { grid-template-columns: 1fr; }
+      .zone-filters { gap: 8px; }
+      .zone-btn { font-size: 0.75rem; padding: 7px 14px; }
+    }
+
+    /* ===== CARD PHOTO HEADERS ===== */
+    .op-card-header img {
+      position: absolute; inset: 0;
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      z-index: 0;
+    }
+    .op-card:hover .op-card-header img { transform: scale(1.08); }
+    .header-overlay {
+      position: absolute; inset: 0;
+      opacity: 0.45;
+      z-index: 1;
+    }
+    .op-card-zone-badge, .op-card-instructor { position: relative; z-index: 2; }
+
+    /* ===== WHATSAPP FLOAT BUTTON ===== */
+    .whatsapp-float {
+      position: fixed;
+      bottom: 28px; right: 28px;
+      width: 60px; height: 60px;
+      background: #25D366;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      z-index: 9999;
+      transition: transform 0.2s, box-shadow 0.2s;
+      text-decoration: none;
+    }
+    .whatsapp-float:hover {
+      transform: scale(1.12);
+      box-shadow: 0 6px 28px rgba(37,211,102,0.7);
+    }
+    .whatsapp-float svg { width: 32px; height: 32px; fill: #fff; }
+    .whatsapp-tooltip {
+      position: fixed;
+      bottom: 38px; right: 98px;
+      background: #fff; color: #111;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.78rem; font-weight: 700;
+      padding: 8px 14px; border-radius: 20px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.18);
+      white-space: nowrap; opacity: 0;
+      pointer-events: none; transition: opacity 0.2s; z-index: 9998;
+    }
+    .whatsapp-float:hover + .whatsapp-tooltip { opacity: 1; }
+    @media (max-width: 480px) {
+      .whatsapp-float { bottom: 18px; right: 18px; width: 54px; height: 54px; }
+      .whatsapp-tooltip { display: none; }
+    }
+
+    /* ===== BEST FOR BADGE ===== */
+    .op-best-for {
+      position: absolute;
+      bottom: 10px; left: 12px;
+      background: rgba(0,0,0,0.72);
+      backdrop-filter: blur(6px);
+      border-radius: 50px;
+      padding: 3px 11px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.65rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 0.3px;
+      z-index: 2;
+      white-space: nowrap;
+    }
+
+    /* ===== BACK TO TOP ===== */
+    .back-top {
+      position: fixed; bottom: 28px; left: 28px;
+      width: 46px; height: 46px;
+      background: var(--teal); color: var(--dark);
+      border: none; border-radius: 50%;
+      font-size: 1.2rem; cursor: pointer;
+      display: flex; align-items: center; justify-content: center;
+      opacity: 0; pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      z-index: 9990;
+      box-shadow: 0 4px 16px rgba(0,212,200,0.4);
+    }
+    .back-top.visible { opacity: 1; pointer-events: auto; }
+    .back-top:hover { transform: translateY(-3px); }
+
+    /* ===== COOKIE CONSENT ===== */
+    .cookie-bar {
+      position: fixed; bottom: 0; left: 0; right: 0;
+      background: #0d1e35;
+      border-top: 1px solid var(--border);
+      padding: 16px 24px;
+      display: flex; align-items: center;
+      justify-content: space-between; gap: 20px;
+      z-index: 99999;
+      transform: translateY(100%);
+      transition: transform 0.4s ease;
+      flex-wrap: wrap;
+    }
+    .cookie-bar.show { transform: translateY(0); }
+    .cookie-bar p { margin: 0; font-size: 0.82rem; color: var(--text-light); flex: 1; min-width: 220px; }
+    .cookie-bar p a { color: var(--teal); }
+    .cookie-btns { display: flex; gap: 10px; flex-shrink: 0; }
+    .cookie-accept {
+      background: var(--teal); color: var(--dark);
+      border: none; padding: 9px 22px; border-radius: 50px;
+      font-family: 'Montserrat', sans-serif; font-weight: 700;
+      font-size: 0.82rem; cursor: pointer; white-space: nowrap;
+    }
+    .cookie-decline {
+      background: transparent; color: var(--text-muted);
+      border: 1px solid var(--border); padding: 9px 18px;
+      border-radius: 50px; font-size: 0.82rem; cursor: pointer;
+      white-space: nowrap;
+    }
+
+    /* ===== PHOTO GALLERY ===== */
+    .gallery-section {
+      background: var(--dark);
+      padding: 80px 0;
+    }
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: 220px 220px;
+      gap: 10px;
+      margin-top: 40px;
+      border-radius: var(--radius);
+      overflow: hidden;
+    }
+    .gallery-item {
+      overflow: hidden;
+      position: relative;
+      cursor: pointer;
+    }
+    .gallery-item:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
+    .gallery-item:nth-child(5) { grid-column: span 2; }
+    .gallery-item img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+      display: block;
+    }
+    .gallery-item:hover img { transform: scale(1.07); }
+    .gallery-item::after {
+      content: '';
+      position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.35) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    @media (max-width: 768px) {
+      .gallery-grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: auto;
+      }
+      .gallery-item:first-child { grid-column: span 2; height: 200px; }
+      .gallery-item:nth-child(5) { grid-column: span 1; }
+    }
+
+    /* ===== PRICE TABLE ===== */
+    .price-table-section {
+      background: var(--dark2);
+      padding: 80px 0;
+    }
+    .price-table-wrap {
+      overflow-x: auto;
+      margin-top: 40px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+    .price-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.88rem;
+      min-width: 600px;
+    }
+    .price-table thead tr {
+      background: var(--teal);
+      color: var(--dark);
+    }
+    .price-table th {
+      padding: 14px 16px;
+      text-align: left;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.8rem;
+      letter-spacing: 0.5px;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+    }
+    .price-table th:hover { background: var(--teal2); }
+    .price-table th .sort-icon { margin-left: 4px; opacity: 0.6; }
+    .price-table tbody tr {
+      border-bottom: 1px solid var(--border);
+      transition: background 0.2s;
+    }
+    .price-table tbody tr:hover { background: var(--card-hover); }
+    .price-table td {
+      padding: 12px 16px;
+      color: var(--text-light);
+      vertical-align: middle;
+    }
+    .price-table td:first-child { color: var(--white); font-weight: 600; }
+    .price-table .zone-chip {
+      display: inline-block;
+      padding: 3px 10px; border-radius: 50px;
+      font-size: 0.72rem; font-weight: 700;
+      font-family: 'Montserrat', sans-serif;
+    }
+    .price-table .table-book-btn {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: var(--teal); color: var(--dark);
+      padding: 7px 16px; border-radius: 50px;
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700; font-size: 0.75rem;
+      white-space: nowrap; transition: background 0.2s;
+    }
+    .price-table .table-book-btn:hover { background: var(--teal2); }
+
+    /* ===== LANGUAGE TOGGLE ===== */
+    .lang-toggle {
+      display: flex; align-items: center; gap: 2px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 50px; padding: 3px;
+      border: 1px solid var(--border);
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.72rem; font-weight: 700;
+    }
+    .lang-btn {
+      padding: 5px 11px; border-radius: 50px; cursor: pointer;
+      border: none; background: transparent;
+      color: var(--text-muted); transition: all 0.2s;
+      font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 0.72rem;
+    }
+    .lang-btn.active { background: var(--teal); color: var(--dark); }
+  </style>
+</head>
+<body>
+
+<!-- ============================================================
+     NAVIGATION
+============================================================ -->
+<nav class="nav" id="navbar">
+  <div class="nav-inner">
+    <a href="#" class="logo">
+      <div class="logo-icon">🌊</div>
+      <div>Miami <span>Jetski</span></div>
+    </a>
+    <div class="nav-links">
+      <a href="#operators" data-i18n="nav.operators">Operators</a>
+      <a href="#map" data-i18n="nav.map">Map</a>
+      <a href="#reviews" data-i18n="nav.reviews">Reviews</a>
+      <a href="#faq" data-i18n="nav.faq">FAQ</a>
+      
+      <a href="#operators" class="btn btn-primary nav-cta" data-i18n="nav.book">Book Now</a>
+      <div class="lang-toggle" id="langToggle">
+      <button class="lang-btn active" onclick="setLang('en')">EN</button>
+      <button class="lang-btn" onclick="setLang('es')">ES</button>
+    </div>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobileMenu">
+  <a href="#operators" onclick="closeMobile()">Operators</a>
+  <a href="#map" onclick="closeMobile()">Map</a>
+  <a href="#reviews" onclick="closeMobile()">Reviews</a>
+  <a href="#faq" onclick="closeMobile()">FAQ</a>
+  
+  <a href="#operators" class="btn btn-primary" onclick="closeMobile()">Book Now</a>
+</div>
+
+
+<!-- ============================================================
+     HERO
+============================================================ -->
+<section class="hero" id="home">
+  <div class="hero-bg-shapes">
+    <div class="hero-orb hero-orb-1"></div>
+    <div class="hero-orb hero-orb-2"></div>
+    <div class="hero-orb hero-orb-3"></div>
+  </div>
+
+  <div class="hero-content">
+    <div class="hero-text">
+      <div class="hero-badge">
+        <i class="fa-solid fa-circle" style="font-size:0.4rem;animation:pulse 1.5s infinite;"></i>
+        21 Operators · Instructor Included · South Florida
+      </div>
+      <h1>
+        Jet Ski Rentals
+        <span class="line-teal">Miami &amp; South Florida</span>
+      </h1>
+      <p class="hero-desc">
+        Compare the top 21 jet ski operators across Miami Beach, Hollywood, Fort Lauderdale, Pompano Beach and the Florida Keys — all with instructor included. Find your perfect ride and book in seconds.
+      </p>
+      <div class="hero-btns">
+        <a href="#operators" class="btn btn-primary" style="font-size:1rem;padding:16px 36px;">
+          <i class="fa-solid fa-water"></i> Find Your Jet Ski
+        </a>
+        
+      </div>
+      <div class="hero-stats">
+        <div class="hero-stat">
+          <div class="hero-stat-num">20+</div>
+          <div class="hero-stat-label">Operators</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">$99</div>
+          <div class="hero-stat-label">Starting Price</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">9</div>
+          <div class="hero-stat-label">Zones</div>
+        </div>
+        <div class="hero-stat">
+          <div class="hero-stat-num">4.9★</div>
+          <div class="hero-stat-label">Avg. Rating</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual">
+      <div class="hero-card-float">
+        <div class="hero-card-title">⚡ Featured Operators</div>
+        <div class="quick-op">
+          <div class="quick-op-icon">🌊</div>
+          <div class="quick-op-info">
+            <div class="quick-op-name">AquaFusion Combo</div>
+            <div class="quick-op-location"><i class="fa-solid fa-location-dot"></i> Miami Beach</div>
+          </div>
+          <div class="quick-op-price">$150</div>
+        </div>
+        <div class="quick-op">
+          <div class="quick-op-icon">🏄</div>
+          <div class="quick-op-info">
+            <div class="quick-op-name">Jetski Rentals Hollywood</div>
+            <div class="quick-op-location"><i class="fa-solid fa-location-dot"></i> Hollywood</div>
+          </div>
+          <div class="quick-op-price">$110</div>
+        </div>
+        <div class="quick-op">
+          <div class="quick-op-icon">🐠</div>
+          <div class="quick-op-info">
+            <div class="quick-op-name">Marathon Jetski Rentals</div>
+            <div class="quick-op-location"><i class="fa-solid fa-location-dot"></i> Marathon, FL Keys</div>
+          </div>
+          <div class="quick-op-price">$99</div>
+        </div>
+        <div class="quick-op">
+          <div class="quick-op-icon">🌴</div>
+          <div class="quick-op-info">
+            <div class="quick-op-name">Six Fins Key West Tour</div>
+            <div class="quick-op-location"><i class="fa-solid fa-location-dot"></i> Key West</div>
+          </div>
+          <div class="quick-op-price">$209</div>
+        </div>
+        <div style="margin-top:16px;">
+          <a href="#operators" class="btn btn-primary" style="width:100%;justify-content:center;padding:12px;">
+            See All 21 Operators <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Wave -->
+  <div class="hero-wave">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="display:block;width:100%;height:80px;">
+      <path d="M0,40 C360,80 1080,0 1440,40 L1440,80 L0,80 Z" fill="#0d1e35"/>
+    </svg>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     HOW IT WORKS
+============================================================ -->
+<section class="how" id="how">
+  <div class="container text-center">
+    <div class="section-tag">How It Works</div>
+    <h2 class="section-title">Book Your Jet Ski in <span class="teal">3 Simple Steps</span></h2>
+    <p class="section-sub">We connect you directly with the best operators. No hidden fees, no middleman markup.</p>
+    <div class="how-grid">
+      <div class="how-card">
+        <div class="how-num">01</div>
+        <div class="how-icon"><i class="fa-solid fa-magnifying-glass"></i></div>
+        <h3>Browse &amp; Compare</h3>
+        <p>Explore 21 top-rated jet ski operators across South Florida. Filter by zone, price, and activity type to find your perfect match.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">02</div>
+        <div class="how-icon"><i class="fa-solid fa-calendar-check"></i></div>
+        <h3>Book Online</h3>
+        <p>Click "Book Now" on any operator card. You'll be taken directly to their secure booking page powered by FareHarbor — safe and instant.</p>
+      </div>
+      <div class="how-card">
+        <div class="how-num">03</div>
+        <div class="how-icon"><i class="fa-solid fa-water"></i></div>
+        <h3>Ride the Waves</h3>
+        <p>Show up at the location, meet your certified instructor, and enjoy an unforgettable jet ski adventure on the beautiful waters of South Florida!</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     OPERATORS
+============================================================ -->
+<section class="operators" id="operators">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">Top Operators</div>
+      <h2 class="section-title">Find Your Perfect <span class="teal">Jet Ski Rental</span></h2>
+      <p class="section-sub">All operators include certified instructor. Prices shown are per session starting rates.</p>
+    </div>
+
+    <!-- Zone Filter -->
+    <div class="zone-filters">
+      <button class="zone-btn active" onclick="filterZone('all', this)">🌎 All (20)</button>
+      <button class="zone-btn" onclick="filterZone('miami-beach', this)">🏖️ Miami Beach</button>
+      <button class="zone-btn" onclick="filterZone('miami-city', this)">🏙️ Miami City</button>
+      <button class="zone-btn" onclick="filterZone('coconut-grove', this)">🌴 Coconut Grove</button>
+      <button class="zone-btn" onclick="filterZone('hollywood', this)">🌅 Hollywood</button>
+      <button class="zone-btn" onclick="filterZone('fort-laud', this)">⛵ Fort Lauderdale</button>
+      <button class="zone-btn" onclick="filterZone('pompano', this)">🏄 Pompano Beach</button>
+      <button class="zone-btn" onclick="filterZone('keys', this)">🐠 Florida Keys</button>
+    </div>
+
+    <!-- Operator Cards Grid -->
+    <div class="ops-grid" id="opsGrid">
+
+      <!-- 1. AquaFusion -->
+      <div class="op-card zone-miami-beach" data-zone="miami-beach">
+        <div class="op-card-header">
+          <img src="https://www.jetskisinmiami.com/img/MiamiJetSkiRentals.jpg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Miami Beach</span>
+          <span class="op-best-for">🎉 Best for Groups</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">AquaFusion Combo: Jet Ski &amp; Party Boat</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 10800 Collins Ave, Miami Beach, FL 33154</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Jet Ski + Boat Combo</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Instructor Included</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Haulover Area</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$150</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/bjmrentals/items/313688/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 2. Jetski Rental Byron Ave -->
+      <div class="op-card zone-miami-beach" data-zone="miami-beach">
+        <div class="op-card-header">
+          <img src="https://static.wixstatic.com/media/90c75d_2745dc2654894059b21aa0ad5365fff0~mv2.jpg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Miami Beach</span>
+          <span class="op-best-for">🏄 Best for Beginners</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Jetski Rental – North Miami Beach</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 8100 Byron Ave, Miami Beach, FL 33141</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Instructor Included</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> North Miami Beach</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Easy Booking</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$130</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/slingkimotors/items/571874/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 3. One Hour Jet Ski 18th St -->
+      <div class="op-card zone-miami-beach" data-zone="miami-beach">
+        <div class="op-card-header">
+          <img src="https://sfjetskirentals.com/wp-content/uploads/sites/6688/2023/09/mobile1.png?w=1000&h=1000" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Miami Beach</span>
+          <span class="op-best-for">⏱ Best Quick Ride</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">One Hour Jet Ski Rental</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 1416 18th St, Miami Beach, FL 33139</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> 1 Hour Session</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Central South Beach</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Biscayne Bay Access</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$130</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/jetskiridingmiami/items/660333/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 4. Jetski Rentals Alton Road -->
+      <div class="op-card zone-miami-beach" data-zone="miami-beach">
+        <div class="op-card-header">
+          <img src="https://files.funwaveswatersports.com/images/hero-jetski.webp" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Miami Beach</span>
+          <span class="op-best-for">🌴 Best South Beach Vibe</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Jetski Rentals – South Beach</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 232 Alton Road, Miami Beach, FL 33139</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Best Price SoBe</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Alton Rd Location</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Instructor Included</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$125</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/flowvip/items/595513/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 5. Package Deal Boat+Jetski+ATV -->
+      <div class="op-card zone-miami-city" data-zone="miami-city">
+        <div class="op-card-header">
+          <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit800600gsm/eventThirdParty/2025/10/13/b0d83746-1500-43d9-8c61-48458a4c6b7f-1760343657142-93f4a36b5471e6ecf734f2dca2c97b1a.jpg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Miami City</span>
+          <span class="op-best-for">🔥 Best for Thrill Seekers</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Package Deal: Boat Ride, Jet Ski &amp; ATV</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 961 NW 7th St, Miami, FL 33136</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> 3-in-1 Adventure</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Boat + Jet Ski + ATV</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Best Value</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$230</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/jetskimiamirentals/items/635177/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 6. Jetcar 1-Hour -->
+      <div class="op-card zone-miami-city" data-zone="miami-city">
+        <div class="op-card-header">
+          <img src="https://www.flexwatersportsrentals.com/wp-content/uploads/2024/03/001-640x320.webp" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Miami City</span>
+          <span class="op-best-for">🚗 Most Unique Experience</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Jetcar 1-Hour – Drive a Car on Water!</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 961 NW 7th St, Miami, FL 33136</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Unique Experience</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Car-Shaped Watercraft</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> 1 Hour Session</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$350</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/305jetskisrental/items/584793/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 7. Miami WaterSports Pan American -->
+      <div class="op-card zone-coconut-grove" data-zone="coconut-grove">
+        <div class="op-card-header">
+          <img src="https://miajetskirental.com/wp-content/uploads/2023/02/DOUBLERIDERJETSKI-768x1024.jpg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Coconut Grove</span>
+          <span class="op-best-for">🌊 Best Biscayne Bay</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Jet Ski Rentals | Miami WaterSports</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 3400 Pan American Dr, Miami, FL 33133</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Biscayne Bay Views</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Professional Staff</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Coconut Grove Marina</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$140</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/sfjetskirentals/items/532517/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 8. Tiza Motorsports Coconut Grove -->
+      <div class="op-card zone-coconut-grove" data-zone="coconut-grove">
+        <div class="op-card-header">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/fe/87/ff/caption.jpg?w=500&h=400&s=1" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Coconut Grove</span>
+          <span class="op-best-for">💑 Best for Couples</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Jet Ski Rentals – Coconut Grove</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 3498 Main Hwy, Miami, FL 33133</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Main Hwy Marina</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Instructor Included</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Great for Groups</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$150</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/tizamotorsportsllc/items/618589/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 9. Under the Sun Hollywood -->
+      <div class="op-card zone-hollywood" data-zone="hollywood">
+        <div class="op-card-header">
+          <img src="http://greatlocations.com/wp-content/uploads/2022/01/7.jpeg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Hollywood</span>
+          <span class="op-best-for">💰 Best Value Hollywood</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">1 Hour Jet Ski Rental – Hollywood Beach</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> A1A &amp; Johnson St, Hollywood, FL 33019</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> 1 Hour Session</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Oceanfront A1A</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Family Friendly</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$120</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/underthesunbeachservices/items/631947/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 10. Falcon's Jetski Hollywood -->
+      <div class="op-card zone-hollywood" data-zone="hollywood">
+        <div class="op-card-header">
+          <img src="https://miajetskirental.com/wp-content/uploads/2023/02/DOUBLERIDERJETSKI-768x1024.jpg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Hollywood</span>
+          <span class="op-best-for">👨‍👩‍👧 Best for Families</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Jet Ski Rental Hollywood – Falcon's</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 1520 N Ocean Dr, Hollywood, FL 33019</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Best Price Hollywood</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Ocean Drive Views</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Easy Access</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$110</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/falconsjetskirentals/items/583875/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 11. Bimini Day Trip Fort Lauderdale -->
+      <div class="op-card zone-fort-laud" data-zone="fort-laud">
+        <div class="op-card-header">
+          <img src="https://ferrytobahamas.com/images/miami-to-bimini-ferry-prices.jpg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Fort Lauderdale</span>
+          <span class="op-best-for">🏝 Best Day Trip</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Bimini Island Day Trip by Fast-Ferry</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 2021 Eller Drive, Fort Lauderdale, FL 33316</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Day Trip Bahamas</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Fast Ferry</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Unique Experience</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$299</span>
+              <span class="op-price-per">/person</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/us2u/items/81674/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 12. Slingshot Jetski Fort Lauderdale -->
+      <div class="op-card zone-fort-laud" data-zone="fort-laud">
+        <div class="op-card-header">
+          <img src="https://static.wixstatic.com/media/6b8d54_832097b008524ed9a29c5322ca4aee73~mv2.jpg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Fort Lauderdale</span>
+          <span class="op-best-for">🌅 Best Ft. Lauderdale</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Jetski Rental – Fort Lauderdale</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 955 S Federal Hwy, Fort Lauderdale, FL 33316</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Intracoastal Access</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Expert Guides</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Flexible Hours</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">Call for</span>
+              <span class="op-price-num" style="font-size:1.1rem;">Pricing</span>
+              <span class="op-price-per">&nbsp;</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/slingshotandjetskirentals/items/571875/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 13. KC Jetskiing Pompano Beach -->
+      <div class="op-card zone-pompano" data-zone="pompano">
+        <div class="op-card-header">
+          <img src="https://www.miamionthewater.com/wp-content/uploads/sites/2762/2021/11/Miami-Jet-Ski-Ride-Miami-on-the-Water-2.jpg?resize=360%2C240&zoom=2" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Pompano Beach</span>
+          <span class="op-best-for">🎯 Best Pompano Ocean</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Jet Ski Rental Pompano Beach</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 125 N Riverside Dr, Pompano Beach, FL 33062</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Best Price Area</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Riverside Drive</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Great Visibility</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$100</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/kcjetskiing/items/96359/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 14. Ocean Jet Ski Pompano -->
+      <div class="op-card zone-pompano" data-zone="pompano">
+        <div class="op-card-header">
+          <img src="https://s3-media0.fl.yelpcdn.com/bphoto/VrpoCH8HL1KCP830iSPvMA/348s.jpg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Pompano Beach</span>
+          <span class="op-best-for">🐬 Best Ocean Views</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Ocean Jet Ski Rentals – Pompano</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 1406 N Ocean Blvd, Pompano Beach, FL 33062</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Oceanfront Location</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Modern Watercraft</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> $100 Starting</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$100</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/ftlauderdaleparasail/items/546896/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 15. Key Largo WakeZone -->
+      <div class="op-card zone-key-largo" data-zone="keys">
+        <div class="op-card-header">
+          <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/fe/87/ff/caption.jpg?w=500&h=400&s=1" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Key Largo</span>
+          <span class="op-best-for">🐠 Best for Snorkeling</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Key Largo: Jet Ski Rentals</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> Key Largo, FL 33037</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Florida Keys</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Crystal Waters</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Guided Tour</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$160</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/wakezonewatersports/items/672056/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 16. Tropic Watersports Key Largo -->
+      <div class="op-card zone-key-largo" data-zone="keys">
+        <div class="op-card-header">
+          <img src="https://media-cdn.tripadvisor.com/media/photo-o/29/f5/a4/b1/caption.jpg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Key Largo</span>
+          <span class="op-best-for">🌺 Best Keys Adventure</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Jet Ski Rental Key Largo – Tropic Water</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 139 Seaside Ave, Key Largo, FL 33037</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Seaside Location</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Family Friendly</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Snorkeling Nearby</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$130</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/tropicwatersports/items/264896/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 17. Seahorse Marathon -->
+      <div class="op-card zone-marathon" data-zone="keys">
+        <div class="op-card-header">
+          <img src="https://cdn11.bigcommerce.com/s-tkkmz5sk/images/stencil/1280x1280/products/110/832/Extreme_Jet_Ski_Tours__98614.1579039602.jpg?c=2" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Marathon</span>
+          <span class="op-best-for">💲 Best Price in Keys</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Jetski Rentals Marathon – Best Price!</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 4650 Overseas Hwy, Marathon, FL 33050</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Best Price Keys</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Marathon Florida</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Turquoise Waters</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$99</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/seahorsewateradventures/items/628493/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 18. Grassy Key Marina -->
+      <div class="op-card zone-marathon" data-zone="keys">
+        <div class="op-card-header">
+          <img src="https://www.beachroadwatersports.net/wp-content/uploads/2025/06/jet-ski-rentals-2.jpg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Grassy Key</span>
+          <span class="op-best-for">☀️ Best Full-Day Ride</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Grassy Key Marina – Daily Jet Ski Rental</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 59073 Overseas Hwy, Marathon, FL 33050</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> All-Day Option</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Marina Launch</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Premium Experience</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$550</span>
+              <span class="op-price-per">/day</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/paradisewatersportsrentals/items/489052/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 19. WakeZone Marathon -->
+      <div class="op-card zone-marathon" data-zone="keys">
+        <div class="op-card-header">
+          <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit800600gsm/eventThirdParty/2025/10/13/b0d83746-1500-43d9-8c61-48458a4c6b7f-1760343657142-93f4a36b5471e6ecf734f2dca2c97b1a.jpg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Marathon</span>
+          <span class="op-best-for">🏆 Best in Marathon</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Marathon: Jet Ski Rentals – WakeZone</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 58743 Overseas Hwy, Marathon, FL 33050</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Guided Tours</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Overseas Hwy</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Tropical Views</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$160</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/wakezonewatersports/items/671762/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 20. Six Fins Key West -->
+      <div class="op-card zone-key-west" data-zone="keys">
+        <div class="op-card-header">
+          <img src="https://www.jetskisinmiami.com/img/MiamiJetSkiRentals.jpg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental Miami">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 Key West</span>
+          <span class="op-best-for">🦈 Best Key West Tour</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Six Fins Key West: 2-Hr Flagship Jet Ski Tour</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 7025 Shrimp Rd &amp; Coconut Row, Key West, FL 33040</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> 2-Hour Guided Tour</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Flagship Experience</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Southernmost City</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$209</span>
+              <span class="op-price-per">/person</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/sixfinsjetskirental/items/628106/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <!-- 21. Miami Style Rentals – North Miami -->
+      <div class="op-card zone-miami-city" data-zone="miami-city">
+        <div class="op-card-header">
+          <img src="https://cdn.filestackcontent.com/CE61syeCQCp4cJjjqG2A/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';" alt="Jet ski rental North Miami Biscayne Bay">
+          <div class="header-overlay"></div>
+          <span class="op-card-zone-badge">📍 North Miami</span>
+          <span class="op-best-for">⭐ Best Local Operator</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-card-name">Miami Style Rentals – Jet Ski Tour</div>
+          <div class="op-card-address"><i class="fa-solid fa-location-dot"></i> 2699 NE 135th St, North Miami, FL 33181</div>
+          <div class="op-card-features">
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Instructor Included</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> Biscayne Bay Access</span>
+            <span class="op-feature"><i class="fa-solid fa-check"></i> North Miami Launch</span>
+          </div>
+          <div class="op-card-footer">
+            <div class="op-price">
+              <span class="op-price-from">From</span>
+              <span class="op-price-num">$99</span>
+              <span class="op-price-per">/session</span>
+            </div>
+            <a href="https://fareharbor.com/embeds/book/miamistylerentals/items/326919/calendar/2026/04/?flow=613885&full-items=yes" target="_blank" rel="noopener" class="op-book-btn">
+              Book Now <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- /ops-grid -->
+  </div>
+</section>
+
+
+<!-- ============================================================
+     MAP SECTION
+============================================================ -->
+<section class="map-section" id="map">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">Find Your Location</div>
+      <h2 class="section-title">Operators Across <span class="teal">South Florida</span></h2>
+      <p class="section-sub">From Pompano Beach to Key West — find the nearest jet ski operator to you.</p>
+    </div>
+    <div class="map-layout">
+      <div id="jetski-map"></div>
+      <div class="map-sidebar">
+        <a href="#operators" onclick="filterZone('pompano',document.querySelectorAll('.zone-btn')[6])">
+          <div class="map-zone-card">
+            <div class="map-zone-dot" style="background:#006688;"></div>
+            <div class="map-zone-info">
+              <div class="map-zone-name">Pompano Beach</div>
+              <div class="map-zone-count">2 operators · From $100</div>
+            </div>
+            <i class="fa-solid fa-chevron-right map-zone-arrow"></i>
+          </div>
+        </a>
+        <a href="#operators" onclick="filterZone('fort-laud',document.querySelectorAll('.zone-btn')[5])">
+          <div class="map-zone-card">
+            <div class="map-zone-dot" style="background:#8800aa;"></div>
+            <div class="map-zone-info">
+              <div class="map-zone-name">Fort Lauderdale</div>
+              <div class="map-zone-count">2 operators · From $299</div>
+            </div>
+            <i class="fa-solid fa-chevron-right map-zone-arrow"></i>
+          </div>
+        </a>
+        <a href="#operators" onclick="filterZone('hollywood',document.querySelectorAll('.zone-btn')[4])">
+          <div class="map-zone-card">
+            <div class="map-zone-dot" style="background:#a04000;"></div>
+            <div class="map-zone-info">
+              <div class="map-zone-name">Hollywood</div>
+              <div class="map-zone-count">2 operators · From $110</div>
+            </div>
+            <i class="fa-solid fa-chevron-right map-zone-arrow"></i>
+          </div>
+        </a>
+        <a href="#operators" onclick="filterZone('miami-beach',document.querySelectorAll('.zone-btn')[1])">
+          <div class="map-zone-card">
+            <div class="map-zone-dot" style="background:#0066cc;"></div>
+            <div class="map-zone-info">
+              <div class="map-zone-name">Miami Beach</div>
+              <div class="map-zone-count">4 operators · From $125</div>
+            </div>
+            <i class="fa-solid fa-chevron-right map-zone-arrow"></i>
+          </div>
+        </a>
+        <a href="#operators" onclick="filterZone('miami-city',document.querySelectorAll('.zone-btn')[2])">
+          <div class="map-zone-card">
+            <div class="map-zone-dot" style="background:#3a0099;"></div>
+            <div class="map-zone-info">
+              <div class="map-zone-name">Miami City</div>
+              <div class="map-zone-count">2 operators · From $230</div>
+            </div>
+            <i class="fa-solid fa-chevron-right map-zone-arrow"></i>
+          </div>
+        </a>
+        <a href="#operators" onclick="filterZone('coconut-grove',document.querySelectorAll('.zone-btn')[3])">
+          <div class="map-zone-card">
+            <div class="map-zone-dot" style="background:#007a5e;"></div>
+            <div class="map-zone-info">
+              <div class="map-zone-name">Coconut Grove</div>
+              <div class="map-zone-count">2 operators · From $140</div>
+            </div>
+            <i class="fa-solid fa-chevron-right map-zone-arrow"></i>
+          </div>
+        </a>
+        <a href="#operators" onclick="filterZone('keys',document.querySelectorAll('.zone-btn')[7])">
+          <div class="map-zone-card">
+            <div class="map-zone-dot" style="background:#00885a;"></div>
+            <div class="map-zone-info">
+              <div class="map-zone-name">Florida Keys</div>
+              <div class="map-zone-count">6 operators · From $99</div>
+            </div>
+            <i class="fa-solid fa-chevron-right map-zone-arrow"></i>
+          </div>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     TESTIMONIALS
+============================================================ -->
+<section class="testimonials" id="reviews">
+  <div class="container text-center">
+    <div class="section-tag">Reviews</div>
+    <h2 class="section-title">What Our <span class="teal">Customers Say</span></h2>
+    <p class="section-sub">Hundreds of happy riders across South Florida — here are a few of their stories.</p>
+    <div class="reviews-grid">
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Booked through this site and it was so easy! Found AquaFusion in 2 minutes, the instructor was amazing and we had a blast on the party boat combo. 10/10 would recommend to anyone visiting Miami!"</p>
+        <div class="review-author">
+          <div class="review-avatar">JL</div>
+          <div>
+            <div class="review-name">Jessica L.</div>
+            <div class="review-meta">Miami Beach · AquaFusion Combo</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Went to Hollywood Beach with my family. The Falcon's rental was only $110 and the instructor was super patient with the kids. The views were stunning. Best day of our Florida vacation!"</p>
+        <div class="review-author">
+          <div class="review-avatar">MR</div>
+          <div>
+            <div class="review-name">Marco R.</div>
+            <div class="review-meta">Hollywood · Falcon's Jetski</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Did the Six Fins tour in Key West — absolutely breathtaking! 2 hours felt like 20 minutes. The guide knew every hidden spot in the water. Don't miss this if you're in the Keys!"</p>
+        <div class="review-author">
+          <div class="review-avatar">AT</div>
+          <div>
+            <div class="review-name">Ashley T.</div>
+            <div class="review-meta">Key West · Six Fins Tour</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"The Jetcar experience in Miami was unlike anything I've ever done. Literally driving a car on water through Biscayne Bay! My girlfriend loved it. This site made comparing options super easy."</p>
+        <div class="review-author">
+          <div class="review-avatar">DM</div>
+          <div>
+            <div class="review-name">Diego M.</div>
+            <div class="review-meta">Miami City · Jetcar 1-Hour</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Marathon jet ski at $99 was the best deal I've found in the Keys. Crystal clear water, no crowds, and the instructor was very professional. Already booked again for next month!"</p>
+        <div class="review-author">
+          <div class="review-avatar">KC</div>
+          <div>
+            <div class="review-name">Karen C.</div>
+            <div class="review-meta">Marathon · Seahorse Adventures</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <p class="review-text">"Coconut Grove location at Pan American Drive was perfect. Beautiful scenery, great instructor, and the booking process through this site took less than 5 minutes. Highly recommend!"</p>
+        <div class="review-author">
+          <div class="review-avatar">RB</div>
+          <div>
+            <div class="review-name">Ryan B.</div>
+            <div class="review-meta">Coconut Grove · Miami WaterSports</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FAQ
+============================================================ -->
+<section class="faq" id="faq">
+  <div class="container text-center">
+    <div class="section-tag" data-i18n="faq.tag">FAQ</div>
+    <h2 class="section-title">Frequently Asked <span class="teal">Questions</span></h2>
+    <p class="section-sub">Everything you need to know before booking your jet ski adventure.</p>
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Do I need a license or experience to ride a jet ski in Florida?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">
+          In Florida, anyone born on or after January 1, 1988 must complete a boating safety course to operate a personal watercraft. Don't worry — all our operators include a certified instructor who will brief you on safety before you ride. No prior experience needed!
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Is the instructor really included in the price?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">
+          Yes! All 21 operators listed on our site include a certified instructor in the price shown. The instructor accompanies you on the water, guides you through the experience, and ensures your safety at all times.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What is the cheapest jet ski rental in South Florida?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">
+          The most affordable option on our platform is the Jetski Rentals Marathon (Seahorse Adventures) starting at just $99/session. For Miami area, the cheapest options are in Hollywood ($110) and South Beach ($125). Pompano Beach also offers $100 starting prices.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          How does booking through your site work?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">
+          We're a comparison platform. When you click "Book Now" on any operator card, you're taken directly to their secure booking page on FareHarbor — a trusted booking platform used by thousands of activity companies. You pay directly to the operator, not to us.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          What should I bring to a jet ski rental?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">
+          We recommend bringing: swimwear, a towel, sunscreen, sunglasses with a strap, and a valid photo ID. Leave valuables at home or in your car. Operators typically provide life jackets. Water shoes are optional but recommended.
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-q" onclick="toggleFaq(this)">
+          Can I ride with a passenger?
+          <i class="fa-solid fa-chevron-down"></i>
+        </button>
+        <div class="faq-a">
+          Most jet skis are designed for 2-3 passengers. Yes, you can bring a passenger — it's a great couples or friends activity! Some operators may charge a small additional fee for extra passengers. Check the specific operator's booking page for details.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+<!-- ============================================================
+     PRICE COMPARISON TABLE
+============================================================ -->
+<section class="price-table-section" id="compare">
+  <div class="container">
+    <div class="section-tag" data-i18n="compare.tag">Compare</div>
+    <h2 class="section-title">All Operators — <span class="teal">At a Glance</span></h2>
+    <p class="section-sub">Click any column header to sort. Find the best price for your zone.</p>
+    <div class="price-table-wrap">
+      <table class="price-table" id="priceTable">
+        <thead>
+          <tr>
+            <th onclick="sortTable(0)">Operator <span class="sort-icon">↕</span></th>
+            <th onclick="sortTable(1)">Zone <span class="sort-icon">↕</span></th>
+            <th onclick="sortTable(2)">Price <span class="sort-icon">↕</span></th>
+            <th>Book</th>
+          </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>AquaFusion Combo: Jet Ski & Party Boat</td>
+          <td><span class="zone-chip" style="background:#0066cc22;color:#0066cc;border:1px solid #0066cc44">Miami Beach</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$150</td>
+          <td><a href="https://fareharbor.com/embeds/book/bjmrentals/items/313688/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Jetski Rental – North Miami Beach</td>
+          <td><span class="zone-chip" style="background:#0066cc22;color:#0066cc;border:1px solid #0066cc44">Miami Beach</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$130</td>
+          <td><a href="https://fareharbor.com/embeds/book/slingkimotors/items/571874/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>One Hour Jet Ski Rental</td>
+          <td><span class="zone-chip" style="background:#0066cc22;color:#0066cc;border:1px solid #0066cc44">Miami Beach</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$130</td>
+          <td><a href="https://fareharbor.com/embeds/book/jetskiridingmiami/items/660333/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Jetski Rentals – South Beach</td>
+          <td><span class="zone-chip" style="background:#0066cc22;color:#0066cc;border:1px solid #0066cc44">Miami Beach</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$125</td>
+          <td><a href="https://fareharbor.com/embeds/book/flowvip/items/595513/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Miami Style Rentals – Jet Ski Tour</td>
+          <td><span class="zone-chip" style="background:#0066cc22;color:#0066cc;border:1px solid #0066cc44">North Miami</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$99</td>
+          <td><a href="https://fareharbor.com/embeds/book/miamistylerentals/items/326919/calendar/2026/04/?flow=613885&full-items=yes&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Package Deal: Boat + Jet Ski + ATV</td>
+          <td><span class="zone-chip" style="background:#6600cc22;color:#6600cc;border:1px solid #6600cc44">Miami City</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$230</td>
+          <td><a href="https://fareharbor.com/embeds/book/jetskimiamirentals/items/635177/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Jetcar 1-Hour – Drive a Car on Water!</td>
+          <td><span class="zone-chip" style="background:#6600cc22;color:#6600cc;border:1px solid #6600cc44">Miami City</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$350</td>
+          <td><a href="https://fareharbor.com/embeds/book/305jetskisrental/items/584793/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Jet Ski Rentals | Miami WaterSports</td>
+          <td><span class="zone-chip" style="background:#007a5e22;color:#007a5e;border:1px solid #007a5e44">Coconut Grove</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$140</td>
+          <td><a href="https://fareharbor.com/embeds/book/sfjetskirentals/items/532517/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Jet Ski Rentals – Coconut Grove</td>
+          <td><span class="zone-chip" style="background:#007a5e22;color:#007a5e;border:1px solid #007a5e44">Coconut Grove</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$150</td>
+          <td><a href="https://fareharbor.com/embeds/book/tizamotorsportsllc/items/618589/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>1 Hour Jet Ski Rental – Hollywood Beach</td>
+          <td><span class="zone-chip" style="background:#c0500022;color:#c05000;border:1px solid #c0500044">Hollywood</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$120</td>
+          <td><a href="https://fareharbor.com/embeds/book/underthesunbeachservices/items/631947/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Jet Ski Rental Hollywood – Falcon's</td>
+          <td><span class="zone-chip" style="background:#c0500022;color:#c05000;border:1px solid #c0500044">Hollywood</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$110</td>
+          <td><a href="https://fareharbor.com/embeds/book/falconsjetskirentals/items/583875/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Bimini Island Day Trip by Fast-Ferry</td>
+          <td><span class="zone-chip" style="background:#8800aa22;color:#8800aa;border:1px solid #8800aa44">Fort Lauderdale</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$299</td>
+          <td><a href="https://fareharbor.com/embeds/book/us2u/items/81674/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Jetski Rental – Fort Lauderdale</td>
+          <td><span class="zone-chip" style="background:#8800aa22;color:#8800aa;border:1px solid #8800aa44">Fort Lauderdale</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">Call</td>
+          <td><a href="https://fareharbor.com/embeds/book/slingshotandjetskirentals/items/571875/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Jet Ski Rental Pompano Beach</td>
+          <td><span class="zone-chip" style="background:#00668822;color:#006688;border:1px solid #00668844">Pompano Beach</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$100</td>
+          <td><a href="https://fareharbor.com/embeds/book/kcjetskiing/items/96359/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Ocean Jet Ski Rentals – Pompano</td>
+          <td><span class="zone-chip" style="background:#00668822;color:#006688;border:1px solid #00668844">Pompano Beach</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$100</td>
+          <td><a href="https://fareharbor.com/embeds/book/ftlauderdaleparasail/items/546896/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Key Largo: Jet Ski Rentals</td>
+          <td><span class="zone-chip" style="background:#00885a22;color:#00885a;border:1px solid #00885a44">Key Largo</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$160</td>
+          <td><a href="https://fareharbor.com/embeds/book/wakezonewatersports/items/672056/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Jet Ski Rental Key Largo – Tropic Water</td>
+          <td><span class="zone-chip" style="background:#00885a22;color:#00885a;border:1px solid #00885a44">Key Largo</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$130</td>
+          <td><a href="https://fareharbor.com/embeds/book/tropicwatersports/items/264896/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Jetski Rentals Marathon – Best Price!</td>
+          <td><span class="zone-chip" style="background:#00665022;color:#006650;border:1px solid #00665044">Marathon</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$99</td>
+          <td><a href="https://fareharbor.com/embeds/book/seahorsewateradventures/items/628493/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Grassy Key Marina – Daily Jet Ski Rental</td>
+          <td><span class="zone-chip" style="background:#00665022;color:#006650;border:1px solid #00665044">Marathon</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$550/day</td>
+          <td><a href="https://fareharbor.com/embeds/book/paradisewatersportsrentals/items/489052/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Marathon: Jet Ski Rentals – WakeZone</td>
+          <td><span class="zone-chip" style="background:#00665022;color:#006650;border:1px solid #00665044">Marathon</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$160</td>
+          <td><a href="https://fareharbor.com/embeds/book/wakezonewatersports/items/671762/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        <tr>
+          <td>Six Fins Key West: 2-Hr Flagship Jet Ski Tour</td>
+          <td><span class="zone-chip" style="background:#c0660022;color:#c06600;border:1px solid #c0660044">Key West</span></td>
+          <td style="color:var(--teal);font-weight:700;font-family:'Montserrat',sans-serif">$209</td>
+          <td><a href="https://fareharbor.com/embeds/book/sixfinsjetskirental/items/628106/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" class="table-book-btn">Book <i class="fa-solid fa-arrow-right"></i></a></td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     PHOTO GALLERY
+============================================================ -->
+<section class="gallery-section" id="gallery">
+  <div class="container">
+    <div class="section-tag" data-i18n="gallery.tag">Gallery</div>
+    <h2 class="section-title" data-i18n="gallery.title">South Florida Jet Ski <span class="teal">Adventures</span></h2>
+    <p class="section-sub" data-i18n="gallery.sub">Real moments from our operators across Miami Beach, the Keys and beyond.</p>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://www.jetskisinmiami.com/img/MiamiJetSkiRentals.jpg" loading="lazy" alt="Jet ski Miami Beach" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="gallery-item">
+        <img src="https://sfjetskirentals.com/wp-content/uploads/sites/6688/2023/09/mobile1.png?w=1000&h=1000" loading="lazy" alt="Jet ski South Florida" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="gallery-item">
+        <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit800600gsm/eventThirdParty/2025/10/13/b0d83746-1500-43d9-8c61-48458a4c6b7f-1760343657142-93f4a36b5471e6ecf734f2dca2c97b1a.jpg" loading="lazy" alt="Jet ski rental Miami" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.flexwatersportsrentals.com/wp-content/uploads/2024/03/001-640x320.webp" loading="lazy" alt="Jet ski Fort Lauderdale" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="gallery-item">
+        <img src="https://miajetskirental.com/wp-content/uploads/2023/02/DOUBLERIDERJETSKI-768x1024.jpg" loading="lazy" alt="Double rider jet ski Miami" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="gallery-item">
+        <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/fe/87/ff/caption.jpg?w=500&h=400&s=1" loading="lazy" alt="Jet ski adventure Miami" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="gallery-item">
+        <img src="https://static.wixstatic.com/media/6b8d54_832097b008524ed9a29c5322ca4aee73~mv2.jpg" loading="lazy" alt="Miami jet ski rentals" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="gallery-item">
+        <img src="https://s3-media0.fl.yelpcdn.com/bphoto/VrpoCH8HL1KCP830iSPvMA/348s.jpg" loading="lazy" alt="Jet ski riders Miami" onerror="this.parentElement.style.display='none'">
+      </div>
+      <div class="gallery-item">
+        <img src="https://www.miamionthewater.com/wp-content/uploads/sites/2762/2021/11/Miami-Jet-Ski-Ride-Miami-on-the-Water-2.jpg?resize=360%2C240&zoom=2" loading="lazy" alt="Miami on the water jet ski" onerror="this.parentElement.style.display='none'">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     CTA SECTION
+============================================================ -->
+<section class="cta-section">
+  <div class="container">
+    <h2>Ready to <span class="teal">Ride the Waves?</span></h2>
+    <p>Browse 21 operators, compare prices, and book your South Florida jet ski adventure in minutes.</p>
+    <div class="cta-btns">
+      <a href="#operators" class="btn btn-primary" style="font-size:1.05rem;padding:18px 40px;">
+        <i class="fa-solid fa-water"></i> <span data-i18n="cta.btn">Browse All Operators</span>
+      </a>
+      
+    </div>
+  </div>
+</section>
+
+
+<!-- ============================================================
+     FOOTER
+============================================================ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <div class="logo">
+          <div class="logo-icon">🌊</div>
+          <div>Miami <span>Jetski</span> &amp; Boat Rentals</div>
+        </div>
+        <p>South Florida's #1 jet ski rental comparison platform. We connect you with the best operators from Pompano Beach to Key West.</p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="footer-social" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="footer-social" aria-label="TikTok"><i class="fa-brands fa-tiktok"></i></a>
+          <a href="#" class="footer-social" aria-label="YouTube"><i class="fa-brands fa-youtube"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Zones</h4>
+        <ul>
+          <li><a href="#operators">Miami Beach</a></li>
+          <li><a href="#operators">Miami City</a></li>
+          <li><a href="#operators">Coconut Grove</a></li>
+          <li><a href="#operators">Hollywood</a></li>
+          <li><a href="#operators">Fort Lauderdale</a></li>
+          <li><a href="#operators">Pompano Beach</a></li>
+          <li><a href="#operators">Florida Keys</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Info</h4>
+        <ul>
+          <li><a href="#how">How It Works</a></li>
+          <li><a href="#reviews" data-i18n="nav.reviews">Reviews</a></li>
+          <li><a href="#faq" data-i18n="nav.faq">FAQ</a></li>
+          <li><a href="#operators">All Operators</a></li>
+          <li><a href="#map" data-i18n="nav.map">Map</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <ul>
+          <li></li>
+          <li><a href="mailto:info@miamijetskiboatrentals.com"><i class="fa-solid fa-envelope"></i> Email Us</a></li>
+          <li style="color:var(--text-muted);font-size:0.85rem;margin-top:8px;">Miami Beach, FL 33139</li>
+          <li style="color:var(--text-muted);font-size:0.85rem;">Mon–Sun: 8am–8pm</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Miami Jetski &amp; Boat Rentals. All rights reserved.</p>
+      <p class="footer-disclaimer">We are a referral platform. Bookings are processed by each operator via FareHarbor.</p>
+    </div>
+  </div>
+</footer>
+
+
+<!-- Scroll to Top -->
+<button class="scroll-top" id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Back to top">
+  <i class="fa-solid fa-arrow-up"></i>
+</button>
+
+
+<!-- ============================================================
+     JAVASCRIPT
+============================================================ -->
+<script>
+  // --- Navbar scroll effect ---
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    navbar.classList.toggle('scrolled', window.scrollY > 60);
+    document.getElementById('scrollTop').classList.toggle('visible', window.scrollY > 400);
+  });
+
+  // --- Hamburger menu ---
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('open');
+  });
+  function closeMobile() {
+    mobileMenu.classList.remove('open');
+  }
+
+  // --- Zone filter ---
+  function filterZone(zone, btn) {
+    // Update active button
+    document.querySelectorAll('.zone-btn').forEach(b => b.classList.remove('active'));
+    if (btn) btn.classList.add('active');
+
+    // Show/hide cards
+    document.querySelectorAll('.op-card').forEach(card => {
+      if (zone === 'all' || card.dataset.zone === zone) {
+        card.classList.remove('hidden');
+        card.style.display = '';
+      } else {
+        card.style.display = 'none';
+      }
+    });
+
+    // Scroll to operators
+    document.getElementById('operators').scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+
+  // --- FAQ accordion ---
+  function toggleFaq(btn) {
+    const answer = btn.nextElementSibling;
+    const isOpen = btn.classList.contains('open');
+    // Close all
+    document.querySelectorAll('.faq-q').forEach(q => {
+      q.classList.remove('open');
+      q.nextElementSibling.classList.remove('open');
+    });
+    // Open clicked if it was closed
+    if (!isOpen) {
+      btn.classList.add('open');
+      answer.classList.add('open');
+    }
+  }
+
+  // --- Smooth scroll for anchor links ---
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+      const target = document.querySelector(this.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+
+  // --- Hero badge pulse animation ---
+  const style = document.createElement('style');
+  style.textContent = `
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.5; transform: scale(0.8); }
+    }
+  `;
+  document.head.appendChild(style);
+
+  // --- Leaflet Map with all 21 operators ---
+  const operators = [
+    { name: "AquaFusion Combo: Jet Ski & Party Boat", zone: "Miami Beach", lat: 25.8890, lng: -80.1215, price: "$150", link: "https://fareharbor.com/embeds/book/bjmrentals/items/313688/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#0066cc" },
+    { name: "Jetski Rental – North Miami Beach", zone: "Miami Beach", lat: 25.8539, lng: -80.1218, price: "$130", link: "https://fareharbor.com/embeds/book/slingkimotors/items/571874/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#0066cc" },
+    { name: "One Hour Jet Ski Rental", zone: "Miami Beach", lat: 25.7920, lng: -80.1400, price: "$130", link: "https://fareharbor.com/embeds/book/jetskiridingmiami/items/660333/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#0066cc" },
+    { name: "Jetski Rentals – South Beach", zone: "Miami Beach", lat: 25.7762, lng: -80.1399, price: "$125", link: "https://fareharbor.com/embeds/book/flowvip/items/595513/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#0066cc" },
+    { name: "Package Deal: Boat + Jet Ski + ATV", zone: "Miami City", lat: 25.7800, lng: -80.2200, price: "$230", link: "https://fareharbor.com/embeds/book/jetskimiamirentals/items/635177/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#6600cc" },
+    { name: "Jetcar 1-Hour – Drive a Car on Water!", zone: "Miami City", lat: 25.7785, lng: -80.2185, price: "$350", link: "https://fareharbor.com/embeds/book/305jetskisrental/items/584793/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#6600cc" },
+    { name: "Jet Ski Rentals | Miami WaterSports", zone: "Coconut Grove", lat: 25.7338, lng: -80.1621, price: "$140", link: "https://fareharbor.com/embeds/book/sfjetskirentals/items/532517/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#007a5e" },
+    { name: "Jet Ski Rentals – Coconut Grove", zone: "Coconut Grove", lat: 25.7321, lng: -80.1641, price: "$150", link: "https://fareharbor.com/embeds/book/tizamotorsportsllc/items/618589/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#007a5e" },
+    { name: "1 Hour Jet Ski Rental – Hollywood Beach", zone: "Hollywood", lat: 26.0112, lng: -80.1151, price: "$120", link: "https://fareharbor.com/embeds/book/underthesunbeachservices/items/631947/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#c05000" },
+    { name: "Jet Ski Rental Hollywood – Falcon's", zone: "Hollywood", lat: 26.0228, lng: -80.1122, price: "$110", link: "https://fareharbor.com/embeds/book/falconsjetskirentals/items/583875/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#c05000" },
+    { name: "Bimini Island Day Trip by Fast-Ferry", zone: "Fort Lauderdale", lat: 26.1090, lng: -80.1087, price: "$299", link: "https://fareharbor.com/embeds/book/us2u/items/81674/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#8800aa" },
+    { name: "Jetski Rental – Fort Lauderdale", zone: "Fort Lauderdale", lat: 26.0820, lng: -80.1395, price: "Call", link: "https://fareharbor.com/embeds/book/slingshotandjetskirentals/items/571875/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#8800aa" },
+    { name: "Jet Ski Rental Pompano Beach", zone: "Pompano Beach", lat: 26.2389, lng: -80.1222, price: "$100", link: "https://fareharbor.com/embeds/book/kcjetskiing/items/96359/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#006688" },
+    { name: "Ocean Jet Ski Rentals – Pompano", zone: "Pompano Beach", lat: 26.2445, lng: -80.0855, price: "$100", link: "https://fareharbor.com/embeds/book/ftlauderdaleparasail/items/546896/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#006688" },
+    { name: "Key Largo: Jet Ski Rentals", zone: "Key Largo", lat: 25.0865, lng: -80.4473, price: "$160", link: "https://fareharbor.com/embeds/book/wakezonewatersports/items/672056/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#00885a" },
+    { name: "Jet Ski Rental Key Largo – Tropic Water", zone: "Key Largo", lat: 25.1012, lng: -80.4196, price: "$130", link: "https://fareharbor.com/embeds/book/tropicwatersports/items/264896/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#00885a" },
+    { name: "Jetski Rentals Marathon – Best Price!", zone: "Marathon", lat: 24.7180, lng: -81.0575, price: "$99", link: "https://fareharbor.com/embeds/book/seahorsewateradventures/items/628493/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#006650" },
+    { name: "Grassy Key Marina – Daily Jet Ski Rental", zone: "Marathon", lat: 24.7436, lng: -80.9096, price: "$550/day", link: "https://fareharbor.com/embeds/book/paradisewatersportsrentals/items/489052/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#006650" },
+    { name: "Marathon: Jet Ski Rentals – WakeZone", zone: "Marathon", lat: 24.7421, lng: -80.9128, price: "$160", link: "https://fareharbor.com/embeds/book/wakezonewatersports/items/671762/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#006650" },
+    { name: "Six Fins Key West: 2-Hr Flagship Jet Ski Tour", zone: "Key West", lat: 24.5551, lng: -81.7806, price: "$209", link: "https://fareharbor.com/embeds/book/sixfinsjetskirental/items/628106/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no", color: "#c06600" },
+    { name: "Miami Style Rentals – Jet Ski Tour", zone: "North Miami", lat: 25.9022, lng: -80.1408, price: "$99", link: "https://fareharbor.com/embeds/book/miamistylerentals/items/326919/calendar/2026/04/?flow=613885&full-items=yes", color: "#0066cc" }
+  ];
+
+  // Custom marker SVG by color
+  function makeIcon(color) {
+    const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 42" width="32" height="42">
+      <path d="M16 0C7.163 0 0 7.163 0 16c0 10 16 26 16 26S32 26 32 16C32 7.163 24.837 0 16 0z" fill="${color}" stroke="#fff" stroke-width="2"/>
+      <circle cx="16" cy="16" r="7" fill="#fff" opacity="0.95"/>
+      <text x="16" y="20" text-anchor="middle" font-size="10" font-weight="bold" fill="${color}" font-family="Arial">JS</text>
+    </svg>`;
+    return L.divIcon({
+      html: svg,
+      className: '',
+      iconSize: [32, 42],
+      iconAnchor: [16, 42],
+      popupAnchor: [0, -44]
+    });
+  }
+
+  const map = L.map('jetski-map', {
+    center: [25.90, -80.25],   // centered on South Florida
+    zoom: 10,
+    zoomControl: true,
+    scrollWheelZoom: false,
+    minZoom: 7
+  });
+
+  // Dark-style tile layer (CartoDB Dark Matter)
+  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> &copy; <a href="https://carto.com/">CARTO</a>',
+    subdomains: 'abcd',
+    maxZoom: 19
+  }).addTo(map);
+
+  // Build markers — all pins always visible
+  const markers = operators.map(op => {
+    const marker = L.marker([op.lat, op.lng], { icon: makeIcon(op.color) });
+    marker.addTo(map);
+    marker.bindPopup(`
+      <div class="map-popup-zone">📍 ${op.zone}</div>
+      <div class="map-popup-name">${op.name}</div>
+      <div class="map-popup-price">From ${op.price}</div>
+      <div class="map-popup-instructor">✓ Instructor Included</div>
+      <a href="${op.link}" target="_blank" rel="noopener" class="map-popup-btn">Book Now →</a>
+    `, { maxWidth: 240 });
+    return marker;
+  });
+</script>
+
+
+
+
+<!-- Back to Top -->
+<button class="back-top" id="backTop" aria-label="Back to top" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+  <i class="fa-solid fa-chevron-up"></i>
+</button>
+
+<!-- Cookie Consent -->
+<div class="cookie-bar" id="cookieBar">
+  <p>🍪 We use cookies to analyze site traffic via Google Analytics and improve your experience. <a href="#">Privacy Policy</a></p>
+  <div class="cookie-btns">
+    <button class="cookie-decline" onclick="cookieChoice(false)"><span data-i18n="cookie.decline">Decline</span></button>
+    <button class="cookie-accept" onclick="cookieChoice(true)"><span data-i18n="cookie.accept">Accept</span></button>
+  </div>
+</div>
+</body>
+</html>
