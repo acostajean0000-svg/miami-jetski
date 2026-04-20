@@ -72,9 +72,14 @@
     .marketplace{background:var(--dark);}
     .marketplace-header{position:sticky;top:68px;z-index:600;background:var(--dark2);border-bottom:1px solid var(--border);padding:12px 16px;}
     .mkt-filters{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
+    /* CAT TABS — desktop pill style */
     .cat-tabs{display:flex;gap:8px;flex-wrap:wrap;}
-    .cat-tab{padding:8px 18px;border-radius:50px;border:1.5px solid var(--border);background:transparent;color:var(--text-muted);font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;}
+    .cat-tab{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:50px;border:1.5px solid var(--border);background:transparent;color:var(--text-muted);font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;}
+    .cat-tab .cat-emoji{font-size:.9rem;line-height:1;}
+    .cat-tab .cat-label{display:inline;}
+    .cat-tab .cat-count{opacity:.6;font-size:.72rem;}
     .cat-tab:hover,.cat-tab.active{background:var(--teal-glow);border-color:var(--teal);color:var(--teal);}
+    /* ZONE TABS */
     .zone-tabs{display:flex;gap:6px;flex-wrap:wrap;}
     .zone-tab{padding:6px 14px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--text-muted);font-family:'Montserrat',sans-serif;font-size:.73rem;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;}
     .zone-tab:hover,.zone-tab.active{background:rgba(0,100,200,.15);border-color:#0066cc;color:#4da6ff;}
@@ -190,17 +195,71 @@
       .hero-stats{gap:20px;}
       .hero-stat-num{font-size:1.3rem;}
 
-      /* Sticky filter bar — horizontal scroll, no wrap */
-      .marketplace-header{padding:10px 12px;top:60px;}
-      .mkt-filters{gap:8px;}
-      .cat-tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px;}
-      .cat-tabs::-webkit-scrollbar{display:none;}
-      .zone-tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;padding-bottom:2px;}
-      .zone-tabs::-webkit-scrollbar{display:none;}
-      .cat-tab{padding:7px 14px;font-size:.73rem;flex-shrink:0;}
-      .zone-tab{padding:5px 12px;font-size:.7rem;flex-shrink:0;}
+      /* ── CATEGORY TABS → icon cards carousel ── */
+      .marketplace-header{padding:10px 0 0;top:60px;}
+      .mkt-filters{gap:0;}
 
-      /* Map hidden on mobile by default — show below cards */
+      .cat-tabs{
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+        gap:0;
+        padding:10px 12px 8px;
+        border-bottom:1px solid var(--border);
+      }
+      .cat-tabs::-webkit-scrollbar{display:none;}
+
+      .cat-tab{
+        flex-direction:column;
+        align-items:center;
+        gap:5px;
+        padding:10px 12px 8px;
+        border-radius:14px;
+        border:2px solid transparent;
+        background:rgba(255,255,255,.04);
+        min-width:68px;
+        flex-shrink:0;
+      }
+      .cat-tab .cat-emoji{font-size:1.55rem;line-height:1;}
+      .cat-tab .cat-label{font-size:.63rem;font-weight:700;letter-spacing:.3px;color:var(--text-muted);text-align:center;line-height:1.2;}
+      .cat-tab .cat-count{font-size:.6rem;font-weight:600;opacity:.55;}
+      .cat-tab.active{
+        background:var(--teal-glow);
+        border-color:var(--teal);
+      }
+      .cat-tab.active .cat-label{color:var(--teal);}
+      .cat-tab.active .cat-count{opacity:.8;color:var(--teal);}
+      .cat-tab:hover:not(.active){background:rgba(255,255,255,.07);}
+
+      /* ── ZONE TABS → colorful chips ── */
+      .zone-tabs{
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+        scrollbar-width:none;
+        gap:7px;
+        padding:8px 12px 10px;
+      }
+      .zone-tabs::-webkit-scrollbar{display:none;}
+      .zone-tab{
+        flex-shrink:0;
+        padding:6px 14px;
+        font-size:.72rem;
+        font-weight:700;
+        border-radius:50px;
+        background:rgba(255,255,255,.05);
+        border:1.5px solid rgba(255,255,255,.1);
+        color:rgba(255,255,255,.55);
+      }
+      .zone-tab.active{
+        background:linear-gradient(135deg,#0047ab,#0066cc);
+        border-color:#0066cc;
+        color:#fff;
+        box-shadow:0 2px 12px rgba(0,100,204,.4);
+      }
+
+      /* Map & Cards */
       .marketplace-body{flex-direction:column;}
       .cards-panel{max-width:100%;width:100%;padding:12px;}
       .map-panel{position:relative;top:0;height:40vh;max-width:100%;width:100%;}
@@ -219,6 +278,8 @@
     @media(max-width:400px){
       .footer-grid{grid-template-columns:1fr;}
       .hero h1{font-size:1.6rem;}
+      .cat-tab{min-width:62px;padding:9px 10px 7px;}
+      .cat-tab .cat-emoji{font-size:1.35rem;}
     }
   </style>
 </head>
@@ -271,28 +332,28 @@
   <div class="marketplace-header">
     <div class="mkt-filters">
       <div class="cat-tabs">
-        <button class="cat-tab active" onclick="filterCat('all',this)">🌎 All (156)</button>
-        <button class="cat-tab" onclick="filterCat('jetski',this)">🛥️ Jet Ski (29)</button>
-        <button class="cat-tab" onclick="filterCat('boat',this)">⛵ Boats &amp; Yachts (69)</button>
-        <button class="cat-tab" onclick="filterCat('fishing',this)">🎣 Fishing (6)</button>
-        <button class="cat-tab" onclick="filterCat('watersports',this)">🏄 Water Sports (10)</button>
-        <button class="cat-tab" onclick="filterCat('slingshot',this)">🏎️ Slingshot (6)</button>
-        <button class="cat-tab" onclick="filterCat('jetcar',this)">🚗 Jet Cars (10)</button>
-        <button class="cat-tab" onclick="filterCat('golfcart',this)">🛺 Golf Carts (8)</button>
-        <button class="cat-tab" onclick="filterCat('atv',this)">🏍️ ATV & Buggies (7)</button>
-        <button class="cat-tab" onclick="filterCat('tour',this)">🚌 Tours (11)</button>
+        <button class="cat-tab active" onclick="filterCat('all',this)"><span class="cat-emoji">🌎</span><span class="cat-label">All</span><span class="cat-count">(156)</span></button>
+        <button class="cat-tab" onclick="filterCat('jetski',this)"><span class="cat-emoji">🛥️</span><span class="cat-label">Jet Ski</span><span class="cat-count">(29)</span></button>
+        <button class="cat-tab" onclick="filterCat('boat',this)"><span class="cat-emoji">⛵</span><span class="cat-label">Boats &amp; Yachts</span><span class="cat-count">(69)</span></button>
+        <button class="cat-tab" onclick="filterCat('fishing',this)"><span class="cat-emoji">🎣</span><span class="cat-label">Fishing</span><span class="cat-count">(6)</span></button>
+        <button class="cat-tab" onclick="filterCat('watersports',this)"><span class="cat-emoji">🏄</span><span class="cat-label">Water Sports</span><span class="cat-count">(10)</span></button>
+        <button class="cat-tab" onclick="filterCat('slingshot',this)"><span class="cat-emoji">🏎️</span><span class="cat-label">Slingshot</span><span class="cat-count">(6)</span></button>
+        <button class="cat-tab" onclick="filterCat('jetcar',this)"><span class="cat-emoji">🚗</span><span class="cat-label">Jet Cars</span><span class="cat-count">(10)</span></button>
+        <button class="cat-tab" onclick="filterCat('golfcart',this)"><span class="cat-emoji">🛺</span><span class="cat-label">Golf Carts</span><span class="cat-count">(8)</span></button>
+        <button class="cat-tab" onclick="filterCat('atv',this)"><span class="cat-emoji">🏍️</span><span class="cat-label">ATV &amp; Buggies</span><span class="cat-count">(7)</span></button>
+        <button class="cat-tab" onclick="filterCat('tour',this)"><span class="cat-emoji">🚌</span><span class="cat-label">Tours</span><span class="cat-count">(11)</span></button>
       </div>
       <div class="zone-tabs">
-        <button class="zone-tab active" onclick="filterZone('all',this)">All Florida</button>
+        <button class="zone-tab active" onclick="filterZone('all',this)">🗺️ All Florida</button>
         <button class="zone-tab" onclick="filterZone('miami',this)">🏖️ Miami</button>
         <button class="zone-tab" onclick="filterZone('broward',this)">🌅 Broward</button>
         <button class="zone-tab" onclick="filterZone('keys',this)">🐠 Florida Keys</button>
         <button class="zone-tab" onclick="filterZone('gulf',this)">🌊 Gulf Coast</button>
         <button class="zone-tab" onclick="filterZone('everglades',this)">🌿 Everglades</button>
         <button class="zone-tab" onclick="filterZone('palmbeach',this)">🌴 Palm Beach</button>
-        <button class="zone-tab" onclick="filterZone('westfl',this)">🏖 West Florida</button>
+        <button class="zone-tab" onclick="filterZone('westfl',this)">🏖️ West Florida</button>
         <button class="zone-tab" onclick="filterZone('space',this)">🚀 Space Coast</button>
-        <button class="zone-tab" onclick="filterZone('central',this)">🏞 Central FL</button>
+        <button class="zone-tab" onclick="filterZone('central',this)">🏞️ Central FL</button>
         <button class="zone-tab" onclick="filterZone('northeast',this)">🌊 Northeast FL</button>
       </div>
     </div>
