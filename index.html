@@ -904,14 +904,14 @@ function renderDeals() {
       <div class="deal-img"><img src="${op.photo}" alt="${op.name}" loading="lazy" onerror="this.style.display='none'"></div>
       <div class="deal-body">
         <div class="deal-name">${op.name}</div>
-        <div class="deal-zone">\u{1F4CD} ${op.zl}</div>
+        <div class="deal-zone">📍 ${op.zl}</div>
         <div class="deal-footer">
           <div class="deal-price">$${op.price}</div>
           <div class="deal-badge">Best Value</div>
         </div>
       </div>
     </a>
-  \`).join('');
+  `).join('');
 }
 
 // ---- FAQ TOGGLE ----
