@@ -314,9 +314,95 @@
       .cat-tab{min-width:62px;padding:9px 10px 7px;}
       .cat-tab .cat-emoji{font-size:1.35rem;}
     }
+
+    /* SEARCH & SORT BAR */
+    .search-sort-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 16px 0;}
+    .search-box{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1.5px solid var(--border);border-radius:50px;padding:8px 16px;flex:1;min-width:180px;}
+    .search-box i{color:var(--text-muted);font-size:.85rem;}
+    .search-box input{background:transparent;border:none;outline:none;color:#fff;font-family:'Montserrat',sans-serif;font-size:.82rem;width:100%;}
+    .search-box input::placeholder{color:var(--text-muted);}
+    .sort-select{background:rgba(255,255,255,.06);border:1.5px solid var(--border);border-radius:50px;padding:8px 16px;color:var(--text-muted);font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:600;cursor:pointer;outline:none;appearance:none;-webkit-appearance:none;padding-right:28px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b8fa8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;}
+    .sort-select option{background:#0a1e35;color:#fff;}
+    /* PRICE SLIDER */
+    .price-row{display:flex;align-items:center;gap:12px;padding:8px 16px 10px;flex-wrap:wrap;}
+    .price-row label{color:var(--text-muted);font-size:.75rem;font-family:'Montserrat',sans-serif;font-weight:600;white-space:nowrap;}
+    .price-range{flex:1;min-width:120px;accent-color:var(--teal);cursor:pointer;}
+    .price-val{color:var(--teal);font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;white-space:nowrap;}
+    /* TRUST BADGES */
+    .trust-bar{background:rgba(0,212,200,.06);border-bottom:1px solid rgba(0,212,200,.12);padding:10px 20px;}
+    .trust-inner{max-width:1200px;margin:0 auto;display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:center;}
+    .trust-item{display:flex;align-items:center;gap:7px;font-size:.75rem;color:var(--text-muted);font-family:'Montserrat',sans-serif;font-weight:600;}
+    .trust-item i{color:var(--teal);font-size:.85rem;}
+    .booking-counter{color:var(--teal);font-weight:700;}
+    /* FEATURED PARTNER BANNER */
+    .featured-banner{background:linear-gradient(135deg,#051a30,#082a48);border:1.5px solid rgba(255,165,0,.3);border-radius:var(--radius);margin:16px;padding:16px 20px;display:flex;align-items:center;gap:16px;flex-wrap:wrap;}
+    .featured-label{background:linear-gradient(135deg,#ffa500,#ff8c00);color:#000;font-family:'Montserrat',sans-serif;font-size:.65rem;font-weight:800;letter-spacing:1px;padding:4px 10px;border-radius:50px;text-transform:uppercase;white-space:nowrap;}
+    .featured-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;color:#fff;flex:1;}
+    .featured-sub{font-size:.78rem;color:var(--text-muted);}
+    .featured-price{font-family:'Montserrat',sans-serif;font-weight:900;color:#ffa500;font-size:1.1rem;white-space:nowrap;}
+    .featured-btn{background:linear-gradient(135deg,#ffa500,#ff8c00);color:#000;padding:9px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;white-space:nowrap;transition:all .2s;}
+    .featured-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(255,165,0,.4);}
+    /* DEALS SECTION */
+    .deals-section{background:var(--dark);padding:60px 0;}
+    .deals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px;}
+    .deal-card{background:var(--card-bg);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .25s,border-color .25s;}
+    .deal-card:hover{transform:translateY(-4px);border-color:var(--teal-dark);}
+    .deal-img{height:110px;overflow:hidden;background:#0a1e36;}
+    .deal-img img{width:100%;height:100%;object-fit:cover;}
+    .deal-body{padding:12px;}
+    .deal-name{font-family:'Montserrat',sans-serif;font-size:.83rem;font-weight:700;margin-bottom:4px;line-height:1.3;}
+    .deal-zone{font-size:.72rem;color:var(--text-muted);margin-bottom:10px;}
+    .deal-footer{display:flex;align-items:center;justify-content:space-between;}
+    .deal-price{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:900;color:var(--teal);}
+    .deal-badge{background:rgba(0,212,200,.12);color:var(--teal);font-family:'Montserrat',sans-serif;font-size:.63rem;font-weight:700;padding:3px 8px;border-radius:50px;border:1px solid rgba(0,212,200,.3);}
+    /* FAQ SECTION */
+    .faq-section{background:var(--dark2);padding:70px 0;}
+    .faq-list{max-width:800px;margin:36px auto 0;}
+    .faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s;}
+    .faq-item.open{border-color:var(--teal-dark);}
+    .faq-q{display:flex;align-items:center;justify-content:space-between;padding:18px 22px;cursor:pointer;font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:700;gap:12px;}
+    .faq-q:hover{color:var(--teal);}
+    .faq-icon{font-size:1.1rem;transition:transform .3s;flex-shrink:0;color:var(--teal);}
+    .faq-item.open .faq-icon{transform:rotate(45deg);}
+    .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease;}
+    .faq-item.open .faq-a{max-height:300px;}
+    .faq-a p{padding:0 22px 18px;color:var(--text-muted);font-size:.88rem;line-height:1.75;}
+    /* NEWSLETTER */
+    .newsletter-section{background:linear-gradient(135deg,#041a30,#061e38);padding:60px 20px;text-align:center;border-top:1px solid var(--border);}
+    .newsletter-section h3{font-size:clamp(1.4rem,3vw,1.9rem);font-weight:800;margin-bottom:10px;}
+    .newsletter-section p{color:var(--text-muted);font-size:.9rem;margin-bottom:28px;}
+    .newsletter-form{display:flex;gap:10px;max-width:460px;margin:0 auto;flex-wrap:wrap;justify-content:center;}
+    .newsletter-input{flex:1;min-width:200px;background:rgba(255,255,255,.07);border:1.5px solid var(--border);border-radius:50px;padding:12px 20px;color:#fff;font-family:'Montserrat',sans-serif;font-size:.85rem;outline:none;}
+    .newsletter-input:focus{border-color:var(--teal);}
+    .newsletter-btn{background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);padding:12px 26px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:700;border:none;cursor:pointer;transition:all .2s;white-space:nowrap;}
+    .newsletter-btn:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,212,200,.4);}
+    .newsletter-note{font-size:.72rem;color:var(--text-muted);margin-top:12px;}
+    /* MOBILE responsive for new elements */
+    @media(max-width:768px){
+      .search-sort-row{padding:8px 12px 0;}
+      .price-row{padding:6px 12px 8px;}
+      .featured-banner{margin:10px;}
+      .deals-grid{grid-template-columns:repeat(2,1fr);}
+      .trust-inner{gap:14px;}
+      .trust-item span{display:none;}
+    }
+    @media(max-width:480px){
+      .deals-grid{grid-template-columns:1fr 1fr;}
+    }
   </style>
 </head>
 <body>
+
+<!-- TRUST BAR -->
+<div class="trust-bar">
+  <div class="trust-inner">
+    <div class="trust-item"><i class="fa-solid fa-shield-halved"></i><span>Licensed &amp; Verified Operators</span></div>
+    <div class="trust-item"><i class="fa-solid fa-lock"></i><span>Secure Booking via FareHarbor</span></div>
+    <div class="trust-item"><i class="fa-solid fa-star"></i><span>4.8★ Avg Rating</span></div>
+    <div class="trust-item"><i class="fa-solid fa-fire"></i><span class="booking-counter" id="bookingCounter">23 booked today</span></div>
+    <div class="trust-item"><i class="fa-solid fa-headset"></i><span>7-day Support</span></div>
+  </div>
+</div>
 
 <!-- NAV -->
 <nav class="nav" id="navbar">
@@ -389,10 +475,37 @@
         <button class="zone-tab" onclick="filterZone('central',this)">🏞️ Central FL</button>
         <button class="zone-tab" onclick="filterZone('northeast',this)">🌊 Northeast FL</button>
       </div>
+      <div class="search-sort-row">
+        <div class="search-box">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" placeholder="Search by name or city…" oninput="renderCards()">
+        </div>
+        <select class="sort-select" id="sortSelect" onchange="renderCards()">
+          <option value="default">Sort: Default</option>
+          <option value="price-asc">Price: Low → High</option>
+          <option value="price-desc">Price: High → Low</option>
+          <option value="name">Name A–Z</option>
+        </select>
+      </div>
+      <div class="price-row">
+        <label><i class="fa-solid fa-tag"></i> Max Price:</label>
+        <input type="range" class="price-range" id="priceRange" min="0" max="600" value="600" step="10" oninput="updatePriceLabel();renderCards()">
+        <span class="price-val" id="priceVal">$600+</span>
+      </div>
     </div>
   </div>
   <div class="marketplace-body mobile-map-hidden" id="marketplaceBody">
     <div class="cards-panel" id="cardsPanel">
+      <!-- FEATURED PARTNER -->
+      <div class="featured-banner">
+        <span class="featured-label">⭐ Featured</span>
+        <div>
+          <div class="featured-name">Miami Style Rentals — Jet Ski &amp; Slingshot</div>
+          <div class="featured-sub">Miami Beach · Jet Ski, Slingshot &amp; More</div>
+        </div>
+        <div class="featured-price">From $100</div>
+        <a href="https://fareharbor.com/embeds/book/miamistylerentals/items/339925/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="featured-btn">Book Now →</a>
+      </div>
       <div class="cards-count" id="cardsCount">Showing 113 operators</div>
       <div class="cards-grid" id="cardsGrid"></div>
     </div>
@@ -407,6 +520,18 @@
   <span class="btn-icon">🗺️</span>
   <span class="btn-text">Ver Mapa</span>
 </button>
+
+<!-- DEALS -->
+<section class="deals-section" id="deals">
+  <div class="container">
+    <div class="text-center">
+      <div class="section-tag">🔥 Best Deals</div>
+      <h2 class="section-title">Top <span class="teal">Value Picks</span></h2>
+      <p class="section-sub" style="margin-bottom:0">The most affordable operators across Florida, hand-picked.</p>
+    </div>
+    <div class="deals-grid" id="dealsGrid"></div>
+  </div>
+</section>
 
 <!-- REVIEWS -->
 <section class="testimonials" id="reviews">
@@ -423,6 +548,44 @@
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="faq-section" id="faq">
+  <div class="container text-center">
+    <div class="section-tag">FAQ</div>
+    <h2 class="section-title">Frequently Asked <span class="teal">Questions</span></h2>
+    <div class="faq-list">
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">How do I book a jet ski or boat rental?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Click "Book Now" on any operator card. You'll be taken directly to their FareHarbor booking page where you can select date, time and number of riders. All bookings are confirmed instantly online.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Do I need a license to rent a jet ski in Florida?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>In Florida, anyone born after January 1, 1988 must have a boating safety ID card to operate a personal watercraft. Most rental operators offer a brief safety course on-site. Always confirm with the operator before booking.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What is the minimum age for jet ski rentals?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Most operators require riders to be at least 18 years old to drive a jet ski. Passengers can typically be younger. Age requirements vary by operator — check their listing for specifics.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Are the operators on this site licensed and insured?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Yes. All operators listed on MiamiJetskiBoatRentals.com are active FareHarbor partners operating legally in Florida. We recommend confirming insurance details directly with each operator before your activity.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">Can I cancel or reschedule my booking?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Cancellation and rescheduling policies vary by operator. Most allow free cancellation 24–48 hours before the activity. Review the specific cancellation policy on each operator's FareHarbor booking page before confirming.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What areas of Florida do you cover?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>We cover operators statewide — Miami Beach, Fort Lauderdale, Florida Keys, Gulf Coast (Naples, Fort Myers, Sarasota, St. Petersburg), Palm Beach, Space Coast, Everglades, Central Florida and Northeast FL.</p></div>
+      </div>
+      <div class="faq-item" onclick="toggleFaq(this)">
+        <div class="faq-q">What's the difference between a Slingshot and a Jet Car?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>A Polaris Slingshot is a 3-wheeled open-air autocycle you drive on roads. A Jet Car (also called a Jet Capsule or Water Car) is a vehicle that drives on water like a speedboat but looks like a sports car. Both are unique Florida experiences!</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- CTA -->
 <section class="cta-section">
   <div>
@@ -430,6 +593,18 @@
     <p>Browse 156 operators, compare prices, and book your Florida water adventure in minutes.</p>
     <a href="#operators" class="btn btn-primary" style="font-size:1rem;padding:16px 36px;"><i class="fa-solid fa-water"></i> Browse All Operators</a>
   </div>
+</section>
+
+<!-- NEWSLETTER -->
+<section class="newsletter-section">
+  <div class="section-tag">📬 Stay Updated</div>
+  <h3 style="margin-top:16px;">Get the <span class="teal">Best Deals</span> in Your Inbox</h3>
+  <p>New operators, exclusive discounts and Florida water sports tips — weekly.</p>
+  <form class="newsletter-form" onsubmit="submitNewsletter(event)">
+    <input type="email" class="newsletter-input" placeholder="your@email.com" required>
+    <button type="submit" class="newsletter-btn"><i class="fa-solid fa-paper-plane"></i> Subscribe</button>
+  </form>
+  <p class="newsletter-note">No spam. Unsubscribe anytime. 🌊</p>
 </section>
 
 <!-- FOOTER -->
@@ -445,8 +620,8 @@
           <a href="#" class="footer-social"><i class="fa-brands fa-tiktok"></i></a>
         </div>
       </div>
-      <div class="footer-col"><h4>Categories</h4><ul><li><a href="#operators">🛥️ Jet Ski</a></li><li><a href="#operators">⛵ Boats &amp; Yachts</a></li><li><a href="#operators">🎣 Fishing Charters</a></li><li><a href="#operators">🏄 Water Sports</a></li></ul></div>
-      <div class="footer-col"><h4>Zones</h4><ul><li><a href="#operators">Miami Beach</a></li><li><a href="#operators">Fort Lauderdale</a></li><li><a href="#operators">Florida Keys</a></li><li><a href="#operators">Gulf Coast</a></li><li><a href="#operators">Space Coast</a></li></ul></div>
+      <div class="footer-col"><h4>Categories</h4><ul><li><a href="/jet-ski-rentals-florida.html">🛥️ Jet Ski</a></li><li><a href="/boat-rentals-florida.html">⛵ Boats &amp; Yachts</a></li><li><a href="/fishing-charters-florida.html">🎣 Fishing</a></li><li><a href="/water-sports-florida.html">🏄 Water Sports</a></li><li><a href="/slingshot-rentals-florida.html">🏎️ Slingshot</a></li><li><a href="/tours-florida.html">🚌 Tours</a></li></ul></div>
+      <div class="footer-col"><h4>Zones</h4><ul><li><a href="/miami-water-sports.html">Miami</a></li><li><a href="/fort-lauderdale-water-sports.html">Fort Lauderdale</a></li><li><a href="/florida-keys-water-sports.html">Florida Keys</a></li><li><a href="/gulf-coast-water-sports.html">Gulf Coast</a></li><li><a href="/palm-beach-water-sports.html">Palm Beach</a></li><li><a href="/space-coast-water-sports.html">Space Coast</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:info@miamijetskiboatrentals.com"><i class="fa-solid fa-envelope"></i> Email Us</a></li><li style="color:var(--text-muted);font-size:.85rem;margin-top:8px;">Miami Beach, FL 33139</li><li style="color:var(--text-muted);font-size:.85rem;">Mon–Sun: 8am–8pm</li></ul></div>
     </div>
     <div class="footer-bottom">
@@ -646,11 +821,20 @@ const catLabels = {jetski:'Jet Ski', boat:'Boat', fishing:'Fishing', watersports
 
 // ---- FILTERED LIST ----
 function getFiltered() {
-  return allOperators.filter(op => {
+  const q = getSearchQuery();
+  const maxP = getMaxPrice();
+  let ops = allOperators.filter(op => {
     const catOk = activeCat === 'all' || op.cat === activeCat;
     const zoneOk = activeZone === 'all' || op.zone === activeZone;
-    return catOk && zoneOk;
+    const searchOk = !q || op.name.toLowerCase().includes(q) || op.zl.toLowerCase().includes(q) || op.addr.toLowerCase().includes(q);
+    const priceOk = op.price <= maxP || maxP >= 600;
+    return catOk && zoneOk && searchOk && priceOk;
   });
+  const sort = getSortMode();
+  if (sort === 'price-asc') ops.sort((a,b) => a.price - b.price);
+  else if (sort === 'price-desc') ops.sort((a,b) => b.price - a.price);
+  else if (sort === 'name') ops.sort((a,b) => a.name.localeCompare(b.name));
+  return ops;
 }
 
 // ---- RENDER CARDS ----
@@ -690,6 +874,73 @@ function filterZone(zone, btn) {
   document.querySelectorAll('.zone-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   renderCards();
+}
+
+// ---- SEARCH + SORT + PRICE ----
+function getSearchQuery() {
+  const el = document.getElementById('searchInput');
+  return el ? el.value.trim().toLowerCase() : '';
+}
+function getSortMode() {
+  const el = document.getElementById('sortSelect');
+  return el ? el.value : 'default';
+}
+function getMaxPrice() {
+  const el = document.getElementById('priceRange');
+  return el ? parseInt(el.value) : 9999;
+}
+function updatePriceLabel() {
+  const val = getMaxPrice();
+  document.getElementById('priceVal').textContent = val >= 600 ? '$600+' : '$' + val;
+}
+
+// ---- DEALS GRID ----
+function renderDeals() {
+  const sorted = [...allOperators].sort((a,b) => a.price - b.price).slice(0,8);
+  const grid = document.getElementById('dealsGrid');
+  if (!grid) return;
+  grid.innerHTML = sorted.map(op => `
+    <a href="${op.link}" target="_blank" rel="noopener" class="deal-card">
+      <div class="deal-img"><img src="${op.photo}" alt="${op.name}" loading="lazy" onerror="this.style.display='none'"></div>
+      <div class="deal-body">
+        <div class="deal-name">${op.name}</div>
+        <div class="deal-zone">\u{1F4CD} ${op.zl}</div>
+        <div class="deal-footer">
+          <div class="deal-price">$${op.price}</div>
+          <div class="deal-badge">Best Value</div>
+        </div>
+      </div>
+    </a>
+  \`).join('');
+}
+
+// ---- FAQ TOGGLE ----
+function toggleFaq(item) {
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
+}
+
+// ---- NEWSLETTER ----
+function submitNewsletter(e) {
+  e.preventDefault();
+  const btn = e.target.querySelector('.newsletter-btn');
+  btn.textContent = 'Subscribed!';
+  btn.style.background = '#22b422';
+  e.target.querySelector('input').value = '';
+  setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Subscribe'; btn.style.background=''; }, 3000);
+}
+
+// ---- BOOKING COUNTER (live feel) ----
+function animateCounter() {
+  const el = document.getElementById('bookingCounter');
+  if (!el) return;
+  const base = 18 + Math.floor(Math.random() * 15);
+  el.textContent = base + ' booked today';
+  setInterval(() => {
+    const n = parseInt(el.textContent) + (Math.random() > 0.6 ? 1 : 0);
+    el.textContent = n + ' booked today';
+  }, 45000);
 }
 
 // ---- MAP ----
@@ -823,6 +1074,8 @@ if(!localStorage.getItem('cookie_consent')) {
 document.addEventListener('DOMContentLoaded', () => {
   initMap();
   renderCards();
+  renderDeals();
+  animateCounter();
 });
 </script>
 <noscript>
