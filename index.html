@@ -21,8 +21,14 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#081525">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-09F6C7YC7B"></script>
-  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-09F6C7YC7B');</script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16509204378"></script>
+  <script>
+    window.dataLayer=window.dataLayer||[];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js',new Date());
+    gtag('config','G-09F6C7YC7B');
+    gtag('config','AW-16509204378');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
@@ -436,16 +442,16 @@
   <div class="marketplace-header">
     <div class="mkt-filters">
       <div class="cat-tabs">
-        <button class="cat-tab active" onclick="filterCat('all',this)"><span class="cat-emoji">🌎</span><span class="cat-label">All</span><span class="cat-count">(156)</span></button>
+        <button class="cat-tab active" onclick="filterCat('all',this)"><span class="cat-emoji">🌎</span><span class="cat-label">All</span><span class="cat-count">(172)</span></button>
         <button class="cat-tab" onclick="filterCat('jetski',this)"><span class="cat-emoji">🛥️</span><span class="cat-label">Jet Ski</span><span class="cat-count">(29)</span></button>
-        <button class="cat-tab" onclick="filterCat('boat',this)"><span class="cat-emoji">⛵</span><span class="cat-label">Boats &amp; Yachts</span><span class="cat-count">(69)</span></button>
+        <button class="cat-tab" onclick="filterCat('boat',this)"><span class="cat-emoji">⛵</span><span class="cat-label">Boats &amp; Yachts</span><span class="cat-count">(76)</span></button>
         <button class="cat-tab" onclick="filterCat('fishing',this)"><span class="cat-emoji">🎣</span><span class="cat-label">Fishing</span><span class="cat-count">(6)</span></button>
-        <button class="cat-tab" onclick="filterCat('watersports',this)"><span class="cat-emoji">🏄</span><span class="cat-label">Water Sports</span><span class="cat-count">(10)</span></button>
+        <button class="cat-tab" onclick="filterCat('watersports',this)"><span class="cat-emoji">🏄</span><span class="cat-label">Water Sports</span><span class="cat-count">(15)</span></button>
         <button class="cat-tab" onclick="filterCat('slingshot',this)"><span class="cat-emoji">🏎️</span><span class="cat-label">Slingshot</span><span class="cat-count">(6)</span></button>
         <button class="cat-tab" onclick="filterCat('jetcar',this)"><span class="cat-emoji">🚗</span><span class="cat-label">Jet Cars</span><span class="cat-count">(10)</span></button>
         <button class="cat-tab" onclick="filterCat('golfcart',this)"><span class="cat-emoji">🛺</span><span class="cat-label">Golf Carts</span><span class="cat-count">(8)</span></button>
         <button class="cat-tab" onclick="filterCat('atv',this)"><span class="cat-emoji">🏍️</span><span class="cat-label">ATV &amp; Buggies</span><span class="cat-count">(7)</span></button>
-        <button class="cat-tab" onclick="filterCat('tour',this)"><span class="cat-emoji">🚌</span><span class="cat-label">Tours</span><span class="cat-count">(11)</span></button>
+        <button class="cat-tab" onclick="filterCat('tour',this)"><span class="cat-emoji">🚌</span><span class="cat-label">Tours</span><span class="cat-count">(15)</span></button>
       </div>
       <div class="zone-tabs">
         <button class="zone-tab active" onclick="filterZone('all',this)">🗺️ All Florida</button>
@@ -749,11 +755,23 @@ const allOperators = [
   {id:"bt68",name:"Robin Hood Anna Maria",addr:"9802 Gulf Dr, Anna Maria, FL",zone:"gulf",zl:"Anna Maria Island",cat:"boat",price:99,lat:27.5015,lng:-82.7247,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KbeKLjQFTwCj9fMR1mgT",link:"https://fareharbor.com/embeds/book/robinhoodanamaria/items/98490/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🏝 Anna Maria"},
   {id:"bt69",name:"The Pink Pelican Tiki",addr:"Don CeSar Boat Ramp, St. Pete Beach, FL",zone:"westfl",zl:"St. Pete Beach",cat:"boat",price:350,lat:27.7252,lng:-82.7378,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/W4VBvLxpTAODqGQtinIs",link:"https://fareharbor.com/embeds/book/thepinkpelicantiki/items/536888/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🦩 Tiki Bar"},
   {id:"bt70",name:"Open Miami – Private Everglades Tour",addr:"22nd & Miami Beach Dr, Miami Beach, FL",zone:"miami",zl:"Miami Beach",cat:"boat",price:980,lat:25.7897,lng:-80.1304,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rwIn7wiRQDeaU8pineua",link:"https://fareharbor.com/embeds/book/open-miami/items/281856/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🐊 Private"},
+  {id:"bt70",name:"Six Fins Charter – Private Boat Tour Key West",addr:"7001 Shrimp Rd, Key West, FL 33040",zone:"keys",zl:"Key West",cat:"boat",price:1395,lat:24.5662,lng:-81.7527,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/OfeqdTQAShyXRHgu1eXI",link:"https://fareharbor.com/embeds/book/sixfinscharter/items/532140/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"⚓ Private Charter"},
+  {id:"bt71",name:"Six Fins Charter – Boat Tour Key West II",addr:"7001 Shrimp Rd, Key West, FL 33040",zone:"keys",zl:"Key West",cat:"boat",price:1295,lat:24.5662,lng:-81.7527,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/XXdbwAp0RwCtLZI3BxzJ",link:"https://fareharbor.com/embeds/book/sixfinscharter/items/532164/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"⛵ Key West"},
+  {id:"bt72",name:"Six Fins Charter – Boat Tour Key West III",addr:"7001 Shrimp Rd, Key West, FL 33040",zone:"keys",zl:"Key West",cat:"boat",price:1195,lat:24.5662,lng:-81.7527,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/lfTU36coSeCs6VvlYDkg",link:"https://fareharbor.com/embeds/book/sixfinscharter/items/532226/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"⛵ Key West"},
+  {id:"bt73",name:"Sea Rocket Fort Lauderdale – Boat Tour",addr:"801 Seabreeze Blvd, Fort Lauderdale, FL 33316",zone:"broward",zl:"Fort Lauderdale",cat:"boat",price:2.99,lat:26.1048,lng:-80.1028,photo:"https://cdn.filestackcontent.com/eN2wLizTfysYWvkGfLQM",link:"https://fareharbor.com/embeds/book/searocketftlauderdale/items/537543/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🚤 Bahia Mar"},
+  {id:"bt74",name:"Six Fins Charter – Boat Tour Key West IV",addr:"7001 Shrimp Rd, Key West, FL 33040",zone:"keys",zl:"Key West",cat:"boat",price:995,lat:24.5662,lng:-81.7527,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/zhsgTdGSLqqeEFI08wIQ",link:"https://fareharbor.com/embeds/book/sixfinscharter/items/532228/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"⚓ Key West"},
+  {id:"bt75",name:"Destin Private Yachts – Luxury Charter",addr:"314 Harbor Blvd, Destin, FL 32541",zone:"westfl",zl:"Destin",cat:"boat",price:1500,lat:30.3935,lng:-86.4958,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/Yrhnn1XSCC8E3xpHBsJe",link:"https://fareharbor.com/embeds/book/destinprivateyachts/items/448709/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🛥️ Luxury Yacht"},
+  {id:"bt76",name:"Destin Private Yachts – Premium Charter",addr:"314 Harbor Blvd, Destin, FL 32541",zone:"westfl",zl:"Destin",cat:"boat",price:2100,lat:30.3935,lng:-86.4958,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/fl5HycCjTxiXHlBpoENB",link:"https://fareharbor.com/embeds/book/destinprivateyachts/items/446491/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"💎 Premium"},
   // ---- WATERSPORTS (new) ----
   {id:"ws7",name:"Florida Adventures – Kayak Tour",addr:"1295 Capri Blvd, Naples, FL",zone:"gulf",zl:"Naples",cat:"watersports",price:45,lat:26.0891,lng:-81.7982,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/1gcLiu63TkigI9M3sf1F",link:"https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/44245/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🚣 Kayak"},
   {id:"ws8",name:"Florida Adventures – Kayak Rental",addr:"Kirkwood St, Marco Island, FL",zone:"gulf",zl:"Marco Island",cat:"watersports",price:4,lat:25.9220,lng:-81.7018,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/Q0OFqglhToKW2y5GiPsA",link:"https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/115886/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🚣 Marco Island"},
   {id:"ws9",name:"Visit Palm Beach – Snorkel",addr:"138 S Flagler Dr, West Palm Beach, FL",zone:"palmbeach",zl:"West Palm Beach",cat:"watersports",price:45,lat:26.7068,lng:-80.0548,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/14UgEQMHQRiNpKqB2GkX",link:"https://fareharbor.com/embeds/book/visitpalmbeach/items/101423/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🤿 Snorkel"},
   {id:"ws10",name:"Sunset Scooter Rentals",addr:"4101 N Ocean Blvd, Fort Lauderdale, FL",zone:"broward",zl:"Fort Lauderdale",cat:"watersports",price:65,lat:26.2328,lng:-80.0826,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/5yKM0Bm7TyeVZQxva6wh",link:"https://fareharbor.com/embeds/book/sunsetscooterrentals/items/551717/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🛵 Scooter"},
+  {id:"ws11",name:"Florida Adventures – Kayak Rental Naples",addr:"1295 Capri Blvd, Naples, FL 34113",zone:"gulf",zl:"Naples",cat:"watersports",price:2,lat:26.0891,lng:-81.7982,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/ObMcnBUrSTmL2yLctsPT",link:"https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/44251/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🚣 From $2"},
+  {id:"ws12",name:"Florida Adventures – Paddle Tour Naples",addr:"1295 Capri Blvd, Naples, FL 34113",zone:"gulf",zl:"Naples",cat:"watersports",price:2,lat:26.0891,lng:-81.7982,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/m8L4FMiNQxCAo1QLXYnG",link:"https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/45206/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🏄 Paddle Tour"},
+  {id:"ws13",name:"Six Fins Charter – Snorkel Tour Key West",addr:"7001 Shrimp Rd, Key West, FL 33040",zone:"keys",zl:"Key West",cat:"watersports",price:1195,lat:24.5662,lng:-81.7527,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/dNOeySOQ09l00xx7eYWg",link:"https://fareharbor.com/embeds/book/sixfinscharter/items/532224/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🤿 Snorkel"},
+  {id:"ws14",name:"Get Up & Go Kayaking – Crystal River Springs",addr:"268 NW 3rd Street, Crystal River, FL 34484",zone:"gulf",zl:"Crystal River",cat:"watersports",price:59,lat:28.9025,lng:-82.5932,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/BXkURSjQhqgYzQAo1QNO",link:"https://fareharbor.com/embeds/book/getupandgokayaking-crystalsprings/items/132512/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🦭 Manatee Kayak"},
+  {id:"ws15",name:"Get Up & Go Kayaking – Jupiter Inlet Lighthouse",addr:"Jupiter Inlet Lighthouse Outstanding Natural Area, Jupiter, FL",zone:"palmbeach",zl:"Jupiter / Palm Beach",cat:"watersports",price:64,lat:26.9490,lng:-80.0814,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KMM8cLMeQVaMtJ8uMHjC",link:"https://fareharbor.com/embeds/book/getupandgokayaking-jupiter/items/226174/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🦅 Lighthouse Tour"},
   // ---- ATV & BUGGIES ----
   {id:"at1",name:"Wynwood Buggies",addr:"266 NW 26th St, Miami, FL",zone:"miami",zl:"Wynwood",cat:"atv",price:45,lat:25.8044,lng:-80.1994,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/h4VIjwMkTxenTfk6zLUD",link:"https://fareharbor.com/embeds/book/wynwoodbuggies/items/58110/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🎨 Wynwood"},
   {id:"at2",name:"ATV of Miami",addr:"16901 SW 177th Ave, Miami, FL",zone:"miami",zl:"Miami South",cat:"atv",price:120,lat:25.5763,lng:-80.4421,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/oiFm3EArRMKXGakm6g81",link:"https://fareharbor.com/embeds/book/atvofmiami/items/662071/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🏍️ Miami"},
@@ -812,7 +830,7 @@ function renderCards() {
         <div class="op-addr"><i class="fa-solid fa-location-dot"></i> ${op.zl}</div>
         <div class="op-footer">
           <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$${op.price.toLocaleString()}</div></div>
-          <a href="${op.link}" target="_blank" rel="noopener" class="op-book" onclick="event.stopPropagation()">Book Now <i class="fa-solid fa-arrow-right"></i></a>
+          <a href="${op.link}" target="_blank" rel="noopener" class="op-book" onclick="event.stopPropagation();trackBookNow('${op.name}',${op.price})">Book Now <i class="fa-solid fa-arrow-right"></i></a>
         </div>
       </div>
     </div>
@@ -856,6 +874,17 @@ function renderDeals() {
   `).join('');
 }
 
+// ---- GOOGLE ADS CONVERSION TRACKING ----
+function trackBookNow(name, price) {
+  if (typeof gtag === 'function') {
+    gtag('event', 'conversion', {
+      'send_to': 'AW-16509204378/Od7PCNePlKAcEJrvmcA9',
+      'value': price,
+      'currency': 'USD'
+    });
+  }
+}
+
 // ---- FAQ TOGGLE ----
 function toggleFaq(item) {
   const isOpen = item.classList.contains('open');
@@ -870,7 +899,11 @@ function submitNewsletter(e) {
   btn.textContent = 'Subscribed!';
   btn.style.background = '#22b422';
   e.target.querySelector('input').value = '';
-  setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Subscribe'; btn.style.background=''; }, 3000);
+  setTimeout(() => { btn.innerHTML = '<i class="fa-solid fa-paper-plane"></i> Subscribe'; btn.style.background=''; },
+  {id:"to12",name:"Florida Adventures & Rentals – Goodland Tour",addr:"750 Palm Point Dr, Goodland, FL 34140",zone:"gulf",zl:"Goodland / Marco Island",cat:"tour",price:19,lat:25.9201,lng:-81.6429,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/HHU5RJ8nQou4ejWCL4mY",link:"https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/44212/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🌿 Eco Tour"},
+  {id:"to13",name:"Florida Adventures & Rentals – Eco Experience",addr:"750 Palm Point Dr, Goodland, FL 34140",zone:"gulf",zl:"Goodland / Marco Island",cat:"tour",price:19,lat:25.9201,lng:-81.6429,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/a7VDgVWLT2Ss2ueq63rL",link:"https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/44195/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🦋 Nature Tour"},
+  {id:"to14",name:"Florida Adventures & Rentals – Wildlife Tour",addr:"750 Palm Point Dr, Goodland, FL 34140",zone:"gulf",zl:"Goodland / Marco Island",cat:"tour",price:19,lat:25.9201,lng:-81.6429,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/lZ1iMDFeQi4GodXv1xVg",link:"https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/44214/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🐊 Wildlife"},
+  {id:"to15",name:"Helicopter Aerial Tour – Tampa Bay",addr:"825 Severn Ave, Tampa, FL 33606",zone:"westfl",zl:"Tampa",cat:"tour",price:54.50,lat:27.9351,lng:-82.4595,photo:"https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/mw9OvGpTUOwlXSepNuqg",link:"https://fareharbor.com/embeds/book/heliaf/items/192641/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no",badge:"🚁 Aerial Tour"}, 3000);
 }
 
 // ---- BOOKING COUNTER (live feel) ----
