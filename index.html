@@ -315,19 +315,6 @@
       .cat-tab .cat-emoji{font-size:1.35rem;}
     }
 
-    /* SEARCH & SORT BAR */
-    .search-sort-row{display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 16px 0;}
-    .search-box{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.06);border:1.5px solid var(--border);border-radius:50px;padding:8px 16px;flex:1;min-width:180px;}
-    .search-box i{color:var(--text-muted);font-size:.85rem;}
-    .search-box input{background:transparent;border:none;outline:none;color:#fff;font-family:'Montserrat',sans-serif;font-size:.82rem;width:100%;}
-    .search-box input::placeholder{color:var(--text-muted);}
-    .sort-select{background:rgba(255,255,255,.06);border:1.5px solid var(--border);border-radius:50px;padding:8px 16px;color:var(--text-muted);font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:600;cursor:pointer;outline:none;appearance:none;-webkit-appearance:none;padding-right:28px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236b8fa8' stroke-width='1.5' fill='none'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;}
-    .sort-select option{background:#0a1e35;color:#fff;}
-    /* PRICE SLIDER */
-    .price-row{display:flex;align-items:center;gap:12px;padding:8px 16px 10px;flex-wrap:wrap;}
-    .price-row label{color:var(--text-muted);font-size:.75rem;font-family:'Montserrat',sans-serif;font-weight:600;white-space:nowrap;}
-    .price-range{flex:1;min-width:120px;accent-color:var(--teal);cursor:pointer;}
-    .price-val{color:var(--teal);font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;white-space:nowrap;}
     /* TRUST BADGES */
     .trust-bar{background:rgba(0,212,200,.06);border-bottom:1px solid rgba(0,212,200,.12);padding:10px 20px;}
     .trust-inner{max-width:1200px;margin:0 auto;display:flex;gap:24px;align-items:center;flex-wrap:wrap;justify-content:center;}
@@ -379,8 +366,6 @@
     .newsletter-note{font-size:.72rem;color:var(--text-muted);margin-top:12px;}
     /* MOBILE responsive for new elements */
     @media(max-width:768px){
-      .search-sort-row{padding:8px 12px 0;}
-      .price-row{padding:6px 12px 8px;}
       .featured-banner{margin:10px;}
       .deals-grid{grid-template-columns:repeat(2,1fr);}
       .trust-inner{gap:14px;}
@@ -475,25 +460,7 @@
         <button class="zone-tab" onclick="filterZone('central',this)">🏞️ Central FL</button>
         <button class="zone-tab" onclick="filterZone('northeast',this)">🌊 Northeast FL</button>
       </div>
-      <div class="search-sort-row">
-        <div class="search-box">
-          <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="searchInput" placeholder="Search by name or city…" oninput="renderCards()">
-        </div>
-        <select class="sort-select" id="sortSelect" onchange="renderCards()">
-          <option value="default">Sort: Default</option>
-          <option value="price-asc">Price: Low → High</option>
-          <option value="price-desc">Price: High → Low</option>
-          <option value="name">Name A–Z</option>
-        </select>
-      </div>
-      <div class="price-row">
-        <label><i class="fa-solid fa-tag"></i> Max Price:</label>
-        <input type="range" class="price-range" id="priceRange" min="0" max="600" value="600" step="10" oninput="updatePriceLabel();renderCards()">
-        <span class="price-val" id="priceVal">$600+</span>
-      </div>
-    </div>
-  </div>
+</div>
   <div class="marketplace-body mobile-map-hidden" id="marketplaceBody">
     <div class="cards-panel" id="cardsPanel">
       <!-- FEATURED PARTNER -->
@@ -518,7 +485,7 @@
 <!-- MAP TOGGLE BUTTON (mobile) -->
 <button class="map-toggle-btn" id="mapToggleBtn" onclick="toggleMapView()">
   <span class="btn-icon">🗺️</span>
-  <span class="btn-text">Ver Mapa</span>
+  <span class="btn-text">View Map</span>
 </button>
 
 <!-- DEALS -->
@@ -821,20 +788,11 @@ const catLabels = {jetski:'Jet Ski', boat:'Boat', fishing:'Fishing', watersports
 
 // ---- FILTERED LIST ----
 function getFiltered() {
-  const q = getSearchQuery();
-  const maxP = getMaxPrice();
-  let ops = allOperators.filter(op => {
+  return allOperators.filter(op => {
     const catOk = activeCat === 'all' || op.cat === activeCat;
     const zoneOk = activeZone === 'all' || op.zone === activeZone;
-    const searchOk = !q || op.name.toLowerCase().includes(q) || op.zl.toLowerCase().includes(q) || op.addr.toLowerCase().includes(q);
-    const priceOk = op.price <= maxP || maxP >= 600;
-    return catOk && zoneOk && searchOk && priceOk;
+    return catOk && zoneOk;
   });
-  const sort = getSortMode();
-  if (sort === 'price-asc') ops.sort((a,b) => a.price - b.price);
-  else if (sort === 'price-desc') ops.sort((a,b) => b.price - a.price);
-  else if (sort === 'name') ops.sort((a,b) => a.name.localeCompare(b.name));
-  return ops;
 }
 
 // ---- RENDER CARDS ----
@@ -876,23 +834,7 @@ function filterZone(zone, btn) {
   renderCards();
 }
 
-// ---- SEARCH + SORT + PRICE ----
-function getSearchQuery() {
-  const el = document.getElementById('searchInput');
-  return el ? el.value.trim().toLowerCase() : '';
-}
-function getSortMode() {
-  const el = document.getElementById('sortSelect');
-  return el ? el.value : 'default';
-}
-function getMaxPrice() {
-  const el = document.getElementById('priceRange');
-  return el ? parseInt(el.value) : 9999;
-}
-function updatePriceLabel() {
-  const val = getMaxPrice();
-  document.getElementById('priceVal').textContent = val >= 600 ? '$600+' : '$' + val;
-}
+
 
 // ---- DEALS GRID ----
 function renderDeals() {
@@ -1048,7 +990,7 @@ function toggleMapView() {
     body.classList.remove('mobile-map-hidden');
     body.classList.add('mobile-map-visible');
     icon.textContent = '📋';
-    text.textContent = 'Ver Lista';
+    text.textContent = 'View List';
     btn.classList.add('map-active');
     // Force Leaflet to recalculate map size
     setTimeout(() => { if(window.jetskiMap) window.jetskiMap.invalidateSize(); }, 100);
@@ -1056,7 +998,7 @@ function toggleMapView() {
     body.classList.remove('mobile-map-visible');
     body.classList.add('mobile-map-hidden');
     icon.textContent = '🗺️';
-    text.textContent = 'Ver Mapa';
+    text.textContent = 'View Map';
     btn.classList.remove('map-active');
   }
 }
