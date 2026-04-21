@@ -838,7 +838,7 @@ let mapInstance = null;
 
 // ---- CAT COLORS ----
 const catColors = {jetski:'#00d4c8', boat:'#1a6bcc', fishing:'#e06000', watersports:'#9933cc', slingshot:'#dc2828', jetcar:'#ffa500', golfcart:'#22b422', atv:'#b45000', tour:'#643cc8', aerial:'#0099ff'};
-const catLabels = {jetski:'Jet Ski', boat:'Boat', fishing:'Fishing', watersports:'Water Sport', slingshot:'Slingshot', jetcar:'Jet Car', golfcart:'Golf Cart', atv:'ATV', tour:'Tour'};
+const catLabels = {jetski:'Jet Ski', boat:'Boat', fishing:'Fishing', watersports:'Water Sport', slingshot:'Slingshot', jetcar:'Jet Car', golfcart:'Golf Cart', atv:'ATV', tour:'Tour', aerial:'Aerial & Fly'};
 
 // ---- FILTERED LIST ----
 function getFiltered() {
@@ -981,7 +981,7 @@ function initMap() {
   // Build all markers
   allOperators.forEach(op => {
     const color = catColors[op.cat] || '#00d4c8';
-    const catInitials = {jetski:'JS', boat:'⛵', fishing:'🎣', watersports:'🏄'}[op.cat] || '●';
+    const catInitials = {jetski:'JS', boat:'⛵', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', jetcar:'🚗', golfcart:'🛺', atv:'🏍️'}[op.cat] || '●';
     const marker = L.marker([op.lat, op.lng], {icon: makeIcon(color, catInitials)});
     marker.bindPopup(`
       <div class="map-popup">
