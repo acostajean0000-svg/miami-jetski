@@ -4,5 +4,3 @@ Allow: /
 Sitemap: https://miamijetskiboatrentals.com/sitemap.xml
 
 
-
-
