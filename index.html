@@ -857,43 +857,85 @@ function getFiltered() {
   });
 }
 
-// ---- RENDER CARDS ----
-function renderCards() {
-  const ops = getFiltered();
-  const grid = document.getElementById('cardsGrid');
-  document.getElementById('cardsCount').textContent = `Showing ${ops.length} operator${ops.length!==1?'s':''}`;
-  grid.innerHTML = ops.map(op => `
-    <div class="op-card cat-${op.cat}" id="card-${op.id}" onclick="cardClick('${op.id}')">
-      <div class="op-card-img">
-        <img src="${op.photo}" alt="${op.name}" loading="lazy" onerror="this.src='';this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';">
-        <span class="op-cat-badge">${catLabels[op.cat]}</span>
-        <span class="op-best-badge">${op.badge}</span>
-      </div>
-      <div class="op-card-body">
-        <div class="op-name">${op.name}</div>
-        <div class="op-addr"><i class="fa-solid fa-location-dot"></i> ${op.zl}</div>
-        <div class="op-footer">
-          <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$${op.price.toLocaleString()}</div></div>
-          <a href="${op.link}" target="_blank" rel="noopener" class="op-book" onclick="event.stopPropagation();trackBookNow('${op.name}',${op.price})">Book Now <i class="fa-solid fa-arrow-right"></i></a>
-        </div>
+// ---- RENDER CARDS (paginated) ----
+const PAGE_SIZE = 24;
+let currentPage = 0;
+let currentOps = [];
+
+function cardHTML(op) {
+  return `<div class="op-card cat-${op.cat}" id="card-${op.id}" onclick="cardClick('${op.id}')">
+    <div class="op-card-img">
+      <img src="${op.photo}" alt="${op.name}" loading="lazy" onerror="this.src='';this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc,#00b4d8)';">
+      <span class="op-cat-badge">${catLabels[op.cat]}</span>
+      <span class="op-best-badge">${op.badge}</span>
+    </div>
+    <div class="op-card-body">
+      <div class="op-name">${op.name}</div>
+      <div class="op-addr"><i class="fa-solid fa-location-dot"></i> ${op.zl}</div>
+      <div class="op-footer">
+        <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$${op.price.toLocaleString()}</div></div>
+        <a href="${op.link}" target="_blank" rel="noopener" class="op-book" onclick="event.stopPropagation();trackBookNow('${op.name}',${op.price})">Book Now <i class="fa-solid fa-arrow-right"></i></a>
       </div>
     </div>
-  `).join('');
-  updateMapMarkers(ops);
+  </div>`;
+}
+
+function renderCards() {
+  currentOps = getFiltered();
+  currentPage = 0;
+  const grid = document.getElementById('cardsGrid');
+  const shown = currentOps.slice(0, PAGE_SIZE);
+  document.getElementById('cardsCount').textContent = `Showing ${currentOps.length} operator${currentOps.length!==1?'s':''}`;
+  grid.innerHTML = shown.map(cardHTML).join('');
+  updateLoadMore();
+  updateMapMarkers(currentOps);
+}
+
+function loadMoreCards() {
+  currentPage++;
+  const start = currentPage * PAGE_SIZE;
+  const batch = currentOps.slice(start, start + PAGE_SIZE);
+  const grid = document.getElementById('cardsGrid');
+  const frag = document.createElement('div');
+  frag.innerHTML = batch.map(cardHTML).join('');
+  while (frag.firstChild) grid.appendChild(frag.firstChild);
+  updateLoadMore();
+}
+
+function updateLoadMore() {
+  let btn = document.getElementById('loadMoreBtn');
+  const shown = (currentPage + 1) * PAGE_SIZE;
+  if (shown < currentOps.length) {
+    if (!btn) {
+      btn = document.createElement('div');
+      btn.id = 'loadMoreBtn';
+      btn.style.cssText = 'text-align:center;padding:24px 0 8px;grid-column:1/-1;';
+      btn.innerHTML = '<button onclick="loadMoreCards()" style="background:linear-gradient(135deg,#0066cc,#00b4d8);color:#fff;border:none;padding:14px 36px;border-radius:50px;font-size:1rem;font-weight:700;cursor:pointer;box-shadow:0 4px 15px rgba(0,102,204,.3);">Load More <i class=\'fa-solid fa-chevron-down\'></i></button>';
+      document.getElementById('cardsGrid').after(btn);
+    }
+    btn.querySelector('button').textContent = '';
+    btn.querySelector('button').innerHTML = `Load More (${currentOps.length - shown} remaining) <i class='fa-solid fa-chevron-down'></i>`;
+    btn.style.display = '';
+  } else {
+    if (btn) btn.style.display = 'none';
+  }
 }
 
 // ---- FILTER FUNCTIONS ----
+let _filterTimer = null;
 function filterCat(cat, btn) {
   activeCat = cat;
   document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  renderCards();
+  clearTimeout(_filterTimer);
+  _filterTimer = setTimeout(renderCards, 80);
 }
 function filterZone(zone, btn) {
   activeZone = zone;
   document.querySelectorAll('.zone-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
-  renderCards();
+  clearTimeout(_filterTimer);
+  _filterTimer = setTimeout(renderCards, 80);
 }
 
 
