@@ -498,6 +498,33 @@
     .fav-compare-btn:disabled{opacity:.35;cursor:not-allowed;}
     .fav-compare-hint{font-size:.75rem;color:#6b8fa8;}
     .fav-compare-count{background:rgba(0,212,200,.15);color:#00d4c8;border-radius:50px;padding:2px 8px;font-size:.72rem;font-weight:700;}
+
+    .fav-op-card{background:var(--card-bg);border:1px solid var(--border);border-radius:12px;overflow:hidden;display:flex;flex-direction:column;}
+    .fav-op-thumb{height:110px;overflow:hidden;position:relative;background:#0a1e35;}
+    .fav-op-thumb img{width:100%;height:100%;object-fit:cover;}
+    .fav-op-info{padding:10px 12px;flex:1;display:flex;flex-direction:column;gap:4px;}
+    .fav-op-name{font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:700;line-height:1.3;}
+    .fav-op-loc{font-size:.72rem;color:var(--text-muted);}
+    .fav-op-row{display:flex;align-items:center;justify-content:space-between;margin-top:6px;gap:6px;}
+    .fav-op-price{font-family:'Montserrat',sans-serif;font-weight:800;color:var(--teal);font-size:.88rem;}
+    .fav-op-book{background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);padding:5px 12px;border-radius:50px;font-weight:700;font-size:.72rem;white-space:nowrap;}
+    .fav-cmp-toggle{width:100%;margin-top:8px;padding:7px;border-radius:8px;border:1.5px solid var(--border);background:transparent;color:var(--text-muted);font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;cursor:pointer;transition:all .2s;}
+    .fav-cmp-toggle:hover{border-color:var(--teal);color:var(--teal);}
+    .fav-cmp-toggle.selected{background:rgba(0,212,200,.12);border-color:var(--teal);color:var(--teal);}
+    .fav-remove-link{display:block;text-align:center;padding:6px;font-size:.7rem;color:var(--text-muted);cursor:pointer;border-top:1px solid var(--border);transition:color .15s;}
+    .fav-remove-link:hover{color:#ff6b8a;}
+
+    /* ── SHARE BUTTON ── */
+    .share-btn{position:absolute;bottom:9px;right:9px;width:26px;height:26px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;transition:all .2s;z-index:3;backdrop-filter:blur(4px);}
+    .share-btn:hover{border-color:#fff;background:rgba(255,255,255,.15);}
+    .share-popover{position:absolute;bottom:42px;right:6px;background:#0d2540;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:6px;z-index:10;display:none;flex-direction:column;gap:2px;min-width:160px;box-shadow:0 8px 24px rgba(0,0,0,.5);}
+    .share-popover.open{display:flex;}
+    .share-popover-item{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;cursor:pointer;font-size:.78rem;font-weight:600;color:var(--text-light);transition:background .15s;border:none;background:transparent;width:100%;text-align:left;}
+    .share-popover-item:hover{background:rgba(255,255,255,.08);}
+    .share-popover-item .share-icon{width:22px;height:22px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:.8rem;flex-shrink:0;}
+    .share-wa  .share-icon{background:#25d366;}
+    .share-copy .share-icon{background:#4a6fa5;}
+    .share-copied{color:var(--teal)!important;}
   </style>
 </head>
 <body>
@@ -845,6 +872,13 @@ function cardHTML(op) {
       <span class="op-best-badge">${op.badge}</span>
       <button class="fav-toggle${isFav?' saved':''}" id="fav-${op.id}" onclick="event.stopPropagation();toggleFav('${op.id}')" title="${isFav?'Remove from favorites':'Save to favorites'}">${isFav?'❤️':'🤍'}</button>
       <button class="compare-toggle${inCmp?' selected':''}" id="cmp-${op.id}" onclick="event.stopPropagation();toggleCompare('${op.id}')" title="Add to compare">${inCmp?'✓':'＋'}</button>
+      <div style="position:absolute;bottom:9px;right:9px;z-index:3">
+        <button class="share-btn" onclick="event.stopPropagation();toggleShare('${op.id}')" title="Share">🔗</button>
+        <div class="share-popover" id="share-${op.id}">
+          <button class="share-popover-item share-wa"  onclick="event.stopPropagation();shareWA('${op.id}')"><span class="share-icon">📱</span>WhatsApp</button>
+          <button class="share-popover-item share-copy" id="copy-${op.id}" onclick="event.stopPropagation();copyLink('${op.id}')"><span class="share-icon">🔗</span>Copy Link</button>
+        </div>
+      </div>
     </div>
     <div class="op-card-body">
       <div class="op-name">${op.name}</div>
@@ -1066,21 +1100,59 @@ function updateFavFab() {
   cnt.textContent = favorites.size;
 }
 
-function openFavPanel() {
-  const overlay = document.getElementById('favOverlay');
+
+function favCardHTML(op) {
+  const inCmp = compareList.some(o => o.id === op.id);
+  const emoji = catEmoji[op.cat] || '🌊';
+  const thumb = op.photo
+    ? `<img src="${op.photo}" alt="${op.name}" loading="lazy" onerror="this.style.display='none'">`
+    : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:2rem;color:var(--teal)">${emoji}</div>`;
+  return `<div class="fav-op-card" id="fav-card-${op.id}">
+    <div class="fav-op-thumb">${thumb}</div>
+    <div class="fav-op-info">
+      <div class="fav-op-name">${op.name}</div>
+      <div class="fav-op-loc">📍 ${op.zl}</div>
+      <div class="fav-op-row">
+        <span class="fav-op-price">From $${op.price}</span>
+        <a href="${op.link}" target="_blank" rel="noopener" class="fav-op-book">Book →</a>
+      </div>
+      <button class="fav-cmp-toggle${inCmp ? ' selected' : ''}" id="fav-cmp-${op.id}"
+              onclick="toggleFavCompare('${op.id}')">
+        ${inCmp ? '✓ Selected for Compare' : '＋ Add to Compare'}
+      </button>
+    </div>
+    <div class="fav-remove-link" onclick="toggleFav('${op.id}');refreshFavPanel()">✕ Remove from favorites</div>
+  </div>`;
+}
+
+function toggleFavCompare(id) {
+  toggleCompare(id);
+  // update only the fav-panel button (unique ID prefix avoids duplicate-ID conflict)
+  const btn = document.getElementById('fav-cmp-' + id);
+  if (btn) {
+    const inCmp = compareList.some(o => o.id === id);
+    btn.className = 'fav-cmp-toggle' + (inCmp ? ' selected' : '');
+    btn.textContent = inCmp ? '✓ Selected for Compare' : '＋ Add to Compare';
+  }
+}
+
+function refreshFavPanel() {
+  // re-render panel contents without closing
   const grid = document.getElementById('favGrid');
-  if (!favorites.size) {
+  if (!grid) return;
+  const favOps = allOperators.filter(o => favorites.has(o.id));
+  if (!favOps.length) {
     grid.innerHTML = '<div class="fav-empty"><div class="fav-empty-icon">🤍</div><p>No favorites saved yet.<br>Tap the heart on any operator card.</p></div>';
   } else {
-    const favOps = allOperators.filter(o => favorites.has(o.id));
-    grid.innerHTML = favOps.map(op => `
-      <div>
-        ${cardHTML(op)}
-        <span class="fav-remove" onclick="toggleFav('${op.id}');openFavPanel()">✕ Remove</span>
-      </div>`).join('');
+    grid.innerHTML = favOps.map(op => favCardHTML(op)).join('');
   }
-  overlay.classList.add('show');
   syncFavCompareBtn();
+}
+
+function openFavPanel() {
+  const overlay = document.getElementById('favOverlay');
+  refreshFavPanel();
+  overlay.classList.add('show');
 }
 
 function syncFavCompareBtn() {
@@ -1110,6 +1182,97 @@ function closeFavPanel() {
   document.getElementById('favOverlay').classList.remove('show');
 }
 
+
+
+// ---- SHARE ----
+let _openShare = null;
+
+function toggleShare(id) {
+  const pop = document.getElementById('share-' + id);
+  if (!pop) return;
+  const isOpen = pop.classList.contains('open');
+  // close any open popover
+  if (_openShare && _openShare !== id) {
+    const prev = document.getElementById('share-' + _openShare);
+    if (prev) prev.classList.remove('open');
+  }
+  pop.classList.toggle('open', !isOpen);
+  _openShare = isOpen ? null : id;
+}
+
+// close share popover when clicking outside
+document.addEventListener('click', () => {
+  if (_openShare) {
+    const pop = document.getElementById('share-' + _openShare);
+    if (pop) pop.classList.remove('open');
+    _openShare = null;
+  }
+}, true);
+
+function shareWA(id) {
+  const op = allOperators.find(o => o.id === id);
+  if (!op) return;
+  const siteUrl = 'https://miamijetskiboatrentals.com/?q=' + encodeURIComponent(op.name);
+  const msg = encodeURIComponent(
+    '🌊 Check this out: ' + op.name +
+    '\n📍 ' + op.zl +
+    '\nFrom $' + op.price +
+    '\n👉 ' + siteUrl
+  );
+  window.open('https://wa.me/?text=' + msg, '_blank');
+  closeShare(id);
+}
+
+function copyLink(id) {
+  const op = allOperators.find(o => o.id === id);
+  if (!op) return;
+  const url = 'https://miamijetskiboatrentals.com/?q=' + encodeURIComponent(op.name);
+  navigator.clipboard.writeText(url).then(() => {
+    const btn = document.getElementById('copy-' + id);
+    if (btn) {
+      btn.classList.add('share-copied');
+      btn.innerHTML = '<span class="share-icon">✓</span>Copied!';
+      setTimeout(() => {
+        btn.classList.remove('share-copied');
+        btn.innerHTML = '<span class="share-icon" style="background:#4a6fa5">🔗</span>Copy Link';
+      }, 2000);
+    }
+  }).catch(() => {
+    // fallback for older browsers
+    const ta = document.createElement('textarea');
+    ta.value = url;
+    document.body.appendChild(ta);
+    ta.select();
+    document.execCommand('copy');
+    document.body.removeChild(ta);
+    const btn = document.getElementById('copy-' + id);
+    if (btn) {
+      btn.classList.add('share-copied');
+      btn.innerHTML = '<span class="share-icon">✓</span>Copied!';
+      setTimeout(() => {
+        btn.classList.remove('share-copied');
+        btn.innerHTML = '<span class="share-icon" style="background:#4a6fa5">🔗</span>Copy Link';
+      }, 2000);
+    }
+  });
+  closeShare(id);
+}
+
+function closeShare(id) {
+  const pop = document.getElementById('share-' + id);
+  if (pop) pop.classList.remove('open');
+  _openShare = null;
+}
+
+// ---- URL PARAM: ?q=name pre-fills search on load ----
+(function() {
+  const params = new URLSearchParams(window.location.search);
+  const q = params.get('q');
+  if (q) {
+    // will be applied after operators load
+    window._preloadSearch = q;
+  }
+})();
 
 // ---- PRICE FILTER ----
 function updatePriceFilter() {
@@ -1332,6 +1495,10 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(data => {
       allOperators = data;
       initMap();
+      if (window._preloadSearch) {
+        const inp = document.getElementById('searchInput');
+        if (inp) { inp.value = window._preloadSearch; searchQuery = window._preloadSearch.toLowerCase(); document.getElementById('searchClear').classList.add('show'); }
+      }
       renderCards();
       renderDeals();
       animateCounter();
