@@ -444,6 +444,21 @@
       .compare-bar-item,.compare-bar-empty{display:none;}
       .compare-bar-label{font-size:.65rem;}
     }
+
+    /* ── PRICE SLIDER ── */
+    .price-filter{display:flex;align-items:center;gap:14px;padding:10px 0 4px;flex-wrap:wrap;}
+    .price-filter-label{font-family:'Montserrat',sans-serif;font-size:.73rem;font-weight:700;color:var(--text-muted);white-space:nowrap;}
+    .price-range-wrap{position:relative;flex:1;min-width:160px;max-width:340px;height:22px;display:flex;align-items:center;}
+    .price-range-track{position:absolute;left:0;right:0;height:4px;background:rgba(255,255,255,.1);border-radius:2px;}
+    .price-range-fill{position:absolute;height:4px;background:var(--teal);border-radius:2px;}
+    .price-range-wrap input[type=range]{position:absolute;width:100%;-webkit-appearance:none;appearance:none;background:transparent;pointer-events:none;height:4px;}
+    .price-range-wrap input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:18px;height:18px;border-radius:50%;background:var(--teal);border:2px solid var(--dark);cursor:pointer;pointer-events:all;transition:transform .15s;}
+    .price-range-wrap input[type=range]::-webkit-slider-thumb:hover{transform:scale(1.2);}
+    .price-range-wrap input[type=range]::-moz-range-thumb{width:18px;height:18px;border-radius:50%;background:var(--teal);border:2px solid var(--dark);cursor:pointer;pointer-events:all;}
+    .price-val{font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;color:var(--teal);white-space:nowrap;min-width:110px;}
+    .price-reset{background:transparent;border:none;color:var(--text-muted);font-size:.72rem;cursor:pointer;padding:2px 6px;border-radius:4px;transition:color .15s;}
+    .price-reset:hover{color:var(--teal);}
+    @media(max-width:640px){.price-range-wrap{min-width:120px;}.price-val{min-width:90px;font-size:.72rem;}}
   </style>
 </head>
 <body>
@@ -533,6 +548,17 @@
         <button class="zone-tab" onclick="filterZone('northeast',this)">🌊 Northeast FL</button>
       </div>
       <button class="nearme-btn" id="nearMeBtn" onclick="toggleNearMe()">📍 Near Me</button>
+      <div class="price-filter">
+        <span class="price-filter-label">💰 Price</span>
+        <div class="price-range-wrap">
+          <div class="price-range-track"></div>
+          <div class="price-range-fill" id="priceRangeFill"></div>
+          <input type="range" id="priceMin" min="0" max="1000" value="0" step="5" oninput="updatePriceFilter()">
+          <input type="range" id="priceMax" min="0" max="1000" value="1000" step="5" oninput="updatePriceFilter()">
+        </div>
+        <span class="price-val" id="priceValLabel">$0 – $1000+</span>
+        <button class="price-reset" onclick="resetPrice()" title="Reset price filter">✕ Reset</button>
+      </div>
 </div>
   <div class="marketplace-body mobile-map-hidden" id="marketplaceBody">
     <div class="cards-panel" id="cardsPanel">
@@ -689,6 +715,7 @@ let allOperators = [];
 // ---- STATE ----
 let activeCat = 'jetski';
 let activeZone = 'miami';
+let priceMin = 0, priceMax = 1000;
 let markers = {};
 let mapInstance = null;
 
@@ -732,9 +759,10 @@ function toggleNearMe() {
 // ---- FILTERED LIST ----
 function getFiltered() {
   let ops = allOperators.filter(op => {
-    const catOk = activeCat === 'all' || op.cat === activeCat;
+    const catOk  = activeCat === 'all' || op.cat === activeCat;
     const zoneOk = nearMeActive || activeZone === 'all' || op.zone === activeZone;
-    return catOk && zoneOk;
+    const priceOk = op.price >= priceMin && (priceMax >= 1000 || op.price <= priceMax);
+    return catOk && zoneOk && priceOk;
   });
   if(nearMeActive && userLat!==null){
     ops = ops.map(op=>({...op, _dist:haversine(userLat,userLng,op.lat,op.lng)}))
@@ -928,6 +956,32 @@ function closeCompareModal(){
   document.getElementById('compareOverlay').classList.remove('show');
 }
 
+
+
+// ---- PRICE FILTER ----
+function updatePriceFilter() {
+  const minEl = document.getElementById('priceMin');
+  const maxEl = document.getElementById('priceMax');
+  let lo = parseInt(minEl.value), hi = parseInt(maxEl.value);
+  if(lo > hi - 20){ lo = hi - 20; minEl.value = lo; }
+  priceMin = lo; priceMax = hi;
+  // update fill bar
+  const fill = document.getElementById('priceRangeFill');
+  const pct = (v, mn, mx) => ((v-mn)/(mx-mn))*100;
+  fill.style.left  = pct(lo, 0, 1000) + '%';
+  fill.style.right = (100 - pct(hi, 0, 1000)) + '%';
+  // label
+  const label = document.getElementById('priceValLabel');
+  label.textContent = hi >= 1000 ? `$${lo} – $1000+` : `$${lo} – $${hi}`;
+  clearTimeout(_filterTimer);
+  _filterTimer = setTimeout(renderCards, 100);
+}
+
+function resetPrice() {
+  document.getElementById('priceMin').value = 0;
+  document.getElementById('priceMax').value = 1000;
+  updatePriceFilter();
+}
 
 // ---- DEALS GRID ----
 function renderDeals() {
