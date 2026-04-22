@@ -408,7 +408,7 @@
     .op-card.in-compare{box-shadow:0 0 0 2.5px var(--teal),0 8px 30px rgba(0,212,200,.25);}
 
     /* ── COMPARE BAR ── */
-    .compare-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(6,16,32,.97);backdrop-filter:blur(14px);border-top:1px solid var(--teal);padding:10px 20px;z-index:1500;display:flex;align-items:center;gap:14px;transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);}
+    .compare-bar{position:fixed;bottom:0;left:0;right:0;background:rgba(6,16,32,.97);backdrop-filter:blur(14px);border-top:1px solid var(--teal);padding:10px 20px;z-index:4500;display:flex;align-items:center;gap:14px;transform:translateY(100%);transition:transform .3s cubic-bezier(.4,0,.2,1);}
     .compare-bar.show{transform:translateY(0);}
     .compare-bar-label{font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:800;color:var(--teal);white-space:nowrap;letter-spacing:1px;text-transform:uppercase;}
     .compare-bar-items{display:flex;gap:8px;flex:1;overflow:hidden;}
@@ -492,6 +492,12 @@
     .fav-empty-icon{font-size:2.5rem;margin-bottom:12px;}
     .fav-remove{display:block;text-align:center;margin-top:8px;font-size:.72rem;color:var(--text-muted);cursor:pointer;transition:color .15s;}
     .fav-remove:hover{color:#ff6b8a;}
+
+    .fav-panel-footer{padding:12px 24px 20px;border-top:1px solid var(--border);display:flex;align-items:center;gap:10px;flex-shrink:0;}
+    .fav-compare-btn{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;border:none;padding:10px 22px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;cursor:pointer;transition:opacity .2s;white-space:nowrap;}
+    .fav-compare-btn:disabled{opacity:.35;cursor:not-allowed;}
+    .fav-compare-hint{font-size:.75rem;color:#6b8fa8;}
+    .fav-compare-count{background:rgba(0,212,200,.15);color:#00d4c8;border-radius:50px;padding:2px 8px;font-size:.72rem;font-weight:700;}
   </style>
 </head>
 <body>
@@ -959,6 +965,7 @@ function updateCompareBar() {
   itemsEl.innerHTML=html;
   bar.classList.toggle('show',compareList.length>0);
   document.getElementById('openCompareBtn').disabled=compareList.length<2;
+  syncFavCompareBtn();
 }
 
 function removeFromCompare(id){
@@ -1073,6 +1080,30 @@ function openFavPanel() {
       </div>`).join('');
   }
   overlay.classList.add('show');
+  syncFavCompareBtn();
+}
+
+function syncFavCompareBtn() {
+  const btn  = document.getElementById('favCompareBtn');
+  const hint = document.getElementById('favCompareHint');
+  if (!btn) return;
+  // count how many compareList items are also in favorites
+  const cmpCount = compareList.filter(o => favorites.has(o.id)).length;
+  const total    = compareList.length;
+  btn.disabled   = total < 2;
+  if (total === 0) {
+    hint.innerHTML = 'Select 2–3 operators with <strong>＋</strong> to compare';
+  } else if (total === 1) {
+    hint.innerHTML = `<span class="fav-compare-count">${total} selected</span> — add 1 more`;
+  } else {
+    hint.innerHTML = `<span class="fav-compare-count">${total} selected</span> — ready to compare!`;
+  }
+}
+
+function compareFromFavs() {
+  if (compareList.length < 2) return;
+  closeFavPanel();
+  setTimeout(openCompareModal, 200); // small delay for panel close animation
 }
 
 function closeFavPanel() {
@@ -1517,6 +1548,10 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     <div class="fav-panel-body">
       <div class="fav-grid" id="favGrid"></div>
+    </div>
+    <div class="fav-panel-footer">
+      <button class="fav-compare-btn" id="favCompareBtn" onclick="compareFromFavs()" disabled>⚡ Compare Selected</button>
+      <span class="fav-compare-hint" id="favCompareHint">Select 2–3 operators with <strong>＋</strong> to compare</span>
     </div>
   </div>
 </div>
