@@ -104,7 +104,20 @@
     @media(max-width:480px){
       .cards-grid{grid-template-columns:1fr;}
     }
+  
+  <style>
+    .related-articles{padding:48px 20px 64px;background:linear-gradient(180deg,transparent,rgba(0,212,200,.03));}
+    .related-articles-inner{max-width:1100px;margin:0 auto;}
+    .related-articles h2{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:800;margin-bottom:20px;}
+    .related-articles h2 .teal{color:#00d4c8;}
+    .art-link-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:16px;}
+    .art-link-card{display:block;background:#0a1e35;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:20px;transition:all .2s;text-decoration:none;color:#fff;}
+    .art-link-card:hover{border-color:#00d4c8;transform:translateY(-2px);}
+    .art-link-tag{font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00d4c8;margin-bottom:8px;}
+    .art-link-title{font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:700;line-height:1.35;margin-bottom:10px;}
+    .art-link-cta{font-size:.78rem;color:#6b8fa8;display:flex;align-items:center;gap:5px;}
   </style>
+</style>
 </head>
 <body>
 <nav class="nav">

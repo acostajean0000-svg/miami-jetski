@@ -459,6 +459,39 @@
     .price-reset{background:transparent;border:none;color:var(--text-muted);font-size:.72rem;cursor:pointer;padding:2px 6px;border-radius:4px;transition:color .15s;}
     .price-reset:hover{color:var(--teal);}
     @media(max-width:640px){.price-range-wrap{min-width:120px;}.price-val{min-width:90px;font-size:.72rem;}}
+
+    /* ── SEARCH BAR ── */
+    .search-bar-wrap{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+    .search-bar{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1.5px solid var(--border);border-radius:50px;padding:9px 16px;flex:1;max-width:480px;transition:border-color .2s;}
+    .search-bar:focus-within{border-color:var(--teal);background:rgba(0,212,200,.04);}
+    .search-bar i{color:var(--text-muted);font-size:.85rem;}
+    .search-bar input{background:transparent;border:none;outline:none;color:#fff;font-family:'Inter',sans-serif;font-size:.88rem;flex:1;min-width:0;}
+    .search-bar input::placeholder{color:var(--text-muted);}
+    .search-clear{background:transparent;border:none;color:var(--text-muted);cursor:pointer;font-size:.8rem;padding:0 2px;display:none;transition:color .15s;}
+    .search-clear.show{display:block;}
+    .search-clear:hover{color:#fff;}
+    .search-hint{font-size:.75rem;color:var(--text-muted);white-space:nowrap;}
+
+    /* ── FAVORITES ── */
+    .fav-toggle{position:absolute;top:9px;left:9px;width:26px;height:26px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.82rem;transition:all .2s;z-index:3;backdrop-filter:blur(4px);}
+    .fav-toggle:hover{border-color:#ff6b8a;background:rgba(255,60,100,.15);}
+    .fav-toggle.saved{background:rgba(255,60,100,.9);border-color:#ff3c64;color:#fff;}
+    .fav-fab{position:fixed;bottom:80px;right:20px;background:linear-gradient(135deg,#ff3c64,#ff6b8a);color:#fff;border:none;border-radius:50px;padding:12px 20px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;cursor:pointer;box-shadow:0 4px 20px rgba(255,60,100,.4);z-index:1400;display:flex;align-items:center;gap:8px;transition:transform .2s,opacity .2s;opacity:0;pointer-events:none;}
+    .fav-fab.show{opacity:1;pointer-events:all;}
+    .fav-fab:hover{transform:scale(1.05);}
+    .fav-fab-count{background:rgba(255,255,255,.3);border-radius:50px;padding:2px 8px;font-size:.75rem;}
+    .fav-overlay{position:fixed;inset:0;background:rgba(0,0,0,.82);z-index:4000;display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s;}
+    .fav-overlay.show{opacity:1;pointer-events:all;}
+    .fav-panel{background:#071828;border:1px solid rgba(255,60,100,.2);border-radius:20px 20px 0 0;width:100%;max-width:960px;max-height:85vh;display:flex;flex-direction:column;}
+    .fav-panel-hdr{display:flex;justify-content:space-between;align-items:center;padding:20px 24px 16px;border-bottom:1px solid var(--border);}
+    .fav-panel-title{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:800;}
+    .fav-close{background:rgba(255,255,255,.08);border:none;color:#fff;width:32px;height:32px;border-radius:50%;cursor:pointer;font-size:1rem;}
+    .fav-panel-body{overflow-y:auto;padding:20px 24px 32px;flex:1;}
+    .fav-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;}
+    .fav-empty{text-align:center;padding:60px 20px;color:var(--text-muted);}
+    .fav-empty-icon{font-size:2.5rem;margin-bottom:12px;}
+    .fav-remove{display:block;text-align:center;margin-top:8px;font-size:.72rem;color:var(--text-muted);cursor:pointer;transition:color .15s;}
+    .fav-remove:hover{color:#ff6b8a;}
   </style>
 </head>
 <body>
@@ -520,6 +553,14 @@
 <section class="marketplace" id="operators">
   <div class="marketplace-header">
     <div class="mkt-filters">
+      <div class="search-bar-wrap">
+        <div class="search-bar">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="searchInput" placeholder="Search operators, locations…" oninput="handleSearch()" autocomplete="off">
+          <button class="search-clear" id="searchClear" onclick="clearSearch()" title="Clear search">✕</button>
+        </div>
+        <span class="search-hint" id="searchHint"></span>
+      </div>
       <div class="cat-tabs">
         <button class="cat-tab" onclick="filterCat('all',this)"><span class="cat-emoji">🌎</span><span class="cat-label">All</span><span class="cat-count">(312)</span></button>
         <button class="cat-tab active" onclick="filterCat('jetski',this)"><span class="cat-emoji">🛥️</span><span class="cat-label">Jet Ski</span><span class="cat-count">(31)</span></button>
@@ -759,10 +800,14 @@ function toggleNearMe() {
 // ---- FILTERED LIST ----
 function getFiltered() {
   let ops = allOperators.filter(op => {
-    const catOk  = activeCat === 'all' || op.cat === activeCat;
-    const zoneOk = nearMeActive || activeZone === 'all' || op.zone === activeZone;
-    const priceOk = op.price >= priceMin && (priceMax >= 1000 || op.price <= priceMax);
-    return catOk && zoneOk && priceOk;
+    const catOk    = activeCat === 'all' || op.cat === activeCat;
+    const zoneOk   = nearMeActive || activeZone === 'all' || op.zone === activeZone;
+    const priceOk  = op.price >= priceMin && (priceMax >= 1000 || op.price <= priceMax);
+    const searchOk = !searchQuery || op.name.toLowerCase().includes(searchQuery)
+                     || op.zl.toLowerCase().includes(searchQuery)
+                     || op.addr.toLowerCase().includes(searchQuery)
+                     || (catLabels[op.cat]||'').toLowerCase().includes(searchQuery);
+    return catOk && zoneOk && priceOk && searchOk;
   });
   if(nearMeActive && userLat!==null){
     ops = ops.map(op=>({...op, _dist:haversine(userLat,userLng,op.lat,op.lng)}))
@@ -782,6 +827,7 @@ function cardHTML(op) {
   const label = catLabels[op.cat] || op.cat;
   const distBadge = op._dist !== undefined ? `<span class="op-distance">📍 ${op._dist.toFixed(1)} mi</span>` : '';
   const inCmp = compareList.some(o=>o.id===op.id);
+  const isFav = favorites.has(op.id);
   return `<div class="op-card cat-${op.cat}${inCmp?' in-compare':''}" id="card-${op.id}" onclick="cardClick('${op.id}')">
     <div class="op-card-img">
       <div class="img-shimmer" id="shim-${op.id}"></div>
@@ -791,6 +837,7 @@ function cardHTML(op) {
         onerror="this.style.display='none';var s=document.getElementById('shim-${op.id}');if(s)s.remove();var f=document.getElementById('fall-${op.id}');if(f){f.style.display='flex';f.style.background='${catColors[op.cat]}33';}">
       <span class="op-cat-badge">${catLabels[op.cat]}</span>
       <span class="op-best-badge">${op.badge}</span>
+      <button class="fav-toggle${isFav?' saved':''}" id="fav-${op.id}" onclick="event.stopPropagation();toggleFav('${op.id}')" title="${isFav?'Remove from favorites':'Save to favorites'}">${isFav?'❤️':'🤍'}</button>
       <button class="compare-toggle${inCmp?' selected':''}" id="cmp-${op.id}" onclick="event.stopPropagation();toggleCompare('${op.id}')" title="Add to compare">${inCmp?'✓':'＋'}</button>
     </div>
     <div class="op-card-body">
@@ -809,7 +856,8 @@ function renderCards() {
   currentPage = 0;
   const grid = document.getElementById('cardsGrid');
   const shown = currentOps.slice(0, PAGE_SIZE);
-  document.getElementById('cardsCount').textContent = `Showing ${currentOps.length} operator${currentOps.length!==1?'s':''}`;
+  const searchSuffix = searchQuery ? ` for "${searchQuery}"` : '';
+  document.getElementById('cardsCount').textContent = `Showing ${currentOps.length} operator${currentOps.length!==1?'s':''}${searchSuffix}`;
   grid.innerHTML = shown.map(cardHTML).join('');
   updateLoadMore();
   updateMapMarkers(currentOps);
@@ -956,6 +1004,80 @@ function closeCompareModal(){
   document.getElementById('compareOverlay').classList.remove('show');
 }
 
+
+
+
+// ---- SEARCH ----
+let searchQuery = '';
+
+function handleSearch() {
+  const inp = document.getElementById('searchInput');
+  searchQuery = inp.value.trim().toLowerCase();
+  document.getElementById('searchClear').classList.toggle('show', searchQuery.length > 0);
+  const hint = document.getElementById('searchHint');
+  hint.textContent = searchQuery ? '' : '';
+  clearTimeout(_filterTimer);
+  _filterTimer = setTimeout(renderCards, 120);
+}
+
+function clearSearch() {
+  document.getElementById('searchInput').value = '';
+  searchQuery = '';
+  document.getElementById('searchClear').classList.remove('show');
+  renderCards();
+}
+
+// ---- FAVORITES ----
+let favorites = new Set(JSON.parse(localStorage.getItem('fav_ops') || '[]'));
+
+function saveFavs() {
+  localStorage.setItem('fav_ops', JSON.stringify([...favorites]));
+}
+
+function toggleFav(id) {
+  if (favorites.has(id)) {
+    favorites.delete(id);
+  } else {
+    favorites.add(id);
+  }
+  saveFavs();
+  // update card button in place
+  const btn = document.getElementById('fav-' + id);
+  if (btn) {
+    btn.classList.toggle('saved', favorites.has(id));
+    btn.textContent = favorites.has(id) ? '❤️' : '🤍';
+    btn.title = favorites.has(id) ? 'Remove from favorites' : 'Save to favorites';
+  }
+  updateFavFab();
+}
+
+function updateFavFab() {
+  const fab = document.getElementById('favFab');
+  const cnt = document.getElementById('favFabCount');
+  if (!fab) return;
+  fab.classList.toggle('show', favorites.size > 0);
+  cnt.textContent = favorites.size;
+}
+
+function openFavPanel() {
+  const overlay = document.getElementById('favOverlay');
+  const grid = document.getElementById('favGrid');
+  if (!favorites.size) {
+    grid.innerHTML = '<div class="fav-empty"><div class="fav-empty-icon">🤍</div><p>No favorites saved yet.<br>Tap the heart on any operator card.</p></div>';
+  } else {
+    const favOps = allOperators.filter(o => favorites.has(o.id));
+    grid.innerHTML = favOps.map(op => `
+      <div>
+        ${cardHTML(op)}
+        <span class="fav-remove" onclick="toggleFav('${op.id}');openFavPanel()">✕ Remove</span>
+      </div>`).join('');
+  }
+  overlay.classList.add('show');
+}
+
+function closeFavPanel() {
+  document.getElementById('favOverlay').classList.remove('show');
+}
 
 
 // ---- PRICE FILTER ----
@@ -1182,6 +1304,7 @@ document.addEventListener('DOMContentLoaded', () => {
       renderCards();
       renderDeals();
       animateCounter();
+      updateFavFab();
     })
     .catch(() => {
       document.getElementById('cardsGrid').innerHTML =
@@ -1375,6 +1498,25 @@ document.addEventListener('DOMContentLoaded', () => {
         <thead id="cmpTableHead"></thead>
         <tbody id="cmpTableBody"></tbody>
       </table>
+    </div>
+  </div>
+</div>
+
+
+<!-- ── FAVORITES FAB ── -->
+<button class="fav-fab" id="favFab" onclick="openFavPanel()">
+  ❤️ My Favorites <span class="fav-fab-count" id="favFabCount">0</span>
+</button>
+
+<!-- ── FAVORITES PANEL ── -->
+<div class="fav-overlay" id="favOverlay" onclick="if(event.target===this)closeFavPanel()">
+  <div class="fav-panel">
+    <div class="fav-panel-hdr">
+      <div class="fav-panel-title">❤️ My <span style="color:var(--teal)">Favorites</span></div>
+      <button class="fav-close" onclick="closeFavPanel()">✕</button>
+    </div>
+    <div class="fav-panel-body">
+      <div class="fav-grid" id="favGrid"></div>
     </div>
   </div>
 </div>
