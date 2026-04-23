@@ -897,7 +897,7 @@ function cardHTML(op) {
         <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$${op.price.toLocaleString()}</div></div>
         <a href="${op.link}" target="_blank" rel="noopener" class="op-book" onclick="event.stopPropagation();trackBookNow('${op.name}',${op.price})">Book Now <i class="fa-solid fa-arrow-right"></i></a>
       </div>
-      <a href="/${OP_SLUG_MAP[op.id]||''}" class="op-detail-link" onclick="event.stopPropagation()">Ver detalle <i class="fa-solid fa-chevron-right"></i></a>
+      <a href="/${OP_SLUG_MAP[op.id]||''}" class="op-detail-link" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
     </div>
   </div>`;
 }
