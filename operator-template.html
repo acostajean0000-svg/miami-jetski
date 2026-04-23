@@ -1,7 +1,165 @@
-{
-  "cleanUrls": true,
-  "trailingSlash": false,
-  "rewrites": [
-    { "source": "/operators/(.*)", "destination": "/operator-template.html" }
-  ]
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Loading… | Florida Water Sports</title>
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#040d1a;color:#e8f4fd;min-height:100vh}
+    a{color:inherit;text-decoration:none}
+    nav{background:#040d1a;border-bottom:1px solid rgba(0,210,255,.15);padding:0 20px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;height:56px}
+    .nav-logo{font-size:1rem;font-weight:700;color:#00d2ff}.nav-logo span{color:#e8f4fd}
+    .nav-back{margin-left:auto;font-size:.85rem;color:#00d2ff;background:rgba(0,210,255,.08);border:1px solid rgba(0,210,255,.2);border-radius:8px;padding:6px 14px}
+    .bc{padding:14px 20px;font-size:.78rem;color:#7ba3c0;max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:6px}
+    .bc a{color:#00d2ff}.sep{opacity:.4}
+    #main{max-width:1100px;margin:0 auto;padding:0 20px 40px}
+    .hero-photo{width:100%;height:320px;object-fit:cover;border-radius:16px;background:#0a1929;display:block}
+    .hero-wrap{position:relative;margin-bottom:24px}
+    .hero-badge{position:absolute;top:16px;left:16px;background:rgba(0,0,0,.7);border:1px solid rgba(0,210,255,.3);border-radius:20px;padding:5px 14px;font-size:.8rem;font-weight:600;color:#00d2ff}
+    h1{font-size:clamp(1.4rem,4vw,2rem);font-weight:800;margin-bottom:12px}
+    .chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+    .chip{background:rgba(0,210,255,.08);border:1px solid rgba(0,210,255,.15);border-radius:20px;padding:6px 14px;font-size:.82rem;color:#a8d4f0}
+    .chip.price{background:rgba(0,210,255,.15);border-color:rgba(0,210,255,.35);color:#00d2ff;font-weight:700;font-size:.95rem}
+    .book-btn{display:block;width:100%;max-width:480px;background:linear-gradient(135deg,#00d2ff,#0099cc);color:#040d1a;font-weight:800;font-size:1.1rem;text-align:center;padding:16px 24px;border-radius:14px;margin:0 auto 40px;box-shadow:0 4px 20px rgba(0,210,255,.3)}
+    .stitle{font-size:1.1rem;font-weight:700;color:#00d2ff;margin-bottom:14px}
+    .dg{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:40px}
+    .dc{background:rgba(255,255,255,.04);border:1px solid rgba(0,210,255,.1);border-radius:12px;padding:16px 18px}
+    .dl{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#7ba3c0;margin-bottom:6px}
+    .dv{font-size:.95rem;font-weight:600}
+    .map-wrap{border-radius:14px;overflow:hidden;margin-bottom:40px;border:1px solid rgba(0,210,255,.15)}
+    .map-wrap iframe{width:100%;height:320px;border:0;display:block}
+    .rg{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:50px}
+    .rc{background:rgba(255,255,255,.04);border:1px solid rgba(0,210,255,.1);border-radius:14px;overflow:hidden;display:block;transition:.2s}
+    .rc:hover{border-color:rgba(0,210,255,.35);transform:translateY(-3px)}
+    .rp{height:130px;background-size:cover;background-position:center;background-color:#0a1929}
+    .ri{padding:12px 14px}
+    .rn{font-size:.88rem;font-weight:700;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+    .rm{font-size:.75rem;color:#7ba3c0;margin-bottom:6px}
+    .rpr{font-size:.82rem;font-weight:700;color:#00d2ff}
+    .sk{background:linear-gradient(90deg,rgba(0,210,255,.05) 0%,rgba(0,210,255,.12) 50%,rgba(0,210,255,.05) 100%);background-size:200% 100%;animation:sk 1.5s infinite;border-radius:12px}
+    @keyframes sk{0%{background-position:200% 0}100%{background-position:-200% 0}}
+    .err{text-align:center;padding:80px 20px;color:#7ba3c0}
+    .err h2{font-size:1.5rem;margin-bottom:12px;color:#e8f4fd}
+    .err a{color:#00d2ff;text-decoration:underline}
+    footer{background:#020810;border-top:1px solid rgba(0,210,255,.1);padding:28px 20px;text-align:center;color:#4a7a9b;font-size:.82rem}
+    footer a{color:#00d2ff}
+    @media(max-width:600px){.hero-photo{height:220px}.map-wrap iframe{height:240px}}
+  </style>
+</head>
+<body>
+<nav>
+  <a href="/" class="nav-logo">💧 Florida<span>WaterSports</span></a>
+  <a href="/" class="nav-back">← All operators</a>
+</nav>
+<div id="bc" class="bc"><a href="/">Home</a><span class="sep">›</span><span>Loading…</span></div>
+<div id="main">
+  <div class="sk" style="height:320px;border-radius:16px;margin-bottom:24px"></div>
+  <div class="sk" style="height:36px;width:70%;margin-bottom:16px"></div>
+  <div style="display:flex;gap:10px;margin-bottom:28px">
+    <div class="sk" style="height:34px;width:110px;border-radius:20px"></div>
+    <div class="sk" style="height:34px;width:110px;border-radius:20px"></div>
+  </div>
+  <div class="sk" style="height:56px;max-width:480px;margin:0 auto 40px;display:block"></div>
+</div>
+<footer><p>© 2025 <a href="/">FloridaWaterSports</a> · 312 operators across Florida</p></footer>
+
+<script>
+const REV_SLUG = {"aquafusion-combo-jet-ski-party-boat-miami": "js1", "jetski-rental-north-miami-beach-miami": "js2", "one-hour-jet-ski-rental-miami": "js3", "jetski-rentals-south-beach-miami": "js4", "305-tours-rentals-miami": "js5", "package-deal-boat-jet-ski-atv-miami": "js6", "jetcar-1-hour-drive-a-car-on-water-miami": "js7", "jet-ski-rentals-miami-watersports-miami": "js8", "jet-ski-rentals-coconut-grove-miami": "js9", "miami-style-rentals-jet-ski-tour-miami": "js10", "1-hour-jet-ski-rental-hollywood-beach-broward": "js11", "jet-ski-rental-falcons-hollywood-broward": "js12", "bimini-island-day-trip-by-fast-ferry-broward": "js13", "jetski-rental-fort-lauderdale-broward": "js14", "jet-ski-rental-pompano-beach-broward": "js15", "ocean-jet-ski-rentals-pompano-broward": "js16", "key-largo-jet-ski-rentals-keys": "js17", "tropic-water-sports-key-largo-keys": "js18", "jetski-rentals-marathon-best-price-keys": "js19", "grassy-key-marina-daily-jet-ski-keys": "js20", "marathon-jet-ski-rentals-wakezone-keys": "js21", "six-fins-key-west-2-hr-flagship-jet-ski-tour-keys": "js22", "its-jet-ski-time-naples-gulf": "js23", "sunset-ski-watersports-gulf": "js24", "island-ski-rentals-gulf": "js25", "aquaholic-charters-gulf": "js26", "splash-n-dash-jet-ski-rental-gulf": "js27", "jp-jet-ski-rental-gulf": "js28", "sf-jet-ski-rentals-miami": "js29", "bruschi-boat-rental-miami": "bt1", "bruschi-boat-rental-small-boat-miami": "bt2", "altamar-trade-miami-river-miami": "bt3", "100-miami-luxury-boat-miami": "bt4", "100-miami-premium-charter-miami": "bt5", "aura-yacht-experience-miami": "bt6", "100-miami-nw-21st-mega-yacht-miami": "bt7", "horizon-yacht-rentals-miami": "bt8", "100-miami-bayshore-miami": "bt9", "100-miami-collins-ave-miami": "bt10", "the-real-yacht-experience-miami": "bt11", "the-real-yacht-experience-ii-miami": "bt12", "ocean-force-adventures-private-miami": "bt13", "ocean-force-adventures-marina-miami": "bt14", "aquarius-boat-rental-boating-lesson-miami": "bt15", "100-pro-boats-hollywood-broward": "bt16", "bluefoot-pirates-broward": "bt17", "sun-boat-rental-broward": "bt18", "dania-beach-adventures-broward": "bt19", "byob-party-pontoon-broward": "bt20", "baymingo-broward": "bt21", "fort-lauderdale-boat-rentals-broward": "bt22", "altamar-trade-fort-lauderdale-broward": "bt23", "100-pro-boats-fort-lauderdale-broward": "bt24", "blue-h2o-cruisers-broward": "bt25", "fort-lauderdale-boat-rental-with-captain-broward": "bt26", "everglades-holiday-park-everglades": "bt27", "flamingo-everglades-everglades": "bt28", "key-largo-adventures-keys": "bt29", "islamorada-boat-rentals-keys": "bt30", "rumaway-lifestyle-keys": "bt31", "wakezone-watersports-keys": "bt32", "aqua-boat-rentals-keys": "bt33", "nothing-better-boat-rentals-keys": "bt34", "boat-rentals-in-key-west-keys": "bt35", "island-vibe-charters-keys": "bt36", "sail-away-key-west-keys": "bt37", "coastal-key-west-charters-keys": "bt38", "adventures-on-water-keys": "bt39", "best-sandbar-tours-keys": "bt40", "spencers-boatyard-keys": "bt41", "barefoot-billys-kw-keys": "bt42", "sea-monkey-charters-keys": "bt43", "visit-palm-beach-palmbeach": "bt44", "florida-island-tours-gulf": "bt45", "kokomo-charters-gulf": "bt46", "beach-bums-boat-rentals-gulf": "bt47", "pg-boat-rental-gulf": "bt48", "island-time-florida-charters-gulf": "bt49", "crystens-gulf": "bt50", "tv-boat-rentals-westfl": "bt51", "chadillac-adventures-westfl": "bt52", "father-daughter-charters-gulf": "bt53", "lake-harris-boat-rentals-central": "bt54", "island-time-marina-space": "bt55", "daytona-beach-dolphin-tours-northeast": "bt56", "l-fish-fishing-charter-keys": "fi1", "atlantic-gulf-fishing-charters-keys": "fi2", "key-west-fishing-charters-keys": "fi3", "reel-floridian-fishing-broward": "fi4", "south-florida-fishing-key-largo-charter-keys": "fi9", "book-key-largo-fishing-charter-keys": "fi8", "miss-penny-day-fishing-charter-keys": "fi7", "adventures-key-west-fishing-charter-keys": "fi6", "dirty-dolly-fish-company-space": "fi5", "paddle-hobie-sail-club-windsurfing-miami": "ws1", "padl-bike-rentals-virginia-key-miami": "ws2", "key-west-sailing-center-keys": "ws3", "the-wakeboard-coach-central": "ws4", "crystal-river-preserve-adventures-westfl": "ws5", "see-crystal-river-westfl": "ws6", "miami-style-rentals-slingshot-miami": "sl1", "727-slingshots-westfl": "sl2", "miami-style-rentals-biscayne-miami": "sl3", "tgif-rides-slingshot-broward": "sl4", "south-florida-slingshot-rentals-palmbeach": "sl5", "big-shot-slingshot-gulf": "sl6", "wakezone-watersports-jet-car-keys": "jc1", "get-wet-fl-jet-car-westfl": "jc2", "top-line-watersports-jet-car-miami": "jc3", "adventure-watersports-jet-car-gulf": "jc4", "aqua-voyage-jet-cars-gulf": "jc5", "slingshot-jet-ski-rentals-jet-car-broward": "jc6", "flamingo-yacht-charters-jet-car-broward": "jc7", "jet-ski-miami-rentals-jet-car-miami": "jc8", "slinki-motors-jet-car-miami": "jc9", "sf-jet-ski-rentals-jet-car-miami": "jc10", "miami-team-party-golf-cart-miami": "gc1", "golf-cart-rental-key-west-keys": "gc2", "paradise-rentals-kw-golf-cart-keys": "gc3", "conch-carts-golf-cart-keys": "gc4", "fl-keys-food-tour-golf-cart-keys": "gc5", "wynwood-art-walk-golf-cart-miami-miami": "gc6", "wynwood-art-walk-golf-cart-fort-lauderdale-broward": "gc7", "good-vibes-island-rides-golf-cart-gulf": "gc8", "key-west-fishing-charters-ii-keys": "bt57", "six-fins-charter-clothing-optional-keys": "bt58", "marco-island-boat-charters-gulf": "bt59", "sea-rocket-fort-lauderdale-broward": "bt60", "keys-huka-dive-nokomis-gulf": "bt61", "island-boat-adventures-westfl": "bt62", "pontiki-jupiter-palmbeach": "bt63", "walks-nyc-boat-tour-miami-miami": "bt64", "miami-tour-company-everglades-miami": "bt65", "florida-adventures-dolphin-tour-gulf": "bt66", "miami-aqua-tours-miami": "bt67", "robin-hood-anna-maria-gulf": "bt68", "the-pink-pelican-tiki-westfl": "bt69", "open-miami-private-everglades-tour-miami": "bt70", "six-fins-charter-private-boat-tour-key-west-keys": "bt70b", "six-fins-charter-boat-tour-key-west-ii-keys": "bt71", "six-fins-charter-boat-tour-key-west-iii-keys": "bt72", "sea-rocket-fort-lauderdale-boat-tour-broward": "bt73", "six-fins-charter-boat-tour-key-west-iv-keys": "bt74", "destin-private-yachts-luxury-charter-westfl": "bt75", "cypress-cay-pontoon-12-passengers-fort-myers-gulf": "bt85", "florida-adventures-marco-island-boat-rental-gulf": "bt84", "punta-gorda-tiki-tiki-boat-cruise-gulf": "bt83", "boat-charter-fl-st-petersburg-gulf": "bt82", "100-miami-luxury-boat-rental-miami": "bt81", "kokomo-charters-sarasota-boat-tour-gulf": "bt80", "sunset-sail-key-west-luxury-charter-keys": "bt79", "sunset-sail-key-west-private-charter-keys": "bt78", "heron-harbor-private-yacht-charter-westfl": "bt77", "destin-private-yachts-premium-charter-westfl": "bt76", "florida-adventures-kayak-tour-gulf": "ws7", "florida-adventures-kayak-rental-gulf": "ws8", "visit-palm-beach-snorkel-palmbeach": "ws9", "sunset-scooter-rentals-broward": "ws10", "florida-adventures-kayak-rental-naples-gulf": "ws11", "florida-adventures-paddle-tour-naples-gulf": "ws12", "six-fins-charter-snorkel-tour-key-west-keys": "ws13", "get-up-go-kayaking-crystal-river-springs-gulf": "ws14", "get-up-go-kayaking-jupiter-inlet-lighthouse-palmbeach": "ws15", "finz-dive-center-2-tank-private-dive-keys": "ws18", "gulf-coast-kayak-sirenia-vista-park-ii-gulf": "ws17", "gulf-coast-kayak-sirenia-vista-park-gulf": "ws16", "yak-shack-mangrove-tour-gulf": "ws19", "sea-daddys-3hr-adventure-diving-crystal-river-gulf": "ws22", "xela-expeditions-night-shark-drift-snorkel-palmbeach": "ws21", "yak-shack-kayak-rentals-emerson-point-gulf": "ws20", "wynwood-buggies-miami": "at1", "atv-of-miami-miami": "at2", "top-line-watersports-atv-miami": "at3", "miami-atv-rentals-miami": "at4", "side-x-side-st-pete-westfl": "at5", "showdown-atv-rentals-central": "at6", "captain-steves-swamp-buggy-everglades": "at7", "travel-to-key-west-bus-tour-miami": "to1", "travel-to-key-west-ii-miami": "to2", "chicago-liaison-tours-south-beach-miami": "to3", "key-west-day-tours-broward": "to4", "xcursions-usa-everglades-tour-miami": "to5", "duck-tours-south-beach-miami": "to6", "miami-beach-welcome-center-tour-broward": "to7", "system-shuttle-key-west-miami": "to8", "underground-donut-tour-wynwood-miami": "to9", "south-florida-trikke-tours-miami": "to10", "up-the-keys-aquarium-encounters-day-tour-keys": "to24", "makers-air-private-charter-fort-lauderdale-broward": "to23", "sky-tours-miami-premium-aerial-experience-miami": "to25", "sky-tours-miami-south-beach-private-airplane-tour-miami": "to22", "fly-key-west-helicopter-discovery-flight-keys": "to21", "sky-tours-miami-night-lights-airplane-tour-miami": "to20", "sky-tours-miami-private-airplane-luxury-tour-miami": "to19", "your-jamaican-tour-guide-secret-falls-tour-space": "to18", "your-jamaican-tour-guide-nine-mile-dunns-river-space": "to17", "your-jamaican-tour-guide-mayfield-falls-space": "to16", "zoom-air-zipline-daytona-beach-nefl": "to15", "stroke-of-art-wheel-throwing-pottery-centralfl": "to14", "ghosts-of-palm-beach-ghost-tour-palmbeach": "to13", "beach-sand-sculptures-artisan-experience-westfl": "to12", "sky-tours-miami-aerial-miami": "to11", "florida-adventures-rentals-goodland-tour-gulf": "to24b", "florida-adventures-rentals-eco-experience-gulf": "to26", "florida-adventures-rentals-wildlife-tour-gulf": "to27", "helicopter-aerial-tour-tampa-bay-westfl": "ae1", "wekiwa-springs-kayak-canoe-centralfl": "ws23", "three-brothers-boards-daytona-nefl": "ws24", "tampa-riverwalk-rentals-westfl": "ws25", "aquasport-miami-flyboard-miami": "ws26", "aquasport-miami-premium-miami": "ws27", "venture-outdoors-llc-centralfl": "ws28", "the-key-rides-keys": "br1", "south-florida-trikke-tours-miami-br2": "br2", "south-florida-trikke-tours-premium-miami": "br3", "seaside-bicycle-rentals-palmbeach": "br4", "ez-raider-fort-lauderdale-broward": "br5", "fun-rentals-st-augustine-nefl": "br6", "sandsurfer-e-skate-tours-nefl": "br7", "unlimited-biking-miami-beach-highlights-miami": "br8", "south-florida-trikke-tours-boat-tour-miami": "to28", "wild-gator-airboat-adventures-centralfl": "to29", "us2u-miami-beach-city-tour-miami": "to30", "the-french-company-orlando-centralfl": "to31", "us2u-miami-beach-tour-miami": "to32", "spirit-of-the-swamp-centralfl": "to33", "south-florida-trikke-tours-premium-boat-miami": "to34", "sea-serpent-tours-st-augustine-nefl": "to35", "sea-serpent-tours-river-nefl": "to36", "miami-beach-welcome-center-tour-miami": "to37", "raised-by-water-airboat-adventures-centralfl": "to38", "river-safaris-homosassa-westfl": "to39", "monkey-island-adventures-westfl": "to40", "kachunga-lake-panasoffkee-westfl": "to41", "monkey-island-adventures-marina-westfl": "to42", "speakeasy-murder-mystery-dinner-show-centralfl": "to43", "pirates-dinner-adventure-orlando-centralfl": "to44", "mertailors-mermaid-aquarium-encounter-westfl": "to45", "tpa-shuttles-mco-to-tampa-centralfl": "to46", "space-shuttle-excursions-lighthouse-tour-space": "to47", "the-panda-tours-st-augustine-nefl": "to48", "rhum-runner-the-lagoon-at-grassy-key-keys": "to49", "showdown-atv-rentals-centralfl": "at8", "wild-lime-adventures-miami": "at9", "x-terrains-ohv-adventures-centralfl": "at10", "thrill-trek-adventures-tallahassee-westfl": "at11", "side-x-side-st-pete-westfl-at12": "at12", "tampa-atv-rentals-westfl": "at13", "revolution-offroad-clermont-centralfl": "at14", "orlando-atv-polk-city-centralfl": "at15", "forrests-motorsports-rentals-westfl": "at16", "luxe-atv-rentals-nefl": "at17", "forrests-motorsports-trail-ride-westfl": "at18", "golf-cart-rental-key-west-keys-gc9": "gc9", "tropical-mokes-white-moke-rental-westfl": "gc10", "town-golf-carts-port-st-joe-westfl": "gc11", "suncoast-biplanes-westfl": "ae2", "eagles-air-tours-miami-miami": "ae3", "jones-air-sea-centralfl": "ae4", "jones-air-sea-premium-centralfl": "ae5", "destin-helicopters-westfl": "ae6", "orlando-helicopter-adventures-centralfl": "ae7", "destin-helicopters-premium-westfl": "ae8", "sunsplash-jetski-rentals-gulf": "js30", "epic-hotel-boat-jet-ski-combo-miami": "js31", "aquarius-boat-rental-miami-beach-miami": "bt86", "ho2-pensacola-beach-westfl": "ws29", "dockside-watersports-destin-westfl": "ws30", "st-andrews-adventures-panama-city-westfl": "ws31", "amelia-island-adventures-nefl": "ws32", "weeki-wachee-springs-state-park-westfl": "ws33", "aoa-fun-poe-springs-kayak-nefl": "ws34", "chadillac-adventures-cove-cay-westfl": "ws35", "blackwater-joes-canoes-westfl": "ws36", "glow-boats-kayaking-bradenton-westfl": "ws37", "parasailing-miami-water-sports-miami": "ws38", "sf-jet-ski-3-hour-watersport-excursion-miami": "ws39", "aoa-fun-poe-springs-tube-nefl": "ws40", "sunset-watersports-key-west-keys": "ws41", "soflo-water-adventures-miami": "ws42", "north-miami-divers-2-tank-dive-miami": "ws43", "bobbys-bike-hike-miami-beach-food-tour-miami": "br9", "south-florida-trikke-tours-luxury-miami": "br10", "south-florida-trikke-art-deco-segway-miami": "br11", "soflo-water-adventures-e-bike-airboat-miami": "br12", "escape-cocoa-beach-space": "to50", "big-tiki-tours-fort-myers-beach-gulf": "to51", "everglades-holiday-park-broward": "to52", "hubbards-marina-madeira-beach-westfl": "to53", "hubbards-marina-deep-sea-westfl": "to54", "gulf-islands-ferry-bradenton-westfl": "to55", "the-pelican-llc-st-petersburg-westfl": "to56", "wynwood-art-walk-miami-miami": "to57", "wandering-palm-adventures-orlando-centralfl": "to58", "flamingo-everglades-miami": "to59", "everglades-florida-adventures-gulf": "to60", "tart-tales-key-west-keys": "to61", "st-augustine-land-sea-tours-nefl": "to62", "old-city-carriages-st-augustine-nefl": "to63", "carriage-tours-events-private-nefl": "to64", "carriage-tours-events-romantic-nefl": "to65", "carriage-tours-events-classic-nefl": "to66", "miami-party-boats-miami": "to67", "us2u-key-west-day-trip-miami": "to68", "miami-aqua-tours-nite-sea-party-cruise-miami": "to69", "us2u-key-west-dolphin-spotting-boat-miami": "to70", "us2u-everglades-tour-broward": "to71", "hunk-o-mania-male-revue-miami-beach-miami": "to72", "miami-aqua-tours-boat-tour-combo-miami": "to73", "wynwood-graffiti-experience-miami": "to74", "miami-aqua-tours-pirate-boat-cruise-miami": "to75", "miami-aqua-tours-biscayne-bay-miami": "to76"};
+
+const CAT_LABELS={jetski:'Jet Ski Rental',boat:'Boat Rental',slingshot:'Slingshot Rental',watersports:'Water Sports',tour:'Tour',fishing:'Fishing Charter',jetcar:'Jet Car Rental',atv:'ATV Rental',golfcart:'Golf Cart Rental',aerial:'Aerial Tour',bikerental:'Bike Rental'};
+const CAT_PAGE={jetski:'/jet-ski-rentals-florida.html',boat:'/boat-rentals-florida.html',slingshot:'/slingshot-rentals-florida.html',watersports:'/water-sports-florida.html',tour:'/tours-florida.html',fishing:'/fishing-charters-florida.html',jetcar:'/jet-car-rentals-florida.html',atv:'/atv-rentals-florida.html',golfcart:'/golf-cart-rentals-florida.html',aerial:'/tours-florida.html',bikerental:'/water-sports-florida.html'};
+const ZONE_LABELS={miami:'Miami Beach',broward:'Fort Lauderdale / Broward',keys:'Florida Keys',palmbeach:'Palm Beach',gulf:'Gulf Coast',centralfl:'Central Florida',everglades:'Everglades',westfl:'West Florida',central:'Central Florida',space:'Space Coast',nefl:'Northeast Florida',northeast:'Northeast Florida'};
+const ZONE_PAGE={miami:'/miami-water-sports.html',broward:'/fort-lauderdale-water-sports.html',keys:'/florida-keys-water-sports.html',palmbeach:'/palm-beach-water-sports.html',gulf:'/gulf-coast-water-sports.html',centralfl:'/central-florida-water-sports.html',everglades:'/everglades-tours-rentals.html',westfl:'/west-florida-water-sports.html',central:'/central-florida-water-sports.html',space:'/space-coast-water-sports.html',nefl:'/northeast-florida-water-sports.html',northeast:'/northeast-florida-water-sports.html'};
+
+function getSlug(){
+  const p=new URLSearchParams(window.location.search);
+  if(p.get('slug'))return p.get('slug');
+  const parts=window.location.pathname.split('/').filter(Boolean);
+  return(parts[parts.length-1]||'').replace(/\.html$/,'');
 }
+
+function setMeta(n,c){let e=document.querySelector('meta[name="'+n+'"]');if(!e){e=document.createElement('meta');e.name=n;document.head.appendChild(e);}e.content=c;}
+function setOG(p,c){let e=document.querySelector('meta[property="'+p+'"]');if(!e){e=document.createElement('meta');e.setAttribute('property',p);document.head.appendChild(e);}e.content=c;}
+function setLD(s){const t=document.createElement('script');t.type='application/ld+json';t.textContent=JSON.stringify(s);document.head.appendChild(t);}
+function setCanonical(u){let e=document.querySelector('link[rel="canonical"]');if(!e){e=document.createElement('link');e.rel='canonical';document.head.appendChild(e);}e.href=u;}
+
+function render404(){
+  document.getElementById('main').innerHTML='<div class="err"><h2>Operator not found</h2><p>This operator may have moved or been removed.</p><p style="margin-top:16px"><a href="/">← View all 312 operators</a></p></div>';
+  document.getElementById('bc').innerHTML='<a href="/">Home</a><span class="sep">›</span><span>Not found</span>';
+}
+
+function renderPage(op, allOps){
+  const catLabel=CAT_LABELS[op.cat]||op.cat;
+  const zoneLabel=ZONE_LABELS[op.zone]||op.zl||op.zone;
+  const catPage=CAT_PAGE[op.cat]||'/';
+  const zonePage=ZONE_PAGE[op.zone]||'/';
+  const slug=REV_SLUG[op.id]||'';
+  const url='https://miamijetskiboatrentals.com/operators/'+slug;
+
+  document.title=op.name+' | '+catLabel+' in '+zoneLabel+' | Florida Water Sports';
+  setMeta('description','Book '+op.name+' — '+catLabel+' in '+zoneLabel+', Florida. Starting at $'+op.price+'/hr. '+op.addr+'.');
+  setCanonical(url);
+  setOG('og:title',op.name+' | '+catLabel+' in '+zoneLabel);
+  setOG('og:description','Book '+op.name+' in '+zoneLabel+'. From $'+op.price+'/hr.');
+  setOG('og:url',url);
+  setOG('og:image','https://miamijetskiboatrentals.com/og-image.png');
+  setMeta('twitter:card','summary_large_image');
+  setMeta('twitter:image','https://miamijetskiboatrentals.com/og-image.png');
+
+  setLD({"@context":"https://schema.org","@type":"LocalBusiness","name":op.name,"description":catLabel+" in "+zoneLabel+", Florida. Starting at $"+op.price+" per hour.","address":{"@type":"PostalAddress","streetAddress":op.addr,"addressRegion":"FL","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":op.lat,"longitude":op.lng},"url":url,"priceRange":"From $"+op.price,"image":op.photo});
+  setLD({"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://miamijetskiboatrentals.com/"},{"@type":"ListItem","position":2,"name":catLabel,"item":"https://miamijetskiboatrentals.com"+catPage},{"@type":"ListItem","position":3,"name":op.name,"item":url}]});
+
+  document.getElementById('bc').innerHTML='<a href="/">Home</a><span class="sep">›</span><a href="'+catPage+'">'+catLabel+'</a><span class="sep">›</span><span>'+op.name+'</span>';
+
+  const related=allOps.filter(o=>o.id!==op.id&&o.cat===op.cat&&o.zone===op.zone).slice(0,4);
+  const rel2=related.length<2?allOps.filter(o=>o.id!==op.id&&o.cat===op.cat).slice(0,4):related;
+  const relHTML=rel2.map(r=>{
+    const rs=REV_SLUG[r.id]||'';
+    return '<a href="/operators/'+rs+'" class="rc"><div class="rp" style="background-image:url(''+r.photo+'')"></div><div class="ri"><div class="rn">'+r.name+'</div><div class="rm">'+(CAT_LABELS[r.cat]||r.cat)+' · '+(ZONE_LABELS[r.zone]||r.zl||'')+'</div><div class="rpr">From $'+r.price+'/hr</div></div></a>';
+  }).join('');
+
+  document.getElementById('main').innerHTML=`
+    <div class="hero-wrap">
+      <img class="hero-photo" src="${op.photo}" alt="${op.name}" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80'">
+      ${op.badge?'<span class="hero-badge">'+op.badge+'</span>':''}
+    </div>
+    <h1>${op.name}</h1>
+    <div class="chips">
+      <span class="chip price">From $${op.price}/hr</span>
+      <span class="chip">${zoneLabel}</span>
+      <span class="chip">${catLabel}</span>
+    </div>
+    <a href="${op.link}" target="_blank" rel="noopener" class="book-btn">🏄 Book Now — From $${op.price}/hr</a>
+    <p class="stitle">📋 Details</p>
+    <div class="dg">
+      <div class="dc"><div class="dl">Address</div><div class="dv">${op.addr}</div></div>
+      <div class="dc"><div class="dl">Category</div><div class="dv">${catLabel}</div></div>
+      <div class="dc"><div class="dl">Zone</div><div class="dv">${zoneLabel}</div></div>
+      <div class="dc"><div class="dl">Starting Price</div><div class="dv">$${op.price} / hour</div></div>
+    </div>
+    <p class="stitle">📍 Location</p>
+    <div class="map-wrap">
+      <iframe src="https://maps.google.com/maps?q=${op.lat},${op.lng}&z=15&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    ${rel2.length?'<p class="stitle">🌊 Similar '+catLabel+'s Nearby</p><div class="rg">'+relHTML+'</div>':''}
+    <p style="margin-top:20px;text-align:center"><a href="${catPage}" style="color:#00d2ff;text-decoration:underline">← All ${catLabel}s in Florida</a></p>
+  `;
+}
+
+(function(){
+  const slug=getSlug();
+  const opId=REV_SLUG[slug];
+  if(!opId){render404();return;}
+  fetch('/operators.json')
+    .then(r=>r.json())
+    .then(ops=>{
+      const op=ops.find(o=>o.id===opId);
+      if(op)renderPage(op,ops);
+      else render404();
+    })
+    .catch(()=>render404());
+})();
+</script>
+</body>
+</html>
