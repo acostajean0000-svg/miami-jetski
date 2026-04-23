@@ -95,7 +95,7 @@ function renderPage(op, allOps){
   const catPage=CAT_PAGE[op.cat]||'/';
   const zonePage=ZONE_PAGE[op.zone]||'/';
   const slug=REV_SLUG[op.id]||'';
-  const url='https://miamijetskiboatrentals.com/operators/'+slug;
+  const url='https://miamijetskiboatrentals.com/'+slug;
 
   document.title=op.name+' | '+catLabel+' in '+zoneLabel+' | Florida Water Sports';
   setMeta('description','Book '+op.name+' — '+catLabel+' in '+zoneLabel+', Florida. Starting at $'+op.price+'/hr. '+op.addr+'.');
@@ -116,7 +116,7 @@ function renderPage(op, allOps){
   const rel2=related.length<2?allOps.filter(o=>o.id!==op.id&&o.cat===op.cat).slice(0,4):related;
   const relHTML=rel2.map(r=>{
     const rs=REV_SLUG[r.id]||'';
-    return '<a href="/operators/'+rs+'" class="rc"><div class="rp" style="background-image:url(''+r.photo+'')"></div><div class="ri"><div class="rn">'+r.name+'</div><div class="rm">'+(CAT_LABELS[r.cat]||r.cat)+' · '+(ZONE_LABELS[r.zone]||r.zl||'')+'</div><div class="rpr">From $'+r.price+'/hr</div></div></a>';
+    return '<a href="/'+rs+'" class="rc"><div class="rp" style="background-image:url(''+r.photo+'')"></div><div class="ri"><div class="rn">'+r.name+'</div><div class="rm">'+(CAT_LABELS[r.cat]||r.cat)+' · '+(ZONE_LABELS[r.zone]||r.zl||'')+'</div><div class="rpr">From $'+r.price+'/hr</div></div></a>';
   }).join('');
 
   document.getElementById('main').innerHTML=`
