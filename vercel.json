@@ -1,7 +1,10 @@
 {
   "cleanUrls": true,
   "trailingSlash": false,
+  "redirects": [
+    { "source": "/operators/:slug", "destination": "/:slug", "permanent": true }
+  ],
   "rewrites": [
-    { "source": "/operators/(.*)", "destination": "/operator-template.html" }
+    { "source": "/(.*)", "destination": "/operator-template.html" }
   ]
 }
