@@ -2,6 +2,6 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "rewrites": [
-    { "source": "/operators/:slug", "destination": "/operator-template" }
+    { "source": "/operators/:slug", "destination": "/operator-template.html" }
   ]
 }
