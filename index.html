@@ -90,16 +90,19 @@
     .marketplace-header{position:sticky;top:68px;z-index:600;background:var(--dark2);border-bottom:1px solid var(--border);padding:12px 16px;}
     .mkt-filters{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
     /* CAT TABS — desktop pill style */
+    /* ── CATEGORY TABS — teal/cyan ── */
     .cat-tabs{display:flex;gap:8px;flex-wrap:wrap;}
-    .cat-tab{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:50px;border:1.5px solid var(--border);background:transparent;color:var(--text-muted);font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;}
+    .cat-tab{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:50px;border:1.5px solid rgba(0,212,200,.25);background:rgba(0,212,200,.06);color:#7ecfcc;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;}
     .cat-tab .cat-emoji{font-size:.9rem;line-height:1;}
     .cat-tab .cat-label{display:inline;}
     .cat-tab .cat-count{opacity:.6;font-size:.72rem;}
-    .cat-tab:hover,.cat-tab.active{background:var(--teal-glow);border-color:var(--teal);color:var(--teal);}
-    /* ZONE TABS */
+    .cat-tab:hover{background:rgba(0,212,200,.14);border-color:rgba(0,212,200,.5);color:#00eedd;}
+    .cat-tab.active{background:linear-gradient(135deg,rgba(0,212,200,.25),rgba(0,238,221,.15));border-color:var(--teal);color:var(--teal2);box-shadow:0 2px 10px rgba(0,212,200,.2);}
+    /* ── ZONE TABS — orange/gold ── */
     .zone-tabs{display:flex;gap:6px;flex-wrap:wrap;}
-    .zone-tab{padding:6px 14px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--text-muted);font-family:'Montserrat',sans-serif;font-size:.73rem;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;}
-    .zone-tab:hover,.zone-tab.active{background:rgba(0,100,200,.15);border-color:#0066cc;color:#4da6ff;}
+    .zone-tab{padding:6px 14px;border-radius:50px;border:1.5px solid rgba(245,160,50,.25);background:rgba(245,160,50,.06);color:#c89040;font-family:'Montserrat',sans-serif;font-size:.73rem;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;}
+    .zone-tab:hover{background:rgba(245,160,50,.14);border-color:rgba(245,160,50,.5);color:#f5a832;}
+    .zone-tab.active{background:linear-gradient(135deg,rgba(245,160,50,.28),rgba(245,200,66,.15));border-color:#f5a832;color:#f5c842;box-shadow:0 2px 10px rgba(245,160,50,.2);}
 
     /* SPLIT BODY */
     .marketplace-body{display:flex;align-items:flex-start;}
@@ -253,14 +256,14 @@
       .mkt-filters{gap:0;}
       .cat-tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:0;padding:10px 12px 8px;border-bottom:1px solid var(--border);}
       .cat-tabs::-webkit-scrollbar{display:none;}
-      .cat-tab{flex-direction:column;align-items:center;gap:5px;padding:10px 12px 8px;border-radius:14px;border:2px solid transparent;background:rgba(255,255,255,.04);min-width:68px;flex-shrink:0;}
+      .cat-tab{flex-direction:column;align-items:center;gap:5px;padding:10px 12px 8px;border-radius:14px;border:2px solid rgba(0,212,200,.15);background:rgba(0,212,200,.05);min-width:68px;flex-shrink:0;}
       .cat-tab .cat-emoji{font-size:1.55rem;line-height:1;}
-      .cat-tab .cat-label{font-size:.63rem;font-weight:700;letter-spacing:.3px;color:var(--text-muted);text-align:center;line-height:1.2;}
-      .cat-tab .cat-count{font-size:.6rem;font-weight:600;opacity:.55;}
-      .cat-tab.active{background:var(--teal-glow);border-color:var(--teal);}
-      .cat-tab.active .cat-label{color:var(--teal);}
-      .cat-tab.active .cat-count{opacity:.8;color:var(--teal);}
-      .cat-tab:hover:not(.active){background:rgba(255,255,255,.07);}
+      .cat-tab .cat-label{font-size:.63rem;font-weight:700;letter-spacing:.3px;color:#7ecfcc;text-align:center;line-height:1.2;}
+      .cat-tab .cat-count{font-size:.6rem;font-weight:600;opacity:.55;color:#7ecfcc;}
+      .cat-tab.active{background:rgba(0,212,200,.18);border-color:var(--teal);}
+      .cat-tab.active .cat-label{color:var(--teal2);}
+      .cat-tab.active .cat-count{opacity:.8;color:var(--teal2);}
+      .cat-tab:hover:not(.active){background:rgba(0,212,200,.1);}
 
       /* ── ZONE TABS → colorful chips ── */
       .zone-tabs{
@@ -278,15 +281,15 @@
         font-size:.72rem;
         font-weight:700;
         border-radius:50px;
-        background:rgba(255,255,255,.05);
-        border:1.5px solid rgba(255,255,255,.1);
-        color:rgba(255,255,255,.55);
+        background:rgba(245,160,50,.07);
+        border:1.5px solid rgba(245,160,50,.2);
+        color:#c89040;
       }
       .zone-tab.active{
-        background:linear-gradient(135deg,#0047ab,#0066cc);
-        border-color:#0066cc;
-        color:#fff;
-        box-shadow:0 2px 12px rgba(0,100,204,.4);
+        background:linear-gradient(135deg,rgba(245,160,50,.3),rgba(245,200,66,.2));
+        border-color:#f5a832;
+        color:#f5c842;
+        box-shadow:0 2px 12px rgba(245,160,50,.3);
       }
 
       /* Map & Cards */
