@@ -36,11 +36,17 @@
   <!-- Vercel Analytics (enable in Vercel dashboard first) -->
   <!-- <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script> -->
   <!-- <script defer src="/_vercel/insights/script.js"></script> -->
+  <!-- Fonts — non-blocking -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
-  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap"></noscript>
+  <!-- Font Awesome — non-blocking -->
+  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  <!-- Leaflet — non-blocking, lazy init via IntersectionObserver -->
+  <link rel="preload" as="style" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
   <style>
     :root{--dark:#081525;--dark2:#0d1e35;--dark3:#112340;--card-bg:#0f2038;--card-hover:#132846;--border:#1c3a58;--teal:#00d4c8;--teal2:#00eedd;--teal-dark:#009e99;--teal-glow:rgba(0,212,200,0.15);--white:#ffffff;--text-muted:#7a9eba;--text-light:#c4ddf0;--star:#ffd700;--radius:12px;--shadow:0 8px 32px rgba(0,0,0,0.4);}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
@@ -855,17 +861,19 @@ function thumbUrl(url) {
   return url;
 }
 
+let _cardIndex = 0; // reset each renderCards call
 function cardHTML(op) {
   const emoji = catEmoji[op.cat] || '🌊';
   const label = catLabels[op.cat] || op.cat;
   const distBadge = op._dist !== undefined ? `<span class="op-distance">📍 ${op._dist.toFixed(1)} mi</span>` : '';
   const inCmp = compareList.some(o=>o.id===op.id);
   const isFav = favorites.has(op.id);
+  const imgLoad = _cardIndex++ < 8 ? '' : 'loading="lazy"';
   return `<div class="op-card cat-${op.cat}${inCmp?' in-compare':''}" id="card-${op.id}" onclick="cardClick('${op.id}')">
     <div class="op-card-img">
       <div class="img-shimmer" id="shim-${op.id}"></div>
       <div class="img-fallback" id="fall-${op.id}" style="display:none"><div>${emoji}</div><span>${label}</span></div>
-      <img src="${thumbUrl(op.photo)}" alt="${op.name}" 
+      <img src="${thumbUrl(op.photo)}" alt="${op.name}" ${imgLoad}
         onload="this.classList.add('loaded');var s=document.getElementById('shim-${op.id}');if(s)s.remove();"
         onerror="this.style.display='none';var s=document.getElementById('shim-${op.id}');if(s)s.remove();var f=document.getElementById('fall-${op.id}');if(f){f.style.display='flex';f.style.background='${catColors[op.cat]}33';}">
       <span class="op-cat-badge">${catLabels[op.cat]}</span>
@@ -898,6 +906,7 @@ let currentPage = 0;
 function renderCards() {
   currentOps = getFiltered();
   currentPage = 0;
+  _cardIndex = 0;
   const grid = document.getElementById('cardsGrid');
   const searchSuffix = searchQuery ? ` for "${searchQuery}"` : '';
   document.getElementById('cardsCount').textContent = `Showing ${currentOps.length} operator${currentOps.length!==1?'s':''}${searchSuffix}`;
@@ -1489,6 +1498,30 @@ if(!localStorage.getItem('cookie_consent')) {
   setTimeout(() => document.getElementById('cookieBar').classList.add('show'), 2000);
 }
 
+// ---- LEAFLET LAZY LOAD ----
+let leafletLoaded = false;
+function loadLeafletThenMap() {
+  if (leafletLoaded) return;
+  leafletLoaded = true;
+  const s = document.createElement('script');
+  s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  s.onload = () => { if (allOperators.length) initMap(); };
+  document.head.appendChild(s);
+}
+// Init map only when map panel is scrolled into view
+if ('IntersectionObserver' in window) {
+  const mapEl = document.getElementById('jetski-map');
+  if (mapEl) {
+    new IntersectionObserver((entries, obs) => {
+      if (entries[0].isIntersecting) { loadLeafletThenMap(); obs.disconnect(); }
+    }, {rootMargin:'200px'}).observe(mapEl);
+  }
+} else {
+  window.addEventListener('scroll', function onScroll() {
+    loadLeafletThenMap(); window.removeEventListener('scroll', onScroll);
+  }, {once:true});
+}
+
 // ---- INIT (fetch operators.json) ----
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('cardsGrid').innerHTML =
@@ -1497,7 +1530,7 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
     .then(data => {
       allOperators = data;
-      initMap();
+      // Map init is handled by IntersectionObserver above
       if (window._preloadSearch) {
         const inp = document.getElementById('searchInput');
         if (inp) { inp.value = window._preloadSearch; searchQuery = window._preloadSearch.toLowerCase(); document.getElementById('searchClear').classList.add('show'); }
