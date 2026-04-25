@@ -840,6 +840,18 @@ function getFiltered() {
 let currentOps = [];
 
 const catEmoji = {jetski:'🏄',boat:'⛵',fishing:'🎣',watersports:'🌊',slingshot:'🏎️',jetcar:'🚗',golfcart:'🛺',atv:'🏍️',tour:'🗺️',aerial:'✈️',bikerental:'🚲'};
+
+// Downsize Filestack images to card thumbnail width (400px) — reduces file size ~85%
+function thumbUrl(url) {
+  if (!url) return url;
+  if (url.includes('cdn.filestackcontent.com')) {
+    return url
+      .replace(/resize=width:\d+/, 'resize=width:400')
+      .replace(/quality=value:\d+/, 'quality=value:70');
+  }
+  return url;
+}
+
 function cardHTML(op) {
   const emoji = catEmoji[op.cat] || '🌊';
   const label = catLabels[op.cat] || op.cat;
@@ -850,7 +862,7 @@ function cardHTML(op) {
     <div class="op-card-img">
       <div class="img-shimmer" id="shim-${op.id}"></div>
       <div class="img-fallback" id="fall-${op.id}" style="display:none"><div>${emoji}</div><span>${label}</span></div>
-      <img src="${op.photo}" alt="${op.name}" 
+      <img src="${thumbUrl(op.photo)}" alt="${op.name}" 
         onload="this.classList.add('loaded');var s=document.getElementById('shim-${op.id}');if(s)s.remove();"
         onerror="this.style.display='none';var s=document.getElementById('shim-${op.id}');if(s)s.remove();var f=document.getElementById('fall-${op.id}');if(f){f.style.display='flex';f.style.background='${catColors[op.cat]}33';}">
       <span class="op-cat-badge">${catLabels[op.cat]}</span>
@@ -1060,7 +1072,7 @@ function favCardHTML(op) {
   const inCmp = compareList.some(o => o.id === op.id);
   const emoji = catEmoji[op.cat] || '🌊';
   const thumb = op.photo
-    ? `<img src="${op.photo}" alt="${op.name}"  onerror="this.style.display='none'">`
+    ? `<img src="${thumbUrl(op.photo)}" alt="${op.name}"  onerror="this.style.display='none'">`
     : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:2rem;color:var(--teal)">${emoji}</div>`;
   return `<div class="fav-op-card" id="fav-card-${op.id}">
     <div class="fav-op-thumb">${thumb}</div>
@@ -1261,7 +1273,7 @@ function renderDeals() {
   if (!grid) return;
   grid.innerHTML = sorted.map(op => `
     <a href="${op.link}" target="_blank" rel="noopener" class="deal-card">
-      <div class="deal-img"><img src="${op.photo}" alt="${op.name}"  onerror="this.style.display='none'"></div>
+      <div class="deal-img"><img src="${thumbUrl(op.photo)}" alt="${op.name}"  onerror="this.style.display='none'"></div>
       <div class="deal-body">
         <div class="deal-name">${op.name}</div>
         <div class="deal-zone">📍 ${op.zl}</div>
