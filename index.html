@@ -90,6 +90,12 @@
     .marketplace-header{position:sticky;top:68px;z-index:600;background:var(--dark2);border-bottom:1px solid var(--border);padding:12px 16px;}
     .mkt-filters{max-width:1400px;margin:0 auto;display:flex;flex-direction:column;gap:10px;}
     /* CAT TABS — desktop pill style */
+    .cat-tabs{display:flex;gap:8px;flex-wrap:wrap;}
+    .cat-tab{display:inline-flex;align-items:center;gap:6px;padding:8px 18px;border-radius:50px;border:1.5px solid var(--border);background:transparent;color:var(--text-muted);font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;}
+    .cat-tab .cat-emoji{font-size:.9rem;line-height:1;}
+    .cat-tab .cat-label{display:inline;}
+    .cat-tab .cat-count{opacity:.6;font-size:.72rem;}
+    .cat-tab:hover,.cat-tab.active{background:var(--teal-glow);border-color:var(--teal);color:var(--teal);}
     /* ZONE TABS */
     .zone-tabs{display:flex;gap:6px;flex-wrap:wrap;}
     .zone-tab{padding:6px 14px;border-radius:50px;border:1px solid var(--border);background:transparent;color:var(--text-muted);font-family:'Montserrat',sans-serif;font-size:.73rem;font-weight:600;cursor:pointer;transition:all .2s;white-space:nowrap;}
@@ -245,6 +251,16 @@
       /* ── CATEGORY TABS → icon cards carousel ── */
       .marketplace-header{padding:10px 0 0;top:60px;}
       .mkt-filters{gap:0;}
+      .cat-tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;gap:0;padding:10px 12px 8px;border-bottom:1px solid var(--border);}
+      .cat-tabs::-webkit-scrollbar{display:none;}
+      .cat-tab{flex-direction:column;align-items:center;gap:5px;padding:10px 12px 8px;border-radius:14px;border:2px solid transparent;background:rgba(255,255,255,.04);min-width:68px;flex-shrink:0;}
+      .cat-tab .cat-emoji{font-size:1.55rem;line-height:1;}
+      .cat-tab .cat-label{font-size:.63rem;font-weight:700;letter-spacing:.3px;color:var(--text-muted);text-align:center;line-height:1.2;}
+      .cat-tab .cat-count{font-size:.6rem;font-weight:600;opacity:.55;}
+      .cat-tab.active{background:var(--teal-glow);border-color:var(--teal);}
+      .cat-tab.active .cat-label{color:var(--teal);}
+      .cat-tab.active .cat-count{opacity:.8;color:var(--teal);}
+      .cat-tab:hover:not(.active){background:rgba(255,255,255,.07);}
 
       /* ── ZONE TABS → colorful chips ── */
       .zone-tabs{
@@ -562,6 +578,20 @@
         </div>
         <span class="search-hint" id="searchHint"></span>
       </div>
+      <div class="cat-tabs">
+        <button class="cat-tab active" onclick="filterCat('all',this)"><span class="cat-emoji">🌎</span><span class="cat-label">All</span><span class="cat-count">(318)</span></button>
+        <button class="cat-tab" onclick="filterCat('jetski',this)"><span class="cat-emoji">🛥️</span><span class="cat-label">Jet Ski</span><span class="cat-count">(33)</span></button>
+        <button class="cat-tab" onclick="filterCat('boat',this)"><span class="cat-emoji">⛵</span><span class="cat-label">Boats &amp; Yachts</span><span class="cat-count">(88)</span></button>
+        <button class="cat-tab" onclick="filterCat('fishing',this)"><span class="cat-emoji">🎣</span><span class="cat-label">Fishing</span><span class="cat-count">(10)</span></button>
+        <button class="cat-tab" onclick="filterCat('watersports',this)"><span class="cat-emoji">🏄</span><span class="cat-label">Water Sports</span><span class="cat-count">(45)</span></button>
+        <button class="cat-tab" onclick="filterCat('slingshot',this)"><span class="cat-emoji">🏎️</span><span class="cat-label">Slingshot</span><span class="cat-count">(6)</span></button>
+        <button class="cat-tab" onclick="filterCat('jetcar',this)"><span class="cat-emoji">🚗</span><span class="cat-label">Jet Cars</span><span class="cat-count">(10)</span></button>
+        <button class="cat-tab" onclick="filterCat('golfcart',this)"><span class="cat-emoji">🛺</span><span class="cat-label">Golf Carts</span><span class="cat-count">(11)</span></button>
+        <button class="cat-tab" onclick="filterCat('atv',this)"><span class="cat-emoji">🏍️</span><span class="cat-label">ATV &amp; Buggies</span><span class="cat-count">(18)</span></button>
+        <button class="cat-tab" onclick="filterCat('tour',this)"><span class="cat-emoji">🚌</span><span class="cat-label">Tours</span><span class="cat-count">(69)</span></button>
+        <button class="cat-tab" onclick="filterCat('aerial',this)"><span class="cat-emoji">✈️</span><span class="cat-label">Aerial &amp; Fly</span><span class="cat-count">(16)</span></button>
+        <button class="cat-tab" onclick="filterCat('bikerental',this)"><span class="cat-emoji">🚲</span><span class="cat-label">Bike &amp; E-Ride</span><span class="cat-count">(12)</span></button>
+      </div>
       <div class="zone-tabs">
         <button class="zone-tab active" data-zone="all" onclick="filterZone('all',this)">🗺️ All Florida</button>
         <button class="zone-tab" onclick="filterZone('miami',this)">🏖️ Miami</button>
@@ -859,6 +889,13 @@ function renderCards() {
 
 // ---- FILTER FUNCTIONS ----
 let _filterTimer = null;
+function filterCat(cat, btn) {
+  activeCat = cat;
+  document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  clearTimeout(_filterTimer);
+  _filterTimer = setTimeout(renderCards, 80);
+}
 function filterZone(zone, btn) {
   activeZone = zone;
   if(nearMeActive){ nearMeActive=false; userLat=userLng=null; const nb=document.getElementById('nearMeBtn'); if(nb){nb.classList.remove('active');nb.innerHTML='📍 Near Me';} }
