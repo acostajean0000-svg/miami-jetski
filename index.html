@@ -531,6 +531,41 @@
     .op-detail-link{display:block;text-align:center;padding:8px 0 2px;font-size:.75rem;font-weight:600;color:#00d2ff;letter-spacing:.04em;border-top:1px solid rgba(0,210,255,.1);margin-top:10px;transition:.2s;text-decoration:none;}
     .op-detail-link:hover{color:#fff;background:rgba(0,210,255,.06);}
     .op-detail-link i{font-size:.65rem;margin-left:3px;}
+
+    /* ── Quick View Modal ── */
+    #qvOverlay{position:fixed;inset:0;z-index:3000;background:rgba(4,13,26,.75);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:flex-end;justify-content:center;opacity:0;pointer-events:none;transition:opacity .25s ease;}
+    #qvOverlay.show{opacity:1;pointer-events:auto;}
+    #qvModal{width:100%;max-width:540px;max-height:92dvh;overflow-y:auto;background:var(--card-bg);border-radius:22px 22px 0 0;border:1px solid var(--border);border-bottom:none;transform:translateY(100%);transition:transform .32s cubic-bezier(.32,0,.15,1);overscroll-behavior:contain;}
+    #qvOverlay.show #qvModal{transform:translateY(0);}
+    @media(min-width:640px){
+      #qvOverlay{align-items:center;}
+      #qvModal{border-radius:18px;border:1px solid var(--border);transform:scale(.94);opacity:0;transition:transform .25s ease,opacity .25s ease;max-height:88vh;}
+      #qvOverlay.show #qvModal{transform:scale(1);opacity:1;}
+    }
+    .qv-drag-bar{width:40px;height:4px;border-radius:4px;background:var(--border);margin:10px auto 0;cursor:grab;}
+    .qv-img-wrap{position:relative;height:220px;overflow:hidden;flex-shrink:0;}
+    .qv-img-wrap img{width:100%;height:100%;object-fit:cover;display:block;}
+    .qv-img-gradient{position:absolute;inset:0;background:linear-gradient(to top,rgba(8,21,37,.85) 0%,transparent 55%);}
+    .qv-close{position:absolute;top:12px;right:12px;width:34px;height:34px;border-radius:50%;background:rgba(0,0,0,.55);border:none;color:#fff;font-size:1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);z-index:2;}
+    .qv-cat-badge{position:absolute;top:12px;left:12px;padding:3px 10px;border-radius:20px;font-size:.65rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;z-index:2;}
+    .qv-price-overlay{position:absolute;bottom:12px;left:14px;z-index:2;}
+    .qv-price-from{font-size:.65rem;color:rgba(255,255,255,.7);text-transform:uppercase;letter-spacing:.5px;}
+    .qv-price-num{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:#fff;line-height:1;}
+    .qv-body{padding:18px 18px 24px;}
+    .qv-name{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;line-height:1.3;margin-bottom:5px;}
+    .qv-addr{font-size:.78rem;color:var(--text-muted);margin-bottom:14px;}
+    .qv-actions{display:flex;gap:10px;margin-bottom:16px;}
+    .qv-btn-fav,.qv-btn-cmp,.qv-btn-shr{flex:1;height:40px;border-radius:10px;border:1.5px solid var(--border);background:transparent;color:var(--text-light);font-size:.78rem;font-weight:600;cursor:pointer;transition:all .2s;display:flex;align-items:center;justify-content:center;gap:5px;}
+    .qv-btn-fav:hover{border-color:#ff6b8a;background:rgba(255,60,100,.12);color:#ff6b8a;}
+    .qv-btn-fav.saved{background:rgba(220,40,80,.9);border-color:#ff3c64;color:#fff;}
+    .qv-btn-cmp:hover{border-color:var(--teal);background:rgba(0,212,200,.12);color:var(--teal);}
+    .qv-btn-cmp.selected{background:var(--teal);border-color:var(--teal);color:#040d1a;}
+    .qv-btn-shr:hover{border-color:var(--teal);background:rgba(0,212,200,.1);color:var(--teal);}
+    .qv-book{display:block;text-align:center;padding:14px;border-radius:12px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:#081525;font-family:'Montserrat',sans-serif;font-size:.9rem;font-weight:800;text-decoration:none;margin-bottom:10px;transition:opacity .2s;}
+    .qv-book:hover{opacity:.9;}
+    .qv-detail{display:block;text-align:center;font-size:.78rem;color:var(--text-muted);text-decoration:none;padding:6px;transition:color .2s;}
+    .qv-detail:hover{color:var(--teal);}
+    .qv-no-photo{height:220px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,var(--dark2),var(--dark3));}
   </style>
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -1446,16 +1481,8 @@ function initMap() {
     const color = catColors[op.cat] || '#00d4c8';
     const catInitials = {jetski:'JS', boat:'⛵', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', jetcar:'🚗', golfcart:'🛺', atv:'🏍️'}[op.cat] || '●';
     const marker = L.marker([op.lat, op.lng], {icon: makeIcon(color, catInitials)});
-    marker.bindPopup(`
-      <div class="map-popup">
-        <div class="map-popup-cat" style="color:${color}">${catLabels[op.cat].toUpperCase()} · ${op.zl}</div>
-        <div class="map-popup-name">${op.name}</div>
-        <div class="map-popup-addr"><i class="fa-solid fa-location-dot"></i> ${op.addr}</div>
-        <div class="map-popup-price">From $${op.price.toLocaleString()}</div>
-        <a href="${op.link}" target="_blank" rel="noopener" class="map-popup-btn">Book Now →</a>
-      </div>
-    `, {maxWidth:260, className:'custom-popup'});
-    marker.on('click', () => scrollToCard(op.id));
+    marker.bindTooltip(`<b>${op.name}</b><br><span style="color:${color};font-size:.72rem">${catLabels[op.cat]}</span> · From $${op.price.toLocaleString()}`, {direction:'top', offset:[0,-10], className:'qv-tooltip'});
+    marker.on('click', () => openQuickView(op.id));
     markers[op.id] = marker;
   });
 }
@@ -1804,6 +1831,174 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
   </div>
 </div>
+
+<!-- ── Quick View Modal ── -->
+<div id="qvOverlay" role="dialog" aria-modal="true" aria-label="Operator quick view" onclick="if(event.target===this)closeQV()">
+  <div id="qvModal">
+    <div class="qv-drag-bar"></div>
+    <div id="qvImgWrap" class="qv-img-wrap">
+      <img id="qvPhoto" src="" alt="" loading="lazy">
+      <div class="qv-img-gradient"></div>
+      <button class="qv-close" onclick="closeQV()" aria-label="Close">✕</button>
+      <span id="qvCatBadge" class="qv-cat-badge"></span>
+      <div class="qv-price-overlay">
+        <div class="qv-price-from">From</div>
+        <div class="qv-price-num" id="qvPrice"></div>
+      </div>
+    </div>
+    <div id="qvNoPhoto" class="qv-no-photo" style="display:none">
+      <button class="qv-close" onclick="closeQV()" aria-label="Close" style="position:absolute;top:12px;right:12px">✕</button>
+      <span id="qvEmoji" style="filter:drop-shadow(0 4px 12px rgba(0,0,0,.4))"></span>
+    </div>
+    <div class="qv-body">
+      <div class="qv-name" id="qvName"></div>
+      <div class="qv-addr" id="qvAddr"></div>
+      <div class="qv-actions">
+        <button class="qv-btn-fav" id="qvFavBtn" onclick="qvToggleFav()">🤍 Save</button>
+        <button class="qv-btn-cmp" id="qvCmpBtn" onclick="qvToggleCmp()">＋ Compare</button>
+        <button class="qv-btn-shr" id="qvShrBtn" onclick="qvShare()">🔗 Share</button>
+      </div>
+      <a class="qv-book" id="qvBookBtn" href="#" target="_blank" rel="noopener">Book Now →</a>
+      <a class="qv-detail" id="qvDetailLink" href="#">View full details →</a>
+    </div>
+  </div>
+</div>
+
+<script>
+// ── Quick View Modal ──────────────────────────────────────────
+var _qvOpId = null;
+var _qvFavs = new Set(JSON.parse(localStorage.getItem('fav_ops')||'[]'));
+
+function openQuickView(opId) {
+  var op = (allOperators||[]).find(function(o){return o.id===opId;});
+  if(!op) return;
+  _qvOpId = opId;
+
+  var color = catColors[op.cat]||'#00d4c8';
+  var label = catLabels[op.cat]||op.cat;
+  var emoji = ({jetski:'🏄',boat:'⛵',fishing:'🎣',watersports:'🌊',slingshot:'🏎️',jetcar:'🚗',golfcart:'🛺',atv:'🏍️',tour:'🗺️',aerial:'✈️',bikerental:'🚲'})[op.cat]||'🌊';
+  var price = op.price ? '$'+op.price.toLocaleString() : 'See site';
+  var slug = (typeof OP_SLUG_MAP!=='undefined'&&OP_SLUG_MAP[op.id]) ? '/'+OP_SLUG_MAP[op.id]+'.html' : '/?q='+encodeURIComponent(op.name);
+  var thumb = (typeof thumbUrl==='function') ? thumbUrl(op.photo) : op.photo;
+
+  // Photo or emoji fallback
+  var imgWrap = document.getElementById('qvImgWrap');
+  var noPhoto = document.getElementById('qvNoPhoto');
+  if(thumb) {
+    imgWrap.style.display='block';
+    noPhoto.style.display='none';
+    var img = document.getElementById('qvPhoto');
+    img.src = thumb;
+    img.alt = op.name;
+  } else {
+    imgWrap.style.display='none';
+    noPhoto.style.display='flex';
+    document.getElementById('qvEmoji').textContent = emoji;
+    noPhoto.style.background = 'linear-gradient(135deg,'+color+'22,'+color+'11)';
+  }
+
+  // Category badge
+  var badge = document.getElementById('qvCatBadge');
+  badge.textContent = label;
+  badge.style.background = color+'22';
+  badge.style.color = color;
+  badge.style.border = '1px solid '+color+'44';
+
+  // Text fields
+  document.getElementById('qvPrice').textContent = price;
+  document.getElementById('qvName').textContent = op.name;
+  document.getElementById('qvAddr').textContent = '📍 '+(op.zl||op.addr||'Florida');
+
+  // Buttons
+  var isFav = _qvFavs.has(opId);
+  var favBtn = document.getElementById('qvFavBtn');
+  favBtn.innerHTML = isFav ? '❤️ Saved' : '🤍 Save';
+  favBtn.classList.toggle('saved', isFav);
+
+  var inCmp = (typeof compareList!=='undefined') && compareList.some(function(o){return o.id===opId;});
+  var cmpBtn = document.getElementById('qvCmpBtn');
+  cmpBtn.innerHTML = inCmp ? '✓ Added' : '＋ Compare';
+  cmpBtn.classList.toggle('selected', inCmp);
+
+  // Links
+  document.getElementById('qvBookBtn').href = op.link||'#';
+  document.getElementById('qvDetailLink').href = slug;
+
+  // Store for action buttons
+  document.getElementById('qvShrBtn').dataset.url = op.link||window.location.href;
+  document.getElementById('qvShrBtn').dataset.name = op.name;
+
+  // Show
+  var overlay = document.getElementById('qvOverlay');
+  overlay.classList.add('show');
+  document.body.style.overflow = 'hidden';
+  document.getElementById('qvModal').scrollTop = 0;
+
+  // Escape key
+  document.addEventListener('keydown', _qvEscHandler);
+}
+
+function closeQV() {
+  document.getElementById('qvOverlay').classList.remove('show');
+  document.body.style.overflow = '';
+  document.removeEventListener('keydown', _qvEscHandler);
+  _qvOpId = null;
+}
+
+function _qvEscHandler(e){ if(e.key==='Escape') closeQV(); }
+
+function qvToggleFav() {
+  if(!_qvOpId) return;
+  var btn = document.getElementById('qvFavBtn');
+  if(_qvFavs.has(_qvOpId)){
+    _qvFavs.delete(_qvOpId);
+    btn.innerHTML = '🤍 Save';
+    btn.classList.remove('saved');
+  } else {
+    _qvFavs.add(_qvOpId);
+    btn.innerHTML = '❤️ Saved';
+    btn.classList.add('saved');
+  }
+  localStorage.setItem('fav_ops', JSON.stringify([..._qvFavs]));
+  // Sync with card fav button if visible
+  var cardBtn = document.querySelector('.fav-toggle[data-id="'+_qvOpId+'"]');
+  if(cardBtn) {
+    cardBtn.textContent = _qvFavs.has(_qvOpId) ? '❤️' : '🤍';
+    cardBtn.classList.toggle('saved', _qvFavs.has(_qvOpId));
+  }
+}
+
+function qvToggleCmp() {
+  if(!_qvOpId || typeof toggleCompare!=='function') return;
+  var op = (allOperators||[]).find(function(o){return o.id===_qvOpId;});
+  if(!op) return;
+  toggleCompare(_qvOpId, op.name);
+  var inCmp = compareList.some(function(o){return o.id===_qvOpId;});
+  var btn = document.getElementById('qvCmpBtn');
+  btn.innerHTML = inCmp ? '✓ Added' : '＋ Compare';
+  btn.classList.toggle('selected', inCmp);
+}
+
+function qvShare() {
+  var btn = document.getElementById('qvShrBtn');
+  var url = btn.dataset.url || window.location.href;
+  var name = btn.dataset.name || '';
+  if(navigator.share){
+    navigator.share({title:name, url:url}).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(url).then(function(){
+      var orig = btn.innerHTML;
+      btn.innerHTML = '✓ Copied!';
+      setTimeout(function(){ btn.innerHTML = orig; }, 2000);
+    }).catch(function(){});
+  }
+}
+
+// Leaflet tooltip style
+var qvTooltipStyle = document.createElement('style');
+qvTooltipStyle.textContent = '.qv-tooltip{background:var(--card-bg)!important;border:1px solid var(--border)!important;color:var(--white)!important;border-radius:8px!important;padding:6px 10px!important;font-size:.78rem!important;box-shadow:0 4px 16px rgba(0,0,0,.4)!important;}.qv-tooltip::before{border-top-color:var(--border)!important;}';
+document.head.appendChild(qvTooltipStyle);
+</script>
 
 </body>
 </html>
