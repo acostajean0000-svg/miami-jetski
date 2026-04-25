@@ -36,7 +36,9 @@
   <!-- Vercel Analytics (enable in Vercel dashboard first) -->
   <!-- <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script> -->
   <!-- <script defer src="/_vercel/insights/script.js"></script> -->
-  <!-- Fonts — non-blocking -->
+  <!-- LCP image — preload before JSON fetch so it's cached when card renders -->
+  <link rel="preload" as="image" href="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/fYlRXu6pQ9yVGrTINaKj" fetchpriority="high">
+  <!-- Fonts — non-blocking (preload+onload pattern, noscript fallback only) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://cdn.filestackcontent.com">
@@ -865,16 +867,26 @@ const catEmoji = {jetski:'🏄',boat:'⛵',fishing:'🎣',watersports:'🌊',sli
 function thumbUrl(url) {
   if (!url) return url;
   if (url.includes('cdn.filestackcontent.com')) {
-    // Strip any existing transform chain and apply compact one
+    const base = 'https://cdn.filestackcontent.com/';
+    const rest = url.slice(base.length);
+    const transforms = 'rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/';
+    // Query-style: HANDLE/convert?...  → rebuild as path-style
+    if (rest.includes('/convert?') || rest.includes('/convert ')) {
+      const handle = rest.split('/')[0];
+      if (/^[A-Za-z0-9]{10,30}$/.test(handle)) return base + transforms + handle;
+    }
+    // Handle-only: bare alphanumeric handle (no slashes, no transforms)
+    if (/^[A-Za-z0-9]{10,30}$/.test(rest.split('?')[0])) {
+      return base + transforms + rest.split('?')[0];
+    }
+    // Path-style: replace existing resize/quality values
     return url
       .replace(/resize=width:\d+/, 'resize=width:360')
       .replace(/quality=value:\d+/, 'quality=value:60');
   }
-  // For Cloudinary: force width 360, auto quality, auto format
   if (url.includes('res.cloudinary.com')) {
     return url.replace(/\/upload\//, '/upload/w_360,q_auto,f_auto/');
   }
-  // For FareHarbor/other: pass through (can't transform)
   return url;
 }
 
@@ -885,7 +897,8 @@ function cardHTML(op) {
   const distBadge = op._dist !== undefined ? `<span class="op-distance">📍 ${op._dist.toFixed(1)} mi</span>` : '';
   const inCmp = compareList.some(o=>o.id===op.id);
   const isFav = favorites.has(op.id);
-  const imgLoad = _cardIndex++ < 2 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"';
+  const ci = _cardIndex++;
+const imgLoad = ci === 0 ? 'fetchpriority="high"' : ci === 1 ? 'loading="eager"' : 'loading="lazy" decoding="async"';
   return `<div class="op-card cat-${op.cat}${inCmp?' in-compare':''}" id="card-${op.id}" onclick="cardClick('${op.id}')">
     <div class="op-card-img">
       <div class="img-shimmer" id="shim-${op.id}"></div>
