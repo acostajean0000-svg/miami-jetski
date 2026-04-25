@@ -37,12 +37,18 @@
   <!-- <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script> -->
   <!-- <script defer src="/_vercel/insights/script.js"></script> -->
   <!-- Fonts — non-blocking -->
+  <link rel="preload" href="/operators.json" as="fetch" crossorigin>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap"></noscript>
-  <!-- Font Awesome — non-blocking -->
-  <link rel="preload" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preconnect" href="https://cdn.filestackcontent.com" crossorigin>
+  <link rel="preconnect" href="https://res.cloudinary.com" crossorigin>
+  <link rel="preconnect" href="https://fareharbor.com" crossorigin>
+  <link rel="dns-prefetch" href="https://storage.googleapis.com">
+  <link rel="dns-prefetch" href="https://images.unsplash.com">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=optional" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=optional"></noscript>
+  <!-- Font Awesome — loaded after paint to avoid blocking -->
+  <script>window.addEventListener('load',function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css';document.head.appendChild(l);});</script>
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
   <!-- Leaflet — non-blocking, lazy init via IntersectionObserver -->
   <link rel="preload" as="style" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -864,10 +870,16 @@ const catEmoji = {jetski:'🏄',boat:'⛵',fishing:'🎣',watersports:'🌊',sli
 function thumbUrl(url) {
   if (!url) return url;
   if (url.includes('cdn.filestackcontent.com')) {
+    // Strip any existing transform chain and apply compact one
     return url
-      .replace(/resize=width:\d+/, 'resize=width:400')
-      .replace(/quality=value:\d+/, 'quality=value:70');
+      .replace(/resize=width:\d+/, 'resize=width:360')
+      .replace(/quality=value:\d+/, 'quality=value:60');
   }
+  // For Cloudinary: force width 360, auto quality, auto format
+  if (url.includes('res.cloudinary.com')) {
+    return url.replace(/\/upload\//, '/upload/w_360,q_auto,f_auto/');
+  }
+  // For FareHarbor/other: pass through (can't transform)
   return url;
 }
 
@@ -878,12 +890,12 @@ function cardHTML(op) {
   const distBadge = op._dist !== undefined ? `<span class="op-distance">📍 ${op._dist.toFixed(1)} mi</span>` : '';
   const inCmp = compareList.some(o=>o.id===op.id);
   const isFav = favorites.has(op.id);
-  const imgLoad = _cardIndex++ < 8 ? '' : 'loading="lazy"';
+  const imgLoad = _cardIndex++ < 2 ? 'fetchpriority="high"' : 'loading="lazy" decoding="async"';
   return `<div class="op-card cat-${op.cat}${inCmp?' in-compare':''}" id="card-${op.id}" onclick="cardClick('${op.id}')">
     <div class="op-card-img">
       <div class="img-shimmer" id="shim-${op.id}"></div>
       <div class="img-fallback" id="fall-${op.id}" style="display:none"><div>${emoji}</div><span>${label}</span></div>
-      <img src="${thumbUrl(op.photo)}" alt="${op.name}" ${imgLoad}
+      <img src="${thumbUrl(op.photo)}" alt="${op.name}" width="400" height="267" ${imgLoad}
         onload="this.classList.add('loaded');var s=document.getElementById('shim-${op.id}');if(s)s.remove();"
         onerror="this.style.display='none';var s=document.getElementById('shim-${op.id}');if(s)s.remove();var f=document.getElementById('fall-${op.id}');if(f){f.style.display='flex';f.style.background='${catColors[op.cat]}33';}">
       <span class="op-cat-badge">${catLabels[op.cat]}</span>
@@ -910,7 +922,7 @@ function cardHTML(op) {
   </div>`;
 }
 
-const PAGE_SIZE = 24;
+const PAGE_SIZE = 12;
 let currentPage = 0;
 
 function renderCards() {
@@ -919,10 +931,14 @@ function renderCards() {
   _cardIndex = 0;
   const grid = document.getElementById('cardsGrid');
   const searchSuffix = searchQuery ? ` for "${searchQuery}"` : '';
-  document.getElementById('cardsCount').textContent = `Showing ${currentOps.length} operator${currentOps.length!==1?'s':''}${searchSuffix}`;
-  grid.innerHTML = currentOps.slice(0, PAGE_SIZE).map(cardHTML).join('');
+  // Batch all DOM writes together — avoids forced reflow
+  const html = currentOps.slice(0, PAGE_SIZE).map(cardHTML).join('');
+  const count = `Showing ${currentOps.length} operator${currentOps.length!==1?'s':''}${searchSuffix}`;
+  document.getElementById('cardsCount').textContent = count;
+  grid.innerHTML = html;
   updateLoadMore();
-  updateMapMarkers(currentOps);
+  // Defer map update to next frame to avoid layout thrashing
+  requestAnimationFrame(() => updateMapMarkers(currentOps));
 }
 
 function loadMoreCards() {
@@ -1298,21 +1314,25 @@ function closeShare(id) {
 
 // ---- PRICE FILTER ----
 function updatePriceFilter() {
+  // Read all values first (avoid interleaved read/write = forced reflow)
   const minEl = document.getElementById('priceMin');
   const maxEl = document.getElementById('priceMax');
   let lo = parseInt(minEl.value), hi = parseInt(maxEl.value);
-  if(lo > hi - 20){ lo = hi - 20; minEl.value = lo; }
+  if(lo > hi - 20){ lo = hi - 20; }
   priceMin = lo; priceMax = hi;
-  // update fill bar
-  const fill = document.getElementById('priceRangeFill');
   const pct = (v, mn, mx) => ((v-mn)/(mx-mn))*100;
-  fill.style.left  = pct(lo, 0, 1000) + '%';
-  fill.style.right = (100 - pct(hi, 0, 1000)) + '%';
-  // label
-  const label = document.getElementById('priceValLabel');
-  label.textContent = hi >= 1000 ? `$${lo} – $1000+` : `$${lo} – $${hi}`;
+  const leftPct  = pct(lo, 0, 1000) + '%';
+  const rightPct = (100 - pct(hi, 0, 1000)) + '%';
+  const labelTxt = hi >= 1000 ? `$${lo} – $1000+` : `$${lo} – $${hi}`;
+  // Write all at once in rAF
+  requestAnimationFrame(() => {
+    if(lo !== parseInt(minEl.value)) minEl.value = lo;
+    document.getElementById('priceRangeFill').style.left  = leftPct;
+    document.getElementById('priceRangeFill').style.right = rightPct;
+    document.getElementById('priceValLabel').textContent  = labelTxt;
+  });
   clearTimeout(_filterTimer);
-  _filterTimer = setTimeout(renderCards, 100);
+  _filterTimer = setTimeout(renderCards, 120);
 }
 
 function resetPrice() {
@@ -1536,7 +1556,7 @@ if ('IntersectionObserver' in window) {
 document.addEventListener('DOMContentLoaded', () => {
   document.getElementById('cardsGrid').innerHTML =
     '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text-muted)"><div style="font-size:2.5rem;margin-bottom:12px">🌊</div><div style="font-family:Montserrat,sans-serif;font-weight:700">Loading operators…</div></div>';
-  fetch('/operators.json')
+  fetch('/operators.json', {priority:'high'})
     .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
     .then(data => {
       allOperators = data;
