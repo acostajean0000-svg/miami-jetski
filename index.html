@@ -48,7 +48,9 @@
   <link rel="preload" as="style" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
   <style>
-    :root{--dark:#081525;--dark2:#0d1e35;--dark3:#112340;--card-bg:#0f2038;--card-hover:#132846;--border:#1c3a58;--teal:#00d4c8;--teal2:#00eedd;--teal-dark:#009e99;--teal-glow:rgba(0,212,200,0.15);--white:#ffffff;--text-muted:#7a9eba;--text-light:#c4ddf0;--star:#ffd700;--radius:12px;--shadow:0 8px 32px rgba(0,0,0,0.4);}
+    .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:-1;}
+    .skip-link:focus{position:fixed;left:50%;transform:translateX(-50%);top:8px;width:auto;height:auto;padding:10px 22px;background:var(--teal);color:var(--dark);font-weight:700;border-radius:6px;z-index:9999;font-size:.9rem;}
+    :root{--dark:#081525;--dark2:#0d1e35;--dark3:#112340;--card-bg:#0f2038;--card-hover:#132846;--border:#1c3a58;--teal:#00d4c8;--teal2:#00eedd;--teal-dark:#009e99;--teal-glow:rgba(0,212,200,0.15);--white:#ffffff;--text-muted:#9bbdd4;--text-light:#c4ddf0;--star:#ffd700;--radius:12px;--shadow:0 8px 32px rgba(0,0,0,0.4);}
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
     html{scroll-behavior:smooth;}
     body{font-family:'Open Sans',sans-serif;background:var(--dark);color:var(--white);line-height:1.6;overflow-x:hidden;}
@@ -192,8 +194,8 @@
     .footer-brand p{color:var(--text-muted);font-size:.88rem;margin-top:14px;line-height:1.7;}
     .footer-col h4{font-family:'Montserrat',sans-serif;font-size:.85rem;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--teal);margin-bottom:16px;}
     .footer-col ul li{margin-bottom:8px;}
-    .footer-col ul li a{color:var(--text-muted);font-size:.85rem;transition:color .2s;}
-    .footer-col ul li a:hover{color:var(--teal);}
+    .footer-col ul li a{color:var(--text-muted);font-size:.85rem;transition:color .2s;text-decoration:underline;text-underline-offset:3px;text-decoration-color:rgba(155,189,212,.35);}
+    .footer-col ul li a:hover{color:var(--teal);text-decoration-color:var(--teal);}
     .footer-socials{display:flex;gap:12px;margin-top:20px;}
     .footer-social{width:38px;height:38px;border-radius:50%;background:var(--card-bg);border:1px solid var(--border);display:flex;align-items:center;justify-content:center;color:var(--text-muted);font-size:.9rem;transition:all .2s;}
     .footer-social:hover{border-color:var(--teal);color:var(--teal);}
@@ -388,9 +390,10 @@
     .op-distance{display:inline-flex;align-items:center;gap:3px;font-size:.7rem;color:#00c864;font-weight:600;margin-left:6px;}
 
     /* ── COMPARE TOGGLE ON CARD ── */
-    .compare-toggle{position:absolute;top:9px;right:9px;width:26px;height:26px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);background:rgba(0,0,0,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.75rem;color:#fff;transition:all .2s;z-index:3;backdrop-filter:blur(4px);}
+    .compare-toggle{position:absolute;top:9px;right:9px;width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.35);background:rgba(0,0,0,.4);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.75rem;color:#fff;transition:all .2s;z-index:3;backdrop-filter:blur(4px);}
     .compare-toggle:hover{border-color:var(--teal);background:rgba(0,212,200,.2);}
     .compare-toggle.selected{background:var(--teal);border-color:var(--teal);color:var(--dark);font-weight:900;}
+    .compare-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
     .op-card.in-compare{box-shadow:0 0 0 2.5px var(--teal),0 8px 30px rgba(0,212,200,.25);}
 
     /* ── COMPARE BAR ── */
@@ -459,9 +462,10 @@
     .search-hint{font-size:.75rem;color:var(--text-muted);white-space:nowrap;}
 
     /* ── FAVORITES ── */
-    .fav-toggle{position:absolute;top:9px;left:9px;width:26px;height:26px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.82rem;transition:all .2s;z-index:3;backdrop-filter:blur(4px);}
+    .fav-toggle{position:absolute;top:9px;left:9px;width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.82rem;transition:all .2s;z-index:3;backdrop-filter:blur(4px);}
     .fav-toggle:hover{border-color:#ff6b8a;background:rgba(255,60,100,.15);}
     .fav-toggle.saved{background:rgba(255,60,100,.9);border-color:#ff3c64;color:#fff;}
+    .fav-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
     .fav-fab{position:fixed;bottom:80px;right:20px;background:linear-gradient(135deg,#ff3c64,#ff6b8a);color:#fff;border:none;border-radius:50px;padding:12px 20px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;cursor:pointer;box-shadow:0 4px 20px rgba(255,60,100,.4);z-index:1400;display:flex;align-items:center;gap:8px;transition:transform .2s,opacity .2s;opacity:0;pointer-events:none;}
     .fav-fab.show{opacity:1;pointer-events:all;}
     .fav-fab:hover{transform:scale(1.05);}
@@ -501,7 +505,8 @@
     .fav-remove-link:hover{color:#ff6b8a;}
 
     /* ── SHARE BUTTON ── */
-    .share-btn{position:absolute;bottom:9px;right:9px;width:26px;height:26px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;transition:all .2s;z-index:3;backdrop-filter:blur(4px);}
+    .share-btn{position:absolute;bottom:9px;right:9px;width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.7rem;color:#fff;transition:all .2s;z-index:3;backdrop-filter:blur(4px);}
+    .share-btn::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
     .share-btn:hover{border-color:#fff;background:rgba(255,255,255,.15);}
     .share-popover{position:absolute;bottom:42px;right:6px;background:#0d2540;border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:6px;z-index:10;display:none;flex-direction:column;gap:2px;min-width:160px;box-shadow:0 8px 24px rgba(0,0,0,.5);}
     .share-popover.open{display:flex;}
@@ -522,6 +527,9 @@
   <meta name="twitter:image" content="https://miamijetskiboatrentals.com/og-image.png">
 </head>
 <body>
+
+<!-- SKIP NAV (accessibility) -->
+<a href="#main-content" class="skip-link">Skip to main content</a>
 
 <!-- TRUST BAR -->
 <div class="trust-bar">
@@ -577,14 +585,15 @@
 </section>
 
 <!-- MARKETPLACE -->
+<main id="main-content">
 <section class="marketplace" id="operators">
   <div class="marketplace-header">
     <div class="mkt-filters">
       <div class="search-bar-wrap">
         <div class="search-bar">
           <i class="fa-solid fa-magnifying-glass"></i>
-          <input type="text" id="searchInput" placeholder="Search operators, locations…" oninput="handleSearch()" autocomplete="off">
-          <button class="search-clear" id="searchClear" onclick="clearSearch()" title="Clear search">✕</button>
+          <input type="text" id="searchInput" placeholder="Search operators, locations…" oninput="handleSearch()" autocomplete="off" aria-label="Search operators and locations">
+          <button class="search-clear" id="searchClear" onclick="clearSearch()" title="Clear search" aria-label="Clear search">✕</button>
         </div>
         <span class="search-hint" id="searchHint"></span>
       </div>
@@ -621,8 +630,8 @@
         <div class="price-range-wrap">
           <div class="price-range-track"></div>
           <div class="price-range-fill" id="priceRangeFill"></div>
-          <input type="range" id="priceMin" min="0" max="1000" value="0" step="5" oninput="updatePriceFilter()">
-          <input type="range" id="priceMax" min="0" max="1000" value="1000" step="5" oninput="updatePriceFilter()">
+          <input type="range" id="priceMin" min="0" max="1000" value="0" step="5" oninput="updatePriceFilter()" aria-label="Minimum price filter">
+          <input type="range" id="priceMax" min="0" max="1000" value="1000" step="5" oninput="updatePriceFilter()" aria-label="Maximum price filter">
         </div>
         <span class="price-val" id="priceValLabel">$0 – $1000+</span>
         <button class="price-reset" onclick="resetPrice()" title="Reset price filter">✕ Reset</button>
@@ -648,6 +657,7 @@
     </div>
   </div>
 </section>
+</main>
 
 <!-- MAP TOGGLE BUTTON (mobile) -->
 <button class="map-toggle-btn" id="mapToggleBtn" onclick="toggleMapView()">
@@ -878,10 +888,10 @@ function cardHTML(op) {
         onerror="this.style.display='none';var s=document.getElementById('shim-${op.id}');if(s)s.remove();var f=document.getElementById('fall-${op.id}');if(f){f.style.display='flex';f.style.background='${catColors[op.cat]}33';}">
       <span class="op-cat-badge">${catLabels[op.cat]}</span>
       <span class="op-best-badge">${op.badge}</span>
-      <button class="fav-toggle${isFav?' saved':''}" id="fav-${op.id}" onclick="event.stopPropagation();toggleFav('${op.id}')" title="${isFav?'Remove from favorites':'Save to favorites'}">${isFav?'❤️':'🤍'}</button>
-      <button class="compare-toggle${inCmp?' selected':''}" id="cmp-${op.id}" onclick="event.stopPropagation();toggleCompare('${op.id}')" title="Add to compare">${inCmp?'✓':'＋'}</button>
+      <button class="fav-toggle${isFav?' saved':''}" id="fav-${op.id}" onclick="event.stopPropagation();toggleFav('${op.id}')" title="${isFav?'Remove from favorites':'Save to favorites'}" aria-label="${isFav?'Remove from favorites':'Save to favorites'}">${isFav?'❤️':'🤍'}</button>
+      <button class="compare-toggle${inCmp?' selected':''}" id="cmp-${op.id}" onclick="event.stopPropagation();toggleCompare('${op.id}')" title="Add to compare" aria-label="Add to compare">${inCmp?'✓':'＋'}</button>
       <div style="position:absolute;bottom:9px;right:9px;z-index:3">
-        <button class="share-btn" onclick="event.stopPropagation();toggleShare('${op.id}')" title="Share">🔗</button>
+        <button class="share-btn" onclick="event.stopPropagation();toggleShare('${op.id}')" title="Share this operator" aria-label="Share this operator">🔗</button>
         <div class="share-popover" id="share-${op.id}">
           <button class="share-popover-item share-wa"  onclick="event.stopPropagation();shareWA('${op.id}')"><span class="share-icon">📱</span>WhatsApp</button>
           <button class="share-popover-item share-copy" id="copy-${op.id}" onclick="event.stopPropagation();copyLink('${op.id}')"><span class="share-icon">🔗</span>Copy Link</button>
