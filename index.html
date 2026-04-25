@@ -25,13 +25,21 @@
   <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA7ElEQVR4nOWXyxWCMBBFI8cFDViChVgI1VEIhViCDWSnKz6S+b1hEj06yyS+ezMmcEjp3+uE/qC/XJ/SfH7coUzzYg3sFVEXoWBUpKsJt2SwAhFwSxYpEAnXMguBGnApWzwDLerthHp3n6exGOtvA79+czMOd4CCS+P7Wkw8u58h1G6luZTWLrg7oAHmca0TLgENjkjAAla4VcLVASvcIgEJ5GmE4XsJt4D1WqESZwTk3b1USwe093YkfMsKeRQfEei4iRbwQuATVQjU7AKVTXaghgSXyf4FkRJSlngGIiS0jO//MEFFWlzl36oXyvJ41X3AMQIAAAAASUVORK5CYII=">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
   <meta name="theme-color" content="#081525">
-  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-16509204378"></script>
+  <!-- GTM deferred past LCP to avoid forced reflow in critical window -->
   <script>
     window.dataLayer=window.dataLayer||[];
     function gtag(){dataLayer.push(arguments);}
-    gtag('js',new Date());
-    gtag('config','G-09F6C7YC7B');
-    gtag('config','AW-16509204378');
+    window.addEventListener('load',function(){
+      setTimeout(function(){
+        var s=document.createElement('script');
+        s.async=true;
+        s.src='https://www.googletagmanager.com/gtag/js?id=AW-16509204378';
+        document.head.appendChild(s);
+        gtag('js',new Date());
+        gtag('config','G-09F6C7YC7B');
+        gtag('config','AW-16509204378');
+      },3000);
+    });
   </script>
   <!-- Vercel Analytics (enable in Vercel dashboard first) -->
   <!-- <script>window.va=window.va||function(){(window.vaq=window.vaq||[]).push(arguments);};</script> -->
@@ -537,11 +545,11 @@
 <!-- TRUST BAR -->
 <div class="trust-bar">
   <div class="trust-inner">
-    <div class="trust-item"><i class="fa-solid fa-shield-halved"></i><span>Licensed &amp; Verified Operators</span></div>
-    <div class="trust-item"><i class="fa-solid fa-lock"></i><span>Secure Booking via FareHarbor</span></div>
-    <div class="trust-item"><i class="fa-solid fa-star"></i><span>4.8★ Avg Rating</span></div>
-    <div class="trust-item"><i class="fa-solid fa-fire"></i><span class="booking-counter" id="bookingCounter">23 booked today</span></div>
-    <div class="trust-item"><i class="fa-solid fa-headset"></i><span>7-day Support</span></div>
+    <div class="trust-item"><span aria-hidden="true">🛡️</span><span>Licensed &amp; Verified Operators</span></div>
+    <div class="trust-item"><span aria-hidden="true">🔒</span><span>Secure Booking via FareHarbor</span></div>
+    <div class="trust-item"><span aria-hidden="true">⭐</span><span>4.8★ Avg Rating</span></div>
+    <div class="trust-item"><span aria-hidden="true">🔥</span><span class="booking-counter" id="bookingCounter">23 booked today</span></div>
+    <div class="trust-item"><span aria-hidden="true">🎧</span><span>7-day Support</span></div>
   </div>
 </div>
 
@@ -572,11 +580,11 @@
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
-    <div class="hero-tag"><i class="fa-solid fa-water"></i> Florida's #1 Water Activities Directory</div>
+    <div class="hero-tag">🌊 Florida's #1 Water Activities Directory</div>
     <h1>Jet Ski, Boats &amp; <span class="teal">Water Adventures</span> Across Florida</h1>
     <p>Compare 318 operators — jet ski rentals, boat charters, slingshots, aerial tours, ATV, bike rentals, golf carts, fishing trips &amp; more. From Miami Beach to Key West, Gulf Coast to Space Coast. Book online instantly.</p>
     <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;">
-      <a href="#operators" class="btn btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Compare Operators</a>
+      <a href="#operators" class="btn btn-primary">🔍 Compare Operators</a>
     </div>
     <div class="hero-stats">
       <div class="hero-stat"><div class="hero-stat-num">318</div><div class="hero-stat-label">Operators</div></div>
@@ -594,7 +602,7 @@
     <div class="mkt-filters">
       <div class="search-bar-wrap">
         <div class="search-bar">
-          <i class="fa-solid fa-magnifying-glass"></i>
+          <span aria-hidden="true" style="font-size:1rem;color:var(--text-muted)">🔍</span>
           <input type="text" id="searchInput" placeholder="Search operators, locations…" oninput="handleSearch()" autocomplete="off" aria-label="Search operators and locations">
           <button class="search-clear" id="searchClear" onclick="clearSearch()" title="Clear search" aria-label="Clear search">✕</button>
         </div>
@@ -738,7 +746,7 @@
   <div>
     <h2>Ready to <span class="teal">Ride the Waves?</span></h2>
     <p>Browse 318 operators, compare prices, and book your Florida water adventure in minutes.</p>
-    <a href="#operators" class="btn btn-primary" style="font-size:1rem;padding:16px 36px;"><i class="fa-solid fa-water"></i> Browse All Operators</a>
+    <a href="#operators" class="btn btn-primary" style="font-size:1rem;padding:16px 36px;">🌊 Browse All Operators</a>
   </div>
 </section>
 
