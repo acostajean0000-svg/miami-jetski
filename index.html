@@ -892,14 +892,47 @@ function cardHTML(op) {
   </div>`;
 }
 
+const PAGE_SIZE = 24;
+let currentPage = 0;
+
 function renderCards() {
   currentOps = getFiltered();
+  currentPage = 0;
   const grid = document.getElementById('cardsGrid');
   const searchSuffix = searchQuery ? ` for "${searchQuery}"` : '';
   document.getElementById('cardsCount').textContent = `Showing ${currentOps.length} operator${currentOps.length!==1?'s':''}${searchSuffix}`;
-  grid.innerHTML = currentOps.map(cardHTML).join('');
+  grid.innerHTML = currentOps.slice(0, PAGE_SIZE).map(cardHTML).join('');
+  updateLoadMore();
   updateMapMarkers(currentOps);
+}
 
+function loadMoreCards() {
+  currentPage++;
+  const start = currentPage * PAGE_SIZE;
+  const batch = currentOps.slice(start, start + PAGE_SIZE);
+  const grid = document.getElementById('cardsGrid');
+  const frag = document.createElement('div');
+  frag.innerHTML = batch.map(cardHTML).join('');
+  while (frag.firstChild) grid.appendChild(frag.firstChild);
+  updateLoadMore();
+}
+
+function updateLoadMore() {
+  let btn = document.getElementById('loadMoreBtn');
+  const shown = (currentPage + 1) * PAGE_SIZE;
+  if (shown < currentOps.length) {
+    const remaining = currentOps.length - shown;
+    if (!btn) {
+      btn = document.createElement('div');
+      btn.id = 'loadMoreBtn';
+      btn.style.cssText = 'text-align:center;padding:28px 0 8px;grid-column:1/-1;';
+      document.getElementById('cardsGrid').after(btn);
+    }
+    btn.innerHTML = `<button onclick="loadMoreCards()" style="background:linear-gradient(135deg,var(--teal),var(--teal2));color:#040d1a;border:none;padding:13px 36px;border-radius:50px;font-size:.9rem;font-weight:800;cursor:pointer;box-shadow:0 4px 18px rgba(0,212,200,.35);font-family:'Montserrat',sans-serif;transition:all .2s;" onmouseover="this.style.transform='translateY(-2px)';this.style.boxShadow='0 7px 24px rgba(0,212,200,.5)'" onmouseout="this.style.transform='';this.style.boxShadow='0 4px 18px rgba(0,212,200,.35)'">Ver más (${remaining} restantes) ▼</button>`;
+    btn.style.display = '';
+  } else {
+    if (btn) btn.style.display = 'none';
+  }
 }
 
 
