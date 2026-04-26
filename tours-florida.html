@@ -95,6 +95,33 @@
     .footer-links{display:flex;gap:20px;}
     .footer-links a{color:var(--text-muted);font-size:.8rem;transition:color .2s;}
     .footer-links a:hover{color:var(--teal);}
+
+    /* ── MAP LAYOUT ── */
+    .marketplace-body{display:flex;gap:0;align-items:flex-start;position:relative;}
+    .cards-panel{flex:1 1 0;min-width:0;padding:40px 20px 60px;}
+    .map-panel{flex:0 0 420px;width:420px;position:sticky;top:64px;height:calc(100vh - 64px);z-index:1;border-left:1px solid rgba(255,255,255,.07);}
+    #cat-map{height:100%;width:100%;}
+    .map-toggle-btn{display:none;}
+    .toolbar{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+    .near-me-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;border:1.5px solid rgba(0,212,200,.35);background:rgba(0,212,200,.07);color:#00d4c8;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;transition:all .2s;}
+    .near-me-btn:hover,.near-me-btn.active{background:rgba(0,212,200,.18);border-color:#00d4c8;}
+    .near-me-btn.loading{opacity:.65;cursor:wait;}
+    .sort-label{font-size:.78rem;color:#6b8fa8;margin-left:auto;}
+    .leaflet-popup-content-wrapper{background:#0f2038;border:1px solid #1c3a58;border-radius:12px;color:#fff;box-shadow:0 8px 32px rgba(0,0,0,.6);}
+    .leaflet-popup-tip{background:#0f2038;}
+    .map-popup{padding:4px 2px;}
+    .map-popup-name{font-size:.88rem;font-weight:700;margin-bottom:3px;}
+    .map-popup-price{font-size:1rem;font-weight:900;color:#00d4c8;margin-bottom:6px;}
+    .map-popup-btn{display:block;text-align:center;background:linear-gradient(135deg,#00d4c8,#00eedd);color:#081525;padding:6px 14px;border-radius:50px;font-size:.75rem;font-weight:700;}
+    @media(max-width:900px){
+      .marketplace-body{flex-direction:column;}
+      .map-panel{flex:none;width:100%;height:45vh;position:relative;top:0;border-left:none;border-top:1px solid rgba(255,255,255,.07);}
+      .cards-panel{padding:24px 16px 48px;}
+      .map-toggle-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;border:1.5px solid rgba(0,212,200,.35);background:rgba(0,212,200,.07);color:#00d4c8;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;}
+      .map-hidden .map-panel{display:none;}
+      .map-visible .map-panel{display:block;}
+    }
+
     /* RESPONSIVE */
     @media(max-width:768px){
       .nav-links{display:none;}
@@ -184,8 +211,14 @@
   </div>
 </section>
 
-<div class="cards-section">
-  <div class="cards-count">Showing 11 operators</div>
+<div class="marketplace-body map-hidden" id="mktBody">
+<div class="cards-panel">
+<div class="cards-section" style="padding:0;">
+  <div class="toolbar">
+  <button class="near-me-btn" id="nearMeBtn">📍 Near Me</button>
+  <span class="sort-label">Sorted by price: low to high</span>
+</div>
+<div class="cards-count">Showing 11 operators</div>
   <div class="cards-grid">
 <div class="op-card cat-tour">
   <div class="op-card-img">
@@ -498,6 +531,158 @@ function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(
   <button class="cmp-go" onclick="openCompare()">Compare →</button>
   <button class="cmp-clear" onclick="_cmp=[];localStorage.removeItem('cmp_ops_cat');document.querySelectorAll('.cmp-toggle').forEach(function(b){b.textContent='＋';b.classList.remove('selected');});renderCmpBar();">Clear</button>
 </div>
+
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script>
+(function(){
+  // ── Parse operator geo from JSON-LD ──
+  var ldEl = document.querySelector('script[type="application/ld+json"]');
+  var opGeo = {};
+  if(ldEl){
+    try{
+      var ld = JSON.parse(ldEl.textContent);
+      var items = [];
+      if(ld['@graph']){var il=ld['@graph'].find(function(g){return g['@type']==='ItemList';});if(il)items=il.itemListElement||[];}
+      else if(ld.itemListElement) items=ld.itemListElement;
+      items.forEach(function(it){
+        var b=it.item;
+        if(b&&b.geo&&b.name){
+          opGeo[b.name]={lat:+b.geo.latitude,lng:+b.geo.longitude,
+            price:parseInt((b.priceRange||'0').replace(/[^0-9]/,'')||'0'),
+            url:b.url||'',addr:(b.address&&b.address.addressLocality)||''};
+        }
+      });
+    }catch(e){}
+  }
+
+  // ── Sort cards by price ──
+  var grid=document.querySelector('.cards-grid');
+  if(grid){
+    var cards=Array.from(grid.querySelectorAll('.op-card'));
+    cards.sort(function(a,b){
+      var pa=parseInt((a.querySelector('.op-price-num')||{}).textContent||'999999');
+      var pb=parseInt((b.querySelector('.op-price-num')||{}).textContent||'999999');
+      return pa-pb;
+    });
+    cards.forEach(function(c){grid.appendChild(c);});
+    // Attach geo data to each card
+    cards.forEach(function(card){
+      var name=(card.querySelector('.op-name')||{}).textContent||'';
+      var geo=opGeo[name];
+      if(geo){card.dataset.lat=geo.lat;card.dataset.lng=geo.lng;card.dataset.price=geo.price;}
+    });
+  }
+
+  // ── Near Me ──
+  var nearActive=false,userLat=null,userLng=null;
+  var nmBtn=document.getElementById('nearMeBtn');
+  if(nmBtn){nmBtn.addEventListener('click',function(){
+    if(nearActive){nearActive=false;userLat=userLng=null;nmBtn.classList.remove('active');nmBtn.textContent='📍 Near Me';sortCards();return;}
+    if(!navigator.geolocation){alert('Geolocation not supported');return;}
+    nmBtn.classList.add('loading');nmBtn.textContent='⏳ Locating…';
+    navigator.geolocation.getCurrentPosition(function(p){
+      userLat=p.coords.latitude;userLng=p.coords.longitude;nearActive=true;
+      nmBtn.classList.remove('loading');nmBtn.classList.add('active');nmBtn.textContent='📍 Near Me ✓';
+      sortCards();
+    },function(){nmBtn.classList.remove('loading');nmBtn.textContent='📍 Near Me';alert('Could not get location.');});
+  });}
+
+  function haversine(la1,lo1,la2,lo2){var R=3958.8,dLa=(la2-la1)*Math.PI/180,dLo=(lo2-lo1)*Math.PI/180,a=Math.sin(dLa/2)**2+Math.cos(la1*Math.PI/180)*Math.cos(la2*Math.PI/180)*Math.sin(dLo/2)**2;return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));}
+
+  function sortCards(){
+    if(!grid)return;
+    var cards=Array.from(grid.querySelectorAll('.op-card'));
+    if(nearActive&&userLat!==null){
+      cards.sort(function(a,b){
+        var da=haversine(userLat,userLng,+(a.dataset.lat||0),+(a.dataset.lng||0));
+        var db=haversine(userLat,userLng,+(b.dataset.lat||0),+(b.dataset.lng||0));
+        return da-db;
+      });
+    } else {
+      cards.sort(function(a,b){return (+(a.dataset.price||0))-(+(b.dataset.price||0));});
+    }
+    cards.forEach(function(c){grid.appendChild(c);});
+  }
+
+  // ── Leaflet Map ──
+  var mapInstance=null,markers={},selectedId=null;
+  function makeIcon(color){
+    var svg='<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36"><path d="M14 0C6.27 0 0 6.27 0 14c0 9.6 14 22 14 22S28 23.6 28 14C28 6.27 21.73 0 14 0z" fill="'+color+'"/><circle cx="14" cy="14" r="6" fill="#fff" opacity=".9"/></svg>';
+    return L.divIcon({html:svg,className:'',iconSize:[28,36],iconAnchor:[14,36],popupAnchor:[0,-38]});
+  }
+
+  function initMap(){
+    if(mapInstance)return;
+    var el=document.getElementById('cat-map');
+    if(!el)return;
+    mapInstance=L.map('cat-map',{center:[25.77,-80.19],zoom:7,zoomControl:true,scrollWheelZoom:true});
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(mapInstance);
+
+    // Build markers from cards
+    var cards=document.querySelectorAll('.op-card');
+    var bounds=[];
+    cards.forEach(function(card,i){
+      var lat=+(card.dataset.lat||0),lng=+(card.dataset.lng||0);
+      if(!lat||!lng)return;
+      var name=(card.querySelector('.op-name')||{}).textContent||'';
+      var price=(card.querySelector('.op-price-num')||{}).textContent||'';
+      var bookEl=card.querySelector('.op-book');
+      var bookUrl=bookEl?bookEl.href:'#';
+      var m=L.marker([lat,lng],{icon:makeIcon('#00d4c8')});
+      m.bindPopup('<div class="map-popup"><div class="map-popup-name">'+name+'</div><div class="map-popup-price">From '+price+'</div><a class="map-popup-btn" href="'+bookUrl+'" target="_blank" rel="noopener">Book Now →</a></div>');
+      m.bindTooltip('<b>'+name+'</b><br>From '+price,{direction:'top',offset:[0,-10]});
+      m.on('click',function(){highlightCard(i);});
+      markers[i]=m;
+      m.addTo(mapInstance);
+      bounds.push([lat,lng]);
+      // Card click → highlight pin
+      card.addEventListener('click',function(){highlightPin(i);});
+    });
+    if(bounds.length>1){try{mapInstance.fitBounds(bounds,{padding:[30,30],maxZoom:12});}catch(e){}}
+  }
+
+  function highlightPin(idx){
+    // Reset previous
+    if(selectedId!==null&&markers[selectedId]){
+      markers[selectedId].setIcon(makeIcon('#00d4c8'));
+      markers[selectedId].setZIndexOffset(0);
+    }
+    selectedId=idx;
+    if(markers[idx]){
+      markers[idx].setIcon(makeIcon('#f5c842'));
+      markers[idx].setZIndexOffset(1000);
+      var el=markers[idx].getElement();
+      if(el){el.style.filter='drop-shadow(0 0 8px #f5c842)';el.style.transform='scale(1.4)';}
+      var card=document.querySelectorAll('.op-card')[idx];
+      if(card){var lat=+(card.dataset.lat||0),lng=+(card.dataset.lng||0);if(lat&&lng)mapInstance.setView([lat,lng],13,{animate:true});}
+      markers[idx].openPopup();
+    }
+  }
+
+  function highlightCard(idx){
+    var cards=document.querySelectorAll('.op-card');
+    cards.forEach(function(c){c.style.outline='';});
+    var card=cards[idx];
+    if(card){card.style.outline='2px solid #f5c842';card.scrollIntoView({behavior:'smooth',block:'nearest'});}
+  }
+
+  // Load Leaflet lazily
+  var leafletLoaded=false;
+  function loadLeaflet(){
+    if(leafletLoaded)return;leafletLoaded=true;
+    var s=document.createElement('script');
+    s.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    s.onload=initMap;
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries,o){if(entries[0].isIntersecting){loadLeaflet();o.disconnect();}},{rootMargin:'200px'});
+    var mapEl=document.getElementById('cat-map');
+    if(mapEl)obs.observe(mapEl);else loadLeaflet();
+  } else {loadLeaflet();}
+})();
+</script>
 
 </body>
 </html>
