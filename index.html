@@ -971,7 +971,8 @@ const imgLoad = ci === 0 ? 'fetchpriority="high"' : ci === 1 ? 'loading="eager"'
       </div>
     </div>
     <div class="op-card-body">
-      <div class="op-name">${op.name}</div>
+      <div class="op-name">${op.name}${op.cat==='boat'&&op.pax?` <span style="font-size:.72rem;font-weight:600;color:#00d4c8;white-space:nowrap;">· ${op.pax}Pax</span>`:''}
+      </div>
       <div class="op-addr"><i class="fa-solid fa-location-dot"></i> ${op.zl}${distBadge}</div>
       <div class="op-footer">
         <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$${op.price.toLocaleString()}</div></div>
