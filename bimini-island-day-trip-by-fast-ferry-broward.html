@@ -19,20 +19,28 @@
   <meta name="twitter:image" content="https://miamijetskiboatrentals.com/og-image.png">
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "LocalBusiness", "name": "Bimini Island Day Trip by Fast-Ferry", "description": "Jet Ski Rental in Fort Lauderdale / Broward, Florida. Book online starting at $299 per hour.", "address": {"@type": "PostalAddress", "streetAddress": "2021 Eller Drive, Fort Lauderdale, FL", "addressRegion": "FL", "addressCountry": "US"}, "geo": {"@type": "GeoCoordinates", "latitude": 26.109, "longitude": -80.1087}, "url": "https://miamijetskiboatrentals.com/operators/bimini-island-day-trip-by-fast-ferry-broward", "priceRange": "From $299", "image": "https://ferrytobahamas.com/images/miami-to-bimini-ferry-prices.jpg", "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.8", "reviewCount": "47", "bestRating": "5"}}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://miamijetskiboatrentals.com/"}, {"@type": "ListItem", "position": 2, "name": "Jet Ski Rental", "item": "https://miamijetskiboatrentals.com/jet-ski-rentals-florida.html"}, {"@type": "ListItem", "position": 3, "name": "Bimini Island Day Trip by Fast-Ferry", "item": "https://miamijetskiboatrentals.com/operators/bimini-island-day-trip-by-fast-ferry-broward"}]}</script>
+  <!-- Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
   <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#040d1a;color:#e8f4fd;min-height:100vh}
     a{color:inherit;text-decoration:none}
+
+    /* NAV */
     nav{background:#040d1a;border-bottom:1px solid rgba(0,210,255,.15);padding:0 20px;position:sticky;top:0;z-index:100;display:flex;align-items:center;gap:16px;height:56px}
     .nav-logo{font-size:1rem;font-weight:700;color:#00d2ff;white-space:nowrap}
     .nav-logo span{color:#e8f4fd}
     .nav-back{margin-left:auto;display:flex;align-items:center;gap:6px;font-size:.85rem;color:#00d2ff;background:rgba(0,210,255,.08);border:1px solid rgba(0,210,255,.2);border-radius:8px;padding:6px 14px;transition:.2s}
     .nav-back:hover{background:rgba(0,210,255,.18)}
+
+    /* BREADCRUMB */
     .breadcrumb{padding:14px 20px;font-size:.78rem;color:#7ba3c0;max-width:1100px;margin:0 auto;display:flex;flex-wrap:wrap;gap:6px;align-items:center}
-    .breadcrumb a{color:#00d2ff}.breadcrumb a:hover{text-decoration:underline}
+    .breadcrumb a{color:#00d2ff}
+    .breadcrumb a:hover{text-decoration:underline}
     .sep{opacity:.4}
+
+    /* HERO */
     .hero{max-width:1100px;margin:0 auto;padding:0 20px 40px}
     .hero-photo{width:100%;height:320px;object-fit:cover;border-radius:16px;background:#0a1929;display:block}
     .hero-photo-wrap{position:relative;margin-bottom:24px}
@@ -42,15 +50,23 @@
     .meta-chip{display:flex;align-items:center;gap:6px;background:rgba(0,210,255,.08);border:1px solid rgba(0,210,255,.15);border-radius:20px;padding:6px 14px;font-size:.82rem;color:#a8d4f0}
     .meta-chip svg{width:14px;height:14px;stroke:#00d2ff;fill:none;stroke-width:2;flex-shrink:0}
     .price-chip{background:rgba(0,210,255,.15);border-color:rgba(0,210,255,.35);color:#00d2ff;font-weight:700;font-size:.95rem}
+
+    /* BOOK BUTTON */
     .book-btn{display:block;width:100%;max-width:480px;background:linear-gradient(135deg,#00d2ff,#0099cc);color:#040d1a;font-weight:800;font-size:1.1rem;text-align:center;padding:16px 24px;border-radius:14px;margin:0 auto 40px;letter-spacing:.3px;transition:.2s;box-shadow:0 4px 20px rgba(0,210,255,.3)}
     .book-btn:hover{transform:translateY(-2px);box-shadow:0 8px 30px rgba(0,210,255,.45)}
-    .section-title{font-size:1.1rem;font-weight:700;color:#00d2ff;margin-bottom:14px}
+
+    /* MAP */
+    .section-title{font-size:1.1rem;font-weight:700;color:#00d2ff;margin-bottom:14px;display:flex;align-items:center;gap:8px}
     .map-wrap{border-radius:14px;overflow:hidden;margin-bottom:40px;border:1px solid rgba(0,210,255,.15)}
     .map-wrap iframe{width:100%;height:320px;border:0;display:block}
+
+    /* DETAILS */
     .details-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:14px;margin-bottom:40px}
     .detail-card{background:rgba(255,255,255,.04);border:1px solid rgba(0,210,255,.1);border-radius:12px;padding:16px 18px}
     .detail-label{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:#7ba3c0;margin-bottom:6px}
     .detail-value{font-size:.95rem;font-weight:600;color:#e8f4fd}
+
+    /* RELATED */
     .related-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:16px;margin-bottom:50px}
     .rel-card{background:rgba(255,255,255,.04);border:1px solid rgba(0,210,255,.1);border-radius:14px;overflow:hidden;transition:.2s}
     .rel-card:hover{border-color:rgba(0,210,255,.35);transform:translateY(-3px)}
@@ -59,53 +75,133 @@
     .rel-name{font-size:.88rem;font-weight:700;margin-bottom:4px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
     .rel-meta{font-size:.75rem;color:#7ba3c0;margin-bottom:6px}
     .rel-price{font-size:.82rem;font-weight:700;color:#00d2ff}
+
+    /* FOOTER */
     footer{background:#020810;border-top:1px solid rgba(0,210,255,.1);padding:28px 20px;text-align:center;color:#4a7a9b;font-size:.82rem}
     footer a{color:#00d2ff}
-    @media(max-width:600px){.hero-photo{height:220px}.map-wrap iframe{height:240px}}
+
+    @media(max-width:600px){
+      .hero-photo{height:220px}
+      .map-wrap iframe{height:240px}
+    }
   </style>
 </head>
 <body>
+
 <nav>
   <a href="/" class="nav-logo">💧 Florida<span>WaterSports</span></a>
-  <a href="/" class="nav-back">← All operators</a>
+  <a href="/" class="nav-back">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+    All operators
+  </a>
 </nav>
+
 <div class="breadcrumb">
   <a href="/">Home</a><span class="sep">›</span>
   <a href="/jet-ski-rentals-florida.html">Jet Ski Rental</a><span class="sep">›</span>
   <span>Bimini Island Day Trip by Fast-Ferry</span>
 </div>
+
 <div class="hero">
+  <!-- PHOTO -->
   <div class="hero-photo-wrap">
-    <img class="hero-photo" src="https://ferrytobahamas.com/images/miami-to-bimini-ferry-prices.jpg" alt="Bimini Island Day Trip by Fast-Ferry — Jet Ski Rental in Fort Lauderdale / Broward" onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80'">
-    <span class="hero-badge">🏝 Day Trip</span>
+    <img class="hero-photo" src="https://ferrytobahamas.com/images/miami-to-bimini-ferry-prices.jpg" alt="Bimini Island Day Trip by Fast-Ferry — Jet Ski Rental in Fort Lauderdale / Broward"
+         onerror="this.src='https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80'">
+    <span class="op-badge">🏝 Day Trip</span>
   </div>
+
+  <!-- TITLE + META -->
   <h1 class="hero-title">Bimini Island Day Trip by Fast-Ferry</h1>
   <div class="meta-row">
-    <span class="meta-chip price-chip">From $299/hr</span>
-    <span class="meta-chip">Fort Lauderdale / Broward</span>
-    <span class="meta-chip">Jet Ski Rental</span>
+    <span class="meta-chip price-chip">
+      <svg viewBox="0 0 24 24"><line x1="12" y1="1" x2="12" y2="23"/><path d="M17 5H9.5a3.5 3.5 0 000 7h5a3.5 3.5 0 010 7H6"/></svg>
+      From $299/hr
+    </span>
+    <span class="meta-chip">
+      <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+      Fort Lauderdale / Broward
+    </span>
+    <span class="meta-chip">
+      <svg viewBox="0 0 24 24"><path d="M14.5 10c-.83 0-1.5-.67-1.5-1.5v-5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5z"/><path d="M20.5 10H19V8.5c0-.83.67-1.5 1.5-1.5s1.5.67 1.5 1.5-.67 1.5-1.5 1.5z"/><path d="M9.5 14c.83 0 1.5.67 1.5 1.5v5c0 .83-.67 1.5-1.5 1.5S8 21.33 8 20.5v-5c0-.83.67-1.5 1.5-1.5z"/><path d="M3.5 14H5v1.5c0 .83-.67 1.5-1.5 1.5S2 16.33 2 15.5 2.67 14 3.5 14z"/><path d="M14 14.5c0-.83.67-1.5 1.5-1.5h5c.83 0 1.5.67 1.5 1.5s-.67 1.5-1.5 1.5h-5c-.83 0-1.5-.67-1.5-1.5z"/><path d="M15.5 19H14v1.5c0 .83.67 1.5 1.5 1.5s1.5-.67 1.5-1.5-.67-1.5-1.5-1.5z"/><path d="M10 9.5C10 8.67 9.33 8 8.5 8h-5C2.67 8 2 8.67 2 9.5S2.67 11 3.5 11h5c.83 0 1.5-.67 1.5-1.5z"/><path d="M8.5 5H10V3.5C10 2.67 9.33 2 8.5 2S7 2.67 7 3.5 7.67 5 8.5 5z"/></svg>
+      Jet Ski Rental
+    </span>
   </div>
+
+  <!-- BOOK BUTTON -->
   <a href="https://fareharbor.com/embeds/book/us2u/items/81674/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="book-btn">🏄 Book Now — From $299/hr</a>
+
+  <!-- DETAILS -->
   <p class="section-title">📋 Details</p>
   <div class="details-grid">
-    <div class="detail-card"><div class="detail-label">Address</div><div class="detail-value">2021 Eller Drive, Fort Lauderdale, FL</div></div>
-    <div class="detail-card"><div class="detail-label">Category</div><div class="detail-value">Jet Ski Rental</div></div>
-    <div class="detail-card"><div class="detail-label">Zone</div><div class="detail-value">Fort Lauderdale / Broward</div></div>
-    <div class="detail-card"><div class="detail-label">Starting Price</div><div class="detail-value">$299 / hour</div></div>
+    <div class="detail-card">
+      <div class="detail-label">Address</div>
+      <div class="detail-value">2021 Eller Drive, Fort Lauderdale, FL</div>
+    </div>
+    <div class="detail-card">
+      <div class="detail-label">Category</div>
+      <div class="detail-value">Jet Ski Rental</div>
+    </div>
+    <div class="detail-card">
+      <div class="detail-label">Zone</div>
+      <div class="detail-value">Fort Lauderdale / Broward</div>
+    </div>
+    <div class="detail-card">
+      <div class="detail-label">Starting Price</div>
+      <div class="detail-value">$299 / hour</div>
+    </div>
   </div>
+
+  <!-- MAP -->
   <p class="section-title">📍 Location</p>
   <div class="map-wrap">
-    <iframe src="https://maps.google.com/maps?q=26.109,-80.1087&z=15&output=embed" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Bimini Island Day Trip by Fast-Ferry location map"></iframe>
+    <iframe
+      src="https://maps.google.com/maps?q=26.109,-80.1087&z=15&output=embed"
+      allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+      title="Bimini Island Day Trip by Fast-Ferry location map">
+    </iframe>
   </div>
+
+  <!-- RELATED -->
   <p class="section-title">🌊 Similar Jet Ski Rentals Nearby</p><div class="related-grid">
-        <a href="/operators/1-hour-jet-ski-rental-hollywood-beach-broward" class="rel-card"><div class="rel-photo" style="background-image:url('http://greatlocations.com/wp-content/uploads/2022/01/7.jpeg')" ></div><div class="rel-info"><div class="rel-name">1 Hour Jet Ski Rental – Hollywood Beach</div><div class="rel-meta">Jet Ski Rental · Fort Lauderdale / Broward</div><div class="rel-price">From $120/hr</div></div></a>
-        <a href="/operators/jet-ski-rental-falcons-hollywood-broward" class="rel-card"><div class="rel-photo" style="background-image:url('https://cdn.filestackcontent.com/fLVy5yJqTly6mwvX99X9/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max')" ></div><div class="rel-info"><div class="rel-name">Jet Ski Rental – Falcon's Hollywood</div><div class="rel-meta">Jet Ski Rental · Fort Lauderdale / Broward</div><div class="rel-price">From $110/hr</div></div></a>
-        <a href="/operators/jetski-rental-fort-lauderdale-broward" class="rel-card"><div class="rel-photo" style="background-image:url('https://www.flexwatersportsrentals.com/wp-content/uploads/2024/03/001-640x320.webp')" ></div><div class="rel-info"><div class="rel-name">Jetski Rental – Fort Lauderdale</div><div class="rel-meta">Jet Ski Rental · Fort Lauderdale / Broward</div><div class="rel-price">From $99/hr</div></div></a>
-        <a href="/operators/jet-ski-rental-pompano-beach-broward" class="rel-card"><div class="rel-photo" style="background-image:url('https://sfjetskirentals.com/wp-content/uploads/sites/6688/2023/09/mobile1.png?w=1000&h=1000')" ></div><div class="rel-info"><div class="rel-name">Jet Ski Rental Pompano Beach</div><div class="rel-meta">Jet Ski Rental · Fort Lauderdale / Broward</div><div class="rel-price">From $100/hr</div></div></a></div>
-</div>
+        <a href="/operators/jet-ski-rental-falcons-hollywood-broward" class="rel-card">
+          <div class="rel-photo" style="background-image:url('https://cdn.filestackcontent.com/fLVy5yJqTly6mwvX99X9/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max')"></div>
+          <div class="rel-info">
+            <div class="rel-name">Jet Ski Rental – Falcon's Hollywood</div>
+            <div class="rel-meta">Jet Ski Rental · Fort Lauderdale / Broward</div>
+            <div class="rel-price">From $110/hr</div>
+          </div>
+        </a>
+        <a href="/operators/ocean-jet-ski-rentals-pompano-broward" class="rel-card">
+          <div class="rel-photo" style="background-image:url('https://cdn.filestackcontent.com/zckgzNDzQJ2ny3uvmgrT/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max')"></div>
+          <div class="rel-info">
+            <div class="rel-name">Ocean Jet Ski Rentals – Pompano</div>
+            <div class="rel-meta">Jet Ski Rental · Fort Lauderdale / Broward</div>
+            <div class="rel-price">From $100/hr</div>
+          </div>
+        </a>
+        <a href="/operators/1-hour-jet-ski-rental-hollywood-beach-broward" class="rel-card">
+          <div class="rel-photo" style="background-image:url('http://greatlocations.com/wp-content/uploads/2022/01/7.jpeg')"></div>
+          <div class="rel-info">
+            <div class="rel-name">1 Hour Jet Ski Rental – Hollywood Beach</div>
+            <div class="rel-meta">Jet Ski Rental · Fort Lauderdale / Broward</div>
+            <div class="rel-price">From $120/hr</div>
+          </div>
+        </a>
+        <a href="/operators/jetski-rental-fort-lauderdale-broward" class="rel-card">
+          <div class="rel-photo" style="background-image:url('https://www.flexwatersportsrentals.com/wp-content/uploads/2024/03/001-640x320.webp')"></div>
+          <div class="rel-info">
+            <div class="rel-name">Jetski Rental – Fort Lauderdale</div>
+            <div class="rel-meta">Jet Ski Rental · Fort Lauderdale / Broward</div>
+            <div class="rel-price">From $99/hr</div>
+          </div>
+        </a></div>
+
+</div><!-- /hero -->
+
 <footer>
   <p>© 2025 <a href="/">FloridaWaterSports</a> · Comparing 312 operators across Florida</p>
   <p style="margin-top:8px"><a href="/jet-ski-rentals-florida.html">Jet Ski Rentals in Florida</a> · <a href="/fort-lauderdale-water-sports.html">Fort Lauderdale / Broward Water Sports</a> · <a href="/">All Operators</a></p>
 </footer>
+
 </body>
 </html>

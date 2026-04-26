@@ -104,7 +104,48 @@
     @media(max-width:480px){
       .cards-grid{grid-template-columns:1fr;}
     }
-  </style>
+  
+    /* ── Card overlay buttons ── */
+    .op-card-img{position:relative;}
+    /* Action strip at bottom of card image */
+    .card-actions{position:absolute;bottom:0;left:0;right:0;z-index:4;display:flex;align-items:center;justify-content:space-between;padding:6px 8px;background:linear-gradient(to top,rgba(4,13,26,.82) 0%,transparent 100%);opacity:0;transform:translateY(4px);transition:opacity .22s ease,transform .22s ease;pointer-events:none;}
+    .op-card:hover .card-actions{opacity:1;transform:translateY(0);pointer-events:auto;}
+    /* Keep fav always visible when saved */
+    .fav-toggle.saved ~ .card-actions,
+    .card-actions:has(.fav-toggle.saved){opacity:1;transform:translateY(0);pointer-events:auto;}
+
+    /* Individual buttons */
+    .fav-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.88rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .fav-toggle:hover{border-color:#ff6b8a;background:rgba(255,60,100,.25);}
+    .fav-toggle.saved{background:rgba(220,40,80,.9);border-color:#ff3c64;}
+    .fav-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    .cmp-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:#fff;font-weight:700;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .cmp-toggle:hover{border-color:#00d4c8;background:rgba(0,212,200,.25);}
+    .cmp-toggle.selected{background:#00d4c8;border-color:#00d4c8;color:#040d1a;}
+    .cmp-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    .shr-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .shr-btn:hover{border-color:#00d4c8;background:rgba(0,212,200,.2);}
+    .shr-btn::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    /* View details link */
+    .op-detail-link{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:8px;padding:7px 0 3px;border-top:1px solid rgba(255,255,255,.07);font-size:.76rem;color:var(--text-muted);transition:color .2s;text-decoration:none;}
+    .op-detail-link:hover{color:#00d4c8;}
+
+    /* Compare bar */
+    #cmpBar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(8,21,37,.97);backdrop-filter:blur(12px);border-top:1px solid #1c3a58;padding:12px 20px;align-items:center;gap:12px;flex-wrap:wrap;}
+    #cmpBar.show{display:flex;}
+    .cmp-bar-title{font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;color:#9bbdd4;white-space:nowrap;}
+    .cmp-items{display:flex;gap:8px;flex:1;min-width:0;flex-wrap:wrap;}
+    .cmp-chip{background:#0f2038;border:1px solid #1c3a58;border-radius:8px;padding:5px 10px;font-size:.75rem;display:flex;align-items:center;gap:6px;max-width:180px;}
+    .cmp-chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .cmp-chip-rm{cursor:pointer;color:#9bbdd4;font-size:.9rem;flex-shrink:0;}
+    .cmp-go{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;border:none;padding:9px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+    .cmp-go:hover{opacity:.9;}
+    .cmp-clear{background:transparent;border:1px solid #1c3a58;color:#9bbdd4;padding:9px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;cursor:pointer;}
+
+    </style>
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -151,6 +192,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/h4VIjwMkTxenTfk6zLUD" alt="Wynwood Buggies" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">ATV & Buggy</span>
     <span class="op-best-badge">🎨 Wynwood</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-58110" onclick="event.stopPropagation();toggleFav(this,'fh-58110')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-58110" onclick="event.stopPropagation();toggleCmp(this,'fh-58110','Wynwood Buggies')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/wynwoodbuggies/items/58110/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Wynwood Buggies',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Wynwood Buggies</div>
@@ -158,6 +200,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$45</div></div>
       <a href="https://fareharbor.com/embeds/book/wynwoodbuggies/items/58110/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Wynwood+Buggies" onclick="event.stopPropagation()" title="View details for Wynwood Buggies">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -166,6 +209,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/oiFm3EArRMKXGakm6g81" alt="ATV of Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">ATV & Buggy</span>
     <span class="op-best-badge">🏍️ Miami</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-662071" onclick="event.stopPropagation();toggleFav(this,'fh-662071')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-662071" onclick="event.stopPropagation();toggleCmp(this,'fh-662071','ATV of Miami')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/atvofmiami/items/662071/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','ATV of Miami',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">ATV of Miami</div>
@@ -173,6 +217,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$120</div></div>
       <a href="https://fareharbor.com/embeds/book/atvofmiami/items/662071/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=ATV+of+Miami" onclick="event.stopPropagation()" title="View details for ATV of Miami">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -181,6 +226,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/pmek02TwTL1KLotcprJH" alt="Top Line Watersports – ATV" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">ATV & Buggy</span>
     <span class="op-best-badge">⚡ Top Line</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-594815" onclick="event.stopPropagation();toggleFav(this,'fh-594815')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-594815" onclick="event.stopPropagation();toggleCmp(this,'fh-594815','Top Line Watersports – ATV')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/toplinewatersports/items/594815/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Top Line Watersports – ATV',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Top Line Watersports – ATV</div>
@@ -188,6 +234,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$100</div></div>
       <a href="https://fareharbor.com/embeds/book/toplinewatersports/items/594815/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Top+Line+Watersports+–+ATV" onclick="event.stopPropagation()" title="View details for Top Line Watersports – ATV">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -196,6 +243,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/lJ8eapawT2shGkMVJNig" alt="Miami ATV Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">ATV & Buggy</span>
     <span class="op-best-badge">🏍️ Off-Road</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-498695" onclick="event.stopPropagation();toggleFav(this,'fh-498695')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-498695" onclick="event.stopPropagation();toggleCmp(this,'fh-498695','Miami ATV Rentals')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/miamiatvrentals/items/498695/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Miami ATV Rentals',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Miami ATV Rentals</div>
@@ -203,6 +251,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$100</div></div>
       <a href="https://fareharbor.com/embeds/book/miamiatvrentals/items/498695/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Miami+ATV+Rentals" onclick="event.stopPropagation()" title="View details for Miami ATV Rentals">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -211,6 +260,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sMxZmknqT2uxwcriinQU" alt="Side x Side St. Pete" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">ATV & Buggy</span>
     <span class="op-best-badge">🏎️ Side x Side</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-612798" onclick="event.stopPropagation();toggleFav(this,'fh-612798')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-612798" onclick="event.stopPropagation();toggleCmp(this,'fh-612798','Side x Side St. Pete')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sidexsidestpete/items/612798/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Side x Side St. Pete',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Side x Side St. Pete</div>
@@ -218,6 +268,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$598</div></div>
       <a href="https://fareharbor.com/embeds/book/sidexsidestpete/items/612798/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Side+x+Side+St.+Pete" onclick="event.stopPropagation()" title="View details for Side x Side St. Pete">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -226,6 +277,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CkJNMB1KR6er2PacOZJU" alt="Showdown ATV Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">ATV & Buggy</span>
     <span class="op-best-badge">🤠 Off-Road</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-664515" onclick="event.stopPropagation();toggleFav(this,'fh-664515')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-664515" onclick="event.stopPropagation();toggleCmp(this,'fh-664515','Showdown ATV Rentals')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/showdownatvrentals/items/664515/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Showdown ATV Rentals',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Showdown ATV Rentals</div>
@@ -233,6 +285,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$75</div></div>
       <a href="https://fareharbor.com/embeds/book/showdownatvrentals/items/664515/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Showdown+ATV+Rentals" onclick="event.stopPropagation()" title="View details for Showdown ATV Rentals">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -241,6 +294,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/yc1wA44SZqh4IEN4Vdn1" alt="Captain Steve's Swamp Buggy" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">ATV & Buggy</span>
     <span class="op-best-badge">🐊 Swamp Buggy</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-386750" onclick="event.stopPropagation();toggleFav(this,'fh-386750')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-386750" onclick="event.stopPropagation();toggleCmp(this,'fh-386750','Captain Steve\'s Swamp Buggy')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/captainstevesswampbuggyadventures/items/386750/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Captain Steve\'s Swamp Buggy',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Captain Steve's Swamp Buggy</div>
@@ -248,6 +302,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$158</div></div>
       <a href="https://fareharbor.com/embeds/book/captainstevesswampbuggyadventures/items/386750/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Captain+Steve's+Swamp+Buggy" onclick="event.stopPropagation()" title="View details for Captain Steve\'s Swamp Buggy">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -294,5 +349,87 @@
     </div>
   </div>
 </footer>
+
+<script>
+// ── Favorites ──
+var _favs = new Set(JSON.parse(localStorage.getItem('fav_ops_cat')||'[]'));
+function toggleFav(btn,id){
+  if(_favs.has(id)){_favs.delete(id);btn.textContent='🤍';btn.classList.remove('saved');}
+  else{_favs.add(id);btn.textContent='❤️';btn.classList.add('saved');}
+  localStorage.setItem('fav_ops_cat',JSON.stringify([..._favs]));
+}
+// restore fav state on load
+document.querySelectorAll('.fav-toggle').forEach(function(b){
+  if(_favs.has(b.dataset.id)){b.textContent='❤️';b.classList.add('saved');}
+});
+
+// ── Compare ──
+var _cmp = JSON.parse(localStorage.getItem('cmp_ops_cat')||'[]');
+var _MAX_CMP = 3;
+function toggleCmp(btn,id,name){
+  var idx = _cmp.findIndex(function(o){return o.id===id;});
+  if(idx > -1){ _cmp.splice(idx,1); btn.textContent='＋'; btn.classList.remove('selected'); }
+  else if(_cmp.length >= _MAX_CMP){ alert('Max '+_MAX_CMP+' operators to compare.'); return; }
+  else{ _cmp.push({id:id,name:name}); btn.textContent='✓'; btn.classList.add('selected'); }
+  localStorage.setItem('cmp_ops_cat',JSON.stringify(_cmp));
+  renderCmpBar();
+}
+function renderCmpBar(){
+  var bar = document.getElementById('cmpBar');
+  if(!bar) return;
+  if(_cmp.length===0){bar.classList.remove('show');return;}
+  bar.classList.add('show');
+  var chips = _cmp.map(function(o){
+    return '<div class="cmp-chip"><span>'+escHtml(o.name)+'</span><span class="cmp-chip-rm" onclick="removeCmp(\''+o.id+'\')">✕</span></div>';
+  }).join('');
+  document.getElementById('cmpItems').innerHTML = chips;
+}
+function removeCmp(id){
+  _cmp = _cmp.filter(function(o){return o.id!==id;});
+  localStorage.setItem('cmp_ops_cat',JSON.stringify(_cmp));
+  var btn = document.querySelector('.cmp-toggle[data-id="'+id+'"]');
+  if(btn){btn.textContent='＋';btn.classList.remove('selected');}
+  renderCmpBar();
+}
+function openCompare(){
+  if(_cmp.length < 2){alert('Select at least 2 operators to compare.');return;}
+  var q = _cmp.map(function(o){return encodeURIComponent(o.name);}).join(',');
+  window.open('/?compare='+q,'_blank');
+}
+// restore compare state
+document.querySelectorAll('.cmp-toggle').forEach(function(b){
+  if(_cmp.find(function(o){return o.id===b.dataset.id;})){b.textContent='✓';b.classList.add('selected');}
+});
+renderCmpBar();
+
+// ── Share ──
+function shareOp(url,name,btn){
+  var shareUrl = url || window.location.href;
+  if(navigator.share){
+    navigator.share({title:name,url:shareUrl}).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(shareUrl).then(function(){
+      var orig = btn.textContent; btn.textContent='✓';
+      setTimeout(function(){btn.textContent=orig;},2000);
+    }).catch(function(){});
+  }
+}
+
+// ── View Details (go to index with prefilled search) ──
+function viewDetails(name){
+  window.location.href='/?q='+encodeURIComponent(name);
+}
+
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+</script>
+
+<!-- Compare bar -->
+<div id="cmpBar">
+  <span class="cmp-bar-title">⚖️ Compare</span>
+  <div class="cmp-items" id="cmpItems"></div>
+  <button class="cmp-go" onclick="openCompare()">Compare →</button>
+  <button class="cmp-clear" onclick="_cmp=[];localStorage.removeItem('cmp_ops_cat');document.querySelectorAll('.cmp-toggle').forEach(function(b){b.textContent='＋';b.classList.remove('selected');});renderCmpBar();">Clear</button>
+</div>
+
 </body>
 </html>
