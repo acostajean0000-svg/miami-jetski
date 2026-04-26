@@ -1474,8 +1474,8 @@ function makeIcon(color, label) {
 function initMap() {
   if (mapInstance) return; // prevent double-init
   mapInstance = L.map('jetski-map', {
-    center:[27.5,-81.5],
-    zoom:6,
+    center:[25.77,-80.19],
+    zoom:10,
     zoomControl:true,
     scrollWheelZoom:true,
     minZoom:5
@@ -1485,9 +1485,13 @@ function initMap() {
     attribution:'&copy; OpenStreetMap &copy; CARTO',
     subdomains:'abcd', maxZoom:19
   }).addTo(mapInstance);
+  // Build markers if operators already loaded; otherwise buildMarkers() is called after fetch
+  if (allOperators.length) buildMarkers();
+}
 
-  // Build all markers
+function buildMarkers() {
   allOperators.forEach(op => {
+    if (markers[op.id]) return; // skip if already built
     const color = catColors[op.cat] || '#00d4c8';
     const catInitials = {jetski:'JS', boat:'⛵', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', jetcar:'🚗', golfcart:'🛺', atv:'🏍️'}[op.cat] || '●';
     const marker = L.marker([op.lat, op.lng], {icon: makeIcon(color, catInitials)});
@@ -1617,7 +1621,7 @@ function loadLeafletThenMap() {
   leafletLoaded = true;
   const s = document.createElement('script');
   s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-  s.onload = () => { initMap(); };
+  s.onload = () => { initMap(); if (allOperators.length) buildMarkers(); };
   document.head.appendChild(s);
 }
 // Init map only when map panel is scrolled into view
@@ -1642,8 +1646,11 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
     .then(data => {
       allOperators = data;
-      // If Leaflet already loaded but initMap() was skipped (race: Leaflet beat operators.json), init now
-      if (window.L && !mapInstance) initMap();
+      // If Leaflet already loaded: init map if needed, then build markers
+      if (window.L) {
+        if (!mapInstance) initMap();
+        else buildMarkers(); // map already exists but markers not yet built
+      }
       if (window._preloadSearch) {
         const inp = document.getElementById('searchInput');
         if (inp) { inp.value = window._preloadSearch; searchQuery = window._preloadSearch.toLowerCase(); document.getElementById('searchClear').classList.add('show'); }
