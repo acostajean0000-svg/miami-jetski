@@ -997,8 +997,8 @@ function renderCards() {
   document.getElementById('cardsCount').textContent = count;
   grid.innerHTML = html;
   updateLoadMore();
-  // Defer map update to next frame to avoid layout thrashing
-  requestAnimationFrame(() => updateMapMarkers(currentOps));
+  // Defer map update two frames to ensure markers are in DOM before styling
+  requestAnimationFrame(() => requestAnimationFrame(() => updateMapMarkers(currentOps)));
 }
 
 function loadMoreCards() {
@@ -1499,16 +1499,45 @@ function initMap() {
 
 function updateMapMarkers(visibleOps) {
   if(!mapInstance) return;
+
+  const isDefaultView = activeCat === 'all' && activeZone === 'all' && !searchQuery && !nearMeActive;
+  const miamiBoats = isDefaultView
+    ? visibleOps.filter(o => o.cat === 'boat' && o.zone === 'miami')
+    : [];
+
   const visibleIds = new Set(visibleOps.map(op => op.id));
+  const highlightIds = new Set(miamiBoats.map(o => o.id));
+
   Object.keys(markers).forEach(id => {
     if(visibleIds.has(id)) {
       if(!mapInstance.hasLayer(markers[id])) markers[id].addTo(mapInstance);
+      // Resaltar pins de botes Miami con tamaño mayor
+      const el = markers[id].getElement();
+      if(el) {
+        if(highlightIds.has(id)) {
+          el.style.transform = (el.style.transform || '').replace(/\s?scale\([^)]*\)/,'') + ' scale(1.35)';
+          el.style.zIndex = '1000';
+          el.style.filter = 'drop-shadow(0 0 6px #00eedd)';
+        } else if(isDefaultView) {
+          el.style.opacity = '0.45';
+          el.style.filter = 'none';
+        } else {
+          el.style.opacity = '';
+          el.style.transform = '';
+          el.style.filter = '';
+          el.style.zIndex = '';
+        }
+      }
     } else {
       if(mapInstance.hasLayer(markers[id])) mapInstance.removeLayer(markers[id]);
     }
   });
-  // Fit bounds to visible
-  if(visibleOps.length > 0) {
+
+  // Fit bounds: en vista por defecto, centrar en botes de Miami
+  if(isDefaultView && miamiBoats.length > 0) {
+    const latlngs = miamiBoats.map(o => [o.lat, o.lng]);
+    try { mapInstance.fitBounds(latlngs, {padding:[40,40], maxZoom:12}); } catch(e) {}
+  } else if(visibleOps.length > 0) {
     const latlngs = visibleOps.map(op => [op.lat, op.lng]);
     try { mapInstance.fitBounds(latlngs, {padding:[30,30], maxZoom:13}); } catch(e) {}
   }
