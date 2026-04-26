@@ -897,6 +897,15 @@ function getFiltered() {
   if(nearMeActive && userLat!==null){
     ops = ops.map(op=>({...op, _dist:haversine(userLat,userLng,op.lat,op.lng)}))
              .sort((a,b)=>a._dist-b._dist);
+  } else {
+    // Default sort: Miami boats first (price asc), then everything else
+    const isDefaultView = activeCat === 'all' && activeZone === 'all' && !searchQuery;
+    if (isDefaultView) {
+      const miamBoats = ops.filter(o => o.cat === 'boat' && o.zone === 'miami')
+                           .sort((a,b) => a.price - b.price);
+      const rest      = ops.filter(o => !(o.cat === 'boat' && o.zone === 'miami'));
+      ops = [...miamBoats, ...rest];
+    }
   }
   return ops;
 }
