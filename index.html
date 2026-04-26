@@ -1463,6 +1463,7 @@ function makeIcon(color, label) {
 }
 
 function initMap() {
+  if (mapInstance) return; // prevent double-init
   mapInstance = L.map('jetski-map', {
     center:[27.5,-81.5],
     zoom:6,
@@ -1578,7 +1579,7 @@ function loadLeafletThenMap() {
   leafletLoaded = true;
   const s = document.createElement('script');
   s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-  s.onload = () => { if (allOperators.length) initMap(); };
+  s.onload = () => { initMap(); };
   document.head.appendChild(s);
 }
 // Init map only when map panel is scrolled into view
@@ -1603,7 +1604,8 @@ document.addEventListener('DOMContentLoaded', () => {
     .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
     .then(data => {
       allOperators = data;
-      // Map init is handled by IntersectionObserver above
+      // If Leaflet already loaded but initMap() was skipped (race: Leaflet beat operators.json), init now
+      if (window.L && !mapInstance) initMap();
       if (window._preloadSearch) {
         const inp = document.getElementById('searchInput');
         if (inp) { inp.value = window._preloadSearch; searchQuery = window._preloadSearch.toLowerCase(); document.getElementById('searchClear').classList.add('show'); }
