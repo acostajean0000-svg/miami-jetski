@@ -1893,7 +1893,13 @@ function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(
     cards.forEach(function(c){grid.appendChild(c);});
     // Attach geo data to each card
     cards.forEach(function(card){
-      var name=(card.querySelector('.op-name')||{}).textContent||'';
+      var nameEl=card.querySelector('.op-name');
+      // Use first text node only (ignoring the "· 8Pax" span)
+      var name='';
+      if(nameEl){
+        var tn=nameEl.firstChild;
+        name=(tn&&tn.nodeType===3)?tn.textContent.trim():(nameEl.textContent||'').replace(/·\s*\d+Pax/,'').trim();
+      }
       var geo=opGeo[name];
       if(geo){card.dataset.lat=geo.lat;card.dataset.lng=geo.lng;card.dataset.price=geo.price;}
     });
@@ -1950,7 +1956,9 @@ function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(
     cards.forEach(function(card,i){
       var lat=+(card.dataset.lat||0),lng=+(card.dataset.lng||0);
       if(!lat||!lng)return;
-      var name=(card.querySelector('.op-name')||{}).textContent||'';
+      var nameEl2=card.querySelector('.op-name');
+      var name='';
+      if(nameEl2){var tn2=nameEl2.firstChild;name=(tn2&&tn2.nodeType===3)?tn2.textContent.trim():(nameEl2.textContent||'').replace(/·\s*\d+Pax/,'').trim();}
       var price=(card.querySelector('.op-price-num')||{}).textContent||'';
       var bookEl=card.querySelector('.op-book');
       var bookUrl=bookEl?bookEl.href:'#';
