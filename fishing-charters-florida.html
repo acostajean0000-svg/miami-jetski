@@ -104,7 +104,48 @@
     @media(max-width:480px){
       .cards-grid{grid-template-columns:1fr;}
     }
-  </style>
+  
+    /* ── Card overlay buttons ── */
+    .op-card-img{position:relative;}
+    /* Action strip at bottom of card image */
+    .card-actions{position:absolute;bottom:0;left:0;right:0;z-index:4;display:flex;align-items:center;justify-content:space-between;padding:6px 8px;background:linear-gradient(to top,rgba(4,13,26,.82) 0%,transparent 100%);opacity:0;transform:translateY(4px);transition:opacity .22s ease,transform .22s ease;pointer-events:none;}
+    .op-card:hover .card-actions{opacity:1;transform:translateY(0);pointer-events:auto;}
+    /* Keep fav always visible when saved */
+    .fav-toggle.saved ~ .card-actions,
+    .card-actions:has(.fav-toggle.saved){opacity:1;transform:translateY(0);pointer-events:auto;}
+
+    /* Individual buttons */
+    .fav-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.88rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .fav-toggle:hover{border-color:#ff6b8a;background:rgba(255,60,100,.25);}
+    .fav-toggle.saved{background:rgba(220,40,80,.9);border-color:#ff3c64;}
+    .fav-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    .cmp-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:#fff;font-weight:700;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .cmp-toggle:hover{border-color:#00d4c8;background:rgba(0,212,200,.25);}
+    .cmp-toggle.selected{background:#00d4c8;border-color:#00d4c8;color:#040d1a;}
+    .cmp-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    .shr-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .shr-btn:hover{border-color:#00d4c8;background:rgba(0,212,200,.2);}
+    .shr-btn::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    /* View details link */
+    .op-detail-link{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:8px;padding:7px 0 3px;border-top:1px solid rgba(255,255,255,.07);font-size:.76rem;color:var(--text-muted);transition:color .2s;text-decoration:none;}
+    .op-detail-link:hover{color:#00d4c8;}
+
+    /* Compare bar */
+    #cmpBar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(8,21,37,.97);backdrop-filter:blur(12px);border-top:1px solid #1c3a58;padding:12px 20px;align-items:center;gap:12px;flex-wrap:wrap;}
+    #cmpBar.show{display:flex;}
+    .cmp-bar-title{font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;color:#9bbdd4;white-space:nowrap;}
+    .cmp-items{display:flex;gap:8px;flex:1;min-width:0;flex-wrap:wrap;}
+    .cmp-chip{background:#0f2038;border:1px solid #1c3a58;border-radius:8px;padding:5px 10px;font-size:.75rem;display:flex;align-items:center;gap:6px;max-width:180px;}
+    .cmp-chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .cmp-chip-rm{cursor:pointer;color:#9bbdd4;font-size:.9rem;flex-shrink:0;}
+    .cmp-go{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;border:none;padding:9px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+    .cmp-go:hover{opacity:.9;}
+    .cmp-clear{background:transparent;border:1px solid #1c3a58;color:#9bbdd4;padding:9px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;cursor:pointer;}
+
+    </style>
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -151,6 +192,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/NXQv4Fc1SHaEj8ixrR1t" alt="L Fish – Fishing Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Fishing</span>
     <span class="op-best-badge">🎣 Deep Sea</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-441766" onclick="event.stopPropagation();toggleFav(this,'fh-441766')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-441766" onclick="event.stopPropagation();toggleCmp(this,'fh-441766','L Fish – Fishing Charter')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/lfish/items/441766/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','L Fish – Fishing Charter',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">L Fish – Fishing Charter</div>
@@ -158,6 +200,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$2000</div></div>
       <a href="https://fareharbor.com/embeds/book/lfish/items/441766/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=L+Fish+–+Fishing+Charter" onclick="event.stopPropagation()" title="View details for L Fish – Fishing Charter">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -166,6 +209,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KjrBR7IBSOaFxGysBFjF" alt="Atlantic Gulf Fishing Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Fishing</span>
     <span class="op-best-badge">🎣 Offshore</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-659660" onclick="event.stopPropagation();toggleFav(this,'fh-659660')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-659660" onclick="event.stopPropagation();toggleCmp(this,'fh-659660','Atlantic Gulf Fishing Charters')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/atlanticgulffishingcharters/items/659660/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Atlantic Gulf Fishing Charters',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Atlantic Gulf Fishing Charters</div>
@@ -173,6 +217,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$1895</div></div>
       <a href="https://fareharbor.com/embeds/book/atlanticgulffishingcharters/items/659660/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Atlantic+Gulf+Fishing+Charters" onclick="event.stopPropagation()" title="View details for Atlantic Gulf Fishing Charters">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -181,6 +226,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/BEtGimlZQoSOdFUKiVio" alt="Key West Fishing Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Fishing</span>
     <span class="op-best-badge">🎣 Key West</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-464690" onclick="event.stopPropagation();toggleFav(this,'fh-464690')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-464690" onclick="event.stopPropagation();toggleCmp(this,'fh-464690','Key West Fishing Charters')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/keywestfishing-charters2/items/464690/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Key West Fishing Charters',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Key West Fishing Charters</div>
@@ -188,6 +234,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$850</div></div>
       <a href="https://fareharbor.com/embeds/book/keywestfishing-charters2/items/464690/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Key+West+Fishing+Charters" onclick="event.stopPropagation()" title="View details for Key West Fishing Charters">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -196,6 +243,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/ajMZl9bjQ4aUCHu44noD" alt="Reel Floridian Fishing" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Fishing</span>
     <span class="op-best-badge">🎣 Pompano</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-645036" onclick="event.stopPropagation();toggleFav(this,'fh-645036')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-645036" onclick="event.stopPropagation();toggleCmp(this,'fh-645036','Reel Floridian Fishing')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/reelfloridianfishing/items/645036/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Reel Floridian Fishing',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Reel Floridian Fishing</div>
@@ -203,6 +251,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$695</div></div>
       <a href="https://fareharbor.com/embeds/book/reelfloridianfishing/items/645036/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Reel+Floridian+Fishing" onclick="event.stopPropagation()" title="View details for Reel Floridian Fishing">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -211,6 +260,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/bFy8WLIHSHiYcOFOHQly" alt="Dirty Dolly Fish Company" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Fishing</span>
     <span class="op-best-badge">🎣 Charter</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-490636" onclick="event.stopPropagation();toggleFav(this,'fh-490636')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-490636" onclick="event.stopPropagation();toggleCmp(this,'fh-490636','Dirty Dolly Fish Company')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/dirtydollyfishcompany/items/490636/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Dirty Dolly Fish Company',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Dirty Dolly Fish Company</div>
@@ -218,6 +268,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$700</div></div>
       <a href="https://fareharbor.com/embeds/book/dirtydollyfishcompany/items/490636/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Dirty+Dolly+Fish+Company" onclick="event.stopPropagation()" title="View details for Dirty Dolly Fish Company">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -226,6 +277,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/UxWDijTVS9CElGrgZCj8" alt="Key West Fishing Charters II" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Fishing</span>
     <span class="op-best-badge">🎣 Key West</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-104492" onclick="event.stopPropagation();toggleFav(this,'fh-104492')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-104492" onclick="event.stopPropagation();toggleCmp(this,'fh-104492','Key West Fishing Charters II')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/keywestfishing-charters/items/104492/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Key West Fishing Charters II',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Key West Fishing Charters II</div>
@@ -233,6 +285,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$1050</div></div>
       <a href="https://fareharbor.com/embeds/book/keywestfishing-charters/items/104492/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Key+West+Fishing+Charters+II" onclick="event.stopPropagation()" title="View details for Key West Fishing Charters II">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -279,5 +332,87 @@
     </div>
   </div>
 </footer>
+
+<script>
+// ── Favorites ──
+var _favs = new Set(JSON.parse(localStorage.getItem('fav_ops_cat')||'[]'));
+function toggleFav(btn,id){
+  if(_favs.has(id)){_favs.delete(id);btn.textContent='🤍';btn.classList.remove('saved');}
+  else{_favs.add(id);btn.textContent='❤️';btn.classList.add('saved');}
+  localStorage.setItem('fav_ops_cat',JSON.stringify([..._favs]));
+}
+// restore fav state on load
+document.querySelectorAll('.fav-toggle').forEach(function(b){
+  if(_favs.has(b.dataset.id)){b.textContent='❤️';b.classList.add('saved');}
+});
+
+// ── Compare ──
+var _cmp = JSON.parse(localStorage.getItem('cmp_ops_cat')||'[]');
+var _MAX_CMP = 3;
+function toggleCmp(btn,id,name){
+  var idx = _cmp.findIndex(function(o){return o.id===id;});
+  if(idx > -1){ _cmp.splice(idx,1); btn.textContent='＋'; btn.classList.remove('selected'); }
+  else if(_cmp.length >= _MAX_CMP){ alert('Max '+_MAX_CMP+' operators to compare.'); return; }
+  else{ _cmp.push({id:id,name:name}); btn.textContent='✓'; btn.classList.add('selected'); }
+  localStorage.setItem('cmp_ops_cat',JSON.stringify(_cmp));
+  renderCmpBar();
+}
+function renderCmpBar(){
+  var bar = document.getElementById('cmpBar');
+  if(!bar) return;
+  if(_cmp.length===0){bar.classList.remove('show');return;}
+  bar.classList.add('show');
+  var chips = _cmp.map(function(o){
+    return '<div class="cmp-chip"><span>'+escHtml(o.name)+'</span><span class="cmp-chip-rm" onclick="removeCmp(\''+o.id+'\')">✕</span></div>';
+  }).join('');
+  document.getElementById('cmpItems').innerHTML = chips;
+}
+function removeCmp(id){
+  _cmp = _cmp.filter(function(o){return o.id!==id;});
+  localStorage.setItem('cmp_ops_cat',JSON.stringify(_cmp));
+  var btn = document.querySelector('.cmp-toggle[data-id="'+id+'"]');
+  if(btn){btn.textContent='＋';btn.classList.remove('selected');}
+  renderCmpBar();
+}
+function openCompare(){
+  if(_cmp.length < 2){alert('Select at least 2 operators to compare.');return;}
+  var q = _cmp.map(function(o){return encodeURIComponent(o.name);}).join(',');
+  window.open('/?compare='+q,'_blank');
+}
+// restore compare state
+document.querySelectorAll('.cmp-toggle').forEach(function(b){
+  if(_cmp.find(function(o){return o.id===b.dataset.id;})){b.textContent='✓';b.classList.add('selected');}
+});
+renderCmpBar();
+
+// ── Share ──
+function shareOp(url,name,btn){
+  var shareUrl = url || window.location.href;
+  if(navigator.share){
+    navigator.share({title:name,url:shareUrl}).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(shareUrl).then(function(){
+      var orig = btn.textContent; btn.textContent='✓';
+      setTimeout(function(){btn.textContent=orig;},2000);
+    }).catch(function(){});
+  }
+}
+
+// ── View Details (go to index with prefilled search) ──
+function viewDetails(name){
+  window.location.href='/?q='+encodeURIComponent(name);
+}
+
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+</script>
+
+<!-- Compare bar -->
+<div id="cmpBar">
+  <span class="cmp-bar-title">⚖️ Compare</span>
+  <div class="cmp-items" id="cmpItems"></div>
+  <button class="cmp-go" onclick="openCompare()">Compare →</button>
+  <button class="cmp-clear" onclick="_cmp=[];localStorage.removeItem('cmp_ops_cat');document.querySelectorAll('.cmp-toggle').forEach(function(b){b.textContent='＋';b.classList.remove('selected');});renderCmpBar();">Clear</button>
+</div>
+
 </body>
 </html>

@@ -104,7 +104,48 @@
     @media(max-width:480px){
       .cards-grid{grid-template-columns:1fr;}
     }
-  </style>
+  
+    /* ── Card overlay buttons ── */
+    .op-card-img{position:relative;}
+    /* Action strip at bottom of card image */
+    .card-actions{position:absolute;bottom:0;left:0;right:0;z-index:4;display:flex;align-items:center;justify-content:space-between;padding:6px 8px;background:linear-gradient(to top,rgba(4,13,26,.82) 0%,transparent 100%);opacity:0;transform:translateY(4px);transition:opacity .22s ease,transform .22s ease;pointer-events:none;}
+    .op-card:hover .card-actions{opacity:1;transform:translateY(0);pointer-events:auto;}
+    /* Keep fav always visible when saved */
+    .fav-toggle.saved ~ .card-actions,
+    .card-actions:has(.fav-toggle.saved){opacity:1;transform:translateY(0);pointer-events:auto;}
+
+    /* Individual buttons */
+    .fav-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.88rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .fav-toggle:hover{border-color:#ff6b8a;background:rgba(255,60,100,.25);}
+    .fav-toggle.saved{background:rgba(220,40,80,.9);border-color:#ff3c64;}
+    .fav-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    .cmp-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:#fff;font-weight:700;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .cmp-toggle:hover{border-color:#00d4c8;background:rgba(0,212,200,.25);}
+    .cmp-toggle.selected{background:#00d4c8;border-color:#00d4c8;color:#040d1a;}
+    .cmp-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    .shr-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .shr-btn:hover{border-color:#00d4c8;background:rgba(0,212,200,.2);}
+    .shr-btn::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    /* View details link */
+    .op-detail-link{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:8px;padding:7px 0 3px;border-top:1px solid rgba(255,255,255,.07);font-size:.76rem;color:var(--text-muted);transition:color .2s;text-decoration:none;}
+    .op-detail-link:hover{color:#00d4c8;}
+
+    /* Compare bar */
+    #cmpBar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(8,21,37,.97);backdrop-filter:blur(12px);border-top:1px solid #1c3a58;padding:12px 20px;align-items:center;gap:12px;flex-wrap:wrap;}
+    #cmpBar.show{display:flex;}
+    .cmp-bar-title{font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;color:#9bbdd4;white-space:nowrap;}
+    .cmp-items{display:flex;gap:8px;flex:1;min-width:0;flex-wrap:wrap;}
+    .cmp-chip{background:#0f2038;border:1px solid #1c3a58;border-radius:8px;padding:5px 10px;font-size:.75rem;display:flex;align-items:center;gap:6px;max-width:180px;}
+    .cmp-chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .cmp-chip-rm{cursor:pointer;color:#9bbdd4;font-size:.9rem;flex-shrink:0;}
+    .cmp-go{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;border:none;padding:9px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+    .cmp-go:hover{opacity:.9;}
+    .cmp-clear{background:transparent;border:1px solid #1c3a58;color:#9bbdd4;padding:9px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;cursor:pointer;}
+
+    </style>
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -151,6 +192,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/cp48OLxQwyd0XSJFHvbg" alt="It\'s Jet Ski Time – Naples" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">💰 From $89</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-585069" onclick="event.stopPropagation();toggleFav(this,'fh-585069')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-585069" onclick="event.stopPropagation();toggleCmp(this,'fh-585069','It\'s Jet Ski Time – Naples')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/itsjetskitime/items/585069/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','It\'s Jet Ski Time – Naples',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">It\'s Jet Ski Time – Naples</div>
@@ -158,6 +200,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$89</div></div>
       <a href="https://fareharbor.com/embeds/book/itsjetskitime/items/585069/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=It\'s+Jet+Ski+Time+–+Naples" onclick="event.stopPropagation()" title="View details for It\'s Jet Ski Time – Naples">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -166,6 +209,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/UHu4AS7tTXa9MBqO75hh" alt="Sunset Ski & Watersports" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🌅 Sunset</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-309714" onclick="event.stopPropagation();toggleFav(this,'fh-309714')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-309714" onclick="event.stopPropagation();toggleCmp(this,'fh-309714','Sunset Ski & Watersports')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sunsetskiandwatersports/items/309714/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Sunset Ski & Watersports',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Sunset Ski & Watersports</div>
@@ -173,6 +217,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$150</div></div>
       <a href="https://fareharbor.com/embeds/book/sunsetskiandwatersports/items/309714/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Sunset+Ski+&+Watersports" onclick="event.stopPropagation()" title="View details for Sunset Ski & Watersports">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -181,6 +226,7 @@
     <img src="https://cdn.filestackcontent.com/wqAfJu8lSry3xGKkBN8L/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max" alt="Island Ski Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🏝 Island</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-564327" onclick="event.stopPropagation();toggleFav(this,'fh-564327')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-564327" onclick="event.stopPropagation();toggleCmp(this,'fh-564327','Island Ski Rentals')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/islandskirentals/items/564327/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Island Ski Rentals',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Island Ski Rentals</div>
@@ -188,6 +234,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$110</div></div>
       <a href="https://fareharbor.com/embeds/book/islandskirentals/items/564327/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Island+Ski+Rentals" onclick="event.stopPropagation()" title="View details for Island Ski Rentals">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -196,6 +243,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/8VlaZciFTCDXtTJsegzj" alt="Aquaholic Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🚤 Charters</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-690519" onclick="event.stopPropagation();toggleFav(this,'fh-690519')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-690519" onclick="event.stopPropagation();toggleCmp(this,'fh-690519','Aquaholic Charters')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/aquaholic-charters/items/690519/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Aquaholic Charters',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Aquaholic Charters</div>
@@ -203,6 +251,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$299</div></div>
       <a href="https://fareharbor.com/embeds/book/aquaholic-charters/items/690519/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Aquaholic+Charters" onclick="event.stopPropagation()" title="View details for Aquaholic Charters">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -211,6 +260,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/gg0aUKKhTMuQx00tpeNK" alt="Splash N Dash Jet Ski Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">💦 Splash</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-639818" onclick="event.stopPropagation();toggleFav(this,'fh-639818')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-639818" onclick="event.stopPropagation();toggleCmp(this,'fh-639818','Splash N Dash Jet Ski Rental')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/splashndashjetskirental/items/639818/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Splash N Dash Jet Ski Rental',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Splash N Dash Jet Ski Rental</div>
@@ -218,6 +268,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$169</div></div>
       <a href="https://fareharbor.com/embeds/book/splashndashjetskirental/items/639818/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Splash+N+Dash+Jet+Ski+Rental" onclick="event.stopPropagation()" title="View details for Splash N Dash Jet Ski Rental">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -226,6 +277,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/vSXR1pSCrmz56viqSEQ6" alt="JP Jet Ski Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🌊 Manatee</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-647756" onclick="event.stopPropagation();toggleFav(this,'fh-647756')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-647756" onclick="event.stopPropagation();toggleCmp(this,'fh-647756','JP Jet Ski Rental')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/jpjetskirental/items/647756/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','JP Jet Ski Rental',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">JP Jet Ski Rental</div>
@@ -233,6 +285,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$120</div></div>
       <a href="https://fareharbor.com/embeds/book/jpjetskirental/items/647756/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=JP+Jet+Ski+Rental" onclick="event.stopPropagation()" title="View details for JP Jet Ski Rental">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -241,6 +294,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4uMATmBQvSPbxZqe4DsQ" alt="Florida Island Tours" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">🏝 Island</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-524679" onclick="event.stopPropagation();toggleFav(this,'fh-524679')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-524679" onclick="event.stopPropagation();toggleCmp(this,'fh-524679','Florida Island Tours')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/floridaislandtours/items/524679/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Florida Island Tours',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Florida Island Tours</div>
@@ -248,6 +302,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$525</div></div>
       <a href="https://fareharbor.com/embeds/book/floridaislandtours/items/524679/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Florida+Island+Tours" onclick="event.stopPropagation()" title="View details for Florida Island Tours">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -256,6 +311,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/gn5rftESnGGUlRc3XA2w" alt="Kokomo Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">🎶 Kokomo</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-518018" onclick="event.stopPropagation();toggleFav(this,'fh-518018')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-518018" onclick="event.stopPropagation();toggleCmp(this,'fh-518018','Kokomo Charters')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/kokomocharters/items/518018/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Kokomo Charters',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Kokomo Charters</div>
@@ -263,6 +319,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$2399</div></div>
       <a href="https://fareharbor.com/embeds/book/kokomocharters/items/518018/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Kokomo+Charters" onclick="event.stopPropagation()" title="View details for Kokomo Charters">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -271,6 +328,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/IiLKnGCWSvKkEF76JR1u" alt="Beach Bums Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">🏖 Captiva</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-54601" onclick="event.stopPropagation();toggleFav(this,'fh-54601')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-54601" onclick="event.stopPropagation();toggleCmp(this,'fh-54601','Beach Bums Boat Rentals')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/beachbumsboatrentals/items/54601/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Beach Bums Boat Rentals',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Beach Bums Boat Rentals</div>
@@ -278,6 +336,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$265</div></div>
       <a href="https://fareharbor.com/embeds/book/beachbumsboatrentals/items/54601/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Beach+Bums+Boat+Rentals" onclick="event.stopPropagation()" title="View details for Beach Bums Boat Rentals">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -286,6 +345,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/zSmEcrGVQqrnIQkeRLO4" alt="PG Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">⚓ Punta Gorda</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-555397" onclick="event.stopPropagation();toggleFav(this,'fh-555397')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-555397" onclick="event.stopPropagation();toggleCmp(this,'fh-555397','PG Boat Rental')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/pgboatrental/items/555397/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','PG Boat Rental',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">PG Boat Rental</div>
@@ -293,6 +353,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$225</div></div>
       <a href="https://fareharbor.com/embeds/book/pgboatrental/items/555397/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=PG+Boat+Rental" onclick="event.stopPropagation()" title="View details for PG Boat Rental">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -301,6 +362,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/A1rDDddfRxG30HUcjyBM" alt="Island Time Florida Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">🏝 Island Time</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-668655" onclick="event.stopPropagation();toggleFav(this,'fh-668655')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-668655" onclick="event.stopPropagation();toggleCmp(this,'fh-668655','Island Time Florida Charters')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/islandtimefloridacharters/items/668655/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Island Time Florida Charters',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Island Time Florida Charters</div>
@@ -308,6 +370,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$330</div></div>
       <a href="https://fareharbor.com/embeds/book/islandtimefloridacharters/items/668655/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Island+Time+Florida+Charters" onclick="event.stopPropagation()" title="View details for Island Time Florida Charters">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -316,6 +379,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/I2gyMwhVTtuQ7bl7XO5V" alt="Crysten\'s" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">🌊 Holmes Beach</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-462988" onclick="event.stopPropagation();toggleFav(this,'fh-462988')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-462988" onclick="event.stopPropagation();toggleCmp(this,'fh-462988','Crysten\'s')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/crystens/items/462988/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Crysten\'s',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Crysten\'s</div>
@@ -323,6 +387,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$350</div></div>
       <a href="https://fareharbor.com/embeds/book/crystens/items/462988/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Crysten\'s" onclick="event.stopPropagation()" title="View details for Crysten\'s">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -331,6 +396,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/0d4wY48USeaKHeRSYXmO" alt="Father Daughter Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">👨‍👧 Charter</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-520862" onclick="event.stopPropagation();toggleFav(this,'fh-520862')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-520862" onclick="event.stopPropagation();toggleCmp(this,'fh-520862','Father Daughter Charters')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/fatherdaughtercharters/items/520862/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Father Daughter Charters',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Father Daughter Charters</div>
@@ -338,6 +404,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$750</div></div>
       <a href="https://fareharbor.com/embeds/book/fatherdaughtercharters/items/520862/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Father+Daughter+Charters" onclick="event.stopPropagation()" title="View details for Father Daughter Charters">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -346,6 +413,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CbrL6oLrRfeEy2R600bz" alt="Big Shot Slingshot" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Slingshot</span>
     <span class="op-best-badge">💥 Big Shot</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-474961" onclick="event.stopPropagation();toggleFav(this,'fh-474961')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-474961" onclick="event.stopPropagation();toggleCmp(this,'fh-474961','Big Shot Slingshot')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/bookslingshot/items/474961/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Big Shot Slingshot',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Big Shot Slingshot</div>
@@ -353,6 +421,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$299</div></div>
       <a href="https://fareharbor.com/embeds/book/bookslingshot/items/474961/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Big+Shot+Slingshot" onclick="event.stopPropagation()" title="View details for Big Shot Slingshot">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -361,6 +430,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/AZ5CoJfEQUSzBfesRVPA" alt="Adventure Watersports – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
     <span class="op-best-badge">🌴 FMB</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-652615" onclick="event.stopPropagation();toggleFav(this,'fh-652615')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-652615" onclick="event.stopPropagation();toggleCmp(this,'fh-652615','Adventure Watersports – Jet Car')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/adventure-watersports/items/652615/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Adventure Watersports – Jet Car',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Adventure Watersports – Jet Car</div>
@@ -368,6 +438,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$200</div></div>
       <a href="https://fareharbor.com/embeds/book/adventure-watersports/items/652615/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Adventure+Watersports+–+Jet+Car" onclick="event.stopPropagation()" title="View details for Adventure Watersports – Jet Car">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -376,6 +447,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hGLCfMpPSIGTsiGbgQvd" alt="Aqua Voyage Jet Cars" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
     <span class="op-best-badge">🚗 Naples</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-627257" onclick="event.stopPropagation();toggleFav(this,'fh-627257')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-627257" onclick="event.stopPropagation();toggleCmp(this,'fh-627257','Aqua Voyage Jet Cars')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/aquavoyagejetcars/items/627257/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Aqua Voyage Jet Cars',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Aqua Voyage Jet Cars</div>
@@ -383,6 +455,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$299</div></div>
       <a href="https://fareharbor.com/embeds/book/aquavoyagejetcars/items/627257/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Aqua+Voyage+Jet+Cars" onclick="event.stopPropagation()" title="View details for Aqua Voyage Jet Cars">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -391,6 +464,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/6L73Q8hxS7aXFBWCYrwH" alt="Good Vibes Island Rides – Golf Cart" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Golf Cart</span>
     <span class="op-best-badge">🌴 Sarasota</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-405372" onclick="event.stopPropagation();toggleFav(this,'fh-405372')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-405372" onclick="event.stopPropagation();toggleCmp(this,'fh-405372','Good Vibes Island Rides – Golf Cart')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/goodvibesislandrides/items/405372/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Good Vibes Island Rides – Golf Cart',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Good Vibes Island Rides – Golf Cart</div>
@@ -398,6 +472,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$305</div></div>
       <a href="https://fareharbor.com/embeds/book/goodvibesislandrides/items/405372/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Good+Vibes+Island+Rides+–+Golf+Cart" onclick="event.stopPropagation()" title="View details for Good Vibes Island Rides – Golf Cart">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -406,6 +481,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/iFPajcCuTV6cbX7s3hd7" alt="Marco Island Boat Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">🚢 Marco Island</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-423750" onclick="event.stopPropagation();toggleFav(this,'fh-423750')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-423750" onclick="event.stopPropagation();toggleCmp(this,'fh-423750','Marco Island Boat Charters')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/marcoislandboatcharters/items/423750/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Marco Island Boat Charters',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Marco Island Boat Charters</div>
@@ -413,6 +489,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$650</div></div>
       <a href="https://fareharbor.com/embeds/book/marcoislandboatcharters/items/423750/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Marco+Island+Boat+Charters" onclick="event.stopPropagation()" title="View details for Marco Island Boat Charters">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -421,6 +498,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/cGCKxq9wQ3i7yHjCqOau" alt="Keys Huka Dive – Nokomis" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">🤿 Dive</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-306831" onclick="event.stopPropagation();toggleFav(this,'fh-306831')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-306831" onclick="event.stopPropagation();toggleCmp(this,'fh-306831','Keys Huka Dive – Nokomis')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/keyshukadive/items/306831/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Keys Huka Dive – Nokomis',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Keys Huka Dive – Nokomis</div>
@@ -428,6 +506,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$79</div></div>
       <a href="https://fareharbor.com/embeds/book/keyshukadive/items/306831/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Keys+Huka+Dive+–+Nokomis" onclick="event.stopPropagation()" title="View details for Keys Huka Dive – Nokomis">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -436,6 +515,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KDRotEB8RFSRppMNjQMa" alt="Florida Adventures – Dolphin Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">🐬 Dolphin</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-76676" onclick="event.stopPropagation();toggleFav(this,'fh-76676')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-76676" onclick="event.stopPropagation();toggleCmp(this,'fh-76676','Florida Adventures – Dolphin Tour')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/76676/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Florida Adventures – Dolphin Tour',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Florida Adventures – Dolphin Tour</div>
@@ -443,6 +523,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$475</div></div>
       <a href="https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/76676/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Florida+Adventures+–+Dolphin+Tour" onclick="event.stopPropagation()" title="View details for Florida Adventures – Dolphin Tour">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -451,6 +532,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KbeKLjQFTwCj9fMR1mgT" alt="Robin Hood Anna Maria" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">🏝 Anna Maria</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-98490" onclick="event.stopPropagation();toggleFav(this,'fh-98490')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-98490" onclick="event.stopPropagation();toggleCmp(this,'fh-98490','Robin Hood Anna Maria')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/robinhoodanamaria/items/98490/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Robin Hood Anna Maria',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Robin Hood Anna Maria</div>
@@ -458,6 +540,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$99</div></div>
       <a href="https://fareharbor.com/embeds/book/robinhoodanamaria/items/98490/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Robin+Hood+Anna+Maria" onclick="event.stopPropagation()" title="View details for Robin Hood Anna Maria">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -466,6 +549,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/1gcLiu63TkigI9M3sf1F" alt="Florida Adventures – Kayak Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Water Sports</span>
     <span class="op-best-badge">🚣 Kayak</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-44245" onclick="event.stopPropagation();toggleFav(this,'fh-44245')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-44245" onclick="event.stopPropagation();toggleCmp(this,'fh-44245','Florida Adventures – Kayak Tour')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/44245/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Florida Adventures – Kayak Tour',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Florida Adventures – Kayak Tour</div>
@@ -473,6 +557,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$45</div></div>
       <a href="https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/44245/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Florida+Adventures+–+Kayak+Tour" onclick="event.stopPropagation()" title="View details for Florida Adventures – Kayak Tour">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -481,6 +566,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/Q0OFqglhToKW2y5GiPsA" alt="Florida Adventures – Kayak Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Water Sports</span>
     <span class="op-best-badge">🚣 Marco Island</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-115886" onclick="event.stopPropagation();toggleFav(this,'fh-115886')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-115886" onclick="event.stopPropagation();toggleCmp(this,'fh-115886','Florida Adventures – Kayak Rental')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/115886/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Florida Adventures – Kayak Rental',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Florida Adventures – Kayak Rental</div>
@@ -488,6 +574,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$4</div></div>
       <a href="https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/115886/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Florida+Adventures+–+Kayak+Rental" onclick="event.stopPropagation()" title="View details for Florida Adventures – Kayak Rental">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -534,5 +621,87 @@
     </div>
   </div>
 </footer>
+
+<script>
+// ── Favorites ──
+var _favs = new Set(JSON.parse(localStorage.getItem('fav_ops_cat')||'[]'));
+function toggleFav(btn,id){
+  if(_favs.has(id)){_favs.delete(id);btn.textContent='🤍';btn.classList.remove('saved');}
+  else{_favs.add(id);btn.textContent='❤️';btn.classList.add('saved');}
+  localStorage.setItem('fav_ops_cat',JSON.stringify([..._favs]));
+}
+// restore fav state on load
+document.querySelectorAll('.fav-toggle').forEach(function(b){
+  if(_favs.has(b.dataset.id)){b.textContent='❤️';b.classList.add('saved');}
+});
+
+// ── Compare ──
+var _cmp = JSON.parse(localStorage.getItem('cmp_ops_cat')||'[]');
+var _MAX_CMP = 3;
+function toggleCmp(btn,id,name){
+  var idx = _cmp.findIndex(function(o){return o.id===id;});
+  if(idx > -1){ _cmp.splice(idx,1); btn.textContent='＋'; btn.classList.remove('selected'); }
+  else if(_cmp.length >= _MAX_CMP){ alert('Max '+_MAX_CMP+' operators to compare.'); return; }
+  else{ _cmp.push({id:id,name:name}); btn.textContent='✓'; btn.classList.add('selected'); }
+  localStorage.setItem('cmp_ops_cat',JSON.stringify(_cmp));
+  renderCmpBar();
+}
+function renderCmpBar(){
+  var bar = document.getElementById('cmpBar');
+  if(!bar) return;
+  if(_cmp.length===0){bar.classList.remove('show');return;}
+  bar.classList.add('show');
+  var chips = _cmp.map(function(o){
+    return '<div class="cmp-chip"><span>'+escHtml(o.name)+'</span><span class="cmp-chip-rm" onclick="removeCmp(\''+o.id+'\')">✕</span></div>';
+  }).join('');
+  document.getElementById('cmpItems').innerHTML = chips;
+}
+function removeCmp(id){
+  _cmp = _cmp.filter(function(o){return o.id!==id;});
+  localStorage.setItem('cmp_ops_cat',JSON.stringify(_cmp));
+  var btn = document.querySelector('.cmp-toggle[data-id="'+id+'"]');
+  if(btn){btn.textContent='＋';btn.classList.remove('selected');}
+  renderCmpBar();
+}
+function openCompare(){
+  if(_cmp.length < 2){alert('Select at least 2 operators to compare.');return;}
+  var q = _cmp.map(function(o){return encodeURIComponent(o.name);}).join(',');
+  window.open('/?compare='+q,'_blank');
+}
+// restore compare state
+document.querySelectorAll('.cmp-toggle').forEach(function(b){
+  if(_cmp.find(function(o){return o.id===b.dataset.id;})){b.textContent='✓';b.classList.add('selected');}
+});
+renderCmpBar();
+
+// ── Share ──
+function shareOp(url,name,btn){
+  var shareUrl = url || window.location.href;
+  if(navigator.share){
+    navigator.share({title:name,url:shareUrl}).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(shareUrl).then(function(){
+      var orig = btn.textContent; btn.textContent='✓';
+      setTimeout(function(){btn.textContent=orig;},2000);
+    }).catch(function(){});
+  }
+}
+
+// ── View Details (go to index with prefilled search) ──
+function viewDetails(name){
+  window.location.href='/?q='+encodeURIComponent(name);
+}
+
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+</script>
+
+<!-- Compare bar -->
+<div id="cmpBar">
+  <span class="cmp-bar-title">⚖️ Compare</span>
+  <div class="cmp-items" id="cmpItems"></div>
+  <button class="cmp-go" onclick="openCompare()">Compare →</button>
+  <button class="cmp-clear" onclick="_cmp=[];localStorage.removeItem('cmp_ops_cat');document.querySelectorAll('.cmp-toggle').forEach(function(b){b.textContent='＋';b.classList.remove('selected');});renderCmpBar();">Clear</button>
+</div>
+
 </body>
 </html>

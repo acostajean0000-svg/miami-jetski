@@ -104,7 +104,48 @@
     @media(max-width:480px){
       .cards-grid{grid-template-columns:1fr;}
     }
-  </style>
+  
+    /* ── Card overlay buttons ── */
+    .op-card-img{position:relative;}
+    /* Action strip at bottom of card image */
+    .card-actions{position:absolute;bottom:0;left:0;right:0;z-index:4;display:flex;align-items:center;justify-content:space-between;padding:6px 8px;background:linear-gradient(to top,rgba(4,13,26,.82) 0%,transparent 100%);opacity:0;transform:translateY(4px);transition:opacity .22s ease,transform .22s ease;pointer-events:none;}
+    .op-card:hover .card-actions{opacity:1;transform:translateY(0);pointer-events:auto;}
+    /* Keep fav always visible when saved */
+    .fav-toggle.saved ~ .card-actions,
+    .card-actions:has(.fav-toggle.saved){opacity:1;transform:translateY(0);pointer-events:auto;}
+
+    /* Individual buttons */
+    .fav-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.88rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .fav-toggle:hover{border-color:#ff6b8a;background:rgba(255,60,100,.25);}
+    .fav-toggle.saved{background:rgba(220,40,80,.9);border-color:#ff3c64;}
+    .fav-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    .cmp-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:#fff;font-weight:700;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .cmp-toggle:hover{border-color:#00d4c8;background:rgba(0,212,200,.25);}
+    .cmp-toggle.selected{background:#00d4c8;border-color:#00d4c8;color:#040d1a;}
+    .cmp-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    .shr-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .shr-btn:hover{border-color:#00d4c8;background:rgba(0,212,200,.2);}
+    .shr-btn::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    /* View details link */
+    .op-detail-link{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:8px;padding:7px 0 3px;border-top:1px solid rgba(255,255,255,.07);font-size:.76rem;color:var(--text-muted);transition:color .2s;text-decoration:none;}
+    .op-detail-link:hover{color:#00d4c8;}
+
+    /* Compare bar */
+    #cmpBar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(8,21,37,.97);backdrop-filter:blur(12px);border-top:1px solid #1c3a58;padding:12px 20px;align-items:center;gap:12px;flex-wrap:wrap;}
+    #cmpBar.show{display:flex;}
+    .cmp-bar-title{font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;color:#9bbdd4;white-space:nowrap;}
+    .cmp-items{display:flex;gap:8px;flex:1;min-width:0;flex-wrap:wrap;}
+    .cmp-chip{background:#0f2038;border:1px solid #1c3a58;border-radius:8px;padding:5px 10px;font-size:.75rem;display:flex;align-items:center;gap:6px;max-width:180px;}
+    .cmp-chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .cmp-chip-rm{cursor:pointer;color:#9bbdd4;font-size:.9rem;flex-shrink:0;}
+    .cmp-go{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;border:none;padding:9px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+    .cmp-go:hover{opacity:.9;}
+    .cmp-clear{background:transparent;border:1px solid #1c3a58;color:#9bbdd4;padding:9px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;cursor:pointer;}
+
+    </style>
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -151,6 +192,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/AFZOE9VSHS63mEDYaRk6" alt="WakeZone Watersports – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
     <span class="op-best-badge">🚗 Keys</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-673133" onclick="event.stopPropagation();toggleFav(this,'fh-673133')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-673133" onclick="event.stopPropagation();toggleCmp(this,'fh-673133','WakeZone Watersports – Jet Car')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/wakezonewatersports/items/673133/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','WakeZone Watersports – Jet Car',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">WakeZone Watersports – Jet Car</div>
@@ -158,6 +200,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$300</div></div>
       <a href="https://fareharbor.com/embeds/book/wakezonewatersports/items/673133/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=WakeZone+Watersports+–+Jet+Car" onclick="event.stopPropagation()" title="View details for WakeZone Watersports – Jet Car">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -166,6 +209,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/xzxmLnRnRKDmOKyjy7Wt" alt="Get Wet FL – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
     <span class="op-best-badge">💦 St. Pete</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-530761" onclick="event.stopPropagation();toggleFav(this,'fh-530761')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-530761" onclick="event.stopPropagation();toggleCmp(this,'fh-530761','Get Wet FL – Jet Car')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/getwetfl/items/530761/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Get Wet FL – Jet Car',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Get Wet FL – Jet Car</div>
@@ -173,6 +217,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$150</div></div>
       <a href="https://fareharbor.com/embeds/book/getwetfl/items/530761/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Get+Wet+FL+–+Jet+Car" onclick="event.stopPropagation()" title="View details for Get Wet FL – Jet Car">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -181,6 +226,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/Lyx5HSyySrWoScEpKVEY" alt="Top Line Watersports – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
     <span class="op-best-badge">⚡ Miami</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-651450" onclick="event.stopPropagation();toggleFav(this,'fh-651450')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-651450" onclick="event.stopPropagation();toggleCmp(this,'fh-651450','Top Line Watersports – Jet Car')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/toplinewatersports/items/651450/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Top Line Watersports – Jet Car',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Top Line Watersports – Jet Car</div>
@@ -188,6 +234,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$350</div></div>
       <a href="https://fareharbor.com/embeds/book/toplinewatersports/items/651450/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Top+Line+Watersports+–+Jet+Car" onclick="event.stopPropagation()" title="View details for Top Line Watersports – Jet Car">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -196,6 +243,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/AZ5CoJfEQUSzBfesRVPA" alt="Adventure Watersports – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
     <span class="op-best-badge">🌴 FMB</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-652615" onclick="event.stopPropagation();toggleFav(this,'fh-652615')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-652615" onclick="event.stopPropagation();toggleCmp(this,'fh-652615','Adventure Watersports – Jet Car')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/adventure-watersports/items/652615/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Adventure Watersports – Jet Car',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Adventure Watersports – Jet Car</div>
@@ -203,6 +251,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$200</div></div>
       <a href="https://fareharbor.com/embeds/book/adventure-watersports/items/652615/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Adventure+Watersports+–+Jet+Car" onclick="event.stopPropagation()" title="View details for Adventure Watersports – Jet Car">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -211,6 +260,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hGLCfMpPSIGTsiGbgQvd" alt="Aqua Voyage Jet Cars" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
     <span class="op-best-badge">🚗 Naples</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-627257" onclick="event.stopPropagation();toggleFav(this,'fh-627257')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-627257" onclick="event.stopPropagation();toggleCmp(this,'fh-627257','Aqua Voyage Jet Cars')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/aquavoyagejetcars/items/627257/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Aqua Voyage Jet Cars',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Aqua Voyage Jet Cars</div>
@@ -218,6 +268,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$299</div></div>
       <a href="https://fareharbor.com/embeds/book/aquavoyagejetcars/items/627257/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Aqua+Voyage+Jet+Cars" onclick="event.stopPropagation()" title="View details for Aqua Voyage Jet Cars">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -226,6 +277,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/kcWCPqdTR6KeZ9YUK5qS" alt="Slingshot & Jet Ski Rentals – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
     <span class="op-best-badge">💰 From $90</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-571867" onclick="event.stopPropagation();toggleFav(this,'fh-571867')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-571867" onclick="event.stopPropagation();toggleCmp(this,'fh-571867','Slingshot & Jet Ski Rentals – Jet Car')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/slingshotandjetskirentals/items/571867/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Slingshot & Jet Ski Rentals – Jet Car',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Slingshot & Jet Ski Rentals – Jet Car</div>
@@ -233,6 +285,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$90</div></div>
       <a href="https://fareharbor.com/embeds/book/slingshotandjetskirentals/items/571867/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Slingshot+&+Jet+Ski+Rentals+–+Jet+Car" onclick="event.stopPropagation()" title="View details for Slingshot & Jet Ski Rentals – Jet Car">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -241,6 +294,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/WeDaEXXFToiH86X8XJlR" alt="Flamingo Yacht Charters – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
     <span class="op-best-badge">🦩 Fort Laud</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-594367" onclick="event.stopPropagation();toggleFav(this,'fh-594367')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-594367" onclick="event.stopPropagation();toggleCmp(this,'fh-594367','Flamingo Yacht Charters – Jet Car')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/flamingoyachtcharters/items/594367/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Flamingo Yacht Charters – Jet Car',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Flamingo Yacht Charters – Jet Car</div>
@@ -248,6 +302,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$275</div></div>
       <a href="https://fareharbor.com/embeds/book/flamingoyachtcharters/items/594367/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Flamingo+Yacht+Charters+–+Jet+Car" onclick="event.stopPropagation()" title="View details for Flamingo Yacht Charters – Jet Car">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -256,6 +311,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/gqaULLH4TgKCX4gN4xqE" alt="Jet Ski Miami Rentals – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
     <span class="op-best-badge">🌊 Collins</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-706920" onclick="event.stopPropagation();toggleFav(this,'fh-706920')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-706920" onclick="event.stopPropagation();toggleCmp(this,'fh-706920','Jet Ski Miami Rentals – Jet Car')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/jetskimiamirentals/items/706920/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Jet Ski Miami Rentals – Jet Car',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Jet Ski Miami Rentals – Jet Car</div>
@@ -263,6 +319,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$300</div></div>
       <a href="https://fareharbor.com/embeds/book/jetskimiamirentals/items/706920/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Jet+Ski+Miami+Rentals+–+Jet+Car" onclick="event.stopPropagation()" title="View details for Jet Ski Miami Rentals – Jet Car">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -271,6 +328,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/EfEtehwlTOWILInJaSkl" alt="Slinki Motors – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
     <span class="op-best-badge">🏎️ Miami Beach</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-617101" onclick="event.stopPropagation();toggleFav(this,'fh-617101')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-617101" onclick="event.stopPropagation();toggleCmp(this,'fh-617101','Slinki Motors – Jet Car')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/slingkimotors/items/617101/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Slinki Motors – Jet Car',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Slinki Motors – Jet Car</div>
@@ -278,6 +336,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$350</div></div>
       <a href="https://fareharbor.com/embeds/book/slingkimotors/items/617101/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Slinki+Motors+–+Jet+Car" onclick="event.stopPropagation()" title="View details for Slinki Motors – Jet Car">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -286,6 +345,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/PzX80V75Tm6k42i0lxwK" alt="SF Jet Ski Rentals – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
     <span class="op-best-badge">⚡ Collins</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-546470" onclick="event.stopPropagation();toggleFav(this,'fh-546470')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-546470" onclick="event.stopPropagation();toggleCmp(this,'fh-546470','SF Jet Ski Rentals – Jet Car')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sfjetskirentals/items/546470/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','SF Jet Ski Rentals – Jet Car',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">SF Jet Ski Rentals – Jet Car</div>
@@ -293,6 +353,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$450</div></div>
       <a href="https://fareharbor.com/embeds/book/sfjetskirentals/items/546470/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=SF+Jet+Ski+Rentals+–+Jet+Car" onclick="event.stopPropagation()" title="View details for SF Jet Ski Rentals – Jet Car">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -339,5 +400,87 @@
     </div>
   </div>
 </footer>
+
+<script>
+// ── Favorites ──
+var _favs = new Set(JSON.parse(localStorage.getItem('fav_ops_cat')||'[]'));
+function toggleFav(btn,id){
+  if(_favs.has(id)){_favs.delete(id);btn.textContent='🤍';btn.classList.remove('saved');}
+  else{_favs.add(id);btn.textContent='❤️';btn.classList.add('saved');}
+  localStorage.setItem('fav_ops_cat',JSON.stringify([..._favs]));
+}
+// restore fav state on load
+document.querySelectorAll('.fav-toggle').forEach(function(b){
+  if(_favs.has(b.dataset.id)){b.textContent='❤️';b.classList.add('saved');}
+});
+
+// ── Compare ──
+var _cmp = JSON.parse(localStorage.getItem('cmp_ops_cat')||'[]');
+var _MAX_CMP = 3;
+function toggleCmp(btn,id,name){
+  var idx = _cmp.findIndex(function(o){return o.id===id;});
+  if(idx > -1){ _cmp.splice(idx,1); btn.textContent='＋'; btn.classList.remove('selected'); }
+  else if(_cmp.length >= _MAX_CMP){ alert('Max '+_MAX_CMP+' operators to compare.'); return; }
+  else{ _cmp.push({id:id,name:name}); btn.textContent='✓'; btn.classList.add('selected'); }
+  localStorage.setItem('cmp_ops_cat',JSON.stringify(_cmp));
+  renderCmpBar();
+}
+function renderCmpBar(){
+  var bar = document.getElementById('cmpBar');
+  if(!bar) return;
+  if(_cmp.length===0){bar.classList.remove('show');return;}
+  bar.classList.add('show');
+  var chips = _cmp.map(function(o){
+    return '<div class="cmp-chip"><span>'+escHtml(o.name)+'</span><span class="cmp-chip-rm" onclick="removeCmp(\''+o.id+'\')">✕</span></div>';
+  }).join('');
+  document.getElementById('cmpItems').innerHTML = chips;
+}
+function removeCmp(id){
+  _cmp = _cmp.filter(function(o){return o.id!==id;});
+  localStorage.setItem('cmp_ops_cat',JSON.stringify(_cmp));
+  var btn = document.querySelector('.cmp-toggle[data-id="'+id+'"]');
+  if(btn){btn.textContent='＋';btn.classList.remove('selected');}
+  renderCmpBar();
+}
+function openCompare(){
+  if(_cmp.length < 2){alert('Select at least 2 operators to compare.');return;}
+  var q = _cmp.map(function(o){return encodeURIComponent(o.name);}).join(',');
+  window.open('/?compare='+q,'_blank');
+}
+// restore compare state
+document.querySelectorAll('.cmp-toggle').forEach(function(b){
+  if(_cmp.find(function(o){return o.id===b.dataset.id;})){b.textContent='✓';b.classList.add('selected');}
+});
+renderCmpBar();
+
+// ── Share ──
+function shareOp(url,name,btn){
+  var shareUrl = url || window.location.href;
+  if(navigator.share){
+    navigator.share({title:name,url:shareUrl}).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(shareUrl).then(function(){
+      var orig = btn.textContent; btn.textContent='✓';
+      setTimeout(function(){btn.textContent=orig;},2000);
+    }).catch(function(){});
+  }
+}
+
+// ── View Details (go to index with prefilled search) ──
+function viewDetails(name){
+  window.location.href='/?q='+encodeURIComponent(name);
+}
+
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+</script>
+
+<!-- Compare bar -->
+<div id="cmpBar">
+  <span class="cmp-bar-title">⚖️ Compare</span>
+  <div class="cmp-items" id="cmpItems"></div>
+  <button class="cmp-go" onclick="openCompare()">Compare →</button>
+  <button class="cmp-clear" onclick="_cmp=[];localStorage.removeItem('cmp_ops_cat');document.querySelectorAll('.cmp-toggle').forEach(function(b){b.textContent='＋';b.classList.remove('selected');});renderCmpBar();">Clear</button>
+</div>
+
 </body>
 </html>

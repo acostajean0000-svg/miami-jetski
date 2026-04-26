@@ -116,7 +116,48 @@
     .art-link-tag{font-size:.68rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#00d4c8;margin-bottom:8px;}
     .art-link-title{font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:700;line-height:1.35;margin-bottom:10px;}
     .art-link-cta{font-size:.78rem;color:#6b8fa8;display:flex;align-items:center;gap:5px;}
-  </style>
+  
+    /* ── Card overlay buttons ── */
+    .op-card-img{position:relative;}
+    /* Action strip at bottom of card image */
+    .card-actions{position:absolute;bottom:0;left:0;right:0;z-index:4;display:flex;align-items:center;justify-content:space-between;padding:6px 8px;background:linear-gradient(to top,rgba(4,13,26,.82) 0%,transparent 100%);opacity:0;transform:translateY(4px);transition:opacity .22s ease,transform .22s ease;pointer-events:none;}
+    .op-card:hover .card-actions{opacity:1;transform:translateY(0);pointer-events:auto;}
+    /* Keep fav always visible when saved */
+    .fav-toggle.saved ~ .card-actions,
+    .card-actions:has(.fav-toggle.saved){opacity:1;transform:translateY(0);pointer-events:auto;}
+
+    /* Individual buttons */
+    .fav-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.88rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .fav-toggle:hover{border-color:#ff6b8a;background:rgba(255,60,100,.25);}
+    .fav-toggle.saved{background:rgba(220,40,80,.9);border-color:#ff3c64;}
+    .fav-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    .cmp-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:#fff;font-weight:700;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .cmp-toggle:hover{border-color:#00d4c8;background:rgba(0,212,200,.25);}
+    .cmp-toggle.selected{background:#00d4c8;border-color:#00d4c8;color:#040d1a;}
+    .cmp-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    .shr-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
+    .shr-btn:hover{border-color:#00d4c8;background:rgba(0,212,200,.2);}
+    .shr-btn::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
+
+    /* View details link */
+    .op-detail-link{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:8px;padding:7px 0 3px;border-top:1px solid rgba(255,255,255,.07);font-size:.76rem;color:var(--text-muted);transition:color .2s;text-decoration:none;}
+    .op-detail-link:hover{color:#00d4c8;}
+
+    /* Compare bar */
+    #cmpBar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(8,21,37,.97);backdrop-filter:blur(12px);border-top:1px solid #1c3a58;padding:12px 20px;align-items:center;gap:12px;flex-wrap:wrap;}
+    #cmpBar.show{display:flex;}
+    .cmp-bar-title{font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;color:#9bbdd4;white-space:nowrap;}
+    .cmp-items{display:flex;gap:8px;flex:1;min-width:0;flex-wrap:wrap;}
+    .cmp-chip{background:#0f2038;border:1px solid #1c3a58;border-radius:8px;padding:5px 10px;font-size:.75rem;display:flex;align-items:center;gap:6px;max-width:180px;}
+    .cmp-chip span{overflow:hidden;text-overflow:ellipsis;white-space:nowrap;}
+    .cmp-chip-rm{cursor:pointer;color:#9bbdd4;font-size:.9rem;flex-shrink:0;}
+    .cmp-go{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;border:none;padding:9px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;}
+    .cmp-go:hover{opacity:.9;}
+    .cmp-clear{background:transparent;border:1px solid #1c3a58;color:#9bbdd4;padding:9px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;cursor:pointer;}
+
+    </style>
 </style>
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -164,6 +205,7 @@
     <img src="https://www.jetskisinmiami.com/img/MiamiJetSkiRentals.jpg" alt="AquaFusion Combo: Jet Ski & Party Boat" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🎉 Groups</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-313688" onclick="event.stopPropagation();toggleFav(this,'fh-313688')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-313688" onclick="event.stopPropagation();toggleCmp(this,'fh-313688','AquaFusion Combo: Jet Ski & Party Boat')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/bjmrentals/items/313688/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','AquaFusion Combo: Jet Ski & Party Boat',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">AquaFusion Combo: Jet Ski & Party Boat</div>
@@ -171,6 +213,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$150</div></div>
       <a href="https://fareharbor.com/embeds/book/bjmrentals/items/313688/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=AquaFusion+Combo:+Jet+Ski+&+Party+Boat" onclick="event.stopPropagation()" title="View details for AquaFusion Combo: Jet Ski & Party Boat">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -179,6 +222,7 @@
     <img src="https://static.wixstatic.com/media/90c75d_2745dc2654894059b21aa0ad5365fff0~mv2.jpg" alt="Jetski Rental – North Miami Beach" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🏄 Beginners</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-571874" onclick="event.stopPropagation();toggleFav(this,'fh-571874')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-571874" onclick="event.stopPropagation();toggleCmp(this,'fh-571874','Jetski Rental – North Miami Beach')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/slingkimotors/items/571874/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Jetski Rental – North Miami Beach',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Jetski Rental – North Miami Beach</div>
@@ -186,6 +230,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$130</div></div>
       <a href="https://fareharbor.com/embeds/book/slingkimotors/items/571874/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Jetski+Rental+–+North+Miami+Beach" onclick="event.stopPropagation()" title="View details for Jetski Rental – North Miami Beach">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -194,6 +239,7 @@
     <img src="https://sfjetskirentals.com/wp-content/uploads/sites/6688/2023/09/mobile1.png?w=1000&h=1000" alt="One Hour Jet Ski Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">⏱ Quick Ride</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-660333" onclick="event.stopPropagation();toggleFav(this,'fh-660333')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-660333" onclick="event.stopPropagation();toggleCmp(this,'fh-660333','One Hour Jet Ski Rental')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/jetskiridingmiami/items/660333/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','One Hour Jet Ski Rental',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">One Hour Jet Ski Rental</div>
@@ -201,6 +247,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$130</div></div>
       <a href="https://fareharbor.com/embeds/book/jetskiridingmiami/items/660333/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=One+Hour+Jet+Ski+Rental" onclick="event.stopPropagation()" title="View details for One Hour Jet Ski Rental">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -209,6 +256,7 @@
     <img src="https://files.funwaveswatersports.com/images/hero-jetski.webp" alt="Jetski Rentals – South Beach" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🌴 South Beach</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-595513" onclick="event.stopPropagation();toggleFav(this,'fh-595513')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-595513" onclick="event.stopPropagation();toggleCmp(this,'fh-595513','Jetski Rentals – South Beach')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/flowvip/items/595513/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Jetski Rentals – South Beach',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Jetski Rentals – South Beach</div>
@@ -216,6 +264,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$125</div></div>
       <a href="https://fareharbor.com/embeds/book/flowvip/items/595513/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Jetski+Rentals+–+South+Beach" onclick="event.stopPropagation()" title="View details for Jetski Rentals – South Beach">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -224,6 +273,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/fYlRXu6pQ9yVGrTINaKj" alt="305 Tours & Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">📸 Fun Vibes</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-467960" onclick="event.stopPropagation();toggleFav(this,'fh-467960')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-467960" onclick="event.stopPropagation();toggleCmp(this,'fh-467960','305 Tours & Rentals')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/305toursandrentals/items/467960/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','305 Tours & Rentals',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">305 Tours & Rentals</div>
@@ -231,6 +281,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$169</div></div>
       <a href="https://fareharbor.com/embeds/book/305toursandrentals/items/467960/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=305+Tours+&+Rentals" onclick="event.stopPropagation()" title="View details for 305 Tours & Rentals">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -239,6 +290,7 @@
     <img src="https://s-light.tiket.photos/t/01E25EBZS3W0FY9GTG6C42E1SE/rsfit800600gsm/eventThirdParty/2025/10/13/b0d83746-1500-43d9-8c61-48458a4c6b7f-1760343657142-93f4a36b5471e6ecf734f2dca2c97b1a.jpg" alt="Package Deal: Boat + Jet Ski + ATV" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🔥 3-in-1</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-635177" onclick="event.stopPropagation();toggleFav(this,'fh-635177')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-635177" onclick="event.stopPropagation();toggleCmp(this,'fh-635177','Package Deal: Boat + Jet Ski + ATV')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/jetskimiamirentals/items/635177/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Package Deal: Boat + Jet Ski + ATV',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Package Deal: Boat + Jet Ski + ATV</div>
@@ -246,6 +298,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$230</div></div>
       <a href="https://fareharbor.com/embeds/book/jetskimiamirentals/items/635177/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Package+Deal:+Boat+++Jet+Ski+++ATV" onclick="event.stopPropagation()" title="View details for Package Deal: Boat + Jet Ski + ATV">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -254,6 +307,7 @@
     <img src="https://www.flexwatersportsrentals.com/wp-content/uploads/2024/03/001-640x320.webp" alt="Jetcar 1-Hour – Drive a Car on Water!" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🚗 Most Unique</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-584793" onclick="event.stopPropagation();toggleFav(this,'fh-584793')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-584793" onclick="event.stopPropagation();toggleCmp(this,'fh-584793','Jetcar 1-Hour – Drive a Car on Water!')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/305jetskisrental/items/584793/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Jetcar 1-Hour – Drive a Car on Water!',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Jetcar 1-Hour – Drive a Car on Water!</div>
@@ -261,6 +315,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$350</div></div>
       <a href="https://fareharbor.com/embeds/book/305jetskisrental/items/584793/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Jetcar+1-Hour+–+Drive+a+Car+on+Water!" onclick="event.stopPropagation()" title="View details for Jetcar 1-Hour – Drive a Car on Water!">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -269,6 +324,7 @@
     <img src="https://miajetskirental.com/wp-content/uploads/2023/02/DOUBLERIDERJETSKI-768x1024.jpg" alt="Jet Ski Rentals | Miami WaterSports" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🌊 Biscayne Bay</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-532517" onclick="event.stopPropagation();toggleFav(this,'fh-532517')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-532517" onclick="event.stopPropagation();toggleCmp(this,'fh-532517','Jet Ski Rentals | Miami WaterSports')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sfjetskirentals/items/532517/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Jet Ski Rentals | Miami WaterSports',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Jet Ski Rentals | Miami WaterSports</div>
@@ -276,6 +332,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$140</div></div>
       <a href="https://fareharbor.com/embeds/book/sfjetskirentals/items/532517/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Jet+Ski+Rentals+|+Miami+WaterSports" onclick="event.stopPropagation()" title="View details for Jet Ski Rentals | Miami WaterSports">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -284,6 +341,7 @@
     <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/fe/87/ff/caption.jpg?w=500&h=400&s=1" alt="Jet Ski Rentals – Coconut Grove" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">💑 Couples</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-618589" onclick="event.stopPropagation();toggleFav(this,'fh-618589')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-618589" onclick="event.stopPropagation();toggleCmp(this,'fh-618589','Jet Ski Rentals – Coconut Grove')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/tizamotorsportsllc/items/618589/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Jet Ski Rentals – Coconut Grove',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Jet Ski Rentals – Coconut Grove</div>
@@ -291,6 +349,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$150</div></div>
       <a href="https://fareharbor.com/embeds/book/tizamotorsportsllc/items/618589/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Jet+Ski+Rentals+–+Coconut+Grove" onclick="event.stopPropagation()" title="View details for Jet Ski Rentals – Coconut Grove">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -299,6 +358,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/fYlRXu6pQ9yVGrTINaKj" alt="Miami Style Rentals – Jet Ski Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">💰 Best Price</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-326919" onclick="event.stopPropagation();toggleFav(this,'fh-326919')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-326919" onclick="event.stopPropagation();toggleCmp(this,'fh-326919','Miami Style Rentals – Jet Ski Tour')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/miamistylerentals/items/326919/calendar/2026/04/?flow=613885&full-items=yes','Miami Style Rentals – Jet Ski Tour',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Miami Style Rentals – Jet Ski Tour</div>
@@ -306,6 +366,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$99</div></div>
       <a href="https://fareharbor.com/embeds/book/miamistylerentals/items/326919/calendar/2026/04/?flow=613885&full-items=yes" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Miami+Style+Rentals+–+Jet+Ski+Tour" onclick="event.stopPropagation()" title="View details for Miami Style Rentals – Jet Ski Tour">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -314,6 +375,7 @@
     <img src="http://greatlocations.com/wp-content/uploads/2022/01/7.jpeg" alt="1 Hour Jet Ski Rental – Hollywood Beach" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">💰 Best Value</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-631947" onclick="event.stopPropagation();toggleFav(this,'fh-631947')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-631947" onclick="event.stopPropagation();toggleCmp(this,'fh-631947','1 Hour Jet Ski Rental – Hollywood Beach')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/underthesunbeachservices/items/631947/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','1 Hour Jet Ski Rental – Hollywood Beach',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">1 Hour Jet Ski Rental – Hollywood Beach</div>
@@ -321,6 +383,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$120</div></div>
       <a href="https://fareharbor.com/embeds/book/underthesunbeachservices/items/631947/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=1+Hour+Jet+Ski+Rental+–+Hollywood+Beach" onclick="event.stopPropagation()" title="View details for 1 Hour Jet Ski Rental – Hollywood Beach">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -329,6 +392,7 @@
     <img src="https://miajetskirental.com/wp-content/uploads/2023/02/DOUBLERIDERJETSKI-768x1024.jpg" alt="Jet Ski Rental – Falcon\'s Hollywood" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">👨‍👩‍👧 Families</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-583875" onclick="event.stopPropagation();toggleFav(this,'fh-583875')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-583875" onclick="event.stopPropagation();toggleCmp(this,'fh-583875','Jet Ski Rental – Falcon\'s Hollywood')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/falconsjetskirentals/items/583875/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Jet Ski Rental – Falcon\'s Hollywood',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Jet Ski Rental – Falcon\'s Hollywood</div>
@@ -336,6 +400,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$110</div></div>
       <a href="https://fareharbor.com/embeds/book/falconsjetskirentals/items/583875/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Jet+Ski+Rental+–+Falcon\'s+Hollywood" onclick="event.stopPropagation()" title="View details for Jet Ski Rental – Falcon\'s Hollywood">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -344,6 +409,7 @@
     <img src="https://ferrytobahamas.com/images/miami-to-bimini-ferry-prices.jpg" alt="Bimini Island Day Trip by Fast-Ferry" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🏝 Day Trip</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-81674" onclick="event.stopPropagation();toggleFav(this,'fh-81674')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-81674" onclick="event.stopPropagation();toggleCmp(this,'fh-81674','Bimini Island Day Trip by Fast-Ferry')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/us2u/items/81674/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Bimini Island Day Trip by Fast-Ferry',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Bimini Island Day Trip by Fast-Ferry</div>
@@ -351,6 +417,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$299</div></div>
       <a href="https://fareharbor.com/embeds/book/us2u/items/81674/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Bimini+Island+Day+Trip+by+Fast-Ferry" onclick="event.stopPropagation()" title="View details for Bimini Island Day Trip by Fast-Ferry">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -359,6 +426,7 @@
     <img src="https://www.flexwatersportsrentals.com/wp-content/uploads/2024/03/001-640x320.webp" alt="Jetski Rental – Fort Lauderdale" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">⛵ Fort Laud</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-571875" onclick="event.stopPropagation();toggleFav(this,'fh-571875')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-571875" onclick="event.stopPropagation();toggleCmp(this,'fh-571875','Jetski Rental – Fort Lauderdale')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/slingshotandjetskirentals/items/571875/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Jetski Rental – Fort Lauderdale',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Jetski Rental – Fort Lauderdale</div>
@@ -366,6 +434,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$99</div></div>
       <a href="https://fareharbor.com/embeds/book/slingshotandjetskirentals/items/571875/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Jetski+Rental+–+Fort+Lauderdale" onclick="event.stopPropagation()" title="View details for Jetski Rental – Fort Lauderdale">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -374,6 +443,7 @@
     <img src="https://sfjetskirentals.com/wp-content/uploads/sites/6688/2023/09/mobile1.png?w=1000&h=1000" alt="Jet Ski Rental Pompano Beach" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🏄 Pompano</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-96359" onclick="event.stopPropagation();toggleFav(this,'fh-96359')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-96359" onclick="event.stopPropagation();toggleCmp(this,'fh-96359','Jet Ski Rental Pompano Beach')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/kcjetskiing/items/96359/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Jet Ski Rental Pompano Beach',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Jet Ski Rental Pompano Beach</div>
@@ -381,6 +451,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$100</div></div>
       <a href="https://fareharbor.com/embeds/book/kcjetskiing/items/96359/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Jet+Ski+Rental+Pompano+Beach" onclick="event.stopPropagation()" title="View details for Jet Ski Rental Pompano Beach">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -389,6 +460,7 @@
     <img src="https://www.jetskisinmiami.com/img/MiamiJetSkiRentals.jpg" alt="Ocean Jet Ski Rentals – Pompano" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🌊 Ocean</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-546896" onclick="event.stopPropagation();toggleFav(this,'fh-546896')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-546896" onclick="event.stopPropagation();toggleCmp(this,'fh-546896','Ocean Jet Ski Rentals – Pompano')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/ftlauderdaleparasail/items/546896/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Ocean Jet Ski Rentals – Pompano',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Ocean Jet Ski Rentals – Pompano</div>
@@ -396,6 +468,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$100</div></div>
       <a href="https://fareharbor.com/embeds/book/ftlauderdaleparasail/items/546896/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Ocean+Jet+Ski+Rentals+–+Pompano" onclick="event.stopPropagation()" title="View details for Ocean Jet Ski Rentals – Pompano">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -404,6 +477,7 @@
     <img src="https://files.funwaveswatersports.com/images/hero-jetski.webp" alt="Key Largo: Jet Ski Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🐠 Key Largo</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-672056" onclick="event.stopPropagation();toggleFav(this,'fh-672056')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-672056" onclick="event.stopPropagation();toggleCmp(this,'fh-672056','Key Largo: Jet Ski Rentals')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/wakezonewatersports/items/672056/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Key Largo: Jet Ski Rentals',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Key Largo: Jet Ski Rentals</div>
@@ -411,6 +485,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$160</div></div>
       <a href="https://fareharbor.com/embeds/book/wakezonewatersports/items/672056/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Key+Largo:+Jet+Ski+Rentals" onclick="event.stopPropagation()" title="View details for Key Largo: Jet Ski Rentals">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -419,6 +494,7 @@
     <img src="https://miajetskirental.com/wp-content/uploads/2023/02/DOUBLERIDERJETSKI-768x1024.jpg" alt="Tropic Water Sports – Key Largo" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🌊 Tropic</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-264896" onclick="event.stopPropagation();toggleFav(this,'fh-264896')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-264896" onclick="event.stopPropagation();toggleCmp(this,'fh-264896','Tropic Water Sports – Key Largo')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/tropicwatersports/items/264896/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Tropic Water Sports – Key Largo',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Tropic Water Sports – Key Largo</div>
@@ -426,6 +502,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$130</div></div>
       <a href="https://fareharbor.com/embeds/book/tropicwatersports/items/264896/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Tropic+Water+Sports+–+Key+Largo" onclick="event.stopPropagation()" title="View details for Tropic Water Sports – Key Largo">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -434,6 +511,7 @@
     <img src="https://dynamic-media-cdn.tripadvisor.com/media/photo-o/2f/fe/87/ff/caption.jpg?w=500&h=400&s=1" alt="Jetski Rentals Marathon – Best Price!" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">💰 $99</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-628493" onclick="event.stopPropagation();toggleFav(this,'fh-628493')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-628493" onclick="event.stopPropagation();toggleCmp(this,'fh-628493','Jetski Rentals Marathon – Best Price!')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/seahorsewateradventures/items/628493/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Jetski Rentals Marathon – Best Price!',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Jetski Rentals Marathon – Best Price!</div>
@@ -441,6 +519,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$99</div></div>
       <a href="https://fareharbor.com/embeds/book/seahorsewateradventures/items/628493/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Jetski+Rentals+Marathon+–+Best+Price!" onclick="event.stopPropagation()" title="View details for Jetski Rentals Marathon – Best Price!">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -449,6 +528,7 @@
     <img src="https://www.jetskisinmiami.com/img/MiamiJetSkiRentals.jpg" alt="Grassy Key Marina – Daily Jet Ski" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🌴 Full Day</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-489052" onclick="event.stopPropagation();toggleFav(this,'fh-489052')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-489052" onclick="event.stopPropagation();toggleCmp(this,'fh-489052','Grassy Key Marina – Daily Jet Ski')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/paradisewatersportsrentals/items/489052/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Grassy Key Marina – Daily Jet Ski',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Grassy Key Marina – Daily Jet Ski</div>
@@ -456,6 +536,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$550</div></div>
       <a href="https://fareharbor.com/embeds/book/paradisewatersportsrentals/items/489052/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Grassy+Key+Marina+–+Daily+Jet+Ski" onclick="event.stopPropagation()" title="View details for Grassy Key Marina – Daily Jet Ski">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -464,6 +545,7 @@
     <img src="https://files.funwaveswatersports.com/images/hero-jetski.webp" alt="Marathon: Jet Ski Rentals – WakeZone" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🏄 WakeZone</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-671762" onclick="event.stopPropagation();toggleFav(this,'fh-671762')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-671762" onclick="event.stopPropagation();toggleCmp(this,'fh-671762','Marathon: Jet Ski Rentals – WakeZone')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/wakezonewatersports/items/671762/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Marathon: Jet Ski Rentals – WakeZone',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Marathon: Jet Ski Rentals – WakeZone</div>
@@ -471,6 +553,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$160</div></div>
       <a href="https://fareharbor.com/embeds/book/wakezonewatersports/items/671762/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Marathon:+Jet+Ski+Rentals+–+WakeZone" onclick="event.stopPropagation()" title="View details for Marathon: Jet Ski Rentals – WakeZone">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -479,6 +562,7 @@
     <img src="https://sfjetskirentals.com/wp-content/uploads/sites/6688/2023/09/mobile1.png?w=1000&h=1000" alt="Six Fins Key West: 2-Hr Flagship Jet Ski Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🗺 Tour</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-628106" onclick="event.stopPropagation();toggleFav(this,'fh-628106')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-628106" onclick="event.stopPropagation();toggleCmp(this,'fh-628106','Six Fins Key West: 2-Hr Flagship Jet Ski Tour')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sixfinsjetskirental/items/628106/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Six Fins Key West: 2-Hr Flagship Jet Ski Tour',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Six Fins Key West: 2-Hr Flagship Jet Ski Tour</div>
@@ -486,6 +570,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$209</div></div>
       <a href="https://fareharbor.com/embeds/book/sixfinsjetskirental/items/628106/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Six+Fins+Key+West:+2-Hr+Flagship+Jet+Ski+Tour" onclick="event.stopPropagation()" title="View details for Six Fins Key West: 2-Hr Flagship Jet Ski Tour">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -494,6 +579,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/cp48OLxQwyd0XSJFHvbg" alt="It\'s Jet Ski Time – Naples" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">💰 From $89</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-585069" onclick="event.stopPropagation();toggleFav(this,'fh-585069')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-585069" onclick="event.stopPropagation();toggleCmp(this,'fh-585069','It\'s Jet Ski Time – Naples')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/itsjetskitime/items/585069/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','It\'s Jet Ski Time – Naples',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">It\'s Jet Ski Time – Naples</div>
@@ -501,6 +587,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$89</div></div>
       <a href="https://fareharbor.com/embeds/book/itsjetskitime/items/585069/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=It\'s+Jet+Ski+Time+–+Naples" onclick="event.stopPropagation()" title="View details for It\'s Jet Ski Time – Naples">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -509,6 +596,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/UHu4AS7tTXa9MBqO75hh" alt="Sunset Ski & Watersports" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🌅 Sunset</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-309714" onclick="event.stopPropagation();toggleFav(this,'fh-309714')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-309714" onclick="event.stopPropagation();toggleCmp(this,'fh-309714','Sunset Ski & Watersports')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sunsetskiandwatersports/items/309714/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Sunset Ski & Watersports',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Sunset Ski & Watersports</div>
@@ -516,6 +604,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$150</div></div>
       <a href="https://fareharbor.com/embeds/book/sunsetskiandwatersports/items/309714/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Sunset+Ski+&+Watersports" onclick="event.stopPropagation()" title="View details for Sunset Ski & Watersports">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -524,6 +613,7 @@
     <img src="https://cdn.filestackcontent.com/wqAfJu8lSry3xGKkBN8L/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max" alt="Island Ski Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🏝 Island</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-564327" onclick="event.stopPropagation();toggleFav(this,'fh-564327')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-564327" onclick="event.stopPropagation();toggleCmp(this,'fh-564327','Island Ski Rentals')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/islandskirentals/items/564327/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Island Ski Rentals',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Island Ski Rentals</div>
@@ -531,6 +621,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$110</div></div>
       <a href="https://fareharbor.com/embeds/book/islandskirentals/items/564327/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Island+Ski+Rentals" onclick="event.stopPropagation()" title="View details for Island Ski Rentals">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -539,6 +630,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/8VlaZciFTCDXtTJsegzj" alt="Aquaholic Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🚤 Charters</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-690519" onclick="event.stopPropagation();toggleFav(this,'fh-690519')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-690519" onclick="event.stopPropagation();toggleCmp(this,'fh-690519','Aquaholic Charters')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/aquaholic-charters/items/690519/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Aquaholic Charters',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Aquaholic Charters</div>
@@ -546,6 +638,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$299</div></div>
       <a href="https://fareharbor.com/embeds/book/aquaholic-charters/items/690519/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Aquaholic+Charters" onclick="event.stopPropagation()" title="View details for Aquaholic Charters">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -554,6 +647,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/gg0aUKKhTMuQx00tpeNK" alt="Splash N Dash Jet Ski Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">💦 Splash</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-639818" onclick="event.stopPropagation();toggleFav(this,'fh-639818')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-639818" onclick="event.stopPropagation();toggleCmp(this,'fh-639818','Splash N Dash Jet Ski Rental')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/splashndashjetskirental/items/639818/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Splash N Dash Jet Ski Rental',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Splash N Dash Jet Ski Rental</div>
@@ -561,6 +655,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$169</div></div>
       <a href="https://fareharbor.com/embeds/book/splashndashjetskirental/items/639818/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=Splash+N+Dash+Jet+Ski+Rental" onclick="event.stopPropagation()" title="View details for Splash N Dash Jet Ski Rental">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -569,6 +664,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/vSXR1pSCrmz56viqSEQ6" alt="JP Jet Ski Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">🌊 Manatee</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-647756" onclick="event.stopPropagation();toggleFav(this,'fh-647756')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-647756" onclick="event.stopPropagation();toggleCmp(this,'fh-647756','JP Jet Ski Rental')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/jpjetskirental/items/647756/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','JP Jet Ski Rental',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">JP Jet Ski Rental</div>
@@ -576,6 +672,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$120</div></div>
       <a href="https://fareharbor.com/embeds/book/jpjetskirental/items/647756/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=JP+Jet+Ski+Rental" onclick="event.stopPropagation()" title="View details for JP Jet Ski Rental">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -584,6 +681,7 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sJfd0dKnTQi4a6M5TdJZ" alt="SF Jet Ski Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Ski</span>
     <span class="op-best-badge">⚡ Fast</span>
+  <div class="card-actions"><button class="fav-toggle" data-id="fh-445324" onclick="event.stopPropagation();toggleFav(this,'fh-445324')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-445324" onclick="event.stopPropagation();toggleCmp(this,'fh-445324','SF Jet Ski Rentals')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sfjetskirentals/items/445324/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','SF Jet Ski Rentals',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">SF Jet Ski Rentals</div>
@@ -591,6 +689,7 @@
     <div class="op-footer">
       <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$198</div></div>
       <a href="https://fareharbor.com/embeds/book/sfjetskirentals/items/445324/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/?q=SF+Jet+Ski+Rentals" onclick="event.stopPropagation()" title="View details for SF Jet Ski Rentals">View details <span style="font-size:.65rem">→</span></a>
     </div>
   </div>
 </div>
@@ -637,5 +736,87 @@
     </div>
   </div>
 </footer>
+
+<script>
+// ── Favorites ──
+var _favs = new Set(JSON.parse(localStorage.getItem('fav_ops_cat')||'[]'));
+function toggleFav(btn,id){
+  if(_favs.has(id)){_favs.delete(id);btn.textContent='🤍';btn.classList.remove('saved');}
+  else{_favs.add(id);btn.textContent='❤️';btn.classList.add('saved');}
+  localStorage.setItem('fav_ops_cat',JSON.stringify([..._favs]));
+}
+// restore fav state on load
+document.querySelectorAll('.fav-toggle').forEach(function(b){
+  if(_favs.has(b.dataset.id)){b.textContent='❤️';b.classList.add('saved');}
+});
+
+// ── Compare ──
+var _cmp = JSON.parse(localStorage.getItem('cmp_ops_cat')||'[]');
+var _MAX_CMP = 3;
+function toggleCmp(btn,id,name){
+  var idx = _cmp.findIndex(function(o){return o.id===id;});
+  if(idx > -1){ _cmp.splice(idx,1); btn.textContent='＋'; btn.classList.remove('selected'); }
+  else if(_cmp.length >= _MAX_CMP){ alert('Max '+_MAX_CMP+' operators to compare.'); return; }
+  else{ _cmp.push({id:id,name:name}); btn.textContent='✓'; btn.classList.add('selected'); }
+  localStorage.setItem('cmp_ops_cat',JSON.stringify(_cmp));
+  renderCmpBar();
+}
+function renderCmpBar(){
+  var bar = document.getElementById('cmpBar');
+  if(!bar) return;
+  if(_cmp.length===0){bar.classList.remove('show');return;}
+  bar.classList.add('show');
+  var chips = _cmp.map(function(o){
+    return '<div class="cmp-chip"><span>'+escHtml(o.name)+'</span><span class="cmp-chip-rm" onclick="removeCmp(\''+o.id+'\')">✕</span></div>';
+  }).join('');
+  document.getElementById('cmpItems').innerHTML = chips;
+}
+function removeCmp(id){
+  _cmp = _cmp.filter(function(o){return o.id!==id;});
+  localStorage.setItem('cmp_ops_cat',JSON.stringify(_cmp));
+  var btn = document.querySelector('.cmp-toggle[data-id="'+id+'"]');
+  if(btn){btn.textContent='＋';btn.classList.remove('selected');}
+  renderCmpBar();
+}
+function openCompare(){
+  if(_cmp.length < 2){alert('Select at least 2 operators to compare.');return;}
+  var q = _cmp.map(function(o){return encodeURIComponent(o.name);}).join(',');
+  window.open('/?compare='+q,'_blank');
+}
+// restore compare state
+document.querySelectorAll('.cmp-toggle').forEach(function(b){
+  if(_cmp.find(function(o){return o.id===b.dataset.id;})){b.textContent='✓';b.classList.add('selected');}
+});
+renderCmpBar();
+
+// ── Share ──
+function shareOp(url,name,btn){
+  var shareUrl = url || window.location.href;
+  if(navigator.share){
+    navigator.share({title:name,url:shareUrl}).catch(function(){});
+  } else {
+    navigator.clipboard.writeText(shareUrl).then(function(){
+      var orig = btn.textContent; btn.textContent='✓';
+      setTimeout(function(){btn.textContent=orig;},2000);
+    }).catch(function(){});
+  }
+}
+
+// ── View Details (go to index with prefilled search) ──
+function viewDetails(name){
+  window.location.href='/?q='+encodeURIComponent(name);
+}
+
+function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+</script>
+
+<!-- Compare bar -->
+<div id="cmpBar">
+  <span class="cmp-bar-title">⚖️ Compare</span>
+  <div class="cmp-items" id="cmpItems"></div>
+  <button class="cmp-go" onclick="openCompare()">Compare →</button>
+  <button class="cmp-clear" onclick="_cmp=[];localStorage.removeItem('cmp_ops_cat');document.querySelectorAll('.cmp-toggle').forEach(function(b){b.textContent='＋';b.classList.remove('selected');});renderCmpBar();">Clear</button>
+</div>
+
 </body>
 </html>

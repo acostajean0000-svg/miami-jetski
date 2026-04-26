@@ -1,0 +1,11 @@
+Save your 7 personal jet ski photos in this folder with these exact names:
+
+photo13.jpg  → Woman in black swimsuit on jet ski (action shot)
+photo14.jpg  → Girl in pink "Miami" swimsuit on red Yamaha jet ski
+photo15.jpg  → Two women on beach with Yamaha jet skis
+photo16.jpg  → Women + Yamaha jet skis on beach (wider shot)
+photo17.jpg  → People with blue life jackets on jet ski
+photo18.jpg  → Couple on black/red Yamaha jet ski on water
+photo19.jpg  → Guy selfie with jet skis on beach
+
+Then upload BOTH index.html AND the images/ folder to Vercel.
