@@ -1514,7 +1514,7 @@ function buildMarkers() {
   allOperators.forEach(op => {
     if (markers[op.id]) return; // skip if already built
     const color = catColors[op.cat] || '#00d4c8';
-    const catInitials = {jetski:'JS', boat:'⛵', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', jetcar:'🚗', golfcart:'🛺', atv:'🏍️'}[op.cat] || '●';
+    const catInitials = {jetski:'JS', boat:'⛵', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', jetcar:'🚗', golfcart:'🛺', atv:'🏍️', scooter:'🛵', bikerental:'🚲'}[op.cat] || '●';
     const marker = L.marker([op.lat, op.lng], {icon: makeIcon(color, catInitials)});
     const opSlug = OP_SLUG_MAP[op.id] || '';
     const popupHTML = `<div class="map-popup">
@@ -1680,7 +1680,7 @@ function loadLeafletThenMap() {
   leafletLoaded = true;
   const s = document.createElement('script');
   s.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
-  s.onload = () => { initMap(); if (allOperators.length) buildMarkers(); };
+  s.onload = () => { initMap(); if (allOperators.length) { buildMarkers(); updateMapMarkers(currentOps); } };
   document.head.appendChild(s);
 }
 // Init map only when map panel is scrolled into view
@@ -1709,6 +1709,8 @@ document.addEventListener('DOMContentLoaded', () => {
       if (window.L) {
         if (!mapInstance) initMap();
         else buildMarkers(); // map already exists but markers not yet built
+        // Apply current filter to map immediately after markers are built
+        updateMapMarkers(currentOps);
       }
       if (window._preloadSearch) {
         const inp = document.getElementById('searchInput');
