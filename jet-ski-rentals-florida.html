@@ -1015,6 +1015,23 @@ function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(
     if(mapEl)obs.observe(mapEl);else loadLeaflet();
   } else {loadLeaflet();}
 })();
+
+  // ── Zone filter ──
+  var activeZone='all';
+  function filterZone(zone,btn){
+    activeZone=zone;
+    document.querySelectorAll('.zone-tab').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    var cards=document.querySelectorAll('.op-card');
+    var visible=0;
+    cards.forEach(function(card){
+      if(zone==='all'||card.dataset.zone===zone){card.style.display='';visible++;}
+      else{card.style.display='none';}
+    });
+    var c=document.querySelector('.cards-count');
+    if(c)c.textContent='Showing '+visible+' operators';
+  }
+
 </script>
 
 </body>
