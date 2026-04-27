@@ -119,6 +119,34 @@
     .footer-links a:hover{color:var(--teal);}
     @media(max-width:768px){.nav-links{display:none;}.cards-grid{grid-template-columns:1fr 1fr;}.page-stats{gap:16px;}}
     @media(max-width:480px){.cards-grid{grid-template-columns:1fr;}}
+  
+    /* ── MAP LAYOUT ── */
+    .marketplace-body{display:flex;gap:0;align-items:flex-start;position:relative;}
+    .cards-panel{flex:1 1 0;min-width:0;padding:40px 20px 60px;}
+    .map-panel{flex:0 0 420px;width:420px;position:sticky;top:64px;height:calc(100vh - 64px);z-index:1;border-left:1px solid rgba(255,255,255,.07);}
+    #cat-map{height:100%;width:100%;}
+    .map-toggle-btn{display:none;}
+    .toolbar{display:flex;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap;}
+    .near-me-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;border:1.5px solid rgba(0,212,200,.35);background:rgba(0,212,200,.07);color:#00d4c8;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;transition:all .2s;}
+    .near-me-btn:hover,.near-me-btn.active{background:rgba(0,212,200,.18);border-color:#00d4c8;}
+    .near-me-btn.loading{opacity:.65;cursor:wait;}
+    .sort-label{font-size:.78rem;color:#6b8fa8;margin-left:auto;}
+    .leaflet-popup-content-wrapper{background:#0f2038;border:1px solid #1c3a58;border-radius:12px;color:#fff;box-shadow:0 8px 32px rgba(0,0,0,.6);}
+    .leaflet-popup-tip{background:#0f2038;}
+    .map-popup{padding:4px 2px;}
+    .map-popup-name{font-size:.88rem;font-weight:700;margin-bottom:3px;}
+    .map-popup-price{font-size:1rem;font-weight:900;color:#00d4c8;margin-bottom:6px;}
+    .map-popup-btn{display:block;text-align:center;background:linear-gradient(135deg,#00d4c8,#00eedd);color:#081525;padding:6px 14px;border-radius:50px;font-size:.75rem;font-weight:700;}
+    .op-detail-link{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:8px;padding:7px 0 3px;border-top:1px solid rgba(255,255,255,.07);font-size:.76rem;color:var(--text-muted);transition:color .2s;text-decoration:none;}
+    .op-detail-link:hover{color:#00d4c8;}
+    @media(max-width:900px){
+      .marketplace-body{flex-direction:column;}
+      .map-panel{flex:none;width:100%;height:45vh;position:relative;top:0;border-left:none;border-top:1px solid rgba(255,255,255,.07);}
+      .cards-panel{padding:24px 16px 48px;}
+      .map-toggle-btn{display:inline-flex;align-items:center;gap:6px;padding:8px 16px;border-radius:50px;border:1.5px solid rgba(0,212,200,.35);background:rgba(0,212,200,.07);color:#00d4c8;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;}
+      .map-hidden .map-panel{display:none;}
+      .map-visible .map-panel{display:block;}
+    }
   </style>
 </head>
 <body>
@@ -159,6 +187,8 @@
   </div>
 </section>
 
+<div class="marketplace-body" id="mktBody">
+<div class="cards-panel" style="min-width:0;padding:32px 20px 60px;">
 <section class="cards-section">
   <div class="cards-controls">
     <div class="cards-count">Showing 6 operators</div>
@@ -198,7 +228,9 @@
     <div class="op-name">PADL Bike Rentals – Virginia Key</div>
     <div class="op-addr">📍 Virginia Key, Miami</div>
     <div class="op-footer">
-      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$85</div></div>
+      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$85</div>
+    <a class="op-detail-link" href="/operators/unknown" onclick="event.stopPropagation()">View details <span style="font-size:.65rem">→</span></a>
+    </div>
       <a href="https://fareharbor.com/embeds/book/padl/items/499772/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
     <a class="op-detail-link" href="/operators/padl-bike-rentals-virginia-key-miami" onclick="event.stopPropagation()" title="View details for PADL Bike Rentals – Virginia Key">View details <span style="font-size:.65rem">→</span></a>
     </div>
@@ -215,7 +247,9 @@
     <div class="op-name">SoFlo Water Adventures – E-Bike & Airboat</div>
     <div class="op-addr">📍 North Miami</div>
     <div class="op-footer">
-      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$99</div></div>
+      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$99</div>
+    <a class="op-detail-link" href="/operators/unknown" onclick="event.stopPropagation()">View details <span style="font-size:.65rem">→</span></a>
+    </div>
       <a href="https://fareharbor.com/embeds/book/soflowateradventures/items/692645/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
     <a class="op-detail-link" href="/operators/soflo-water-adventures-e-bike-airboat-miami" onclick="event.stopPropagation()" title="View details for SoFlo Water Adventures – E-Bike & Airboat">View details <span style="font-size:.65rem">→</span></a>
     </div>
@@ -232,7 +266,9 @@
     <div class="op-name">Eze Bike – Electric Bike Tour (90+ Min)</div>
     <div class="op-addr">📍 Fort Lauderdale</div>
     <div class="op-footer">
-      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$99</div></div>
+      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$99</div>
+    <a class="op-detail-link" href="/operators/unknown" onclick="event.stopPropagation()">View details <span style="font-size:.65rem">→</span></a>
+    </div>
       <a href="https://fareharbor.com/embeds/book/ezebike/items/684829/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
     <a class="op-detail-link" href="/operators/ezebike-electric-bike-tour-fort-lauderdale" onclick="event.stopPropagation()" title="View details for Eze Bike – Electric Bike Tour (90+ Min)">View details <span style="font-size:.65rem">→</span></a>
     </div>
@@ -249,7 +285,9 @@
     <div class="op-name">Eze Bike – KIDS Cargo eBike Rental</div>
     <div class="op-addr">📍 Fort Lauderdale</div>
     <div class="op-footer">
-      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$156</div></div>
+      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$156</div>
+    <a class="op-detail-link" href="/operators/unknown" onclick="event.stopPropagation()">View details <span style="font-size:.65rem">→</span></a>
+    </div>
       <a href="https://fareharbor.com/embeds/book/ezebike/items/684610/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
     <a class="op-detail-link" href="/operators/ezebike-kids-cargo-ebike-fort-lauderdale" onclick="event.stopPropagation()" title="View details for Eze Bike – KIDS Cargo eBike Rental">View details <span style="font-size:.65rem">→</span></a>
     </div>
@@ -266,14 +304,20 @@
     <div class="op-name">Seaside Bicycle Rentals</div>
     <div class="op-addr">📍 Boynton Beach, Palm Beach</div>
     <div class="op-footer">
-      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$55</div></div>
+      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$55</div>
+    <a class="op-detail-link" href="/operators/unknown" onclick="event.stopPropagation()">View details <span style="font-size:.65rem">→</span></a>
+    </div>
       <a href="https://fareharbor.com/embeds/book/seasidebicyclerentals/items/655149/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
+    <a class="op-detail-link" href="/operators/seaside-bicycle-rentals-palmbeach" onclick="event.stopPropagation()">View details <span style="font-size:.65rem">→</span></a>
     
     </div>
   </div>
 </div>
   </div>
-</section>
+</section><!-- /cards-section -->
+</div><!-- /cards-panel -->
+<div class="map-panel"><div id="cat-map"></div></div>
+</div><!-- /marketplace-body -->
 
 <section class="related-section">
   <h3>Explore More Florida Activities</h3>
@@ -410,5 +454,175 @@ function filterZone(zone,btn){
   });
 })();
 </script>
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
+<script>
+(function(){
+  // ── Parse operator geo from JSON-LD ──
+  var ldEl = document.querySelector('script[type="application/ld+json"]');
+  var opGeo = {};
+  if(ldEl){
+    try{
+      var ld = JSON.parse(ldEl.textContent);
+      var items = [];
+      if(ld['@graph']){var il=ld['@graph'].find(function(g){return g['@type']==='ItemList';});if(il)items=il.itemListElement||[];}
+      else if(ld.itemListElement) items=ld.itemListElement;
+      items.forEach(function(it){
+        var b=it.item;
+        if(b&&b.geo&&b.name){
+          opGeo[b.name]={lat:+b.geo.latitude,lng:+b.geo.longitude,
+            price:parseInt((b.priceRange||'0').replace(/[^0-9]/,'')||'0'),
+            url:b.url||'',addr:(b.address&&b.address.addressLocality)||''};
+        }
+      });
+    }catch(e){}
+  }
+
+  // ── Sort cards by price ──
+  var grid=document.querySelector('.cards-grid');
+  if(grid){
+    var cards=Array.from(grid.querySelectorAll('.op-card'));
+    cards.sort(function(a,b){
+      var pa=parseInt((a.querySelector('.op-price-num')||{}).textContent||'999999');
+      var pb=parseInt((b.querySelector('.op-price-num')||{}).textContent||'999999');
+      return pa-pb;
+    });
+    cards.forEach(function(c){grid.appendChild(c);});
+    // Attach geo data to each card (from JSON-LD or existing data-lat/lng)
+    cards.forEach(function(card){
+      if(card.dataset.lat&&+card.dataset.lat!==0) return; // already has real coords
+      var nameEl=card.querySelector('.op-name');
+      var name='';
+      if(nameEl){
+        var tn=nameEl.firstChild;
+        name=(tn&&tn.nodeType===3)?tn.textContent.trim():(nameEl.textContent||'').replace(/·\s*\d+Pax/,'').trim();
+      }
+      var geo=opGeo[name];
+      if(geo){card.dataset.lat=geo.lat;card.dataset.lng=geo.lng;card.dataset.price=geo.price;}
+    });
+  }
+
+  // ── Near Me ──
+  var nearActive=false,userLat=null,userLng=null;
+  var nmBtn=document.getElementById('nearMeBtn');
+  if(nmBtn){nmBtn.addEventListener('click',function(){
+    if(nearActive){nearActive=false;userLat=userLng=null;nmBtn.classList.remove('active');nmBtn.textContent='📍 Near Me';sortCards();return;}
+    if(!navigator.geolocation){alert('Geolocation not supported');return;}
+    nmBtn.classList.add('loading');nmBtn.textContent='⏳ Locating…';
+    navigator.geolocation.getCurrentPosition(function(p){
+      userLat=p.coords.latitude;userLng=p.coords.longitude;nearActive=true;
+      nmBtn.classList.remove('loading');nmBtn.classList.add('active');nmBtn.textContent='📍 Near Me ✓';
+      sortCards();
+    },function(){nmBtn.classList.remove('loading');nmBtn.textContent='📍 Near Me';alert('Could not get location.');});
+  });}
+
+  function haversine(la1,lo1,la2,lo2){var R=3958.8,dLa=(la2-la1)*Math.PI/180,dLo=(lo2-lo1)*Math.PI/180,a=Math.sin(dLa/2)**2+Math.cos(la1*Math.PI/180)*Math.cos(la2*Math.PI/180)*Math.sin(dLo/2)**2;return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));}
+
+  function sortCards(){
+    if(!grid)return;
+    var cards=Array.from(grid.querySelectorAll('.op-card'));
+    if(nearActive&&userLat!==null){
+      cards.sort(function(a,b){
+        var da=haversine(userLat,userLng,+(a.dataset.lat||0),+(a.dataset.lng||0));
+        var db=haversine(userLat,userLng,+(b.dataset.lat||0),+(b.dataset.lng||0));
+        return da-db;
+      });
+    } else {
+      cards.sort(function(a,b){return (+(a.dataset.price||0))-(+(b.dataset.price||0));});
+    }
+    cards.forEach(function(c){grid.appendChild(c);});
+  }
+
+  // ── Leaflet Map ──
+  var mapInstance=null,markers={},selectedId=null;
+  function makeIcon(color){
+    var svg='<svg xmlns="http://www.w3.org/2000/svg" width="28" height="36" viewBox="0 0 28 36"><path d="M14 0C6.27 0 0 6.27 0 14c0 9.6 14 22 14 22S28 23.6 28 14C28 6.27 21.73 0 14 0z" fill="'+color+'"/><circle cx="14" cy="14" r="6" fill="#fff" opacity=".9"/></svg>';
+    return L.divIcon({html:svg,className:'',iconSize:[28,36],iconAnchor:[14,36],popupAnchor:[0,-38]});
+  }
+
+  function initMap(){
+    if(mapInstance)return;
+    var el=document.getElementById('cat-map');
+    if(!el)return;
+    mapInstance=L.map('cat-map',{center:[25.77,-80.19],zoom:7,zoomControl:true,scrollWheelZoom:true});
+    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(mapInstance);
+
+    var cards=document.querySelectorAll('.op-card');
+    var bounds=[];
+    cards.forEach(function(card,i){
+      var lat=+(card.dataset.lat||0),lng=+(card.dataset.lng||0);
+      if(!lat||!lng)return;
+      var nameEl2=card.querySelector('.op-name');
+      var name='';
+      if(nameEl2){var tn2=nameEl2.firstChild;name=(tn2&&tn2.nodeType===3)?tn2.textContent.trim():(nameEl2.textContent||'').replace(/·\s*\d+Pax/,'').trim();}
+      var price=(card.querySelector('.op-price-num')||{}).textContent||'';
+      var bookEl=card.querySelector('.op-book');
+      var bookUrl=bookEl?bookEl.href:'#';
+      var m=L.marker([lat,lng],{icon:makeIcon('#00d4c8')});
+      m.bindPopup('<div class="map-popup"><div class="map-popup-name">'+name+'</div><div class="map-popup-price">From '+price+'</div><a class="map-popup-btn" href="'+bookUrl+'" target="_blank" rel="noopener">Book Now →</a></div>');
+      m.bindTooltip('<b>'+name+'</b><br>From '+price,{direction:'top',offset:[0,-10]});
+      m.on('click',function(){highlightCard(i);});
+      markers[i]=m;
+      m.addTo(mapInstance);
+      bounds.push([lat,lng]);
+      card.addEventListener('click',function(){highlightPin(i);});
+    });
+    if(bounds.length>1){try{mapInstance.fitBounds(bounds,{padding:[30,30],maxZoom:12});}catch(e){}}
+  }
+
+  function highlightPin(idx){
+    if(selectedId!==null&&markers[selectedId]){markers[selectedId].setIcon(makeIcon('#00d4c8'));markers[selectedId].setZIndexOffset(0);}
+    selectedId=idx;
+    if(markers[idx]){
+      markers[idx].setIcon(makeIcon('#f5c842'));markers[idx].setZIndexOffset(1000);
+      var el=markers[idx].getElement();
+      if(el){el.style.filter='drop-shadow(0 0 8px #f5c842)';el.style.transform='scale(1.4)';}
+      var card=document.querySelectorAll('.op-card')[idx];
+      if(card){var lat=+(card.dataset.lat||0),lng=+(card.dataset.lng||0);if(lat&&lng)mapInstance.setView([lat,lng],13,{animate:true});}
+      markers[idx].openPopup();
+    }
+  }
+
+  function highlightCard(idx){
+    var cards=document.querySelectorAll('.op-card');
+    cards.forEach(function(c){c.style.outline='';});
+    var card=cards[idx];
+    if(card){card.style.outline='2px solid #f5c842';card.scrollIntoView({behavior:'smooth',block:'nearest'});}
+  }
+
+  // Load Leaflet lazily
+  var leafletLoaded=false;
+  function loadLeaflet(){
+    if(leafletLoaded)return;leafletLoaded=true;
+    var s=document.createElement('script');
+    s.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+    s.onload=initMap;
+    document.head.appendChild(s);
+  }
+  if('IntersectionObserver' in window){
+    var obs=new IntersectionObserver(function(entries,o){if(entries[0].isIntersecting){loadLeaflet();o.disconnect();}},{rootMargin:'200px'});
+    var mapEl=document.getElementById('cat-map');
+    if(mapEl)obs.observe(mapEl);else loadLeaflet();
+  } else {loadLeaflet();}
+})();
+
+  // ── Zone filter ──
+  var activeZone='all';
+  function filterZone(zone,btn){
+    activeZone=zone;
+    document.querySelectorAll('.zone-tab').forEach(function(b){b.classList.remove('active');});
+    btn.classList.add('active');
+    var cards=document.querySelectorAll('.op-card');
+    var visible=0;
+    cards.forEach(function(card){
+      if(zone==='all'||card.dataset.zone===zone){card.style.display='';visible++;}
+      else{card.style.display='none';}
+    });
+    var c=document.querySelector('.cards-count');
+    if(c)c.textContent='Showing '+visible+' operators';
+  }
+
+</script>
+
 </body>
 </html>
