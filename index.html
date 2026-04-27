@@ -367,6 +367,11 @@
     .deal-footer{display:flex;align-items:center;justify-content:space-between;}
     .deal-price{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:900;color:var(--teal);}
     .deal-badge{background:rgba(0,212,200,.12);color:var(--teal);font-family:'Montserrat',sans-serif;font-size:.63rem;font-weight:700;padding:3px 8px;border-radius:50px;border:1px solid rgba(0,212,200,.3);}
+    .deal-actions{display:flex;gap:6px;margin-top:10px;align-items:center;}
+    .deal-book-btn{flex:1;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:700;padding:7px 10px;border-radius:8px;transition:.2s;text-align:center;}
+    .deal-book-btn:hover{opacity:.88;transform:translateY(-1px);}
+    .deal-detail-btn{display:flex;align-items:center;justify-content:center;gap:4px;border:1px solid rgba(0,212,200,.28);color:var(--teal);font-size:.72rem;font-weight:600;padding:7px 10px;border-radius:8px;transition:.2s;white-space:nowrap;}
+    .deal-detail-btn:hover{background:rgba(0,212,200,.08);border-color:rgba(0,212,200,.5);}
     /* FAQ SECTION */
     .faq-section{background:var(--dark2);padding:70px 0;}
     .faq-list{max-width:800px;margin:36px auto 0;}
@@ -1415,9 +1420,12 @@ function renderDeals() {
   const sorted = [...allOperators].sort((a,b) => a.price - b.price).slice(0,8);
   const grid = document.getElementById('dealsGrid');
   if (!grid) return;
-  grid.innerHTML = sorted.map(op => `
-    <a href="${op.link}" target="_blank" rel="noopener" class="deal-card">
-      <div class="deal-img"><img src="${thumbUrl(op.photo)}" alt="${op.name}"  onerror="this.style.display='none'"></div>
+  grid.innerHTML = sorted.map(op => {
+    const detailSlug = OP_SLUG_MAP[op.id] || '';
+    const detailUrl  = detailSlug ? `/${detailSlug}` : op.link;
+    return `
+    <div class="deal-card">
+      <div class="deal-img"><img src="${thumbUrl(op.photo)}" alt="${op.name}" onerror="this.style.display='none'"></div>
       <div class="deal-body">
         <div class="deal-name">${op.name}</div>
         <div class="deal-zone">📍 ${op.zl}</div>
@@ -1425,9 +1433,13 @@ function renderDeals() {
           <div class="deal-price">$${op.price}</div>
           <div class="deal-badge">Best Value</div>
         </div>
+        <div class="deal-actions">
+          <a href="${op.link}" target="_blank" rel="noopener" class="deal-book-btn" onclick="event.stopPropagation()">Book Now →</a>
+          <a href="${detailUrl}" class="deal-detail-btn" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right" style="font-size:.65rem"></i></a>
+        </div>
       </div>
-    </a>
-  `).join('');
+    </div>`;
+  }).join('');
 }
 
 // ---- GOOGLE ADS CONVERSION TRACKING ----
