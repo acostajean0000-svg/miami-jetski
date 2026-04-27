@@ -184,7 +184,13 @@
     .cmp-go:hover{opacity:.9;}
     .cmp-clear{background:transparent;border:1px solid #1c3a58;color:#9bbdd4;padding:9px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;cursor:pointer;}
 
-    </style>
+    
+    .zone-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px;}
+    .zone-tab{background:rgba(255,255,255,.04);border:1.5px solid rgba(0,212,200,.2);border-radius:50px;padding:7px 16px;font-size:.78rem;font-weight:700;color:#a0bfd0;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:'Montserrat',sans-serif;}
+    .zone-tab:hover{border-color:#00d4c8;color:#00d4c8;}
+    .zone-tab.active{background:#00d4c8;border-color:#00d4c8;color:#081525;}
+
+  </style>
 </style>
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -231,9 +237,23 @@
   <button class="near-me-btn" id="nearMeBtn">📍 Near Me</button>
   <span class="sort-label">Sorted by price: low to high</span>
 </div>
+
+<div class="zone-tabs">
+  <button class="zone-tab active" onclick="filterZone('all',this)">🗺️ All Florida</button>
+  <button class="zone-tab" onclick="filterZone('miami',this)">🏖️ Miami</button>
+  <button class="zone-tab" onclick="filterZone('broward',this)">🌅 Broward</button>
+  <button class="zone-tab" onclick="filterZone('keys',this)">🐠 Florida Keys</button>
+  <button class="zone-tab" onclick="filterZone('gulf',this)">🌊 Gulf Coast</button>
+  <button class="zone-tab" onclick="filterZone('everglades',this)">🌿 Everglades</button>
+  <button class="zone-tab" onclick="filterZone('palmbeach',this)">🌴 Palm Beach</button>
+  <button class="zone-tab" onclick="filterZone('westfl',this)">🏖️ West FL</button>
+  <button class="zone-tab" onclick="filterZone('centralfl',this)">🎡 Central FL</button>
+  <button class="zone-tab" onclick="filterZone('nefl',this)">🏰 NE Florida</button>
+  <button class="zone-tab" onclick="filterZone('space',this)">🚀 Space Coast</button>
+</div>
 <div class="cards-count">Showing 88 operators</div>
   <div class="cards-grid">
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qGF2J9DjSnSyRIoyiVDF" alt="Bruschi Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -250,7 +270,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qlH56wPZSn2vMKN6zdUn" alt="Bruschi Boat Rental – Small Boat" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -267,7 +287,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/yfXcCkP3SjaryQrhVi74" alt="Altamar Trade – Miami River" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -284,7 +304,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hcNurBdvQXa5l1Z0FFX0" alt="100 Miami – Luxury Boat" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -301,7 +321,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/JZZbvFywTmWTT5a3wRUr" alt="100 Miami – Premium Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -318,7 +338,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/dwkmTqVQmeWXpmuOGR8w" alt="Aura Yacht Experience" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -335,7 +355,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/xig8U79oSQOefxbu7snO" alt="100 Miami – NW 21st Mega Yacht" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -352,7 +372,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/IYvk4KtYSNmJz8Db2n22" alt="Horizon Yacht Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -369,7 +389,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/F3mEHY8LQQqcegaKMimf" alt="100 Miami – Bayshore" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -386,7 +406,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/F3mEHY8LQQqcegaKMimf" alt="100 Miami – Collins Ave" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -403,7 +423,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/y6cf74yfQjyqXIzf0Smu" alt="The Real Yacht Experience" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -420,7 +440,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CQH4Q4dSQ222BdUzxK4Y" alt="The Real Yacht Experience II" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -437,7 +457,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/kVN7dZWeTCiJ9rMhWrFX" alt="Ocean Force Adventures – Private" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -454,7 +474,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/2Hn6r2JwTdSehD9tStzj" alt="Ocean Force Adventures – Marina" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -471,7 +491,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qbL1z09LTIiUXCAmdmwH" alt="Aquarius Boat Rental – Boating Lesson" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -488,7 +508,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hkUT6Q5lRnuzaryoOoy1" alt="100 Pro Boats – Hollywood" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -505,7 +525,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/uK4IGupRVCl8Uim7MRPs" alt="Bluefoot Pirates" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -522,7 +542,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/3elI6sZSdCdUYliX7mWg" alt="Sun Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -539,7 +559,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/6CYS9YrTRNaxUlhYYLYw" alt="Dania Beach Adventures" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -556,7 +576,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rqOQ8ZfkTOY67tWumg1A" alt="BYOB Party Pontoon" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -573,7 +593,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CbaZ7ht1QSOFxsJEdwMA" alt="Baymingo" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -590,7 +610,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/8S9gFdBARDaDt3Kgnhus" alt="Fort Lauderdale Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -607,7 +627,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/DVy8CrmkS92HGBzMRNCa" alt="Altamar Trade – Fort Lauderdale" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -624,7 +644,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/89yXGsn6RqShDszSTgQ6" alt="100 Pro Boats – Fort Lauderdale" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -641,7 +661,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/RqefLcVWRHmKmRf0kqmB" alt="Blue H2O Cruisers" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -658,7 +678,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/eIxlqJITGORzbasTH4q8" alt="Fort Lauderdale Boat Rental with Captain" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -675,7 +695,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="everglades">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/QJt4YTh1RaBj51ydj5RQ" alt="Everglades Holiday Park" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -692,7 +712,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="everglades">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/zVlZFIryQEaVr87myQAV" alt="Flamingo Everglades" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -709,7 +729,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/r3CL7LwXRgyFPYe9Zxuj" alt="Key Largo Adventures" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -726,7 +746,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/3bEOyDZXRFaoIdB4Edqr" alt="Islamorada Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -743,7 +763,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/cqifpofxQlyHha8BLXBD" alt="Rumaway Lifestyle" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -760,7 +780,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/5Qz81FoFTpOmxHSNY3pz" alt="WakeZone Watersports" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -777,7 +797,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/QkwUvas4Rp6adULlMuBF" alt="Aqua Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -794,7 +814,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/5gVRq0xiRmC2xKKjgZ0w" alt="Nothing Better Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -811,7 +831,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/xcquWi0bQNiT6ttEbl4i" alt="Boat Rentals in Key West" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -828,7 +848,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/p83RWLcRkxVsS1esmxHA" alt="Island Vibe Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -845,7 +865,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/gTcGYgqWTcmzqQpTJ0qC" alt="Sail Away Key West" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -862,7 +882,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/JIzhKW9QzqumRq7GROkI" alt="Coastal Key West Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -879,7 +899,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/G1tmWHBjSSSr50TGi6qi" alt="Adventures on Water" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -896,7 +916,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/77S6MyFS5im6s3Nc12Ii" alt="Best Sandbar Tours" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -913,7 +933,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/7AHO9CVCQjiED6xevKut" alt="Spencer's Boatyard" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -930,7 +950,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/Y3IVzw69RXKcWGrNP4Td" alt="Barefoot Billy's KW" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -947,7 +967,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/2kr8HzlQQWCfxgb0xjvr" alt="Sea Monkey Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -964,7 +984,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="palmbeach">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4uMATmBQvSPbxZqe4DsQ" alt="Visit Palm Beach" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -981,7 +1001,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4uMATmBQvSPbxZqe4DsQ" alt="Florida Island Tours" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -998,7 +1018,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/gn5rftESnGGUlRc3XA2w" alt="Kokomo Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1015,7 +1035,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/IiLKnGCWSvKkEF76JR1u" alt="Beach Bums Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1032,7 +1052,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/zSmEcrGVQqrnIQkeRLO4" alt="PG Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1049,7 +1069,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/A1rDDddfRxG30HUcjyBM" alt="Island Time Florida Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1066,7 +1086,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/I2gyMwhVTtuQ7bl7XO5V" alt="Crysten's" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1083,7 +1103,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/aD9rLa1CRPixrds628KW" alt="TV Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1100,7 +1120,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rLqH6zeCQKeMlYOCpo5M" alt="Chadillac Adventures" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1117,7 +1137,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/0d4wY48USeaKHeRSYXmO" alt="Father Daughter Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1134,7 +1154,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="centralfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/WYqFkB2mSHqEfPw6pATN" alt="Lake Harris Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1151,7 +1171,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="space">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KaX9fpowQIOftmFRKA8b" alt="Island Time Marina" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1168,7 +1188,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="nefl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/v1941N2qTTqqBlWVSZZO" alt="Daytona Beach Dolphin Tours" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1185,7 +1205,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/C7jKlgoLRJ2nwI3Hrctb" alt="Six Fins Charter – Clothing Optional" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1202,7 +1222,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/iFPajcCuTV6cbX7s3hd7" alt="Marco Island Boat Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1219,7 +1239,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/yMnHEabmRQuSFUw7DyJ4" alt="Sea Rocket Fort Lauderdale" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1236,7 +1256,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/cGCKxq9wQ3i7yHjCqOau" alt="Keys Huka Dive – Nokomis" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1253,7 +1273,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/WezWGyA7TT6cpXfsqv6J" alt="Island Boat Adventures" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1270,7 +1290,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="palmbeach">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/8r8ZW8vSAKQdrAbIdkfg" alt="Pontiki – Jupiter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1287,7 +1307,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/XDuJ9WEWQnyCstfubSf9" alt="Walks NYC – Boat Tour Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1304,7 +1324,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/z2c6eXCERNGACv5op6Fg" alt="Miami Tour Company – Everglades" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1321,7 +1341,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KDRotEB8RFSRppMNjQMa" alt="Florida Adventures – Dolphin Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1338,7 +1358,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4pyXoMyoSG2WO5wuC58M" alt="Miami Aqua Tours" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1355,7 +1375,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KbeKLjQFTwCj9fMR1mgT" alt="Robin Hood Anna Maria" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1372,7 +1392,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/W4VBvLxpTAODqGQtinIs" alt="The Pink Pelican Tiki" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1389,7 +1409,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rwIn7wiRQDeaU8pineua" alt="Open Miami – Private Everglades Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1406,7 +1426,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/OfeqdTQAShyXRHgu1eXI" alt="Six Fins Charter – Private Boat Tour Key West" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1423,7 +1443,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/XXdbwAp0RwCtLZI3BxzJ" alt="Six Fins Charter – Boat Tour Key West II" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1440,7 +1460,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/lfTU36coSeCs6VvlYDkg" alt="Six Fins Charter – Boat Tour Key West III" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1457,7 +1477,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/eN2wLizTfysYWvkGfLQM" alt="Sea Rocket Fort Lauderdale – Boat Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1474,7 +1494,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/zhsgTdGSLqqeEFI08wIQ" alt="Six Fins Charter – Boat Tour Key West IV" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1491,7 +1511,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/Yrhnn1XSCC8E3xpHBsJe" alt="Destin Private Yachts – Luxury Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1508,7 +1528,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/aUj44hYGQGiAK8N7hYb1" alt="Cypress Cay Pontoon – 12 Passengers Fort Myers" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1525,7 +1545,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/7VX81gR8iWFL1m6BfVgw" alt="Florida Adventures – Marco Island Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1542,7 +1562,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CXno2qQJTV2mWyHuit64" alt="Punta Gorda Tiki – Tiki Boat Cruise" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1559,7 +1579,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qvoAd8rTP8j5WenxiBHA" alt="Boat Charter FL – St. Petersburg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1576,7 +1596,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sN256R2zRCqELCHMgjO1" alt="100 Miami – Luxury Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1593,7 +1613,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rSAlslVHRiKDEqFAlFhS" alt="Kokomo Charters – Sarasota Boat Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1610,7 +1630,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/ZLHcLtGITH2tWxSYWnpn" alt="Sunset Sail Key West – Luxury Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1627,7 +1647,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/lzulTOdGQTKToIstCQUm" alt="Sunset Sail Key West – Private Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1644,7 +1664,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/pERe86LOTa6znpMWXrSM" alt="Heron Harbor – Private Yacht Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1661,7 +1681,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/fl5HycCjTxiXHlBpoENB" alt="Destin Private Yachts – Premium Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1678,7 +1698,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sxiFcP9QbGr2G9EIry9s" alt="Aquarius Boat Rental – Miami Beach" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1695,7 +1715,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/V5MiP3fhRCpxBjvOwCrA" alt="Yaju Boat Tours – Standard" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1712,7 +1732,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-boat">
+<div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/maPhcClMS7ee72HEp23M" alt="Yaju Boat Tours – Premium" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Boat &amp; Yacht</span>

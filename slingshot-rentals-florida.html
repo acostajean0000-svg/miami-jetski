@@ -184,7 +184,13 @@
     .cmp-go:hover{opacity:.9;}
     .cmp-clear{background:transparent;border:1px solid #1c3a58;color:#9bbdd4;padding:9px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;cursor:pointer;}
 
-    </style>
+    
+    .zone-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px;}
+    .zone-tab{background:rgba(255,255,255,.04);border:1.5px solid rgba(0,212,200,.2);border-radius:50px;padding:7px 16px;font-size:.78rem;font-weight:700;color:#a0bfd0;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:'Montserrat',sans-serif;}
+    .zone-tab:hover{border-color:#00d4c8;color:#00d4c8;}
+    .zone-tab.active{background:#00d4c8;border-color:#00d4c8;color:#081525;}
+
+  </style>
 </style>
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -231,9 +237,18 @@
   <button class="near-me-btn" id="nearMeBtn">📍 Near Me</button>
   <span class="sort-label">Sorted by price: low to high</span>
 </div>
+
+<div class="zone-tabs">
+  <button class="zone-tab active" onclick="filterZone('all',this)">🗺️ All Florida</button>
+  <button class="zone-tab" onclick="filterZone('miami',this)">🏖️ Miami</button>
+  <button class="zone-tab" onclick="filterZone('broward',this)">🌅 Broward</button>
+  <button class="zone-tab" onclick="filterZone('gulf',this)">🌊 Gulf Coast</button>
+  <button class="zone-tab" onclick="filterZone('palmbeach',this)">🌴 Palm Beach</button>
+  <button class="zone-tab" onclick="filterZone('westfl',this)">🏖️ West FL</button>
+</div>
 <div class="cards-count">Showing 6 operators</div>
   <div class="cards-grid">
-<div class="op-card cat-slingshot">
+<div class="op-card cat-slingshot" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/pUgqw14BSjq7tvevkyEo" alt="Miami Style Rentals – Slingshot" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Slingshot</span>
@@ -250,7 +265,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-slingshot">
+<div class="op-card cat-slingshot" data-zone="westfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4BonRI9Tx2HxZ4Ix3nrz" alt="727 Slingshots" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Slingshot</span>
@@ -267,7 +282,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-slingshot">
+<div class="op-card cat-slingshot" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/HbjjiVAJQuiZ69w3zeut" alt="Miami Style Rentals – Biscayne" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Slingshot</span>
@@ -284,7 +299,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-slingshot">
+<div class="op-card cat-slingshot" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/AMhe7df4Q0i4hUu4oTxh" alt="TGIF Rides – Slingshot" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Slingshot</span>
@@ -301,7 +316,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-slingshot">
+<div class="op-card cat-slingshot" data-zone="palmbeach">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/2ENTuzKMS0aQdlxQ5zwL" alt="South Florida Slingshot Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Slingshot</span>
@@ -318,7 +333,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-slingshot">
+<div class="op-card cat-slingshot" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CbrL6oLrRfeEy2R600bz" alt="Big Shot Slingshot" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Slingshot</span>

@@ -108,6 +108,12 @@
     .cmp-go{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;border:none;padding:9px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;}
     .cmp-go:hover{opacity:.9;}
     .cmp-clear{background:transparent;border:1px solid #1c3a58;color:#9bbdd4;padding:9px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;cursor:pointer;}
+  
+    .zone-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:16px 0 20px;}
+    .zone-tab{background:rgba(255,255,255,.04);border:1.5px solid rgba(0,212,200,.2);border-radius:50px;padding:7px 16px;font-size:.78rem;font-weight:700;color:#a0bfd0;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:'Montserrat',sans-serif;}
+    .zone-tab:hover{border-color:#00d4c8;color:#00d4c8;}
+    .zone-tab.active{background:#00d4c8;border-color:#00d4c8;color:#081525;}
+
   </style>
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -155,9 +161,19 @@
   <button class="near-me-btn" id="nearMeBtn">📍 Near Me</button>
   <span class="sort-label">Sorted by price: low to high</span>
 </div>
+
+<div class="zone-tabs">
+  <button class="zone-tab active" onclick="filterZone('all',this)">🗺️ All Florida</button>
+  <button class="zone-tab" onclick="filterZone('miami',this)">🏖️ Miami</button>
+  <button class="zone-tab" onclick="filterZone('broward',this)">🌅 Broward</button>
+  <button class="zone-tab" onclick="filterZone('keys',this)">🐠 Florida Keys</button>
+  <button class="zone-tab" onclick="filterZone('westfl',this)">🏖️ West FL</button>
+  <button class="zone-tab" onclick="filterZone('centralfl',this)">🎡 Central FL</button>
+  <button class="zone-tab" onclick="filterZone('nefl',this)">🏰 NE Florida</button>
+</div>
 <div class="cards-count">Showing 16 operators</div>
   <div class="cards-grid">
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/nme8B7JS2m90aDNj37Vu" alt="Makers Air – Private Charter Fort Lauderdale" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -174,7 +190,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/V4Zlr9xfRgSV1wmtaIKs" alt="Sky Tours Miami – Premium Aerial Experience" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -191,7 +207,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/h3KxtX4PRQKYAXH7dgqJ" alt="Sky Tours Miami – South Beach Private Airplane Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -208,7 +224,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/P9yuzVVkQTK8Txi3ZkoQ" alt="Fly Key West – Helicopter Discovery Flight" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -225,7 +241,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/8FvOF3cSXDXuCQ9qgaHg" alt="Sky Tours Miami – Night Lights Airplane Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -242,7 +258,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/KemTslQACG3UAd5JZplw" alt="Sky Tours Miami – Private Airplane Luxury Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -259,7 +275,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="nefl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/8bPILh0SQiszOMdUaUaA" alt="Zoom Air – Zipline Daytona Beach" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -276,7 +292,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/nyIu36e6QPmi5bNhlTSt" alt="Sky Tours Miami – Aerial" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -293,7 +309,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="westfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/mw9OvGpTUOwlXSepNuqg" alt="Helicopter Aerial Tour – Tampa Bay" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -310,7 +326,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="westfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/BsTNwo2uTbrp885gk68A" alt="Suncoast Biplanes" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -327,7 +343,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/jIhjuRIQQhWuoOWT9VrY" alt="Eagles Air Tours – Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -344,7 +360,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="centralfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/dV1JK2VzSrWpMQK6Ppme" alt="Jones Air & Sea" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -361,7 +377,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="centralfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/bbMLaYN9Qpqjoa0z53Hr" alt="Jones Air & Sea – Premium" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -378,7 +394,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="westfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/16rZQ8NSpyDLI4UKuvOQ" alt="Destin Helicopters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -395,7 +411,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="centralfl">
   <div class="op-card-img">
     
     <span class="op-cat-badge">Aerial &amp; Fly</span>
@@ -412,7 +428,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-aerial">
+<div class="op-card cat-aerial" data-zone="westfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/elGjH4wsT1C8BKCto5Fw" alt="Destin Helicopters – Premium" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#0a1e36,#1a3a6a)'">
     <span class="op-cat-badge">Aerial &amp; Fly</span>
