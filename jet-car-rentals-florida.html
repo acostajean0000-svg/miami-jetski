@@ -150,6 +150,15 @@
     .op-map-btn{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:6px;padding:6px 0;border:1px solid rgba(0,212,200,.22);border-radius:8px;font-size:.73rem;font-weight:600;color:#00d4c8;background:rgba(0,212,200,.05);transition:.2s;text-decoration:none;cursor:pointer;}
     .op-map-btn:hover{background:rgba(0,212,200,.13);border-color:rgba(0,212,200,.5);color:#00eedd;}
     .op-map-btn svg{width:13px;height:13px;flex-shrink:0;}
+
+    /* ZONE TABS */
+    .zone-tabs-wrap{max-width:1200px;margin:0 auto;padding:24px 20px 0;}
+    .zone-tabs{display:flex;gap:8px;flex-wrap:wrap;align-items:center;}
+    .zone-tab{display:inline-flex;align-items:center;gap:6px;padding:7px 16px;border-radius:50px;border:1.5px solid var(--border);background:transparent;color:var(--text-muted);font-family:'Montserrat',sans-serif;font-size:.76rem;font-weight:700;cursor:pointer;transition:all .2s;white-space:nowrap;}
+    .zone-tab:hover{border-color:var(--teal-dark);color:var(--teal);}
+    .zone-tab.active{background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);border-color:transparent;}
+    .zone-tab .tab-count{background:rgba(0,0,0,.18);color:inherit;font-size:.65rem;padding:1px 6px;border-radius:10px;font-weight:800;}
+    .zone-tab.active .tab-count{background:rgba(4,13,26,.22);}
   </style>
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
   <meta property="og:image:width" content="1200">
@@ -189,10 +198,22 @@
   </div>
 </section>
 
+
+<div class="zone-tabs-wrap">
+  <div class="zone-tabs" id="zoneTabs">
+    <button class="zone-tab active" data-zone="all" onclick="filterZone('all',this)">🌎 All <span class="tab-count" id="cnt-all">10</span></button>
+    <button class="zone-tab" data-zone="miami" onclick="filterZone('miami',this)">🌆 Miami <span class="tab-count" id="cnt-miami">0</span></button>
+    <button class="zone-tab" data-zone="broward" onclick="filterZone('broward',this)">🏖️ Broward <span class="tab-count" id="cnt-broward">0</span></button>
+    <button class="zone-tab" data-zone="keys" onclick="filterZone('keys',this)">🏝️ Keys <span class="tab-count" id="cnt-keys">0</span></button>
+    <button class="zone-tab" data-zone="gulf" onclick="filterZone('gulf',this)">🌊 Gulf Coast <span class="tab-count" id="cnt-gulf">0</span></button>
+    <button class="zone-tab" data-zone="westfl" onclick="filterZone('westfl',this)">🐊 West FL <span class="tab-count" id="cnt-westfl">0</span></button>
+  </div>
+</div>
+
 <div class="cards-section">
   <div class="cards-count">Showing 10 operators</div>
   <div class="cards-grid">
-<div class="op-card cat-jetcar">
+<div class="op-card cat-jetcar" data-zone="keys">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/AFZOE9VSHS63mEDYaRk6" alt="WakeZone Watersports – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
@@ -209,7 +230,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-jetcar">
+<div class="op-card cat-jetcar" data-zone="westfl">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/xzxmLnRnRKDmOKyjy7Wt" alt="Get Wet FL – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
@@ -226,7 +247,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-jetcar">
+<div class="op-card cat-jetcar" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/Lyx5HSyySrWoScEpKVEY" alt="Top Line Watersports – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
@@ -243,7 +264,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-jetcar">
+<div class="op-card cat-jetcar" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/AZ5CoJfEQUSzBfesRVPA" alt="Adventure Watersports – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
@@ -260,7 +281,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-jetcar">
+<div class="op-card cat-jetcar" data-zone="gulf">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hGLCfMpPSIGTsiGbgQvd" alt="Aqua Voyage Jet Cars" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
@@ -277,7 +298,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-jetcar">
+<div class="op-card cat-jetcar" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/kcWCPqdTR6KeZ9YUK5qS" alt="Slingshot & Jet Ski Rentals – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
@@ -294,7 +315,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-jetcar">
+<div class="op-card cat-jetcar" data-zone="broward">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/WeDaEXXFToiH86X8XJlR" alt="Flamingo Yacht Charters – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
@@ -311,7 +332,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-jetcar">
+<div class="op-card cat-jetcar" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/gqaULLH4TgKCX4gN4xqE" alt="Jet Ski Miami Rentals – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
@@ -328,7 +349,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-jetcar">
+<div class="op-card cat-jetcar" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/EfEtehwlTOWILInJaSkl" alt="Slinki Motors – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
@@ -345,7 +366,7 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-jetcar">
+<div class="op-card cat-jetcar" data-zone="miami">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/PzX80V75Tm6k42i0lxwK" alt="SF Jet Ski Rentals – Jet Car" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Jet Car</span>
@@ -477,6 +498,30 @@ function viewDetails(name){
 }
 
 function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+// ── Zone Tabs Filter ──
+function filterZone(zone, btn){
+  document.querySelectorAll('.zone-tab').forEach(function(t){t.classList.remove('active');});
+  btn.classList.add('active');
+  var cards = document.querySelectorAll('.op-card');
+  var visible = 0;
+  cards.forEach(function(c){
+    if(zone === 'all' || c.dataset.zone === zone){ c.style.display = ''; visible++; }
+    else { c.style.display = 'none'; }
+  });
+  var countEl = document.querySelector('.cards-count');
+  if(countEl) countEl.textContent = 'Showing ' + visible + ' operator' + (visible !== 1 ? 's' : '');
+}
+(function initCounts(){
+  var counts = {};
+  document.querySelectorAll('.op-card[data-zone]').forEach(function(c){
+    var z = c.dataset.zone; counts[z] = (counts[z]||0) + 1;
+  });
+  Object.keys(counts).forEach(function(z){
+    var el = document.getElementById('cnt-'+z);
+    if(el) el.textContent = counts[z];
+  });
+})();
+
 </script>
 
 <!-- Compare bar -->
