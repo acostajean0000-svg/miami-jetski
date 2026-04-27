@@ -111,9 +111,6 @@
     .footer-links a{font-size:.8rem;color:#4a7a9b;transition:color .2s;}
     .footer-links a:hover{color:var(--teal);}
 
-    .op-map-btn{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:6px;padding:6px 0;border:1px solid rgba(0,212,200,.22);border-radius:8px;font-size:.73rem;font-weight:600;color:#00d4c8;background:rgba(0,212,200,.05);transition:.2s;text-decoration:none;cursor:pointer;}
-    .op-map-btn:hover{background:rgba(0,212,200,.13);border-color:rgba(0,212,200,.5);color:#00eedd;}
-    .op-map-btn svg{width:13px;height:13px;flex-shrink:0;}
   </style>
 </head>
 <body>
@@ -141,7 +138,7 @@
     <h1>🛵 <span class="teal">Scooter Rentals</span> Florida</h1>
     <p>Explore Miami Beach, Brickell, and South Florida on two wheels. Choose from 50cc beach scooters, electric kick scooters, and premium rides. Starting at just $40 — no experience needed.</p>
     <div class="page-stats">
-      <div><div class="page-stat-num">9</div><div class="page-stat-label">Operators</div></div>
+      <div><div class="page-stat-num">8</div><div class="page-stat-label">Operators</div></div>
       <div><div class="page-stat-num">$40</div><div class="page-stat-label">Starting From</div></div>
       <div><div class="page-stat-num">FL</div><div class="page-stat-label">Statewide</div></div>
     </div>
@@ -150,8 +147,7 @@
 
 <div class="marketplace-body" id="mktBody">
   <div class="toolbar">
-    <button class="near-me-btn" id="nearMeBtn">📍 Near Me</button>
-    <span class="sort-label">Sorted by price: low to high</span>
+    <span class="sort-label" style="margin-left:0">Sorted by price: low to high</span>
   </div>
 <div class="zone-tabs">
   <button class="zone-tab active" onclick="filterZone('all',this)">🌎 All Florida</button>
@@ -160,9 +156,9 @@
   <button class="zone-tab" onclick="filterZone('keys',this)">🏝️ Keys</button>
   <button class="zone-tab" onclick="filterZone('nefl',this)">🗺️ NE Florida</button>
 </div>
-<div class="cards-count">Showing 9 operators</div>
+<div class="cards-count">Showing 8 operators</div>
 <div class="cards-grid">
-<div class="op-card cat-scooter" data-zone="miami" data-lat="0" data-lng="0" data-price="0">
+<div class="op-card cat-scooter" data-zone="miami" data-lat="0" data-lng="0" data-price="9999">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/alZFgqiMRLzuJBiGubZb" alt="Scooter of Miami – Premium Scooter Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Scooter</span>
@@ -230,23 +226,6 @@
     </div>
   </div>
 </div>
-<div class="op-card cat-scooter" data-zone="broward" data-lat="0" data-lng="0" data-price="0">
-  <div class="op-card-img">
-    <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=900&q=80" alt="Sunset Scooter Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
-    <span class="op-cat-badge">Scooter</span>
-    <span class="op-best-badge">🛵 Broward</span>
-  <div class="card-actions"><button class="fav-toggle" data-id="fh-sunsetscooterrenta" onclick="event.stopPropagation();toggleFav(this,'fh-sunsetscooterrenta')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-sunsetscooterrenta" onclick="event.stopPropagation();toggleCmp(this,'fh-sunsetscooterrenta','Sunset Scooter Rentals')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sunsetscooterrentals/items/551717/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Sunset Scooter Rentals',this)" aria-label="Share" title="Share">🔗</button></div>
-  </div>
-  <div class="op-card-body">
-    <div class="op-name">Sunset Scooter Rentals</div>
-    <div class="op-addr">📍 Broward County, FL</div>
-    <div class="op-footer">
-      <div class="op-price"><div class="op-price-from"></div><div class="op-price-num">Check</div></div>
-      <a href="https://fareharbor.com/embeds/book/sunsetscooterrentals/items/551717/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
-    <a class="op-detail-link" href="/operators/sunset-scooter-rentals-broward" onclick="event.stopPropagation()" title="View details for Sunset Scooter Rentals">View details <span style="font-size:.65rem">→</span></a>
-    </div>
-  </div>
-</div>
 <div class="op-card cat-scooter" data-zone="nefl" data-lat="0" data-lng="0" data-price="75">
   <div class="op-card-img">
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/J5plafpQT62QuSKjw2cE" alt="Arcimoto Electric Scooter Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
@@ -258,7 +237,7 @@
     <div class="op-name">Arcimoto Electric Scooter Rentals</div>
     <div class="op-addr">📍 St. Augustine, FL</div>
     <div class="op-footer">
-      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">75</div></div>
+      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$75</div></div>
       <a href="https://fareharbor.com/embeds/book/solanocycle/items/721737/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
     <a class="op-detail-link" href="/operators/arcimoto-electric-scooter-rentals-nefl" onclick="event.stopPropagation()" title="View details for Arcimoto Electric Scooter Rentals">View details <span style="font-size:.65rem">→</span></a>
     </div>
@@ -269,13 +248,13 @@
     <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/5yKM0Bm7TyeVZQxva6wh" alt="Sunset Scooter Rentals – Fort Lauderdale" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
     <span class="op-cat-badge">Scooter</span>
     <span class="op-best-badge">🛵 Fort Lauderdale</span>
-  <div class="card-actions"><button class="fav-toggle" data-id="fh-sunsetscooterrenta" onclick="event.stopPropagation();toggleFav(this,'fh-sunsetscooterrenta')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-sunsetscooterrenta" onclick="event.stopPropagation();toggleCmp(this,'fh-sunsetscooterrenta','Sunset Scooter Rentals – Fort Lauderdale')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sunsetscooterrentals/items/551717/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Sunset Scooter Rentals – Fort Lauderdale',this)" aria-label="Share" title="Share">🔗</button></div>
+  <div class="card-actions"><button class="fav-toggle" data-id="ws10-ftl" onclick="event.stopPropagation();toggleFav(this,'ws10-ftl')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="ws10-ftl" onclick="event.stopPropagation();toggleCmp(this,'ws10-ftl','Sunset Scooter Rentals – Fort Lauderdale')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sunsetscooterrentals/items/551717/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Sunset Scooter Rentals – Fort Lauderdale',this)" aria-label="Share" title="Share">🔗</button></div>
   </div>
   <div class="op-card-body">
     <div class="op-name">Sunset Scooter Rentals – Fort Lauderdale</div>
     <div class="op-addr">📍 Fort Lauderdale, FL</div>
     <div class="op-footer">
-      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">65</div></div>
+      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$65</div></div>
       <a href="https://fareharbor.com/embeds/book/sunsetscooterrentals/items/551717/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
     <a class="op-detail-link" href="/operators/sunset-scooter-rentals-broward" onclick="event.stopPropagation()" title="View details for Sunset Scooter Rentals – Fort Lauderdale">View details <span style="font-size:.65rem">→</span></a>
     </div>
@@ -292,7 +271,7 @@
     <div class="op-name">Paradise Rentals KW – Scooter</div>
     <div class="op-addr">📍 Key West, FL</div>
     <div class="op-footer">
-      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">35</div></div>
+      <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$35</div></div>
       <a href="https://fareharbor.com/embeds/book/paradisekw/items/635124/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="op-book">Book Now →</a>
     <a class="op-detail-link" href="/operators/paradise-rentals-kw-golf-cart-keys" onclick="event.stopPropagation()" title="View details for Paradise Rentals KW – Scooter">View details <span style="font-size:.65rem">→</span></a>
     </div>
@@ -336,7 +315,7 @@
 
 <section class="cta-banner">
   <h2>Find Your Perfect <span style="color:var(--teal)">Florida Adventure</span></h2>
-  <p>Compare 360+ operators, filter by zone or category, and book online instantly.</p>
+  <p>Compare 380+ operators, filter by zone or category, and book online instantly.</p>
   <a href="/" class="btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Browse All Operators</a>
 </section>
 
