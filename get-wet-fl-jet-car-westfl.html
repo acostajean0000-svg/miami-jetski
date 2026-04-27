@@ -58,7 +58,16 @@
 
     /* LAYOUT */
     .page-body{max-width:1100px;margin:0 auto;padding:32px 20px;display:grid;grid-template-columns:1fr 340px;gap:36px;align-items:start}
-    @media(max-width:768px){.page-body{grid-template-columns:1fr}.sidebar{order:-1}}
+    @media(max-width:768px){
+      .page-body{grid-template-columns:1fr}
+      .sidebar{display:none}
+      .mob-book-bar{display:flex!important}
+      body{padding-bottom:76px}
+    }
+    .mob-book-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;background:#081525;border-top:2px solid rgba(0,212,200,.35);padding:10px 16px;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -4px 20px rgba(0,0,0,.5)}
+    .mob-price{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:900;color:#00d4c8;white-space:nowrap}
+    .mob-price-sub{font-size:.65rem;color:#7ba3c0;line-height:1.2}
+    .mob-book-btn{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.9rem;padding:12px 22px;border-radius:12px;white-space:nowrap;text-decoration:none;flex-shrink:0}
 
     /* SECTIONS */
     .section{margin-bottom:36px}
@@ -309,5 +318,25 @@ document.querySelectorAll('.faq-q').forEach(btn => {
   });
 });
 </script>
+
+<!-- MOBILE BOOK BAR -->
+<div class="mob-book-bar" id="mobBar">
+  <div>
+    <div class="mob-price" id="mobPrice">Book Now</div>
+    <div class="mob-price-sub">per person / per rental</div>
+  </div>
+  <a href="#" class="mob-book-btn" id="mobBookBtn" target="_blank" rel="noopener">Book Now →</a>
+</div>
+<script>
+(function(){
+  var b=document.querySelector('.bc-book');
+  var p=document.querySelector('.bc-price');
+  var btn=document.getElementById('mobBookBtn');
+  var priceEl=document.getElementById('mobPrice');
+  if(b&&btn) btn.href=b.href;
+  if(p&&priceEl) priceEl.textContent=p.textContent;
+})();
+</script>
+
 </body>
 </html>
