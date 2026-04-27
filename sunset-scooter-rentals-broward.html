@@ -266,8 +266,9 @@
 </footer>
 
 <script>
-// FAQ accordion
+// FAQ accordion — remove inline onclick to avoid double-fire conflict
 document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.removeAttribute('onclick');
   btn.addEventListener('click', () => {
     const item = btn.parentElement;
     const wasOpen = item.classList.contains('open');
