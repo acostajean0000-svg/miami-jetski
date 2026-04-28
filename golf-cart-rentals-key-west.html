@@ -212,6 +212,22 @@
     .faq-item.open .faq-a{display:block;}
     .faq-item.open .faq-chevron{transform:rotate(180deg);}
 
+    /* KEY WEST ACTIVITIES */
+    .kw-activities{background:var(--dark2);padding:56px 20px;border-top:1px solid var(--border);}
+    .kw-activities-inner{max-width:1100px;margin:0 auto;}
+    .kw-activities-title{font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:900;margin-bottom:6px;text-align:center;}
+    .kw-activities-sub{color:var(--text-muted);font-size:.88rem;text-align:center;margin-bottom:36px;}
+    .kw-act-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;}
+    .kw-act-card{background:var(--card-bg);border:1.5px solid var(--border);border-radius:16px;padding:22px 14px 18px;text-align:center;text-decoration:none;color:#fff;transition:transform .2s,border-color .2s,box-shadow .2s;display:flex;flex-direction:column;align-items:center;gap:6px;}
+    .kw-act-card:hover{transform:translateY(-4px);border-color:var(--teal-dark);box-shadow:0 8px 28px rgba(0,212,200,.14);}
+    .kw-act-card.active-cat{border-color:var(--teal);background:rgba(0,212,200,.06);}
+    .kw-act-emoji{font-size:2.4rem;line-height:1;margin-bottom:4px;}
+    .kw-act-name{font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:700;line-height:1.3;}
+    .kw-act-price{font-size:.72rem;color:var(--teal);font-weight:600;}
+    .kw-act-btn{margin-top:10px;display:inline-block;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);padding:6px 16px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;transition:all .2s;}
+    .kw-act-card:hover .kw-act-btn{box-shadow:0 4px 12px rgba(0,212,200,.35);}
+    @media(max-width:600px){.kw-act-grid{grid-template-columns:repeat(3,1fr);gap:10px;}.kw-act-emoji{font-size:1.9rem;}.kw-act-btn{font-size:.65rem;padding:5px 10px;}}
+
     /* RELATED */
     .related-section{background:var(--dark2);padding:50px 20px;border-top:1px solid var(--border);}
     .related-section h3{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:20px;max-width:1200px;margin-left:auto;margin-right:auto;}
@@ -461,6 +477,80 @@
     <div id="cat-map"></div>
   </div>
 </div><!-- /marketplace-body -->
+
+<!-- KEY WEST ACTIVITIES SECTION -->
+<section class="kw-activities">
+  <div class="kw-activities-inner">
+    <div class="kw-activities-title">🏝️ More Things To Do in Key West</div>
+    <div class="kw-activities-sub">Book all your Key West adventures in one place</div>
+    <div class="kw-act-grid">
+
+      <a class="kw-act-card active-cat" href="/golf-cart-rentals-key-west">
+        <div class="kw-act-emoji">🛺</div>
+        <div class="kw-act-name">Golf Cart Rental</div>
+        <div class="kw-act-price">From $89</div>
+        <span class="kw-act-btn">You're here</span>
+      </a>
+
+      <a class="kw-act-card" href="https://fareharbor.com/embeds/book/sixfinsjetskirental/items/628106/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener">
+        <div class="kw-act-emoji">🛥️</div>
+        <div class="kw-act-name">Jet Ski Tour</div>
+        <div class="kw-act-price">From $209</div>
+        <span class="kw-act-btn">Book Now</span>
+      </a>
+
+      <a class="kw-act-card" href="/bike-rentals-florida.html">
+        <div class="kw-act-emoji">🚲</div>
+        <div class="kw-act-name">Bike Rentals</div>
+        <div class="kw-act-price">From $15</div>
+        <span class="kw-act-btn">Explore</span>
+      </a>
+
+      <a class="kw-act-card" href="/scooter-rentals-florida.html">
+        <div class="kw-act-emoji">🛵</div>
+        <div class="kw-act-name">Scooter Rentals</div>
+        <div class="kw-act-price">From $35</div>
+        <span class="kw-act-btn">Explore</span>
+      </a>
+
+      <a class="kw-act-card" href="/florida-keys-water-sports.html">
+        <div class="kw-act-emoji">🎣</div>
+        <div class="kw-act-name">Fishing Charter</div>
+        <div class="kw-act-price">From $99</div>
+        <span class="kw-act-btn">Explore</span>
+      </a>
+
+      <a class="kw-act-card" href="/florida-keys-water-sports.html">
+        <div class="kw-act-emoji">⛵</div>
+        <div class="kw-act-name">Boat Tours</div>
+        <div class="kw-act-price">From $49</div>
+        <span class="kw-act-btn">Explore</span>
+      </a>
+
+      <a class="kw-act-card" href="/florida-keys-water-sports.html">
+        <div class="kw-act-emoji">🌅</div>
+        <div class="kw-act-name">Sunset Cruise</div>
+        <div class="kw-act-price">From $59</div>
+        <span class="kw-act-btn">Explore</span>
+      </a>
+
+      <a class="kw-act-card" href="/florida-keys-water-sports.html">
+        <div class="kw-act-emoji">🤿</div>
+        <div class="kw-act-name">Snorkeling Tour</div>
+        <div class="kw-act-price">From $45</div>
+        <span class="kw-act-btn">Explore</span>
+      </a>
+
+      <a class="kw-act-card" href="/florida-keys-water-sports.html">
+        <div class="kw-act-emoji">🪂</div>
+        <div class="kw-act-name">Parasailing</div>
+        <div class="kw-act-price">From $89</div>
+        <span class="kw-act-btn">Explore</span>
+      </a>
+
+    </div>
+  </div>
+</section>
 
 <section class="related-section">
   <h3>More Florida Activities</h3>
