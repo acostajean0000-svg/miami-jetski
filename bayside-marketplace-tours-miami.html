@@ -308,7 +308,7 @@ footer a{color:var(--muted)}.footer a:hover{color:var(--teal)}
     <p>Bayside Marketplace sits on the edge of Biscayne Bay in downtown Miami and has been the city's most active tour departure point for decades. With its open-air marina and direct water access, it's the natural starting line for everything from relaxed 45-minute bay cruises to all-day Key West shuttles. Below you'll find every operator currently departing from — or within walking distance of — the marketplace, with prices, what's included, and direct booking links.</p>
 
     <!-- BOAT TOURS -->
-    <div class="section-header">
+    <div class="section-header" id="cat-boat">
       <h2>⛵ Boat & Bay Tours</h2>
       <div class="section-tag">Most Popular</div>
     </div>
@@ -454,7 +454,7 @@ footer a{color:var(--muted)}.footer a:hover{color:var(--teal)}
     </div><!-- /boat tours -->
 
     <!-- NIGHT & SPECIAL CRUISES -->
-    <div class="section-header">
+    <div class="section-header" id="cat-night">
       <h2>🌙 Night Cruises & Themed Adventures</h2>
       <div class="section-tag">Unique Experiences</div>
     </div>
@@ -518,7 +518,7 @@ footer a{color:var(--muted)}.footer a:hover{color:var(--teal)}
     </div><!-- /night cruises -->
 
     <!-- SPEEDBOATS & THRILLS -->
-    <div class="section-header">
+    <div class="section-header" id="cat-speed">
       <h2>⚡ Speedboats & Thrill Rides</h2>
       <div class="section-tag">High Adrenaline</div>
     </div>
@@ -555,7 +555,7 @@ footer a{color:var(--muted)}.footer a:hover{color:var(--teal)}
     </div><!-- /speedboats -->
 
     <!-- UNIQUE VEHICLES -->
-    <div class="section-header">
+    <div class="section-header" id="cat-unique">
       <h2>🚗 Unique Land & Water Vehicles</h2>
       <div class="section-tag">One-of-a-Kind</div>
     </div>
@@ -619,7 +619,7 @@ footer a{color:var(--muted)}.footer a:hover{color:var(--teal)}
     </div><!-- /unique vehicles -->
 
     <!-- SIGHTSEEING BUS -->
-    <div class="section-header">
+    <div class="section-header" id="cat-bus">
       <h2>🚌 Sightseeing Bus Tours</h2>
       <div class="section-tag">Classic Touring</div>
     </div>
@@ -656,7 +656,7 @@ footer a{color:var(--muted)}.footer a:hover{color:var(--teal)}
     </div><!-- /bus tours -->
 
     <!-- DAY TRIPS -->
-    <div class="section-header">
+    <div class="section-header" id="cat-day">
       <h2>🌿 Day Trips & Excursions</h2>
       <div class="section-tag">Full Day Adventures</div>
     </div>
@@ -884,12 +884,12 @@ footer a{color:var(--muted)}.footer a:hover{color:var(--teal)}
     <!-- Quick Links -->
     <div class="sidebar-card">
       <h3>Jump to Category</h3>
-      <a href="#" class="quick-link" onclick="return false"><i class="fa-solid fa-sailboat"></i> Boat & Bay Tours <span class="price-badge">From $5</span></a>
-      <a href="#" class="quick-link" onclick="return false"><i class="fa-solid fa-moon"></i> Night Cruises <span class="price-badge">From $20</span></a>
-      <a href="#" class="quick-link" onclick="return false"><i class="fa-solid fa-bolt"></i> Speedboats <span class="price-badge">From $35</span></a>
-      <a href="#" class="quick-link" onclick="return false"><i class="fa-solid fa-car"></i> Unique Vehicles <span class="price-badge">From $100</span></a>
-      <a href="#" class="quick-link" onclick="return false"><i class="fa-solid fa-bus"></i> Sightseeing Bus <span class="price-badge">From $39</span></a>
-      <a href="#" class="quick-link" onclick="return false"><i class="fa-solid fa-tree"></i> Day Trips <span class="price-badge">From $39</span></a>
+      <a href="#cat-boat" class="quick-link" onclick="scrollTo(this,'cat-boat')"><i class="fa-solid fa-sailboat"></i> Boat & Bay Tours <span class="price-badge">From $5</span></a>
+      <a href="#cat-night" class="quick-link" onclick="scrollTo(this,'cat-night')"><i class="fa-solid fa-moon"></i> Night Cruises <span class="price-badge">From $20</span></a>
+      <a href="#cat-speed" class="quick-link" onclick="scrollTo(this,'cat-speed')"><i class="fa-solid fa-bolt"></i> Speedboats <span class="price-badge">From $35</span></a>
+      <a href="#cat-unique" class="quick-link" onclick="scrollTo(this,'cat-unique')"><i class="fa-solid fa-car"></i> Unique Vehicles <span class="price-badge">From $100</span></a>
+      <a href="#cat-bus" class="quick-link" onclick="scrollTo(this,'cat-bus')"><i class="fa-solid fa-bus"></i> Sightseeing Bus <span class="price-badge">From $39</span></a>
+      <a href="#cat-day" class="quick-link" onclick="scrollTo(this,'cat-day')"><i class="fa-solid fa-tree"></i> Day Trips <span class="price-badge">From $39</span></a>
     </div>
 
     <!-- Location -->
@@ -931,6 +931,18 @@ footer a{color:var(--muted)}.footer a:hover{color:var(--teal)}
 </footer>
 
 <script>
+function scrollTo(el, id){
+  event.preventDefault();
+  var target = document.getElementById(id);
+  if(!target) return;
+  var offset = 80; // nav height
+  var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+  window.scrollTo({top: top, behavior: 'smooth'});
+  // highlight active link
+  document.querySelectorAll('.quick-link[href^="#cat"]').forEach(function(a){a.style.color='';a.style.background='';});
+  el.style.color = 'var(--teal, #00d4c8)';
+}
+
 function toggleFaq(btn){
   const item = btn.closest('.faq-item');
   const allItems = document.querySelectorAll('.faq-item');
