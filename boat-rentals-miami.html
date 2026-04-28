@@ -117,7 +117,7 @@
     .price-table th{background:#0f2038;color:var(--text-light);padding:11px 14px;text-align:left;font-size:.8rem;font-family:'Montserrat',sans-serif;font-weight:700;}
     .price-table td{padding:11px 14px;border-bottom:1px solid var(--border);font-size:.85rem;color:var(--text-light);}
     .price-table tr:last-child td{border-bottom:none;}
-    .price-table tr:hover td{background:rgba(0,212,200,.04);}
+    .price-table tr:hover td{background:rgba(0,212,200,.06);cursor:pointer;}
     .best-tag{background:var(--teal);color:var(--dark);font-size:.65rem;font-weight:700;padding:2px 7px;border-radius:10px;margin-left:6px;font-family:'Montserrat',sans-serif;}
     /* SPOTS */
     .spots-section{margin:40px 0 0;}
@@ -397,14 +397,14 @@
       <table class="price-table">
         <thead><tr><th>Operator</th><th>Capacity</th><th>Starting Price</th><th>Location</th></tr></thead>
         <tbody>
-          <tr><td>Bruschi Boat Rental – Small Boat <span class="best-tag">Best Value</span></td><td>8 pax</td><td style="color:var(--teal);font-weight:700">$260</td><td>Miami River</td></tr>
-          <tr><td>Altamar Trade – Miami River</td><td>10 pax</td><td style="color:var(--teal);font-weight:700">$349</td><td>Miami River</td></tr>
-          <tr><td>Aquarius Boat Rental – Miami Beach</td><td>8 pax</td><td style="color:var(--teal);font-weight:700">$610</td><td>Miami Beach</td></tr>
-          <tr><td>Horizon Yacht Rentals</td><td>12 pax</td><td style="color:var(--teal);font-weight:700">$675</td><td>Miami</td></tr>
-          <tr><td>100 Miami – Bayshore</td><td>13 pax</td><td style="color:var(--teal);font-weight:700">$700</td><td>Miami</td></tr>
-          <tr><td>Ocean Force Adventures – Private</td><td>6 pax</td><td style="color:var(--teal);font-weight:700">$795</td><td>Miami Beach</td></tr>
-          <tr><td>The Real Yacht Experience</td><td>12 pax</td><td style="color:var(--teal);font-weight:700">$900</td><td>Key Biscayne</td></tr>
-          <tr><td>100 Miami – NW 21st Mega Yacht</td><td>20 pax</td><td style="color:var(--teal);font-weight:700">$2,000</td><td>Miami River</td></tr>
+          <tr onclick="window.open('/operators/bruschi-boat-rental-small-boat-miami','_blank')" style="cursor:pointer" title="View Bruschi Boat Rental details"><td>Bruschi Boat Rental – Small Boat <span class="best-tag">Best Value</span></td><td>8 pax</td><td style="color:var(--teal);font-weight:700">$260</td><td>Miami River <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/altamar-trade-miami-river-miami','_blank')" style="cursor:pointer" title="View Altamar Trade details"><td>Altamar Trade – Miami River</td><td>10 pax</td><td style="color:var(--teal);font-weight:700">$349</td><td>Miami River <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/aquarius-boat-rental-miami-beach-miami','_blank')" style="cursor:pointer" title="View Aquarius details"><td>Aquarius Boat Rental – Miami Beach</td><td>8 pax</td><td style="color:var(--teal);font-weight:700">$610</td><td>Miami Beach <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/horizon-yacht-rentals-miami','_blank')" style="cursor:pointer" title="View Horizon Yacht details"><td>Horizon Yacht Rentals</td><td>12 pax</td><td style="color:var(--teal);font-weight:700">$675</td><td>Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/100-miami-bayshore-miami','_blank')" style="cursor:pointer" title="View 100 Miami details"><td>100 Miami – Bayshore</td><td>13 pax</td><td style="color:var(--teal);font-weight:700">$700</td><td>Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/ocean-force-adventures-private-miami','_blank')" style="cursor:pointer" title="View Ocean Force details"><td>Ocean Force Adventures – Private</td><td>6 pax</td><td style="color:var(--teal);font-weight:700">$795</td><td>Miami Beach <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/the-real-yacht-experience-miami','_blank')" style="cursor:pointer" title="View Real Yacht details"><td>The Real Yacht Experience</td><td>12 pax</td><td style="color:var(--teal);font-weight:700">$900</td><td>Key Biscayne <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/100-miami-nw-21st-mega-yacht-miami','_blank')" style="cursor:pointer" title="View 100 Miami Mega Yacht details"><td>100 Miami – NW 21st Mega Yacht</td><td>20 pax</td><td style="color:var(--teal);font-weight:700">$2,000</td><td>Miami River <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
         </tbody>
       </table>
     </div>
