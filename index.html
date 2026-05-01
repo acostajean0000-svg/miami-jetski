@@ -8,12 +8,16 @@
   <meta name="keywords" content="jet ski rentals miami, boat rentals miami, jet ski miami beach, boat rentals florida keys, jet ski key west, boat rentals fort lauderdale, fishing charters miami, jet ski naples florida, boat rentals sarasota">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://miamijetskiboatrentals.com/">
+  <link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/">
+  <link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/">
   <meta property="og:title" content="Jet Ski & Boat Rentals Florida | Compare 377 Operators">
   <meta property="og:description" content="Compare 338 operators across Florida. Jet ski, boats, slingshots, jet cars, golf carts, fishing & more. Prices from $4. Book now!">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://miamijetskiboatrentals.com/">
   <meta property="og:locale" content="en_US">
+  <meta name="color-scheme" content="dark">
   <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@MiamiJetSkiFL">
   <meta name="twitter:title" content="Jet Ski & Boat Rentals Florida | Compare 377 Operators">
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Miami Jetski & Boat Rentals","description":"Florida's #1 jet ski and boat rental comparison platform.","url":"https://miamijetskiboatrentals.com","address":{"@type":"PostalAddress","addressLocality":"Miami Beach","addressRegion":"FL","postalCode":"33139","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":"25.7907","longitude":"-80.1300"},"openingHours":"Mo-Su 08:00-20:00","priceRange":"$"}
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"Miami Jet Ski & Boat Rentals Florida","url":"https://miamijetskiboatrentals.com","description":"Florida's #1 directory to compare jet ski, boat, slingshot, ATV and water sports operators — 377 listings across Miami, Keys, Gulf Coast & more.","potentialAction":{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://miamijetskiboatrentals.com/?q={search_term_string}"},"query-input":"required name=search_term_string"}}</script>
@@ -786,7 +790,7 @@
       </div>
       <div class="cards-toolbar">
         <div class="cards-count" id="cardsCount">Showing 377 operators</div>
-        <select class="sort-select" id="sortSelect" onchange="activeSortBy=this.value;renderCards()">
+        <select class="sort-select" id="sortSelect" onchange="activeSortBy=this.value;renderCards();pushDL('sort_operators',{sort_by:this.value})">
           <option value="default">Sort: Default</option>
           <option value="price_asc">Price: Low → High</option>
           <option value="price_desc">Price: High → Low</option>
@@ -1182,12 +1186,17 @@ function updateLoadMore() {
 
 // ---- FILTER FUNCTIONS ----
 let _filterTimer = null;
+function pushDL(event, params) {
+  window.dataLayer = window.dataLayer || [];
+  window.dataLayer.push({event, ...params});
+}
 function filterCat(cat, btn) {
   activeCat = cat;
   document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   clearTimeout(_filterTimer);
   _filterTimer = setTimeout(renderCards, 80);
+  pushDL('filter_category', {category: cat});
 }
 function filterZone(zone, btn) {
   activeZone = zone;
@@ -1196,6 +1205,7 @@ function filterZone(zone, btn) {
   btn.classList.add('active');
   clearTimeout(_filterTimer);
   _filterTimer = setTimeout(renderCards, 80);
+  pushDL('filter_zone', {zone});
 }
 
 
@@ -1558,6 +1568,7 @@ function setPaxFilter(pax) {
     el.classList.toggle('active', parseInt(el.dataset.pax) === pax);
   });
   renderCards();
+  pushDL('filter_group_size', {pax});
 }
 
 // ---- DEALS GRID ----
