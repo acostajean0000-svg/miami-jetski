@@ -2013,15 +2013,18 @@ function fetchOperators(retry) {
   const grid = document.getElementById('cardsGrid');
   if (!retry && grid) grid.innerHTML =
     '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text-muted)"><div style="font-size:2.5rem;margin-bottom:12px">🌊</div><div style="font-family:Montserrat,sans-serif;font-weight:700">Loading operators…</div></div>';
-  // Use no-cache on retry to bypass stale cache; slim JSON strips unused desc field
-  const opts = {signal: _fetchController.signal, ...(retry ? {cache:'no-cache'} : {})};
-  fetch('./operators-slim.json', opts)
-    .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
+
+  const signal = _fetchController.signal;
+  const cacheOpt = retry ? {cache:'no-cache'} : {};
+
+  // Try slim JSON first (no desc field, ~68KB smaller); fall back to full JSON
+  fetch('./operators-slim.json', {signal, ...cacheOpt})
+    .then(r => r.ok ? r : fetch('./operators.json', {signal, ...cacheOpt}).then(r2 => { if(!r2.ok) throw new Error('HTTP '+r2.status); return r2; }))
+    .then(r => r.json())
     .then(data => { _applyLoadedData(data); })
     .catch(e => {
-      if (e.name === 'AbortError') return; // Intentionally cancelled, ignore
+      if (e.name === 'AbortError') return;
       if (!retry) {
-        // Auto-retry once after 800ms before showing error
         setTimeout(() => fetchOperators(true), 800);
       } else {
         _showLoadError();
