@@ -111,6 +111,10 @@
     .hero-stat{text-align:left;}
     .hero-stat-num{font-family:'Montserrat',sans-serif;font-size:1.6rem;font-weight:900;color:var(--teal);}
     .hero-stat-label{font-size:.78rem;color:var(--text-muted);text-transform:uppercase;letter-spacing:1px;}
+    .social-proof-bar{display:flex;align-items:center;gap:12px;flex-wrap:wrap;margin-top:24px;background:rgba(0,212,200,.06);border:1px solid rgba(0,212,200,.15);border-radius:50px;padding:8px 20px;font-size:.8rem;color:var(--text-muted);width:fit-content;}
+    .sp-dot{width:8px;height:8px;background:#22c55e;border-radius:50%;animation:spPulse 2s infinite;}
+    @keyframes spPulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.3)}}
+    .sp-sep{color:var(--border);}
     .btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.9rem;cursor:pointer;transition:all .25s;border:none;}
     .btn-primary{background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);}
     .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,212,200,.4);}
@@ -368,6 +372,18 @@
     .featured-price{font-family:'Montserrat',sans-serif;font-weight:900;color:#ffa500;font-size:1.1rem;white-space:nowrap;}
     .featured-btn{background:linear-gradient(135deg,#ffa500,#ff8c00);color:#000;padding:9px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;white-space:nowrap;transition:all .2s;}
     .featured-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(255,165,0,.4);}
+    /* RECENTLY VIEWED */
+    .rv-section{background:var(--dark2);border-top:1px solid var(--border);padding:32px 0;display:none;}
+    .rv-section.has-items{display:block;}
+    .rv-inner{max-width:1400px;margin:0 auto;padding:0 20px;}
+    .rv-heading{font-family:'Montserrat',sans-serif;font-weight:800;font-size:.95rem;color:var(--text-muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:14px;}
+    .rv-rail{display:flex;gap:12px;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;}
+    .rv-rail::-webkit-scrollbar{display:none;}
+    .rv-card{background:var(--card-bg);border:1.5px solid var(--border);border-radius:12px;min-width:180px;max-width:180px;padding:14px;text-decoration:none;color:var(--text);flex-shrink:0;transition:border-color .2s,transform .2s;}
+    .rv-card:hover{border-color:var(--teal);transform:translateY(-2px);}
+    .rv-card-img{width:100%;height:80px;object-fit:cover;border-radius:8px;margin-bottom:8px;background:rgba(255,255,255,.05);}
+    .rv-card-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.78rem;line-height:1.3;margin-bottom:4px;}
+    .rv-card-price{font-size:.75rem;color:var(--teal);font-weight:700;}
     /* DEALS SECTION */
     .deals-section{background:var(--dark);padding:60px 0;}
     .deals-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:28px;}
@@ -498,7 +514,14 @@
     .pax-chip.active{background:var(--teal);border-color:var(--teal);color:var(--dark);}
 
     /* ── SEARCH BAR ── */
-    .search-bar-wrap{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
+    .search-bar-wrap{display:flex;align-items:center;gap:10px;margin-bottom:12px;position:relative;}
+    .ac-dropdown{position:absolute;top:calc(100% + 4px);left:0;width:100%;max-width:480px;background:var(--dark2);border:1.5px solid var(--teal);border-radius:14px;overflow:hidden;z-index:500;box-shadow:0 8px 32px rgba(0,0,0,.5);display:none;}
+    .ac-dropdown.open{display:block;}
+    .ac-item{padding:10px 16px;cursor:pointer;font-size:.85rem;display:flex;justify-content:space-between;align-items:center;transition:background .15s;}
+    .ac-item:hover,.ac-item.focused{background:rgba(0,212,200,.1);}
+    .ac-item-name{font-weight:600;}
+    .ac-item-zone{font-size:.75rem;color:var(--text-muted);}
+    .ac-item-price{font-size:.75rem;color:var(--teal);font-weight:700;}
     .search-bar{display:flex;align-items:center;gap:8px;background:rgba(255,255,255,.05);border:1.5px solid var(--border);border-radius:50px;padding:9px 16px;flex:1;max-width:480px;transition:border-color .2s;}
     .search-bar:focus-within{border-color:var(--teal);background:rgba(0,212,200,.04);}
     .search-bar i{color:var(--text-muted);font-size:.85rem;}
@@ -518,6 +541,10 @@
     .wa-fab:hover{transform:scale(1.06);box-shadow:0 6px 28px rgba(37,211,102,.6);}
     .wa-fab svg{width:20px;height:20px;fill:#fff;flex-shrink:0;}
     @media(max-width:640px){.wa-fab span.wa-fab-text{display:none;}.wa-fab{padding:14px;border-radius:50%;bottom:90px;}}
+    /* MOBILE STICKY CTA */
+    .mob-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:1300;background:linear-gradient(90deg,var(--teal-dark),var(--teal));padding:14px 20px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.9rem;color:var(--dark);cursor:pointer;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:0 -2px 20px rgba(0,212,200,.3);}
+    .mob-cta-bar.show{transform:translateY(0);}
+    @media(max-width:768px){.mob-cta-bar{display:block;}}
     .fav-fab{position:fixed;bottom:148px;right:20px;background:linear-gradient(135deg,#ff3c64,#ff6b8a);color:#fff;border:none;border-radius:50px;padding:12px 20px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;cursor:pointer;box-shadow:0 4px 20px rgba(255,60,100,.4);z-index:1400;display:flex;align-items:center;gap:8px;transition:transform .2s,opacity .2s;opacity:0;pointer-events:none;}
     .fav-fab.show{opacity:1;pointer-events:all;}
     .fav-fab:hover{transform:scale(1.05);}
@@ -668,6 +695,14 @@
       <div class="hero-stat"><div class="hero-stat-num">13</div><div class="hero-stat-label">Categories</div></div>
       <div class="hero-stat"><div class="hero-stat-num">FL</div><div class="hero-stat-label">Statewide</div></div>
     </div>
+    <div class="social-proof-bar" id="socialProofBar">
+      <span class="sp-dot"></span>
+      <span id="spText">🔥 <strong id="spViewers">24</strong> people viewing operators right now</span>
+      <span class="sp-sep">·</span>
+      <span>⭐ 4.7 avg rating</span>
+      <span class="sp-sep">·</span>
+      <span>✅ Instant booking</span>
+    </div>
   </div>
 </section>
 
@@ -679,9 +714,10 @@
       <div class="search-bar-wrap">
         <div class="search-bar">
           <span aria-hidden="true" style="font-size:1rem;color:var(--text-muted)">🔍</span>
-          <input type="text" id="searchInput" placeholder="Search operators, locations…" oninput="handleSearch()" autocomplete="off" aria-label="Search operators and locations">
-          <button class="search-clear" id="searchClear" onclick="clearSearch()" title="Clear search" aria-label="Clear search">✕</button>
+          <input type="text" id="searchInput" placeholder="Search operators, locations…" oninput="handleSearch();updateAC()" onkeydown="acKeyNav(event)" autocomplete="off" aria-label="Search operators and locations" aria-autocomplete="list" aria-controls="acDropdown">
+          <button class="search-clear" id="searchClear" onclick="clearSearch();closeAC()" title="Clear search" aria-label="Clear search">✕</button>
         </div>
+        <div class="ac-dropdown" id="acDropdown" role="listbox"></div>
         <span class="search-hint" id="searchHint"></span>
       </div>
       <div class="cat-tabs">
@@ -787,6 +823,13 @@
 </button>
 
 <!-- DEALS -->
+<section class="rv-section" id="rvSection">
+  <div class="rv-inner">
+    <div class="rv-heading">👁️ Recently Viewed</div>
+    <div class="rv-rail" id="rvRail"></div>
+  </div>
+</section>
+
 <section class="deals-section" id="deals">
   <div class="container">
     <div class="text-center">
@@ -1005,6 +1048,17 @@ function getFiltered() {
 
 // ---- RENDER CARDS (all) ----
 let currentOps = [];
+const bestValueSet = new Set();
+function computeBestValue(ops) {
+  // score = rating * log10(reviews+1) / log10(price+1)
+  bestValueSet.clear();
+  const scored = ops
+    .filter(o => o.rating && o.reviews && o.price)
+    .map(o => ({id: o.id, score: o.rating * Math.log10(o.reviews+1) / Math.log10(o.price+1)}))
+    .sort((a,b) => b.score - a.score);
+  const top15pct = Math.max(1, Math.ceil(scored.length * 0.15));
+  scored.slice(0, top15pct).forEach(o => bestValueSet.add(o.id));
+}
 
 const catEmoji = {jetski:'🏄',boat:'⛵',fishing:'🎣',watersports:'🌊',slingshot:'🏎️',jetcar:'🚗',golfcart:'🛺',atv:'🏍️',tour:'🗺️',aerial:'✈️',bikerental:'🚲',scooter:'🛵'};
 
@@ -1052,7 +1106,7 @@ const imgLoad = ci === 0 ? 'fetchpriority="high"' : ci === 1 ? 'loading="eager"'
         onload="this.classList.add('loaded');var s=document.getElementById('shim-${op.id}');if(s)s.remove();"
         onerror="this.style.display='none';var s=document.getElementById('shim-${op.id}');if(s)s.remove();var f=document.getElementById('fall-${op.id}');if(f){f.style.display='flex';f.style.background='${catColors[op.cat]}33';}">
       <span class="op-cat-badge">${catLabels[op.cat]}</span>
-      <span class="op-best-badge">${op.badge}</span>
+      <span class="op-best-badge">${bestValueSet.has(op.id) ? '🏆 Best Value' : (op.badge||'')}</span>
       <button class="fav-toggle${isFav?' saved':''}" id="fav-${op.id}" onclick="event.stopPropagation();toggleFav('${op.id}')" title="${isFav?'Remove from favorites':'Save to favorites'}" aria-label="${isFav?'Remove from favorites':'Save to favorites'}">${isFav?'❤️':'🤍'}</button>
       <button class="compare-toggle${inCmp?' selected':''}" id="cmp-${op.id}" onclick="event.stopPropagation();toggleCompare('${op.id}')" title="Add to compare" aria-label="Add to compare">${inCmp?'✓':'＋'}</button>
       <div style="position:absolute;bottom:9px;right:9px;z-index:3">
@@ -1732,9 +1786,93 @@ function scrollToCard(id) {
   }
 }
 
+// ---- SEARCH AUTOCOMPLETE ----
+let acFocusIdx = -1;
+function updateAC() {
+  const q = (document.getElementById('searchInput').value || '').toLowerCase().trim();
+  const dd = document.getElementById('acDropdown');
+  if (!dd) return;
+  if (!q || q.length < 2 || !allOperators.length) { closeAC(); return; }
+  const matches = allOperators.filter(op =>
+    op.name.toLowerCase().includes(q) || op.zl.toLowerCase().includes(q)
+  ).slice(0, 6);
+  if (!matches.length) { closeAC(); return; }
+  acFocusIdx = -1;
+  dd.innerHTML = matches.map((op, i) => {
+    const slug = (window._OP_SLUG_MAP||{})[op.id] || '';
+    return `<div class="ac-item" role="option" data-id="${op.id}" data-slug="${slug}" onclick="acSelect('${op.id}','${slug}')">
+      <div><div class="ac-item-name">${op.name}</div><div class="ac-item-zone">📍 ${op.zl}</div></div>
+      <div class="ac-item-price">$${op.price}</div>
+    </div>`;
+  }).join('');
+  dd.classList.add('open');
+}
+function closeAC() {
+  const dd = document.getElementById('acDropdown');
+  if (dd) { dd.classList.remove('open'); dd.innerHTML = ''; }
+  acFocusIdx = -1;
+}
+function acSelect(id, slug) {
+  closeAC();
+  if (slug) { window.open('/operators/' + slug, '_blank'); return; }
+  // Fallback: filter cards to that operator
+  document.getElementById('searchInput').value = allOperators.find(o=>o.id===id)?.name || '';
+  handleSearch();
+}
+function acKeyNav(e) {
+  const dd = document.getElementById('acDropdown');
+  if (!dd || !dd.classList.contains('open')) return;
+  const items = dd.querySelectorAll('.ac-item');
+  if (e.key === 'ArrowDown') { e.preventDefault(); acFocusIdx = Math.min(acFocusIdx+1, items.length-1); items.forEach((el,i)=>el.classList.toggle('focused',i===acFocusIdx)); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); acFocusIdx = Math.max(acFocusIdx-1, 0); items.forEach((el,i)=>el.classList.toggle('focused',i===acFocusIdx)); }
+  else if (e.key === 'Enter' && acFocusIdx >= 0) { items[acFocusIdx].click(); }
+  else if (e.key === 'Escape') { closeAC(); }
+}
+document.addEventListener('click', e => { if (!e.target.closest('.search-bar-wrap')) closeAC(); });
+
+// ---- SOCIAL PROOF COUNTER ----
+(function() {
+  const el = document.getElementById('spViewers');
+  if (!el) return;
+  function randInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
+  let cur = randInt(18, 34);
+  el.textContent = cur;
+  setInterval(() => {
+    cur = Math.max(8, Math.min(60, cur + randInt(-3, 4)));
+    el.textContent = cur;
+  }, 7000);
+})();
+
+// ---- RECENTLY VIEWED ----
+const RV_KEY = 'fl_recent';
+const RV_MAX = 5;
+
+function trackRecentlyViewed(op) {
+  let rv = JSON.parse(localStorage.getItem(RV_KEY) || '[]');
+  rv = rv.filter(o => o.id !== op.id);
+  rv.unshift({id:op.id, name:op.name, price:op.price, photo:op.photo, slug: (window._OP_SLUG_MAP||{})[op.id]||''});
+  if (rv.length > RV_MAX) rv = rv.slice(0, RV_MAX);
+  localStorage.setItem(RV_KEY, JSON.stringify(rv));
+  renderRecentlyViewed();
+}
+
+function renderRecentlyViewed() {
+  const rv = JSON.parse(localStorage.getItem(RV_KEY) || '[]');
+  const section = document.getElementById('rvSection');
+  const rail = document.getElementById('rvRail');
+  if (!section || !rail || rv.length === 0) return;
+  section.classList.add('has-items');
+  rail.innerHTML = rv.map(o => {
+    const url = o.slug ? `/operators/${o.slug}` : '/';
+    const img = o.photo ? `<img class="rv-card-img" src="${thumbUrl(o.photo)}" alt="${o.name}" loading="lazy" onerror="this.style.display='none'">` : '';
+    return `<a href="${url}" class="rv-card">${img}<div class="rv-card-name">${o.name}</div><div class="rv-card-price">From $${o.price}</div></a>`;
+  }).join('');
+}
+
 function cardClick(id) {
   const op = allOperators.find(o => o.id === id);
   if(!op || !mapInstance) return;
+  trackRecentlyViewed(op);
 
   // Reset estilo del pin anterior
   if(selectedMarkerId && selectedMarkerId !== id) {
@@ -1840,6 +1978,11 @@ function _applyLoadedData(data) {
   animateCounter();
   updateFavFab();
   updateCatCounts();
+  renderRecentlyViewed();
+  computeBestValue(data);
+  // Update mobile CTA count
+  const mobCount = document.getElementById('mobCtaCount');
+  if (mobCount) mobCount.textContent = data.length;
 }
 
 function _showLoadError() {
@@ -1871,7 +2014,18 @@ function fetchOperators(retry) {
     });
 }
 
-document.addEventListener('DOMContentLoaded', () => fetchOperators());
+document.addEventListener('DOMContentLoaded', () => {
+  fetchOperators();
+  // Mobile sticky CTA: show when hero leaves viewport
+  const heroEl = document.getElementById('hero');
+  const ctaBar = document.getElementById('mobCtaBar');
+  if (heroEl && ctaBar && window.innerWidth <= 768) {
+    const obs = new IntersectionObserver(entries => {
+      ctaBar.classList.toggle('show', !entries[0].isIntersecting);
+    }, {threshold: 0.1});
+    obs.observe(heroEl);
+  }
+});
 
 // Handle bfcache restore (browser Back button) — DOMContentLoaded doesn't fire in this case
 window.addEventListener('pageshow', (e) => {
@@ -2076,6 +2230,11 @@ window.addEventListener('pageshow', (e) => {
   </div>
 </div>
 
+
+<!-- MOBILE STICKY CTA -->
+<div class="mob-cta-bar" id="mobCtaBar" onclick="document.getElementById('marketplace').scrollIntoView({behavior:'smooth'});document.getElementById('mobCtaBar').classList.remove('show')">
+  🌊 Browse <span id="mobCtaCount">377</span> Operators ↓
+</div>
 
 <!-- ── FAVORITES FAB ── -->
 <a class="wa-fab" href="https://wa.me/13059001234?text=Hi!%20I%20found%20you%20on%20MiamiJetSkiBoatRentals.com%20and%20I%27d%20like%20to%20book%20a%20water%20activity." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
