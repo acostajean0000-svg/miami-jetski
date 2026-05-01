@@ -540,16 +540,12 @@
     .fav-toggle{position:absolute;top:9px;left:9px;width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.25);background:rgba(0,0,0,.35);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.82rem;transition:all .2s;z-index:3;backdrop-filter:blur(4px);}
     .fav-toggle:hover{border-color:#ff6b8a;background:rgba(255,60,100,.15);}
     .fav-toggle.saved{background:rgba(255,60,100,.9);border-color:#ff3c64;color:#fff;}
-    .fav-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
-    .wa-fab{position:fixed;bottom:80px;right:20px;background:#25D366;color:#fff;border:none;border-radius:50px;padding:12px 18px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,.45);z-index:1400;display:flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s;text-decoration:none;}
-    .wa-fab:hover{transform:scale(1.06);box-shadow:0 6px 28px rgba(37,211,102,.6);}
-    .wa-fab svg{width:20px;height:20px;fill:#fff;flex-shrink:0;}
-    @media(max-width:640px){.wa-fab span.wa-fab-text{display:none;}.wa-fab{padding:14px;border-radius:50%;bottom:90px;}}
+    .fav-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}.wa-fab{padding:14px;border-radius:50%;bottom:90px;}}
     /* MOBILE STICKY CTA */
     .mob-cta-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:1300;background:linear-gradient(90deg,var(--teal-dark),var(--teal));padding:14px 20px;text-align:center;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.9rem;color:var(--dark);cursor:pointer;transform:translateY(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:0 -2px 20px rgba(0,212,200,.3);}
     .mob-cta-bar.show{transform:translateY(0);}
     @media(max-width:768px){.mob-cta-bar{display:block;}}
-    .fav-fab{position:fixed;bottom:148px;right:20px;background:linear-gradient(135deg,#ff3c64,#ff6b8a);color:#fff;border:none;border-radius:50px;padding:12px 20px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;cursor:pointer;box-shadow:0 4px 20px rgba(255,60,100,.4);z-index:1400;display:flex;align-items:center;gap:8px;transition:transform .2s,opacity .2s;opacity:0;pointer-events:none;}
+    .fav-fab{position:fixed;bottom:80px;right:20px;background:linear-gradient(135deg,#ff3c64,#ff6b8a);color:#fff;border:none;border-radius:50px;padding:12px 20px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;cursor:pointer;box-shadow:0 4px 20px rgba(255,60,100,.4);z-index:1400;display:flex;align-items:center;gap:8px;transition:transform .2s,opacity .2s;opacity:0;pointer-events:none;}
     .fav-fab.show{opacity:1;pointer-events:all;}
     .fav-fab:hover{transform:scale(1.05);}
     .fav-fab-count{background:rgba(255,255,255,.3);border-radius:50px;padding:2px 8px;font-size:.75rem;}
@@ -718,7 +714,7 @@
       <div class="search-bar-wrap">
         <div class="search-bar">
           <span aria-hidden="true" style="font-size:1rem;color:var(--text-muted)">🔍</span>
-          <input type="text" id="searchInput" placeholder="Search operators, locations…" oninput="handleSearch();updateAC()" onkeydown="acKeyNav(event)" autocomplete="off" aria-label="Search operators and locations" aria-autocomplete="list" aria-controls="acDropdown">
+          <input type="text" id="searchInput" placeholder="Search operators, locations…" oninput="handleSearch();_acTimer&&clearTimeout(_acTimer);_acTimer=setTimeout(updateAC,120)" onkeydown="acKeyNav(event)" autocomplete="off" aria-label="Search operators and locations" aria-autocomplete="list" aria-controls="acDropdown">
           <button class="search-clear" id="searchClear" onclick="clearSearch();closeAC()" title="Clear search" aria-label="Clear search">✕</button>
         </div>
         <div class="ac-dropdown" id="acDropdown" role="listbox"></div>
@@ -1186,6 +1182,7 @@ function updateLoadMore() {
 
 // ---- FILTER FUNCTIONS ----
 let _filterTimer = null;
+let _acTimer = null;
 function pushDL(event, params) {
   window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({event, ...params});
@@ -1906,7 +1903,7 @@ function cardClick(id) {
 window.addEventListener('scroll', () => {
   document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
   document.getElementById('backTop').classList.toggle('visible', window.scrollY > 400);
-});
+}, {passive: true});
 
 // ---- HAMBURGER ----
 document.getElementById('hamburger').addEventListener('click', () => {
@@ -1969,10 +1966,11 @@ if ('IntersectionObserver' in window) {
 } else {
   window.addEventListener('scroll', function onScroll() {
     loadLeafletThenMap(); window.removeEventListener('scroll', onScroll);
-  }, {once:true});
+  }, {once: true, passive: true});
 }
 
-// ---- INIT (fetch operators.json) ----
+// ---- INIT (fetch operators-slim.json) ----
+// Note: operators-slim.json strips the 'desc' field (unused in index) saving ~68KB (32KB gzipped)
 function _applyLoadedData(data) {
   allOperators = data;
   if (window.L) {
@@ -2006,16 +2004,22 @@ function _showLoadError() {
     +'</div>';
 }
 
+let _fetchController = null;
 function fetchOperators(retry) {
+  // Cancel any in-flight request
+  if (_fetchController) _fetchController.abort();
+  _fetchController = new AbortController();
+
   const grid = document.getElementById('cardsGrid');
   if (!retry && grid) grid.innerHTML =
     '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text-muted)"><div style="font-size:2.5rem;margin-bottom:12px">🌊</div><div style="font-family:Montserrat,sans-serif;font-weight:700">Loading operators…</div></div>';
-  // Use no-cache on retry to bypass stale cache
-  const opts = retry ? {cache:'no-cache'} : {};
-  fetch('./operators.json', opts)
+  // Use no-cache on retry to bypass stale cache; slim JSON strips unused desc field
+  const opts = {signal: _fetchController.signal, ...(retry ? {cache:'no-cache'} : {})};
+  fetch('./operators-slim.json', opts)
     .then(r => { if(!r.ok) throw new Error('HTTP '+r.status); return r.json(); })
     .then(data => { _applyLoadedData(data); })
-    .catch(() => {
+    .catch(e => {
+      if (e.name === 'AbortError') return; // Intentionally cancelled, ignore
       if (!retry) {
         // Auto-retry once after 800ms before showing error
         setTimeout(() => fetchOperators(true), 800);
