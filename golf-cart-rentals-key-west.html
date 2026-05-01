@@ -66,7 +66,27 @@
       }
     ]
   }
-  </script>
+  
+function trackBookNow(operatorName, price, category) {
+  if (window.dataLayer) {
+    window.dataLayer.push({
+      event: 'book_now_click',
+      operator_name: operatorName || '',
+      operator_price: price || '',
+      operator_category: category || '',
+      page_url: window.location.href
+    });
+  }
+  if (window.gtag) {
+    gtag('event', 'conversion', {
+      send_to: 'AW-CONVERSION_ID/CONVERSION_LABEL',
+      value: parseFloat(price) || 0,
+      currency: 'USD'
+    });
+  }
+}
+
+</script>
 
   <script type="application/ld+json">
   {
@@ -230,6 +250,14 @@
     .kw-act-detail:hover{color:var(--teal);}
     @media(max-width:600px){.kw-act-grid{grid-template-columns:repeat(3,1fr);gap:10px;}.kw-act-emoji{font-size:1.9rem;}.kw-act-btn{font-size:.65rem;padding:5px 10px;}}
 
+
+    .phone-cta-section{background:linear-gradient(135deg,rgba(0,212,200,.12),rgba(0,238,221,.06));border-top:1px solid rgba(0,212,200,.25);border-bottom:1px solid rgba(0,212,200,.25);padding:28px 20px;}
+    .phone-cta-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+    .phone-cta-headline{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;margin-bottom:4px;}
+    .phone-cta-sub{color:var(--text-muted);font-size:.83rem;}
+    .phone-cta-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);padding:13px 28px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:1rem;text-decoration:none;white-space:nowrap;transition:all .2s;}
+    .phone-cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,212,200,.4);}
+
     /* RELATED */
     .related-section{background:var(--dark2);padding:50px 20px;border-top:1px solid var(--border);}
     .related-section h3{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:20px;max-width:1200px;margin-left:auto;margin-right:auto;}
@@ -340,7 +368,7 @@
             <a class="op-detail-link" href="/operators/golf-cart-rental-key-west-keys-gc9" onclick="event.stopPropagation()">View details →</a>
             <a class="op-book"
                href="https://fareharbor.com/embeds/book/golfcartrentalkeywest/items/116411/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no"
-               target="_blank" rel="noopener" onclick="event.stopPropagation()">Book Now →</a>
+               target="_blank" rel="noopener" onclick="event.stopPropagation()" onclick="trackBookNow()">Book Now →</a>
           </div>
         </div>
       </div>
@@ -366,7 +394,7 @@
             <a class="op-detail-link" href="/operators/paradise-rentals-kw-golf-cart-keys" onclick="event.stopPropagation()">View details →</a>
             <a class="op-book"
                href="https://fareharbor.com/embeds/book/paradiserentalskw/items/420452/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no"
-               target="_blank" rel="noopener" onclick="event.stopPropagation()">Book Now →</a>
+               target="_blank" rel="noopener" onclick="event.stopPropagation()" onclick="trackBookNow()">Book Now →</a>
           </div>
         </div>
       </div>
@@ -392,7 +420,7 @@
             <a class="op-detail-link" href="/operators/conch-carts-golf-cart-keys" onclick="event.stopPropagation()">View details →</a>
             <a class="op-book"
                href="https://fareharbor.com/embeds/book/conchcarts/items/665796/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no"
-               target="_blank" rel="noopener" onclick="event.stopPropagation()">Book Now →</a>
+               target="_blank" rel="noopener" onclick="event.stopPropagation()" onclick="trackBookNow()">Book Now →</a>
           </div>
         </div>
       </div>
@@ -551,6 +579,17 @@
       </div>
 
     </div>
+  </div>
+</section>
+
+
+<section class="phone-cta-section">
+  <div class="phone-cta-inner">
+    <div class="phone-cta-text">
+      <div class="phone-cta-headline">📞 Prefer to book by phone?</div>
+      <div class="phone-cta-sub">Our team is available 7 days a week · 8am – 8pm EST</div>
+    </div>
+    <a href="tel:+13059001234" class="phone-cta-btn">Call (305) 900-1234</a>
   </div>
 </section>
 

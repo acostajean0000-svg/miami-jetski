@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Page Not Found | Miami Jet Ski & Boat Rentals Florida</title>
+  <meta name="robots" content="noindex,follow">
+  <link rel="canonical" href="https://miamijetskiboatrentals.com/404">
+  <link rel="manifest" href="/manifest.json">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;900&family=Inter:wght@400;500&display=swap">
+  <style>
+    :root{--dark:#040d1a;--dark2:#081525;--teal:#00d4c8;--teal2:#00eedd;--border:rgba(255,255,255,.08);--card-bg:#0a1e35;--text-muted:#6b8fa8;}
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{background:var(--dark);color:#fff;font-family:'Inter',sans-serif;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:40px 20px;text-align:center;}
+    .big-num{font-family:'Montserrat',sans-serif;font-size:8rem;font-weight:900;color:var(--teal);line-height:1;margin-bottom:16px;}
+    h1{font-family:'Montserrat',sans-serif;font-size:1.8rem;font-weight:900;margin-bottom:12px;}
+    .sub{color:var(--text-muted);font-size:1rem;margin-bottom:40px;max-width:480px;}
+    .home-btn{display:inline-block;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);padding:12px 32px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.95rem;text-decoration:none;margin-bottom:48px;}
+    .cats-title{color:var(--text-muted);font-size:.8rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:20px;}
+    .cats-grid{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;max-width:680px;}
+    .cat-link{padding:10px 20px;border:1.5px solid var(--border);border-radius:50px;color:#fff;text-decoration:none;font-size:.85rem;font-family:'Montserrat',sans-serif;font-weight:600;transition:all .2s;}
+    .cat-link:hover{border-color:var(--teal);color:var(--teal);}
+    .wave{font-size:4rem;margin-bottom:24px;}
+    .search-wrap{margin-bottom:40px;display:flex;gap:10px;max-width:440px;width:100%;}
+    .search-wrap input{flex:1;background:var(--card-bg);border:1.5px solid var(--border);border-radius:50px;padding:12px 20px;color:#fff;font-size:.9rem;outline:none;}
+    .search-wrap button{background:var(--teal);color:var(--dark);border:none;border-radius:50px;padding:12px 24px;font-family:'Montserrat',sans-serif;font-weight:700;cursor:pointer;font-size:.85rem;}
+  </style>
+</head>
+<body>
+  <div class="wave">🌊</div>
+  <div class="big-num">404</div>
+  <h1>Page not found</h1>
+  <p class="sub">Looks like this page drifted out to sea. Let's get you back on the water.</p>
+
+  <div class="search-wrap">
+    <input type="text" id="q" placeholder="Search operators, locations…" onkeydown="if(event.key==='Enter')doSearch()">
+    <button onclick="doSearch()">Search</button>
+  </div>
+
+  <a href="/" class="home-btn">🏠 Back to Homepage</a>
+
+  <div class="cats-title">Browse by category</div>
+  <div class="cats-grid">
+    <a class="cat-link" href="/?cat=jetski">🛥️ Jet Ski</a>
+    <a class="cat-link" href="/?cat=boat">⛵ Boats & Yachts</a>
+    <a class="cat-link" href="/?cat=slingshot">🏎️ Slingshot</a>
+    <a class="cat-link" href="/?cat=jetcar">🚗 Jet Cars</a>
+    <a class="cat-link" href="/?cat=golfcart">🛺 Golf Carts</a>
+    <a class="cat-link" href="/?cat=atv">🏍️ ATV & Buggies</a>
+    <a class="cat-link" href="/?cat=tour">🚌 Tours</a>
+    <a class="cat-link" href="/?cat=aerial">✈️ Aerial & Fly</a>
+    <a class="cat-link" href="/?cat=watersports">🏄 Water Sports</a>
+    <a class="cat-link" href="/?cat=bikerental">🚲 Bike & E-Ride</a>
+    <a class="cat-link" href="/boat-rentals-miami">🌊 Boat Rentals Miami</a>
+    <a class="cat-link" href="/golf-cart-rentals-key-west">🏝️ Key West Activities</a>
+  </div>
+
+  <script>
+    function doSearch(){
+      var q = document.getElementById('q').value.trim();
+      if (q) window.location.href = '/?q=' + encodeURIComponent(q);
+    }
+  </script>
+</body>
+</html>

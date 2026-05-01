@@ -24,6 +24,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA7ElEQVR4nOWXyxWCMBBFI8cFDViChVgI1VEIhViCDWSnKz6S+b1hEj06yyS+ezMmcEjp3+uE/qC/XJ/SfH7coUzzYg3sFVEXoWBUpKsJt2SwAhFwSxYpEAnXMguBGnApWzwDLerthHp3n6exGOtvA79+czMOd4CCS+P7Wkw8u58h1G6luZTWLrg7oAHmca0TLgENjkjAAla4VcLVASvcIgEJ5GmE4XsJt4D1WqESZwTk3b1USwe093YkfMsKeRQfEei4iRbwQuATVQjU7AKVTXaghgSXyf4FkRJSlngGIiS0jO//MEFFWlzl36oXyvJ41X3AMQIAAAAASUVORK5CYII=">
   <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA7ElEQVR4nOWXyxWCMBBFI8cFDViChVgI1VEIhViCDWSnKz6S+b1hEj06yyS+ezMmcEjp3+uE/qC/XJ/SfH7coUzzYg3sFVEXoWBUpKsJt2SwAhFwSxYpEAnXMguBGnApWzwDLerthHp3n6exGOtvA79+czMOd4CCS+P7Wkw8u58h1G6luZTWLrg7oAHmca0TLgENjkjAAla4VcLVASvcIgEJ5GmE4XsJt4D1WqESZwTk3b1USwe093YkfMsKeRQfEei4iRbwQuATVQjU7AKVTXaghgSXyf4FkRJSlngGIiS0jO//MEFFWlzl36oXyvJ41X3AMQIAAAAASUVORK5CYII=">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#081525">
   <!-- GTM deferred past LCP to avoid forced reflow in critical window -->
   <script>
@@ -54,6 +55,15 @@
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap"></noscript>
   <!-- Font Awesome — loaded after paint to avoid blocking -->
   <script>window.addEventListener('load',function(){var l=document.createElement('link');l.rel='stylesheet';l.href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css';document.head.appendChild(l);});</script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"How do I find the best jet ski rental in Miami?","acceptedAnswer":{"@type":"Answer","text":"Use the category filter on our homepage to select 'Jet Ski', then sort by price or location. All operators are FareHarbor-verified with instant online booking. Filter by zone (Miami, Broward, Keys) to find operators near you."}},
+    {"@type":"Question","name":"What is the cheapest water activity in Florida?","acceptedAnswer":{"@type":"Answer","text":"Kayak and paddleboard rentals start from $4–$15 per hour. Jet ski tours start around $99. Boat rentals from $260. Use the price filter on our homepage to find activities within any budget."}},
+    {"@type":"Question","name":"Do I need a license to rent a jet ski in Florida?","acceptedAnswer":{"@type":"Answer","text":"Anyone born after January 1, 1988 must complete a boating safety course and carry a Florida Boating Safety Education ID card. Most rental operators provide a brief safety orientation. Captained charters are available if you prefer not to drive."}},
+    {"@type":"Question","name":"What is the best time of year for water sports in Miami?","acceptedAnswer":{"@type":"Answer","text":"Miami water sports are available year-round. Peak season is November–April with calmer seas and pleasant temperatures. Summer (June–September) is warmest but afternoon storms are common. Most operators run 7 days a week from 8am–6pm."}},
+    {"@type":"Question","name":"Can I book same-day water sports in Florida?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most operators listed on our site offer same-day and next-day booking through FareHarbor. Select your date on any operator's booking page to check real-time availability."}}
+  ]}
+  </script>
   <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
   <!-- Leaflet — non-blocking, lazy init via IntersectionObserver -->
   <link rel="preload" as="style" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -373,6 +383,11 @@
     .deal-detail-btn{display:flex;align-items:center;justify-content:center;gap:4px;border:1px solid rgba(0,212,200,.28);color:var(--teal);font-size:.72rem;font-weight:600;padding:7px 10px;border-radius:8px;transition:.2s;white-space:nowrap;}
     .deal-detail-btn:hover{background:rgba(0,212,200,.08);border-color:rgba(0,212,200,.5);}
     /* FAQ SECTION */
+
+    #faq-home{background:var(--dark2);padding:56px 20px;border-top:1px solid var(--border);}
+    #faq-home .faq-inner{max-width:820px;margin:0 auto;}
+    #faq-home .faq-heading{font-family:'Montserrat',sans-serif;font-size:1.4rem;font-weight:900;margin-bottom:28px;}
+
     .faq-section{background:var(--dark2);padding:70px 0;}
     .faq-list{max-width:800px;margin:36px auto 0;}
     .faq-item{border:1px solid var(--border);border-radius:12px;margin-bottom:10px;overflow:hidden;transition:border-color .2s;}
@@ -717,6 +732,19 @@
     </div>
   </div>
 </section>
+
+<section class="faq-section" id="faq-home">
+  <div class="faq-inner">
+    <h2 class="faq-heading">❓ Frequently Asked Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">How do I find the best jet ski rental in Miami?<span class="faq-chevron">▼</span></div><div class="faq-a">Use the category filter above to select 'Jet Ski', then filter by zone (Miami, Broward, Keys). All operators are FareHarbor-verified with instant online booking and free cancellation on most tours.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the cheapest water activity in Florida?<span class="faq-chevron">▼</span></div><div class="faq-a">Kayak and paddleboard rentals start from $4–$15/hour. Jet ski tours start around $99. Boat rentals from $260. Use the price slider above to filter by budget.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need a license to rent a jet ski in Florida?<span class="faq-chevron">▼</span></div><div class="faq-a">Anyone born after January 1, 1988 must carry a Florida Boating Safety Education ID. Most operators include a brief safety orientation. Captained charters are available if you prefer not to drive.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the best time of year for water sports in Miami?<span class="faq-chevron">▼</span></div><div class="faq-a">Year-round. Peak season is November–April with calmer seas. Summer is warmest but expect afternoon thunderstorms. Operators run 7 days/week from 8am–6pm.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I book same-day water sports in Florida?<span class="faq-chevron">▼</span></div><div class="faq-a">Yes. Most operators offer same-day and next-day booking via FareHarbor. Select your date on any operator card to check real-time availability.</div></div>
+    </div>
+  </div>
+</section>
 </main>
 
 <!-- MAP TOGGLE BUTTON (mobile) -->
@@ -988,6 +1016,7 @@ const imgLoad = ci === 0 ? 'fetchpriority="high"' : ci === 1 ? 'loading="eager"'
       <div class="op-name">${op.name}${op.cat==='boat'&&op.pax?` <span style="font-size:.72rem;font-weight:600;color:#00d4c8;white-space:nowrap;">· ${op.pax}Pax</span>`:''}
       </div>
       <div class="op-addr"><i class="fa-solid fa-location-dot"></i> ${op.zl}${distBadge}</div>
+      ${op.rating ? `<div class="op-stars"><span class="op-stars-val">${op.rating}</span><span class="op-stars-bar">${'★'.repeat(Math.round(op.rating))}${'☆'.repeat(5-Math.round(op.rating))}</span><span class="op-stars-count">(${op.reviews})</span></div>` : ''}
       <div class="op-footer">
         <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$${op.price.toLocaleString()}</div></div>
         <a href="${op.link}" target="_blank" rel="noopener" class="op-book" onclick="event.stopPropagation();trackBookNow('${op.name}',${op.price})">Book Now <i class="fa-solid fa-arrow-right"></i></a>
@@ -1066,7 +1095,7 @@ function filterZone(zone, btn) {
 
 
 // ---- COMPARATOR ----
-let compareList = [];
+let compareList = (()=>{try{const s=localStorage.getItem('fl_compare');return s?JSON.parse(s):[]}catch(e){return []}})();
 const MAX_COMPARE = 3;
 
 function toggleCompare(id) {
@@ -1091,6 +1120,7 @@ function toggleCompare(id) {
   card?.classList.toggle('in-compare',inCmp);
   if(btn){btn.classList.toggle('selected',inCmp);btn.textContent=inCmp?'✓':'＋';}
   updateCompareBar();
+  try{localStorage.setItem('fl_compare',JSON.stringify(compareList))}catch(e){}
 }
 
 function updateCompareBar() {
@@ -1203,6 +1233,7 @@ function toggleFav(id) {
     btn.title = favorites.has(id) ? 'Remove from favorites' : 'Save to favorites';
   }
   updateFavFab();
+  try{localStorage.setItem('fl_favs',JSON.stringify([...favorites]))}catch(e){}
 }
 
 function updateFavFab() {
@@ -1444,6 +1475,35 @@ function renderDeals() {
 }
 
 // ---- GOOGLE ADS CONVERSION TRACKING ----
+
+function updateCatCounts() {
+  if (!allOperators || !allOperators.length) return;
+  const catMap = {
+    'all': allOperators.length,
+    'jetski': allOperators.filter(o=>o.cat==='jetski'||o.cat==='js').length,
+    'boat': allOperators.filter(o=>o.cat==='boat'||o.cat==='bt').length,
+    'fishing': allOperators.filter(o=>o.cat==='fishing'||o.cat==='fi').length,
+    'watersports': allOperators.filter(o=>o.cat==='watersports'||o.cat==='ws').length,
+    'slingshot': allOperators.filter(o=>o.cat==='slingshot'||o.cat==='sl').length,
+    'jetcar': allOperators.filter(o=>o.cat==='jetcar'||o.cat==='jc').length,
+    'golfcart': allOperators.filter(o=>o.cat==='golfcart'||o.cat==='gc').length,
+    'atv': allOperators.filter(o=>o.cat==='atv'||o.cat==='at').length,
+    'tour': allOperators.filter(o=>o.cat==='tours'||o.cat==='tour'||o.cat==='to').length,
+    'aerial': allOperators.filter(o=>o.cat==='aerial'||o.cat==='ae').length,
+    'bikerental': allOperators.filter(o=>o.cat==='bikerentals'||o.cat==='br').length,
+    'scooter': allOperators.filter(o=>o.cat==='scooter'||o.cat==='sc').length,
+  };
+  document.querySelectorAll('.cat-tab').forEach(btn => {
+    const fn = btn.getAttribute('onclick')||'';
+    const m = fn.match(/filterCat\('([^']+)'/);
+    if (!m) return;
+    const key = m[1];
+    const cnt = catMap[key];
+    const el = btn.querySelector('.cat-count');
+    if (el && cnt !== undefined) el.textContent = '(' + cnt + ')';
+  });
+}
+
 function trackBookNow(name, price) {
   if (typeof gtag === 'function') {
     gtag('event', 'conversion', {
@@ -1714,6 +1774,7 @@ function _applyLoadedData(data) {
   renderDeals();
   animateCounter();
   updateFavFab();
+  updateCatCounts();
 }
 
 function _showLoadError() {

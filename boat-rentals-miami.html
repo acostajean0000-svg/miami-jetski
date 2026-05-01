@@ -35,7 +35,27 @@
       {"@type":"ListItem","position":8,"item":{"@type":"LocalBusiness","name":"100 Miami – NW 21st Mega Yacht","priceRange":"From $2000","geo":{"@type":"GeoCoordinates","latitude":25.8011,"longitude":-80.2381},"address":{"@type":"PostalAddress","addressLocality":"Miami","addressRegion":"FL"}}}
     ]
   }
-  </script>
+  
+function trackBookNow(operatorName, price, category) {
+  if (window.dataLayer) {
+    window.dataLayer.push({
+      event: 'book_now_click',
+      operator_name: operatorName || '',
+      operator_price: price || '',
+      operator_category: category || '',
+      page_url: window.location.href
+    });
+  }
+  if (window.gtag) {
+    gtag('event', 'conversion', {
+      send_to: 'AW-CONVERSION_ID/CONVERSION_LABEL',
+      value: parseFloat(price) || 0,
+      currency: 'USD'
+    });
+  }
+}
+
+</script>
 
   <script type="application/ld+json">
   {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
@@ -152,6 +172,14 @@
     .miami-act-btn{margin-top:10px;display:inline-block;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);padding:6px 16px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.7rem;font-weight:700;transition:all .2s;text-decoration:none;cursor:pointer;}
     .miami-act-detail{margin-top:6px;font-size:.69rem;color:var(--text-muted);transition:color .2s;}
     .miami-act-detail:hover{color:var(--teal);}
+
+    .phone-cta-section{background:linear-gradient(135deg,rgba(0,212,200,.12),rgba(0,238,221,.06));border-top:1px solid rgba(0,212,200,.25);border-bottom:1px solid rgba(0,212,200,.25);padding:28px 20px;}
+    .phone-cta-inner{max-width:900px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;gap:20px;flex-wrap:wrap;}
+    .phone-cta-headline{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;margin-bottom:4px;}
+    .phone-cta-sub{color:var(--text-muted);font-size:.83rem;}
+    .phone-cta-btn{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);padding:13px 28px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:1rem;text-decoration:none;white-space:nowrap;transition:all .2s;}
+    .phone-cta-btn:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,212,200,.4);}
+
     /* RELATED */
     .related-section{background:var(--dark2);padding:50px 20px;border-top:1px solid var(--border);}
     .related-section h3{font-family:'Montserrat',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:20px;max-width:1200px;margin-left:auto;margin-right:auto;}
@@ -244,7 +272,7 @@
           <div><div class="op-price-from">From</div><div class="op-price-num">$260</div></div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/bruschi-boat-rental-small-boat-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/bruschiboatrental/items/536845/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/bruschiboatrental/items/536845/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()" onclick="trackBookNow()">Book Now →</a>
           </div>
         </div>
       </div>
@@ -264,7 +292,7 @@
           <div><div class="op-price-from">From</div><div class="op-price-num">$349</div></div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/altamar-trade-miami-river-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/altamartrade/items/668710/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/altamartrade/items/668710/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()" onclick="trackBookNow()">Book Now →</a>
           </div>
         </div>
       </div>
@@ -284,7 +312,7 @@
           <div><div class="op-price-from">From</div><div class="op-price-num">$610</div></div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/aquarius-boat-rental-miami-beach-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/aquariusboatrental/items/508653/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/aquariusboatrental/items/508653/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()" onclick="trackBookNow()">Book Now →</a>
           </div>
         </div>
       </div>
@@ -304,7 +332,7 @@
           <div><div class="op-price-from">From</div><div class="op-price-num">$675</div></div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/horizon-yacht-rentals-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/horizonyachtrentals/items/661134/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/horizonyachtrentals/items/661134/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()" onclick="trackBookNow()">Book Now →</a>
           </div>
         </div>
       </div>
@@ -324,7 +352,7 @@
           <div><div class="op-price-from">From</div><div class="op-price-num">$700</div></div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/100-miami-bayshore-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/100miami/items/648307/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/100miami/items/648307/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()" onclick="trackBookNow()">Book Now →</a>
           </div>
         </div>
       </div>
@@ -344,7 +372,7 @@
           <div><div class="op-price-from">From</div><div class="op-price-num">$795</div></div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/ocean-force-adventures-private-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/oceanforceadventures/items/444868/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/oceanforceadventures/items/444868/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()" onclick="trackBookNow()">Book Now →</a>
           </div>
         </div>
       </div>
@@ -364,7 +392,7 @@
           <div><div class="op-price-from">From</div><div class="op-price-num">$900</div></div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/the-real-yacht-experience-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/therealyachtexperience/items/567861/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/therealyachtexperience/items/567861/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()" onclick="trackBookNow()">Book Now →</a>
           </div>
         </div>
       </div>
@@ -384,7 +412,7 @@
           <div><div class="op-price-from">From</div><div class="op-price-num">$2,000</div></div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/100-miami-nw-21st-mega-yacht-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/100miami/items/648310/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/100miami/items/648310/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation()" onclick="trackBookNow()">Book Now →</a>
           </div>
         </div>
       </div>
@@ -493,6 +521,17 @@
         <a class="miami-act-detail" href="/bike-rentals-florida.html" target="_blank" rel="noopener">View details →</a>
       </div>
     </div>
+  </div>
+</section>
+
+
+<section class="phone-cta-section">
+  <div class="phone-cta-inner">
+    <div class="phone-cta-text">
+      <div class="phone-cta-headline">📞 Prefer to book by phone?</div>
+      <div class="phone-cta-sub">Our team is available 7 days a week · 8am – 8pm EST</div>
+    </div>
+    <a href="tel:+13059001234" class="phone-cta-btn">Call (305) 900-1234</a>
   </div>
 </section>
 
