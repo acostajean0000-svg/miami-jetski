@@ -24,6 +24,7 @@
   <link rel="icon" type="image/png" sizes="16x16" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA7ElEQVR4nOWXyxWCMBBFI8cFDViChVgI1VEIhViCDWSnKz6S+b1hEj06yyS+ezMmcEjp3+uE/qC/XJ/SfH7coUzzYg3sFVEXoWBUpKsJt2SwAhFwSxYpEAnXMguBGnApWzwDLerthHp3n6exGOtvA79+czMOd4CCS+P7Wkw8u58h1G6luZTWLrg7oAHmca0TLgENjkjAAla4VcLVASvcIgEJ5GmE4XsJt4D1WqESZwTk3b1USwe093YkfMsKeRQfEei4iRbwQuATVQjU7AKVTXaghgSXyf4FkRJSlngGIiS0jO//MEFFWlzl36oXyvJ41X3AMQIAAAAASUVORK5CYII=">
   <link rel="shortcut icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAA7ElEQVR4nOWXyxWCMBBFI8cFDViChVgI1VEIhViCDWSnKz6S+b1hEj06yyS+ezMmcEjp3+uE/qC/XJ/SfH7coUzzYg3sFVEXoWBUpKsJt2SwAhFwSxYpEAnXMguBGnApWzwDLerthHp3n6exGOtvA79+czMOd4CCS+P7Wkw8u58h1G6luZTWLrg7oAHmca0TLgENjkjAAla4VcLVASvcIgEJ5GmE4XsJt4D1WqESZwTk3b1USwe093YkfMsKeRQfEei4iRbwQuATVQjU7AKVTXaghgSXyf4FkRJSlngGIiS0jO//MEFFWlzl36oXyvJ41X3AMQIAAAAASUVORK5CYII=">
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <script src="/slug-map.js" defer></script>
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#081525">
   <!-- GTM deferred past LCP to avoid forced reflow in critical window -->
@@ -138,7 +139,10 @@
     .cards-panel{flex:0 0 52%;max-width:52%;overflow-y:auto;padding:16px;height:100%;}
     .map-panel{flex:0 0 48%;max-width:48%;height:100%;position:relative;z-index:1;}
     #jetski-map{height:100%;width:100%;}
-    .cards-count{font-family:'Montserrat',sans-serif;font-size:.8rem;color:var(--text-muted);margin-bottom:12px;padding:0 4px;}
+    .cards-toolbar{display:flex;align-items:center;justify-content:space-between;margin-bottom:10px;padding:0 4px;gap:8px;}
+    .cards-count{font-family:'Montserrat',sans-serif;font-size:.8rem;color:var(--text-muted);}
+    .sort-select{font-family:'Montserrat',sans-serif;font-size:.75rem;background:var(--card-bg);color:var(--text);border:1.5px solid var(--border);border-radius:8px;padding:5px 10px;cursor:pointer;outline:none;transition:border-color .2s;}
+    .sort-select:hover,.sort-select:focus{border-color:var(--teal);}
     .cards-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
 
     /* OPERATOR CARD */
@@ -486,6 +490,12 @@
     .price-reset{background:transparent;border:none;color:var(--text-muted);font-size:.72rem;cursor:pointer;padding:2px 6px;border-radius:4px;transition:color .15s;}
     .price-reset:hover{color:var(--teal);}
     @media(max-width:640px){.price-range-wrap{min-width:120px;}.price-val{min-width:90px;font-size:.72rem;}}
+    .pax-filter{display:flex;align-items:center;gap:10px;padding:6px 0 4px;flex-wrap:wrap;}
+    .pax-filter-label{font-family:'Montserrat',sans-serif;font-size:.73rem;font-weight:700;color:var(--text-muted);white-space:nowrap;}
+    .pax-chips{display:flex;gap:6px;flex-wrap:wrap;}
+    .pax-chip{background:rgba(255,255,255,.05);border:1.5px solid var(--border);border-radius:20px;padding:4px 12px;font-family:'Montserrat',sans-serif;font-size:.72rem;font-weight:600;color:var(--text-muted);cursor:pointer;transition:all .2s;white-space:nowrap;}
+    .pax-chip:hover{border-color:var(--teal);color:#fff;}
+    .pax-chip.active{background:var(--teal);border-color:var(--teal);color:var(--dark);}
 
     /* ── SEARCH BAR ── */
     .search-bar-wrap{display:flex;align-items:center;gap:10px;margin-bottom:12px;}
@@ -504,7 +514,11 @@
     .fav-toggle:hover{border-color:#ff6b8a;background:rgba(255,60,100,.15);}
     .fav-toggle.saved{background:rgba(255,60,100,.9);border-color:#ff3c64;color:#fff;}
     .fav-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
-    .fav-fab{position:fixed;bottom:80px;right:20px;background:linear-gradient(135deg,#ff3c64,#ff6b8a);color:#fff;border:none;border-radius:50px;padding:12px 20px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;cursor:pointer;box-shadow:0 4px 20px rgba(255,60,100,.4);z-index:1400;display:flex;align-items:center;gap:8px;transition:transform .2s,opacity .2s;opacity:0;pointer-events:none;}
+    .wa-fab{position:fixed;bottom:80px;right:20px;background:#25D366;color:#fff;border:none;border-radius:50px;padding:12px 18px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;cursor:pointer;box-shadow:0 4px 20px rgba(37,211,102,.45);z-index:1400;display:flex;align-items:center;gap:8px;transition:transform .2s,box-shadow .2s;text-decoration:none;}
+    .wa-fab:hover{transform:scale(1.06);box-shadow:0 6px 28px rgba(37,211,102,.6);}
+    .wa-fab svg{width:20px;height:20px;fill:#fff;flex-shrink:0;}
+    @media(max-width:640px){.wa-fab span.wa-fab-text{display:none;}.wa-fab{padding:14px;border-radius:50%;bottom:90px;}}
+    .fav-fab{position:fixed;bottom:148px;right:20px;background:linear-gradient(135deg,#ff3c64,#ff6b8a);color:#fff;border:none;border-radius:50px;padding:12px 20px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.82rem;cursor:pointer;box-shadow:0 4px 20px rgba(255,60,100,.4);z-index:1400;display:flex;align-items:center;gap:8px;transition:transform .2s,opacity .2s;opacity:0;pointer-events:none;}
     .fav-fab.show{opacity:1;pointer-events:all;}
     .fav-fab:hover{transform:scale(1.05);}
     .fav-fab-count{background:rgba(255,255,255,.3);border-radius:50px;padding:2px 8px;font-size:.75rem;}
@@ -710,6 +724,16 @@
         <span class="price-val" id="priceValLabel">$0 – $1000+</span>
         <button class="price-reset" onclick="resetPrice()" title="Reset price filter">✕ Reset</button>
       </div>
+      <div class="pax-filter">
+        <span class="pax-filter-label">👥 Group Size</span>
+        <div class="pax-chips" id="paxChips">
+          <span class="pax-chip active" data-pax="0" onclick="setPaxFilter(0)">Any</span>
+          <span class="pax-chip" data-pax="2" onclick="setPaxFilter(2)">1–2</span>
+          <span class="pax-chip" data-pax="6" onclick="setPaxFilter(6)">3–6</span>
+          <span class="pax-chip" data-pax="12" onclick="setPaxFilter(12)">7–12</span>
+          <span class="pax-chip" data-pax="13" onclick="setPaxFilter(13)">13+</span>
+        </div>
+      </div>
 </div>
 </div>
   <div class="marketplace-body mobile-map-hidden" id="marketplaceBody">
@@ -724,7 +748,16 @@
         <div class="featured-price">From $100</div>
         <a href="https://fareharbor.com/embeds/book/miamistylerentals/items/?flow=613885&full-items=yes" target="_blank" rel="noopener" class="featured-btn">Book Now →</a>
       </div>
-      <div class="cards-count" id="cardsCount">Showing 206 operators</div>
+      <div class="cards-toolbar">
+        <div class="cards-count" id="cardsCount">Showing 377 operators</div>
+        <select class="sort-select" id="sortSelect" onchange="activeSortBy=this.value;renderCards()">
+          <option value="default">Sort: Default</option>
+          <option value="price_asc">Price: Low → High</option>
+          <option value="price_desc">Price: High → Low</option>
+          <option value="rating_desc">⭐ Top Rated</option>
+          <option value="reviews_desc">Most Reviewed</option>
+        </select>
+      </div>
       <div class="cards-grid" id="cardsGrid"></div>
     </div>
     <div class="map-panel">
@@ -757,9 +790,9 @@
 <section class="deals-section" id="deals">
   <div class="container">
     <div class="text-center">
-      <div class="section-tag">🔥 Best Deals</div>
-      <h2 class="section-title">Top <span class="teal">Value Picks</span></h2>
-      <p class="section-sub" style="margin-bottom:0">The most affordable operators across Florida, hand-picked.</p>
+      <div class="section-tag">⭐ Editor's Picks</div>
+      <h2 class="section-title">Highest <span class="teal">Rated Operators</span></h2>
+      <p class="section-sub" style="margin-bottom:0">Top-reviewed water sports operators across Florida, ranked by real customer ratings.</p>
     </div>
     <div class="deals-grid" id="dealsGrid"></div>
   </div>
@@ -876,13 +909,15 @@
 <script>
 // ---- DATA ----
 let allOperators = [];
-const OP_SLUG_MAP = {"js1": "aquafusion-combo-jet-ski-party-boat-miami", "js2": "jetski-rental-north-miami-beach-miami", "js3": "one-hour-jet-ski-rental-miami", "js4": "jetski-rentals-south-beach-miami", "js5": "305-tours-rentals-miami", "js6": "package-deal-boat-jet-ski-atv-miami", "js7": "jetcar-1-hour-drive-a-car-on-water-miami", "js8": "jet-ski-rentals-miami-watersports-miami", "js9": "jet-ski-rentals-coconut-grove-miami", "js10": "miami-style-rentals-jet-ski-tour-miami", "js11": "1-hour-jet-ski-rental-hollywood-beach-broward", "js12": "jet-ski-rental-falcons-hollywood-broward", "js13": "bimini-island-day-trip-by-fast-ferry-broward", "js14": "jetski-rental-fort-lauderdale-broward", "js15": "jet-ski-rental-pompano-beach-broward", "js16": "ocean-jet-ski-rentals-pompano-broward", "js17": "key-largo-jet-ski-rentals-keys", "js18": "tropic-water-sports-key-largo-keys", "js19": "jetski-rentals-marathon-best-price-keys", "js20": "grassy-key-marina-daily-jet-ski-keys", "js21": "marathon-jet-ski-rentals-wakezone-keys", "js22": "six-fins-key-west-2-hr-flagship-jet-ski-tour-keys", "js23": "its-jet-ski-time-naples-gulf", "js24": "sunset-ski-watersports-gulf", "js25": "island-ski-rentals-gulf", "js26": "aquaholic-charters-gulf", "js27": "splash-n-dash-jet-ski-rental-gulf", "js28": "jp-jet-ski-rental-gulf", "js29": "sf-jet-ski-rentals-miami", "bt1": "bruschi-boat-rental-miami", "bt2": "bruschi-boat-rental-small-boat-miami", "bt3": "altamar-trade-miami-river-miami", "bt4": "100-miami-luxury-boat-miami", "bt5": "100-miami-premium-charter-miami", "bt6": "aura-yacht-experience-miami", "bt7": "100-miami-nw-21st-mega-yacht-miami", "bt8": "horizon-yacht-rentals-miami", "bt9": "100-miami-bayshore-miami", "bt10": "100-miami-collins-ave-miami", "bt11": "the-real-yacht-experience-miami", "bt12": "the-real-yacht-experience-ii-miami", "bt13": "ocean-force-adventures-private-miami", "bt14": "ocean-force-adventures-marina-miami", "bt15": "aquarius-boat-rental-boating-lesson-miami", "bt16": "100-pro-boats-hollywood-broward", "bt17": "bluefoot-pirates-broward", "bt18": "sun-boat-rental-broward", "bt19": "dania-beach-adventures-broward", "bt20": "byob-party-pontoon-broward", "bt21": "baymingo-broward", "bt22": "fort-lauderdale-boat-rentals-broward", "bt23": "altamar-trade-fort-lauderdale-broward", "bt24": "100-pro-boats-fort-lauderdale-broward", "bt25": "blue-h2o-cruisers-broward", "bt26": "fort-lauderdale-boat-rental-with-captain-broward", "bt27": "everglades-holiday-park-everglades", "bt28": "flamingo-everglades-everglades", "bt29": "key-largo-adventures-keys", "bt30": "islamorada-boat-rentals-keys", "bt31": "rumaway-lifestyle-keys", "bt32": "wakezone-watersports-keys", "bt33": "aqua-boat-rentals-keys", "bt34": "nothing-better-boat-rentals-keys", "bt35": "boat-rentals-in-key-west-keys", "bt36": "island-vibe-charters-keys", "bt37": "sail-away-key-west-keys", "bt38": "coastal-key-west-charters-keys", "bt39": "adventures-on-water-keys", "bt40": "best-sandbar-tours-keys", "bt41": "spencers-boatyard-keys", "bt42": "barefoot-billys-kw-keys", "bt43": "sea-monkey-charters-keys", "bt44": "visit-palm-beach-palmbeach", "bt45": "florida-island-tours-gulf", "bt46": "kokomo-charters-gulf", "bt47": "beach-bums-boat-rentals-gulf", "bt48": "pg-boat-rental-gulf", "bt49": "island-time-florida-charters-gulf", "bt50": "crystens-gulf", "bt51": "tv-boat-rentals-westfl", "bt52": "chadillac-adventures-westfl", "bt53": "father-daughter-charters-gulf", "bt54": "lake-harris-boat-rentals-central", "bt55": "island-time-marina-space", "bt56": "daytona-beach-dolphin-tours-northeast", "fi1": "l-fish-fishing-charter-keys", "fi2": "atlantic-gulf-fishing-charters-keys", "fi3": "key-west-fishing-charters-keys", "fi4": "reel-floridian-fishing-broward", "fi9": "south-florida-fishing-key-largo-charter-keys", "fi8": "book-key-largo-fishing-charter-keys", "fi7": "miss-penny-day-fishing-charter-keys", "fi6": "adventures-key-west-fishing-charter-keys", "fi5": "dirty-dolly-fish-company-space", "ws1": "paddle-hobie-sail-club-windsurfing-miami", "ws2": "padl-bike-rentals-virginia-key-miami", "ws3": "key-west-sailing-center-keys", "ws4": "the-wakeboard-coach-central", "ws5": "crystal-river-preserve-adventures-westfl", "ws6": "see-crystal-river-westfl", "sl1": "miami-style-rentals-slingshot-miami", "sl2": "727-slingshots-westfl", "sl3": "miami-style-rentals-biscayne-miami", "sl4": "tgif-rides-slingshot-broward", "sl5": "south-florida-slingshot-rentals-palmbeach", "sl6": "big-shot-slingshot-gulf", "jc1": "wakezone-watersports-jet-car-keys", "jc2": "get-wet-fl-jet-car-westfl", "jc3": "top-line-watersports-jet-car-miami", "jc4": "adventure-watersports-jet-car-gulf", "jc5": "aqua-voyage-jet-cars-gulf", "jc6": "slingshot-jet-ski-rentals-jet-car-broward", "jc7": "flamingo-yacht-charters-jet-car-broward", "jc8": "jet-ski-miami-rentals-jet-car-miami", "jc9": "slinki-motors-jet-car-miami", "jc10": "sf-jet-ski-rentals-jet-car-miami", "gc1": "miami-team-party-golf-cart-miami", "gc2": "golf-cart-rental-key-west-keys", "gc3": "paradise-rentals-kw-golf-cart-keys", "gc4": "conch-carts-golf-cart-keys", "gc5": "fl-keys-food-tour-golf-cart-keys", "gc6": "wynwood-art-walk-golf-cart-miami-miami", "gc7": "wynwood-art-walk-golf-cart-fort-lauderdale-broward", "gc8": "good-vibes-island-rides-golf-cart-gulf", "bt57": "key-west-fishing-charters-ii-keys", "bt58": "six-fins-charter-clothing-optional-keys", "bt59": "marco-island-boat-charters-gulf", "bt60": "sea-rocket-fort-lauderdale-broward", "bt61": "keys-huka-dive-nokomis-gulf", "bt62": "island-boat-adventures-westfl", "bt63": "pontiki-jupiter-palmbeach", "bt64": "walks-nyc-boat-tour-miami-miami", "bt65": "miami-tour-company-everglades-miami", "bt66": "florida-adventures-dolphin-tour-gulf", "bt67": "miami-aqua-tours-miami", "bt68": "robin-hood-anna-maria-gulf", "bt69": "the-pink-pelican-tiki-westfl", "bt70": "open-miami-private-everglades-tour-miami", "bt70b": "six-fins-charter-private-boat-tour-key-west-keys", "bt71": "six-fins-charter-boat-tour-key-west-ii-keys", "bt72": "six-fins-charter-boat-tour-key-west-iii-keys", "bt73": "sea-rocket-fort-lauderdale-boat-tour-broward", "bt74": "six-fins-charter-boat-tour-key-west-iv-keys", "bt75": "destin-private-yachts-luxury-charter-westfl", "bt85": "cypress-cay-pontoon-12-passengers-fort-myers-gulf", "bt84": "florida-adventures-marco-island-boat-rental-gulf", "bt83": "punta-gorda-tiki-tiki-boat-cruise-gulf", "bt82": "boat-charter-fl-st-petersburg-gulf", "bt81": "100-miami-luxury-boat-rental-miami", "bt80": "kokomo-charters-sarasota-boat-tour-gulf", "bt79": "sunset-sail-key-west-luxury-charter-keys", "bt78": "sunset-sail-key-west-private-charter-keys", "bt77": "heron-harbor-private-yacht-charter-westfl", "bt76": "destin-private-yachts-premium-charter-westfl", "ws7": "florida-adventures-kayak-tour-gulf", "ws8": "florida-adventures-kayak-rental-gulf", "ws9": "visit-palm-beach-snorkel-palmbeach", "ws10": "sunset-scooter-rentals-broward", "ws11": "florida-adventures-kayak-rental-naples-gulf", "ws12": "florida-adventures-paddle-tour-naples-gulf", "ws13": "six-fins-charter-snorkel-tour-key-west-keys", "ws14": "get-up-go-kayaking-crystal-river-springs-gulf", "ws15": "get-up-go-kayaking-jupiter-inlet-lighthouse-palmbeach", "ws18": "finz-dive-center-2-tank-private-dive-keys", "ws17": "gulf-coast-kayak-sirenia-vista-park-ii-gulf", "ws16": "gulf-coast-kayak-sirenia-vista-park-gulf", "ws19": "yak-shack-mangrove-tour-gulf", "ws22": "sea-daddys-3hr-adventure-diving-crystal-river-gulf", "ws21": "xela-expeditions-night-shark-drift-snorkel-palmbeach", "ws20": "yak-shack-kayak-rentals-emerson-point-gulf", "at1": "wynwood-buggies-miami", "at2": "atv-of-miami-miami", "at3": "top-line-watersports-atv-miami", "at4": "miami-atv-rentals-miami", "at5": "side-x-side-st-pete-westfl", "at6": "showdown-atv-rentals-central", "at7": "captain-steves-swamp-buggy-everglades", "to1": "travel-to-key-west-bus-tour-miami", "to2": "travel-to-key-west-ii-miami", "to3": "chicago-liaison-tours-south-beach-miami", "to4": "key-west-day-tours-broward", "to5": "xcursions-usa-everglades-tour-miami", "to6": "duck-tours-south-beach-miami", "to7": "miami-beach-welcome-center-tour-broward", "to8": "system-shuttle-key-west-miami", "to9": "underground-donut-tour-wynwood-miami", "to10": "south-florida-trikke-tours-miami", "to24": "up-the-keys-aquarium-encounters-day-tour-keys", "to23": "makers-air-private-charter-fort-lauderdale-broward", "to25": "sky-tours-miami-premium-aerial-experience-miami", "to22": "sky-tours-miami-south-beach-private-airplane-tour-miami", "to21": "fly-key-west-helicopter-discovery-flight-keys", "to20": "sky-tours-miami-night-lights-airplane-tour-miami", "to19": "sky-tours-miami-private-airplane-luxury-tour-miami", "to18": "your-jamaican-tour-guide-secret-falls-tour-space", "to17": "your-jamaican-tour-guide-nine-mile-dunns-river-space", "to16": "your-jamaican-tour-guide-mayfield-falls-space", "to15": "zoom-air-zipline-daytona-beach-nefl", "to14": "stroke-of-art-wheel-throwing-pottery-centralfl", "to13": "ghosts-of-palm-beach-ghost-tour-palmbeach", "to12": "beach-sand-sculptures-artisan-experience-westfl", "to11": "sky-tours-miami-aerial-miami", "to24b": "florida-adventures-rentals-goodland-tour-gulf", "to26": "florida-adventures-rentals-eco-experience-gulf", "to27": "florida-adventures-rentals-wildlife-tour-gulf", "ae1": "helicopter-aerial-tour-tampa-bay-westfl", "ws23": "wekiwa-springs-kayak-canoe-centralfl", "ws24": "three-brothers-boards-daytona-nefl", "ws25": "tampa-riverwalk-rentals-westfl", "ws26": "aquasport-miami-flyboard-miami", "ws27": "aquasport-miami-premium-miami", "ws28": "venture-outdoors-llc-centralfl", "br1": "the-key-rides-keys", "br2": "south-florida-trikke-tours-miami-br2", "br3": "south-florida-trikke-tours-premium-miami", "br4": "seaside-bicycle-rentals-palmbeach", "br5": "ez-raider-fort-lauderdale-broward", "br6": "fun-rentals-st-augustine-nefl", "br7": "sandsurfer-e-skate-tours-nefl", "br8": "unlimited-biking-miami-beach-highlights-miami", "to28": "south-florida-trikke-tours-boat-tour-miami", "to29": "wild-gator-airboat-adventures-centralfl", "to30": "us2u-miami-beach-city-tour-miami", "to31": "the-french-company-orlando-centralfl", "to32": "us2u-miami-beach-tour-miami", "to33": "spirit-of-the-swamp-centralfl", "to34": "south-florida-trikke-tours-premium-boat-miami", "to35": "sea-serpent-tours-st-augustine-nefl", "to36": "sea-serpent-tours-river-nefl", "to37": "miami-beach-welcome-center-tour-miami", "to38": "raised-by-water-airboat-adventures-centralfl", "to39": "river-safaris-homosassa-westfl", "to40": "monkey-island-adventures-westfl", "to41": "kachunga-lake-panasoffkee-westfl", "to42": "monkey-island-adventures-marina-westfl", "to43": "speakeasy-murder-mystery-dinner-show-centralfl", "to44": "pirates-dinner-adventure-orlando-centralfl", "to45": "mertailors-mermaid-aquarium-encounter-westfl", "to46": "tpa-shuttles-mco-to-tampa-centralfl", "to47": "space-shuttle-excursions-lighthouse-tour-space", "to48": "the-panda-tours-st-augustine-nefl", "to49": "rhum-runner-the-lagoon-at-grassy-key-keys", "at8": "showdown-atv-rentals-centralfl", "at9": "wild-lime-adventures-miami", "at10": "x-terrains-ohv-adventures-centralfl", "at11": "thrill-trek-adventures-tallahassee-westfl", "at12": "side-x-side-st-pete-westfl-at12", "at13": "tampa-atv-rentals-westfl", "at14": "revolution-offroad-clermont-centralfl", "at15": "orlando-atv-polk-city-centralfl", "at16": "forrests-motorsports-rentals-westfl", "at17": "luxe-atv-rentals-nefl", "at18": "forrests-motorsports-trail-ride-westfl", "gc9": "golf-cart-rental-key-west-keys-gc9", "gc10": "tropical-mokes-white-moke-rental-westfl", "gc11": "town-golf-carts-port-st-joe-westfl", "ae2": "suncoast-biplanes-westfl", "ae3": "eagles-air-tours-miami-miami", "ae4": "jones-air-sea-centralfl", "ae5": "jones-air-sea-premium-centralfl", "ae6": "destin-helicopters-westfl", "ae7": "orlando-helicopter-adventures-centralfl", "ae8": "destin-helicopters-premium-westfl", "js30": "sunsplash-jetski-rentals-gulf", "js31": "epic-hotel-boat-jet-ski-combo-miami", "bt86": "aquarius-boat-rental-miami-beach-miami", "ws29": "ho2-pensacola-beach-westfl", "ws30": "dockside-watersports-destin-westfl", "ws31": "st-andrews-adventures-panama-city-westfl", "ws32": "amelia-island-adventures-nefl", "ws33": "weeki-wachee-springs-state-park-westfl", "ws34": "aoa-fun-poe-springs-kayak-nefl", "ws35": "chadillac-adventures-cove-cay-westfl", "ws36": "blackwater-joes-canoes-westfl", "ws37": "glow-boats-kayaking-bradenton-westfl", "ws38": "parasailing-miami-water-sports-miami", "ws39": "sf-jet-ski-3-hour-watersport-excursion-miami", "ws40": "aoa-fun-poe-springs-tube-nefl", "ws41": "sunset-watersports-key-west-keys", "ws42": "soflo-water-adventures-miami", "ws43": "north-miami-divers-2-tank-dive-miami", "br9": "bobbys-bike-hike-miami-beach-food-tour-miami", "br10": "south-florida-trikke-tours-luxury-miami", "br11": "south-florida-trikke-art-deco-segway-miami", "br12": "soflo-water-adventures-e-bike-airboat-miami", "to50": "escape-cocoa-beach-space", "to51": "big-tiki-tours-fort-myers-beach-gulf", "to52": "everglades-holiday-park-broward", "to53": "hubbards-marina-madeira-beach-westfl", "to54": "hubbards-marina-deep-sea-westfl", "to55": "gulf-islands-ferry-bradenton-westfl", "to56": "the-pelican-llc-st-petersburg-westfl", "to57": "wynwood-art-walk-miami-miami", "to58": "wandering-palm-adventures-orlando-centralfl", "to59": "flamingo-everglades-miami", "to60": "everglades-florida-adventures-gulf", "to61": "tart-tales-key-west-keys", "to62": "st-augustine-land-sea-tours-nefl", "to63": "old-city-carriages-st-augustine-nefl", "to64": "carriage-tours-events-private-nefl", "to65": "carriage-tours-events-romantic-nefl", "to66": "carriage-tours-events-classic-nefl", "to67": "miami-party-boats-miami", "to68": "us2u-key-west-day-trip-miami", "to69": "miami-aqua-tours-nite-sea-party-cruise-miami", "to70": "us2u-key-west-dolphin-spotting-boat-miami", "to71": "us2u-everglades-tour-broward", "to72": "hunk-o-mania-male-revue-miami-beach-miami", "to73": "miami-aqua-tours-boat-tour-combo-miami", "to74": "wynwood-graffiti-experience-miami", "to75": "miami-aqua-tours-pirate-boat-cruise-miami", "to76": "miami-aqua-tours-biscayne-bay-miami", "js32": "sf-jet-ski-rentals-miami-miami", "js33": "sf-jet-ski-rentals-key-biscayne-miami", "ws44": "top-line-watersports-water-adventure-miami", "ws45": "watersports-paradise-miami-beach-miami", "bt87": "yaju-boat-tours-standard-miami", "bt88": "yaju-boat-tours-premium-miami", "to77": "seaside-adventures-st-augustine-tour-nefl", "bt89": "holly-bluff-marina-houseboat-rental-centralfl", "ws46": "scuba-steves-force-e-scuba-diving-broward", "to78": "st-petersburg-distillery-tour-westfl", "bt90": "homosassa-river-adventures-westfl", "bt91": "flamingo-yacht-charters-luxury-day-charter-broward", "ws47": "kitty-hawk-destin-parasailing-westfl", "ws48": "top-line-watersports-parasailing-miami", "bt92": "adultsonly-swim-sunset-sail-keys", "to79": "seaside-adventures-ghost-tour-nefl", "to80": "wawa-express-fort-myers-adventure-gulf", "ws49": "holly-bluff-marina-kayak-canoe-rental-centralfl", "bt93": "chilly-down-charters-panama-city-westfl", "bt94": "chilly-down-morning-mimosa-cruise-westfl", "bt95": "chilly-down-charters-sunset-cruise-westfl", "bt96": "chilly-down-charters-private-charter-westfl", "to81": "river-taxi-tours-jacksonville-nefl", "bt97": "lady-delana-alys-fireworks-cruise-westfl", "bt98": "crab-island-luxury-adventures-westfl", "bt99": "crab-island-luxury-adventures-premium-westfl", "to82": "destin-bonfire-company-westfl", "to83": "hope-and-joy-sanctuary-gulf", "ws50": "melbourne-kayak-rentals-space", "to84": "cigar-dinner-cruise-westfl", "br13": "ez-raider-excursion-90min-broward", "to85": "red-boat-tours-gulf", "to86": "walking-history-tour-st-augustine-nefl", "to87": "islamorada-private-charters-keys", "ws51": "sea-monkey-divers-keys", "ws52": "arcimoto-electric-scooter-rentals-nefl", "gc12": "greek-town-golf-carts-tarpon-springs-westfl", "ws53": "anastasia-watersports-paddle-rental-nefl", "to88": "islamorada-private-boat-charter-keys", "js34": "wow-marco-island-jet-ski-1hr-adventure-gulf", "js35": "jet-ski-miami-rentals-miami-beach-miami", "js36": "six-fins-jet-ski-hurricane-hole-keys", "js37": "bradenton-jet-ski-rental-westfl", "js38": "sunset-watersports-key-west-jetski-keys", "js39": "aquaholic-charters-venice-westfl", "js40": "aqua-riders-jet-ski-sarasota-westfl", "js41": "paradise-watersports-port-charlotte-gulf", "js42": "jet-ski-miami-rentals-edgewater-miami", "to89": "horse-riding-miami-countryside-miami", "js43": "atlantic-jet-ski-rental-pompano-premier-broward", "js44": "atlantic-jet-ski-rental-pompano-beach-broward", "js45": "falcons-jet-ski-rentals-hollywood-broward", "js46": "wr-jet-ski-rentals-bradenton-westfl", "jc11": "tampa-jet-ski-jet-car-rentals-westfl", "js47": "honeymoon-island-jet-ski-tour-clearwater-westfl", "js48": "slingshot-jet-ski-rentals-fort-lauderdale-broward", "js49": "falcons-jet-ski-rentals-hollywood-budget-broward", "at19": "takeovers-miami-2hr-utv-tour-miami", "bt100": "100-miami-nw-river-miami", "sc1": "scooter-of-miami-miami-beach", "sc2": "flwow-rentals-50cc-scooter-miami", "sc3": "flwow-rentals-electric-kick-scooter-miami", "sc4": "305-tours-electric-scooter-miami-beach", "sc5": "paradise-rentals-kw-golf-cart-keys", "sc6": "miami-style-rentals-electric-scooter-miami", "sc7": "eze-bike-electric-tour-broward", "sc8": "scooter-stop-st-pete-beach-westfl", "ws52": "arcimoto-electric-scooter-rentals-nefl"};
+const OP_SLUG_MAP = window._OP_SLUG_MAP || {};
 
 
 
 // ---- STATE ----
 let activeCat = 'all';
 let activeZone = 'all';
+let activeSortBy = 'default';
+let activePax = 0; // 0 = any
 let priceMin = 0, priceMax = 1000;
 let markers = {};
 let mapInstance = null;
@@ -934,11 +969,27 @@ function getFiltered() {
                      || op.zl.toLowerCase().includes(searchQuery)
                      || op.addr.toLowerCase().includes(searchQuery)
                      || (catLabels[op.cat]||'').toLowerCase().includes(searchQuery);
-    return catOk && zoneOk && priceOk && searchOk;
+    let paxOk = true;
+    if (activePax > 0) {
+      const p = op.pax || 0;
+      if (activePax === 2)  paxOk = p >= 1 && p <= 2;
+      else if (activePax === 6)  paxOk = p >= 3 && p <= 6;
+      else if (activePax === 12) paxOk = p >= 7 && p <= 12;
+      else if (activePax === 13) paxOk = p >= 13;
+    }
+    return catOk && zoneOk && priceOk && searchOk && paxOk;
   });
   if(nearMeActive && userLat!==null){
     ops = ops.map(op=>({...op, _dist:haversine(userLat,userLng,op.lat,op.lng)}))
              .sort((a,b)=>a._dist-b._dist);
+  } else if (activeSortBy === 'price_asc') {
+    ops.sort((a,b) => a.price - b.price);
+  } else if (activeSortBy === 'price_desc') {
+    ops.sort((a,b) => b.price - a.price);
+  } else if (activeSortBy === 'rating_desc') {
+    ops.sort((a,b) => (b.rating||0) - (a.rating||0));
+  } else if (activeSortBy === 'reviews_desc') {
+    ops.sort((a,b) => (b.reviews||0) - (a.reviews||0));
   } else {
     // Default sort: Miami boats first (price asc), then everything else
     const isDefaultView = activeCat === 'all' && activeZone === 'all' && !searchQuery;
@@ -1447,14 +1498,27 @@ function resetPrice() {
   updatePriceFilter();
 }
 
+function setPaxFilter(pax) {
+  activePax = pax;
+  document.querySelectorAll('.pax-chip').forEach(el => {
+    el.classList.toggle('active', parseInt(el.dataset.pax) === pax);
+  });
+  renderCards();
+}
+
 // ---- DEALS GRID ----
 function renderDeals() {
-  const sorted = [...allOperators].sort((a,b) => a.price - b.price).slice(0,8);
+  // Show top-rated operators (min 50 reviews, sorted by rating desc, then reviews desc)
+  const sorted = [...allOperators]
+    .filter(op => op.rating && op.reviews >= 50)
+    .sort((a,b) => (b.rating - a.rating) || (b.reviews - a.reviews))
+    .slice(0, 8);
   const grid = document.getElementById('dealsGrid');
   if (!grid) return;
   grid.innerHTML = sorted.map(op => {
     const detailSlug = OP_SLUG_MAP[op.id] || '';
     const detailUrl  = detailSlug ? `/${detailSlug}` : op.link;
+    const stars = op.rating ? `${'★'.repeat(Math.round(op.rating))}${'☆'.repeat(5-Math.round(op.rating))}` : '';
     return `
     <div class="deal-card">
       <div class="deal-img"><img src="${thumbUrl(op.photo)}" alt="${op.name}" onerror="this.style.display='none'"></div>
@@ -1463,10 +1527,10 @@ function renderDeals() {
         <div class="deal-zone">📍 ${op.zl}</div>
         <div class="deal-footer">
           <div class="deal-price">$${op.price}</div>
-          <div class="deal-badge">Best Value</div>
+          <div class="deal-badge" style="background:var(--teal);color:var(--dark)">⭐ ${op.rating} (${op.reviews})</div>
         </div>
         <div class="deal-actions">
-          <a href="${op.link}" target="_blank" rel="noopener" class="deal-book-btn" onclick="event.stopPropagation()">Book Now →</a>
+          <a href="${op.link}" target="_blank" rel="noopener" class="deal-book-btn" onclick="event.stopPropagation();trackBookNow()">Book Now →</a>
           <a href="${detailUrl}" class="deal-detail-btn" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right" style="font-size:.65rem"></i></a>
         </div>
       </div>
@@ -2014,6 +2078,10 @@ window.addEventListener('pageshow', (e) => {
 
 
 <!-- ── FAVORITES FAB ── -->
+<a class="wa-fab" href="https://wa.me/13059001234?text=Hi!%20I%20found%20you%20on%20MiamiJetSkiBoatRentals.com%20and%20I%27d%20like%20to%20book%20a%20water%20activity." target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="wa-fab-text">Chat on WhatsApp</span>
+</a>
 <button class="fav-fab" id="favFab" onclick="openFavPanel()">
   ❤️ My Favorites <span class="fav-fab-count" id="favFabCount">0</span>
 </button>
