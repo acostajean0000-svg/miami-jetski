@@ -1574,6 +1574,7 @@ function initMap() {
 function buildMarkers() {
   allOperators.forEach(op => {
     if (markers[op.id]) return; // skip if already built
+    if (!op.lat || !op.lng) return; // skip ops without geo coords
     const color = catColors[op.cat] || '#00d4c8';
     const catInitials = {jetski:'JS', boat:'⛵', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', jetcar:'🚗', golfcart:'🛺', atv:'🏍️', scooter:'🛵', bikerental:'🚲'}[op.cat] || '●';
     const marker = L.marker([op.lat, op.lng], {icon: makeIcon(color, catInitials)});
