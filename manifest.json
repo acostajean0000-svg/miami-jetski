@@ -1,0 +1,13 @@
+{
+  "name": "Florida Water Sports & Boat Rentals",
+  "short_name": "FL Water Sports",
+  "description": "Find and book jet ski rentals, boat charters, water sports tours across Florida. Compare 377+ operators.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#040d1a",
+  "theme_color": "#00d2ff",
+  "icons": [
+    { "src": "/apple-touch-icon.png", "sizes": "180x180", "type": "image/png" },
+    { "src": "/og-image.png", "sizes": "1200x630", "type": "image/png" }
+  ]
+}

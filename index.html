@@ -1007,7 +1007,7 @@ function getFiltered() {
   let ops = allOperators.filter(op => {
     const catOk    = activeCat === 'all' || op.cat === activeCat;
     const zoneOk   = nearMeActive || activeZone === 'all' || op.zone === activeZone;
-    const priceOk  = op.price >= priceMin && (priceMax >= 1000 || op.price <= priceMax);
+    const priceOk  = op.price >= priceMin && (priceMax >= (document.getElementById('priceMax')||{max:1000}).max || op.price <= priceMax);
     const searchOk = !searchQuery || op.name.toLowerCase().includes(searchQuery)
                      || op.zl.toLowerCase().includes(searchQuery)
                      || op.addr.toLowerCase().includes(searchQuery)
@@ -1555,7 +1555,7 @@ function updatePriceFilter() {
 
 function resetPrice() {
   document.getElementById('priceMin').value = 0;
-  document.getElementById('priceMax').value = 1000;
+  document.getElementById('priceMax').value = document.getElementById('priceMax').max;
   updatePriceFilter();
 }
 
@@ -1973,6 +1973,12 @@ if ('IntersectionObserver' in window) {
 // Note: operators-slim.json strips the 'desc' field (unused in index) saving ~68KB (32KB gzipped)
 function _applyLoadedData(data) {
   allOperators = data;
+  // Set price filter range dynamically based on actual max price
+  const maxPrice = Math.max(...data.map(o => o.price || 0));
+  const roundedMax = Math.ceil(maxPrice / 500) * 500;
+  ['priceMin','priceMax'].forEach(id => document.getElementById(id).max = roundedMax);
+  document.getElementById('priceMax').value = roundedMax;
+  priceMax = roundedMax;
   if (window.L) {
     if (!mapInstance) initMap();
     else buildMarkers();

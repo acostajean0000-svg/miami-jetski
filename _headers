@@ -1,0 +1,43 @@
+# Netlify / Cloudflare Pages cache headers
+# Static JSON data — cache 24h, stale-while-revalidate 1h
+/operators.json
+  Cache-Control: public, max-age=86400, stale-while-revalidate=3600
+  Content-Type: application/json; charset=utf-8
+
+/operators-slim.json
+  Cache-Control: public, max-age=86400, stale-while-revalidate=3600
+
+/slug-map.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=3600
+
+# Static assets — cache 1 week
+/og-image.png
+  Cache-Control: public, max-age=604800, immutable
+
+/icons/*
+  Cache-Control: public, max-age=604800, immutable
+
+/manifest.json
+  Cache-Control: public, max-age=86400
+
+# HTML pages — no-cache (always revalidate)
+/*.html
+  Cache-Control: no-cache, must-revalidate
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+
+# Root
+/
+  Cache-Control: no-cache, must-revalidate
+  X-Content-Type-Options: nosniff
+
+# Sitemap
+/sitemap.xml
+  Cache-Control: public, max-age=43200
+  Content-Type: application/xml; charset=utf-8
+
+# Security headers on all pages
+/*
+  X-XSS-Protection: 1; mode=block
+  Permissions-Policy: geolocation=(self), camera=(), microphone=()
