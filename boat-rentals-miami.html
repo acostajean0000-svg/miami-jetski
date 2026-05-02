@@ -402,6 +402,17 @@
       <button class="ftab" data-pl="premium">$700–$1,499</button>
       <button class="ftab" data-pl="luxury">$1,500+</button>
     </div>
+    <div class="filter-row">
+      <span class="filter-lbl">Category</span>
+      <button class="ftab active" data-cat-filter="all">All types</button>
+      <button class="ftab" data-cat-filter="cruise">🚢 Sightseeing</button>
+      <button class="ftab" data-cat-filter="sunset">🌅 Sunset</button>
+      <button class="ftab" data-cat-filter="party">🎉 Party &amp; Events</button>
+      <button class="ftab" data-cat-filter="luxury">💎 Luxury / Yacht</button>
+      <button class="ftab" data-cat-filter="nature">🐊 Nature</button>
+      <button class="ftab" data-cat-filter="romantic">👫 Romantic</button>
+      <button class="ftab" data-cat-filter="corporate">🏢 Corporate</button>
+    </div>
   </div>
 </div>
 
@@ -427,7 +438,7 @@
 
     <div class="cards-grid" id="cardsGrid">
 
-      <div class="op-card" data-lat="25.7744" data-lng="-80.1875" data-price="5" data-pax="30" data-pl="budget" onclick="highlightPin(0)">
+      <div class="op-card" data-cat="party" data-lat="25.7744" data-lng="-80.1875" data-price="5" data-pax="30" data-pl="budget" onclick="highlightPin(0)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4pyXoMyoSG2WO5wuC58M" alt="Miami Aqua Tours Miami" loading="eager" fetchpriority="high" decoding="sync" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -456,7 +467,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7744" data-lng="-80.1872" data-price="16" data-pax="20" data-pl="budget" onclick="highlightPin(1)">
+      <div class="op-card" data-cat="cruise" data-lat="25.7744" data-lng="-80.1872" data-price="16" data-pax="20" data-pl="budget" onclick="highlightPin(1)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/XDuJ9WEWQnyCstfubSf9" alt="Walks NYC – Boat Tour Miami Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -485,7 +496,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7748" data-lng="-80.1877" data-price="73" data-pax="15" data-pl="budget" onclick="highlightPin(2)">
+      <div class="op-card" data-cat="nature" data-lat="25.7748" data-lng="-80.1877" data-price="73" data-pax="15" data-pl="budget" onclick="highlightPin(2)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/z2c6eXCERNGACv5op6Fg" alt="Miami Tour Company – Everglades Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -514,7 +525,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7711" data-lng="-80.1395" data-price="169" data-pax="100" data-pl="budget" onclick="highlightPin(3)">
+      <div class="op-card" data-cat="party" data-lat="25.7711" data-lng="-80.1395" data-price="169" data-pax="100" data-pl="budget" onclick="highlightPin(3)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/2Hn6r2JwTdSehD9tStzj" alt="Ocean Force Adventures – Marina Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -543,7 +554,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7762" data-lng="-80.2159" data-price="249" data-pax="10" data-pl="mid" onclick="highlightPin(4)">
+      <div class="op-card" data-cat="cruise" data-lat="25.7762" data-lng="-80.2159" data-price="249" data-pax="10" data-pl="mid" onclick="highlightPin(4)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/V5MiP3fhRCpxBjvOwCrA" alt="Yaju Boat Tours – Standard Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -572,7 +583,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7753" data-lng="-80.2016" data-price="260" data-pax="8" data-pl="mid" onclick="highlightPin(5)">
+      <div class="op-card" data-cat="cruise" data-lat="25.7753" data-lng="-80.2016" data-price="260" data-pax="8" data-pl="mid" onclick="highlightPin(5)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qlH56wPZSn2vMKN6zdUn" alt="Bruschi Boat Rental – Small Boat Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -601,7 +612,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.765" data-lng="-80.135" data-price="315" data-pax="2" data-pl="mid" onclick="highlightPin(6)">
+      <div class="op-card" data-cat="cruise" data-lat="25.765" data-lng="-80.135" data-price="315" data-pax="2" data-pl="mid" onclick="highlightPin(6)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qbL1z09LTIiUXCAmdmwH" alt="Aquarius Boat Rental – Boating Lesson Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -630,7 +641,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7748" data-lng="-80.2019" data-price="349" data-pax="10" data-pl="mid" onclick="highlightPin(7)">
+      <div class="op-card" data-cat="party" data-lat="25.7748" data-lng="-80.2019" data-price="349" data-pax="10" data-pl="mid" onclick="highlightPin(7)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/yfXcCkP3SjaryQrhVi74" alt="Altamar Trade – Miami River Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -659,7 +670,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7762" data-lng="-80.216" data-price="349" data-pax="12" data-pl="mid" onclick="highlightPin(8)">
+      <div class="op-card" data-cat="sunset" data-lat="25.7762" data-lng="-80.216" data-price="349" data-pax="12" data-pl="mid" onclick="highlightPin(8)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/maPhcClMS7ee72HEp23M" alt="Yaju Boat Tours – Premium Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -688,7 +699,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7751" data-lng="-80.2014" data-price="550" data-pax="8" data-pl="mid" onclick="highlightPin(9)">
+      <div class="op-card" data-cat="cruise" data-lat="25.7751" data-lng="-80.2014" data-price="550" data-pax="8" data-pl="mid" onclick="highlightPin(9)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qGF2J9DjSnSyRIoyiVDF" alt="Bruschi Boat Rental Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -717,7 +728,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7796" data-lng="-80.2243" data-price="600" data-pax="13" data-pl="mid" onclick="highlightPin(10)">
+      <div class="op-card" data-cat="party" data-lat="25.7796" data-lng="-80.2243" data-price="600" data-pax="13" data-pl="mid" onclick="highlightPin(10)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/JZZbvFywTmWTT5a3wRUr" alt="100 Miami – Premium Charter Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -746,7 +757,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7711" data-lng="-80.1395" data-price="610" data-pax="8" data-pl="mid" onclick="highlightPin(11)">
+      <div class="op-card" data-cat="sunset" data-lat="25.7711" data-lng="-80.1395" data-price="610" data-pax="8" data-pl="mid" onclick="highlightPin(11)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sxiFcP9QbGr2G9EIry9s" alt="Aquarius Boat Rental – Miami Beach Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -775,7 +786,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.8013" data-lng="-80.2383" data-price="675" data-pax="12" data-pl="mid" onclick="highlightPin(12)">
+      <div class="op-card" data-cat="sunset" data-lat="25.8013" data-lng="-80.2383" data-price="675" data-pax="12" data-pl="mid" onclick="highlightPin(12)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/IYvk4KtYSNmJz8Db2n22" alt="Horizon Yacht Rentals Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -804,7 +815,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7879" data-lng="-80.1879" data-price="700" data-pax="13" data-pl="premium" onclick="highlightPin(13)">
+      <div class="op-card" data-cat="party" data-lat="25.7879" data-lng="-80.1879" data-price="700" data-pax="13" data-pl="premium" onclick="highlightPin(13)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/xig8U79oSQOefxbu7snO/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max" alt="100 Miami – Bayshore Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -833,7 +844,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7709" data-lng="-80.1393" data-price="795" data-pax="6" data-pl="premium" onclick="highlightPin(14)">
+      <div class="op-card" data-cat="romantic" data-lat="25.7709" data-lng="-80.1393" data-price="795" data-pax="6" data-pl="premium" onclick="highlightPin(14)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/kVN7dZWeTCiJ9rMhWrFX" alt="Ocean Force Adventures – Private Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -862,7 +873,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.6893" data-lng="-80.1576" data-price="800" data-pax="12" data-pl="premium" onclick="highlightPin(15)">
+      <div class="op-card" data-cat="luxury" data-lat="25.6893" data-lng="-80.1576" data-price="800" data-pax="12" data-pl="premium" onclick="highlightPin(15)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CQH4Q4dSQ222BdUzxK4Y" alt="The Real Yacht Experience II Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -891,7 +902,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.8087" data-lng="-80.1232" data-price="900" data-pax="13" data-pl="premium" onclick="highlightPin(16)">
+      <div class="op-card" data-cat="cruise" data-lat="25.8087" data-lng="-80.1232" data-price="900" data-pax="13" data-pl="premium" onclick="highlightPin(16)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/F3mEHY8LQQqcegaKMimf" alt="100 Miami – Collins Ave Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -920,7 +931,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.6895" data-lng="-80.1574" data-price="900" data-pax="12" data-pl="premium" onclick="highlightPin(17)">
+      <div class="op-card" data-cat="luxury" data-lat="25.6895" data-lng="-80.1574" data-price="900" data-pax="12" data-pl="premium" onclick="highlightPin(17)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/y6cf74yfQjyqXIzf0Smu" alt="The Real Yacht Experience Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -949,7 +960,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7897" data-lng="-80.1304" data-price="980" data-pax="8" data-pl="premium" onclick="highlightPin(18)">
+      <div class="op-card" data-cat="nature" data-lat="25.7897" data-lng="-80.1304" data-price="980" data-pax="8" data-pl="premium" onclick="highlightPin(18)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rwIn7wiRQDeaU8pineua" alt="Open Miami – Private Everglades Tour Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -978,7 +989,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7794" data-lng="-80.2241" data-price="1200" data-pax="12" data-pl="premium" onclick="highlightPin(19)">
+      <div class="op-card" data-cat="luxury" data-lat="25.7794" data-lng="-80.2241" data-price="1200" data-pax="12" data-pl="premium" onclick="highlightPin(19)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hcNurBdvQXa5l1Z0FFX0" alt="100 Miami – Luxury Boat Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1007,7 +1018,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.77" data-lng="-80.18" data-price="1250" data-pax="12" data-pl="premium" onclick="highlightPin(20)">
+      <div class="op-card" data-cat="luxury" data-lat="25.77" data-lng="-80.18" data-price="1250" data-pax="12" data-pl="premium" onclick="highlightPin(20)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/dwkmTqVQmeWXpmuOGR8w" alt="Aura Yacht Experience Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1036,7 +1047,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.774" data-lng="-80.203" data-price="1300" data-pax="13" data-pl="premium" onclick="highlightPin(21)">
+      <div class="op-card" data-cat="corporate" data-lat="25.774" data-lng="-80.203" data-price="1300" data-pax="13" data-pl="premium" onclick="highlightPin(21)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/7j1kEXj9QgS9xMNqHhcK" alt="100 Miami – NW River Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1065,7 +1076,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.8011" data-lng="-80.2381" data-price="2000" data-pax="20" data-pl="luxury" onclick="highlightPin(22)">
+      <div class="op-card" data-cat="luxury" data-lat="25.8011" data-lng="-80.2381" data-price="2000" data-pax="20" data-pl="luxury" onclick="highlightPin(22)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/xig8U79oSQOefxbu7snO/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max" alt="100 Miami – NW 21st Mega Yacht Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1094,7 +1105,7 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-lat="25.7865" data-lng="-80.2213" data-price="3800" data-pax="13" data-pl="luxury" onclick="highlightPin(23)">
+      <div class="op-card" data-cat="luxury" data-lat="25.7865" data-lng="-80.2213" data-price="3800" data-pax="13" data-pl="luxury" onclick="highlightPin(23)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sN256R2zRCqELCHMgjO1" alt="100 Miami – Luxury Boat Rental Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -1452,7 +1463,7 @@
   };
 
   /* ── FILTER LOGIC ── */
-  var paxFilter = 'all', plFilter = 'all';
+  var paxFilter = 'all', plFilter = 'all', catFilter = 'all';
 
   function applyFilters(){
     var cards = document.querySelectorAll('#cardsGrid .op-card');
@@ -1462,9 +1473,11 @@
     cards.forEach(function(c){
       var pax = parseInt(c.dataset.pax)||0;
       var pl = c.dataset.pl||'';
+      var cat = c.dataset.cat||'';
       var paxOk = !pr || (pax >= pr[0] && pax <= pr[1]);
       var plOk = plFilter === 'all' || pl === plFilter;
-      var show = paxOk && plOk;
+      var catOk = catFilter === 'all' || cat === catFilter;
+      var show = paxOk && plOk && catOk;
       c.classList.toggle('hidden', !show);
       if(show) visible++;
     });
@@ -1487,6 +1500,16 @@
       t.classList.add('active');
       plFilter = t.dataset.pl;
       applyFilters();
+    });
+  });
+
+  document.querySelectorAll('.ftab[data-cat-filter]').forEach(function(t){
+    t.addEventListener('click', function(){
+      document.querySelectorAll('.ftab[data-cat-filter]').forEach(function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      catFilter = t.dataset.catFilter;
+      applyFilters();
+      if(window.dataLayer) window.dataLayer.push({event:'category_filter',category:catFilter});
     });
   });
 
