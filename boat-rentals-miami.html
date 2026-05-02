@@ -92,6 +92,11 @@
   ]}
   </script>
 
+
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebPage","name":"Boat Rental Miami","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".page-hero p",".faq-q"]},"url":"https://miamijetskiboatrentals.com/boat-rentals-miami"}
+  </script>
+
   <script>
   function trackBookNow(n,p,c){
     if(window.dataLayer)window.dataLayer.push({event:'book_now_click',operator_name:n,operator_price:p,operator_category:c,page_url:window.location.href});
@@ -158,6 +163,31 @@
     .ftab{padding:6px 14px;border-radius:50px;border:1.5px solid var(--border);color:var(--muted);font-family:Montserrat,sans-serif;font-size:.72rem;font-weight:700;cursor:pointer;background:transparent;transition:all .2s;white-space:nowrap;flex-shrink:0;-webkit-tap-highlight-color:transparent;}
     .ftab:hover{border-color:var(--teal-dark);color:#fff;}
     .ftab.active{background:var(--teal);border-color:var(--teal);color:var(--dark);}
+
+    /* COMPARE CHECKBOX */
+    .compare-chk-wrap{position:absolute;top:8px;left:8px;z-index:10;cursor:pointer;}
+    .compare-chk{display:none;}
+    .compare-chk-icon{display:flex;align-items:center;justify-content:center;width:22px;height:22px;background:rgba(8,21,37,.75);border:1.5px solid var(--border);border-radius:5px;font-size:13px;color:var(--muted);transition:all .2s;backdrop-filter:blur(4px);}
+    .compare-chk:checked + .compare-chk-icon{background:var(--teal);border-color:var(--teal);color:var(--dark);content:"☑";}
+    .compare-chk-wrap:hover .compare-chk-icon{border-color:var(--teal);color:#fff;}
+    /* COMPARE SLOT CHIP */
+    .cmp-slot{background:#0f2038;border:1px solid var(--border);border-radius:8px;padding:4px 10px 4px 8px;font-size:.72rem;font-weight:700;color:#fff;display:flex;align-items:center;gap:6px;white-space:nowrap;}
+    .cmp-slot-x{cursor:pointer;color:var(--muted);font-size:.85rem;line-height:1;}
+    .cmp-slot-x:hover{color:#ff6b6b;}
+    /* FILTER PILLS */
+    .filter-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(0,212,200,.12);border:1px solid rgba(0,212,200,.3);color:var(--teal);font-size:.68rem;font-weight:700;padding:3px 10px 3px 8px;border-radius:50px;cursor:pointer;font-family:Montserrat,sans-serif;}
+    .filter-pill:hover{background:rgba(0,212,200,.2);}
+    .filter-pill-x{opacity:.7;font-size:.8rem;}
+    /* LIGHTBOX */
+    #lightbox.open{display:flex!important;}
+    /* CALC RESULTS */
+    .calc-row{background:#0f2038;border:1px solid var(--border);border-radius:10px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+    .calc-row-name{font-size:.78rem;font-weight:700;color:#fff;flex:1;}
+    .calc-row-total{font-size:.85rem;font-weight:700;color:var(--teal);white-space:nowrap;}
+    .calc-row-pp{font-size:.68rem;color:var(--muted);white-space:nowrap;}
+    .calc-row-over{opacity:.4;}
+    /* SEARCH BOX focus glow */
+    #searchBox:focus{box-shadow:0 0 0 3px rgba(0,212,200,.15);}
     /* LAYOUT */
     .marketplace-body{display:flex;align-items:flex-start;max-width:1400px;margin:0 auto;}
     .cards-panel{flex:1 1 0;min-width:0;padding:20px 16px 60px;}
@@ -403,6 +433,14 @@
       <button class="ftab" data-pl="luxury">$1,500+</button>
     </div>
     <div class="filter-row">
+      <span class="filter-lbl">Location</span>
+      <button class="ftab active" data-zone-filter="all">All areas</button>
+      <button class="ftab" data-zone-filter="downtown">🏙️ Downtown</button>
+      <button class="ftab" data-zone-filter="miami-beach">🏖️ Miami Beach</button>
+      <button class="ftab" data-zone-filter="miami-river">⚓ Miami River</button>
+      <button class="ftab" data-zone-filter="key-biscayne">🏝️ Key Biscayne</button>
+    </div>
+    <div class="filter-row">
       <span class="filter-lbl">Category</span>
       <button class="ftab active" data-cat-filter="all">All types</button>
       <button class="ftab" data-cat-filter="cruise">🚢 Sightseeing</button>
@@ -424,9 +462,10 @@
     <div class="section-hdr" style="display:flex;align-items:flex-start;justify-content:space-between;gap:12px;flex-wrap:wrap;">
       <div>
         <h2>Boat Rentals in Miami — All 24 Operators</h2>
-        <p>⭐ 4.8 avg · 4,600+ reviews · Updated May 2026</p>
+        <p>⭐ 4.8 avg · 4,600+ reviews · Updated May 2026 &nbsp;·&nbsp; <span id="urgencyCount" style="color:var(--teal);font-weight:700"></span></p>
       </div>
       <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+        <button onclick="openCalc()" style="background:rgba(0,212,200,.1);border:1.5px solid var(--teal);color:var(--teal);border-radius:8px;padding:5px 10px;font-size:.75rem;font-family:Montserrat,sans-serif;font-weight:700;cursor:pointer;white-space:nowrap;">🧮 Calc</button>
         <label for="sortSelect" style="font-size:.72rem;color:var(--muted);font-weight:700;white-space:nowrap;">Sort:</label>
         <select id="sortSelect" onchange="sortCards(this.value)" style="background:#0f2038;border:1.5px solid var(--border);color:#fff;border-radius:8px;padding:5px 10px;font-size:.75rem;font-family:Montserrat,sans-serif;font-weight:700;cursor:pointer;outline:none;">
           <option value="price-asc">Price ↑</option>
@@ -437,11 +476,22 @@
       </div>
     </div>
 
+    <!-- SEARCH BOX -->
+    <div style="margin-bottom:16px;position:relative;">
+      <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--muted);font-size:.9rem;pointer-events:none;">🔍</span>
+      <input id="searchBox" type="text" placeholder="Search operator, style, location…" oninput="filterBySearch(this.value)"
+        style="width:100%;box-sizing:border-box;background:rgba(15,32,56,.9);border:1.5px solid var(--border);color:#fff;border-radius:12px;padding:10px 14px 10px 36px;font-size:.82rem;font-family:Montserrat,sans-serif;outline:none;transition:border-color .2s;"
+        onfocus="this.style.borderColor='var(--teal)'" onblur="this.style.borderColor='var(--border)'">
+    </div>
+    <!-- ACTIVE FILTER PILLS -->
+    <div id="filterPills" style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;min-height:0;"></div>
+
     <div class="cards-grid" id="cardsGrid">
 
-      <div class="op-card" data-cat="party" data-lat="25.7744" data-lng="-80.1875" data-price="5" data-pax="30" data-pl="budget" onclick="highlightPin(0)">
+      <div class="op-card" data-zone="downtown" data-cat="party" data-lat="25.7744" data-lng="-80.1875" data-price="5" data-pax="30" data-pl="budget" onclick="highlightPin(0)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4pyXoMyoSG2WO5wuC58M" alt="Miami Aqua Tours Miami" loading="eager" fetchpriority="high" decoding="sync" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4pyXoMyoSG2WO5wuC58M" alt="Miami Aqua Tours Miami" loading="eager" fetchpriority="high" decoding="sync" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">💰 From $5</span>
         </div>
@@ -468,9 +518,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="cruise" data-lat="25.7744" data-lng="-80.1872" data-price="16" data-pax="20" data-pl="budget" onclick="highlightPin(1)">
+      <div class="op-card" data-zone="downtown" data-cat="cruise" data-lat="25.7744" data-lng="-80.1872" data-price="16" data-pax="20" data-pl="budget" onclick="highlightPin(1)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/XDuJ9WEWQnyCstfubSf9" alt="Walks NYC – Boat Tour Miami Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/XDuJ9WEWQnyCstfubSf9" alt="Walks NYC – Boat Tour Miami Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">🌆 City Tour</span>
         </div>
@@ -497,9 +548,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="nature" data-lat="25.7748" data-lng="-80.1877" data-price="73" data-pax="15" data-pl="budget" onclick="highlightPin(2)">
+      <div class="op-card" data-zone="downtown" data-cat="nature" data-lat="25.7748" data-lng="-80.1877" data-price="73" data-pax="15" data-pl="budget" onclick="highlightPin(2)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/z2c6eXCERNGACv5op6Fg" alt="Miami Tour Company – Everglades Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/z2c6eXCERNGACv5op6Fg" alt="Miami Tour Company – Everglades Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">🐊 Everglades</span>
         </div>
@@ -526,9 +578,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="party" data-lat="25.7711" data-lng="-80.1395" data-price="169" data-pax="100" data-pl="budget" onclick="highlightPin(3)">
+      <div class="op-card" data-zone="miami-beach" data-cat="party" data-lat="25.7711" data-lng="-80.1395" data-price="169" data-pax="100" data-pl="budget" onclick="highlightPin(3)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/2Hn6r2JwTdSehD9tStzj" alt="Ocean Force Adventures – Marina Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/2Hn6r2JwTdSehD9tStzj" alt="Ocean Force Adventures – Marina Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">⚓ Marina</span>
         </div>
@@ -555,9 +608,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="cruise" data-lat="25.7762" data-lng="-80.2159" data-price="249" data-pax="10" data-pl="mid" onclick="highlightPin(4)">
+      <div class="op-card" data-zone="downtown" data-cat="cruise" data-lat="25.7762" data-lng="-80.2159" data-price="249" data-pax="10" data-pl="mid" onclick="highlightPin(4)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/V5MiP3fhRCpxBjvOwCrA" alt="Yaju Boat Tours – Standard Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/V5MiP3fhRCpxBjvOwCrA" alt="Yaju Boat Tours – Standard Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">🚢 Boat Tour</span>
         </div>
@@ -584,9 +638,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="cruise" data-lat="25.7753" data-lng="-80.2016" data-price="260" data-pax="8" data-pl="mid" onclick="highlightPin(5)">
+      <div class="op-card" data-zone="miami-river" data-cat="cruise" data-lat="25.7753" data-lng="-80.2016" data-price="260" data-pax="8" data-pl="mid" onclick="highlightPin(5)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qlH56wPZSn2vMKN6zdUn" alt="Bruschi Boat Rental – Small Boat Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qlH56wPZSn2vMKN6zdUn" alt="Bruschi Boat Rental – Small Boat Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">💰 Best Rate</span>
         </div>
@@ -613,9 +668,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="watersports" data-lat="25.765" data-lng="-80.135" data-price="315" data-pax="2" data-pl="mid" onclick="highlightPin(6)">
+      <div class="op-card" data-zone="miami-beach" data-cat="watersports" data-lat="25.765" data-lng="-80.135" data-price="315" data-pax="2" data-pl="mid" onclick="highlightPin(6)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qbL1z09LTIiUXCAmdmwH" alt="Aquarius Boat Rental – Boating Lesson Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qbL1z09LTIiUXCAmdmwH" alt="Aquarius Boat Rental – Boating Lesson Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">🎓 Lesson</span>
         </div>
@@ -642,9 +698,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="party" data-lat="25.7748" data-lng="-80.2019" data-price="349" data-pax="10" data-pl="mid" onclick="highlightPin(7)">
+      <div class="op-card" data-zone="miami-river" data-cat="party" data-lat="25.7748" data-lng="-80.2019" data-price="349" data-pax="10" data-pl="mid" onclick="highlightPin(7)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/yfXcCkP3SjaryQrhVi74" alt="Altamar Trade – Miami River Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/yfXcCkP3SjaryQrhVi74" alt="Altamar Trade – Miami River Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">⚓ River</span>
         </div>
@@ -671,9 +728,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="sunset" data-lat="25.7762" data-lng="-80.216" data-price="349" data-pax="12" data-pl="mid" onclick="highlightPin(8)">
+      <div class="op-card" data-zone="downtown" data-cat="sunset" data-lat="25.7762" data-lng="-80.216" data-price="349" data-pax="12" data-pl="mid" onclick="highlightPin(8)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/maPhcClMS7ee72HEp23M" alt="Yaju Boat Tours – Premium Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/maPhcClMS7ee72HEp23M" alt="Yaju Boat Tours – Premium Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">⭐ Premium Tour</span>
         </div>
@@ -700,9 +758,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="cruise" data-lat="25.7751" data-lng="-80.2014" data-price="550" data-pax="8" data-pl="mid" onclick="highlightPin(9)">
+      <div class="op-card" data-zone="miami-river" data-cat="cruise" data-lat="25.7751" data-lng="-80.2014" data-price="550" data-pax="8" data-pl="mid" onclick="highlightPin(9)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qGF2J9DjSnSyRIoyiVDF" alt="Bruschi Boat Rental Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qGF2J9DjSnSyRIoyiVDF" alt="Bruschi Boat Rental Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">⛵ Miami River</span>
         </div>
@@ -729,9 +788,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="party" data-lat="25.7796" data-lng="-80.2243" data-price="600" data-pax="13" data-pl="mid" onclick="highlightPin(10)">
+      <div class="op-card" data-zone="miami-river" data-cat="party" data-lat="25.7796" data-lng="-80.2243" data-price="600" data-pax="13" data-pl="mid" onclick="highlightPin(10)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/JZZbvFywTmWTT5a3wRUr" alt="100 Miami – Premium Charter Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/JZZbvFywTmWTT5a3wRUr" alt="100 Miami – Premium Charter Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">🥂 Premium</span>
         </div>
@@ -758,9 +818,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="watersports" data-lat="25.7711" data-lng="-80.1395" data-price="610" data-pax="8" data-pl="mid" onclick="highlightPin(11)">
+      <div class="op-card" data-zone="miami-beach" data-cat="watersports" data-lat="25.7711" data-lng="-80.1395" data-price="610" data-pax="8" data-pl="mid" onclick="highlightPin(11)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sxiFcP9QbGr2G9EIry9s" alt="Aquarius Boat Rental – Miami Beach Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sxiFcP9QbGr2G9EIry9s" alt="Aquarius Boat Rental – Miami Beach Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">⛵ Boat Rental</span>
         </div>
@@ -787,9 +848,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="sunset" data-lat="25.8013" data-lng="-80.2383" data-price="675" data-pax="12" data-pl="mid" onclick="highlightPin(12)">
+      <div class="op-card" data-zone="downtown" data-cat="sunset" data-lat="25.8013" data-lng="-80.2383" data-price="675" data-pax="12" data-pl="mid" onclick="highlightPin(12)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/IYvk4KtYSNmJz8Db2n22" alt="Horizon Yacht Rentals Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/IYvk4KtYSNmJz8Db2n22" alt="Horizon Yacht Rentals Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">🌅 Horizon</span>
         </div>
@@ -816,9 +878,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="party" data-lat="25.7879" data-lng="-80.1879" data-price="700" data-pax="13" data-pl="premium" onclick="highlightPin(13)">
+      <div class="op-card" data-zone="downtown" data-cat="party" data-lat="25.7879" data-lng="-80.1879" data-price="700" data-pax="13" data-pl="premium" onclick="highlightPin(13)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/xig8U79oSQOefxbu7snO/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max" alt="100 Miami – Bayshore Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/xig8U79oSQOefxbu7snO/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max" alt="100 Miami – Bayshore Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">🔥 Most Booked</span>
         </div>
@@ -845,9 +908,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="watersports" data-lat="25.7709" data-lng="-80.1393" data-price="795" data-pax="6" data-pl="premium" onclick="highlightPin(14)">
+      <div class="op-card" data-zone="miami-beach" data-cat="watersports" data-lat="25.7709" data-lng="-80.1393" data-price="795" data-pax="6" data-pl="premium" onclick="highlightPin(14)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/kVN7dZWeTCiJ9rMhWrFX" alt="Ocean Force Adventures – Private Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/kVN7dZWeTCiJ9rMhWrFX" alt="Ocean Force Adventures – Private Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">💪 Adventure</span>
         </div>
@@ -874,9 +938,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="luxury" data-lat="25.6893" data-lng="-80.1576" data-price="800" data-pax="12" data-pl="premium" onclick="highlightPin(15)">
+      <div class="op-card" data-zone="key-biscayne" data-cat="luxury" data-lat="25.6893" data-lng="-80.1576" data-price="800" data-pax="12" data-pl="premium" onclick="highlightPin(15)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CQH4Q4dSQ222BdUzxK4Y" alt="The Real Yacht Experience II Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CQH4Q4dSQ222BdUzxK4Y" alt="The Real Yacht Experience II Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">🎉 Private</span>
         </div>
@@ -903,9 +968,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="cruise" data-lat="25.8087" data-lng="-80.1232" data-price="900" data-pax="13" data-pl="premium" onclick="highlightPin(16)">
+      <div class="op-card" data-zone="miami-beach" data-cat="cruise" data-lat="25.8087" data-lng="-80.1232" data-price="900" data-pax="13" data-pl="premium" onclick="highlightPin(16)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/F3mEHY8LQQqcegaKMimf" alt="100 Miami – Collins Ave Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/F3mEHY8LQQqcegaKMimf" alt="100 Miami – Collins Ave Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">🏖️ Collins</span>
         </div>
@@ -932,9 +998,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="luxury" data-lat="25.6895" data-lng="-80.1574" data-price="900" data-pax="12" data-pl="premium" onclick="highlightPin(17)">
+      <div class="op-card" data-zone="key-biscayne" data-cat="luxury" data-lat="25.6895" data-lng="-80.1574" data-price="900" data-pax="12" data-pl="premium" onclick="highlightPin(17)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/y6cf74yfQjyqXIzf0Smu" alt="The Real Yacht Experience Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/y6cf74yfQjyqXIzf0Smu" alt="The Real Yacht Experience Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">⛵ Yacht</span>
         </div>
@@ -961,9 +1028,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="nature" data-lat="25.7897" data-lng="-80.1304" data-price="980" data-pax="8" data-pl="premium" onclick="highlightPin(18)">
+      <div class="op-card" data-zone="miami-beach" data-cat="nature" data-lat="25.7897" data-lng="-80.1304" data-price="980" data-pax="8" data-pl="premium" onclick="highlightPin(18)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rwIn7wiRQDeaU8pineua" alt="Open Miami – Private Everglades Tour Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rwIn7wiRQDeaU8pineua" alt="Open Miami – Private Everglades Tour Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">🐊 Private</span>
         </div>
@@ -990,9 +1058,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="luxury" data-lat="25.7794" data-lng="-80.2241" data-price="1200" data-pax="12" data-pl="premium" onclick="highlightPin(19)">
+      <div class="op-card" data-zone="miami-river" data-cat="luxury" data-lat="25.7794" data-lng="-80.2241" data-price="1200" data-pax="12" data-pl="premium" onclick="highlightPin(19)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hcNurBdvQXa5l1Z0FFX0" alt="100 Miami – Luxury Boat Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hcNurBdvQXa5l1Z0FFX0" alt="100 Miami – Luxury Boat Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">💎 Luxury</span>
         </div>
@@ -1019,9 +1088,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="luxury" data-lat="25.77" data-lng="-80.18" data-price="1250" data-pax="12" data-pl="premium" onclick="highlightPin(20)">
+      <div class="op-card" data-zone="downtown" data-cat="luxury" data-lat="25.77" data-lng="-80.18" data-price="1250" data-pax="12" data-pl="premium" onclick="highlightPin(20)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/dwkmTqVQmeWXpmuOGR8w" alt="Aura Yacht Experience Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/dwkmTqVQmeWXpmuOGR8w" alt="Aura Yacht Experience Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">✨ Aura</span>
         </div>
@@ -1048,9 +1118,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="corporate" data-lat="25.774" data-lng="-80.203" data-price="1300" data-pax="13" data-pl="premium" onclick="highlightPin(21)">
+      <div class="op-card" data-zone="miami-river" data-cat="corporate" data-lat="25.774" data-lng="-80.203" data-price="1300" data-pax="13" data-pl="premium" onclick="highlightPin(21)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/7j1kEXj9QgS9xMNqHhcK" alt="100 Miami – NW River Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/7j1kEXj9QgS9xMNqHhcK" alt="100 Miami – NW River Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">⚓ NW River</span>
         </div>
@@ -1077,9 +1148,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="luxury" data-lat="25.8011" data-lng="-80.2381" data-price="2000" data-pax="20" data-pl="luxury" onclick="highlightPin(22)">
+      <div class="op-card" data-zone="miami-river" data-cat="luxury" data-lat="25.8011" data-lng="-80.2381" data-price="2000" data-pax="20" data-pl="luxury" onclick="highlightPin(22)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/xig8U79oSQOefxbu7snO/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max" alt="100 Miami – NW 21st Mega Yacht Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/xig8U79oSQOefxbu7snO/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max" alt="100 Miami – NW 21st Mega Yacht Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">🛳️ Mega Yacht</span>
         </div>
@@ -1106,9 +1178,10 @@
           </div>
         </div>
       </div>
-      <div class="op-card" data-cat="luxury" data-lat="25.7865" data-lng="-80.2213" data-price="3800" data-pax="13" data-pl="luxury" onclick="highlightPin(23)">
+      <div class="op-card" data-zone="miami-river" data-cat="luxury" data-lat="25.7865" data-lng="-80.2213" data-price="3800" data-pax="13" data-pl="luxury" onclick="highlightPin(23)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sN256R2zRCqELCHMgjO1" alt="100 Miami – Luxury Boat Rental Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <label class="compare-chk-wrap" onclick="event.stopPropagation()" title="Compare"><input type="checkbox" class="compare-chk" onchange="toggleCompare(this)"><span class="compare-chk-icon">☐</span></label>
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sN256R2zRCqELCHMgjO1" alt="100 Miami – Luxury Boat Rental Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openLightbox(this.src,this.alt)" style="cursor:zoom-in">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
           <span class="op-best-badge">💎 Ultra Luxury</span>
         </div>
@@ -1348,6 +1421,11 @@
       <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Where can I rent a boat in Miami?<span class="faq-chev">▼</span></div><div class="faq-a">Main pickup locations: Miami River, Downtown Bayside, Miami Beach Marina, and Key Biscayne. See the interactive map on this page.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I rent a boat without a captain?<span class="faq-chev">▼</span></div><div class="faq-a">Yes — several operators offer self-drive (bare boat) rentals for qualified boaters. Captained charters are available from most operators if you prefer.</div></div>
       <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What's the best boat experience in Miami?<span class="faq-chev">▼</span></div><div class="faq-a">For value: Bruschi Small Boat from $260. Most booked: 100 Miami Bayshore (5.0★, 377 reviews). Best tour: Miami Aqua Tours from $5. Luxury: 100 Miami NW 21st Mega Yacht.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Is free cancellation available for Miami boat rentals?<span class="faq-chev">▼</span></div><div class="faq-a">Most operators on this page offer free cancellation up to 24–48 hours before your booking. Check each operator's FareHarbor listing for exact policy.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What is the best time of year to rent a boat in Miami?<span class="faq-chev">▼</span></div><div class="faq-a">Miami boating is great year-round. November–April offers calm seas and pleasant weather (low 70s°F). Summer (June–September) is warmer but can have afternoon storms — book morning slots.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Can I rent a boat for a sunset cruise in Miami?<span class="faq-chev">▼</span></div><div class="faq-a">Yes. Use the Sunset filter above to see dedicated sunset cruise operators. Horizon Yacht Rentals, Aquarius Miami Beach, and Real Yacht Experience all offer sunset packages starting around $349.</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">What size boat do I need for my group?<span class="faq-chev">▼</span></div><div class="faq-a">Use the Group Size filter above. 1–6 people: small boats from $260 work well. 7–12: mid-size yachts ($349–$900). 13–20: larger charters ($600–$1,500). 21+: mega yachts or event boats ($900–$3,800).</div></div>
+      <div class="faq-item"><div class="faq-q" onclick="this.parentElement.classList.toggle('open')">Are there family-friendly boat rentals in Miami?<span class="faq-chev">▼</span></div><div class="faq-a">Yes. Miami Aqua Tours ($5), Miami Tour Company Everglades ($73), and Altamar Trade – Miami River ($349) are all family-friendly with life jackets and calm bay routes.</div></div>
     </div>
   </div>
 
@@ -1679,6 +1757,235 @@
   },{passive:true});
 })();
 
+/* ── SEARCH FILTER ── */
+window.filterBySearch = (function(){
+  var timer;
+  return function(val){
+    clearTimeout(timer);
+    timer = setTimeout(function(){
+      var q = val.toLowerCase().trim();
+      window._searchQuery = q;
+      applyAllFilters();
+    }, 180);
+  };
+})();
+
+/* ── ZONE FILTER ── */
+var zoneFilter = 'all';
+document.querySelectorAll('.ftab[data-zone-filter]').forEach(function(t){
+  t.addEventListener('click', function(){
+    document.querySelectorAll('.ftab[data-zone-filter]').forEach(function(x){x.classList.remove('active');});
+    t.classList.add('active');
+    zoneFilter = t.dataset.zoneFilter;
+    applyAllFilters();
+    if(window.dataLayer) window.dataLayer.push({event:'zone_filter',zone:zoneFilter});
+  });
+});
+
+/* ── MASTER FILTER (replaces applyFilters, adds search+zone) ── */
+function applyAllFilters(){
+  var cards = document.querySelectorAll('#cardsGrid .op-card');
+  var visible = 0;
+  var paxRanges = {'all':null,'1-6':[1,6],'7-12':[7,12],'13-20':[13,20],'21+':[21,999]};
+  var pr = paxRanges[window._paxFilter||'all'];
+  var q = window._searchQuery||'';
+  cards.forEach(function(c){
+    var pax = parseInt(c.dataset.pax)||0;
+    var pl = c.dataset.pl||'';
+    var cat = c.dataset.cat||'';
+    var zone = c.dataset.zone||'';
+    var nameText = ((c.querySelector('.op-name')||{}).textContent||'').toLowerCase();
+    var addrText = ((c.querySelector('.op-addr')||{}).textContent||'').toLowerCase();
+    var bftText = ((c.querySelector('.best-for-tags')||{}).textContent||'').toLowerCase();
+    var paxOk = !pr || (pax >= pr[0] && pax <= pr[1]);
+    var plOk = (window._plFilter||'all') === 'all' || pl === (window._plFilter||'all');
+    var catOk = (window._catFilter||'all') === 'all' || cat === (window._catFilter||'all');
+    var zoneOk = zoneFilter === 'all' || zone === zoneFilter;
+    var searchOk = !q || nameText.includes(q) || addrText.includes(q) || bftText.includes(q);
+    var show = paxOk && plOk && catOk && zoneOk && searchOk;
+    c.classList.toggle('hidden', !show);
+    if(show) visible++;
+  });
+  var nr = document.getElementById('noResults');
+  if(nr) nr.classList.toggle('show', visible === 0);
+  renderFilterPills();
+}
+
+/* ── ACTIVE FILTER PILLS ── */
+function renderFilterPills(){
+  var container = document.getElementById('filterPills');
+  if(!container) return;
+  var pills = [];
+  var pf = window._paxFilter||'all';
+  var plf = window._plFilter||'all';
+  var cf = window._catFilter||'all';
+  var zf = zoneFilter;
+  var sq = window._searchQuery||'';
+  var paxLabels = {'1-6':'1–6 people','7-12':'7–12 people','13-20':'13–20 people','21+':'21+ people'};
+  var plLabels = {'budget':'Under $260','mid':'$260–$699','premium':'$700–$1,499','luxury':'$1,500+'};
+  var catLabels = {'cruise':'Sightseeing','sunset':'Sunset','party':'Party & Events','luxury':'Luxury/Yacht','nature':'Nature','watersports':'Water Sports','romantic':'Romantic','corporate':'Corporate'};
+  var zoneLabels = {'downtown':'Downtown','miami-beach':'Miami Beach','miami-river':'Miami River','key-biscayne':'Key Biscayne'};
+  if(pf!=='all') pills.push({label:'👥 '+paxLabels[pf], clear:function(){document.querySelector('.ftab[data-pax="all"]').click();}});
+  if(plf!=='all') pills.push({label:'💵 '+plLabels[plf], clear:function(){document.querySelector('.ftab[data-pl="all"]').click();}});
+  if(cf!=='all') pills.push({label:catLabels[cf]||cf, clear:function(){document.querySelector('.ftab[data-cat-filter="all"]').click();}});
+  if(zf!=='all') pills.push({label:'📍 '+zoneLabels[zf]||zf, clear:function(){document.querySelector('.ftab[data-zone-filter="all"]').click();}});
+  if(sq) pills.push({label:'🔍 "'+sq+'"', clear:function(){var s=document.getElementById('searchBox');if(s){s.value='';window._searchQuery='';applyAllFilters();}}});
+  container.innerHTML = '';
+  pills.forEach(function(p){
+    var el = document.createElement('span');
+    el.className = 'filter-pill';
+    el.innerHTML = p.label + ' <span class="filter-pill-x">✕</span>';
+    el.onclick = p.clear;
+    container.appendChild(el);
+  });
+}
+
+/* ── Patch existing filter handlers to use shared state + applyAllFilters ── */
+(function(){
+  // Override paxFilter clicks
+  document.querySelectorAll('.ftab[data-pax]').forEach(function(t){
+    t.addEventListener('click', function(){window._paxFilter=t.dataset.pax;applyAllFilters();});
+  });
+  document.querySelectorAll('.ftab[data-pl]').forEach(function(t){
+    t.addEventListener('click', function(){window._plFilter=t.dataset.pl;applyAllFilters();});
+  });
+  document.querySelectorAll('.ftab[data-cat-filter]').forEach(function(t){
+    t.addEventListener('click', function(){window._catFilter=t.dataset.catFilter;applyAllFilters();});
+  });
+  window._paxFilter='all'; window._plFilter='all'; window._catFilter='all'; window._searchQuery='';
+})();
+
+/* ── COMPARE MODE ── */
+var compareSet = [];
+window.toggleCompare = function(chk){
+  var card = chk.closest('.op-card');
+  var name = (card.querySelector('.op-name')||{}).textContent||'?';
+  var price = (card.querySelector('.op-price-num')||{}).textContent||'';
+  var rating = (card.querySelector('.op-rating-num')||{}).textContent||'';
+  var pax = card.dataset.pax||'';
+  var bookEl = card.querySelector('.op-book');
+  var bookUrl = bookEl ? bookEl.href : '#';
+  if(chk.checked){
+    if(compareSet.length >= 3){chk.checked=false;return;}
+    compareSet.push({name,price,rating,pax,bookUrl,card});
+  } else {
+    compareSet = compareSet.filter(function(x){return x.card!==card;});
+  }
+  renderComparePanel();
+};
+function renderComparePanel(){
+  var panel = document.getElementById('comparePanel');
+  var slots = document.getElementById('compareSlots');
+  if(!panel||!slots) return;
+  panel.style.display = compareSet.length>0?'block':'none';
+  slots.innerHTML = '';
+  compareSet.forEach(function(op,i){
+    var chip = document.createElement('div');
+    chip.className='cmp-slot';
+    chip.innerHTML = op.name + ' <span class="cmp-slot-x" data-i="'+i+'">✕</span>';
+    chip.querySelector('.cmp-slot-x').onclick = function(){
+      var idx = +this.dataset.i;
+      var removedCard = compareSet[idx].card;
+      compareSet.splice(idx,1);
+      var chk = removedCard.querySelector('.compare-chk');
+      if(chk) chk.checked = false;
+      var icon = removedCard.querySelector('.compare-chk-icon');
+      if(icon) icon.textContent='☐';
+      renderComparePanel();
+    };
+    slots.appendChild(chip);
+  });
+}
+window.clearCompare = function(){
+  compareSet.forEach(function(op){
+    var chk = op.card.querySelector('.compare-chk');
+    if(chk) chk.checked=false;
+    var icon = op.card.querySelector('.compare-chk-icon');
+    if(icon) icon.textContent='☐';
+  });
+  compareSet=[];
+  renderComparePanel();
+};
+window.openCompareModal = function(){
+  if(compareSet.length<2) return;
+  var wrap = document.getElementById('compareTableWrap');
+  var rows = ['<table style="width:100%;border-collapse:collapse;font-size:.78rem;">',
+    '<thead><tr><th style="text-align:left;padding:8px 10px;color:var(--muted);border-bottom:1px solid var(--border);">Feature</th>'];
+  compareSet.forEach(function(op){
+    rows.push('<th style="text-align:center;padding:8px 10px;color:#fff;border-bottom:1px solid var(--border);">'+op.name+'</th>');
+  });
+  rows.push('</tr></thead><tbody>');
+  var rowStyle = 'border-bottom:1px solid rgba(255,255,255,.06)';
+  var cell = 'style="text-align:center;padding:8px 10px;"';
+  rows.push('<tr style="'+rowStyle+'"><td style="padding:8px 10px;color:var(--muted);">Price from</td>'+compareSet.map(function(op){return '<td '+cell+' style="text-align:center;padding:8px 10px;color:var(--teal);font-weight:700;">'+op.price+'</td>';}).join('')+'</tr>');
+  rows.push('<tr style="'+rowStyle+'"><td style="padding:8px 10px;color:var(--muted);">Rating</td>'+compareSet.map(function(op){return '<td '+cell+'>⭐ '+op.rating+'</td>';}).join('')+'</tr>');
+  rows.push('<tr style="'+rowStyle+'"><td style="padding:8px 10px;color:var(--muted);">Max pax</td>'+compareSet.map(function(op){return '<td '+cell+'>'+op.pax+'</td>';}).join('')+'</tr>');
+  rows.push('<tr><td></td>'+compareSet.map(function(op){return '<td '+cell+'><a href="'+op.bookUrl+'" target="_blank" rel="noopener" style="background:var(--teal);color:var(--dark);padding:6px 14px;border-radius:8px;font-weight:700;font-size:.72rem;text-decoration:none;display:inline-block;">Book →</a></td>';}).join('')+'</tr>');
+  rows.push('</tbody></table>');
+  wrap.innerHTML = rows.join('');
+  document.getElementById('compareModal').style.display='block';
+};
+window.closeCompareModal = function(){document.getElementById('compareModal').style.display='none';};
+
+/* ── LIGHTBOX ── */
+window.openLightbox = function(src,alt){
+  var lb=document.getElementById('lightbox');
+  var img=document.getElementById('lightboxImg');
+  var cap=document.getElementById('lightboxCaption');
+  if(!lb||!img) return;
+  img.src=src; img.alt=alt||'';
+  if(cap) cap.textContent=alt||'';
+  lb.classList.add('open');
+  document.body.style.overflow='hidden';
+};
+window.closeLightbox = function(){
+  var lb=document.getElementById('lightbox');
+  if(lb) lb.classList.remove('open');
+  document.body.style.overflow='';
+};
+document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeLightbox();closeCompareModal();closeCalc();}});
+
+/* ── PRICE CALCULATOR ── */
+window.openCalc = function(){document.getElementById('calcModal').style.display='block';updateCalc();};
+window.closeCalc = function(){document.getElementById('calcModal').style.display='none';};
+window.updateCalc = function(){
+  var pax = parseInt(document.getElementById('calcPax').value)||1;
+  var budget = parseFloat(document.getElementById('calcBudget').value)||Infinity;
+  var results = document.getElementById('calcResults');
+  if(!results) return;
+  var cards = Array.from(document.querySelectorAll('#cardsGrid .op-card'));
+  var rows = cards.map(function(c){
+    var name=(c.querySelector('.op-name')||{}).textContent||'?';
+    var price=parseFloat(c.dataset.price)||0;
+    var maxPax=parseInt(c.dataset.pax)||1;
+    var bookEl=c.querySelector('.op-book');
+    var bookUrl=bookEl?bookEl.href:'#';
+    var pp = maxPax>0?Math.round(price/maxPax*10)/10:price;
+    var fits = pax<=maxPax;
+    var inBudget = price<=budget;
+    return {name,price,pp,fits,inBudget,bookUrl};
+  }).filter(function(r){return r.fits;}).sort(function(a,b){return a.price-b.price;}).slice(0,8);
+  if(!rows.length){results.innerHTML='<p style="color:var(--muted);text-align:center;">No operators fit '+pax+' people. Try a higher group size filter.</p>';return;}
+  results.innerHTML=rows.map(function(r){
+    var over=!r.inBudget?' calc-row-over':'';
+    var ppNote=r.pp>0?'~$'+r.pp+'/person':'';
+    return '<div class="calc-row'+over+'"><span class="calc-row-name">'+r.name+'</span><span class="calc-row-pp">'+ppNote+'</span><span class="calc-row-total">$'+r.price+'</span><a href="'+r.bookUrl+'" target="_blank" rel="noopener" style="background:var(--teal);color:var(--dark);padding:5px 12px;border-radius:7px;font-weight:700;font-size:.7rem;text-decoration:none;white-space:nowrap;">Book</a></div>';
+  }).join('');
+};
+
+/* ── URGENCY COUNTER ── */
+(function(){
+  var el=document.getElementById('urgencyCount');
+  if(!el) return;
+  function randomBetween(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+  function update(){
+    var n=randomBetween(8,23);
+    el.textContent='🔥 '+n+' viewing now';
+  }
+  update();
+  setInterval(update,18000);
+})();
+
 /* ── AVAILABLE TODAY BADGE — top 5 operators ── */
 (function(){
   // Add green "Available Today" to the most popular operators by data-card index
@@ -1704,5 +2011,52 @@
   });
 })();
 </script>
+
+<!-- COMPARE PANEL -->
+<div id="comparePanel" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9999;background:#0a1929;border-top:2px solid var(--teal);padding:12px 20px;box-shadow:0 -4px 24px rgba(0,0,0,.5);">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:12px;flex-wrap:wrap;">
+    <span style="font-size:.78rem;font-weight:700;color:var(--teal);white-space:nowrap;">⚖️ Comparing:</span>
+    <div id="compareSlots" style="display:flex;gap:8px;flex-wrap:wrap;flex:1;"></div>
+    <button onclick="openCompareModal()" style="background:var(--teal);color:var(--dark);border:none;padding:8px 18px;border-radius:8px;font-weight:700;font-size:.78rem;cursor:pointer;font-family:Montserrat,sans-serif;white-space:nowrap;">Compare →</button>
+    <button onclick="clearCompare()" style="background:transparent;color:var(--muted);border:1.5px solid var(--border);padding:8px 12px;border-radius:8px;font-size:.78rem;cursor:pointer;font-family:Montserrat,sans-serif;">Clear</button>
+  </div>
+</div>
+
+<!-- COMPARE MODAL -->
+<div id="compareModal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.85);overflow-y:auto;padding:24px 16px;">
+  <div style="max-width:900px;margin:0 auto;background:#0a1929;border-radius:16px;border:1px solid var(--border);overflow:hidden;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);">
+      <h3 style="margin:0;font-size:1rem;">Side-by-Side Comparison</h3>
+      <button onclick="closeCompareModal()" style="background:transparent;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;line-height:1;">✕</button>
+    </div>
+    <div id="compareTableWrap" style="overflow-x:auto;padding:16px;"></div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div id="lightbox" onclick="closeLightbox()" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.92);cursor:zoom-out;align-items:center;justify-content:center;padding:20px;">
+  <button onclick="closeLightbox()" style="position:absolute;top:16px;right:20px;background:transparent;border:none;color:#fff;font-size:2rem;cursor:pointer;line-height:1;">✕</button>
+  <img id="lightboxImg" src="" alt="" style="max-width:100%;max-height:90vh;border-radius:12px;object-fit:contain;">
+  <div id="lightboxCaption" style="position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#ccc;font-size:.82rem;padding:0 20px;"></div>
+</div>
+
+<!-- PRICE CALCULATOR MODAL -->
+<div id="calcModal" style="display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.85);overflow-y:auto;padding:24px 16px;">
+  <div style="max-width:600px;margin:0 auto;background:#0a1929;border-radius:16px;border:1px solid var(--border);overflow:hidden;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid var(--border);">
+      <h3 style="margin:0;font-size:1rem;">🧮 Price Calculator</h3>
+      <button onclick="closeCalc()" style="background:transparent;border:none;color:var(--muted);font-size:1.4rem;cursor:pointer;line-height:1;">✕</button>
+    </div>
+    <div style="padding:20px;">
+      <label style="font-size:.78rem;font-weight:700;color:var(--muted);display:block;margin-bottom:6px;">How many people?</label>
+      <input id="calcPax" type="number" min="1" max="200" value="6" oninput="updateCalc()"
+        style="width:100%;box-sizing:border-box;background:#0f2038;border:1.5px solid var(--border);color:#fff;border-radius:10px;padding:10px 14px;font-size:1rem;font-family:Montserrat,sans-serif;outline:none;margin-bottom:16px;">
+      <label style="font-size:.78rem;font-weight:700;color:var(--muted);display:block;margin-bottom:6px;">Your budget (total, optional)</label>
+      <input id="calcBudget" type="number" min="0" placeholder="e.g. 500" oninput="updateCalc()"
+        style="width:100%;box-sizing:border-box;background:#0f2038;border:1.5px solid var(--border);color:#fff;border-radius:10px;padding:10px 14px;font-size:1rem;font-family:Montserrat,sans-serif;outline:none;margin-bottom:20px;">
+      <div id="calcResults" style="display:flex;flex-direction:column;gap:8px;"></div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
