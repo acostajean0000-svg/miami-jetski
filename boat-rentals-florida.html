@@ -191,6 +191,37 @@
     .zone-tab:hover{border-color:#00d4c8;color:#00d4c8;}
     .zone-tab.active{background:#00d4c8;border-color:#00d4c8;color:#081525;}
 
+
+    /* SEARCH BOX */
+    #flSearchBox:focus{box-shadow:0 0 0 3px rgba(0,212,200,.15);border-color:var(--teal)!important;}
+    /* BUDGET TABS */
+    .budget-tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px;}
+    .budget-tab{background:rgba(255,255,255,.04);border:1.5px solid rgba(0,212,200,.2);border-radius:50px;padding:6px 14px;font-size:.75rem;font-weight:700;color:#a0bfd0;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:'Montserrat',sans-serif;}
+    .budget-tab:hover{border-color:#00d4c8;color:#00d4c8;}
+    .budget-tab.active{background:#00d4c8;border-color:#00d4c8;color:#081525;}
+    /* FILTER PILLS */
+    #flFilterPills{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;min-height:0;}
+    .fl-pill{display:inline-flex;align-items:center;gap:5px;background:rgba(0,212,200,.12);border:1px solid rgba(0,212,200,.3);color:#00d4c8;font-size:.68rem;font-weight:700;padding:3px 10px 3px 8px;border-radius:50px;cursor:pointer;font-family:'Montserrat',sans-serif;}
+    .fl-pill:hover{background:rgba(0,212,200,.2);}
+    /* LIGHTBOX */
+    #flLightbox{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.92);cursor:zoom-out;align-items:center;justify-content:center;padding:20px;}
+    #flLightbox.open{display:flex!important;}
+    /* CALC */
+    #flCalcModal{display:none;position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.85);overflow-y:auto;padding:24px 16px;}
+    .fl-calc-row{background:#0f2038;border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:10px 14px;display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:8px;}
+    .fl-calc-name{font-size:.78rem;font-weight:700;color:#fff;flex:1;}
+    .fl-calc-price{font-size:.85rem;font-weight:700;color:#00d4c8;white-space:nowrap;}
+    .fl-calc-over{opacity:.4;}
+    /* FAQ */
+    .fl-faq-section{max-width:1200px;margin:0 auto;padding:40px 20px 60px;}
+    .fl-faq-section h2{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:800;margin-bottom:20px;}
+    .fl-faq-item{border:1px solid rgba(255,255,255,.08);border-radius:12px;margin-bottom:10px;overflow:hidden;}
+    .fl-faq-q{padding:14px 16px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;font-weight:600;font-size:.88rem;}
+    .fl-faq-q:hover{color:#00d4c8;}
+    .fl-faq-chev{transition:transform .2s;font-size:.75rem;color:#6b8fa8;}
+    .fl-faq-a{display:none;padding:0 16px 14px;font-size:.84rem;color:#8baabf;line-height:1.6;}
+    .fl-faq-item.open .fl-faq-a{display:block;}
+    .fl-faq-item.open .fl-faq-chev{transform:rotate(180deg);}
   </style>
 </style>
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
@@ -199,6 +230,9 @@
   <meta name="twitter:site" content="@MiamiJetSkiFL">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://miamijetskiboatrentals.com/og-image.png">
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"WebPage","name":"Boat Rentals Florida","speakable":{"@type":"SpeakableSpecification","cssSelector":["h1",".page-hero p",".fl-faq-q"]},"url":"https://miamijetskiboatrentals.com/boat-rentals-florida.html"}
+</script>
 </head>
 <body>
 <nav class="nav">
@@ -228,6 +262,7 @@
       <div><div class="page-stat-num">69</div><div class="page-stat-label">Operators</div></div>
       <div><div class="page-stat-num">$5</div><div class="page-stat-label">Starting From</div></div>
       <div><div class="page-stat-num">FL</div><div class="page-stat-label">Statewide</div></div>
+      <div><div id="flUrgency" style="font-family:Montserrat,sans-serif;font-size:1rem;font-weight:700;color:#00d4c8;"></div><div class="page-stat-label">Viewing now</div></div>
     </div>
   </div>
 </section>
@@ -240,6 +275,20 @@
   <span class="sort-label">Sorted by price: low to high</span>
 </div>
 
+<div style="margin-bottom:12px;position:relative;">
+    <span style="position:absolute;left:14px;top:50%;transform:translateY(-50%);color:#6b8fa8;font-size:.9rem;pointer-events:none;">🔍</span>
+    <input id="flSearchBox" type="text" placeholder="Search operator, city, zone…" oninput="flApplyFilters()"
+      style="width:100%;box-sizing:border-box;background:rgba(15,32,56,.9);border:1.5px solid rgba(255,255,255,.08);color:#fff;border-radius:12px;padding:10px 14px 10px 36px;font-size:.82rem;font-family:Montserrat,sans-serif;outline:none;transition:border-color .2s;">
+  </div>
+  <div class="budget-tabs">
+    <button class="budget-tab active" data-budget="all">All prices</button>
+    <button class="budget-tab" data-budget="budget">Under $260</button>
+    <button class="budget-tab" data-budget="mid">$260–$699</button>
+    <button class="budget-tab" data-budget="premium">$700–$1,499</button>
+    <button class="budget-tab" data-budget="luxury">$1,500+</button>
+    <button onclick="openFlCalc()" style="background:rgba(0,212,200,.1);border:1.5px solid #00d4c8;color:#00d4c8;border-radius:50px;padding:6px 14px;font-size:.75rem;font-family:Montserrat,sans-serif;font-weight:700;cursor:pointer;white-space:nowrap;">🧮 Calc</button>
+  </div>
+  <div id="flFilterPills"></div>
 <div class="zone-tabs">
   <button class="zone-tab active" onclick="filterZone('all',this)">🗺️ All Florida</button>
   <button class="zone-tab" onclick="filterZone('miami',this)">🏖️ Miami</button>
@@ -257,7 +306,7 @@
   <div class="cards-grid">
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qGF2J9DjSnSyRIoyiVDF" alt="Bruschi Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qGF2J9DjSnSyRIoyiVDF" alt="Bruschi Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⛵ Miami River</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt1" onclick="event.stopPropagation();toggleFav(this,'bt1')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt1" onclick="event.stopPropagation();toggleCmp(this,'bt1','Bruschi Boat Rental')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/bruschiboatrental/items/482947/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Bruschi Boat Rental',this)" aria-label="Share">🔗</button></div>
@@ -274,7 +323,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qlH56wPZSn2vMKN6zdUn" alt="Bruschi Boat Rental – Small Boat" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qlH56wPZSn2vMKN6zdUn" alt="Bruschi Boat Rental – Small Boat" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">💰 Best Rate</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt2" onclick="event.stopPropagation();toggleFav(this,'bt2')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt2" onclick="event.stopPropagation();toggleCmp(this,'bt2','Bruschi Boat Rental – Small Boat')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/bruschiboatrental/items/536845/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Bruschi Boat Rental – Small Boat',this)" aria-label="Share">🔗</button></div>
@@ -291,7 +340,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/yfXcCkP3SjaryQrhVi74" alt="Altamar Trade – Miami River" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/yfXcCkP3SjaryQrhVi74" alt="Altamar Trade – Miami River" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⚓ River</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt3" onclick="event.stopPropagation();toggleFav(this,'bt3')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt3" onclick="event.stopPropagation();toggleCmp(this,'bt3','Altamar Trade – Miami River')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/altamartrade/items/668710/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Altamar Trade – Miami River',this)" aria-label="Share">🔗</button></div>
@@ -308,7 +357,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hcNurBdvQXa5l1Z0FFX0" alt="100 Miami – Luxury Boat" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hcNurBdvQXa5l1Z0FFX0" alt="100 Miami – Luxury Boat" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">💎 Luxury</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt4" onclick="event.stopPropagation();toggleFav(this,'bt4')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt4" onclick="event.stopPropagation();toggleCmp(this,'bt4','100 Miami – Luxury Boat')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/100miami/items/648184/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','100 Miami – Luxury Boat',this)" aria-label="Share">🔗</button></div>
@@ -325,7 +374,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/JZZbvFywTmWTT5a3wRUr" alt="100 Miami – Premium Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/JZZbvFywTmWTT5a3wRUr" alt="100 Miami – Premium Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🥂 Premium</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt5" onclick="event.stopPropagation();toggleFav(this,'bt5')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt5" onclick="event.stopPropagation();toggleCmp(this,'bt5','100 Miami – Premium Charter')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/100miami/items/648206/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','100 Miami – Premium Charter',this)" aria-label="Share">🔗</button></div>
@@ -342,7 +391,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/dwkmTqVQmeWXpmuOGR8w" alt="Aura Yacht Experience" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/dwkmTqVQmeWXpmuOGR8w" alt="Aura Yacht Experience" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">✨ Aura</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt6" onclick="event.stopPropagation();toggleFav(this,'bt6')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt6" onclick="event.stopPropagation();toggleCmp(this,'bt6','Aura Yacht Experience')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/aura/items/693765/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Aura Yacht Experience',this)" aria-label="Share">🔗</button></div>
@@ -359,7 +408,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/xig8U79oSQOefxbu7snO" alt="100 Miami – NW 21st Mega Yacht" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/xig8U79oSQOefxbu7snO" alt="100 Miami – NW 21st Mega Yacht" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🛳 Mega Yacht</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt7" onclick="event.stopPropagation();toggleFav(this,'bt7')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt7" onclick="event.stopPropagation();toggleCmp(this,'bt7','100 Miami – NW 21st Mega Yacht')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/100miami/items/648310/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','100 Miami – NW 21st Mega Yacht',this)" aria-label="Share">🔗</button></div>
@@ -376,7 +425,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/IYvk4KtYSNmJz8Db2n22" alt="Horizon Yacht Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/IYvk4KtYSNmJz8Db2n22" alt="Horizon Yacht Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌅 Horizon</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt8" onclick="event.stopPropagation();toggleFav(this,'bt8')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt8" onclick="event.stopPropagation();toggleCmp(this,'bt8','Horizon Yacht Rentals')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/horizonyachtrentals/items/661134/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Horizon Yacht Rentals',this)" aria-label="Share">🔗</button></div>
@@ -393,7 +442,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/F3mEHY8LQQqcegaKMimf" alt="100 Miami – Bayshore" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/F3mEHY8LQQqcegaKMimf" alt="100 Miami – Bayshore" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌊 Bayshore</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt9" onclick="event.stopPropagation();toggleFav(this,'bt9')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt9" onclick="event.stopPropagation();toggleCmp(this,'bt9','100 Miami – Bayshore')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/100miami/items/648307/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','100 Miami – Bayshore',this)" aria-label="Share">🔗</button></div>
@@ -410,7 +459,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/F3mEHY8LQQqcegaKMimf" alt="100 Miami – Collins Ave" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/F3mEHY8LQQqcegaKMimf" alt="100 Miami – Collins Ave" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🏖 Collins</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt10" onclick="event.stopPropagation();toggleFav(this,'bt10')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt10" onclick="event.stopPropagation();toggleCmp(this,'bt10','100 Miami – Collins Ave')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/100miami/items/648171/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','100 Miami – Collins Ave',this)" aria-label="Share">🔗</button></div>
@@ -427,7 +476,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/y6cf74yfQjyqXIzf0Smu" alt="The Real Yacht Experience" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/y6cf74yfQjyqXIzf0Smu" alt="The Real Yacht Experience" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⛵ Yacht</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt11" onclick="event.stopPropagation();toggleFav(this,'bt11')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt11" onclick="event.stopPropagation();toggleCmp(this,'bt11','The Real Yacht Experience')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/therealyachtexperience/items/567861/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','The Real Yacht Experience',this)" aria-label="Share">🔗</button></div>
@@ -444,7 +493,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CQH4Q4dSQ222BdUzxK4Y" alt="The Real Yacht Experience II" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CQH4Q4dSQ222BdUzxK4Y" alt="The Real Yacht Experience II" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🎉 Private</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt12" onclick="event.stopPropagation();toggleFav(this,'bt12')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt12" onclick="event.stopPropagation();toggleCmp(this,'bt12','The Real Yacht Experience II')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/therealyachtexperience/items/567859/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','The Real Yacht Experience II',this)" aria-label="Share">🔗</button></div>
@@ -461,7 +510,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/kVN7dZWeTCiJ9rMhWrFX" alt="Ocean Force Adventures – Private" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/kVN7dZWeTCiJ9rMhWrFX" alt="Ocean Force Adventures – Private" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">💪 Adventure</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt13" onclick="event.stopPropagation();toggleFav(this,'bt13')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt13" onclick="event.stopPropagation();toggleCmp(this,'bt13','Ocean Force Adventures – Private')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/oceanforceadventures/items/444868/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Ocean Force Adventures – Private',this)" aria-label="Share">🔗</button></div>
@@ -478,7 +527,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/2Hn6r2JwTdSehD9tStzj" alt="Ocean Force Adventures – Marina" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/2Hn6r2JwTdSehD9tStzj" alt="Ocean Force Adventures – Marina" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⚓ Marina</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt14" onclick="event.stopPropagation();toggleFav(this,'bt14')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt14" onclick="event.stopPropagation();toggleCmp(this,'bt14','Ocean Force Adventures – Marina')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/oceanforceadventures/items/613413/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Ocean Force Adventures – Marina',this)" aria-label="Share">🔗</button></div>
@@ -495,7 +544,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qbL1z09LTIiUXCAmdmwH" alt="Aquarius Boat Rental – Boating Lesson" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qbL1z09LTIiUXCAmdmwH" alt="Aquarius Boat Rental – Boating Lesson" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🎓 Lesson</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt15" onclick="event.stopPropagation();toggleFav(this,'bt15')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt15" onclick="event.stopPropagation();toggleCmp(this,'bt15','Aquarius Boat Rental – Boating Lesson')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/aquariusboatrental/items/501817/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Aquarius Boat Rental – Boating Lesson',this)" aria-label="Share">🔗</button></div>
@@ -512,7 +561,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hkUT6Q5lRnuzaryoOoy1" alt="100 Pro Boats – Hollywood" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hkUT6Q5lRnuzaryoOoy1" alt="100 Pro Boats – Hollywood" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🚤 Pro</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt16" onclick="event.stopPropagation();toggleFav(this,'bt16')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt16" onclick="event.stopPropagation();toggleCmp(this,'bt16','100 Pro Boats – Hollywood')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/100proboats/items/654480/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','100 Pro Boats – Hollywood',this)" aria-label="Share">🔗</button></div>
@@ -529,7 +578,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/uK4IGupRVCl8Uim7MRPs" alt="Bluefoot Pirates" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/uK4IGupRVCl8Uim7MRPs" alt="Bluefoot Pirates" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🏴‍☠️ Pirates</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt17" onclick="event.stopPropagation();toggleFav(this,'bt17')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt17" onclick="event.stopPropagation();toggleCmp(this,'bt17','Bluefoot Pirates')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/bluefootpirates/items/1342/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Bluefoot Pirates',this)" aria-label="Share">🔗</button></div>
@@ -546,7 +595,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/3elI6sZSdCdUYliX7mWg" alt="Sun Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/3elI6sZSdCdUYliX7mWg" alt="Sun Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">☀️ Sunny</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt18" onclick="event.stopPropagation();toggleFav(this,'bt18')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt18" onclick="event.stopPropagation();toggleCmp(this,'bt18','Sun Boat Rental')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sunboatrental/items/543184/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Sun Boat Rental',this)" aria-label="Share">🔗</button></div>
@@ -563,7 +612,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/6CYS9YrTRNaxUlhYYLYw" alt="Dania Beach Adventures" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/6CYS9YrTRNaxUlhYYLYw" alt="Dania Beach Adventures" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌊 Adventure</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt19" onclick="event.stopPropagation();toggleFav(this,'bt19')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt19" onclick="event.stopPropagation();toggleCmp(this,'bt19','Dania Beach Adventures')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/daniabeachadventures/items/659300/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Dania Beach Adventures',this)" aria-label="Share">🔗</button></div>
@@ -580,7 +629,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rqOQ8ZfkTOY67tWumg1A" alt="BYOB Party Pontoon" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rqOQ8ZfkTOY67tWumg1A" alt="BYOB Party Pontoon" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🎉 Party</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt20" onclick="event.stopPropagation();toggleFav(this,'bt20')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt20" onclick="event.stopPropagation();toggleCmp(this,'bt20','BYOB Party Pontoon')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/byobpartypontoon/items/541689/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','BYOB Party Pontoon',this)" aria-label="Share">🔗</button></div>
@@ -597,7 +646,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CbaZ7ht1QSOFxsJEdwMA" alt="Baymingo" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CbaZ7ht1QSOFxsJEdwMA" alt="Baymingo" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🦩 Flamingo</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt21" onclick="event.stopPropagation();toggleFav(this,'bt21')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt21" onclick="event.stopPropagation();toggleCmp(this,'bt21','Baymingo')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/baymingo/items/262061/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Baymingo',this)" aria-label="Share">🔗</button></div>
@@ -614,7 +663,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/8S9gFdBARDaDt3Kgnhus" alt="Fort Lauderdale Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/8S9gFdBARDaDt3Kgnhus" alt="Fort Lauderdale Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⛵ Classic</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt22" onclick="event.stopPropagation();toggleFav(this,'bt22')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt22" onclick="event.stopPropagation();toggleCmp(this,'bt22','Fort Lauderdale Boat Rentals')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/fortlauderdaleboatrentals/items/665233/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Fort Lauderdale Boat Rentals',this)" aria-label="Share">🔗</button></div>
@@ -631,7 +680,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/DVy8CrmkS92HGBzMRNCa" alt="Altamar Trade – Fort Lauderdale" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/DVy8CrmkS92HGBzMRNCa" alt="Altamar Trade – Fort Lauderdale" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⚓ Altamar</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt23" onclick="event.stopPropagation();toggleFav(this,'bt23')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt23" onclick="event.stopPropagation();toggleCmp(this,'bt23','Altamar Trade – Fort Lauderdale')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/altamartrade/items/623380/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Altamar Trade – Fort Lauderdale',this)" aria-label="Share">🔗</button></div>
@@ -648,7 +697,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/89yXGsn6RqShDszSTgQ6" alt="100 Pro Boats – Fort Lauderdale" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/89yXGsn6RqShDszSTgQ6" alt="100 Pro Boats – Fort Lauderdale" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">💰 $99</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt24" onclick="event.stopPropagation();toggleFav(this,'bt24')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt24" onclick="event.stopPropagation();toggleCmp(this,'bt24','100 Pro Boats – Fort Lauderdale')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/100proboats/items/418098/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','100 Pro Boats – Fort Lauderdale',this)" aria-label="Share">🔗</button></div>
@@ -665,7 +714,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/RqefLcVWRHmKmRf0kqmB" alt="Blue H2O Cruisers" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/RqefLcVWRHmKmRf0kqmB" alt="Blue H2O Cruisers" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">💎 VIP</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt25" onclick="event.stopPropagation();toggleFav(this,'bt25')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt25" onclick="event.stopPropagation();toggleCmp(this,'bt25','Blue H2O Cruisers')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/blueh20cruisers/items/593889/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Blue H2O Cruisers',this)" aria-label="Share">🔗</button></div>
@@ -682,7 +731,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/eIxlqJITGORzbasTH4q8" alt="Fort Lauderdale Boat Rental with Captain" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/eIxlqJITGORzbasTH4q8" alt="Fort Lauderdale Boat Rental with Captain" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🧑‍✈️ Captain</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt26" onclick="event.stopPropagation();toggleFav(this,'bt26')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt26" onclick="event.stopPropagation();toggleCmp(this,'bt26','Fort Lauderdale Boat Rental with Captain')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/fortlauderdaleboatrentalwithcaptain/items/542921/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Fort Lauderdale Boat Rental with Captain',this)" aria-label="Share">🔗</button></div>
@@ -699,7 +748,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="everglades">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/QJt4YTh1RaBj51ydj5RQ" alt="Everglades Holiday Park" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/QJt4YTh1RaBj51ydj5RQ" alt="Everglades Holiday Park" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌿 Everglades</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt27" onclick="event.stopPropagation();toggleFav(this,'bt27')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt27" onclick="event.stopPropagation();toggleCmp(this,'bt27','Everglades Holiday Park')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/evergladesholidaypark/items/669677/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Everglades Holiday Park',this)" aria-label="Share">🔗</button></div>
@@ -716,7 +765,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="everglades">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/zVlZFIryQEaVr87myQAV" alt="Flamingo Everglades" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/zVlZFIryQEaVr87myQAV" alt="Flamingo Everglades" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🦩 Flamingo</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt28" onclick="event.stopPropagation();toggleFav(this,'bt28')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt28" onclick="event.stopPropagation();toggleCmp(this,'bt28','Flamingo Everglades')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/flamingoeverglades/items/461065/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Flamingo Everglades',this)" aria-label="Share">🔗</button></div>
@@ -733,7 +782,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/r3CL7LwXRgyFPYe9Zxuj" alt="Key Largo Adventures" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/r3CL7LwXRgyFPYe9Zxuj" alt="Key Largo Adventures" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🐠 Keys</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt29" onclick="event.stopPropagation();toggleFav(this,'bt29')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt29" onclick="event.stopPropagation();toggleCmp(this,'bt29','Key Largo Adventures')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/keylargoadventures/items/110281/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Key Largo Adventures',this)" aria-label="Share">🔗</button></div>
@@ -750,7 +799,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/3bEOyDZXRFaoIdB4Edqr" alt="Islamorada Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/3bEOyDZXRFaoIdB4Edqr" alt="Islamorada Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌊 Islamorada</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt30" onclick="event.stopPropagation();toggleFav(this,'bt30')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt30" onclick="event.stopPropagation();toggleCmp(this,'bt30','Islamorada Boat Rentals')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/islamoradaboatrentals/items/663815/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Islamorada Boat Rentals',this)" aria-label="Share">🔗</button></div>
@@ -767,7 +816,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/cqifpofxQlyHha8BLXBD" alt="Rumaway Lifestyle" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/cqifpofxQlyHha8BLXBD" alt="Rumaway Lifestyle" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🏄 Lifestyle</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt31" onclick="event.stopPropagation();toggleFav(this,'bt31')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt31" onclick="event.stopPropagation();toggleCmp(this,'bt31','Rumaway Lifestyle')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/rumawaylifestyle/items/590544/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Rumaway Lifestyle',this)" aria-label="Share">🔗</button></div>
@@ -784,7 +833,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/5Qz81FoFTpOmxHSNY3pz" alt="WakeZone Watersports" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/5Qz81FoFTpOmxHSNY3pz" alt="WakeZone Watersports" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌊 WakeZone</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt32" onclick="event.stopPropagation();toggleFav(this,'bt32')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt32" onclick="event.stopPropagation();toggleCmp(this,'bt32','WakeZone Watersports')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/wakezonewatersports/items/672022/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','WakeZone Watersports',this)" aria-label="Share">🔗</button></div>
@@ -801,7 +850,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/QkwUvas4Rp6adULlMuBF" alt="Aqua Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/QkwUvas4Rp6adULlMuBF" alt="Aqua Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">💧 Aqua</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt33" onclick="event.stopPropagation();toggleFav(this,'bt33')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt33" onclick="event.stopPropagation();toggleCmp(this,'bt33','Aqua Boat Rentals')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/aquaboatrentals/items/580834/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Aqua Boat Rentals',this)" aria-label="Share">🔗</button></div>
@@ -818,7 +867,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/5gVRq0xiRmC2xKKjgZ0w" alt="Nothing Better Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/5gVRq0xiRmC2xKKjgZ0w" alt="Nothing Better Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🏝 Best</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt34" onclick="event.stopPropagation();toggleFav(this,'bt34')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt34" onclick="event.stopPropagation();toggleCmp(this,'bt34','Nothing Better Boat Rentals')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/nothingbetterboatrentals/items/415699/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Nothing Better Boat Rentals',this)" aria-label="Share">🔗</button></div>
@@ -835,7 +884,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/xcquWi0bQNiT6ttEbl4i" alt="Boat Rentals in Key West" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/xcquWi0bQNiT6ttEbl4i" alt="Boat Rentals in Key West" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⛵ Key West</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt35" onclick="event.stopPropagation();toggleFav(this,'bt35')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt35" onclick="event.stopPropagation();toggleCmp(this,'bt35','Boat Rentals in Key West')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/boatrentalsinkeywest/items/38331/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Boat Rentals in Key West',this)" aria-label="Share">🔗</button></div>
@@ -852,7 +901,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/p83RWLcRkxVsS1esmxHA" alt="Island Vibe Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/p83RWLcRkxVsS1esmxHA" alt="Island Vibe Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌴 Island</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt36" onclick="event.stopPropagation();toggleFav(this,'bt36')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt36" onclick="event.stopPropagation();toggleCmp(this,'bt36','Island Vibe Charters')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/islandvibecharters/items/301595/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Island Vibe Charters',this)" aria-label="Share">🔗</button></div>
@@ -869,7 +918,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/gTcGYgqWTcmzqQpTJ0qC" alt="Sail Away Key West" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/gTcGYgqWTcmzqQpTJ0qC" alt="Sail Away Key West" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⛵ Sailing</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt37" onclick="event.stopPropagation();toggleFav(this,'bt37')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt37" onclick="event.stopPropagation();toggleCmp(this,'bt37','Sail Away Key West')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sailawaykeywest/items/346348/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Sail Away Key West',this)" aria-label="Share">🔗</button></div>
@@ -886,7 +935,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/JIzhKW9QzqumRq7GROkI" alt="Coastal Key West Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/JIzhKW9QzqumRq7GROkI" alt="Coastal Key West Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🏝 Coastal</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt38" onclick="event.stopPropagation();toggleFav(this,'bt38')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt38" onclick="event.stopPropagation();toggleCmp(this,'bt38','Coastal Key West Charters')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/coastalkeywestcharters/items/565591/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Coastal Key West Charters',this)" aria-label="Share">🔗</button></div>
@@ -903,7 +952,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/G1tmWHBjSSSr50TGi6qi" alt="Adventures on Water" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/G1tmWHBjSSSr50TGi6qi" alt="Adventures on Water" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌊 Adventure</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt39" onclick="event.stopPropagation();toggleFav(this,'bt39')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt39" onclick="event.stopPropagation();toggleCmp(this,'bt39','Adventures on Water')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/adventuresonwater/items/433221/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Adventures on Water',this)" aria-label="Share">🔗</button></div>
@@ -920,7 +969,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/77S6MyFS5im6s3Nc12Ii" alt="Best Sandbar Tours" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/77S6MyFS5im6s3Nc12Ii" alt="Best Sandbar Tours" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🏖 Sandbar</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt40" onclick="event.stopPropagation();toggleFav(this,'bt40')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt40" onclick="event.stopPropagation();toggleCmp(this,'bt40','Best Sandbar Tours')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/bestsandbartours/items/570694/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Best Sandbar Tours',this)" aria-label="Share">🔗</button></div>
@@ -937,7 +986,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/7AHO9CVCQjiED6xevKut" alt="Spencer's Boatyard" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/7AHO9CVCQjiED6xevKut" alt="Spencer's Boatyard" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⚓ Classic</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt41" onclick="event.stopPropagation();toggleFav(this,'bt41')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt41" onclick="event.stopPropagation();toggleCmp(this,'bt41','Spencers Boatyard')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/spencersboatyard/items/106398/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Spencers Boatyard',this)" aria-label="Share">🔗</button></div>
@@ -954,7 +1003,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/Y3IVzw69RXKcWGrNP4Td" alt="Barefoot Billy's KW" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/Y3IVzw69RXKcWGrNP4Td" alt="Barefoot Billy's KW" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🦶 Barefoot</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt42" onclick="event.stopPropagation();toggleFav(this,'bt42')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt42" onclick="event.stopPropagation();toggleCmp(this,'bt42','Barefoot Billys KW')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/barefootbillyskw/items/369905/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Barefoot Billys KW',this)" aria-label="Share">🔗</button></div>
@@ -971,7 +1020,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/2kr8HzlQQWCfxgb0xjvr" alt="Sea Monkey Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/2kr8HzlQQWCfxgb0xjvr" alt="Sea Monkey Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🐒 Charters</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt43" onclick="event.stopPropagation();toggleFav(this,'bt43')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt43" onclick="event.stopPropagation();toggleCmp(this,'bt43','Sea Monkey Charters')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/seamonkeycharters/items/444694/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Sea Monkey Charters',this)" aria-label="Share">🔗</button></div>
@@ -988,7 +1037,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="palmbeach">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4uMATmBQvSPbxZqe4DsQ" alt="Visit Palm Beach" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4uMATmBQvSPbxZqe4DsQ" alt="Visit Palm Beach" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌴 Palm Beach</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt44" onclick="event.stopPropagation();toggleFav(this,'bt44')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt44" onclick="event.stopPropagation();toggleCmp(this,'bt44','Visit Palm Beach')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/visitpalmbeach/items/116102/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Visit Palm Beach',this)" aria-label="Share">🔗</button></div>
@@ -1005,7 +1054,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4uMATmBQvSPbxZqe4DsQ" alt="Florida Island Tours" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4uMATmBQvSPbxZqe4DsQ" alt="Florida Island Tours" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🏝 Island</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt45" onclick="event.stopPropagation();toggleFav(this,'bt45')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt45" onclick="event.stopPropagation();toggleCmp(this,'bt45','Florida Island Tours')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/floridaislandtours/items/524679/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Florida Island Tours',this)" aria-label="Share">🔗</button></div>
@@ -1022,7 +1071,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/gn5rftESnGGUlRc3XA2w" alt="Kokomo Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/gn5rftESnGGUlRc3XA2w" alt="Kokomo Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🎶 Kokomo</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt46" onclick="event.stopPropagation();toggleFav(this,'bt46')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt46" onclick="event.stopPropagation();toggleCmp(this,'bt46','Kokomo Charters')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/kokomocharters/items/518018/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Kokomo Charters',this)" aria-label="Share">🔗</button></div>
@@ -1039,7 +1088,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/IiLKnGCWSvKkEF76JR1u" alt="Beach Bums Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/IiLKnGCWSvKkEF76JR1u" alt="Beach Bums Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🏖 Captiva</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt47" onclick="event.stopPropagation();toggleFav(this,'bt47')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt47" onclick="event.stopPropagation();toggleCmp(this,'bt47','Beach Bums Boat Rentals')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/beachbumsboatrentals/items/54601/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Beach Bums Boat Rentals',this)" aria-label="Share">🔗</button></div>
@@ -1056,7 +1105,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/zSmEcrGVQqrnIQkeRLO4" alt="PG Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/zSmEcrGVQqrnIQkeRLO4" alt="PG Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⚓ Punta Gorda</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt48" onclick="event.stopPropagation();toggleFav(this,'bt48')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt48" onclick="event.stopPropagation();toggleCmp(this,'bt48','PG Boat Rental')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/pgboatrental/items/555397/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','PG Boat Rental',this)" aria-label="Share">🔗</button></div>
@@ -1073,7 +1122,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/A1rDDddfRxG30HUcjyBM" alt="Island Time Florida Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/A1rDDddfRxG30HUcjyBM" alt="Island Time Florida Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🏝 Island Time</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt49" onclick="event.stopPropagation();toggleFav(this,'bt49')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt49" onclick="event.stopPropagation();toggleCmp(this,'bt49','Island Time Florida Charters')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/islandtimefloridacharters/items/668655/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Island Time Florida Charters',this)" aria-label="Share">🔗</button></div>
@@ -1090,7 +1139,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/I2gyMwhVTtuQ7bl7XO5V" alt="Crysten's" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/I2gyMwhVTtuQ7bl7XO5V" alt="Crysten's" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌊 Holmes Beach</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt50" onclick="event.stopPropagation();toggleFav(this,'bt50')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt50" onclick="event.stopPropagation();toggleCmp(this,'bt50','Crystens')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/crystens/items/462988/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Crystens',this)" aria-label="Share">🔗</button></div>
@@ -1107,7 +1156,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/aD9rLa1CRPixrds628KW" alt="TV Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/aD9rLa1CRPixrds628KW" alt="TV Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌅 St. Pete</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt51" onclick="event.stopPropagation();toggleFav(this,'bt51')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt51" onclick="event.stopPropagation();toggleCmp(this,'bt51','TV Boat Rentals')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/tvboatrentals-new/items/97654/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','TV Boat Rentals',this)" aria-label="Share">🔗</button></div>
@@ -1124,7 +1173,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rLqH6zeCQKeMlYOCpo5M" alt="Chadillac Adventures" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rLqH6zeCQKeMlYOCpo5M" alt="Chadillac Adventures" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🏖 Clearwater</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt52" onclick="event.stopPropagation();toggleFav(this,'bt52')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt52" onclick="event.stopPropagation();toggleCmp(this,'bt52','Chadillac Adventures')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/chadillacadventures/items/668740/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Chadillac Adventures',this)" aria-label="Share">🔗</button></div>
@@ -1141,7 +1190,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/0d4wY48USeaKHeRSYXmO" alt="Father Daughter Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/0d4wY48USeaKHeRSYXmO" alt="Father Daughter Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">👨‍👧 Charter</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt53" onclick="event.stopPropagation();toggleFav(this,'bt53')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt53" onclick="event.stopPropagation();toggleCmp(this,'bt53','Father Daughter Charters')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/fatherdaughtercharters/items/520862/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Father Daughter Charters',this)" aria-label="Share">🔗</button></div>
@@ -1158,7 +1207,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="centralfl">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/WYqFkB2mSHqEfPw6pATN" alt="Lake Harris Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/WYqFkB2mSHqEfPw6pATN" alt="Lake Harris Boat Rentals" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🏞 Lake Harris</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt54" onclick="event.stopPropagation();toggleFav(this,'bt54')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt54" onclick="event.stopPropagation();toggleCmp(this,'bt54','Lake Harris Boat Rentals')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/lakeharrisboatrentals/items/692644/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Lake Harris Boat Rentals',this)" aria-label="Share">🔗</button></div>
@@ -1175,7 +1224,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="space">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KaX9fpowQIOftmFRKA8b" alt="Island Time Marina" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KaX9fpowQIOftmFRKA8b" alt="Island Time Marina" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🚀 Space Coast</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt55" onclick="event.stopPropagation();toggleFav(this,'bt55')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt55" onclick="event.stopPropagation();toggleCmp(this,'bt55','Island Time Marina')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/islandtimemarina/items/573997/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Island Time Marina',this)" aria-label="Share">🔗</button></div>
@@ -1192,7 +1241,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="nefl">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/v1941N2qTTqqBlWVSZZO" alt="Daytona Beach Dolphin Tours" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/v1941N2qTTqqBlWVSZZO" alt="Daytona Beach Dolphin Tours" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🐬 Dolphin</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt56" onclick="event.stopPropagation();toggleFav(this,'bt56')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt56" onclick="event.stopPropagation();toggleCmp(this,'bt56','Daytona Beach Dolphin Tours')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/daytonabeachdolphintours/items/477129/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Daytona Beach Dolphin Tours',this)" aria-label="Share">🔗</button></div>
@@ -1209,7 +1258,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/C7jKlgoLRJ2nwI3Hrctb" alt="Six Fins Charter – Clothing Optional" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/C7jKlgoLRJ2nwI3Hrctb" alt="Six Fins Charter – Clothing Optional" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌴 Private</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt58" onclick="event.stopPropagation();toggleFav(this,'bt58')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt58" onclick="event.stopPropagation();toggleCmp(this,'bt58','Six Fins Charter – Clothing Optional')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sixfinscharter/items/563185/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Six Fins Charter – Clothing Optional',this)" aria-label="Share">🔗</button></div>
@@ -1226,7 +1275,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/iFPajcCuTV6cbX7s3hd7" alt="Marco Island Boat Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/iFPajcCuTV6cbX7s3hd7" alt="Marco Island Boat Charters" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🚢 Marco Island</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt59" onclick="event.stopPropagation();toggleFav(this,'bt59')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt59" onclick="event.stopPropagation();toggleCmp(this,'bt59','Marco Island Boat Charters')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/marcoislandboatcharters/items/423750/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Marco Island Boat Charters',this)" aria-label="Share">🔗</button></div>
@@ -1243,7 +1292,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/yMnHEabmRQuSFUw7DyJ4" alt="Sea Rocket Fort Lauderdale" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/yMnHEabmRQuSFUw7DyJ4" alt="Sea Rocket Fort Lauderdale" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🚀 Speed Boat</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt60" onclick="event.stopPropagation();toggleFav(this,'bt60')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt60" onclick="event.stopPropagation();toggleCmp(this,'bt60','Sea Rocket Fort Lauderdale')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/searocketftlauderdale/items/537949/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Sea Rocket Fort Lauderdale',this)" aria-label="Share">🔗</button></div>
@@ -1260,7 +1309,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/cGCKxq9wQ3i7yHjCqOau" alt="Keys Huka Dive – Nokomis" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/cGCKxq9wQ3i7yHjCqOau" alt="Keys Huka Dive – Nokomis" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🤿 Dive</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt61" onclick="event.stopPropagation();toggleFav(this,'bt61')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt61" onclick="event.stopPropagation();toggleCmp(this,'bt61','Keys Huka Dive – Nokomis')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/keyshukadive/items/306831/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Keys Huka Dive – Nokomis',this)" aria-label="Share">🔗</button></div>
@@ -1277,7 +1326,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/WezWGyA7TT6cpXfsqv6J" alt="Island Boat Adventures" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/WezWGyA7TT6cpXfsqv6J" alt="Island Boat Adventures" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🏝 Island</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt62" onclick="event.stopPropagation();toggleFav(this,'bt62')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt62" onclick="event.stopPropagation();toggleCmp(this,'bt62','Island Boat Adventures')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/islandboatadventures/items/462785/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Island Boat Adventures',this)" aria-label="Share">🔗</button></div>
@@ -1294,7 +1343,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="palmbeach">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/8r8ZW8vSAKQdrAbIdkfg" alt="Pontiki – Jupiter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/8r8ZW8vSAKQdrAbIdkfg" alt="Pontiki – Jupiter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🎉 Party</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt63" onclick="event.stopPropagation();toggleFav(this,'bt63')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt63" onclick="event.stopPropagation();toggleCmp(this,'bt63','Pontiki – Jupiter')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/pontiki/items/107963/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Pontiki – Jupiter',this)" aria-label="Share">🔗</button></div>
@@ -1311,7 +1360,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/XDuJ9WEWQnyCstfubSf9" alt="Walks NYC – Boat Tour Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/XDuJ9WEWQnyCstfubSf9" alt="Walks NYC – Boat Tour Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌆 City Tour</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt64" onclick="event.stopPropagation();toggleFav(this,'bt64')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt64" onclick="event.stopPropagation();toggleCmp(this,'bt64','Walks NYC – Boat Tour Miami')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/walksnyc/items/322563/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Walks NYC – Boat Tour Miami',this)" aria-label="Share">🔗</button></div>
@@ -1328,7 +1377,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/z2c6eXCERNGACv5op6Fg" alt="Miami Tour Company – Everglades" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/z2c6eXCERNGACv5op6Fg" alt="Miami Tour Company – Everglades" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🐊 Everglades</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt65" onclick="event.stopPropagation();toggleFav(this,'bt65')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt65" onclick="event.stopPropagation();toggleCmp(this,'bt65','Miami Tour Company – Everglades')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/miamitourcompany/items/659236/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Miami Tour Company – Everglades',this)" aria-label="Share">🔗</button></div>
@@ -1345,7 +1394,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KDRotEB8RFSRppMNjQMa" alt="Florida Adventures – Dolphin Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KDRotEB8RFSRppMNjQMa" alt="Florida Adventures – Dolphin Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🐬 Dolphin</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt66" onclick="event.stopPropagation();toggleFav(this,'bt66')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt66" onclick="event.stopPropagation();toggleCmp(this,'bt66','Florida Adventures – Dolphin Tour')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/76676/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Florida Adventures – Dolphin Tour',this)" aria-label="Share">🔗</button></div>
@@ -1362,7 +1411,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4pyXoMyoSG2WO5wuC58M" alt="Miami Aqua Tours" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4pyXoMyoSG2WO5wuC58M" alt="Miami Aqua Tours" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">💰 From $5</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt67" onclick="event.stopPropagation();toggleFav(this,'bt67')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt67" onclick="event.stopPropagation();toggleCmp(this,'bt67','Miami Aqua Tours')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/miamiaquatours/items/221278/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Miami Aqua Tours',this)" aria-label="Share">🔗</button></div>
@@ -1379,7 +1428,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KbeKLjQFTwCj9fMR1mgT" alt="Robin Hood Anna Maria" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/KbeKLjQFTwCj9fMR1mgT" alt="Robin Hood Anna Maria" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🏝 Anna Maria</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt68" onclick="event.stopPropagation();toggleFav(this,'bt68')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt68" onclick="event.stopPropagation();toggleCmp(this,'bt68','Robin Hood Anna Maria')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/robinhoodanamaria/items/98490/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Robin Hood Anna Maria',this)" aria-label="Share">🔗</button></div>
@@ -1396,7 +1445,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/W4VBvLxpTAODqGQtinIs" alt="The Pink Pelican Tiki" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/W4VBvLxpTAODqGQtinIs" alt="The Pink Pelican Tiki" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🦩 Tiki Bar</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt69" onclick="event.stopPropagation();toggleFav(this,'bt69')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt69" onclick="event.stopPropagation();toggleCmp(this,'bt69','The Pink Pelican Tiki')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/thepinkpelicantiki/items/536888/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','The Pink Pelican Tiki',this)" aria-label="Share">🔗</button></div>
@@ -1413,7 +1462,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rwIn7wiRQDeaU8pineua" alt="Open Miami – Private Everglades Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rwIn7wiRQDeaU8pineua" alt="Open Miami – Private Everglades Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🐊 Private</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt70" onclick="event.stopPropagation();toggleFav(this,'bt70')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt70" onclick="event.stopPropagation();toggleCmp(this,'bt70','Open Miami – Private Everglades Tour')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/open-miami/items/281856/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Open Miami – Private Everglades Tour',this)" aria-label="Share">🔗</button></div>
@@ -1430,7 +1479,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/OfeqdTQAShyXRHgu1eXI" alt="Six Fins Charter – Private Boat Tour Key West" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/OfeqdTQAShyXRHgu1eXI" alt="Six Fins Charter – Private Boat Tour Key West" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⚓ Private Charter</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt70b" onclick="event.stopPropagation();toggleFav(this,'bt70b')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt70b" onclick="event.stopPropagation();toggleCmp(this,'bt70b','Six Fins Charter – Private Boat Tour Key West')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sixfinscharter/items/532140/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Six Fins Charter – Private Boat Tour Key West',this)" aria-label="Share">🔗</button></div>
@@ -1447,7 +1496,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/XXdbwAp0RwCtLZI3BxzJ" alt="Six Fins Charter – Boat Tour Key West II" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/XXdbwAp0RwCtLZI3BxzJ" alt="Six Fins Charter – Boat Tour Key West II" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⛵ Key West</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt71" onclick="event.stopPropagation();toggleFav(this,'bt71')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt71" onclick="event.stopPropagation();toggleCmp(this,'bt71','Six Fins Charter – Boat Tour Key West II')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sixfinscharter/items/532164/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Six Fins Charter – Boat Tour Key West II',this)" aria-label="Share">🔗</button></div>
@@ -1464,7 +1513,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/lfTU36coSeCs6VvlYDkg" alt="Six Fins Charter – Boat Tour Key West III" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/lfTU36coSeCs6VvlYDkg" alt="Six Fins Charter – Boat Tour Key West III" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⛵ Key West</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt72" onclick="event.stopPropagation();toggleFav(this,'bt72')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt72" onclick="event.stopPropagation();toggleCmp(this,'bt72','Six Fins Charter – Boat Tour Key West III')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sixfinscharter/items/532226/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Six Fins Charter – Boat Tour Key West III',this)" aria-label="Share">🔗</button></div>
@@ -1481,7 +1530,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/eN2wLizTfysYWvkGfLQM" alt="Sea Rocket Fort Lauderdale – Boat Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:360/quality=value:60/auto_image/compress/cache=expiry:max/eN2wLizTfysYWvkGfLQM" alt="Sea Rocket Fort Lauderdale – Boat Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🚤 Bahia Mar</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt73" onclick="event.stopPropagation();toggleFav(this,'bt73')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt73" onclick="event.stopPropagation();toggleCmp(this,'bt73','Sea Rocket Fort Lauderdale – Boat Tour')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/searocketftlauderdale/items/537543/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Sea Rocket Fort Lauderdale – Boat Tour',this)" aria-label="Share">🔗</button></div>
@@ -1498,7 +1547,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/zhsgTdGSLqqeEFI08wIQ" alt="Six Fins Charter – Boat Tour Key West IV" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/zhsgTdGSLqqeEFI08wIQ" alt="Six Fins Charter – Boat Tour Key West IV" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⚓ Key West</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt74" onclick="event.stopPropagation();toggleFav(this,'bt74')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt74" onclick="event.stopPropagation();toggleCmp(this,'bt74','Six Fins Charter – Boat Tour Key West IV')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sixfinscharter/items/532228/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Six Fins Charter – Boat Tour Key West IV',this)" aria-label="Share">🔗</button></div>
@@ -1515,7 +1564,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/Yrhnn1XSCC8E3xpHBsJe" alt="Destin Private Yachts – Luxury Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/Yrhnn1XSCC8E3xpHBsJe" alt="Destin Private Yachts – Luxury Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🛥️ Luxury Yacht</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt75" onclick="event.stopPropagation();toggleFav(this,'bt75')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt75" onclick="event.stopPropagation();toggleCmp(this,'bt75','Destin Private Yachts – Luxury Charter')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/destinprivateyachts/items/448709/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Destin Private Yachts – Luxury Charter',this)" aria-label="Share">🔗</button></div>
@@ -1532,7 +1581,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/aUj44hYGQGiAK8N7hYb1" alt="Cypress Cay Pontoon – 12 Passengers Fort Myers" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/aUj44hYGQGiAK8N7hYb1" alt="Cypress Cay Pontoon – 12 Passengers Fort Myers" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🚤 Pontoon 12 Pax</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt85" onclick="event.stopPropagation();toggleFav(this,'bt85')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt85" onclick="event.stopPropagation();toggleCmp(this,'bt85','Cypress Cay Pontoon – 12 Passengers Fort Myers')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/yachtcharterfortmyers/items/584236/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Cypress Cay Pontoon – 12 Passengers Fort Myers',this)" aria-label="Share">🔗</button></div>
@@ -1549,7 +1598,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/7VX81gR8iWFL1m6BfVgw" alt="Florida Adventures – Marco Island Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/7VX81gR8iWFL1m6BfVgw" alt="Florida Adventures – Marco Island Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🚤 Marco Island</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt84" onclick="event.stopPropagation();toggleFav(this,'bt84')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt84" onclick="event.stopPropagation();toggleCmp(this,'bt84','Florida Adventures – Marco Island Boat Rental')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/floridaadventuresandrentals/items/367544/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Florida Adventures – Marco Island Boat Rental',this)" aria-label="Share">🔗</button></div>
@@ -1566,7 +1615,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CXno2qQJTV2mWyHuit64" alt="Punta Gorda Tiki – Tiki Boat Cruise" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CXno2qQJTV2mWyHuit64" alt="Punta Gorda Tiki – Tiki Boat Cruise" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌺 Tiki Cruise</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt83" onclick="event.stopPropagation();toggleFav(this,'bt83')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt83" onclick="event.stopPropagation();toggleCmp(this,'bt83','Punta Gorda Tiki – Tiki Boat Cruise')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/puntagordatiki/items/609967/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Punta Gorda Tiki – Tiki Boat Cruise',this)" aria-label="Share">🔗</button></div>
@@ -1583,7 +1632,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qvoAd8rTP8j5WenxiBHA" alt="Boat Charter FL – St. Petersburg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qvoAd8rTP8j5WenxiBHA" alt="Boat Charter FL – St. Petersburg" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⚓ St. Pete</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt82" onclick="event.stopPropagation();toggleFav(this,'bt82')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt82" onclick="event.stopPropagation();toggleCmp(this,'bt82','Boat Charter FL – St. Petersburg')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/boatcharterfl/items/637032/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Boat Charter FL – St. Petersburg',this)" aria-label="Share">🔗</button></div>
@@ -1600,7 +1649,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sN256R2zRCqELCHMgjO1" alt="100 Miami – Luxury Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sN256R2zRCqELCHMgjO1" alt="100 Miami – Luxury Boat Rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">💎 Luxury</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt81" onclick="event.stopPropagation();toggleFav(this,'bt81')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt81" onclick="event.stopPropagation();toggleCmp(this,'bt81','100 Miami – Luxury Boat Rental')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/100miami/items/648149/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','100 Miami – Luxury Boat Rental',this)" aria-label="Share">🔗</button></div>
@@ -1617,7 +1666,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="gulf">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rSAlslVHRiKDEqFAlFhS" alt="Kokomo Charters – Sarasota Boat Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rSAlslVHRiKDEqFAlFhS" alt="Kokomo Charters – Sarasota Boat Tour" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🛥️ Sarasota</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt80" onclick="event.stopPropagation();toggleFav(this,'bt80')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt80" onclick="event.stopPropagation();toggleCmp(this,'bt80','Kokomo Charters – Sarasota Boat Tour')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/kokomocharters/items/722783/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Kokomo Charters – Sarasota Boat Tour',this)" aria-label="Share">🔗</button></div>
@@ -1634,7 +1683,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/ZLHcLtGITH2tWxSYWnpn" alt="Sunset Sail Key West – Luxury Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/ZLHcLtGITH2tWxSYWnpn" alt="Sunset Sail Key West – Luxury Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⛵ Luxury Sail</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt79" onclick="event.stopPropagation();toggleFav(this,'bt79')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt79" onclick="event.stopPropagation();toggleCmp(this,'bt79','Sunset Sail Key West – Luxury Charter')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sunsetsailkeywest/items/1395/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Sunset Sail Key West – Luxury Charter',this)" aria-label="Share">🔗</button></div>
@@ -1651,7 +1700,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="keys">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/lzulTOdGQTKToIstCQUm" alt="Sunset Sail Key West – Private Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/lzulTOdGQTKToIstCQUm" alt="Sunset Sail Key West – Private Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🌅 Sunset Sail</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt78" onclick="event.stopPropagation();toggleFav(this,'bt78')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt78" onclick="event.stopPropagation();toggleCmp(this,'bt78','Sunset Sail Key West – Private Charter')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/sunsetsailkeywest/items/1194/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Sunset Sail Key West – Private Charter',this)" aria-label="Share">🔗</button></div>
@@ -1668,7 +1717,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/pERe86LOTa6znpMWXrSM" alt="Heron Harbor – Private Yacht Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/pERe86LOTa6znpMWXrSM" alt="Heron Harbor – Private Yacht Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⚓ Heron Harbor</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt77" onclick="event.stopPropagation();toggleFav(this,'bt77')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt77" onclick="event.stopPropagation();toggleCmp(this,'bt77','Heron Harbor – Private Yacht Charter')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/destinprivateyachts/items/372444/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Heron Harbor – Private Yacht Charter',this)" aria-label="Share">🔗</button></div>
@@ -1685,7 +1734,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="westfl">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/fl5HycCjTxiXHlBpoENB" alt="Destin Private Yachts – Premium Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/fl5HycCjTxiXHlBpoENB" alt="Destin Private Yachts – Premium Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">💎 Premium</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt76" onclick="event.stopPropagation();toggleFav(this,'bt76')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt76" onclick="event.stopPropagation();toggleCmp(this,'bt76','Destin Private Yachts – Premium Charter')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/destinprivateyachts/items/446491/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Destin Private Yachts – Premium Charter',this)" aria-label="Share">🔗</button></div>
@@ -1702,7 +1751,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sxiFcP9QbGr2G9EIry9s" alt="Aquarius Boat Rental – Miami Beach" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sxiFcP9QbGr2G9EIry9s" alt="Aquarius Boat Rental – Miami Beach" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">⛵ Boat Rental</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt86" onclick="event.stopPropagation();toggleFav(this,'bt86')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt86" onclick="event.stopPropagation();toggleCmp(this,'bt86','Aquarius Boat Rental – Miami Beach')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/aquariusboatrental/items/508653/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Aquarius Boat Rental – Miami Beach',this)" aria-label="Share">🔗</button></div>
@@ -1719,7 +1768,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/V5MiP3fhRCpxBjvOwCrA" alt="Yaju Boat Tours – Standard" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/V5MiP3fhRCpxBjvOwCrA" alt="Yaju Boat Tours – Standard" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🚢 Boat Tour</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt87" onclick="event.stopPropagation();toggleFav(this,'bt87')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt87" onclick="event.stopPropagation();toggleCmp(this,'bt87','Yaju Boat Tours – Standard')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/yajuboattours/items/575404/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Yaju Boat Tours – Standard',this)" aria-label="Share">🔗</button></div>
@@ -1736,7 +1785,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/maPhcClMS7ee72HEp23M" alt="Yaju Boat Tours – Premium" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/maPhcClMS7ee72HEp23M" alt="Yaju Boat Tours – Premium" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat &amp; Yacht</span>
     <span class="op-best-badge">🚢 Boat Tour</span>
   <div class="card-actions"><button class="fav-toggle" data-id="bt88" onclick="event.stopPropagation();toggleFav(this,'bt88')" aria-label="Save to favorites">🤍</button><button class="cmp-toggle" data-id="bt88" onclick="event.stopPropagation();toggleCmp(this,'bt88','Yaju Boat Tours – Premium')" aria-label="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/yajuboattours/items/575406/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Yaju Boat Tours – Premium',this)" aria-label="Share">🔗</button></div>
@@ -1752,7 +1801,7 @@
 
 <div class="op-card cat-boat" data-zone="miami">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/JK00dVhvRY6noDDLnHPK" alt="26 Bayliner – 100 Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/JK00dVhvRY6noDDLnHPK" alt="26 Bayliner – 100 Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">⛵ Miami River</span>
   <div class="card-actions"><button class="fav-toggle" data-id="fh-100miami26bayline" onclick="event.stopPropagation();toggleFav(this,'fh-100miami26bayline')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-100miami26bayline" onclick="event.stopPropagation();toggleCmp(this,'fh-100miami26bayline','26 Bayliner – 100 Miami')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/100miami/items/720963/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','26 Bayliner – 100 Miami',this)" aria-label="Share" title="Share">🔗</button></div>
@@ -1769,7 +1818,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/fMi1jKRlSfSygdiFa1bt" alt="Uncharted Waters NMB" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/fMi1jKRlSfSygdiFa1bt" alt="Uncharted Waters NMB" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">🛥️ Fort Lauderdale</span>
   <div class="card-actions"><button class="fav-toggle" data-id="fh-unchartedwatersnmb" onclick="event.stopPropagation();toggleFav(this,'fh-unchartedwatersnmb')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-unchartedwatersnmb" onclick="event.stopPropagation();toggleCmp(this,'fh-unchartedwatersnmb','Uncharted Waters NMB')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/unchartedwatersnmb/items/701437/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Uncharted Waters NMB',this)" aria-label="Share" title="Share">🔗</button></div>
@@ -1786,7 +1835,7 @@
 </div>
 <div class="op-card cat-boat" data-zone="broward">
   <div class="op-card-img">
-    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/ZMYZgPTWQ6uKvgla3zLN" alt="Breezy Tiki – Private Tiki Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+    <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/ZMYZgPTWQ6uKvgla3zLN" alt="Breezy Tiki – Private Tiki Charter" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'" onclick="openFlLightbox(this.src,this.alt)" style="cursor:zoom-in">
     <span class="op-cat-badge">Boat & Yacht</span>
     <span class="op-best-badge">🌴 Tiki Bar Cruise</span>
   <div class="card-actions"><button class="fav-toggle" data-id="fh-breezytikifortlau" onclick="event.stopPropagation();toggleFav(this,'fh-breezytikifortlau')" aria-label="Save to favorites" title="Save to favorites">🤍</button><button class="cmp-toggle" data-id="fh-breezytikifortlau" onclick="event.stopPropagation();toggleCmp(this,'fh-breezytikifortlau','Breezy Tiki – Private Tiki Charter')" aria-label="Add to compare" title="Add to compare">＋</button><button class="shr-btn" onclick="event.stopPropagation();shareOp('https://fareharbor.com/embeds/book/breezytiki/items/689642/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no','Breezy Tiki – Private Tiki Charter',this)" aria-label="Share" title="Share">🔗</button></div>
@@ -2102,23 +2151,169 @@ function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(
   } else {loadLeaflet();}
 })();
 
-  // ── Zone filter ──
+  // ── Zone filter (enhanced) ──
   var activeZone='all';
   function filterZone(zone,btn){
     activeZone=zone;
     document.querySelectorAll('.zone-tab').forEach(function(b){b.classList.remove('active');});
     btn.classList.add('active');
+    flApplyFilters();
+  }
+
+  // ── Budget tabs ──
+  var activeBudget='all';
+  document.querySelectorAll('.budget-tab[data-budget]').forEach(function(t){
+    t.addEventListener('click',function(){
+      document.querySelectorAll('.budget-tab[data-budget]').forEach(function(x){x.classList.remove('active');});
+      t.classList.add('active');
+      activeBudget=t.dataset.budget;
+      flApplyFilters();
+    });
+  });
+
+  // ── Master filter ──
+  function flApplyFilters(){
+    var q=(document.getElementById('flSearchBox')||{value:''}).value.toLowerCase().trim();
+    var budgetRanges={'all':null,'budget':[0,259],'mid':[260,699],'premium':[700,1499],'luxury':[1500,99999]};
+    var br=budgetRanges[activeBudget];
     var cards=document.querySelectorAll('.op-card');
     var visible=0;
     cards.forEach(function(card){
-      if(zone==='all'||card.dataset.zone===zone){card.style.display='';visible++;}
-      else{card.style.display='none';}
+      var zone=card.dataset.zone||'';
+      var price=parseFloat(card.dataset.price)||parseFloat(((card.querySelector('.op-price-num')||{}).textContent||'0').replace(/[^0-9.]/g,''))||0;
+      var name=((card.querySelector('.op-name')||{}).textContent||'').toLowerCase();
+      var addr=((card.querySelector('.op-addr')||{}).textContent||'').toLowerCase();
+      var zoneOk=activeZone==='all'||zone===activeZone;
+      var budgetOk=!br||(price>=br[0]&&price<=br[1]);
+      var searchOk=!q||name.includes(q)||addr.includes(q)||zone.includes(q);
+      var show=zoneOk&&budgetOk&&searchOk;
+      card.style.display=show?'':'none';
+      if(show)visible++;
     });
     var c=document.querySelector('.cards-count');
     if(c)c.textContent='Showing '+visible+' operators';
+    flRenderPills(q);
   }
+
+  // ── Filter pills ──
+  function flRenderPills(q){
+    var container=document.getElementById('flFilterPills');
+    if(!container)return;
+    var pills=[];
+    var zLabels={'miami':'Miami','broward':'Broward','keys':'Keys','gulf':'Gulf Coast','everglades':'Everglades','palmbeach':'Palm Beach','westfl':'West FL','centralfl':'Central FL','nefl':'NE Florida','space':'Space Coast'};
+    var bLabels={'budget':'Under $260','mid':'$260–$699','premium':'$700–$1,499','luxury':'$1,500+'};
+    if(activeZone!=='all') pills.push({label:'📍 '+(zLabels[activeZone]||activeZone),clear:function(){filterZone('all',document.querySelector('.zone-tab'));}});
+    if(activeBudget!=='all') pills.push({label:'💵 '+(bLabels[activeBudget]||activeBudget),clear:function(){document.querySelector('.budget-tab[data-budget="all"]').click();}});
+    if(q) pills.push({label:'🔍 "'+q+'"',clear:function(){var s=document.getElementById('flSearchBox');if(s){s.value='';flApplyFilters();}}});
+    container.innerHTML='';
+    pills.forEach(function(p){
+      var el=document.createElement('span');
+      el.className='fl-pill';
+      el.innerHTML=p.label+' <span style="opacity:.7;font-size:.8rem">✕</span>';
+      el.onclick=p.clear;
+      container.appendChild(el);
+    });
+  }
+
+  // ── Lightbox ──
+  window.openFlLightbox=function(src,alt){
+    var lb=document.getElementById('flLightbox');
+    var img=document.getElementById('flLightboxImg');
+    var cap=document.getElementById('flLightboxCap');
+    if(!lb||!img)return;
+    img.src=src;img.alt=alt||'';
+    if(cap)cap.textContent=alt||'';
+    lb.classList.add('open');
+    document.body.style.overflow='hidden';
+  };
+  window.closeFlLightbox=function(){
+    var lb=document.getElementById('flLightbox');
+    if(lb)lb.classList.remove('open');
+    document.body.style.overflow='';
+  };
+
+  // ── Price Calc ──
+  window.openFlCalc=function(){document.getElementById('flCalcModal').style.display='block';updateFlCalc();};
+  window.closeFlCalc=function(){document.getElementById('flCalcModal').style.display='none';};
+  window.updateFlCalc=function(){
+    var budget=parseFloat(document.getElementById('flCalcBudget').value)||Infinity;
+    var zone=(document.getElementById('flCalcZone')||{}).value||'all';
+    var results=document.getElementById('flCalcResults');
+    if(!results)return;
+    var cards=Array.from(document.querySelectorAll('.op-card'));
+    var rows=cards.map(function(c){
+      var name=((c.querySelector('.op-name')||{}).textContent||'?').replace(/·\s*\d+Pax/,'').trim();
+      var price=parseFloat(((c.querySelector('.op-price-num')||{}).textContent||'0').replace(/[^0-9.]/g,''))||0;
+      var czone=c.dataset.zone||'';
+      var bookEl=c.querySelector('.op-book');
+      var bookUrl=bookEl?bookEl.href:'#';
+      return{name,price,czone,bookUrl};
+    }).filter(function(r){
+      return r.price>0&&(zone==='all'||r.czone===zone)&&r.price<=budget;
+    }).sort(function(a,b){return a.price-b.price;}).slice(0,8);
+    if(!rows.length){results.innerHTML='<p style="color:#6b8fa8;text-align:center;">No operators under $'+budget+(zone!=='all'?' in '+zone:'')+'. Try higher budget.</p>';return;}
+    results.innerHTML=rows.map(function(r){
+      return '<div class="fl-calc-row"><span class="fl-calc-name">'+r.name+'</span><span class="fl-calc-price">$'+r.price+'</span><a href="'+r.bookUrl+'" target="_blank" rel="noopener" style="background:#00d4c8;color:#040d1a;padding:5px 12px;border-radius:7px;font-weight:700;font-size:.7rem;text-decoration:none;white-space:nowrap;">Book</a></div>';
+    }).join('');
+  };
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeFlLightbox();closeFlCalc();}});
+
+  // ── Urgency counter ──
+  (function(){
+    var el=document.getElementById('flUrgency');
+    if(!el)return;
+    function rand(a,b){return Math.floor(Math.random()*(b-a+1))+a;}
+    function update(){el.textContent=rand(11,31);}
+    update();
+    setInterval(update,20000);
+  })();
 
 </script>
 
+
+<!-- FL LIGHTBOX -->
+<div id="flLightbox" onclick="closeFlLightbox()">
+  <button onclick="closeFlLightbox()" style="position:absolute;top:16px;right:20px;background:transparent;border:none;color:#fff;font-size:2rem;cursor:pointer;">✕</button>
+  <img id="flLightboxImg" src="" alt="" style="max-width:100%;max-height:90vh;border-radius:12px;object-fit:contain;">
+  <div id="flLightboxCap" style="position:absolute;bottom:20px;left:0;right:0;text-align:center;color:#ccc;font-size:.82rem;"></div>
+</div>
+
+<!-- FL PRICE CALC -->
+<div id="flCalcModal">
+  <div style="max-width:600px;margin:0 auto;background:#0a1929;border-radius:16px;border:1px solid rgba(255,255,255,.08);overflow:hidden;">
+    <div style="display:flex;align-items:center;justify-content:space-between;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.08);">
+      <h3 style="margin:0;font-size:1rem;">🧮 Price Calculator — Florida Boats</h3>
+      <button onclick="closeFlCalc()" style="background:transparent;border:none;color:#6b8fa8;font-size:1.4rem;cursor:pointer;">✕</button>
+    </div>
+    <div style="padding:20px;">
+      <label style="font-size:.78rem;font-weight:700;color:#6b8fa8;display:block;margin-bottom:6px;">Max budget (total)</label>
+      <input id="flCalcBudget" type="number" min="0" placeholder="e.g. 500" oninput="updateFlCalc()"
+        style="width:100%;box-sizing:border-box;background:#0f2038;border:1.5px solid rgba(255,255,255,.08);color:#fff;border-radius:10px;padding:10px 14px;font-size:1rem;font-family:Montserrat,sans-serif;outline:none;margin-bottom:16px;">
+      <label style="font-size:.78rem;font-weight:700;color:#6b8fa8;display:block;margin-bottom:6px;">Florida zone (optional)</label>
+      <select id="flCalcZone" onchange="updateFlCalc()" style="width:100%;box-sizing:border-box;background:#0f2038;border:1.5px solid rgba(255,255,255,.08);color:#fff;border-radius:10px;padding:10px 14px;font-size:.85rem;font-family:Montserrat,sans-serif;outline:none;margin-bottom:20px;">
+        <option value="all">All Florida</option>
+        <option value="miami">Miami</option>
+        <option value="broward">Broward</option>
+        <option value="keys">Florida Keys</option>
+        <option value="gulf">Gulf Coast</option>
+        <option value="palmbeach">Palm Beach</option>
+        <option value="westfl">West FL</option>
+        <option value="centralfl">Central FL</option>
+      </select>
+      <div id="flCalcResults"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FL FAQ SECTION -->
+<section class="fl-faq-section">
+  <h2>Frequently Asked Questions — Florida Boat Rentals</h2>
+  <div class="fl-faq-item"><div class="fl-faq-q" onclick="this.parentElement.classList.toggle('open')">How much does it cost to rent a boat in Florida?<span class="fl-faq-chev">▼</span></div><div class="fl-faq-a">Florida boat rentals range from $9 (Cocoa Beach pontoon) to $4,000+ (Key West luxury sailing). Self-drive boats average $260–$700. Captained charters $350–$1,500. Mega yachts $2,000–$4,000.</div></div>
+  <div class="fl-faq-item"><div class="fl-faq-q" onclick="this.parentElement.classList.toggle('open')">Where are the best places to rent a boat in Florida?<span class="fl-faq-chev">▼</span></div><div class="fl-faq-a">Top destinations: Miami (Biscayne Bay, Miami River), Fort Lauderdale (Intracoastal), Florida Keys (Islamorada, Marathon, Key West), Clearwater/St. Pete (Gulf), Cape Coral/Punta Gorda (Charlotte Harbor).</div></div>
+  <div class="fl-faq-item"><div class="fl-faq-q" onclick="this.parentElement.classList.toggle('open')">Do I need a boating license in Florida?<span class="fl-faq-chev">▼</span></div><div class="fl-faq-a">Anyone born after Jan 1, 1988 needs a Florida Boating Safety ID. Most rental companies offer captained charters so no license is needed. Always confirm before booking.</div></div>
+  <div class="fl-faq-item"><div class="fl-faq-q" onclick="this.parentElement.classList.toggle('open')">What is the best time of year to rent a boat in Florida?<span class="fl-faq-chev">▼</span></div><div class="fl-faq-a">October–April offers the best weather (cooler, calm seas). Summer (June–Sep) is hot with afternoon storms; book morning slots. Gulf Coast is calmer than Atlantic in summer.</div></div>
+  <div class="fl-faq-item"><div class="fl-faq-q" onclick="this.parentElement.classList.toggle('open')">What types of boats are available in Florida?<span class="fl-faq-chev">▼</span></div><div class="fl-faq-a">Options include pontoon boats, center-console fishing boats, catamarans, sailboats, luxury yachts, mega yachts, party boats, tiki boats, and airboat tours (Everglades).</div></div>
+  <div class="fl-faq-item"><div class="fl-faq-q" onclick="this.parentElement.classList.toggle('open')">Is free cancellation available?<span class="fl-faq-chev">▼</span></div><div class="fl-faq-a">Most operators offer free cancellation 24–48 hours before your trip. Check each FareHarbor listing for exact policy. Weather cancellations are typically rescheduled at no charge.</div></div>
+</section>
 </body>
 </html>
