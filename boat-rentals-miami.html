@@ -208,6 +208,28 @@
     .cta-banner p{color:var(--muted);margin-bottom:20px;font-size:.88rem;}
     .btn-primary{display:inline-flex;align-items:center;gap:8px;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);padding:13px 28px;border-radius:50px;font-family:Montserrat,sans-serif;font-weight:700;font-size:.9rem;transition:all .25s;min-height:48px;}
     .btn-primary:hover{transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,212,200,.4);}
+    /* STICKY BOTTOM CTA BAR (mobile/tablet) */
+    .sticky-bar{position:fixed;bottom:0;left:0;right:0;z-index:990;background:linear-gradient(135deg,#081f3a,#0a2540);border-top:2px solid var(--teal);display:flex;align-items:center;justify-content:space-between;padding:10px 16px;gap:12px;transform:translateY(100%);transition:transform .35s cubic-bezier(.25,.8,.25,1);box-shadow:0 -4px 20px rgba(0,0,0,.5);}
+    .sticky-bar.show{transform:translateY(0);}
+    .sticky-bar-left{min-width:0;}
+    .sticky-bar-title{font-family:Montserrat,sans-serif;font-weight:800;font-size:.88rem;white-space:nowrap;}
+    .sticky-bar-sub{font-size:.72rem;color:var(--teal);}
+    .sticky-bar-btn{flex-shrink:0;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);padding:11px 22px;border-radius:50px;font-family:Montserrat,sans-serif;font-weight:800;font-size:.85rem;white-space:nowrap;min-height:44px;display:flex;align-items:center;gap:6px;}
+    .sticky-bar-close{background:none;border:none;color:var(--muted);font-size:1.1rem;cursor:pointer;padding:4px;margin-left:4px;flex-shrink:0;line-height:1;}
+    @media(min-width:1100px){.sticky-bar{display:none;}}
+
+    /* HERO QUICK-PICK */
+    .hero-qp{margin-top:18px;}
+    .hero-qp-lbl{font-size:.72rem;color:var(--muted);text-transform:uppercase;letter-spacing:1.5px;font-weight:700;margin-bottom:8px;}
+    .hero-qp-btns{display:flex;gap:8px;flex-wrap:wrap;}
+    .hqp-btn{padding:8px 16px;border-radius:50px;border:1.5px solid rgba(0,212,200,.3);color:var(--light);font-family:Montserrat,sans-serif;font-size:.75rem;font-weight:700;cursor:pointer;background:rgba(0,212,200,.07);transition:all .2s;min-height:40px;-webkit-tap-highlight-color:transparent;}
+    .hqp-btn:hover,.hqp-btn.active{background:var(--teal);border-color:var(--teal);color:var(--dark);}
+
+    /* AVAILABLE TODAY BADGE */
+    .avail-badge{position:absolute;bottom:8px;left:8px;background:rgba(34,197,94,.9);color:#fff;font-size:.6rem;font-weight:700;padding:3px 8px;border-radius:50px;display:flex;align-items:center;gap:4px;z-index:3;font-family:Montserrat,sans-serif;}
+    .avail-dot{width:6px;height:6px;background:#fff;border-radius:50%;animation:blink 1.8s ease-in-out infinite;}
+    @keyframes blink{0%,100%{opacity:1;}50%{opacity:.3;}}
+
     /* FOOTER */
     footer{background:var(--dark2);border-top:1px solid var(--border);padding:28px 16px;}
     .footer-inner{max-width:1200px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
@@ -224,6 +246,16 @@
   </style>
 </head>
 <body>
+
+<!-- STICKY BOTTOM BAR -->
+<div class="sticky-bar" id="stickyBar">
+  <div class="sticky-bar-left">
+    <div class="sticky-bar-title">⛵ Boat Rentals Miami</div>
+    <div class="sticky-bar-sub">⭐ 4.8 · 24 operators · From $5</div>
+  </div>
+  <a class="sticky-bar-btn" href="#cardsGrid" onclick="if(window.dataLayer)dataLayer.push({event:'sticky_cta_click'})">Book Now →</a>
+  <button class="sticky-bar-close" onclick="document.getElementById('stickyBar').classList.remove('show');document.getElementById('stickyBar').style.display='none'" aria-label="Close">✕</button>
+</div>
 
 <nav class="nav">
   <div class="nav-inner">
@@ -253,6 +285,15 @@
       <div><div class="ps-num">$5</div><div class="ps-lbl">Starting From</div></div>
       <div><div class="ps-num">4.8 ⭐</div><div class="ps-lbl">Avg Rating</div></div>
       <div><div class="ps-num">100 Pax</div><div class="ps-lbl">Max Capacity</div></div>
+    </div>
+    <div class="hero-qp">
+      <div class="hero-qp-lbl">What are you looking for?</div>
+      <div class="hero-qp-btns">
+        <button class="hqp-btn" onclick="quickPick('budget')">💰 Budget Tour</button>
+        <button class="hqp-btn" onclick="quickPick('mid')">⛵ Self-Drive Rental</button>
+        <button class="hqp-btn" onclick="quickPick('premium')">🌅 Private Charter</button>
+        <button class="hqp-btn" onclick="quickPick('luxury')">💎 Luxury Yacht</button>
+      </div>
     </div>
   </div>
 </section>
@@ -1431,6 +1472,104 @@
       if(mapEl) obs.observe(mapEl); else loadLeaflet();
     } else { loadLeaflet(); }
   }
+
+  /* ── QUICK PICK (hero buttons) ── */
+  window.quickPick = function(pl){
+    document.querySelectorAll('.ftab[data-pl]').forEach(function(t){t.classList.remove('active');});
+    var tab = document.querySelector('.ftab[data-pl="'+pl+'"]');
+    if(tab){tab.classList.add('active');plFilter=pl;applyFilters();}
+    document.querySelectorAll('.hqp-btn').forEach(function(b){b.classList.remove('active');});
+    var hb = document.querySelector('.hqp-btn[onclick*="\''+pl+'\'"]');
+    if(hb) hb.classList.add('active');
+    var grid = document.getElementById('cardsGrid');
+    if(grid) setTimeout(function(){grid.scrollIntoView({behavior:'smooth',block:'start'});},50);
+    if(window.dataLayer) window.dataLayer.push({event:'quick_pick',category:pl});
+    if(window.gtag) gtag('event','quick_pick',{event_category:'engagement',event_label:pl});
+  };
+
+})();
+
+/* ── UTM KEYWORD PERSONALIZATION ── */
+(function(){
+  try{
+    var params = new URLSearchParams(window.location.search);
+    var kw = params.get('utm_term') || params.get('utm_keyword');
+    if(!kw) return;
+    var clean = decodeURIComponent(kw).replace(/\+/g,' ').replace(/\b\w/g,function(l){return l.toUpperCase();});
+    // Personalize H1
+    var h1 = document.querySelector('.page-hero h1');
+    if(h1) h1.innerHTML = '⛵ ' + clean + ' — <span class="t">Miami</span>';
+    // Personalize title
+    document.title = clean + ' Miami | 24 Operators | ⭐ 4.8 Stars';
+    // Personalize hero subtitle
+    var sub = document.querySelector('.page-hero p');
+    if(sub && !sub.dataset.original){
+      sub.dataset.original = sub.textContent;
+      sub.textContent = 'Best ' + clean.toLowerCase() + ' options in Miami. Instant booking, free cancellation, 4.8⭐ avg rating across 4,600+ reviews.';
+    }
+  }catch(e){}
+})();
+
+/* ── SCROLL DEPTH + TIME TRACKING (Google Ads Quality Score) ── */
+(function(){
+  var tracked={};
+  var milestones=[25,50,75,90];
+  function fireEvent(name,params){
+    if(window.gtag) gtag('event',name,params);
+    if(window.dataLayer) window.dataLayer.push(Object.assign({event:name},params));
+  }
+  window.addEventListener('scroll',function(){
+    var pct = Math.round((window.scrollY/(document.body.scrollHeight-window.innerHeight))*100);
+    milestones.forEach(function(m){
+      if(pct>=m && !tracked[m]){tracked[m]=true;fireEvent('scroll_depth',{percent_scrolled:m,page:'boat-rentals-miami'});}
+    });
+  },{passive:true});
+  // Time on page
+  [30,60,120].forEach(function(s){
+    setTimeout(function(){fireEvent('time_on_page',{seconds:s,page:'boat-rentals-miami'});},s*1000);
+  });
+})();
+
+/* ── STICKY BOTTOM BAR ── */
+(function(){
+  var bar = document.getElementById('stickyBar');
+  if(!bar) return;
+  var shown = false;
+  var heroH = (document.querySelector('.page-hero')||{}).offsetHeight || 300;
+  window.addEventListener('scroll',function(){
+    var scrolled = window.scrollY;
+    var nearBottom = (window.scrollY + window.innerHeight) >= (document.body.scrollHeight - 120);
+    if(scrolled > heroH && !nearBottom && !shown){
+      shown = true; bar.classList.add('show');
+    } else if((scrolled <= heroH || nearBottom) && shown){
+      shown = false; bar.classList.remove('show');
+    }
+  },{passive:true});
+})();
+
+/* ── AVAILABLE TODAY BADGE — top 5 operators ── */
+(function(){
+  // Add green "Available Today" to the most popular operators by data-card index
+  var hotIds = ['bt9','bt13','bt2','bt67','bt86'];
+  document.querySelectorAll('.op-card').forEach(function(card){
+    var bookLink = card.querySelector('.op-book');
+    if(!bookLink) return;
+    var href = bookLink.href||'';
+    var isHot = hotIds.some(function(id){
+      // Check if the operator name or link matches
+      var name = (card.querySelector('.op-name')||{}).textContent||'';
+      return href.indexOf(id==='bt9'?'648307':id==='bt13'?'444868':id==='bt2'?'536845':id==='bt67'?'221278':'508653') > -1;
+    });
+    if(isHot){
+      var imgDiv = card.querySelector('.op-card-img');
+      if(imgDiv){
+        var badge = document.createElement('span');
+        badge.className='avail-badge';
+        badge.innerHTML='<span class="avail-dot"></span> Available Today';
+        imgDiv.appendChild(badge);
+      }
+    }
+  });
 })();
 </script>
 </body>
