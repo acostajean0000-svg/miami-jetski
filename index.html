@@ -1126,7 +1126,7 @@ const imgLoad = ci === 0 ? 'fetchpriority="high"' : ci === 1 ? 'loading="eager"'
         <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$${op.price.toLocaleString()}</div></div>
         <a href="${op.link}" target="_blank" rel="noopener" class="op-book" onclick="event.stopPropagation();trackBookNow('${op.name}',${op.price})">Book Now <i class="fa-solid fa-arrow-right"></i></a>
       </div>
-      <a href="/${OP_SLUG_MAP[op.id]||''}" class="op-detail-link" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
+      ${(window._OP_SLUG_MAP||{})[op.id] ? `<a href="/${(window._OP_SLUG_MAP||{})[op.id]}" class="op-detail-link" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>` : `<a href="${op.link}" target="_blank" rel="noopener" class="op-detail-link" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>`}
     </div>
   </div>`;
 }
@@ -1578,7 +1578,7 @@ function renderDeals() {
   const grid = document.getElementById('dealsGrid');
   if (!grid) return;
   grid.innerHTML = sorted.map(op => {
-    const detailSlug = OP_SLUG_MAP[op.id] || '';
+    const detailSlug = (window._OP_SLUG_MAP||{})[op.id] || '';
     const detailUrl  = detailSlug ? `/${detailSlug}` : op.link;
     const stars = op.rating ? `${'★'.repeat(Math.round(op.rating))}${'☆'.repeat(5-Math.round(op.rating))}` : '';
     return `
@@ -1704,12 +1704,12 @@ function buildMarkers() {
     const color = catColors[op.cat] || '#00d4c8';
     const catInitials = {jetski:'JS', boat:'⛵', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', jetcar:'🚗', golfcart:'🛺', atv:'🏍️', scooter:'🛵', bikerental:'🚲'}[op.cat] || '●';
     const marker = L.marker([op.lat, op.lng], {icon: makeIcon(color, catInitials)});
-    const opSlug = OP_SLUG_MAP[op.id] || '';
+    const opSlug = (window._OP_SLUG_MAP||{})[op.id] || '';
     const popupHTML = `<div class="map-popup">
       <div class="map-popup-name">${op.name}</div>
       <div class="map-popup-price">From $${op.price.toLocaleString()}</div>
       <a class="map-popup-btn" href="${op.link}" target="_blank" rel="noopener">Book Now →</a>
-      ${opSlug ? `<a class="map-popup-details" href="/operators/${opSlug}">View Details</a>` : ''}
+      ${opSlug ? `<a class="map-popup-details" href="/${opSlug}">View Details</a>` : ''}
     </div>`;
     marker.bindPopup(popupHTML, {maxWidth:280, closeButton:true});
     marker.on('click', () => {
@@ -1822,7 +1822,7 @@ function closeAC() {
 }
 function acSelect(id, slug) {
   closeAC();
-  if (slug) { window.open('/operators/' + slug, '_blank'); return; }
+  if (slug) { window.open('/' + slug, '_blank'); return; }
   // Fallback: filter cards to that operator
   document.getElementById('searchInput').value = allOperators.find(o=>o.id===id)?.name || '';
   handleSearch();
@@ -1871,7 +1871,7 @@ function renderRecentlyViewed() {
   if (!section || !rail || rv.length === 0) return;
   section.classList.add('has-items');
   rail.innerHTML = rv.map(o => {
-    const url = o.slug ? `/operators/${o.slug}` : '/';
+    const url = o.slug ? `/${o.slug}` : '/';
     const img = o.photo ? `<img class="rv-card-img" src="${thumbUrl(o.photo)}" alt="${o.name}" loading="lazy" onerror="this.style.display='none'">` : '';
     return `<a href="${url}" class="rv-card">${img}<div class="rv-card-name">${o.name}</div><div class="rv-card-price">From $${o.price}</div></a>`;
   }).join('');
@@ -2328,7 +2328,7 @@ function openQuickView(opId) {
   var label = catLabels[op.cat]||op.cat;
   var emoji = ({jetski:'🏄',boat:'⛵',fishing:'🎣',watersports:'🌊',slingshot:'🏎️',jetcar:'🚗',golfcart:'🛺',atv:'🏍️',tour:'🗺️',aerial:'✈️',bikerental:'🚲'})[op.cat]||'🌊';
   var price = op.price ? '$'+op.price.toLocaleString() : 'See site';
-  var slug = (typeof OP_SLUG_MAP!=='undefined'&&OP_SLUG_MAP[op.id]) ? '/'+OP_SLUG_MAP[op.id]+'.html' : '/?q='+encodeURIComponent(op.name);
+  var slug = (window._OP_SLUG_MAP&&window._OP_SLUG_MAP[op.id]) ? '/'+window._OP_SLUG_MAP[op.id] : null;
   var thumb = (typeof thumbUrl==='function') ? thumbUrl(op.photo) : op.photo;
 
   // Photo or emoji fallback
@@ -2372,7 +2372,8 @@ function openQuickView(opId) {
 
   // Links
   document.getElementById('qvBookBtn').href = op.link||'#';
-  document.getElementById('qvDetailLink').href = slug;
+  document.getElementById('qvDetailLink').href = slug || op.link || '#';
+  if (slug) { document.getElementById('qvDetailLink').removeAttribute('target'); } else { document.getElementById('qvDetailLink').setAttribute('target','_blank'); }
 
   // Store for action buttons
   document.getElementById('qvShrBtn').dataset.url = op.link||window.location.href;
