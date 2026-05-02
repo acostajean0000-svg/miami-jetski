@@ -4,12 +4,12 @@
   <meta charset="UTF-8">
   <meta name="color-scheme" content="dark">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Boat Rental Miami | 8 Operators – From $260 | ⭐ 4.9 Stars</title>
-  <meta name="description" content="Rent a boat in Miami from $260. Compare 8 top-rated operators (⭐ 4.9 avg · 1,600+ reviews) on Biscayne Bay, Miami Beach & Miami River. Instant booking, free cancellation.">
+  <title>Boat Rental Miami | 24 Operators – From $5 | ⭐ 4.8 Stars</title>
+  <meta name="description" content="Rent a boat in Miami from $5. Compare 24 top-rated operators (⭐ 4.8 avg · 4,600+ reviews) on Biscayne Bay, Miami Beach & Miami River. Instant booking, free cancellation.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://miamijetskiboatrentals.com/boat-rentals-miami">
-  <meta property="og:title" content="Boat Rental Miami | From $260 | ⭐ 4.9 Stars">
-  <meta property="og:description" content="8 top-rated boat rental operators in Miami (4.9⭐ avg, 1,600+ reviews). Biscayne Bay, Miami River & Miami Beach. Instant booking.">
+  <meta property="og:title" content="Boat Rental Miami | From $5 | ⭐ 4.8 Stars">
+  <meta property="og:description" content="24 top-rated boat rental operators in Miami (4.8⭐ avg, 4,600+ reviews). Biscayne Bay, Miami River & Miami Beach. Instant booking.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://miamijetskiboatrentals.com/boat-rentals-miami">
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
@@ -131,7 +131,7 @@
     .section-hdr{margin-bottom:20px;}
     .section-hdr h2{font-family:'Montserrat',sans-serif;font-size:1.2rem;font-weight:800;}
     .section-hdr p{color:var(--text-muted);font-size:.82rem;margin-top:3px;}
-    .cards-grid{display:flex;flex-direction:column;gap:16px;}
+    .cards-grid{display:grid;grid-template-columns:1fr;gap:16px;}
     .op-card{background:var(--card-bg);border:1.5px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:transform .25s,border-color .25s,box-shadow .25s;cursor:pointer;display:flex;flex-direction:column;}
     .op-card:hover,.op-card.active{transform:translateY(-3px);border-color:var(--teal-dark);box-shadow:0 8px 28px rgba(0,212,200,.14);}
     .op-card.hidden{display:none;}
@@ -244,8 +244,36 @@
     .map-popup-name{font-size:.88rem;font-weight:700;margin-bottom:3px;}
     .map-popup-price{font-size:1rem;font-weight:900;color:#00d4c8;margin-bottom:6px;}
     .map-popup-btn{display:block;text-align:center;background:linear-gradient(135deg,#00d4c8,#00eedd);color:#081525;padding:6px 14px;border-radius:50px;font-size:.75rem;font-weight:700;}
-    @media(max-width:900px){.marketplace-body{flex-direction:column;}.map-panel{flex:none;width:100%;height:45vh;position:relative;top:0;border-left:none;border-top:1px solid var(--border);}.cards-panel{padding:24px 16px 48px;}}
-    @media(max-width:768px){.nav-links{display:none;}.usp-item{padding:10px 14px;}.social-proof-bar{gap:14px;}}
+    @media(max-width:900px){
+      .marketplace-body{flex-direction:column;}
+      .map-panel{flex:none;width:100%;height:40vh;position:relative;top:0;border-left:none;border-top:1px solid var(--border);}
+      .cards-panel{padding:20px 12px 48px;}
+      .cards-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+      .op-card{flex-direction:column;}
+      .op-card-img{height:150px;}
+      .op-footer{flex-wrap:wrap;gap:8px;}
+      .op-actions{width:100%;}
+      .op-book{width:100%;justify-content:center;}
+    }
+    @media(max-width:600px){
+      .cards-grid{grid-template-columns:1fr;}
+      .op-card-img{height:170px;}
+      .op-footer{padding:8px 12px;}
+      .op-card-body{padding:10px 12px;}
+      .op-name{font-size:.88rem;}
+      .section-hdr h2{font-size:1.05rem;}
+      .page-hero h1{font-size:1.5rem;}
+      .page-stat-num{font-size:1.15rem;}
+      .pax-filter-tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:4px;scrollbar-width:none;}
+      .pax-filter-tabs::-webkit-scrollbar{display:none;}
+      .pax-tab{flex-shrink:0;}
+      .best-for-tags{display:none;}
+      .op-per-person{display:none;}
+      .usp-strip{display:none;}
+      .social-proof-bar{gap:10px;padding:8px 12px;}
+      .sp-item{font-size:.72rem;}
+    }
+    @media(max-width:768px){.nav-links{display:none;}.social-proof-bar{gap:14px;}}
     .no-results-msg{padding:32px;text-align:center;color:var(--text-muted);font-size:.9rem;display:none;}
     .no-results-msg.visible{display:block;}
   </style>
@@ -274,12 +302,12 @@
   <div class="page-hero-inner">
     <div class="page-tag"><i class="fa-solid fa-sailboat"></i> Miami's Top Boat Rentals</div>
     <h1>⛵ Boat Rental <span class="teal">Miami</span></h1>
-    <p>Biscayne Bay, Miami River & Miami Beach. 8 verified operators, instant booking, free cancellation on most rentals.</p>
+    <p>Biscayne Bay, Miami River & Miami Beach. 24 verified operators — from guided tours to private yachts. Instant booking, free cancellation on most rentals.</p>
     <div class="page-stats">
-      <div><div class="page-stat-num">8</div><div class="page-stat-label">Operators</div></div>
-      <div><div class="page-stat-num">$260</div><div class="page-stat-label">Starting From</div></div>
-      <div><div class="page-stat-num">4.9 ⭐</div><div class="page-stat-label">Avg Rating</div></div>
-      <div><div class="page-stat-num">20 Pax</div><div class="page-stat-label">Max Capacity</div></div>
+      <div><div class="page-stat-num">24</div><div class="page-stat-label">Operators</div></div>
+      <div><div class="page-stat-num">$5</div><div class="page-stat-label">Starting From</div></div>
+      <div><div class="page-stat-num">4.8 ⭐</div><div class="page-stat-label">Avg Rating</div></div>
+      <div><div class="page-stat-num">100 Pax</div><div class="page-stat-label">Max Capacity</div></div>
     </div>
   </div>
 </section>
@@ -293,8 +321,8 @@
 </div>
 
 <div class="social-proof-bar">
-  <div class="sp-item"><span class="sp-stars">★★★★★</span> <strong>4.9</strong> avg rating</div>
-  <div class="sp-item">📝 <strong>1,654</strong> verified reviews</div>
+  <div class="sp-item"><span class="sp-stars">★★★★★</span> <strong>4.8</strong> avg rating</div>
+  <div class="sp-item">📝 <strong>4,600+</strong> verified reviews</div>
   <div class="sp-item sp-fire">🔥 <strong>47</strong> bookings this week</div>
   <div class="sp-item">🏆 <strong>#1</strong> boat rental platform in Miami</div>
 </div>
@@ -304,7 +332,7 @@
 
     <div class="section-hdr">
       <h2>Boat Rentals in Miami</h2>
-      <p>8 verified operators · <span style="color:var(--teal)">⭐ 4.9 avg · 1,654 reviews</span> · Updated May 2026</p>
+      <p>24 verified operators · <span style="color:var(--teal)">⭐ 4.8 avg · 4,600+ reviews</span> · Updated May 2026</p>
     </div>
 
     <!-- PAX FILTER -->
@@ -312,21 +340,166 @@
       <div class="pax-filter-label">Filter by group size</div>
       <div class="pax-filter-tabs">
         <button class="pax-tab active" data-pax="all">👥 All sizes</button>
-        <button class="pax-tab" data-pax="1-4">2–4 people</button>
-        <button class="pax-tab" data-pax="5-8">5–8 people</button>
-        <button class="pax-tab" data-pax="9-13">9–13 people</button>
-        <button class="pax-tab" data-pax="14-20">14–20 people</button>
+        <button class="pax-tab" data-pax="1-8">2–8 people</button>
+        <button class="pax-tab" data-pax="9-15">9–15 people</button>
+        <button class="pax-tab" data-pax="16-30">16–30 people</button>
+        <button class="pax-tab" data-pax="31-999">30+ people</button>
       </div>
     </div>
 
     <div class="cards-grid" id="cardsGrid">
 
-      <!-- Card 1: Bruschi Small Boat -->
-      <div class="op-card" data-lat="25.7753" data-lng="-80.2016" data-price="260" data-pax="8" onclick="highlightPin(0)">
+
+      <div class="op-card" data-lat="25.7744" data-lng="-80.1875" data-price="5" data-pax="30" onclick="highlightPin(0)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qlH56wPZSn2vMKN6zdUn" alt="Bruschi Boat Rental – Small Boat Miami River" loading="eager" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/4pyXoMyoSG2WO5wuC58M" alt="Miami Aqua Tours Miami" loading="eager" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
-          <span class="op-best-badge">💰 Best Value</span>
+          <span class="op-best-badge">💰 From $5</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">Miami Aqua Tours</div>
+          <div class="op-addr">📍 Downtown Miami</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.9</span>
+            <span class="op-review-count">(147 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 30 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">🎉 Nightlife</span><span class="best-for-tag">💰 Budget</span><span class="best-for-tag">👥 Group Tour</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$5</div>
+            <div class="op-per-person">$0.17/person (30 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/miami-aqua-tours-nite-sea-party-cruise-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/miamiaquatours/items/221278/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Miami Aqua Tours','5','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.7744" data-lng="-80.1872" data-price="16" data-pax="20" onclick="highlightPin(1)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/XDuJ9WEWQnyCstfubSf9" alt="Walks NYC – Boat Tour Miami Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">🌆 City Tour</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">Walks NYC – Boat Tour Miami</div>
+          <div class="op-addr">📍 Downtown Miami</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.6</span>
+            <span class="op-review-count">(86 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 20 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">🌆 City Tour</span><span class="best-for-tag">💰 Budget</span><span class="best-for-tag">🚢 Guided</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$16</div>
+            <div class="op-per-person">$1/person (20 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/walks-nyc-boat-tour-miami-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/walksnyc/items/322563/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Walks NYC – Boat Tour Miami','16','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.7748" data-lng="-80.1877" data-price="73" data-pax="15" onclick="highlightPin(2)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/z2c6eXCERNGACv5op6Fg" alt="Miami Tour Company – Everglades Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">🐊 Everglades</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">Miami Tour Company – Everglades</div>
+          <div class="op-addr">📍 Downtown Miami</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.5</span>
+            <span class="op-review-count">(224 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 15 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">🐊 Everglades</span><span class="best-for-tag">🌿 Nature</span><span class="best-for-tag">👥 Groups</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$73</div>
+            <div class="op-per-person">$5/person (15 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/miami-tour-company-everglades-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/miamitourcompany/items/659236/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Miami Tour Company – Everglades','73','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.7711" data-lng="-80.1395" data-price="169" data-pax="100" onclick="highlightPin(3)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/2Hn6r2JwTdSehD9tStzj" alt="Ocean Force Adventures – Marina Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">⚓ Marina</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">Ocean Force Adventures – Marina</div>
+          <div class="op-addr">📍 Miami Beach</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.6</span>
+            <span class="op-review-count">(344 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 100 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">⚓ Marina</span><span class="best-for-tag">🎉 Large Events</span><span class="best-for-tag">🏢 Corporate</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$169</div>
+            <div class="op-per-person">$2/person (100 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/ocean-force-adventures-private-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/oceanforceadventures/items/613413/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Ocean Force Adventures – Marina','169','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.7762" data-lng="-80.2159" data-price="249" data-pax="10" onclick="highlightPin(4)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/V5MiP3fhRCpxBjvOwCrA" alt="Yaju Boat Tours – Standard Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">🚢 Boat Tour</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">Yaju Boat Tours – Standard</div>
+          <div class="op-addr">📍 Miami</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.6</span>
+            <span class="op-review-count">(312 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 10 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">🚢 Guided Tour</span><span class="best-for-tag">👥 Groups</span><span class="best-for-tag">🌅 Scenic</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$249</div>
+            <div class="op-per-person">$25/person (10 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/yaju-boat-tours-premium-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/yajuboattours/items/575404/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Yaju Boat Tours – Standard','249','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.7753" data-lng="-80.2016" data-price="260" data-pax="8" onclick="highlightPin(5)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qlH56wPZSn2vMKN6zdUn" alt="Bruschi Boat Rental – Small Boat Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">💰 Best Rate</span>
         </div>
         <div class="op-card-body">
           <div class="op-name">Bruschi Boat Rental – Small Boat</div>
@@ -337,31 +510,54 @@
             <span class="op-review-count">(219 reviews)</span>
           </div>
           <div class="op-pax">👥 Up to 8 passengers</div>
-          <div class="best-for-tags">
-            <span class="best-for-tag">💰 Budget</span>
-            <span class="best-for-tag">👫 Couples</span>
-            <span class="best-for-tag">🏖️ Sandbar</span>
-          </div>
+          <div class="best-for-tags"><span class="best-for-tag">💰 Best Value</span><span class="best-for-tag">🏖️ Sandbar</span><span class="best-for-tag">👫 Couples</span></div>
         </div>
         <div class="op-footer">
           <div class="op-price-block">
             <div class="op-price-from">From</div>
             <div class="op-price-num">$260</div>
-            <div class="op-per-person">≈ $33/person (8 pax)</div>
+            <div class="op-per-person">~$33/person (8 pax)</div>
           </div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/bruschi-boat-rental-small-boat-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/bruschiboatrental/items/536845/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Bruschi Boat Rental','260','boat')">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/bruschiboatrental/items/536845/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Bruschi Boat Rental – Small Boat','260','boat')">Book Now →</a>
           </div>
         </div>
       </div>
-
-      <!-- Card 2: Altamar Trade -->
-      <div class="op-card" data-lat="25.7748" data-lng="-80.2019" data-price="349" data-pax="10" onclick="highlightPin(1)">
+      <div class="op-card" data-lat="25.765" data-lng="-80.135" data-price="315" data-pax="2" onclick="highlightPin(6)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/yfXcCkP3SjaryQrhVi74" alt="Altamar Trade Miami River boat rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qbL1z09LTIiUXCAmdmwH" alt="Aquarius Boat Rental – Boating Lesson Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
-          <span class="op-best-badge">⚓ Miami River</span>
+          <span class="op-best-badge">🎓 Lesson</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">Aquarius Boat Rental – Boating Lesson</div>
+          <div class="op-addr">📍 Miami</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.7</span>
+            <span class="op-review-count">(336 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 2 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">🎓 Learn to Boat</span><span class="best-for-tag">👫 Couples</span><span class="best-for-tag">🌊 Beginner</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$315</div>
+            <div class="op-per-person">~$158/person (2 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/aquarius-boat-rental-boating-lesson-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/aquariusboatrental/items/501817/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Aquarius Boat Rental – Boating Lesson','315','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.7748" data-lng="-80.2019" data-price="349" data-pax="10" onclick="highlightPin(7)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/yfXcCkP3SjaryQrhVi74" alt="Altamar Trade – Miami River Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">⚓ River</span>
         </div>
         <div class="op-card-body">
           <div class="op-name">Altamar Trade – Miami River</div>
@@ -372,31 +568,112 @@
             <span class="op-review-count">(80 reviews)</span>
           </div>
           <div class="op-pax">👥 Up to 10 passengers</div>
-          <div class="best-for-tags">
-            <span class="best-for-tag">🎂 Birthday</span>
-            <span class="best-for-tag">👨‍👩‍👧 Families</span>
-            <span class="best-for-tag">🌆 City Views</span>
-          </div>
+          <div class="best-for-tags"><span class="best-for-tag">🎂 Birthday</span><span class="best-for-tag">🌆 City Views</span><span class="best-for-tag">👥 Groups</span></div>
         </div>
         <div class="op-footer">
           <div class="op-price-block">
             <div class="op-price-from">From</div>
             <div class="op-price-num">$349</div>
-            <div class="op-per-person">≈ $35/person (10 pax)</div>
+            <div class="op-per-person">~$35/person (10 pax)</div>
           </div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/altamar-trade-miami-river-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/altamartrade/items/668710/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Altamar Trade','349','boat')">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/altamartrade/items/668710/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Altamar Trade – Miami River','349','boat')">Book Now →</a>
           </div>
         </div>
       </div>
-
-      <!-- Card 3: Aquarius Miami Beach -->
-      <div class="op-card" data-lat="25.7711" data-lng="-80.1395" data-price="610" data-pax="8" onclick="highlightPin(2)">
+      <div class="op-card" data-lat="25.7762" data-lng="-80.2159" data-price="349" data-pax="12" onclick="highlightPin(8)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sxiFcP9QbGr2G9EIry9s" alt="Aquarius Boat Rental Miami Beach" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/maPhcClMS7ee72HEp23M" alt="Yaju Boat Tours – Premium Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
-          <span class="op-best-badge">🏖️ Miami Beach</span>
+          <span class="op-best-badge">🚢 Boat Tour</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">Yaju Boat Tours – Premium</div>
+          <div class="op-addr">📍 Miami</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">5.0</span>
+            <span class="op-review-count">(183 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 12 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">⭐ Top Rated</span><span class="best-for-tag">🥂 Premium</span><span class="best-for-tag">👥 Groups</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$349</div>
+            <div class="op-per-person">~$29/person (12 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/yaju-boat-tours-premium-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/yajuboattours/items/575406/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Yaju Boat Tours – Premium','349','boat')"><span class="urgency-dot"></span>Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.7751" data-lng="-80.2014" data-price="550" data-pax="8" onclick="highlightPin(9)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/qGF2J9DjSnSyRIoyiVDF" alt="Bruschi Boat Rental Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">⛵ Miami River</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">Bruschi Boat Rental</div>
+          <div class="op-addr">📍 Miami River</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.9</span>
+            <span class="op-review-count">(170 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 8 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">⛵ Classic</span><span class="best-for-tag">🌊 Biscayne Bay</span><span class="best-for-tag">👫 Couples</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$550</div>
+            <div class="op-per-person">~$69/person (8 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/bruschi-boat-rental-small-boat-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/bruschiboatrental/items/482947/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Bruschi Boat Rental','550','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.7796" data-lng="-80.2243" data-price="600" data-pax="13" onclick="highlightPin(10)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/JZZbvFywTmWTT5a3wRUr" alt="100 Miami – Premium Charter Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">🥂 Premium</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">100 Miami – Premium Charter</div>
+          <div class="op-addr">📍 Miami River</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.8</span>
+            <span class="op-review-count">(180 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 13 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">🎉 Party</span><span class="best-for-tag">👨‍👩‍👧 Large Group</span><span class="best-for-tag">🥂 Premium</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$600</div>
+            <div class="op-per-person">~$46/person (13 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/100-miami-premium-charter-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/100miami/items/648206/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('100 Miami – Premium Charter','600','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.7758" data-lng="-80.1399" data-price="610" data-pax="8" onclick="highlightPin(11)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sxiFcP9QbGr2G9EIry9s" alt="Aquarius Boat Rental – Miami Beach Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">⛵ Boat Rental</span>
         </div>
         <div class="op-card-body">
           <div class="op-name">Aquarius Boat Rental – Miami Beach</div>
@@ -407,27 +684,21 @@
             <span class="op-review-count">(267 reviews)</span>
           </div>
           <div class="op-pax">👥 Up to 8 passengers</div>
-          <div class="best-for-tags">
-            <span class="best-for-tag">🌅 Sunset Cruise</span>
-            <span class="best-for-tag">👫 Couples</span>
-            <span class="best-for-tag">🐠 Snorkeling</span>
-          </div>
+          <div class="best-for-tags"><span class="best-for-tag">🌅 Sunset</span><span class="best-for-tag">👫 Couples</span><span class="best-for-tag">🐠 Snorkeling</span></div>
         </div>
         <div class="op-footer">
           <div class="op-price-block">
             <div class="op-price-from">From</div>
             <div class="op-price-num">$610</div>
-            <div class="op-per-person">≈ $76/person (8 pax)</div>
+            <div class="op-per-person">~$76/person (8 pax)</div>
           </div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/aquarius-boat-rental-miami-beach-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/aquariusboatrental/items/508653/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Aquarius Boat Rental','610','boat')">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/aquariusboatrental/items/508653/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Aquarius Boat Rental – Miami Beach','610','boat')">Book Now →</a>
           </div>
         </div>
       </div>
-
-      <!-- Card 4: Horizon Yacht -->
-      <div class="op-card" data-lat="25.8013" data-lng="-80.2383" data-price="675" data-pax="12" onclick="highlightPin(3)">
+      <div class="op-card" data-lat="25.8013" data-lng="-80.2383" data-price="675" data-pax="12" onclick="highlightPin(12)">
         <div class="op-card-img">
           <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/IYvk4KtYSNmJz8Db2n22" alt="Horizon Yacht Rentals Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
@@ -442,31 +713,25 @@
             <span class="op-review-count">(85 reviews)</span>
           </div>
           <div class="op-pax">👥 Up to 12 passengers</div>
-          <div class="best-for-tags">
-            <span class="best-for-tag">🌅 Sunset Cruise</span>
-            <span class="best-for-tag">🎂 Birthday</span>
-            <span class="best-for-tag">⭐ Star Island</span>
-          </div>
+          <div class="best-for-tags"><span class="best-for-tag">🌅 Sunset Cruise</span><span class="best-for-tag">⭐ Star Island</span><span class="best-for-tag">🎂 Birthday</span></div>
         </div>
         <div class="op-footer">
           <div class="op-price-block">
             <div class="op-price-from">From</div>
             <div class="op-price-num">$675</div>
-            <div class="op-per-person">≈ $56/person (12 pax)</div>
+            <div class="op-per-person">~$56/person (12 pax)</div>
           </div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/horizon-yacht-rentals-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/horizonyachtrentals/items/661134/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Horizon Yacht','675','boat')">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/horizonyachtrentals/items/661134/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Horizon Yacht Rentals','675','boat')">Book Now →</a>
           </div>
         </div>
       </div>
-
-      <!-- Card 5: 100 Miami Bayshore -->
-      <div class="op-card" data-lat="25.7879" data-lng="-80.1879" data-price="700" data-pax="13" onclick="highlightPin(4)">
+      <div class="op-card" data-lat="25.7879" data-lng="-80.1879" data-price="700" data-pax="13" onclick="highlightPin(13)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/F3mEHY8LQQqcegaKMimf" alt="100 Miami Bayshore boat rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <img src="https://cdn.filestackcontent.com/xig8U79oSQOefxbu7snO/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max" alt="100 Miami – Bayshore Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
-          <span class="op-best-badge">🔥 Most Booked</span>
+          <span class="op-best-badge">🌊 Bayshore</span>
         </div>
         <div class="op-card-body">
           <div class="op-name">100 Miami – Bayshore</div>
@@ -477,31 +742,25 @@
             <span class="op-review-count">(377 reviews)</span>
           </div>
           <div class="op-pax">👥 Up to 13 passengers</div>
-          <div class="best-for-tags">
-            <span class="best-for-tag">🎂 Birthday Party</span>
-            <span class="best-for-tag">👨‍👩‍👧 Large Group</span>
-            <span class="best-for-tag">🏝️ Sandbar</span>
-          </div>
+          <div class="best-for-tags"><span class="best-for-tag">🎂 Birthday Party</span><span class="best-for-tag">🏝️ Sandbar</span><span class="best-for-tag">👥 Large Group</span></div>
         </div>
         <div class="op-footer">
           <div class="op-price-block">
             <div class="op-price-from">From</div>
             <div class="op-price-num">$700</div>
-            <div class="op-per-person">≈ $54/person (13 pax)</div>
+            <div class="op-per-person">~$54/person (13 pax)</div>
           </div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/100-miami-bayshore-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/100miami/items/648307/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('100 Miami Bayshore','700','boat')"><span class="urgency-dot"></span>Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/100miami/items/648307/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('100 Miami – Bayshore','700','boat')"><span class="urgency-dot"></span>Book Now →</a>
           </div>
         </div>
       </div>
-
-      <!-- Card 6: Ocean Force Private -->
-      <div class="op-card" data-lat="25.7709" data-lng="-80.1393" data-price="795" data-pax="6" onclick="highlightPin(5)">
+      <div class="op-card" data-lat="25.7709" data-lng="-80.1393" data-price="795" data-pax="6" onclick="highlightPin(14)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/kVN7dZWeTCiJ9rMhWrFX" alt="Ocean Force Adventures private boat Miami Beach" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/kVN7dZWeTCiJ9rMhWrFX" alt="Ocean Force Adventures – Private Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
-          <span class="op-best-badge">💪 Private Charter</span>
+          <span class="op-best-badge">💪 Adventure</span>
         </div>
         <div class="op-card-body">
           <div class="op-name">Ocean Force Adventures – Private</div>
@@ -512,31 +771,83 @@
             <span class="op-review-count">(329 reviews)</span>
           </div>
           <div class="op-pax">👥 Up to 6 passengers</div>
-          <div class="best-for-tags">
-            <span class="best-for-tag">👫 Romantic</span>
-            <span class="best-for-tag">🎁 Special Occasion</span>
-            <span class="best-for-tag">🤿 Snorkeling</span>
-          </div>
+          <div class="best-for-tags"><span class="best-for-tag">👫 Romantic</span><span class="best-for-tag">🎁 Special Occasion</span><span class="best-for-tag">🤿 Snorkeling</span></div>
         </div>
         <div class="op-footer">
           <div class="op-price-block">
             <div class="op-price-from">From</div>
             <div class="op-price-num">$795</div>
-            <div class="op-per-person">≈ $133/person (6 pax)</div>
+            <div class="op-per-person">~$133/person (6 pax)</div>
           </div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/ocean-force-adventures-private-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/oceanforceadventures/items/444868/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Ocean Force Adventures','795','boat')"><span class="urgency-dot"></span>Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/oceanforceadventures/items/444868/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Ocean Force Adventures – Private','795','boat')"><span class="urgency-dot"></span>Book Now →</a>
           </div>
         </div>
       </div>
-
-      <!-- Card 7: Real Yacht Experience -->
-      <div class="op-card" data-lat="25.6895" data-lng="-80.1574" data-price="900" data-pax="12" onclick="highlightPin(6)">
+      <div class="op-card" data-lat="25.6893" data-lng="-80.1576" data-price="800" data-pax="12" onclick="highlightPin(15)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/y6cf74yfQjyqXIzf0Smu" alt="The Real Yacht Experience Key Biscayne Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/CQH4Q4dSQ222BdUzxK4Y" alt="The Real Yacht Experience II Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
-          <span class="op-best-badge">⛵ Key Biscayne</span>
+          <span class="op-best-badge">🎉 Private</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">The Real Yacht Experience II</div>
+          <div class="op-addr">📍 Key Biscayne</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">5.0</span>
+            <span class="op-review-count">(166 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 12 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">💎 Luxury</span><span class="best-for-tag">🏝️ Key Biscayne</span><span class="best-for-tag">🌅 Sunset</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$800</div>
+            <div class="op-per-person">~$67/person (12 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/the-real-yacht-experience-ii-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/therealyachtexperience/items/567859/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('The Real Yacht Experience II','800','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.8087" data-lng="-80.1232" data-price="900" data-pax="13" onclick="highlightPin(16)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/F3mEHY8LQQqcegaKMimf" alt="100 Miami – Collins Ave Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">🏖 Collins</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">100 Miami – Collins Ave</div>
+          <div class="op-addr">📍 Miami Beach</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.9</span>
+            <span class="op-review-count">(154 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 13 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">🏖️ Miami Beach</span><span class="best-for-tag">🎉 Birthday</span><span class="best-for-tag">🌅 Sunset</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$900</div>
+            <div class="op-per-person">~$69/person (13 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/100-miami-collins-ave-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/100miami/items/648171/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('100 Miami – Collins Ave','900','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.6895" data-lng="-80.1574" data-price="900" data-pax="12" onclick="highlightPin(17)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/y6cf74yfQjyqXIzf0Smu" alt="The Real Yacht Experience Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">⛵ Yacht</span>
         </div>
         <div class="op-card-body">
           <div class="op-name">The Real Yacht Experience</div>
@@ -547,59 +858,195 @@
             <span class="op-review-count">(100 reviews)</span>
           </div>
           <div class="op-pax">👥 Up to 12 passengers</div>
-          <div class="best-for-tags">
-            <span class="best-for-tag">💎 Luxury</span>
-            <span class="best-for-tag">🌅 Sunset</span>
-            <span class="best-for-tag">🏝️ Key Biscayne</span>
-          </div>
+          <div class="best-for-tags"><span class="best-for-tag">💎 Luxury</span><span class="best-for-tag">🌅 Sunset</span><span class="best-for-tag">⛵ Yacht</span></div>
         </div>
         <div class="op-footer">
           <div class="op-price-block">
             <div class="op-price-from">From</div>
             <div class="op-price-num">$900</div>
-            <div class="op-per-person">≈ $75/person (12 pax)</div>
+            <div class="op-per-person">~$75/person (12 pax)</div>
           </div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/the-real-yacht-experience-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/therealyachtexperience/items/567861/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Real Yacht Experience','900','boat')">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/therealyachtexperience/items/567861/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('The Real Yacht Experience','900','boat')">Book Now →</a>
           </div>
         </div>
       </div>
-
-      <!-- Card 8: 100 Miami Mega Yacht -->
-      <div class="op-card" data-lat="25.8011" data-lng="-80.2381" data-price="2000" data-pax="20" onclick="highlightPin(7)">
+      <div class="op-card" data-lat="25.7897" data-lng="-80.1304" data-price="980" data-pax="8" onclick="highlightPin(18)">
         <div class="op-card-img">
-          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/xig8U79oSQOefxbu7snO" alt="100 Miami NW 21st Mega Yacht rental" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/rwIn7wiRQDeaU8pineua" alt="Open Miami – Private Everglades Tour Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
           <span class="op-cat-badge">Boat &amp; Yacht</span>
-          <span class="op-best-badge">🛳️ Mega Yacht</span>
+          <span class="op-best-badge">🐊 Private</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">Open Miami – Private Everglades Tour</div>
+          <div class="op-addr">📍 Miami Beach</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.9</span>
+            <span class="op-review-count">(130 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 8 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">🐊 Everglades</span><span class="best-for-tag">🌿 Private</span><span class="best-for-tag">🔍 Eco Tour</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$980</div>
+            <div class="op-per-person">~$123/person (8 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/open-miami-private-everglades-tour-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/open-miami/items/281856/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Open Miami – Private Everglades Tour','980','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.7794" data-lng="-80.2241" data-price="1200" data-pax="12" onclick="highlightPin(19)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hcNurBdvQXa5l1Z0FFX0" alt="100 Miami – Luxury Boat Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">💎 Luxury</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">100 Miami – Luxury Boat</div>
+          <div class="op-addr">📍 Miami River</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.7</span>
+            <span class="op-review-count">(239 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 12 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">💎 Luxury</span><span class="best-for-tag">🎉 Events</span><span class="best-for-tag">🥂 Premium</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$1,200</div>
+            <div class="op-per-person">~$100/person (12 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/100-miami-luxury-boat-rental-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/100miami/items/648184/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('100 Miami – Luxury Boat','1200','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.77" data-lng="-80.18" data-price="1250" data-pax="12" onclick="highlightPin(20)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/dwkmTqVQmeWXpmuOGR8w" alt="Aura Yacht Experience Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">✨ Aura</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">Aura Yacht Experience</div>
+          <div class="op-addr">📍 Miami</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.8</span>
+            <span class="op-review-count">(284 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 12 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">✨ Aura Yacht</span><span class="best-for-tag">👫 Romantic</span><span class="best-for-tag">💎 Luxury</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$1,250</div>
+            <div class="op-per-person">~$104/person (12 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/aura-yacht-experience-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/aura/items/693765/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('Aura Yacht Experience','1250','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.774" data-lng="-80.203" data-price="1300" data-pax="13" onclick="highlightPin(21)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/7j1kEXj9QgS9xMNqHhcK" alt="100 Miami – NW River Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">⚓ NW River</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">100 Miami – NW River</div>
+          <div class="op-addr">📍 Miami</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">5.0</span>
+            <span class="op-review-count">(200 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 13 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">🌊 River</span><span class="best-for-tag">🎉 Party</span><span class="best-for-tag">💎 Premium</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$1,300</div>
+            <div class="op-per-person">~$100/person (13 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/100-miami-nw-21st-mega-yacht-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/100miami/items/720887/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('100 Miami – NW River','1300','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+      <div class="op-card" data-lat="25.8011" data-lng="-80.2381" data-price="2000" data-pax="20" onclick="highlightPin(22)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/xig8U79oSQOefxbu7snO/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max" alt="100 Miami – NW 21st Mega Yacht Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">🛳 Mega Yacht</span>
         </div>
         <div class="op-card-body">
           <div class="op-name">100 Miami – NW 21st Mega Yacht</div>
-          <div class="op-addr">📍 Miami River</div>
+          <div class="op-addr">📍 Miami</div>
           <div class="op-rating-row">
             <span class="op-stars">★★★★★</span>
             <span class="op-rating-num">5.0</span>
             <span class="op-review-count">(197 reviews)</span>
           </div>
           <div class="op-pax">👥 Up to 20 passengers</div>
-          <div class="best-for-tags">
-            <span class="best-for-tag">🎉 Corporate Event</span>
-            <span class="best-for-tag">🎂 Large Party</span>
-            <span class="best-for-tag">💎 Premium</span>
-          </div>
+          <div class="best-for-tags"><span class="best-for-tag">🎉 Corporate</span><span class="best-for-tag">🎂 Large Party</span><span class="best-for-tag">🛳️ Mega Yacht</span></div>
         </div>
         <div class="op-footer">
           <div class="op-price-block">
             <div class="op-price-from">From</div>
             <div class="op-price-num">$2,000</div>
-            <div class="op-per-person">≈ $100/person (20 pax)</div>
+            <div class="op-per-person">~$100/person (20 pax)</div>
           </div>
           <div class="op-actions">
             <a class="op-detail-link" href="/operators/100-miami-nw-21st-mega-yacht-miami">View details →</a>
-            <a class="op-book" href="https://fareharbor.com/embeds/book/100miami/items/648310/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('100 Miami Mega Yacht','2000','boat')">Book Now →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/100miami/items/648310/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('100 Miami – NW 21st Mega Yacht','2000','boat')">Book Now →</a>
           </div>
         </div>
       </div>
+      <div class="op-card" data-lat="25.7865" data-lng="-80.2213" data-price="3800" data-pax="13" onclick="highlightPin(23)">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/sN256R2zRCqELCHMgjO1" alt="100 Miami – Luxury Boat Rental Miami" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#003d7a,#0066cc)'">
+          <span class="op-cat-badge">Boat &amp; Yacht</span>
+          <span class="op-best-badge">💎 Luxury</span>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">100 Miami – Luxury Boat Rental</div>
+          <div class="op-addr">📍 Miami</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.8</span>
+            <span class="op-review-count">(234 reviews)</span>
+          </div>
+          <div class="op-pax">👥 Up to 13 passengers</div>
+          <div class="best-for-tags"><span class="best-for-tag">💎 Ultra Luxury</span><span class="best-for-tag">🥂 VIP</span><span class="best-for-tag">🎉 Elite Events</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$3,800</div>
+            <div class="op-per-person">~$292/person (13 pax)</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-detail-link" href="/operators/100-miami-luxury-boat-rental-miami">View details →</a>
+            <a class="op-book" href="https://fareharbor.com/embeds/book/100miami/items/648149/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" onclick="event.stopPropagation();trackBookNow('100 Miami – Luxury Boat Rental','3800','boat')">Book Now →</a>
+          </div>
+        </div>
+      </div>
+
 
     </div><!-- /cards-grid -->
 
@@ -620,14 +1067,30 @@
       <table class="price-table">
         <thead><tr><th>Operator</th><th>Rating</th><th>Capacity</th><th>Starting Price</th><th>Location</th></tr></thead>
         <tbody>
-          <tr onclick="window.open('/operators/bruschi-boat-rental-small-boat-miami','_blank')" style="cursor:pointer" title="View Bruschi Boat Rental details"><td>Bruschi Boat Rental – Small Boat <span class="best-tag">Best Value</span></td><td><span class="price-stars">★★★★★</span> 4.9 <small style="color:var(--text-muted)">(219)</small></td><td>8 pax</td><td style="color:var(--teal);font-weight:700">$260</td><td>Miami River <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
-          <tr onclick="window.open('/operators/altamar-trade-miami-river-miami','_blank')" style="cursor:pointer" title="View Altamar Trade details"><td>Altamar Trade – Miami River</td><td><span class="price-stars">★★★★★</span> 4.8 <small style="color:var(--text-muted)">(80)</small></td><td>10 pax</td><td style="color:var(--teal);font-weight:700">$349</td><td>Miami River <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
-          <tr onclick="window.open('/operators/aquarius-boat-rental-miami-beach-miami','_blank')" style="cursor:pointer" title="View Aquarius details"><td>Aquarius Boat Rental – Miami Beach</td><td><span class="price-stars">★★★★★</span> 4.9 <small style="color:var(--text-muted)">(267)</small></td><td>8 pax</td><td style="color:var(--teal);font-weight:700">$610</td><td>Miami Beach <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
-          <tr onclick="window.open('/operators/horizon-yacht-rentals-miami','_blank')" style="cursor:pointer" title="View Horizon Yacht details"><td>Horizon Yacht Rentals</td><td><span class="price-stars">★★★★★</span> 5.0 <small style="color:var(--text-muted)">(85)</small></td><td>12 pax</td><td style="color:var(--teal);font-weight:700">$675</td><td>Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
-          <tr onclick="window.open('/operators/100-miami-bayshore-miami','_blank')" style="cursor:pointer" title="View 100 Miami details"><td>100 Miami – Bayshore <span class="best-tag">Most Booked</span></td><td><span class="price-stars">★★★★★</span> 5.0 <small style="color:var(--text-muted)">(377)</small></td><td>13 pax</td><td style="color:var(--teal);font-weight:700">$700</td><td>Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
-          <tr onclick="window.open('/operators/ocean-force-adventures-private-miami','_blank')" style="cursor:pointer" title="View Ocean Force details"><td>Ocean Force Adventures – Private</td><td><span class="price-stars">★★★★★</span> 5.0 <small style="color:var(--text-muted)">(329)</small></td><td>6 pax</td><td style="color:var(--teal);font-weight:700">$795</td><td>Miami Beach <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
-          <tr onclick="window.open('/operators/the-real-yacht-experience-miami','_blank')" style="cursor:pointer" title="View Real Yacht details"><td>The Real Yacht Experience</td><td><span class="price-stars">★★★★★</span> 5.0 <small style="color:var(--text-muted)">(100)</small></td><td>12 pax</td><td style="color:var(--teal);font-weight:700">$900</td><td>Key Biscayne <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
-          <tr onclick="window.open('/operators/100-miami-nw-21st-mega-yacht-miami','_blank')" style="cursor:pointer" title="View 100 Miami Mega Yacht details"><td>100 Miami – NW 21st Mega Yacht</td><td><span class="price-stars">★★★★★</span> 5.0 <small style="color:var(--text-muted)">(197)</small></td><td>20 pax</td><td style="color:var(--teal);font-weight:700">$2,000</td><td>Miami River <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/miami-aqua-tours-nite-sea-party-cruise-miami','_blank')" style="cursor:pointer"><td>Miami Aqua Tours <span class="best-tag">Best Value</span></td><td><span class="price-stars">★★★★★</span> 4.9 <small style="color:var(--text-muted)">(147)</small></td><td>30 pax</td><td style="color:var(--teal);font-weight:700">$5</td><td>Downtown Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/walks-nyc-boat-tour-miami-miami','_blank')" style="cursor:pointer"><td>Walks NYC – Boat Tour Miami <span class="best-tag">Best Value</span></td><td><span class="price-stars">★★★★★</span> 4.6 <small style="color:var(--text-muted)">(86)</small></td><td>20 pax</td><td style="color:var(--teal);font-weight:700">$16</td><td>Downtown Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/miami-tour-company-everglades-miami','_blank')" style="cursor:pointer"><td>Miami Tour Company – Everglades</td><td><span class="price-stars">★★★★★</span> 4.5 <small style="color:var(--text-muted)">(224)</small></td><td>15 pax</td><td style="color:var(--teal);font-weight:700">$73</td><td>Downtown Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/ocean-force-adventures-private-miami','_blank')" style="cursor:pointer"><td>Ocean Force Adventures – Marina</td><td><span class="price-stars">★★★★★</span> 4.6 <small style="color:var(--text-muted)">(344)</small></td><td>100 pax</td><td style="color:var(--teal);font-weight:700">$169</td><td>Miami Beach <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/yaju-boat-tours-premium-miami','_blank')" style="cursor:pointer"><td>Yaju Boat Tours – Standard</td><td><span class="price-stars">★★★★★</span> 4.6 <small style="color:var(--text-muted)">(312)</small></td><td>10 pax</td><td style="color:var(--teal);font-weight:700">$249</td><td>Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/bruschi-boat-rental-small-boat-miami','_blank')" style="cursor:pointer"><td>Bruschi Boat Rental – Small Boat</td><td><span class="price-stars">★★★★★</span> 4.9 <small style="color:var(--text-muted)">(219)</small></td><td>8 pax</td><td style="color:var(--teal);font-weight:700">$260</td><td>Miami River <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/aquarius-boat-rental-boating-lesson-miami','_blank')" style="cursor:pointer"><td>Aquarius Boat Rental – Boating Lesson</td><td><span class="price-stars">★★★★★</span> 4.7 <small style="color:var(--text-muted)">(336)</small></td><td>2 pax</td><td style="color:var(--teal);font-weight:700">$315</td><td>Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/altamar-trade-miami-river-miami','_blank')" style="cursor:pointer"><td>Altamar Trade – Miami River</td><td><span class="price-stars">★★★★★</span> 4.8 <small style="color:var(--text-muted)">(80)</small></td><td>10 pax</td><td style="color:var(--teal);font-weight:700">$349</td><td>Miami River <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/yaju-boat-tours-premium-miami','_blank')" style="cursor:pointer"><td>Yaju Boat Tours – Premium <span class="best-tag">5.0 ★</span></td><td><span class="price-stars">★★★★★</span> 5.0 <small style="color:var(--text-muted)">(183)</small></td><td>12 pax</td><td style="color:var(--teal);font-weight:700">$349</td><td>Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/bruschi-boat-rental-small-boat-miami','_blank')" style="cursor:pointer"><td>Bruschi Boat Rental</td><td><span class="price-stars">★★★★★</span> 4.9 <small style="color:var(--text-muted)">(170)</small></td><td>8 pax</td><td style="color:var(--teal);font-weight:700">$550</td><td>Miami River <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/100-miami-premium-charter-miami','_blank')" style="cursor:pointer"><td>100 Miami – Premium Charter</td><td><span class="price-stars">★★★★★</span> 4.8 <small style="color:var(--text-muted)">(180)</small></td><td>13 pax</td><td style="color:var(--teal);font-weight:700">$600</td><td>Miami River <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/aquarius-boat-rental-miami-beach-miami','_blank')" style="cursor:pointer"><td>Aquarius Boat Rental – Miami Beach</td><td><span class="price-stars">★★★★★</span> 4.9 <small style="color:var(--text-muted)">(267)</small></td><td>8 pax</td><td style="color:var(--teal);font-weight:700">$610</td><td>Miami Beach <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/horizon-yacht-rentals-miami','_blank')" style="cursor:pointer"><td>Horizon Yacht Rentals <span class="best-tag">5.0 ★</span></td><td><span class="price-stars">★★★★★</span> 5.0 <small style="color:var(--text-muted)">(85)</small></td><td>12 pax</td><td style="color:var(--teal);font-weight:700">$675</td><td>Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/100-miami-bayshore-miami','_blank')" style="cursor:pointer"><td>100 Miami – Bayshore <span class="best-tag">Most Booked</span></td><td><span class="price-stars">★★★★★</span> 5.0 <small style="color:var(--text-muted)">(377)</small></td><td>13 pax</td><td style="color:var(--teal);font-weight:700">$700</td><td>Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/ocean-force-adventures-private-miami','_blank')" style="cursor:pointer"><td>Ocean Force Adventures – Private <span class="best-tag">5.0 ★</span></td><td><span class="price-stars">★★★★★</span> 5.0 <small style="color:var(--text-muted)">(329)</small></td><td>6 pax</td><td style="color:var(--teal);font-weight:700">$795</td><td>Miami Beach <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/the-real-yacht-experience-ii-miami','_blank')" style="cursor:pointer"><td>The Real Yacht Experience II <span class="best-tag">5.0 ★</span></td><td><span class="price-stars">★★★★★</span> 5.0 <small style="color:var(--text-muted)">(166)</small></td><td>12 pax</td><td style="color:var(--teal);font-weight:700">$800</td><td>Key Biscayne <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/100-miami-collins-ave-miami','_blank')" style="cursor:pointer"><td>100 Miami – Collins Ave</td><td><span class="price-stars">★★★★★</span> 4.9 <small style="color:var(--text-muted)">(154)</small></td><td>13 pax</td><td style="color:var(--teal);font-weight:700">$900</td><td>Miami Beach <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/the-real-yacht-experience-miami','_blank')" style="cursor:pointer"><td>The Real Yacht Experience <span class="best-tag">5.0 ★</span></td><td><span class="price-stars">★★★★★</span> 5.0 <small style="color:var(--text-muted)">(100)</small></td><td>12 pax</td><td style="color:var(--teal);font-weight:700">$900</td><td>Key Biscayne <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/open-miami-private-everglades-tour-miami','_blank')" style="cursor:pointer"><td>Open Miami – Private Everglades Tour</td><td><span class="price-stars">★★★★★</span> 4.9 <small style="color:var(--text-muted)">(130)</small></td><td>8 pax</td><td style="color:var(--teal);font-weight:700">$980</td><td>Miami Beach <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/100-miami-luxury-boat-rental-miami','_blank')" style="cursor:pointer"><td>100 Miami – Luxury Boat</td><td><span class="price-stars">★★★★★</span> 4.7 <small style="color:var(--text-muted)">(239)</small></td><td>12 pax</td><td style="color:var(--teal);font-weight:700">$1,200</td><td>Miami River <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/aura-yacht-experience-miami','_blank')" style="cursor:pointer"><td>Aura Yacht Experience</td><td><span class="price-stars">★★★★★</span> 4.8 <small style="color:var(--text-muted)">(284)</small></td><td>12 pax</td><td style="color:var(--teal);font-weight:700">$1,250</td><td>Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/100-miami-nw-21st-mega-yacht-miami','_blank')" style="cursor:pointer"><td>100 Miami – NW River <span class="best-tag">5.0 ★</span></td><td><span class="price-stars">★★★★★</span> 5.0 <small style="color:var(--text-muted)">(200)</small></td><td>13 pax</td><td style="color:var(--teal);font-weight:700">$1,300</td><td>Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/100-miami-nw-21st-mega-yacht-miami','_blank')" style="cursor:pointer"><td>100 Miami – NW 21st Mega Yacht <span class="best-tag">5.0 ★</span></td><td><span class="price-stars">★★★★★</span> 5.0 <small style="color:var(--text-muted)">(197)</small></td><td>20 pax</td><td style="color:var(--teal);font-weight:700">$2,000</td><td>Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
+          <tr onclick="window.open('/operators/100-miami-luxury-boat-rental-miami','_blank')" style="cursor:pointer"><td>100 Miami – Luxury Boat Rental</td><td><span class="price-stars">★★★★★</span> 4.8 <small style="color:var(--text-muted)">(234)</small></td><td>13 pax</td><td style="color:var(--teal);font-weight:700">$3,800</td><td>Miami <span style="float:right;color:var(--teal);font-size:.75rem">→</span></td></tr>
         </tbody>
       </table>
     </div>
