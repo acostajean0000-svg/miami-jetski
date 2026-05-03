@@ -1180,7 +1180,7 @@ document.querySelectorAll('.urgency-spots').forEach(function(el){
 var exitShown = false;
 function showExit(){ if(!exitShown){ exitShown=true; var m=document.getElementById('exitModal'); if(m){m.style.display='flex';} } }
 function closeExit(){ var m=document.getElementById('exitModal'); if(m) m.style.display='none'; }
-function submitExit(e){ e.preventDefault(); var em=document.getElementById('exitEmail'); if(window.dataLayer)dataLayer.push({event:'exit_intent_submit',email_domain:(em.value||'').split('@')[1]||''}); closeExit(); var b=document.querySelector('#exitModal button[type=submit]'); if(b){b.textContent='✓ You're in!';} }
+function submitExit(e){ e.preventDefault(); var em=document.getElementById('exitEmail'); if(window.dataLayer)dataLayer.push({event:'exit_intent_submit',email_domain:(em.value||'').split('@')[1]||''}); closeExit(); var b=document.querySelector('#exitModal button[type=submit]'); if(b){b.textContent='✓ You\'re in!';} }
 document.addEventListener('mouseleave',function(e){ if(e.clientY<10) showExit(); });
 // Mobile: show after 45s idle
 var idleTimer = setTimeout(function(){ showExit(); }, 45000);
