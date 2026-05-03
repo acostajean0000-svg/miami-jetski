@@ -79,6 +79,25 @@
     .footer-links a{color:var(--text-muted);font-size:.78rem;transition:color .2s;}
     .footer-links a:hover{color:var(--teal);}
     @media(max-width:600px){.nav-links{display:none;}.art-ops{grid-template-columns:1fr 1fr;}}
+
+    /* ── BOOKING WIDGET ── */
+    .bw-wrap{background:rgba(8,21,37,.88);border:1.5px solid rgba(0,212,200,.25);border-radius:16px;padding:20px 20px 16px;margin-top:22px;backdrop-filter:blur(8px);}
+    .bw-title{font-family:Montserrat,sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:12px;}
+    .bw-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px;}
+    @media(max-width:500px){.bw-cats{grid-template-columns:repeat(4,1fr);gap:6px;}}
+    .bw-cat{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;border-radius:12px;border:1.5px solid var(--border);background:rgba(255,255,255,.03);cursor:pointer;transition:all .18s;-webkit-tap-highlight-color:transparent;}
+    .bw-cat:hover,.bw-cat.sel{border-color:var(--teal);background:rgba(0,212,200,.1);}
+    .bw-cat.sel .bw-cat-icon{transform:scale(1.15);}
+    .bw-cat-icon{font-size:1.4rem;line-height:1;transition:transform .18s;}
+    .bw-cat-lbl{font-family:Montserrat,sans-serif;font-size:.6rem;font-weight:700;color:var(--light);text-align:center;line-height:1.2;}
+    .bw-row{display:flex;gap:10px;align-items:center;}
+    .bw-guests{flex:1;display:flex;flex-direction:column;gap:4px;}
+    .bw-guests-lbl{font-size:.65rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:1px;}
+    .bw-guests-sel{background:rgba(15,32,56,.9);border:1.5px solid var(--border);color:#fff;border-radius:10px;padding:9px 12px;font-size:.82rem;font-family:Montserrat,sans-serif;font-weight:700;cursor:pointer;outline:none;width:100%;}
+    .bw-guests-sel:focus{border-color:var(--teal);}
+    .bw-cta{flex-shrink:0;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);border:none;padding:11px 22px;border-radius:50px;font-family:Montserrat,sans-serif;font-weight:800;font-size:.85rem;cursor:pointer;white-space:nowrap;min-height:44px;transition:all .2s;display:flex;align-items:center;gap:6px;}
+    .bw-cta:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,212,200,.4);}
+    .bw-sub{font-size:.65rem;color:var(--muted);margin-top:10px;text-align:center;}
   </style>
 </head>
 <body>

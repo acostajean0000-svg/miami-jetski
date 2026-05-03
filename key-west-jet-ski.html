@@ -247,6 +247,25 @@
     .sort-lbl{font-size:.72rem;color:var(--muted);font-weight:700;white-space:nowrap;}
     .trust-strip{display:flex;gap:16px;flex-wrap:wrap;padding:16px;background:rgba(0,212,200,.04);border:1px solid rgba(0,212,200,.1);border-radius:12px;margin-bottom:20px;}
     .tbadge{display:flex;align-items:center;gap:5px;font-size:.74rem;color:var(--light);font-weight:600;}
+
+    /* ── BOOKING WIDGET ── */
+    .bw-wrap{background:rgba(8,21,37,.88);border:1.5px solid rgba(0,212,200,.25);border-radius:16px;padding:20px 20px 16px;margin-top:22px;backdrop-filter:blur(8px);}
+    .bw-title{font-family:Montserrat,sans-serif;font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:var(--muted);margin-bottom:12px;}
+    .bw-cats{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px;}
+    @media(max-width:500px){.bw-cats{grid-template-columns:repeat(4,1fr);gap:6px;}}
+    .bw-cat{display:flex;flex-direction:column;align-items:center;gap:4px;padding:10px 6px;border-radius:12px;border:1.5px solid var(--border);background:rgba(255,255,255,.03);cursor:pointer;transition:all .18s;-webkit-tap-highlight-color:transparent;}
+    .bw-cat:hover,.bw-cat.sel{border-color:var(--teal);background:rgba(0,212,200,.1);}
+    .bw-cat.sel .bw-cat-icon{transform:scale(1.15);}
+    .bw-cat-icon{font-size:1.4rem;line-height:1;transition:transform .18s;}
+    .bw-cat-lbl{font-family:Montserrat,sans-serif;font-size:.6rem;font-weight:700;color:var(--light);text-align:center;line-height:1.2;}
+    .bw-row{display:flex;gap:10px;align-items:center;}
+    .bw-guests{flex:1;display:flex;flex-direction:column;gap:4px;}
+    .bw-guests-lbl{font-size:.65rem;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:1px;}
+    .bw-guests-sel{background:rgba(15,32,56,.9);border:1.5px solid var(--border);color:#fff;border-radius:10px;padding:9px 12px;font-size:.82rem;font-family:Montserrat,sans-serif;font-weight:700;cursor:pointer;outline:none;width:100%;}
+    .bw-guests-sel:focus{border-color:var(--teal);}
+    .bw-cta{flex-shrink:0;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);border:none;padding:11px 22px;border-radius:50px;font-family:Montserrat,sans-serif;font-weight:800;font-size:.85rem;cursor:pointer;white-space:nowrap;min-height:44px;transition:all .2s;display:flex;align-items:center;gap:6px;}
+    .bw-cta:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,212,200,.4);}
+    .bw-sub{font-size:.65rem;color:var(--muted);margin-top:10px;text-align:center;}
   </style>
 </head>
 <body>
@@ -296,14 +315,39 @@
       <div><div class="ps-num">4.7 ⭐</div><div class="ps-lbl">Avg Rating</div></div>
       <div><div class="ps-num">1,200+</div><div class="ps-lbl">Reviews</div></div>
     </div>
-    <div class="hero-qp">
-      <div class="hero-qp-lbl">What are you looking for?</div>
-      <div class="hero-qp-btns">
-        <button class="hqp-btn active" onclick="quickFilter('jetski')">View Options</button>
-        <button class="hqp-btn" onclick="quickFilter('budget')">💰 Budget Picks</button>
-        <button class="hqp-btn" onclick="resetFilters()">All Activities</button>
+
+    <!-- BOOKING WIDGET -->
+    <div class="bw-wrap" id="bookingWidget">
+      <div class="bw-title">Step 1 — Pick your activity</div>
+      <div class="bw-cats" id="bwCats">
+        <div class="bw-cat sel" data-bwcat="all" onclick="bwSelect(this,'all')"><div class="bw-cat-icon">🌴</div><div class="bw-cat-lbl">All</div></div>
+        <div class="bw-cat" data-bwcat="jetski" onclick="bwSelect(this,'jetski')"><div class="bw-cat-icon">🏄</div><div class="bw-cat-lbl">Jet Ski</div></div>
+        <div class="bw-cat" data-bwcat="boat" onclick="bwSelect(this,'boat')"><div class="bw-cat-icon">⛵</div><div class="bw-cat-lbl">Boat</div></div>
+        <div class="bw-cat" data-bwcat="sail" onclick="bwSelect(this,'sail')"><div class="bw-cat-icon">🌅</div><div class="bw-cat-lbl">Sailing</div></div>
+        <div class="bw-cat" data-bwcat="aerial" onclick="bwSelect(this,'aerial')"><div class="bw-cat-icon">🚁</div><div class="bw-cat-lbl">Helicopter</div></div>
+        <div class="bw-cat" data-bwcat="golfcart" onclick="bwSelect(this,'golfcart')"><div class="bw-cat-icon">🛺</div><div class="bw-cat-lbl">Golf Cart</div></div>
+        <div class="bw-cat" data-bwcat="watersports" onclick="bwSelect(this,'watersports')"><div class="bw-cat-icon">🤿</div><div class="bw-cat-lbl">Diving</div></div>
+        <div class="bw-cat" data-bwcat="fishing" onclick="bwSelect(this,'fishing')"><div class="bw-cat-icon">🎣</div><div class="bw-cat-lbl">Fishing</div></div>
       </div>
+      <div class="bw-row">
+        <div class="bw-guests">
+          <div class="bw-guests-lbl">Guests</div>
+          <select class="bw-guests-sel" id="bwGuests">
+            <option value="1">1 person</option>
+            <option value="2" selected>2 people</option>
+            <option value="3">3 people</option>
+            <option value="4">4 people</option>
+            <option value="6">5–6 people</option>
+            <option value="8">7–8 people</option>
+            <option value="10">9–10 people</option>
+            <option value="12">10+ people</option>
+          </select>
+        </div>
+        <button class="bw-cta" id="bwBtn" onclick="bwSearch()">See Options →</button>
+      </div>
+      <div class="bw-sub">🔄 Free cancellation &nbsp;·&nbsp; ✅ Instant confirmation &nbsp;·&nbsp; No hidden fees</div>
     </div>
+
   </div>
 </section>
 
@@ -1096,6 +1140,25 @@ window.addEventListener('scroll', function(){
 
 // Auto-activate category for this ad-group page
 document.addEventListener("DOMContentLoaded",function(){ setCat("jetski"); });
+
+
+// ── BOOKING WIDGET ──
+var bwCat = 'all';
+function bwSelect(el, cat){
+  bwCat = cat;
+  document.querySelectorAll('.bw-cat').forEach(function(c){ c.classList.remove('sel'); });
+  el.classList.add('sel');
+  var btn = document.getElementById('bwBtn');
+  var labels = {all:'See All Options →',jetski:'See Jet Ski Options →',boat:'See Boat Options →',sail:'See Sailing Options →',aerial:'See Helicopter Options →',golfcart:'See Golf Cart Options →',watersports:'See Diving Options →',fishing:'See Fishing Options →'};
+  if(btn) btn.textContent = labels[cat] || 'See Options →';
+}
+function bwSearch(){
+  var guests = parseInt(document.getElementById('bwGuests').value) || 2;
+  if(window.dataLayer) dataLayer.push({event:'booking_widget_search', activity:bwCat, guests:guests});
+  setCat(bwCat);
+  var grid = document.getElementById('cardsGrid');
+  if(grid) grid.scrollIntoView({behavior:'smooth', block:'start'});
+}
 
 // ── DKI: Dynamic Keyword Insertion ──
 (function(){
