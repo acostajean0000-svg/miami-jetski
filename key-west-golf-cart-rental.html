@@ -4,10 +4,10 @@
   <meta charset="UTF-8">
   <meta name="color-scheme" content="dark">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-  <title>Key West Activities 2026 | 18 Operators – From $35 | ⭐ 4.7 Stars</title>
-  <meta name="description" content="Compare 18 top-rated Key West activities — jet ski, sailing, boat charters, golf carts, helicopter tours & more. ⭐ 4.7 avg · 1,200+ reviews. Instant booking, free cancellation.">
+  <title>Key West Golf Cart Rental 2026 | Street Legal – From $89 | ⭐ 4.5</title>
+  <meta name="description" content="Rent a street-legal golf cart in Key West from $89/day. Explore Duval St, beaches & restaurants at your own pace. Instant booking.">
   <meta name="robots" content="index,follow">
-  <link rel="canonical" href="https://miamijetskiboatrentals.com/key-west-activities">
+  <link rel="canonical" href="https://miamijetskiboatrentals.com/key-west-golf-cart-rental">
   <meta property="og:title" content="Key West Activities 2026 | 18 Operators From $35 | ⭐ 4.7 Stars">
   <meta property="og:description" content="18 verified Key West activities — jet ski, sailing, boat charters, helicopter, golf carts & more. Book instantly.">
   <meta property="og:type" content="website">
@@ -253,15 +253,15 @@
 
 <!-- MOBILE TOP BOOK BAR (ads only) -->
 <div class="mobile-top-bar" id="mobileTopBar">
-  <div style="font-size:.8rem;font-weight:700;">🌴 Key West Activities — From $35</div>
+  <div style="font-size:.8rem;font-weight:700;">🛺 Key West Golf Cart — Key West</div>
   <a href="#cardsGrid" class="mobile-top-btn" onclick="if(window.dataLayer)dataLayer.push({event:'mobile_top_cta'})">Book Now →</a>
 </div>
 
 <!-- STICKY BOTTOM BAR -->
 <div class="sticky-bar" id="stickyBar">
   <div class="sticky-bar-left">
-    <div class="sticky-bar-title">🌴 Key West Activities</div>
-    <div class="sticky-bar-sub">⭐ 4.7 · 18 operators · From $35</div>
+    <div class="sticky-bar-title">🛺 Key West Golf Cart</div>
+    <div class="sticky-bar-sub">⭐ FareHarbor Verified · Instant Booking</div>
   </div>
   <a class="sticky-bar-btn" href="#cardsGrid" onclick="if(window.dataLayer)dataLayer.push({event:'sticky_cta_click',page:'key-west-activities'})">Book Now →</a>
   <button class="sticky-bar-close" onclick="this.closest('.sticky-bar').style.display='none'" aria-label="Close">✕</button>
@@ -286,8 +286,8 @@
 
 <section class="page-hero">
   <div class="page-hero-inner">
-    <div class="page-tag">🌴 Key West, Florida</div>
-    <h1>🏄 Key West <span class="t">Activities</span> 2026</h1>
+    <div class="page-tag">🛺 Key West Golf Cart</div>
+    <h1>Key West Golf Cart <span class="t">Rentals</span></h1>
     <p>Jet ski tours, boat charters, sailing, golf carts, helicopter flights & more. 18 FareHarbor-verified operators — all with instant booking and free cancellation.</p>
     <div class="hero-proof"><span class="hp-stars">★★★★★</span> <strong>4.7</strong> · 1,200+ verified reviews · <span style="color:var(--teal)">Free cancellation</span></div>
     <div class="page-stats">
@@ -299,11 +299,9 @@
     <div class="hero-qp">
       <div class="hero-qp-lbl">What are you looking for?</div>
       <div class="hero-qp-btns">
-        <button class="hqp-btn" onclick="quickFilter('budget')">💰 Under $150</button>
-        <button class="hqp-btn" onclick="quickFilter('jetski')">🏄 Jet Ski</button>
-        <button class="hqp-btn" onclick="quickFilter('boat')">⛵ Boat Charter</button>
-        <button class="hqp-btn" onclick="quickFilter('sail')">🌅 Sunset Sail</button>
-        <button class="hqp-btn" onclick="quickFilter('aerial')">🚁 Helicopter</button>
+        <button class="hqp-btn active" onclick="quickFilter('golfcart')">View Options</button>
+        <button class="hqp-btn" onclick="quickFilter('budget')">💰 Budget Picks</button>
+        <button class="hqp-btn" onclick="resetFilters()">All Activities</button>
       </div>
     </div>
   </div>
@@ -330,13 +328,13 @@
   <div class="filter-bar-inner">
     <div class="filter-row">
       <span class="filter-lbl">Category</span>
-      <button class="ftab active" data-cat="all">All Activities</button>
+      <button class="ftab" data-cat="all">All Activities</button>
       <button class="ftab" data-cat="jetski">🏄 Jet Ski</button>
       <button class="ftab" data-cat="boat">⛵ Boat Charter</button>
       <button class="ftab" data-cat="sail">🌅 Sailing</button>
       <button class="ftab" data-cat="watersports">🤿 Water Sports</button>
       <button class="ftab" data-cat="aerial">🚁 Helicopter</button>
-      <button class="ftab" data-cat="golfcart">🛺 Golf Cart</button>
+      <button class="ftab active" data-cat="golfcart">🛺 Golf Cart</button>
       <button class="ftab" data-cat="tour">🦞 Tours</button>
       <button class="ftab" data-cat="fishing">🎣 Fishing</button>
     </div>
@@ -355,7 +353,7 @@
 <div class="cards-area">
   <div class="section-hdr">
     <div>
-      <h2>Key West Activities — All 18 Operators</h2>
+      <h2>Key West Golf Cart Rentals — Key West</h2>
       <p>⭐ 4.7 avg · 1,200+ reviews · Updated May 2026 &nbsp;·&nbsp; <span id="activeCount" style="color:var(--teal);font-weight:700"></span></p>
     </div>
     <div class="sort-wrap">
@@ -1095,6 +1093,9 @@ window.addEventListener('scroll', function(){
   if(!bar) return;
   if(window.scrollY > 400 && !stickyShown){ bar.classList.add('show'); stickyShown = true; }
 }, {passive:true});
+
+// Auto-activate category for this ad-group page
+document.addEventListener("DOMContentLoaded",function(){ setCat("golfcart"); });
 
 // ── DKI: Dynamic Keyword Insertion ──
 (function(){
