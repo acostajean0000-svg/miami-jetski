@@ -1176,23 +1176,9 @@ document.querySelectorAll('.urgency-spots').forEach(function(el){
   el.textContent = Math.floor(Math.random()*4)+2;
 });
 
-// ── EXIT INTENT ──
-var exitShown = false;
-function showExit(){ if(!exitShown){ exitShown=true; var m=document.getElementById('exitModal'); if(m){m.style.display='flex';} } }
-function closeExit(){ var m=document.getElementById('exitModal'); if(m) m.style.display='none'; }
-function submitExit(e){ e.preventDefault(); var em=document.getElementById('exitEmail'); if(window.dataLayer)dataLayer.push({event:'exit_intent_submit',email_domain:(em.value||'').split('@')[1]||''}); closeExit(); var b=document.querySelector('#exitModal button[type=submit]'); if(b){b.textContent='✓ You\'re in!';} }
-document.addEventListener('mouseleave',function(e){ if(e.clientY<10) showExit(); });
-// Mobile: show after 45s idle
-var idleTimer = setTimeout(function(){ showExit(); }, 45000);
-document.addEventListener('touchstart',function(){ clearTimeout(idleTimer); idleTimer=setTimeout(function(){showExit();},45000); },{passive:true});
 
 </script>
 
-<!-- EXIT INTENT MODAL -->
-<div id="exitModal" style="display:none;position:fixed;inset:0;z-index:9999;background:rgba(0,0,0,.75);backdrop-filter:blur(4px);align-items:center;justify-content:center;padding:16px;">
-  <div style="background:#0a1e35;border:1.5px solid var(--teal);border-radius:20px;max-width:440px;width:100%;padding:32px 28px;position:relative;text-align:center;">
-    <button onclick="closeExit()" style="position:absolute;top:12px;right:16px;background:none;border:none;color:var(--muted);font-size:1.3rem;cursor:pointer;line-height:1;">✕</button>
-    <div style="font-size:2.2rem;margin-bottom:8px;">🌴</div>
     <h3 style="font-family:Montserrat,sans-serif;font-weight:900;font-size:1.2rem;margin-bottom:8px;">Wait — Get $10 Off Your First Booking</h3>
     <p style="color:var(--muted);font-size:.85rem;margin-bottom:20px;">Join 4,200+ Florida adventurers. Get exclusive deals on Key West activities delivered to your inbox.</p>
     <form onsubmit="submitExit(event)" style="display:flex;gap:8px;flex-wrap:wrap;">
