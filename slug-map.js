@@ -3,4 +3,13 @@ window._OP_SLUG_MAP = {"js5":"305-tours-rentals-miami","bt1":"bruschi-boat-renta
 "bt101":"freedom-float-boat-rental-westfl",
 "bt102":"double-freedom-float-boat-rental-westfl",
 "br14":"multi-day-e-bike-rental-westfl",
+"js50":"power-up-watersports-westfl",
+"js51":"bonita-jet-ski-parasail-gulf",
+"js52":"bluwater-jet-ski-rentals-gulf",
+"bt103":"paradise-island-pontoon-rentals-westfl",
+"ws55":"johns-pass-parasail-westfl",
+"ws56":"suncoast-watersports-westfl",
+"ws57":"gators-parasail-westfl",
+"js53":"luxe-jet-ski-rental-orlando-centralfl",
+"ws58":"sole-watersports-miami",
 };
