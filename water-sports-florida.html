@@ -160,6 +160,16 @@
     .zone-tab.active{background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);border-color:transparent;}
     .zone-tab .tab-count{background:rgba(0,0,0,.18);color:inherit;font-size:.65rem;padding:1px 6px;border-radius:10px;font-weight:800;}
     .zone-tab.active .tab-count{background:rgba(4,13,26,.22);}
+  
+    /* ---- AVAILABILITY EMBED ---- */
+    .fh-avail-section{margin:32px 0 24px;background:#081525;border:1.5px solid rgba(0,210,255,.15);border-radius:16px;overflow:hidden;}
+    .fh-avail-header{padding:20px 24px 14px;border-bottom:1px solid rgba(0,210,255,.1);}
+    .fh-avail-header h3{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;color:#e8f4fd;margin:0 0 4px;}
+    .fh-avail-header p{font-size:.78rem;color:#7ba3c0;margin:0;}
+    .fh-calendar-wrap{position:relative;min-height:160px;background:#081525;}
+    .fh-calendar-loader{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#7ba3c0;font-size:.83rem;gap:8px;}
+    .fh-calendar-frame{display:block;width:100%;min-height:680px;border:none;opacity:0;transition:opacity .4s;}
+    .fh-calendar-frame.fh-loaded{opacity:1;}
   </style>
   <meta property="og:image" content="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/3ReQdBWdQoSIFJlghYUg">
   <meta property="og:image:width" content="1200">
@@ -576,5 +586,26 @@ function filterZone(zone, btn){
 })();
 </script>
 
+<script>
+(function(){
+  var ff = document.querySelectorAll('.fh-calendar-frame[data-src]');
+  if(!ff.length) return;
+  function loadFrame(fr){
+    fr.src = fr.getAttribute('data-src');
+    fr.addEventListener('load', function(){
+      fr.classList.add('fh-loaded');
+      var loader = fr.parentElement.querySelector('.fh-calendar-loader');
+      if(loader) loader.style.display='none';
+    });
+    fr.removeAttribute('data-src');
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ loadFrame(e.target); io.unobserve(e.target); } });
+    },{rootMargin:'300px'});
+    ff.forEach(function(f){ io.observe(f); });
+  } else { ff.forEach(loadFrame); }
+})();
+</script>
 </body>
 </html>

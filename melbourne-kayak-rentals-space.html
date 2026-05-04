@@ -50,6 +50,16 @@
     .miz-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:14px;text-decoration:none;color:#e8edf5;display:flex;flex-direction:column;gap:4px;transition:.2s}.miz-card:hover{border-color:#00D4C8;transform:translateY(-2px)}
     .miz-name{font-weight:700;font-size:.85rem}.miz-meta{font-size:.75rem;color:rgba(232,237,245,.5)}
     @media(max-width:600px){.hero-photo{height:220px}.map-wrap iframe{height:240px}}
+  
+    /* ---- AVAILABILITY EMBED ---- */
+    .fh-avail-section{margin:32px 0 24px;background:#081525;border:1.5px solid rgba(0,210,255,.15);border-radius:16px;overflow:hidden;}
+    .fh-avail-header{padding:20px 24px 14px;border-bottom:1px solid rgba(0,210,255,.1);}
+    .fh-avail-header h3{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;color:#e8f4fd;margin:0 0 4px;}
+    .fh-avail-header p{font-size:.78rem;color:#7ba3c0;margin:0;}
+    .fh-calendar-wrap{position:relative;min-height:160px;background:#081525;}
+    .fh-calendar-loader{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#7ba3c0;font-size:.83rem;gap:8px;}
+    .fh-calendar-frame{display:block;width:100%;min-height:680px;border:none;opacity:0;transition:opacity .4s;}
+    .fh-calendar-frame.fh-loaded{opacity:1;}
   </style>
 </head>
 <body>
@@ -104,5 +114,26 @@
   <p>© 2025 <a href="/">FloridaWaterSports</a> · Comparing 377 operators across Florida</p>
   <p style="margin-top:8px"><a href="/">All Operators</a> · <a href="/sitemap.xml">Sitemap</a></p>
 </footer>
+<script>
+(function(){
+  var ff = document.querySelectorAll('.fh-calendar-frame[data-src]');
+  if(!ff.length) return;
+  function loadFrame(fr){
+    fr.src = fr.getAttribute('data-src');
+    fr.addEventListener('load', function(){
+      fr.classList.add('fh-loaded');
+      var loader = fr.parentElement.querySelector('.fh-calendar-loader');
+      if(loader) loader.style.display='none';
+    });
+    fr.removeAttribute('data-src');
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ loadFrame(e.target); io.unobserve(e.target); } });
+    },{rootMargin:'300px'});
+    ff.forEach(function(f){ io.observe(f); });
+  } else { ff.forEach(loadFrame); }
+})();
+</script>
 </body>
 </html>

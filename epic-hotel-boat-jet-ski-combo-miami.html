@@ -138,6 +138,16 @@
     /* FOOTER */
     footer{background:#020810;border-top:1px solid rgba(0,210,255,.1);padding:28px 20px;text-align:center;color:#4a7a9b;font-size:.82rem}
     footer a{color:#00d2ff}
+  
+    /* ---- AVAILABILITY EMBED ---- */
+    .fh-avail-section{margin:32px 0 24px;background:#081525;border:1.5px solid rgba(0,210,255,.15);border-radius:16px;overflow:hidden;}
+    .fh-avail-header{padding:20px 24px 14px;border-bottom:1px solid rgba(0,210,255,.1);}
+    .fh-avail-header h3{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;color:#e8f4fd;margin:0 0 4px;}
+    .fh-avail-header p{font-size:.78rem;color:#7ba3c0;margin:0;}
+    .fh-calendar-wrap{position:relative;min-height:160px;background:#081525;}
+    .fh-calendar-loader{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#7ba3c0;font-size:.83rem;gap:8px;}
+    .fh-calendar-frame{display:block;width:100%;min-height:680px;border:none;opacity:0;transition:opacity .4s;}
+    .fh-calendar-frame.fh-loaded{opacity:1;}
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need experience to rent a jet ski?", "acceptedAnswer": {"@type": "Answer", "text": "No experience is required! A short safety briefing is given before your rental begins. You'll be riding confidently within minutes."}}, {"@type": "Question", "name": "What is the minimum age to ride?", "acceptedAnswer": {"@type": "Answer", "text": "Most operators require riders to be at least 18 years old to operate independently. Passengers can typically be younger — ask your operator for specifics."}}, {"@type": "Question", "name": "Is fuel included in the price?", "acceptedAnswer": {"@type": "Answer", "text": "Yes! Fuel is included in all jet ski rentals. You pay the hourly rate and everything else is covered."}}, {"@type": "Question", "name": "What should I wear?", "acceptedAnswer": {"@type": "Answer", "text": "Wear a swimsuit and bring sunscreen. You will get wet! Leave valuables in your car or use the provided waterproof storage bag."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".hero-title", ".desc-text"]}, "url": "https://miamijetskiboatrentals.com/operators/epic-hotel-boat-jet-ski-combo-miami"}</script>
@@ -242,6 +252,26 @@
     </div>
 
     <!-- CTA BANNER -->
+    
+    <!-- AVAILABILITY EMBED -->
+    <div class="fh-avail-section">
+      <div class="fh-avail-header">
+        <h3>📅 Check Availability &amp; Book</h3>
+        <p>Live calendar — pick a date to see open slots and complete your booking securely.</p>
+      </div>
+      <div class="fh-calendar-wrap">
+        <div class="fh-calendar-loader">⏳ Loading availability…</div>
+        <iframe
+          data-src="https://fareharbor.com/embeds/book/sfjetskirentals/items/445316/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&branding=no"
+          class="fh-calendar-frame"
+          height="700"
+          frameborder="0"
+          allowfullscreen
+          title="Book Epic Hotel – Boat + Jet Ski Combo online"
+        ></iframe>
+      </div>
+    </div>
+
     <div class="cta-banner">
       <h3>Ready to Book?</h3>
       <p>Secure your spot in seconds — instant confirmation on all bookings.</p>
@@ -391,6 +421,27 @@ function shareOp(){
   } else {
     iframes.forEach(function(iframe){iframe.src=iframe.dataset.srcLazyMap;});
   }
+})();
+</script>
+<script>
+(function(){
+  var ff = document.querySelectorAll('.fh-calendar-frame[data-src]');
+  if(!ff.length) return;
+  function loadFrame(fr){
+    fr.src = fr.getAttribute('data-src');
+    fr.addEventListener('load', function(){
+      fr.classList.add('fh-loaded');
+      var loader = fr.parentElement.querySelector('.fh-calendar-loader');
+      if(loader) loader.style.display='none';
+    });
+    fr.removeAttribute('data-src');
+  }
+  if('IntersectionObserver' in window){
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){ if(e.isIntersecting){ loadFrame(e.target); io.unobserve(e.target); } });
+    },{rootMargin:'300px'});
+    ff.forEach(function(f){ io.observe(f); });
+  } else { ff.forEach(loadFrame); }
 })();
 </script>
 </body>
