@@ -440,23 +440,45 @@ function filterZone(zone,btn){
 </script>
 <script>
 (function(){
+  // Force-load iframe and scroll to calendar section
+  window.scrollToCalendar = function(e) {
+    if(e) e.preventDefault();
+    var sec = document.getElementById('fh-avail');
+    if(!sec) return;
+    var fr = sec.querySelector('.fh-calendar-frame');
+    if(fr && fr.getAttribute('data-src')){
+      fr.src = fr.getAttribute('data-src');
+      fr.removeAttribute('data-src');
+      fr.addEventListener('load', function(){
+        fr.classList.add('fh-loaded');
+        var ldr = sec.querySelector('.fh-calendar-loader');
+        if(ldr) ldr.style.display = 'none';
+      });
+    }
+    setTimeout(function(){ sec.scrollIntoView({behavior:'smooth', block:'start'}); }, 60);
+  };
+
+  // Lazy-load for users who scroll without clicking Book Now
   var ff = document.querySelectorAll('.fh-calendar-frame[data-src]');
   if(!ff.length) return;
-  function loadFrame(fr){
-    fr.src = fr.getAttribute('data-src');
-    fr.addEventListener('load', function(){
-      fr.classList.add('fh-loaded');
-      var loader = fr.parentElement.querySelector('.fh-calendar-loader');
-      if(loader) loader.style.display='none';
-    });
-    fr.removeAttribute('data-src');
-  }
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ loadFrame(e.target); io.unobserve(e.target); } });
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var fr = e.target;
+          fr.src = fr.getAttribute('data-src');
+          fr.removeAttribute('data-src');
+          fr.addEventListener('load', function(){
+            fr.classList.add('fh-loaded');
+            var ldr = fr.parentElement.querySelector('.fh-calendar-loader');
+            if(ldr) ldr.style.display = 'none';
+          });
+          io.unobserve(fr);
+        }
+      });
     },{rootMargin:'300px'});
     ff.forEach(function(f){ io.observe(f); });
-  } else { ff.forEach(loadFrame); }
+  } else { ff.forEach(function(f){ f.src=f.getAttribute('data-src'); f.removeAttribute('data-src'); }); }
 })();
 </script>
 </body>

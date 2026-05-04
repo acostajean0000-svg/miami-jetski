@@ -254,7 +254,7 @@
     <!-- CTA BANNER -->
     
     <!-- AVAILABILITY EMBED -->
-    <div class="fh-avail-section">
+    <div class="fh-avail-section" id="fh-avail">
       <div class="fh-avail-header">
         <h3>📅 Check Availability &amp; Book</h3>
         <p>Live calendar — pick a date to see open slots and complete your booking securely.</p>
@@ -279,7 +279,7 @@
         <span style="color:#00d4c8;font-weight:700;">🔥 <span id="weeklyBookings"></span> booked this week</span>
         <span style="color:#7ba3c0;"><span id="viewingNow"></span> viewing now</span>
       </div>
-      <a href="https://fareharbor.com/embeds/book/evergladesholidaypark/items/668301/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener">Book Everglades Holiday Park — From $45</a>
+      <a href="#fh-avail" onclick="scrollToCalendar(event)">Book Everglades Holiday Park — From $45</a>
     </div>
 
   </div><!-- /main-col -->
@@ -289,7 +289,7 @@
     <div class="booking-card">
       <div class="bc-price">From $45</div>
       <div class="bc-price-sub">total price from</div>
-      <a href="https://fareharbor.com/embeds/book/evergladesholidaypark/items/668301/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener" class="bc-book">🚌 Book Now →</a>
+      <a href="#fh-avail" onclick="scrollToCalendar(event)" class="bc-book">🚌 Book Now →</a>
       <div class="bc-cancel">✅ Free cancellation 24 hrs before</div>
             <button onclick="shareOp()" style="width:100%;background:transparent;border:1.5px solid rgba(255,255,255,.1);color:#a8c8e8;border-radius:10px;padding:9px 14px;font-size:.78rem;font-weight:600;cursor:pointer;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:6px;transition:.2s;" onmouseover="this.style.borderColor='rgba(0,212,200,.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">🔗 Share this experience</button>
       <hr class="bc-divider">
@@ -371,7 +371,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     <div class="mob-price" id="mobPrice">Book Now</div>
     <div class="mob-price-sub">total price from</div>
   </div>
-  <a href="#" class="mob-book-btn" id="mobBookBtn" target="_blank" rel="noopener">Book Now →</a>
+  <a href="#fh-avail" class="mob-book-btn" id="mobBookBtn" onclick="scrollToCalendar(event)">Book Now →</a>
 </div>
 <script>
 (function(){
@@ -425,23 +425,45 @@ function shareOp(){
 </script>
 <script>
 (function(){
+  // Force-load iframe and scroll to calendar section
+  window.scrollToCalendar = function(e) {
+    if(e) e.preventDefault();
+    var sec = document.getElementById('fh-avail');
+    if(!sec) return;
+    var fr = sec.querySelector('.fh-calendar-frame');
+    if(fr && fr.getAttribute('data-src')){
+      fr.src = fr.getAttribute('data-src');
+      fr.removeAttribute('data-src');
+      fr.addEventListener('load', function(){
+        fr.classList.add('fh-loaded');
+        var ldr = sec.querySelector('.fh-calendar-loader');
+        if(ldr) ldr.style.display = 'none';
+      });
+    }
+    setTimeout(function(){ sec.scrollIntoView({behavior:'smooth', block:'start'}); }, 60);
+  };
+
+  // Lazy-load for users who scroll without clicking Book Now
   var ff = document.querySelectorAll('.fh-calendar-frame[data-src]');
   if(!ff.length) return;
-  function loadFrame(fr){
-    fr.src = fr.getAttribute('data-src');
-    fr.addEventListener('load', function(){
-      fr.classList.add('fh-loaded');
-      var loader = fr.parentElement.querySelector('.fh-calendar-loader');
-      if(loader) loader.style.display='none';
-    });
-    fr.removeAttribute('data-src');
-  }
   if('IntersectionObserver' in window){
     var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){ if(e.isIntersecting){ loadFrame(e.target); io.unobserve(e.target); } });
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          var fr = e.target;
+          fr.src = fr.getAttribute('data-src');
+          fr.removeAttribute('data-src');
+          fr.addEventListener('load', function(){
+            fr.classList.add('fh-loaded');
+            var ldr = fr.parentElement.querySelector('.fh-calendar-loader');
+            if(ldr) ldr.style.display = 'none';
+          });
+          io.unobserve(fr);
+        }
+      });
     },{rootMargin:'300px'});
     ff.forEach(function(f){ io.observe(f); });
-  } else { ff.forEach(loadFrame); }
+  } else { ff.forEach(function(f){ f.src=f.getAttribute('data-src'); f.removeAttribute('data-src'); }); }
 })();
 </script>
 </body>
