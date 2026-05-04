@@ -12,4 +12,7 @@ window._OP_SLUG_MAP = {"js5":"305-tours-rentals-miami","bt1":"bruschi-boat-renta
 "ws57":"gators-parasail-westfl",
 "js53":"luxe-jet-ski-rental-orlando-centralfl",
 "ws58":"sole-watersports-miami",
+"js54":"jet-ski-fl-fort-lauderdale-broward",
+"bt104":"boat-party-fort-lauderdale-broward",
+"bt105":"staying-afloat-party-boat-broward",
 };

@@ -6834,5 +6834,53 @@
     "badge": "\ud83c\udf0a Watersports",
     "rating": 4.6,
     "reviews": 50
+  },
+  {
+    "id": "js54",
+    "name": "Jet Ski FL \u2013 Fort Lauderdale",
+    "addr": "2670 E Sunrise Blvd, Fort Lauderdale, FL 33304",
+    "zone": "broward",
+    "zl": "Fort Lauderdale",
+    "cat": "jetski",
+    "price": 125,
+    "lat": 26.136,
+    "lng": -80.102,
+    "photo": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/3bfS9F8oTbWMqnCFjwNd",
+    "link": "https://fareharbor.com/embeds/book/jetskifl/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&marketplace=yes&flow=no&branding=no",
+    "badge": "\ud83d\udee5\ufe0f Jet Ski + Tours",
+    "rating": 4.9,
+    "reviews": 210
+  },
+  {
+    "id": "bt104",
+    "name": "Boat Party Fort Lauderdale",
+    "addr": "2670 E Sunrise Blvd, Fort Lauderdale, FL 33304",
+    "zone": "broward",
+    "zl": "Fort Lauderdale",
+    "cat": "boat",
+    "price": 65,
+    "lat": 26.136,
+    "lng": -80.102,
+    "photo": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/3bfS9F8oTbWMqnCFjwNd",
+    "link": "https://fareharbor.com/embeds/book/boatpartyfortlauderdale/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&marketplace=yes&flow=no&branding=no",
+    "badge": "\u26f5 Sandbar + Charter",
+    "rating": 4.8,
+    "reviews": 145
+  },
+  {
+    "id": "bt105",
+    "name": "Staying Afloat Party Boat",
+    "addr": "801 Seabreeze Blvd, Fort Lauderdale, FL 33316",
+    "zone": "broward",
+    "zl": "Fort Lauderdale",
+    "cat": "boat",
+    "price": 48,
+    "lat": 26.112,
+    "lng": -80.1015,
+    "photo": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/3bfS9F8oTbWMqnCFjwNd",
+    "link": "https://fareharbor.com/embeds/book/stayingafloatpartyboat/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&marketplace=yes&flow=no&branding=no",
+    "badge": "\ud83c\udf89 Party Boat",
+    "rating": 4.9,
+    "reviews": 236
   }
 ]
