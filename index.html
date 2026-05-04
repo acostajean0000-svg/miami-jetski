@@ -634,7 +634,30 @@
     .qv-detail{display:block;text-align:center;font-size:.78rem;color:var(--text-muted);text-decoration:none;padding:6px;transition:color .2s;}
     .qv-detail:hover{color:var(--teal);}
     .qv-no-photo{height:220px;display:flex;align-items:center;justify-content:center;font-size:3.5rem;background:linear-gradient(135deg,var(--dark2),var(--dark3));}
-  </style>
+  
+    /* BOOKING WIDGET (home hero) */
+    .hero-bw{background:rgba(13,30,53,0.9);border:1.5px solid var(--border);border-radius:16px;padding:22px 26px;margin-bottom:32px;backdrop-filter:blur(8px);}
+    .hero-bw-title{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.76rem;color:var(--text-muted);margin-bottom:14px;text-transform:uppercase;letter-spacing:1px;}
+    .hero-bw-row{display:grid;grid-template-columns:1fr 1fr auto;gap:12px;align-items:end;}
+    @media(max-width:600px){.hero-bw-row{grid-template-columns:1fr;}}
+    .hero-bw-label{display:block;color:var(--text-muted);font-size:.7rem;font-family:'Montserrat',sans-serif;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px;}
+    .hero-bw-select{width:100%;background:#112340;border:1.5px solid var(--border);border-radius:10px;color:#fff;padding:11px 14px;font-size:.88rem;outline:none;cursor:pointer;font-family:'Open Sans',sans-serif;}
+    .hero-bw-select:focus{border-color:var(--teal);}
+    .hero-bw-btn{background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);padding:12px 24px;border-radius:50px;font-family:'Montserrat',sans-serif;font-weight:700;font-size:.88rem;text-decoration:none;white-space:nowrap;display:inline-block;text-align:center;border:none;cursor:pointer;}
+    .hero-bw-trust{margin-top:12px;color:var(--text-muted);font-size:.74rem;display:flex;gap:16px;flex-wrap:wrap;}
+
+    /* LOCATION CARDS */
+    .loc-section{padding:56px 24px;}
+    .loc-section .container{max-width:1200px;margin:0 auto;}
+    .loc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:14px;margin-top:32px;}
+    .loc-card{background:var(--card-bg);border:1.5px solid var(--border);border-radius:14px;padding:18px 20px;cursor:pointer;transition:all .2s;text-decoration:none;color:inherit;display:block;}
+    .loc-card:hover{border-color:var(--teal);transform:translateY(-2px);box-shadow:0 6px 24px var(--teal-glow);}
+    .loc-card-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px;}
+    .loc-card-emoji{font-size:1.8rem;}
+    .loc-card-count{background:rgba(0,212,200,0.1);color:var(--teal);font-size:.68rem;font-family:'Montserrat',sans-serif;font-weight:700;padding:3px 9px;border-radius:50%;}
+    .loc-card-name{font-family:'Montserrat',sans-serif;font-weight:700;font-size:.92rem;margin-bottom:6px;}
+    .loc-card-cta{color:var(--teal);font-family:'Montserrat',sans-serif;font-weight:600;font-size:.74rem;}
+</style>
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -664,9 +687,10 @@
       <div>Miami <span>Jetski</span> &amp; Boat Rentals</div>
     </div>
     <div class="nav-links">
-      <a href="#operators">Operators</a>
+      <a href="/miami-activities">Miami</a>
+      <a href="/key-west-activities">Key West</a>
+      <a href="/fort-lauderdale-activities">Fort Lauderdale</a>
       <a href="#reviews">Reviews</a>
-      <a href="mailto:info@miamijetskiboatrentals.com">Contact</a>
       <a href="#operators" class="nav-cta">Book Now</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -675,9 +699,11 @@
   </div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="#operators" onclick="closeMobile()">Operators</a>
-  <a href="#reviews" onclick="closeMobile()">Reviews</a>
-  <a href="mailto:info@miamijetskiboatrentals.com" onclick="closeMobile()">Contact</a>
+  <a href="/miami-activities" onclick="closeMobile()">🌊 Miami Activities</a>
+  <a href="/key-west-activities" onclick="closeMobile()">🗝️ Key West Activities</a>
+  <a href="/fort-lauderdale-activities" onclick="closeMobile()">⛵ Fort Lauderdale</a>
+  <a href="#operators" onclick="closeMobile()">🔍 Compare All Operators</a>
+  <a href="#reviews" onclick="closeMobile()">⭐ Reviews</a>
 </div>
 
 <!-- HERO -->
@@ -686,9 +712,46 @@
     <div class="hero-tag">🌊 Florida's #1 Water Activities Directory</div>
     <h1>Jet Ski, Boats &amp; <span class="teal">Water Adventures</span> Across Florida</h1>
     <p>Compare 377 operators — jet ski rentals, boat charters, slingshots, aerial tours, ATV, bike rentals, golf carts, fishing trips &amp; more. From Miami Beach to Key West, Gulf Coast to Space Coast. Book online instantly.</p>
-    <div style="display:flex;gap:12px;flex-wrap:wrap;margin-bottom:36px;">
-      <a href="#operators" class="btn btn-primary">🔍 Compare Operators</a>
+    <!-- BOOKING WIDGET -->
+    <div class="hero-bw">
+      <div class="hero-bw-title">Find your perfect activity</div>
+      <div class="hero-bw-row">
+        <div>
+          <label class="hero-bw-label" for="bwLoc">📍 Location</label>
+          <select id="bwLoc" class="hero-bw-select" onchange="bwUpdate()">
+            <option value="">All Florida</option>
+            <option value="miami-activities">🌊 Miami (108 operators)</option>
+            <option value="fort-lauderdale-activities">⛵ Fort Lauderdale (39 operators)</option>
+            <option value="key-west-activities">🗝️ Florida Keys (55 operators)</option>
+            <option value="west-florida-activities">🌴 West Florida (60 operators)</option>
+            <option value="gulf-coast-activities">🐚 Gulf Coast (47 operators)</option>
+            <option value="orlando-activities">🎡 Orlando Area (23 operators)</option>
+            <option value="jacksonville-activities">🌊 Jacksonville (23 operators)</option>
+            <option value="palm-beach-activities">🌴 Palm Beach (8 operators)</option>
+          </select>
+        </div>
+        <div>
+          <label class="hero-bw-label" for="bwCat">🏄 Activity</label>
+          <select id="bwCat" class="hero-bw-select" onchange="bwUpdate()">
+            <option value="">All Activities</option>
+            <option value="jetski">🏄 Jet Ski</option>
+            <option value="boat">⛵ Boat Charter</option>
+            <option value="sail">🌅 Sailing</option>
+            <option value="aerial">🚁 Helicopter</option>
+            <option value="golfcart">🛺 Golf Cart</option>
+            <option value="fishing">🎣 Fishing</option>
+            <option value="watersports">🤿 Water Sports</option>
+          </select>
+        </div>
+        <a id="bwGoBtn" href="#operators" class="hero-bw-btn">See Options →</a>
+      </div>
+      <div class="hero-bw-trust">
+        <span>🔄 Free cancellation</span>
+        <span>✅ Instant confirmation</span>
+        <span>💳 No hidden fees</span>
+      </div>
     </div>
+
     <div class="hero-stats">
       <div class="hero-stat"><div class="hero-stat-num">377</div><div class="hero-stat-label">Operators</div></div>
       <div class="hero-stat"><div class="hero-stat-num">$4</div><div class="hero-stat-label">Starting From</div></div>
@@ -702,6 +765,57 @@
       <span>⭐ 4.7 avg rating</span>
       <span class="sp-sep">·</span>
       <span>✅ Instant booking</span>
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION CARDS -->
+<section class="loc-section">
+  <div class="container">
+    <div class="section-tag">Browse by Location</div>
+    <h2 class="section-title">Florida's Top <span class="teal">Activity Hubs</span></h2>
+    <p class="section-sub">Click any destination to see all operators with real-time availability and instant booking.</p>
+    <div class="loc-grid">
+      <a href="/miami-activities" class="loc-card">
+        <div class="loc-card-top"><span class="loc-card-emoji">🌊</span><span class="loc-card-count">108 ops</span></div>
+        <div class="loc-card-name">Miami</div>
+        <div class="loc-card-cta">Browse Activities →</div>
+      </a>
+      <a href="/fort-lauderdale-activities" class="loc-card">
+        <div class="loc-card-top"><span class="loc-card-emoji">⛵</span><span class="loc-card-count">39 ops</span></div>
+        <div class="loc-card-name">Fort Lauderdale</div>
+        <div class="loc-card-cta">Browse Activities →</div>
+      </a>
+      <a href="/key-west-activities" class="loc-card">
+        <div class="loc-card-top"><span class="loc-card-emoji">🗝️</span><span class="loc-card-count">55 ops</span></div>
+        <div class="loc-card-name">Florida Keys</div>
+        <div class="loc-card-cta">Browse Activities →</div>
+      </a>
+      <a href="/west-florida-activities" class="loc-card">
+        <div class="loc-card-top"><span class="loc-card-emoji">🌴</span><span class="loc-card-count">60 ops</span></div>
+        <div class="loc-card-name">West Florida</div>
+        <div class="loc-card-cta">Browse Activities →</div>
+      </a>
+      <a href="/gulf-coast-activities" class="loc-card">
+        <div class="loc-card-top"><span class="loc-card-emoji">🐚</span><span class="loc-card-count">47 ops</span></div>
+        <div class="loc-card-name">Gulf Coast</div>
+        <div class="loc-card-cta">Browse Activities →</div>
+      </a>
+      <a href="/orlando-activities" class="loc-card">
+        <div class="loc-card-top"><span class="loc-card-emoji">🎡</span><span class="loc-card-count">23 ops</span></div>
+        <div class="loc-card-name">Orlando Area</div>
+        <div class="loc-card-cta">Browse Activities →</div>
+      </a>
+      <a href="/jacksonville-activities" class="loc-card">
+        <div class="loc-card-top"><span class="loc-card-emoji">🌊</span><span class="loc-card-count">23 ops</span></div>
+        <div class="loc-card-name">Jacksonville</div>
+        <div class="loc-card-cta">Browse Activities →</div>
+      </a>
+      <a href="/palm-beach-activities" class="loc-card">
+        <div class="loc-card-top"><span class="loc-card-emoji">🌴</span><span class="loc-card-count">8 ops</span></div>
+        <div class="loc-card-name">Palm Beach</div>
+        <div class="loc-card-cta">Browse Activities →</div>
+      </a>
     </div>
   </div>
 </section>
@@ -887,7 +1001,10 @@
   <div>
     <h2>Ready to <span class="teal">Ride the Waves?</span></h2>
     <p>Browse 377 operators, compare prices, and book your Florida water adventure in minutes.</p>
-    <a href="#operators" class="btn btn-primary" style="font-size:1rem;padding:16px 36px;">🌊 Browse All Operators</a>
+    <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
+      <a href="#operators" class="btn btn-primary" style="font-size:1rem;padding:16px 36px;">🌊 Browse All Operators</a>
+      <a href="/key-west-activities" class="btn" style="font-size:1rem;padding:16px 36px;background:transparent;border:2px solid rgba(255,255,255,0.3);color:#fff;">🗝️ Key West →</a>
+    </div>
   </div>
 </section>
 
@@ -917,7 +1034,7 @@
         </div>
       </div>
       <div class="footer-col"><h4>Categories</h4><ul><li><a href="/jet-ski-rentals-florida.html">🛥️ Jet Ski</a></li><li><a href="/boat-rentals-florida.html">⛵ Boats &amp; Yachts</a></li><li><a href="/fishing-charters-florida.html">🎣 Fishing</a></li><li><a href="/water-sports-florida.html">🏄 Water Sports</a></li><li><a href="/slingshot-rentals-florida.html">🏎️ Slingshot</a></li><li><a href="/tours-florida.html">🚌 Tours</a></li><li><a href="/aerial-tours-florida.html">✈️ Aerial &amp; Fly</a></li></ul></div>
-      <div class="footer-col"><h4>Zones</h4><ul><li><a href="/miami-water-sports.html">Miami</a></li><li><a href="/fort-lauderdale-water-sports.html">Fort Lauderdale</a></li><li><a href="/florida-keys-water-sports.html">Florida Keys</a></li><li><a href="/gulf-coast-water-sports.html">Gulf Coast</a></li><li><a href="/palm-beach-water-sports.html">Palm Beach</a></li><li><a href="/space-coast-water-sports.html">Space Coast</a></li></ul></div>
+      <div class="footer-col"><h4>Zones</h4><ul><li><a href="/miami-activities">Miami</a></li><li><a href="/fort-lauderdale-activities">Fort Lauderdale</a></li><li><a href="/key-west-activities">Florida Keys</a></li><li><a href="/gulf-coast-activities">Gulf Coast</a></li><li><a href="/west-florida-activities">West Florida</a></li><li><a href="/palm-beach-activities">Palm Beach</a></li><li><a href="/space-coast-activities">Space Coast</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:info@miamijetskiboatrentals.com"><i class="fa-solid fa-envelope"></i> Email Us</a></li><li style="color:var(--text-muted);font-size:.85rem;margin-top:8px;">Miami Beach, FL 33139</li><li style="color:var(--text-muted);font-size:.85rem;">Mon–Sun: 8am–8pm</li></ul></div>
     </div>
     <div class="footer-bottom">
@@ -2051,6 +2168,20 @@ window.addEventListener('pageshow', (e) => {
     fetchOperators();
   }
 });
+
+// ── BOOKING WIDGET (home hero) ──
+function bwUpdate(){
+  var loc = document.getElementById('bwLoc') ? document.getElementById('bwLoc').value : '';
+  var cat = document.getElementById('bwCat') ? document.getElementById('bwCat').value : '';
+  var btn = document.getElementById('bwGoBtn');
+  if(!btn) return;
+  var url = loc ? ('/' + loc) : '#operators';
+  if(cat && loc) url += '?cat=' + cat;
+  else if(cat && !loc) url = '#operators';
+  btn.href = url;
+  var labels = {jetski:'See Jet Ski Options →', boat:'See Boat Options →', sail:'See Sailing Options →', aerial:'See Helicopter Options →', golfcart:'See Golf Cart Options →', fishing:'See Fishing Options →', watersports:'See Water Sports →'};
+  btn.textContent = (cat && labels[cat]) ? labels[cat] : 'See Options →';
+}
 </script>
 <noscript>
 <div id="seo-operator-list" style="position:absolute;left:-9999px;top:0;visibility:hidden;" aria-hidden="true">
