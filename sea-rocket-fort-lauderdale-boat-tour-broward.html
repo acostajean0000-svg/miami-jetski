@@ -139,18 +139,25 @@
     footer{background:#020810;border-top:1px solid rgba(0,210,255,.1);padding:28px 20px;text-align:center;color:#4a7a9b;font-size:.82rem}
     footer a{color:#00d2ff}
   
-    /* ---- AVAILABILITY EMBED ---- */
+    /* ---- AVAILABILITY / LIGHTBOX ---- */
     .fh-avail-section{margin:32px 0 24px;background:#081525;border:1.5px solid rgba(0,210,255,.15);border-radius:16px;overflow:hidden;}
     .fh-avail-header{padding:20px 24px 14px;border-bottom:1px solid rgba(0,210,255,.1);}
     .fh-avail-header h3{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;color:#e8f4fd;margin:0 0 4px;}
     .fh-avail-header p{font-size:.78rem;color:#7ba3c0;margin:0;}
-    .fh-calendar-wrap{position:relative;min-height:160px;background:#081525;}
-    .fh-calendar-loader{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#7ba3c0;font-size:.83rem;gap:8px;}
-    .fh-calendar-frame{display:block;width:100%;min-height:680px;border:none;opacity:0;transition:opacity .4s;}
-    .fh-calendar-frame.fh-loaded{opacity:1;}
+    .fh-calendar-wrap{padding:24px;}
+    .fh-lightbox-cta{display:flex;align-items:center;gap:16px;background:rgba(0,210,255,.05);border:1px solid rgba(0,210,255,.15);border-radius:12px;padding:20px 22px;flex-wrap:wrap;}
+    .fh-lb-icon{font-size:2rem;flex-shrink:0;}
+    .fh-lb-text{flex:1;display:flex;flex-direction:column;gap:3px;}
+    .fh-lb-text strong{font-size:.95rem;font-weight:700;color:#e8f4fd;}
+    .fh-lb-text span{font-size:.78rem;color:#7ba3c0;}
+    .fh-lb-btn{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.85rem;padding:12px 22px;border-radius:50px;white-space:nowrap;text-decoration:none;transition:.2s;flex-shrink:0;}
+    .fh-lb-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,212,200,.45);}
+    @media(max-width:600px){.fh-lightbox-cta{flex-direction:column;text-align:center;}.fh-lb-btn{width:100%;text-align:center;}}
+
   </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need a captain?", "acceptedAnswer": {"@type": "Answer", "text": "Many boat rentals are self-drive if you have a boating license. Otherwise, a licensed captain can be arranged — check your specific listing for details."}}, {"@type": "Question", "name": "Can I bring food and drinks aboard?", "acceptedAnswer": {"@type": "Answer", "text": "Absolutely! Most charters allow BYO food, coolers, and beverages. Please confirm with your operator for any restrictions."}}, {"@type": "Question", "name": "What is the cancellation policy?", "acceptedAnswer": {"@type": "Answer", "text": "Most bookings offer free cancellation up to 24 hours before departure. Check your confirmation for exact terms."}}, {"@type": "Question", "name": "How many people can come?", "acceptedAnswer": {"@type": "Answer", "text": "Capacity varies by vessel — from intimate 6-person boats to luxury yachts for 20+. Check the listing details for capacity."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".hero-title", ".desc-text"]}, "url": "https://miamijetskiboatrentals.com/operators/sea-rocket-fort-lauderdale-boat-tour-broward"}</script>
+  <script async src="https://fareharbor.com/embeds/book/searocketftlauderdale/script/?asn=fhdn&asn-ref=miamistylerentals&full-items=yes&branding=no"></script>
 </head>
 <body>
 
@@ -252,34 +259,33 @@
     </div>
 
     <!-- CTA BANNER -->
-    
+
     <!-- AVAILABILITY EMBED -->
     <div class="fh-avail-section" id="fh-avail">
       <div class="fh-avail-header">
         <h3>📅 Check Availability &amp; Book</h3>
-        <p>Live calendar — pick a date to see open slots and complete your booking securely.</p>
+        <p>Live booking calendar — select a date and complete your reservation securely via FareHarbor.</p>
       </div>
       <div class="fh-calendar-wrap">
-        <div class="fh-calendar-loader">⏳ Loading availability…</div>
-        <iframe
-          data-src="https://fareharbor.com/embeds/book/searocketftlauderdale/items/537543/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&branding=no&bookable-only=yes&marketplace=yes&flow=no"
-          class="fh-calendar-frame"
-          height="700"
-          frameborder="0"
-          allowfullscreen
-          title="Book Sea Rocket Fort Lauderdale – Boat Tour online"
-        ></iframe>
+        <div class="fh-lightbox-cta">
+          <div class="fh-lb-icon">📅</div>
+          <div class="fh-lb-text">
+            <strong>Instant Availability</strong>
+            <span>Click below to open the live booking calendar</span>
+          </div>
+          <a href="https://fareharbor.com/embeds/book/searocketftlauderdale/items/537543/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" class="fh-lb-btn">Open Booking Calendar →</a>
+        </div>
       </div>
     </div>
 
-    <div class="cta-banner">
+        <div class="cta-banner">
       <h3>Ready to Book?</h3>
       <p>Secure your spot in seconds — instant confirmation on all bookings.</p>
             <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-size:.72rem;">
         <span style="color:#00d4c8;font-weight:700;">🔥 <span id="weeklyBookings"></span> booked this week</span>
         <span style="color:#7ba3c0;"><span id="viewingNow"></span> viewing now</span>
       </div>
-      <a href="#fh-avail" onclick="scrollToCalendar(event)">Book Sea Rocket Fort Lauderdale – Boat Tour — From $2.99</a>
+      <a href="https://fareharbor.com/embeds/book/searocketftlauderdale/items/537543/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no">Book Sea Rocket Fort Lauderdale – Boat Tour — From $2.99</a>
     </div>
 
   </div><!-- /main-col -->
@@ -289,7 +295,7 @@
     <div class="booking-card">
       <div class="bc-price">From $2.99</div>
       <div class="bc-price-sub">total price from</div>
-      <a href="#fh-avail" onclick="scrollToCalendar(event)" class="bc-book">⛵ Book Now →</a>
+      <a href="https://fareharbor.com/embeds/book/searocketftlauderdale/items/537543/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" class="bc-book">⛵ Book Now →</a>
       <div class="bc-cancel">✅ Free cancellation 24 hrs before</div>
             <button onclick="shareOp()" style="width:100%;background:transparent;border:1.5px solid rgba(255,255,255,.1);color:#a8c8e8;border-radius:10px;padding:9px 14px;font-size:.78rem;font-weight:600;cursor:pointer;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:6px;transition:.2s;" onmouseover="this.style.borderColor='rgba(0,212,200,.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">🔗 Share this experience</button>
       <hr class="bc-divider">
@@ -423,48 +429,18 @@ function shareOp(){
   }
 })();
 </script>
-<script>
-(function(){
-  // Force-load iframe and scroll to calendar section
-  window.scrollToCalendar = function(e) {
-    if(e) e.preventDefault();
-    var sec = document.getElementById('fh-avail');
-    if(!sec) return;
-    var fr = sec.querySelector('.fh-calendar-frame');
-    if(fr && fr.getAttribute('data-src')){
-      fr.src = fr.getAttribute('data-src');
-      fr.removeAttribute('data-src');
-      fr.addEventListener('load', function(){
-        fr.classList.add('fh-loaded');
-        var ldr = sec.querySelector('.fh-calendar-loader');
-        if(ldr) ldr.style.display = 'none';
-      });
-    }
-    setTimeout(function(){ sec.scrollIntoView({behavior:'smooth', block:'start'}); }, 60);
-  };
 
-  // Lazy-load for users who scroll without clicking Book Now
-  var ff = document.querySelectorAll('.fh-calendar-frame[data-src]');
-  if(!ff.length) return;
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          var fr = e.target;
-          fr.src = fr.getAttribute('data-src');
-          fr.removeAttribute('data-src');
-          fr.addEventListener('load', function(){
-            fr.classList.add('fh-loaded');
-            var ldr = fr.parentElement.querySelector('.fh-calendar-loader');
-            if(ldr) ldr.style.display = 'none';
-          });
-          io.unobserve(fr);
-        }
-      });
-    },{rootMargin:'300px'});
-    ff.forEach(function(f){ io.observe(f); });
-  } else { ff.forEach(function(f){ f.src=f.getAttribute('data-src'); f.removeAttribute('data-src'); }); }
-})();
+<script>
+window.scrollToCalendar = function(e) {
+  if(e) e.preventDefault();
+  var sec = document.getElementById('fh-avail');
+  if(sec) sec.scrollIntoView({behavior:'smooth', block:'start'});
+  // find and click the lightbox button after scroll
+  setTimeout(function(){
+    var btn = document.querySelector('.fh-lb-btn');
+    if(btn) btn.click();
+  }, 600);
+};
 </script>
 </body>
 </html>

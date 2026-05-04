@@ -87,15 +87,21 @@
     .footer-links a{color:var(--text-muted);font-size:.78rem;transition:color .2s;}
     .footer-links a:hover{color:var(--teal);}
   
-    /* ---- AVAILABILITY EMBED ---- */
+    /* ---- AVAILABILITY / LIGHTBOX ---- */
     .fh-avail-section{margin:32px 0 24px;background:#081525;border:1.5px solid rgba(0,210,255,.15);border-radius:16px;overflow:hidden;}
     .fh-avail-header{padding:20px 24px 14px;border-bottom:1px solid rgba(0,210,255,.1);}
     .fh-avail-header h3{font-family:'Montserrat',sans-serif;font-size:1.05rem;font-weight:800;color:#e8f4fd;margin:0 0 4px;}
     .fh-avail-header p{font-size:.78rem;color:#7ba3c0;margin:0;}
-    .fh-calendar-wrap{position:relative;min-height:160px;background:#081525;}
-    .fh-calendar-loader{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#7ba3c0;font-size:.83rem;gap:8px;}
-    .fh-calendar-frame{display:block;width:100%;min-height:680px;border:none;opacity:0;transition:opacity .4s;}
-    .fh-calendar-frame.fh-loaded{opacity:1;}
+    .fh-calendar-wrap{padding:24px;}
+    .fh-lightbox-cta{display:flex;align-items:center;gap:16px;background:rgba(0,210,255,.05);border:1px solid rgba(0,210,255,.15);border-radius:12px;padding:20px 22px;flex-wrap:wrap;}
+    .fh-lb-icon{font-size:2rem;flex-shrink:0;}
+    .fh-lb-text{flex:1;display:flex;flex-direction:column;gap:3px;}
+    .fh-lb-text strong{font-size:.95rem;font-weight:700;color:#e8f4fd;}
+    .fh-lb-text span{font-size:.78rem;color:#7ba3c0;}
+    .fh-lb-btn{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.85rem;padding:12px 22px;border-radius:50px;white-space:nowrap;text-decoration:none;transition:.2s;flex-shrink:0;}
+    .fh-lb-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,212,200,.45);}
+    @media(max-width:600px){.fh-lightbox-cta{flex-direction:column;text-align:center;}.fh-lb-btn{width:100%;text-align:center;}}
+
   </style>
   <!-- GA4 -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-09F6C7YC7B"></script>
@@ -106,6 +112,7 @@
   <meta name="twitter:site" content="@MiamiJetSkiFL">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://miamijetskiboatrentals.com/og-image.png">
+  <script async src="https://fareharbor.com/embeds/book/miamistylerentals/script/?asn=fhdn&asn-ref=miamistylerentals&full-items=yes&branding=no"></script>
 </head>
 <body>
 <nav class="nav">
@@ -267,48 +274,18 @@
     </div>
   </div>
 </footer>
-<script>
-(function(){
-  // Force-load iframe and scroll to calendar section
-  window.scrollToCalendar = function(e) {
-    if(e) e.preventDefault();
-    var sec = document.getElementById('fh-avail');
-    if(!sec) return;
-    var fr = sec.querySelector('.fh-calendar-frame');
-    if(fr && fr.getAttribute('data-src')){
-      fr.src = fr.getAttribute('data-src');
-      fr.removeAttribute('data-src');
-      fr.addEventListener('load', function(){
-        fr.classList.add('fh-loaded');
-        var ldr = sec.querySelector('.fh-calendar-loader');
-        if(ldr) ldr.style.display = 'none';
-      });
-    }
-    setTimeout(function(){ sec.scrollIntoView({behavior:'smooth', block:'start'}); }, 60);
-  };
 
-  // Lazy-load for users who scroll without clicking Book Now
-  var ff = document.querySelectorAll('.fh-calendar-frame[data-src]');
-  if(!ff.length) return;
-  if('IntersectionObserver' in window){
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(e){
-        if(e.isIntersecting){
-          var fr = e.target;
-          fr.src = fr.getAttribute('data-src');
-          fr.removeAttribute('data-src');
-          fr.addEventListener('load', function(){
-            fr.classList.add('fh-loaded');
-            var ldr = fr.parentElement.querySelector('.fh-calendar-loader');
-            if(ldr) ldr.style.display = 'none';
-          });
-          io.unobserve(fr);
-        }
-      });
-    },{rootMargin:'300px'});
-    ff.forEach(function(f){ io.observe(f); });
-  } else { ff.forEach(function(f){ f.src=f.getAttribute('data-src'); f.removeAttribute('data-src'); }); }
-})();
+<script>
+window.scrollToCalendar = function(e) {
+  if(e) e.preventDefault();
+  var sec = document.getElementById('fh-avail');
+  if(sec) sec.scrollIntoView({behavior:'smooth', block:'start'});
+  // find and click the lightbox button after scroll
+  setTimeout(function(){
+    var btn = document.querySelector('.fh-lb-btn');
+    if(btn) btn.click();
+  }, 600);
+};
 </script>
 </body>
 </html>
