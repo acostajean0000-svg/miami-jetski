@@ -37,5 +37,4 @@ window._OP_SLUG_MAP = {"js5":"305-tours-rentals-miami","bt1":"bruschi-boat-renta
 "ws69":"caribbean-lake-park-puntacana",
 "to92":"canelo-tours-puntacana",
 "bt111":"pink-party-boat-punta-cana-puntacana",
-"to93":"adventures-finder-puntacana",
 };
