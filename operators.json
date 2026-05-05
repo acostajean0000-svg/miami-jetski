@@ -7256,5 +7256,39 @@
     "rating": 4.6,
     "reviews": 143,
     "desc": "Party boat tours, fishing, and sunset cruises off Punta Cana. From $79 \u00b7 \u2b504.6 (143 reviews). Open bar options available."
+  },
+  {
+    "id": "ws70",
+    "name": "Punta Cana Scuba Diving",
+    "addr": "Bayah\u00edbe, Dominican Republic",
+    "zone": "puntacana",
+    "zl": "Bayah\u00edbe",
+    "cat": "watersports",
+    "price": 85,
+    "lat": 18.3637,
+    "lng": -68.8469,
+    "photo": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/HQaMdXETSISUkFVS9mU4",
+    "link": "https://fareharbor.com/embeds/book/puntacanascubadiving/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&marketplace=yes&flow=no&branding=no",
+    "badge": "\ud83e\udd3f Scuba Diving",
+    "rating": 4.8,
+    "reviews": 0,
+    "desc": "Private dive charters to Catalina Island and top dive sites near Bayah\u00edbe. From $85 \u00b7 Certified instructors, equipment included. Groups and solo divers welcome."
+  },
+  {
+    "id": "bt112",
+    "name": "Aquazul Tours",
+    "addr": "Bayah\u00edbe, Dominican Republic",
+    "zone": "puntacana",
+    "zl": "Bayah\u00edbe",
+    "cat": "boat",
+    "price": 75,
+    "lat": 18.3599,
+    "lng": -68.8421,
+    "photo": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/6LywayWyRb2DDGBEPbUA",
+    "link": "https://fareharbor.com/embeds/book/aquazultours/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&marketplace=yes&flow=no&branding=no",
+    "badge": "\u26f5 Saona Island",
+    "rating": 4.8,
+    "reviews": 0,
+    "desc": "Private small group charters to Saona Island \u2014 snorkeling, natural pools, beach lunch. From $75 \u00b7 Bayah\u00edbe departure. One of the Caribbean's top day trips."
   }
 ]
