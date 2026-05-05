@@ -140,6 +140,16 @@
     .trust-strip{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:20px;}
     .tbadge{background:rgba(0,212,200,.07);border:1px solid rgba(0,212,200,.18);color:#7de8e2;padding:5px 12px;border-radius:50px;font-size:.75rem;font-weight:600;}
 
+    /* ACTIVITY SECTIONS */
+    .activity-section{margin-bottom:40px;}
+    .activity-section.hidden-section{display:none;}
+    .activity-hdr{display:flex;align-items:center;gap:14px;margin-bottom:16px;padding:16px 20px;background:rgba(255,255,255,.03);border:1px solid var(--border);border-left:4px solid var(--teal);border-radius:12px;flex-wrap:wrap;}
+    .activity-icon{font-size:2rem;flex-shrink:0;}
+    .activity-hdr > div{flex:1;}
+    .activity-title{font-size:1.15rem;font-weight:800;color:#fff;}
+    .activity-sub{font-size:.8rem;color:var(--muted);margin-top:2px;}
+    .activity-count{background:var(--tg);border:1px solid rgba(0,212,200,.25);color:var(--teal);font-size:.75rem;font-weight:700;padding:4px 12px;border-radius:50px;white-space:nowrap;}
+
     /* CARDS */
     .cards-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:16px;}
     @media(max-width:640px){.cards-grid{grid-template-columns:1fr;}}
@@ -207,15 +217,15 @@
     <a href="/miami-activities">Miami</a>
     <a href="/key-west-activities">Key West</a>
     <a href="/punta-cana-activities" style="color:var(--teal);font-weight:700;">🇩🇴 Punta Cana</a>
-    <a href="#cardsGrid" class="nav-cta">Book Now</a>
+    <a href="#sec-tours" class="nav-cta">Book Now</a>
   </div>
 </nav>
 
-<a href="#cardsGrid" class="mobile-top-btn" onclick="if(window.dataLayer)dataLayer.push({event:'mobile_top_cta'})">Book Now →</a>
+<a href="#sec-tours" class="mobile-top-btn" onclick="if(window.dataLayer)dataLayer.push({event:'mobile_top_cta'})">Book Now →</a>
 
 <div class="sticky-bar">
   <span class="sticky-bar-text">🇩🇴 Punta Cana · <strong>6 operators</strong> · From $45 · ⭐ 4.7</span>
-  <a class="sticky-bar-btn" href="#cardsGrid" onclick="if(window.dataLayer)dataLayer.push({event:'sticky_cta_click',page:'punta-cana-activities'})">Book Now →</a>
+  <a class="sticky-bar-btn" href="#sec-tours" onclick="if(window.dataLayer)dataLayer.push({event:'sticky_cta_click',page:'punta-cana-activities'})">Book Now →</a>
 </div>
 
 <div class="page-hero">
@@ -265,195 +275,236 @@
     <div class="tbadge">🇺🇸 English-Speaking Guides</div>
   </div>
 
-  <div class="cards-grid" id="cardsGrid">
-
-    <!-- 1. Runners Adventures – $65 | 4.9★ | tour -->
-    <div class="op-card" data-cat="tour" data-budget="mid" data-price="65" data-rating="4.9" data-reviews="320">
-      <div class="op-card-img">
-        <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/njF7cst9TTOBxdLrEf98" alt="Runners Adventures Punta Cana" loading="eager" fetchpriority="high" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#004b7a,#0066aa)'">
-        <span class="op-cat-badge">Catamaran & Tours</span>
-        <span class="op-best-badge">⭐ 4.9 · 320 reviews</span>
-        <div class="avail-badge"><div class="avail-dot"></div>Available Today</div>
+  <!-- ═══ TOURS & ADVENTURES ═══ -->
+  <div class="activity-section" id="sec-tours">
+    <div class="activity-hdr">
+      <span class="activity-icon">🗺️</span>
+      <div>
+        <div class="activity-title">Tours &amp; Adventures</div>
+        <div class="activity-sub">Catamaran cruises · ATV jungle trails · Snorkeling · Zipline</div>
       </div>
-      <div class="op-card-body">
-        <div class="op-name">Runners Adventures</div>
-        <div class="op-addr">📍 Punta Cana, Dominican Republic</div>
-        <div class="op-rating-row">
-          <span class="op-stars">★★★★★</span>
-          <span class="op-rating-num">4.9</span>
-          <span class="op-review-count">(320 reviews)</span>
-        </div>
-        <div class="best-for-tags"><span class="bft">⛵ Catamaran</span><span class="bft">🤿 Snorkel</span><span class="bft">🧗 Zipline</span></div>
-      </div>
-      <div class="op-footer">
-        <div class="op-price-block">
-          <div class="op-price-from">From</div>
-          <div class="op-price-num">$65</div>
-        </div>
-        <div class="op-actions">
-          <a class="op-book" href="/runners-adventures-puntacana#fh-avail" onclick="trackBookNow('Runners Adventures','65','tour')">Book Now →</a>
-          <a class="op-detail-link" href="/runners-adventures-puntacana" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
-        </div>
-      </div>
-      <div class="op-guarantee">🔄 Free cancellation · No hidden fees</div>
+      <span class="activity-count">2 operators</span>
     </div>
+    <div class="cards-grid">
 
-    <!-- 2. Caribbean Lake Park – $50 | 4.7★ | watersports -->
-    <div class="op-card" data-cat="watersports" data-budget="mid" data-price="50" data-rating="4.7" data-reviews="185">
-      <div class="op-card-img">
-        <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/rCBC9zNTQiCUoNrfRCO3" alt="Caribbean Lake Park Punta Cana" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#004b7a,#0066aa)'">
-        <span class="op-cat-badge">Water Sports</span>
-        <span class="op-best-badge">🏄 Flyboard</span>
-        <div class="avail-badge"><div class="avail-dot"></div>Available Today</div>
-      </div>
-      <div class="op-card-body">
-        <div class="op-name">Caribbean Lake Park</div>
-        <div class="op-addr">📍 Punta Cana, Dominican Republic</div>
-        <div class="op-rating-row">
-          <span class="op-stars">★★★★★</span>
-          <span class="op-rating-num">4.7</span>
-          <span class="op-review-count">(185 reviews)</span>
+      <!-- Runners Adventures – $65 | 4.9★ -->
+      <div class="op-card" data-cat="tour" data-budget="mid" data-price="65" data-rating="4.9" data-reviews="320">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/mQaszLzcRjWGKq8TeirL" alt="Runners Adventures Punta Cana" loading="eager" fetchpriority="high" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#004b7a,#0066aa)'">
+          <span class="op-cat-badge">Catamaran & Tours</span>
+          <span class="op-best-badge">⭐ 4.9 · 320 reviews</span>
+          <div class="avail-badge"><div class="avail-dot"></div>Available Today</div>
         </div>
-        <div class="best-for-tags"><span class="bft">🏄 Flyboard</span><span class="bft">🌊 Surf</span><span class="bft">🚣 Kayak</span></div>
-      </div>
-      <div class="op-footer">
-        <div class="op-price-block">
-          <div class="op-price-from">From</div>
-          <div class="op-price-num">$50</div>
+        <div class="op-card-body">
+          <div class="op-name">Runners Adventures</div>
+          <div class="op-addr">📍 Punta Cana, Dominican Republic</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.9</span>
+            <span class="op-review-count">(320 reviews)</span>
+          </div>
+          <div class="best-for-tags"><span class="bft">⛵ Catamaran</span><span class="bft">🤿 Snorkel</span><span class="bft">🧗 Zipline</span></div>
         </div>
-        <div class="op-actions">
-          <a class="op-book" href="/caribbean-lake-park-puntacana#fh-avail" onclick="trackBookNow('Caribbean Lake Park','50','watersports')">Book Now →</a>
-          <a class="op-detail-link" href="/caribbean-lake-park-puntacana" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$65</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-book" href="/runners-adventures-puntacana#fh-avail" onclick="trackBookNow('Runners Adventures','65','tour')">Book Now →</a>
+            <a class="op-detail-link" href="/runners-adventures-puntacana" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
         </div>
+        <div class="op-guarantee">🔄 Free cancellation · No hidden fees</div>
       </div>
-      <div class="op-guarantee">🔄 Free cancellation · No hidden fees</div>
+
+      <!-- Canelo Tours – $45 | 4.7★ -->
+      <div class="op-card" data-cat="tour" data-budget="budget" data-price="45" data-rating="4.7" data-reviews="210">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/rCBC9zNTQiCUoNrfRCO3" alt="Canelo Tours Punta Cana" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#004b7a,#0066aa)'">
+          <span class="op-cat-badge">ATV & Adventures</span>
+          <span class="op-best-badge">💰 Best Value</span>
+          <div class="avail-badge"><div class="avail-dot"></div>Available Today</div>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">Canelo Tours</div>
+          <div class="op-addr">📍 Punta Cana, Dominican Republic</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.7</span>
+            <span class="op-review-count">(210 reviews)</span>
+          </div>
+          <div class="best-for-tags"><span class="bft">🏍️ ATV</span><span class="bft">⛵ Boat</span><span class="bft">🤿 Snorkel</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$45</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-book" href="/canelo-tours-puntacana#fh-avail" onclick="trackBookNow('Canelo Tours','45','tour')">Book Now →</a>
+            <a class="op-detail-link" href="/canelo-tours-puntacana" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="op-guarantee">🔄 Free cancellation · No hidden fees</div>
+      </div>
+
     </div>
+  </div>
 
-    <!-- 3. Canelo Tours – $45 | 4.7★ | tour -->
-    <div class="op-card" data-cat="tour" data-budget="budget" data-price="45" data-rating="4.7" data-reviews="210">
-      <div class="op-card-img">
-        <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/MBRZ1g0TgqbTCOn3frmg" alt="Canelo Tours Punta Cana" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#004b7a,#0066aa)'">
-        <span class="op-cat-badge">ATV & Adventures</span>
-        <span class="op-best-badge">💰 Best Value</span>
-        <div class="avail-badge"><div class="avail-dot"></div>Available Today</div>
+  <!-- ═══ WATER SPORTS ═══ -->
+  <div class="activity-section" id="sec-watersports">
+    <div class="activity-hdr">
+      <span class="activity-icon">🏄</span>
+      <div>
+        <div class="activity-title">Water Sports</div>
+        <div class="activity-sub">Flyboard · Surf · Kayak · Scuba diving · Reef dives</div>
       </div>
-      <div class="op-card-body">
-        <div class="op-name">Canelo Tours</div>
-        <div class="op-addr">📍 Punta Cana, Dominican Republic</div>
-        <div class="op-rating-row">
-          <span class="op-stars">★★★★★</span>
-          <span class="op-rating-num">4.7</span>
-          <span class="op-review-count">(210 reviews)</span>
-        </div>
-        <div class="best-for-tags"><span class="bft">🏍️ ATV</span><span class="bft">⛵ Boat</span><span class="bft">🤿 Snorkel</span></div>
-      </div>
-      <div class="op-footer">
-        <div class="op-price-block">
-          <div class="op-price-from">From</div>
-          <div class="op-price-num">$45</div>
-        </div>
-        <div class="op-actions">
-          <a class="op-book" href="/canelo-tours-puntacana#fh-avail" onclick="trackBookNow('Canelo Tours','45','tour')">Book Now →</a>
-          <a class="op-detail-link" href="/canelo-tours-puntacana" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
-        </div>
-      </div>
-      <div class="op-guarantee">🔄 Free cancellation · No hidden fees</div>
+      <span class="activity-count">2 operators</span>
     </div>
+    <div class="cards-grid">
 
-    <!-- 4. Pink Party Boat – $79 | 4.6★ | boat -->
-    <div class="op-card" data-cat="boat" data-budget="mid" data-price="79" data-rating="4.6" data-reviews="143">
-      <div class="op-card-img">
-        <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/hBUgZOsNRmqBN1vBnUp4" alt="Pink Party Boat Punta Cana" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#004b7a,#0066aa)'">
-        <span class="op-cat-badge">Party Boat</span>
-        <span class="op-best-badge">🎉 Open Bar</span>
-        <div class="avail-badge"><div class="avail-dot"></div>Available Today</div>
-      </div>
-      <div class="op-card-body">
-        <div class="op-name">Pink Party Boat Punta Cana</div>
-        <div class="op-addr">📍 Punta Cana, Dominican Republic</div>
-        <div class="op-rating-row">
-          <span class="op-stars">★★★★★</span>
-          <span class="op-rating-num">4.6</span>
-          <span class="op-review-count">(143 reviews)</span>
+      <!-- Caribbean Lake Park – $50 | 4.7★ -->
+      <div class="op-card" data-cat="watersports" data-budget="mid" data-price="50" data-rating="4.7" data-reviews="185">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/njF7cst9TTOBxdLrEf98" alt="Caribbean Lake Park Punta Cana" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#004b7a,#0066aa)'">
+          <span class="op-cat-badge">Water Sports</span>
+          <span class="op-best-badge">🏄 Flyboard</span>
+          <div class="avail-badge"><div class="avail-dot"></div>Available Today</div>
         </div>
-        <div class="best-for-tags"><span class="bft">🎉 Party</span><span class="bft">🐟 Fishing</span><span class="bft">🌅 Sunset</span></div>
-      </div>
-      <div class="op-footer">
-        <div class="op-price-block">
-          <div class="op-price-from">From</div>
-          <div class="op-price-num">$79</div>
+        <div class="op-card-body">
+          <div class="op-name">Caribbean Lake Park</div>
+          <div class="op-addr">📍 Punta Cana, Dominican Republic</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.7</span>
+            <span class="op-review-count">(185 reviews)</span>
+          </div>
+          <div class="best-for-tags"><span class="bft">🏄 Flyboard</span><span class="bft">🌊 Surf</span><span class="bft">🚣 Kayak</span></div>
         </div>
-        <div class="op-actions">
-          <a class="op-book" href="/pink-party-boat-punta-cana-puntacana#fh-avail" onclick="trackBookNow('Pink Party Boat Punta Cana','79','boat')">Book Now →</a>
-          <a class="op-detail-link" href="/pink-party-boat-punta-cana-puntacana" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$50</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-book" href="/caribbean-lake-park-puntacana#fh-avail" onclick="trackBookNow('Caribbean Lake Park','50','watersports')">Book Now →</a>
+            <a class="op-detail-link" href="/caribbean-lake-park-puntacana" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
         </div>
+        <div class="op-guarantee">🔄 Free cancellation · No hidden fees</div>
       </div>
-      <div class="op-guarantee">🔄 Free cancellation · No hidden fees</div>
+
+      <!-- Punta Cana Scuba Diving – $85 | 4.8★ -->
+      <div class="op-card" data-cat="watersports" data-budget="mid" data-price="85" data-rating="4.8" data-reviews="0">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/HQaMdXETSISUkFVS9mU4" alt="Punta Cana Scuba Diving Bayahíbe" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#004b7a,#0066aa)'">
+          <span class="op-cat-badge">Scuba Diving</span>
+          <span class="op-best-badge">🤿 Catalina Island</span>
+          <div class="avail-badge"><div class="avail-dot"></div>Available Today</div>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">Punta Cana Scuba Diving</div>
+          <div class="op-addr">📍 Bayahíbe, Dominican Republic</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.8</span>
+            <span class="op-review-count">New operator</span>
+          </div>
+          <div class="best-for-tags"><span class="bft">🤿 Scuba</span><span class="bft">🐠 Reef</span><span class="bft">⚓ Wreck</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$85</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-book" href="/punta-cana-scuba-diving-bayahibe#fh-avail" onclick="trackBookNow('Punta Cana Scuba Diving','85','watersports')">Book Now →</a>
+            <a class="op-detail-link" href="/punta-cana-scuba-diving-bayahibe" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="op-guarantee">🔄 Free cancellation · No hidden fees</div>
+      </div>
+
     </div>
+  </div>
 
-    <!-- 5. Punta Cana Scuba Diving – $85 | 4.8★ | watersports -->
-    <div class="op-card" data-cat="watersports" data-budget="mid" data-price="85" data-rating="4.8" data-reviews="0">
-      <div class="op-card-img">
-        <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/HQaMdXETSISUkFVS9mU4" alt="Punta Cana Scuba Diving Bayahíbe" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#004b7a,#0066aa)'">
-        <span class="op-cat-badge">Scuba Diving</span>
-        <span class="op-best-badge">🤿 Catalina Island</span>
-        <div class="avail-badge"><div class="avail-dot"></div>Available Today</div>
+  <!-- ═══ BOAT CHARTERS ═══ -->
+  <div class="activity-section" id="sec-boats">
+    <div class="activity-hdr">
+      <span class="activity-icon">⛵</span>
+      <div>
+        <div class="activity-title">Boat Charters</div>
+        <div class="activity-sub">Party boats · Saona Island · Open bar · Fishing trips</div>
       </div>
-      <div class="op-card-body">
-        <div class="op-name">Punta Cana Scuba Diving</div>
-        <div class="op-addr">📍 Bayahíbe, Dominican Republic</div>
-        <div class="op-rating-row">
-          <span class="op-stars">★★★★★</span>
-          <span class="op-rating-num">4.8</span>
-          <span class="op-review-count">New operator</span>
-        </div>
-        <div class="best-for-tags"><span class="bft">🤿 Scuba</span><span class="bft">🐠 Reef</span><span class="bft">⚓ Wreck</span></div>
-      </div>
-      <div class="op-footer">
-        <div class="op-price-block">
-          <div class="op-price-from">From</div>
-          <div class="op-price-num">$85</div>
-        </div>
-        <div class="op-actions">
-          <a class="op-book" href="/punta-cana-scuba-diving-bayahibe#fh-avail" onclick="trackBookNow('Punta Cana Scuba Diving','85','watersports')">Book Now →</a>
-          <a class="op-detail-link" href="/punta-cana-scuba-diving-bayahibe" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
-        </div>
-      </div>
-      <div class="op-guarantee">🔄 Free cancellation · No hidden fees</div>
+      <span class="activity-count">2 operators</span>
     </div>
+    <div class="cards-grid">
 
-    <!-- 6. Aquazul Tours – $75 | 4.8★ | boat -->
-    <div class="op-card" data-cat="boat" data-budget="mid" data-price="75" data-rating="4.8" data-reviews="0">
-      <div class="op-card-img">
-        <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/6LywayWyRb2DDGBEPbUA" alt="Aquazul Tours Saona Island" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#004b7a,#0066aa)'">
-        <span class="op-cat-badge">Boat Charter</span>
-        <span class="op-best-badge">🏖️ Saona Island</span>
-        <div class="avail-badge"><div class="avail-dot"></div>Available Today</div>
-      </div>
-      <div class="op-card-body">
-        <div class="op-name">Aquazul Tours</div>
-        <div class="op-addr">📍 Bayahíbe, Dominican Republic</div>
-        <div class="op-rating-row">
-          <span class="op-stars">★★★★★</span>
-          <span class="op-rating-num">4.8</span>
-          <span class="op-review-count">New operator</span>
+      <!-- Pink Party Boat – $79 | 4.6★ -->
+      <div class="op-card" data-cat="boat" data-budget="mid" data-price="79" data-rating="4.6" data-reviews="143">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/MBRZ1g0TgqbTCOn3frmg" alt="Pink Party Boat Punta Cana" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#004b7a,#0066aa)'">
+          <span class="op-cat-badge">Party Boat</span>
+          <span class="op-best-badge">🎉 Open Bar</span>
+          <div class="avail-badge"><div class="avail-dot"></div>Available Today</div>
         </div>
-        <div class="best-for-tags"><span class="bft">⛵ Saona</span><span class="bft">🤿 Snorkel</span><span class="bft">🍽️ Lunch</span></div>
-      </div>
-      <div class="op-footer">
-        <div class="op-price-block">
-          <div class="op-price-from">From</div>
-          <div class="op-price-num">$75</div>
+        <div class="op-card-body">
+          <div class="op-name">Pink Party Boat Punta Cana</div>
+          <div class="op-addr">📍 Punta Cana, Dominican Republic</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.6</span>
+            <span class="op-review-count">(143 reviews)</span>
+          </div>
+          <div class="best-for-tags"><span class="bft">🎉 Party</span><span class="bft">🐟 Fishing</span><span class="bft">🌅 Sunset</span></div>
         </div>
-        <div class="op-actions">
-          <a class="op-book" href="/aquazul-tours-bayahibe-saona#fh-avail" onclick="trackBookNow('Aquazul Tours','75','boat')">Book Now →</a>
-          <a class="op-detail-link" href="/aquazul-tours-bayahibe-saona" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$79</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-book" href="/pink-party-boat-punta-cana-puntacana#fh-avail" onclick="trackBookNow('Pink Party Boat Punta Cana','79','boat')">Book Now →</a>
+            <a class="op-detail-link" href="/pink-party-boat-punta-cana-puntacana" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
         </div>
+        <div class="op-guarantee">🔄 Free cancellation · No hidden fees</div>
       </div>
-      <div class="op-guarantee">🔄 Free cancellation · No hidden fees</div>
+
+      <!-- Aquazul Tours – $75 | 4.8★ -->
+      <div class="op-card" data-cat="boat" data-budget="mid" data-price="75" data-rating="4.8" data-reviews="0">
+        <div class="op-card-img">
+          <img src="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:800/quality=value:75/auto_image/compress/cache=expiry:max/6LywayWyRb2DDGBEPbUA" alt="Aquazul Tours Saona Island" loading="lazy" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#004b7a,#0066aa)'">
+          <span class="op-cat-badge">Boat Charter</span>
+          <span class="op-best-badge">🏖️ Saona Island</span>
+          <div class="avail-badge"><div class="avail-dot"></div>Available Today</div>
+        </div>
+        <div class="op-card-body">
+          <div class="op-name">Aquazul Tours</div>
+          <div class="op-addr">📍 Bayahíbe, Dominican Republic</div>
+          <div class="op-rating-row">
+            <span class="op-stars">★★★★★</span>
+            <span class="op-rating-num">4.8</span>
+            <span class="op-review-count">New operator</span>
+          </div>
+          <div class="best-for-tags"><span class="bft">⛵ Saona</span><span class="bft">🤿 Snorkel</span><span class="bft">🍽️ Lunch</span></div>
+        </div>
+        <div class="op-footer">
+          <div class="op-price-block">
+            <div class="op-price-from">From</div>
+            <div class="op-price-num">$75</div>
+          </div>
+          <div class="op-actions">
+            <a class="op-book" href="/aquazul-tours-bayahibe-saona#fh-avail" onclick="trackBookNow('Aquazul Tours','75','boat')">Book Now →</a>
+            <a class="op-detail-link" href="/aquazul-tours-bayahibe-saona" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>
+          </div>
+        </div>
+        <div class="op-guarantee">🔄 Free cancellation · No hidden fees</div>
+      </div>
+
     </div>
-
-  </div><!-- /cards-grid -->
+  </div>
 
   <div class="no-results" id="noResults">
     <h3>No operators found</h3>
@@ -557,21 +608,28 @@ function applyFilters(search){
     if(matchCat && matchSearch){ card.classList.remove('hidden'); visible++; }
     else card.classList.add('hidden');
   });
+  // Hide empty sections
+  document.querySelectorAll('.activity-section').forEach(sec=>{
+    const anyVisible = [...sec.querySelectorAll('.op-card')].some(c=>!c.classList.contains('hidden'));
+    sec.classList.toggle('hidden-section', !anyVisible);
+  });
   document.getElementById('activeCount').textContent = visible + ' shown';
   document.getElementById('noResults').style.display = visible === 0 ? 'block' : 'none';
 }
 
 function sortCards(val){
-  const grid = document.getElementById('cardsGrid');
-  const cards = [...grid.querySelectorAll('.op-card')];
-  cards.sort((a,b)=>{
-    if(val==='price-asc') return parseFloat(a.dataset.price)-parseFloat(b.dataset.price);
-    if(val==='price-desc') return parseFloat(b.dataset.price)-parseFloat(a.dataset.price);
-    if(val==='rating') return parseFloat(b.dataset.rating)-parseFloat(a.dataset.rating);
-    if(val==='reviews') return parseInt(b.dataset.reviews)-parseInt(a.dataset.reviews);
-    return 0;
+  // Sort within each section independently
+  document.querySelectorAll('.activity-section .cards-grid').forEach(grid=>{
+    const cards = [...grid.querySelectorAll('.op-card')];
+    cards.sort((a,b)=>{
+      if(val==='price-asc') return parseFloat(a.dataset.price)-parseFloat(b.dataset.price);
+      if(val==='price-desc') return parseFloat(b.dataset.price)-parseFloat(a.dataset.price);
+      if(val==='rating') return parseFloat(b.dataset.rating)-parseFloat(a.dataset.rating);
+      if(val==='reviews') return parseInt(b.dataset.reviews)-parseInt(a.dataset.reviews);
+      return 0;
+    });
+    cards.forEach(c=>grid.appendChild(c));
   });
-  cards.forEach(c=>grid.appendChild(c));
 }
 
 // FAQ
