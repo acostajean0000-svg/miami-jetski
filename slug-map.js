@@ -33,4 +33,9 @@ window._OP_SLUG_MAP = {"js5":"305-tours-rentals-miami","bt1":"bruschi-boat-renta
 "bt110":"coastal-cruises-south-pasadena-westfl",
 "fi10":"native-guided-fishing-charters-marco-island-gulf",
 "to90":"cocoa-beach-catamaran-centralfl",
+"to91":"runners-adventures-puntacana",
+"ws69":"caribbean-lake-park-puntacana",
+"to92":"canelo-tours-puntacana",
+"bt111":"pink-party-boat-punta-cana-puntacana",
+"to93":"adventures-finder-puntacana",
 };
