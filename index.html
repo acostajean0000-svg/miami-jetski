@@ -69,7 +69,7 @@
     {"@type":"Question","name":"Can I book same-day water sports in Florida?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most operators listed on our site offer same-day and next-day booking through FareHarbor. Select your date on any operator's booking page to check real-time availability."}}
   ]}
   </script>
-  <noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
+  <noscript><link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript></noscript>
   <!-- Leaflet — non-blocking, lazy init via IntersectionObserver -->
   <link rel="preload" as="style" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
@@ -662,6 +662,8 @@
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta name="twitter:image" content="https://miamijetskiboatrentals.com/og-image.png">
+  <link rel="preconnect" href="https://fareharbor.com" crossorigin>
+  <link rel="dns-prefetch" href="https://fareharbor.com">
 </head>
 <body>
 
