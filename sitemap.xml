@@ -694,7 +694,13 @@
   </url>
   <url>
     <loc>https://miamijetskiboatrentals.com/hawaii-activities</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-09</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/cancun-activities</loc>
+    <lastmod>2026-05-09</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.90</priority>
   </url>
