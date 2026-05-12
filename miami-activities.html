@@ -287,6 +287,23 @@
     .bw-cta{flex-shrink:0;background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark);border:none;padding:11px 22px;border-radius:50px;font-family:Montserrat,sans-serif;font-weight:800;font-size:.85rem;cursor:pointer;white-space:nowrap;min-height:44px;transition:all .2s;display:flex;align-items:center;gap:6px;}
     .bw-cta:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,212,200,.4);}
     .bw-sub{font-size:.65rem;color:var(--muted);margin-top:10px;text-align:center;}
+    /* ── OCCASION SECTION ── */
+    .occasion-section{padding:32px 16px 24px;background:var(--dark2);border-top:1px solid var(--border);}
+    .occasion-inner{max-width:1200px;margin:0 auto;}
+    .occasion-hdr{display:flex;align-items:baseline;gap:12px;margin-bottom:18px;flex-wrap:wrap;}
+    .occasion-hdr h2{font-family:Montserrat,sans-serif;font-size:1rem;font-weight:800;color:#fff;}
+    .occasion-hdr span{font-size:.75rem;color:var(--muted);}
+    .occasion-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:10px;}
+    .occ-card{display:flex;align-items:center;gap:10px;background:var(--card);border:1.5px solid var(--border);border-radius:12px;padding:12px 14px;transition:border-color .2s,background .2s;text-decoration:none;}
+    .occ-card:hover{border-color:var(--teal);background:rgba(0,212,200,.06);}
+    .occ-icon{font-size:1.4rem;flex-shrink:0;line-height:1;}
+    .occ-label{font-family:Montserrat,sans-serif;font-size:.72rem;font-weight:700;color:var(--light);line-height:1.3;}
+    .occ-sub{font-size:.62rem;color:var(--muted);margin-top:2px;}
+    .guides-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(190px,1fr));gap:8px;margin-top:24px;}
+    .guide-card{display:flex;align-items:center;gap:8px;background:rgba(0,212,200,.05);border:1px solid rgba(0,212,200,.15);border-radius:10px;padding:10px 14px;transition:border-color .2s;text-decoration:none;}
+    .guide-card:hover{border-color:var(--teal);}
+    .guide-icon{font-size:1.1rem;flex-shrink:0;}
+    .guide-label{font-family:Montserrat,sans-serif;font-size:.7rem;font-weight:700;color:var(--teal);line-height:1.3;}
   </style>
 </head>
 <body>
@@ -387,6 +404,50 @@
   <div class="sp-item sp-fire">🔥 <strong><span id="urgencyCount">14</span></strong> booked today</div>
   <div class="sp-item">🏆 <strong>108</strong> verified operators</div>
 </div>
+
+<!-- PLAN BY OCCASION -->
+<section class="occasion-section">
+  <div class="occasion-inner">
+    <div class="occasion-hdr">
+      <h2>🎯 Plan by Occasion</h2>
+      <span>Curated guides for every type of trip</span>
+    </div>
+    <div class="occasion-grid">
+      <a href="/family-jet-ski-rental-miami" class="occ-card">
+        <div class="occ-icon">👨‍👩‍👧</div>
+        <div><div class="occ-label">Family Trip</div><div class="occ-sub">Kid-safe operators</div></div>
+      </a>
+      <a href="/date-night-boat-tour-miami" class="occ-card">
+        <div class="occ-icon">🌅</div>
+        <div><div class="occ-label">Date Night</div><div class="occ-sub">Sunset cruises</div></div>
+      </a>
+      <a href="/bachelorette-water-sports-miami" class="occ-card">
+        <div class="occ-icon">🥂</div>
+        <div><div class="occ-label">Bachelorette</div><div class="occ-sub">Group &amp; party boats</div></div>
+      </a>
+      <a href="/birthday-water-sports-miami" class="occ-card">
+        <div class="occ-icon">🎂</div>
+        <div><div class="occ-label">Birthday</div><div class="occ-sub">Group packages</div></div>
+      </a>
+      <a href="/corporate-team-building-water-sports-miami" class="occ-card">
+        <div class="occ-icon">🏢</div>
+        <div><div class="occ-label">Corporate</div><div class="occ-sub">Team building</div></div>
+      </a>
+    </div>
+    <div class="occasion-hdr" style="margin-top:24px;margin-bottom:14px;">
+      <h2>📋 Top Ranked Guides</h2>
+      <span>Expert picks by category</span>
+    </div>
+    <div class="guides-grid">
+      <a href="/best-jet-ski-rentals-miami" class="guide-card"><div class="guide-icon">🏄</div><div class="guide-label">Best Jet Ski Rentals Miami</div></a>
+      <a href="/best-boat-rentals-miami" class="guide-card"><div class="guide-icon">⛵</div><div class="guide-label">Best Boat Rentals Miami</div></a>
+      <a href="/best-yacht-charters-miami" class="guide-card"><div class="guide-icon">🛥️</div><div class="guide-label">Best Yacht Charters Miami</div></a>
+      <a href="/best-parasailing-miami" class="guide-card"><div class="guide-icon">🪂</div><div class="guide-label">Best Parasailing Miami</div></a>
+      <a href="/best-jet-ski-rentals-miami-beach" class="guide-card"><div class="guide-icon">🌊</div><div class="guide-label">Best Jet Ski Miami Beach</div></a>
+      <a href="/best-jet-ski-rentals-key-west" class="guide-card"><div class="guide-icon">🏝️</div><div class="guide-label">Best Jet Ski Key West</div></a>
+    </div>
+  </div>
+</section>
 
 <!-- FILTER BAR -->
 <div class="filter-bar">
