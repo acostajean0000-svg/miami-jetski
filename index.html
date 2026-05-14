@@ -761,7 +761,7 @@
     </div>
 
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num">492</div><div class="hero-stat-label">Operators</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" id="heroOpCount">652</div><div class="hero-stat-label">Operators</div></div>
       <div class="hero-stat"><div class="hero-stat-num">$4</div><div class="hero-stat-label">Starting From</div></div>
       <div class="hero-stat"><div class="hero-stat-num">13</div><div class="hero-stat-label">Categories</div></div>
       <div class="hero-stat"><div class="hero-stat-num">FL</div><div class="hero-stat-label">Statewide</div></div>
@@ -869,7 +869,7 @@
         <a href="https://fareharbor.com/embeds/book/miamistylerentals/items/?flow=613885&full-items=yes" target="_blank" rel="noopener" class="featured-btn">Book Now →</a>
       </div>
       <div class="cards-toolbar">
-        <div class="cards-count" id="cardsCount">Showing 881 operators</div>
+        <div class="cards-count" id="cardsCount">Showing 652 operators</div>
         <select class="sort-select" id="sortSelect" onchange="activeSortBy=this.value;renderCards();pushDL('sort_operators',{sort_by:this.value})">
           <option value="default">Sort: Default</option>
           <option value="price_asc">Price: Low → High</option>
@@ -2196,10 +2196,14 @@ if ('IntersectionObserver' in window) {
 // ---- INIT (fetch operators-slim.json) ----
 // Note: operators-slim.json strips the 'desc' field (unused in index) saving ~68KB (32KB gzipped)
 function _applyLoadedData(data) {
+  // Normalize prices: convert any string prices to numbers
+  data.forEach(o => { if (typeof o.price !== 'number') { const s=String(o.price||'').replace(/[^0-9.]/g,''); o.price = s ? parseFloat(s)||0 : 0; } });
+  // Ensure zl/addr are always strings (prevents search crash)
+  data.forEach(o => { if (!o.zl) o.zl=''; if (!o.addr) o.addr=''; });
   allOperators = data;
   // Set price filter range dynamically based on actual max price
-  const maxPrice = Math.max(...data.map(o => o.price || 0));
-  const roundedMax = Math.ceil(maxPrice / 500) * 500;
+  const maxPrice = Math.max(0, ...data.map(o => o.price || 0));
+  const roundedMax = Math.ceil(maxPrice / 500) * 500 || 1000;
   ['priceMin','priceMax'].forEach(id => document.getElementById(id).max = roundedMax);
   document.getElementById('priceMax').value = roundedMax;
   priceMax = roundedMax;
@@ -2229,9 +2233,11 @@ function _applyLoadedData(data) {
   updateCatCounts();
   renderRecentlyViewed();
   computeBestValue(data);
-  // Update mobile CTA count
+  // Update mobile CTA count and hero operator count
   const mobCount = document.getElementById('mobCtaCount');
   if (mobCount) mobCount.textContent = data.length;
+  const heroOpCount = document.getElementById('heroOpCount');
+  if (heroOpCount) heroOpCount.textContent = data.length;
 }
 
 function _showLoadError() {
