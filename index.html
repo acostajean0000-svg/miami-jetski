@@ -1989,9 +1989,12 @@ function buildMarkers() {
     const catInitials = {jetski:'JS', boat:'⛵', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', jetcar:'🚗', golfcart:'🛺', atv:'🏍️', scooter:'🛵', bikerental:'🚲'}[op.cat] || '●';
     const marker = L.marker([op.lat, op.lng], {icon: makeIcon(color, catInitials)});
     const opSlug = (window._OP_SLUG_MAP||{})[op.id] || '';
+    const priceLabel = (op.price && op.price > 0)
+      ? ('From $' + op.price.toLocaleString())
+      : 'Contact for pricing';
     const popupHTML = `<div class="map-popup">
       <div class="map-popup-name">${esc(op.name)}</div>
-      <div class="map-popup-price">From $${op.price.toLocaleString()}</div>
+      <div class="map-popup-price">${esc(priceLabel)}</div>
       <a class="map-popup-btn" href="${escUrl(op.link)}" target="_blank" rel="noopener noreferrer">Book Now →</a>
       ${opSlug ? `<a class="map-popup-details" href="/${opSlug}">View Details</a>` : ''}
     </div>`;
@@ -2209,8 +2212,12 @@ function toggleMapView() {
     icon.textContent = '📋';
     text.textContent = 'View List';
     btn.classList.add('map-active');
-    // Force Leaflet to recalculate map size
-    setTimeout(() => { if(window.jetskiMap) window.jetskiMap.invalidateSize(); }, 100);
+    // On mobile, the map panel was display:none so IntersectionObserver never
+    // fired — load Leaflet now if it hasn't been loaded yet.
+    if (typeof loadLeafletThenMap === 'function') loadLeafletThenMap();
+    // Force Leaflet to recalculate map size once it's available.
+    setTimeout(() => { if(window.jetskiMap) window.jetskiMap.invalidateSize(); }, 250);
+    setTimeout(() => { if(window.jetskiMap) window.jetskiMap.invalidateSize(); }, 800);
   } else {
     body.classList.remove('mobile-map-visible');
     body.classList.add('mobile-map-hidden');
