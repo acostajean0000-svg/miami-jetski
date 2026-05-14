@@ -5,7 +5,7 @@
     { "source": "/operators/:slug", "destination": "/:slug", "permanent": true }
   ],
   "rewrites": [
-    { "source": "/:path((?!.*\\.).+)", "destination": "/operator-template.html" }
+    { "source": "/(.*)", "destination": "/operator-template.html" }
   ],
   "headers": [
     {
