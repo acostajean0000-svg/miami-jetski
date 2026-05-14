@@ -1231,8 +1231,8 @@ function toggleNearMe() {
 // ---- FILTERED LIST ----
 function getFiltered() {
   let ops = allOperators.filter(op => {
-    const catOk    = activeCat === 'all' || op.cat === activeCat || (activeCat === 'bike' && op.cat === 'bikerental') || (activeCat === 'bikerental' && op.cat === 'bike');
-    const zoneOk   = nearMeActive || activeZone === 'all' || op.zone === activeZone || (activeZone === 'keys' && op.zone === 'keywest') || (activeZone === 'broward' && op.zone === 'ftlauderdale');
+    const catOk    = catMatches(activeCat, op);
+    const zoneOk   = nearMeActive || zoneMatches(activeZone, op);
     const priceOk  = op.price >= priceMin && (priceMax >= (document.getElementById('priceMax')||{max:1000}).max || op.price <= priceMax);
     const searchOk = !searchQuery || op.name.toLowerCase().includes(searchQuery)
                      || op.zl.toLowerCase().includes(searchQuery)
@@ -1829,25 +1829,65 @@ function renderDeals() {
 
 // ---- GOOGLE ADS CONVERSION TRACKING ----
 
+// ---- Sub-category and sub-zone matchers (after operators.json normalization
+// folded kayak/snorkel/scooter into watersports/bikerental, and the granular
+// zones like 'tampa'/'destin' into canonical regions). These predicates power
+// both the count display and the getFiltered() check below. ----
+const SUBCAT_MATCH = {
+  kayak:   o => o.cat==='watersports' && /\bkayak|\bsup\b|paddle|canoe/i.test(o.name),
+  snorkel: o => o.cat==='watersports' && /snorkel|\bdive|scuba|reef/i.test(o.name),
+  scooter: o => o.cat==='bikerental'  && /scooter|moke|vespa|\b\d{2,3}cc\b/i.test(o.name),
+};
+const SUBZONE_MATCH = {
+  tampa:        o => /tampa/i.test(o.zl||''),
+  destin:       o => /destin/i.test(o.zl||''),
+  naples:       o => /naples/i.test(o.zl||''),
+  ftmyers:      o => /fort\s*myers|ft\.?\s*myers/i.test(o.zl||''),
+  crystalriver: o => /crystal\s*river/i.test(o.zl||''),
+  orlando:      o => /orlando/i.test(o.zl||''),
+  daytona:      o => /daytona/i.test(o.zl||''),
+  jacksonville: o => /jacksonville/i.test(o.zl||''),
+};
+
+function catMatches(activeCat, op) {
+  if (activeCat === 'all') return true;
+  if (op.cat === activeCat) return true;
+  if (activeCat === 'bike' && op.cat === 'bikerental') return true;
+  if (activeCat === 'bikerental' && op.cat === 'bike') return true;
+  const m = SUBCAT_MATCH[activeCat];
+  return m ? m(op) : false;
+}
+
+function zoneMatches(activeZone, op) {
+  if (activeZone === 'all' || activeZone === 'florida') return true;
+  if (op.zone === activeZone) return true;
+  // Legacy zone-code aliases (pre-normalization data shouldn't exist anymore,
+  // but keep them as defense-in-depth).
+  if (activeZone === 'keys' && op.zone === 'keywest') return true;
+  if (activeZone === 'broward' && op.zone === 'ftlauderdale') return true;
+  const m = SUBZONE_MATCH[activeZone];
+  return m ? m(op) : false;
+}
+
 function updateCatCounts() {
   if (!allOperators || !allOperators.length) return;
   const catMap = {
     'all': allOperators.length,
-    'jetski': allOperators.filter(o=>o.cat==='jetski'||o.cat==='js').length,
-    'boat': allOperators.filter(o=>o.cat==='boat'||o.cat==='bt').length,
-    'fishing': allOperators.filter(o=>o.cat==='fishing'||o.cat==='fi').length,
-    'watersports': allOperators.filter(o=>o.cat==='watersports'||o.cat==='ws').length,
-    'slingshot': allOperators.filter(o=>o.cat==='slingshot'||o.cat==='sl').length,
-    'jetcar': allOperators.filter(o=>o.cat==='jetcar'||o.cat==='jc').length,
-    'golfcart': allOperators.filter(o=>o.cat==='golfcart'||o.cat==='gc').length,
-    'atv': allOperators.filter(o=>o.cat==='atv'||o.cat==='at').length,
-    'tour': allOperators.filter(o=>o.cat==='tours'||o.cat==='tour'||o.cat==='to').length,
-    'aerial': allOperators.filter(o=>o.cat==='aerial'||o.cat==='ae').length,
-    'bike': allOperators.filter(o=>o.cat==='bike'||o.cat==='bikerental').length,
-    'bikerental': allOperators.filter(o=>o.cat==='bikerental'||o.cat==='bike').length,
-    'scooter': allOperators.filter(o=>o.cat==='scooter'||o.cat==='sc').length,
-    'kayak': allOperators.filter(o=>o.cat==='kayak').length,
-    'snorkel': allOperators.filter(o=>o.cat==='snorkel').length,
+    'jetski':      allOperators.filter(o=>catMatches('jetski',o)).length,
+    'boat':        allOperators.filter(o=>catMatches('boat',o)).length,
+    'fishing':     allOperators.filter(o=>catMatches('fishing',o)).length,
+    'watersports': allOperators.filter(o=>catMatches('watersports',o)).length,
+    'slingshot':   allOperators.filter(o=>catMatches('slingshot',o)).length,
+    'jetcar':      allOperators.filter(o=>catMatches('jetcar',o)).length,
+    'golfcart':    allOperators.filter(o=>catMatches('golfcart',o)).length,
+    'atv':         allOperators.filter(o=>catMatches('atv',o)).length,
+    'tour':        allOperators.filter(o=>catMatches('tour',o)).length,
+    'aerial':      allOperators.filter(o=>catMatches('aerial',o)).length,
+    'bike':        allOperators.filter(o=>catMatches('bike',o)).length,
+    'bikerental':  allOperators.filter(o=>catMatches('bikerental',o)).length,
+    'scooter':     allOperators.filter(o=>catMatches('scooter',o)).length,
+    'kayak':       allOperators.filter(o=>catMatches('kayak',o)).length,
+    'snorkel':     allOperators.filter(o=>catMatches('snorkel',o)).length,
   };
   document.querySelectorAll('.cat-tab').forEach(btn => {
     const fn = btn.getAttribute('onclick')||'';
@@ -1857,6 +1897,20 @@ function updateCatCounts() {
     const cnt = catMap[key];
     const el = btn.querySelector('.cat-count');
     if (el && cnt !== undefined) el.textContent = '(' + cnt + ')';
+    // Hide zero-count chips so the UI never advertises an empty filter.
+    if (cnt === 0) btn.style.display = 'none';
+    else btn.style.display = '';
+  });
+
+  // Hide zone chips that match nothing (e.g. 'gainesville' after data cleanup).
+  document.querySelectorAll('.zone-tab').forEach(btn => {
+    const fn = btn.getAttribute('onclick')||'';
+    const m = fn.match(/filterZone\('([^']+)'/);
+    if (!m) return;
+    const key = m[1];
+    if (key === 'all' || key === 'florida') return; // always keep
+    const n = allOperators.filter(o => zoneMatches(key, o)).length;
+    if (n === 0) btn.style.display = 'none';
   });
 }
 
