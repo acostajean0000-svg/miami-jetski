@@ -169,6 +169,8 @@
   <script async src="https://fareharbor.com/embeds/book/bobbysbikehike/items/575606/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no"></script>
   <link rel="preconnect" href="https://fareharbor.com" crossorigin>
   <link rel="dns-prefetch" href="https://fareharbor.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1"></script>
+<script>window.dataLayer=window.dataLayer · [];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');</script>
 </head>
 <body>
 <nav class="nav">
@@ -344,7 +346,7 @@
   <h3>Explore More Florida Activities</h3>
   <div class="related-links">
     <a href="/scooter-rentals-florida.html" class="related-link">🛵 Scooter Rentals</a>
-    <a href="/aerial-tours-florida.html" class="related-link">🚁 Aerial & Helicopter</a>
+    
     <a href="/golf-cart-rentals-florida.html" class="related-link">🛺 Golf Cart Rentals</a>
     <a href="/beach-activities-florida.html" class="related-link">🏖️ Beach Activities</a>
     <a href="/tours-florida.html" class="related-link">🚌 Tours</a>
@@ -374,8 +376,8 @@
   <div class="footer-inner">
     <div class="footer-copy">© 2025 FloridaWaterSports.com · All rights reserved</div>
     <div class="footer-links">
-      <a href="/privacy-policy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
+      
+      
       <a href="/sitemap.xml">Sitemap</a>
     </div>
   </div>
@@ -383,7 +385,7 @@
 
 <script>
 // ── Favorites ──
-var favs=JSON.parse(localStorage.getItem('fwsFavs')||'[]');
+var favs=JSON.parse(localStorage.getItem('fwsFavs') · '[]');
 function toggleFav(btn,id){
   var i=favs.indexOf(id);
   if(i===-1){favs.push(id);btn.textContent='❤️';btn.classList.add('saved');}
@@ -428,9 +430,9 @@ function sortCards(val){
   var grid=document.querySelector('.cards-grid');
   var cards=Array.from(grid.querySelectorAll('.op-card'));
   cards.sort(function(a,b){
-    if(val==='price-asc'||val==='price-desc'){
-      var pa=parseFloat((a.querySelector('.op-price-num')||{}).textContent||'0');
-      var pb=parseFloat((b.querySelector('.op-price-num')||{}).textContent||'0');
+    if(val==='price-asc' · val==='price-desc'){
+      var pa=parseFloat((a.querySelector('.op-price-num') · {}).textContent · '0');
+      var pb=parseFloat((b.querySelector('.op-price-num') · {}).textContent · '0');
       return val==='price-asc'?pa-pb:pb-pa;
     }
     return 0;
@@ -447,7 +449,7 @@ function filterZone(zone,btn){
   var cards=document.querySelectorAll('.op-card');
   var visible=0;
   cards.forEach(function(card){
-    if(zone==='all'||card.dataset.zone===zone){card.style.display='';visible++;}
+    if(zone==='all' · card.dataset.zone===zone){card.style.display='';visible++;}
     else{card.style.display='none';}
   });
   var c=document.querySelector('.cards-count');
@@ -460,8 +462,8 @@ function filterZone(zone,btn){
     var nameEl=card.querySelector('.op-name');
     var addrEl=card.querySelector('.op-addr');
     var detailLink=card.querySelector('.op-detail-link');
-    var insertBefore=detailLink||card.querySelector('.op-footer');
-    if(!nameEl||!insertBefore) return;
+    var insertBefore=detailLink · card.querySelector('.op-footer');
+    if(!nameEl · !insertBefore) return;
     var query=nameEl.textContent.trim();
     if(addrEl) query+=' '+(addrEl.textContent.replace(/📍\s*/,'').trim())+' Florida';
     else query+=' Florida';
@@ -486,14 +488,14 @@ function filterZone(zone,btn){
     try{
       var ld = JSON.parse(ldEl.textContent);
       var items = [];
-      if(ld['@graph']){var il=ld['@graph'].find(function(g){return g['@type']==='ItemList';});if(il)items=il.itemListElement||[];}
+      if(ld['@graph']){var il=ld['@graph'].find(function(g){return g['@type']==='ItemList';});if(il)items=il.itemListElement · [];}
       else if(ld.itemListElement) items=ld.itemListElement;
       items.forEach(function(it){
         var b=it.item;
         if(b&&b.geo&&b.name){
           opGeo[b.name]={lat:+b.geo.latitude,lng:+b.geo.longitude,
-            price:parseInt((b.priceRange||'0').replace(/[^0-9]/,'')||'0'),
-            url:b.url||'',addr:(b.address&&b.address.addressLocality)||''};
+            price:parseInt((b.priceRange · '0').replace(/[^0-9]/,'') · '0'),
+            url:b.url · '',addr:(b.address&&b.address.addressLocality) · ''};
         }
       });
     }catch(e){}
@@ -504,8 +506,8 @@ function filterZone(zone,btn){
   if(grid){
     var cards=Array.from(grid.querySelectorAll('.op-card'));
     cards.sort(function(a,b){
-      var pa=parseInt((a.querySelector('.op-price-num')||{}).textContent||'999999');
-      var pb=parseInt((b.querySelector('.op-price-num')||{}).textContent||'999999');
+      var pa=parseInt((a.querySelector('.op-price-num') · {}).textContent · '999999');
+      var pb=parseInt((b.querySelector('.op-price-num') · {}).textContent · '999999');
       return pa-pb;
     });
     cards.forEach(function(c){grid.appendChild(c);});
@@ -516,7 +518,7 @@ function filterZone(zone,btn){
       var name='';
       if(nameEl){
         var tn=nameEl.firstChild;
-        name=(tn&&tn.nodeType===3)?tn.textContent.trim():(nameEl.textContent||'').replace(/·\s*\d+Pax/,'').trim();
+        name=(tn&&tn.nodeType===3)?tn.textContent.trim():(nameEl.textContent · '').replace(/·\s*\d+Pax/,'').trim();
       }
       var geo=opGeo[name];
       if(geo){card.dataset.lat=geo.lat;card.dataset.lng=geo.lng;card.dataset.price=geo.price;}
@@ -544,12 +546,12 @@ function filterZone(zone,btn){
     var cards=Array.from(grid.querySelectorAll('.op-card'));
     if(nearActive&&userLat!==null){
       cards.sort(function(a,b){
-        var da=haversine(userLat,userLng,+(a.dataset.lat||0),+(a.dataset.lng||0));
-        var db=haversine(userLat,userLng,+(b.dataset.lat||0),+(b.dataset.lng||0));
+        var da=haversine(userLat,userLng,+(a.dataset.lat · 0),+(a.dataset.lng · 0));
+        var db=haversine(userLat,userLng,+(b.dataset.lat · 0),+(b.dataset.lng · 0));
         return da-db;
       });
     } else {
-      cards.sort(function(a,b){return (+(a.dataset.price||0))-(+(b.dataset.price||0));});
+      cards.sort(function(a,b){return (+(a.dataset.price · 0))-(+(b.dataset.price · 0));});
     }
     cards.forEach(function(c){grid.appendChild(c);});
   }
@@ -571,12 +573,12 @@ function filterZone(zone,btn){
     var cards=document.querySelectorAll('.op-card');
     var bounds=[];
     cards.forEach(function(card,i){
-      var lat=+(card.dataset.lat||0),lng=+(card.dataset.lng||0);
-      if(!lat||!lng)return;
+      var lat=+(card.dataset.lat · 0),lng=+(card.dataset.lng · 0);
+      if(!lat · !lng)return;
       var nameEl2=card.querySelector('.op-name');
       var name='';
-      if(nameEl2){var tn2=nameEl2.firstChild;name=(tn2&&tn2.nodeType===3)?tn2.textContent.trim():(nameEl2.textContent||'').replace(/·\s*\d+Pax/,'').trim();}
-      var price=(card.querySelector('.op-price-num')||{}).textContent||'';
+      if(nameEl2){var tn2=nameEl2.firstChild;name=(tn2&&tn2.nodeType===3)?tn2.textContent.trim():(nameEl2.textContent · '').replace(/·\s*\d+Pax/,'').trim();}
+      var price=(card.querySelector('.op-price-num') · {}).textContent · '';
       var bookEl=card.querySelector('.op-book');
       var bookUrl=bookEl?bookEl.href:'#';
       var m=L.marker([lat,lng],{icon:makeIcon('#00d4c8')});
@@ -599,7 +601,7 @@ function filterZone(zone,btn){
       var el=markers[idx].getElement();
       if(el){el.style.filter='drop-shadow(0 0 8px #f5c842)';el.style.transform='scale(1.4)';}
       var card=document.querySelectorAll('.op-card')[idx];
-      if(card){var lat=+(card.dataset.lat||0),lng=+(card.dataset.lng||0);if(lat&&lng)mapInstance.setView([lat,lng],13,{animate:true});}
+      if(card){var lat=+(card.dataset.lat · 0),lng=+(card.dataset.lng · 0);if(lat&&lng)mapInstance.setView([lat,lng],13,{animate:true});}
       markers[idx].openPopup();
     }
   }
@@ -636,7 +638,7 @@ function filterZone(zone,btn){
     var cards=document.querySelectorAll('.op-card');
     var visible=0;
     cards.forEach(function(card){
-      if(zone==='all'||card.dataset.zone===zone){card.style.display='';visible++;}
+      if(zone==='all' · card.dataset.zone===zone){card.style.display='';visible++;}
       else{card.style.display='none';}
     });
     var c=document.querySelector('.cards-count');

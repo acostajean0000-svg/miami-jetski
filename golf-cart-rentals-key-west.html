@@ -73,16 +73,16 @@ function trackBookNow(operatorName, price, category) {
   if (window.dataLayer) {
     window.dataLayer.push({
       event: 'book_now_click',
-      operator_name: operatorName || '',
-      operator_price: price || '',
-      operator_category: category || '',
+      operator_name: operatorName · '',
+      operator_price: price · '',
+      operator_category: category · '',
       page_url: window.location.href
     });
   }
   if (window.gtag) {
     gtag('event', 'conversion', {
       send_to: 'AW-CONVERSION_ID/CONVERSION_LABEL',
-      value: parseFloat(price) || 0,
+      value: parseFloat(price) · 0,
       currency: 'USD'
     });
   }
@@ -316,6 +316,8 @@ function trackBookNow(operatorName, price, category) {
   <script async src="https://fareharbor.com/embeds/book/golfcartrentalkeywest/items/116411/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&flow=no&full-items=yes&flow=no&full-items=yes"></script>
   <link rel="preconnect" href="https://fareharbor.com" crossorigin>
   <link rel="dns-prefetch" href="https://fareharbor.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1"></script>
+<script>window.dataLayer=window.dataLayer · [];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');</script>
 </head>
 <body>
 
@@ -621,7 +623,7 @@ function trackBookNow(operatorName, price, category) {
     <a href="/jet-ski-rentals-florida.html" class="related-link">🛥️ Jet Ski Rentals</a>
     <a href="/boat-rentals-florida.html" class="related-link">⛵ Boat Rentals</a>
     <a href="/slingshot-rentals-florida.html" class="related-link">🏎️ Slingshot Rentals</a>
-    <a href="/bike-rentals-florida.html" class="related-link">🚲 Bike Rentals Key West</a>
+    
     <a href="/scooter-rentals-florida.html" class="related-link">🛵 Scooter Rentals</a>
     <a href="/florida-keys-water-sports.html" class="related-link">🏝️ Florida Keys</a>
   </div>
@@ -671,10 +673,10 @@ function toggleFaq(el){el.parentElement.classList.toggle('open');}
     var cards=document.querySelectorAll('.op-card');
     var bounds=[];
     cards.forEach(function(card,i){
-      var lat=+(card.dataset.lat||0), lng=+(card.dataset.lng||0);
-      if(!lat||!lng) return;
-      var name=(card.querySelector('.op-name')||{}).textContent||'';
-      var price=(card.querySelector('.op-price-num')||{}).textContent||'';
+      var lat=+(card.dataset.lat · 0), lng=+(card.dataset.lng · 0);
+      if(!lat · !lng) return;
+      var name=(card.querySelector('.op-name') · {}).textContent · '';
+      var price=(card.querySelector('.op-price-num') · {}).textContent · '';
       var bookEl=card.querySelector('.op-book');
       var bookUrl=bookEl?bookEl.href:'#';
       var m=L.marker([lat,lng],{icon:makeIcon('#00d4c8',i+1)});

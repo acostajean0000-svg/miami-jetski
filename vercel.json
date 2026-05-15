@@ -2,58 +2,599 @@
   "cleanUrls": true,
   "trailingSlash": false,
   "redirects": [
-    { "source": "/operators/:slug", "destination": "/:slug", "permanent": true }
+    {
+      "source": "/operators/:slug",
+      "destination": "/:slug",
+      "permanent": true
+    },
+    {
+      "source": "/bruschi-boat-rental-miami",
+      "destination": "/bruschi-boat-rental-small-boat-miami",
+      "permanent": true
+    },
+    {
+      "source": "/727-slingshots-st-petersburg",
+      "destination": "/727-slingshots-westfl",
+      "permanent": true
+    },
+    {
+      "source": "/travel-to-key-west-ii-miami",
+      "destination": "/travel-to-key-west-bus-tour-miami-to2",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-fishing-charters-keys",
+      "destination": "/adventures-key-west-fishing-charter-keys",
+      "permanent": true
+    },
+    {
+      "source": "/reel-floridian-fishing-broward",
+      "destination": "/reel-floridian-fishing-pompano-beach",
+      "permanent": true
+    },
+    {
+      "source": "/the-wakeboard-coach-central",
+      "destination": "/the-wakeboard-coach-winter-haven",
+      "permanent": true
+    },
+    {
+      "source": "/seaside-bicycle-rentals-boynton-beach",
+      "destination": "/seaside-bicycle-rentals-palmbeach",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-slingshot-rentals-palmbeach",
+      "destination": "/south-florida-slingshot-rentals-greenacres",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-fishing-charters-ii-keys",
+      "destination": "/adventures-key-west-fishing-charter-keys-bt57",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-scooter-rentals-broward",
+      "destination": "/sunset-scooter-rentals-fort-lauderdale",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-trikke-tours-miami",
+      "destination": "/south-florida-trikke-tours-premium-boat-miami-to10",
+      "permanent": true
+    },
+    {
+      "source": "/the-real-yacht-experience-miami",
+      "destination": "/the-real-yacht-experience-ii-miami",
+      "permanent": true
+    },
+    {
+      "source": "/sf-jet-ski-rentals-miami",
+      "destination": "/sf-jet-ski-rentals-key-biscayne-miami-js29",
+      "permanent": true
+    },
+    {
+      "source": "/sunsplash-jetski-rentals-gulf",
+      "destination": "/sunsplash-jetski-rentals-fort-myers",
+      "permanent": true
+    },
+    {
+      "source": "/destin-helicopters-westfl",
+      "destination": "/destin-helicopters-destin",
+      "permanent": true
+    },
+    {
+      "source": "/orlando-helicopter-adventures-centralfl",
+      "destination": "/orlando-helicopter-adventures-kissimmee",
+      "permanent": true
+    },
+    {
+      "source": "/sun-boat-rental-dania-beach",
+      "destination": "/sun-boat-rental-broward",
+      "permanent": true
+    },
+    {
+      "source": "/byob-party-pontoon-fort-lauderdale",
+      "destination": "/byob-party-pontoon-broward",
+      "permanent": true
+    },
+    {
+      "source": "/fort-lauderdale-boat-rentals-fort-lauderdale",
+      "destination": "/jetski-rental-fort-lauderdale-broward",
+      "permanent": true
+    },
+    {
+      "source": "/fort-lauderdale-boat-rentals-broward",
+      "destination": "/jetski-rental-fort-lauderdale-broward",
+      "permanent": true
+    },
+    {
+      "source": "/jetski-rental-fort-lauderdale-broward-bt26",
+      "destination": "/fort-lauderdale-boat-rental-with-captain-lauderdale-by-the-sea",
+      "permanent": true
+    },
+    {
+      "source": "/fort-lauderdale-boat-rental-with-captain-broward",
+      "destination": "/fort-lauderdale-boat-rental-with-captain-lauderdale-by-the-sea",
+      "permanent": true
+    },
+    {
+      "source": "/spirit-of-the-swamp-centralfl",
+      "destination": "/spirit-of-the-swamp-kissimmee",
+      "permanent": true
+    },
+    {
+      "source": "/ocean-jet-ski-rentals-pompano-broward-js15",
+      "destination": "/jet-ski-rental-pompano-beach-pompano-beach",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-rental-pompano-beach-broward",
+      "destination": "/jet-ski-rental-pompano-beach-pompano-beach",
+      "permanent": true
+    },
+    {
+      "source": "/key-largo-jet-ski-rentals-keys",
+      "destination": "/key-largo-jet-ski-rentals-key-largo",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-boat-rentals-islamorada",
+      "destination": "/islamorada-boat-rentals-keys",
+      "permanent": true
+    },
+    {
+      "source": "/aqua-boat-rentals-keys",
+      "destination": "/aqua-boat-rentals-summerland-key",
+      "permanent": true
+    },
+    {
+      "source": "/monkey-island-adventures-marina-westfl",
+      "destination": "/monkey-island-adventures-homosassa",
+      "permanent": true
+    },
+    {
+      "source": "/monkey-island-adventures-westfl",
+      "destination": "/monkey-island-adventures-homosassa",
+      "permanent": true
+    },
+    {
+      "source": "/nothing-better-boat-rentals-keys",
+      "destination": "/nothing-better-boat-rentals-cudjoe-key",
+      "permanent": true
+    },
+    {
+      "source": "/boat-rentals-in-key-west-keys",
+      "destination": "/boat-rentals-florida-keys",
+      "permanent": true
+    },
+    {
+      "source": "/everglades-holiday-park-broward",
+      "destination": "/everglades-holiday-park-fort-lauderdale",
+      "permanent": true
+    },
+    {
+      "source": "/kokomo-charters-gulf",
+      "destination": "/kokomo-charters-sarasota-boat-tour-gulf",
+      "permanent": true
+    },
+    {
+      "source": "/island-time-florida-charters-gulf",
+      "destination": "/island-time-florida-charters-cape-coral",
+      "permanent": true
+    },
+    {
+      "source": "/tv-boat-rentals-westfl",
+      "destination": "/tv-boat-rentals-st-petersburg",
+      "permanent": true
+    },
+    {
+      "source": "/lake-harris-boat-rentals-central",
+      "destination": "/lake-harris-boat-rentals-leesburg",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-land-sea-tours-nefl",
+      "destination": "/old-city-carriages-st-augustine-nefl",
+      "permanent": true
+    },
+    {
+      "source": "/florida-adventures-marco-island-boat-rental-gulf-bt59",
+      "destination": "/marco-island-boat-charters-marco-island",
+      "permanent": true
+    },
+    {
+      "source": "/marco-island-boat-charters-gulf",
+      "destination": "/marco-island-boat-charters-marco-island",
+      "permanent": true
+    },
+    {
+      "source": "/st-petersburg-distillery-tour-st-petersburg",
+      "destination": "/st-petersburg-distillery-tour-westfl",
+      "permanent": true
+    },
+    {
+      "source": "/arcimoto-electric-scooter-rentals-nefl",
+      "destination": "/arcimoto-electric-scooter-rentals-st-augustine",
+      "permanent": true
+    },
+    {
+      "source": "/freedom-float-boat-rental-pensacola-beach",
+      "destination": "/freedom-float-boat-rental-westfl",
+      "permanent": true
+    },
+    {
+      "source": "/double-freedom-float-boat-rental-pensacola-beach",
+      "destination": "/double-freedom-float-boat-rental-westfl",
+      "permanent": true
+    },
+    {
+      "source": "/bluwater-jet-ski-rentals-gulf",
+      "destination": "/bluwater-jet-ski-rentals-marco-island",
+      "permanent": true
+    },
+    {
+      "source": "/paradise-island-pontoon-rentals-westfl",
+      "destination": "/paradise-island-pontoon-rentals-clearwater-beach",
+      "permanent": true
+    },
+    {
+      "source": "/boat-party-fort-lauderdale-broward",
+      "destination": "/boat-party-fort-lauderdale-fort-lauderdale",
+      "permanent": true
+    },
+    {
+      "source": "/staying-afloat-party-boat-broward",
+      "destination": "/staying-afloat-party-boat-fort-lauderdale",
+      "permanent": true
+    },
+    {
+      "source": "/naples-kayak-company-gulf",
+      "destination": "/naples-kayak-company-naples",
+      "permanent": true
+    },
+    {
+      "source": "/sup-paddle-in-florida-westfl",
+      "destination": "/sup-paddle-in-florida-sarasota",
+      "permanent": true
+    },
+    {
+      "source": "/destin-pontoon-charters-destin",
+      "destination": "/destin-pontoon-charters-westfl",
+      "permanent": true
+    },
+    {
+      "source": "/native-guided-fishing-charters-marco-island",
+      "destination": "/native-guided-fishing-charters-marco-island-gulf",
+      "permanent": true
+    },
+    {
+      "source": "/distraction-yachts-miami",
+      "destination": "/distraction-yachts-miami-fl",
+      "permanent": true
+    },
+    {
+      "source": "/cypress-outdoor-adventures-tamarac",
+      "destination": "/cypress-outdoor-adventures-tamarac-fl",
+      "permanent": true
+    },
+    {
+      "source": "/island-sailing-naples-naples",
+      "destination": "/island-sailing-naples-naples-fl",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-history-and-haunting-pensacola",
+      "destination": "/pensacola-history-and-haunting-pensacola-fl",
+      "permanent": true
+    },
+    {
+      "source": "/thriller-miami-speedboat-adventures-miami",
+      "destination": "/thriller-miami-speedboat-adventures-miami-fl",
+      "permanent": true
+    },
+    {
+      "source": "/game-over-escape-rooms-jax-jacksonville",
+      "destination": "/game-over-escape-rooms-jax-jacksonville-fl",
+      "permanent": true
+    },
+    {
+      "source": "/orlando-tree-trek-adventure-park-kissimmee",
+      "destination": "/orlando-tree-trek-adventure-park-kissimmee-fl",
+      "permanent": true
+    },
+    {
+      "source": "/take-two-catamaran-sailing-key-largo",
+      "destination": "/take-two-catamaran-sailing-key-largo-fl",
+      "permanent": true
+    },
+    {
+      "source": "/palm-beach-ebike-rentals-west-palm-beach",
+      "destination": "/palm-beach-ebike-rentals-west-palm-beach-fl",
+      "permanent": true
+    },
+    {
+      "source": "/bulk-candy-store-west-palm-beach",
+      "destination": "/bulk-candy-store-west-palm-beach-fl",
+      "permanent": true
+    },
+    {
+      "source": "/gone2sea-boat-rentals-st-augustine",
+      "destination": "/gone2sea-boat-rentals-st-augustine-fl",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-sailing-st-augustine",
+      "destination": "/st-augustine-sailing-st-augustine-fl",
+      "permanent": true
+    },
+    {
+      "source": "/everwater-charters-and-tours-marco-island",
+      "destination": "/everwater-charters-and-tours-marco-island-fl",
+      "permanent": true
+    },
+    {
+      "source": "/holly-bluff-marina-kayak-canoe-rental-centralfl",
+      "destination": "/holly-bluff-marina-kayak-canoe-rental-deland",
+      "permanent": true
+    },
+    {
+      "source": "/florida-adventures-rentals-goodland-tour-goodland-marco-island",
+      "destination": "/florida-adventures-rentals-eco-experience-goodland-marco-island",
+      "permanent": true
+    },
+    {
+      "source": "/florida-adventures-rentals-wildlife-tour-goodland-marco-island",
+      "destination": "/florida-adventures-rentals-eco-experience-goodland-marco-island",
+      "permanent": true
+    },
+    {
+      "source": "/crab-island-luxury-adventures-westfl",
+      "destination": "/crab-island-luxury-adventures-miramar-beach",
+      "permanent": true
+    },
+    {
+      "source": "/the-beer-bus--craft-beer-tour-st-augustine-st.-augustine",
+      "destination": "/corks--forks-food-tour--st-augustine-st.-augustine",
+      "permanent": true
+    },
+    {
+      "source": "/florida-adventures-kayak-tour-gulf",
+      "destination": "/florida-adventures-kayak-tour-naples",
+      "permanent": true
+    },
+    {
+      "source": "/florida-adventures-paddle-tour-naples-gulf",
+      "destination": "/florida-adventures-paddle-tour-naples-naples",
+      "permanent": true
+    },
+    {
+      "source": "/chilly-down-morning-mimosa-cruise-westfl",
+      "destination": "/chilly-down-morning-mimosa-cruise-panama-city",
+      "permanent": true
+    },
+    {
+      "source": "/chadillac-adventures-westfl",
+      "destination": "/chadillac-adventures-clearwater-beach",
+      "permanent": true
+    },
+    {
+      "source": "/watersports-paradise-miami-beach-miami-beach",
+      "destination": "/watersports-paradise-miami-beach-miami",
+      "permanent": true
+    },
+    {
+      "source": "/florida-adventures-rentals-goodland-tour-gulf",
+      "destination": "/florida-adventures-rentals-wildlife-tour-gulf",
+      "permanent": true
+    },
+    {
+      "source": "/florida-adventures-rentals-eco-experience-gulf",
+      "destination": "/florida-adventures-rentals-wildlife-tour-gulf",
+      "permanent": true
+    },
+    {
+      "source": "/seaside-adventures-st-augustine-tour-nefl",
+      "destination": "/seaside-adventures-st-augustine-tour-st-augustine",
+      "permanent": true
+    },
+    {
+      "source": "/your-jamaican-tour-guide-secret-falls-tour-palm-bay",
+      "destination": "/your-jamaican-tour-guide-mayfield-falls-palm-bay",
+      "permanent": true
+    },
+    {
+      "source": "/your-jamaican-tour-guide-nine-mile-dunns-river-palm-bay",
+      "destination": "/your-jamaican-tour-guide-mayfield-falls-palm-bay",
+      "permanent": true
+    },
+    {
+      "source": "/your-jamaican-tour-guide-nine-mile-dunns-river-space",
+      "destination": "/your-jamaican-tour-guide-mayfield-falls-palm-bay",
+      "permanent": true
+    },
+    {
+      "source": "/your-jamaican-tour-guide-secret-falls-tour-space",
+      "destination": "/your-jamaican-tour-guide-mayfield-falls-palm-bay",
+      "permanent": true
+    },
+    {
+      "source": "/florida-adventures-kayak-rental-naples-naples",
+      "destination": "/florida-adventures-kayak-rental-naples-gulf",
+      "permanent": true
+    },
+    {
+      "source": "/destin-helicopters-premium-westfl",
+      "destination": "/destin-helicopters-premium-destin",
+      "permanent": true
+    },
+    {
+      "source": "/chilly-down-charters-sunset-cruise-panama-city",
+      "destination": "/chilly-down-charters-panama-city-panama-city",
+      "permanent": true
+    },
+    {
+      "source": "/chilly-down-charters-private-charter-panama-city",
+      "destination": "/chilly-down-charters-panama-city-panama-city",
+      "permanent": true
+    },
+    {
+      "source": "/chilly-down-charters-sunset-cruise-westfl",
+      "destination": "/chilly-down-charters-panama-city-panama-city",
+      "permanent": true
+    },
+    {
+      "source": "/chilly-down-charters-panama-city-westfl",
+      "destination": "/chilly-down-charters-panama-city-panama-city",
+      "permanent": true
+    },
+    {
+      "source": "/florida-adventures-dolphin-tour-gulf",
+      "destination": "/florida-adventures-dolphin-tour-marco-island-area",
+      "permanent": true
+    },
+    {
+      "source": "/destin-private-yachts-luxury-charter-westfl",
+      "destination": "/destin-private-yachts-luxury-charter-destin",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-rental-falcons-hollywood-broward",
+      "destination": "/jet-ski-rental-falcons-hollywood-hollywood",
+      "permanent": true
+    },
+    {
+      "source": "/flamingo-yacht-charters-luxury-day-charter-broward",
+      "destination": "/flamingo-yacht-charters-luxury-day-charter-fort-lauderdale",
+      "permanent": true
+    },
+    {
+      "source": "/sea-rocket-fort-lauderdale-fort-lauderdale",
+      "destination": "/sea-rocket-fort-lauderdale-broward",
+      "permanent": true
+    },
+    {
+      "source": "/visit-palm-beach-palmbeach",
+      "destination": "/visit-palm-beach-west-palm-beach",
+      "permanent": true
+    },
+    {
+      "source": "/sea-serpent-tours-river-nefl",
+      "destination": "/sea-serpent-tours-river-st-augustine",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-beach-dolphin-tours-northeast",
+      "destination": "/daytona-beach-dolphin-tours-daytona-beach",
+      "permanent": true
+    },
+    {
+      "source": "/carriage-tours-events-classic-st-augustine",
+      "destination": "/carriage-tours-events-romantic-st-augustine",
+      "permanent": true
+    },
+    {
+      "source": "/100-pro-boats-hollywood-broward",
+      "destination": "/100-pro-boats-hollywood-hollywood",
+      "permanent": true
+    },
+    {
+      "source": "/florida-adventures-kayak-rental-gulf",
+      "destination": "/florida-adventures-kayak-rental-marco-island",
+      "permanent": true
+    }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/operator-template.html" }
+    {
+      "source": "/(.*)",
+      "destination": "/operator-template.html"
+    }
   ],
   "headers": [
     {
       "source": "/(.*)",
       "headers": [
-        { "key": "X-Content-Type-Options", "value": "nosniff" },
-        { "key": "X-Frame-Options", "value": "SAMEORIGIN" },
-        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
-        { "key": "X-XSS-Protection", "value": "1; mode=block" },
-        { "key": "Permissions-Policy", "value": "geolocation=(self), camera=(), microphone=()" },
-        { "key": "Content-Security-Policy", "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://fareharbor.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; frame-src https://maps.google.com https://www.google.com https://fareharbor.com; connect-src 'self' https://www.google-analytics.com https://fareharbor.com https://*.basemaps.cartocdn.com" }
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-XSS-Protection",
+          "value": "1; mode=block"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "geolocation=(self), camera=(), microphone=()"
+        },
+        {
+          "key": "Content-Security-Policy",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com https://fareharbor.com https://unpkg.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com https://unpkg.com; img-src 'self' https: data: blob:; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com data:; frame-src https://maps.google.com https://www.google.com https://fareharbor.com; connect-src 'self' https://www.google-analytics.com https://fareharbor.com https://*.basemaps.cartocdn.com"
+        }
       ]
     },
     {
       "source": "/(operators(?:-slim)?\\.json|slug-map\\.js)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400, stale-while-revalidate=3600" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400, stale-while-revalidate=3600"
+        }
       ]
     },
     {
       "source": "/og-image.png",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, immutable"
+        }
       ]
     },
     {
       "source": "/icons/(.*)",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=604800, immutable" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, immutable"
+        }
       ]
     },
     {
       "source": "/manifest.json",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=86400" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=86400"
+        }
       ]
     },
     {
       "source": "/sitemap.xml",
       "headers": [
-        { "key": "Cache-Control", "value": "public, max-age=43200" },
-        { "key": "Content-Type", "value": "application/xml; charset=utf-8" }
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=43200"
+        },
+        {
+          "key": "Content-Type",
+          "value": "application/xml; charset=utf-8"
+        }
       ]
     },
     {
       "source": "/(.*\\.html)",
       "headers": [
-        { "key": "Cache-Control", "value": "no-cache, must-revalidate" }
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, must-revalidate"
+        }
       ]
     }
   ]

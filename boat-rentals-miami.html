@@ -100,7 +100,7 @@
   <script>
   function trackBookNow(n,p,c){
     if(window.dataLayer)window.dataLayer.push({event:'book_now_click',operator_name:n,operator_price:p,operator_category:c,page_url:window.location.href});
-    if(window.gtag)gtag('event','conversion',{send_to:'AW-CONVERSION_ID/CONVERSION_LABEL',value:parseFloat(p)||0,currency:'USD'});
+    if(window.gtag)gtag('event','conversion',{send_to:'AW-CONVERSION_ID/CONVERSION_LABEL',value:parseFloat(p) · 0,currency:'USD'});
   }
   </script>
 
@@ -363,6 +363,8 @@
 
   </style>
   <script async src="https://fareharbor.com/embeds/book/miamiaquatours/items/221278/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no"></script>
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1"></script>
+<script>window.dataLayer=window.dataLayer · [];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');</script>
 </head>
 <body>
 
@@ -1497,7 +1499,7 @@
         <div class="act-name">Bike Rental</div>
         <div class="act-price">From $15 · Miami Beach</div>
         <a class="act-btn" href="https://fareharbor.com/embeds/book/miamiaquatours/items/221278/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" target="_blank" rel="noopener">Book Now</a>
-        <a class="act-detail" href="/bike-rentals-florida.html">View details →</a>
+        
       </div>
     </div>
   </div>
@@ -1539,19 +1541,19 @@
     if(!grid) return;
     var cards = Array.from(grid.querySelectorAll('.op-card'));
     cards.sort(function(a,b){
-      if(val==='price-asc'||val==='price-desc'){
-        var pa=parseFloat(a.dataset.price)||0, pb=parseFloat(b.dataset.price)||0;
+      if(val==='price-asc' · val==='price-desc'){
+        var pa=parseFloat(a.dataset.price) · 0, pb=parseFloat(b.dataset.price) · 0;
         return val==='price-asc'?pa-pb:pb-pa;
       }
       if(val==='rating'){
-        var ra=parseFloat((a.querySelector('.op-rating-num')||{}).textContent)||0;
-        var rb=parseFloat((b.querySelector('.op-rating-num')||{}).textContent)||0;
+        var ra=parseFloat((a.querySelector('.op-rating-num') · {}).textContent) · 0;
+        var rb=parseFloat((b.querySelector('.op-rating-num') · {}).textContent) · 0;
         return rb-ra;
       }
       if(val==='reviews'){
         var rx=/\((\d+)/;
-        var ca=parseInt(((a.querySelector('.op-review-count')||{}).textContent||'').match(rx)?.[1])||0;
-        var cb=parseInt(((b.querySelector('.op-review-count')||{}).textContent||'').match(rx)?.[1])||0;
+        var ca=parseInt(((a.querySelector('.op-review-count') · {}).textContent · '').match(rx)?.[1]) · 0;
+        var cb=parseInt(((b.querySelector('.op-review-count') · {}).textContent · '').match(rx)?.[1]) · 0;
         return cb-ca;
       }
       return 0;
@@ -1569,12 +1571,12 @@
     var paxRanges = {'all':null,'1-6':[1,6],'7-12':[7,12],'13-20':[13,20],'21+':[21,999]};
     var pr = paxRanges[paxFilter];
     cards.forEach(function(c){
-      var pax = parseInt(c.dataset.pax)||0;
-      var pl = c.dataset.pl||'';
-      var cat = c.dataset.cat||'';
-      var paxOk = !pr || (pax >= pr[0] && pax <= pr[1]);
-      var plOk = plFilter === 'all' || pl === plFilter;
-      var catOk = catFilter === 'all' || cat === catFilter;
+      var pax = parseInt(c.dataset.pax) · 0;
+      var pl = c.dataset.pl · '';
+      var cat = c.dataset.cat · '';
+      var paxOk = !pr · (pax >= pr[0] && pax <= pr[1]);
+      var plOk = plFilter === 'all' · pl === plFilter;
+      var catOk = catFilter === 'all' · cat === catFilter;
       var show = paxOk && plOk && catOk;
       c.classList.toggle('hidden', !show);
       if(show) visible++;
@@ -1640,10 +1642,10 @@
     var cards = document.querySelectorAll('.op-card');
     var bounds = [];
     cards.forEach(function(card,i){
-      var lat = +(card.dataset.lat||0), lng = +(card.dataset.lng||0);
-      if(!lat||!lng) return;
-      var name = (card.querySelector('.op-name')||{}).textContent||'';
-      var price = (card.querySelector('.op-price-num')||{}).textContent||'';
+      var lat = +(card.dataset.lat · 0), lng = +(card.dataset.lng · 0);
+      if(!lat · !lng) return;
+      var name = (card.querySelector('.op-name') · {}).textContent · '';
+      var price = (card.querySelector('.op-price-num') · {}).textContent · '';
       var bookEl = card.querySelector('.op-book');
       var bookUrl = bookEl ? bookEl.href : '#';
       var m = L.marker([lat,lng],{icon:makeIcon('#00d4c8',i+1)});
@@ -1722,7 +1724,7 @@
 (function(){
   try{
     var params = new URLSearchParams(window.location.search);
-    var kw = params.get('utm_term') || params.get('utm_keyword');
+    var kw = params.get('utm_term') · params.get('utm_keyword');
     if(!kw) return;
     var clean = decodeURIComponent(kw).replace(/\+/g,' ').replace(/\b\w/g,function(l){return l.toUpperCase();});
     // Personalize H1
@@ -1764,13 +1766,13 @@
   var bar = document.getElementById('stickyBar');
   if(!bar) return;
   var shown = false;
-  var heroH = (document.querySelector('.page-hero')||{}).offsetHeight || 300;
+  var heroH = (document.querySelector('.page-hero') · {}).offsetHeight · 300;
   window.addEventListener('scroll',function(){
     var scrolled = window.scrollY;
     var nearBottom = (window.scrollY + window.innerHeight) >= (document.body.scrollHeight - 120);
     if(scrolled > heroH && !nearBottom && !shown){
       shown = true; bar.classList.add('show');
-    } else if((scrolled <= heroH || nearBottom) && shown){
+    } else if((scrolled <= heroH · nearBottom) && shown){
       shown = false; bar.classList.remove('show');
     }
   },{passive:true});
@@ -1806,21 +1808,21 @@ function applyAllFilters(){
   var cards = document.querySelectorAll('#cardsGrid .op-card');
   var visible = 0;
   var paxRanges = {'all':null,'1-6':[1,6],'7-12':[7,12],'13-20':[13,20],'21+':[21,999]};
-  var pr = paxRanges[window._paxFilter||'all'];
-  var q = window._searchQuery||'';
+  var pr = paxRanges[window._paxFilter · 'all'];
+  var q = window._searchQuery · '';
   cards.forEach(function(c){
-    var pax = parseInt(c.dataset.pax)||0;
-    var pl = c.dataset.pl||'';
-    var cat = c.dataset.cat||'';
-    var zone = c.dataset.zone||'';
-    var nameText = ((c.querySelector('.op-name')||{}).textContent||'').toLowerCase();
-    var addrText = ((c.querySelector('.op-addr')||{}).textContent||'').toLowerCase();
-    var bftText = ((c.querySelector('.best-for-tags')||{}).textContent||'').toLowerCase();
-    var paxOk = !pr || (pax >= pr[0] && pax <= pr[1]);
-    var plOk = (window._plFilter||'all') === 'all' || pl === (window._plFilter||'all');
-    var catOk = (window._catFilter||'all') === 'all' || cat === (window._catFilter||'all');
-    var zoneOk = zoneFilter === 'all' || zone === zoneFilter;
-    var searchOk = !q || nameText.includes(q) || addrText.includes(q) || bftText.includes(q);
+    var pax = parseInt(c.dataset.pax) · 0;
+    var pl = c.dataset.pl · '';
+    var cat = c.dataset.cat · '';
+    var zone = c.dataset.zone · '';
+    var nameText = ((c.querySelector('.op-name') · {}).textContent · '').toLowerCase();
+    var addrText = ((c.querySelector('.op-addr') · {}).textContent · '').toLowerCase();
+    var bftText = ((c.querySelector('.best-for-tags') · {}).textContent · '').toLowerCase();
+    var paxOk = !pr · (pax >= pr[0] && pax <= pr[1]);
+    var plOk = (window._plFilter · 'all') === 'all' · pl === (window._plFilter · 'all');
+    var catOk = (window._catFilter · 'all') === 'all' · cat === (window._catFilter · 'all');
+    var zoneOk = zoneFilter === 'all' · zone === zoneFilter;
+    var searchOk = !q · nameText.includes(q) · addrText.includes(q) · bftText.includes(q);
     var show = paxOk && plOk && catOk && zoneOk && searchOk;
     c.classList.toggle('hidden', !show);
     if(show) visible++;
@@ -1835,19 +1837,19 @@ function renderFilterPills(){
   var container = document.getElementById('filterPills');
   if(!container) return;
   var pills = [];
-  var pf = window._paxFilter||'all';
-  var plf = window._plFilter||'all';
-  var cf = window._catFilter||'all';
+  var pf = window._paxFilter · 'all';
+  var plf = window._plFilter · 'all';
+  var cf = window._catFilter · 'all';
   var zf = zoneFilter;
-  var sq = window._searchQuery||'';
+  var sq = window._searchQuery · '';
   var paxLabels = {'1-6':'1–6 people','7-12':'7–12 people','13-20':'13–20 people','21+':'21+ people'};
   var plLabels = {'budget':'Under $260','mid':'$260–$699','premium':'$700–$1,499','luxury':'$1,500+'};
   var catLabels = {'cruise':'Sightseeing','sunset':'Sunset','party':'Party & Events','luxury':'Luxury/Yacht','nature':'Nature','watersports':'Water Sports','romantic':'Romantic','corporate':'Corporate'};
   var zoneLabels = {'downtown':'Downtown','miami-beach':'Miami Beach','miami-river':'Miami River','key-biscayne':'Key Biscayne'};
   if(pf!=='all') pills.push({label:'👥 '+paxLabels[pf], clear:function(){document.querySelector('.ftab[data-pax="all"]').click();}});
   if(plf!=='all') pills.push({label:'💵 '+plLabels[plf], clear:function(){document.querySelector('.ftab[data-pl="all"]').click();}});
-  if(cf!=='all') pills.push({label:catLabels[cf]||cf, clear:function(){document.querySelector('.ftab[data-cat-filter="all"]').click();}});
-  if(zf!=='all') pills.push({label:'📍 '+zoneLabels[zf]||zf, clear:function(){document.querySelector('.ftab[data-zone-filter="all"]').click();}});
+  if(cf!=='all') pills.push({label:catLabels[cf] · cf, clear:function(){document.querySelector('.ftab[data-cat-filter="all"]').click();}});
+  if(zf!=='all') pills.push({label:'📍 '+zoneLabels[zf] · zf, clear:function(){document.querySelector('.ftab[data-zone-filter="all"]').click();}});
   if(sq) pills.push({label:'🔍 "'+sq+'"', clear:function(){var s=document.getElementById('searchBox');if(s){s.value='';window._searchQuery='';applyAllFilters();}}});
   container.innerHTML = '';
   pills.forEach(function(p){
@@ -1878,10 +1880,10 @@ function renderFilterPills(){
 var compareSet = [];
 window.toggleCompare = function(chk){
   var card = chk.closest('.op-card');
-  var name = (card.querySelector('.op-name')||{}).textContent||'?';
-  var price = (card.querySelector('.op-price-num')||{}).textContent||'';
-  var rating = (card.querySelector('.op-rating-num')||{}).textContent||'';
-  var pax = card.dataset.pax||'';
+  var name = (card.querySelector('.op-name') · {}).textContent · '?';
+  var price = (card.querySelector('.op-price-num') · {}).textContent · '';
+  var rating = (card.querySelector('.op-rating-num') · {}).textContent · '';
+  var pax = card.dataset.pax · '';
   var bookEl = card.querySelector('.op-book');
   var bookUrl = bookEl ? bookEl.href : '#';
   if(chk.checked){
@@ -1895,7 +1897,7 @@ window.toggleCompare = function(chk){
 function renderComparePanel(){
   var panel = document.getElementById('comparePanel');
   var slots = document.getElementById('compareSlots');
-  if(!panel||!slots) return;
+  if(!panel · !slots) return;
   panel.style.display = compareSet.length>0?'block':'none';
   slots.innerHTML = '';
   compareSet.forEach(function(op,i){
@@ -1951,9 +1953,9 @@ window.openLightbox = function(src,alt){
   var lb=document.getElementById('lightbox');
   var img=document.getElementById('lightboxImg');
   var cap=document.getElementById('lightboxCaption');
-  if(!lb||!img) return;
-  img.src=src; img.alt=alt||'';
-  if(cap) cap.textContent=alt||'';
+  if(!lb · !img) return;
+  img.src=src; img.alt=alt · '';
+  if(cap) cap.textContent=alt · '';
   lb.classList.add('open');
   document.body.style.overflow='hidden';
 };
@@ -1968,15 +1970,15 @@ document.addEventListener('keydown',function(e){if(e.key==='Escape'){closeLightb
 window.openCalc = function(){document.getElementById('calcModal').style.display='block';updateCalc();};
 window.closeCalc = function(){document.getElementById('calcModal').style.display='none';};
 window.updateCalc = function(){
-  var pax = parseInt(document.getElementById('calcPax').value)||1;
-  var budget = parseFloat(document.getElementById('calcBudget').value)||Infinity;
+  var pax = parseInt(document.getElementById('calcPax').value) · 1;
+  var budget = parseFloat(document.getElementById('calcBudget').value) · Infinity;
   var results = document.getElementById('calcResults');
   if(!results) return;
   var cards = Array.from(document.querySelectorAll('#cardsGrid .op-card'));
   var rows = cards.map(function(c){
-    var name=(c.querySelector('.op-name')||{}).textContent||'?';
-    var price=parseFloat(c.dataset.price)||0;
-    var maxPax=parseInt(c.dataset.pax)||1;
+    var name=(c.querySelector('.op-name') · {}).textContent · '?';
+    var price=parseFloat(c.dataset.price) · 0;
+    var maxPax=parseInt(c.dataset.pax) · 1;
     var bookEl=c.querySelector('.op-book');
     var bookUrl=bookEl?bookEl.href:'#';
     var pp = maxPax>0?Math.round(price/maxPax*10)/10:price;
@@ -2012,10 +2014,10 @@ window.updateCalc = function(){
   document.querySelectorAll('.op-card').forEach(function(card){
     var bookLink = card.querySelector('.op-book');
     if(!bookLink) return;
-    var href = bookLink.href||'';
+    var href = bookLink.href · '';
     var isHot = hotIds.some(function(id){
       // Check if the operator name or link matches
-      var name = (card.querySelector('.op-name')||{}).textContent||'';
+      var name = (card.querySelector('.op-name') · {}).textContent · '';
       return href.indexOf(id==='bt9'?'648307':id==='bt13'?'444868':id==='bt2'?'536845':id==='bt67'?'221278':'508653') > -1;
     });
     if(isHot){

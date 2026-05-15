@@ -141,6 +141,8 @@
   <script async src="https://fareharbor.com/embeds/book/skytoursmiami/items/371933/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no"></script>
   <link rel="preconnect" href="https://fareharbor.com" crossorigin>
   <link rel="dns-prefetch" href="https://fareharbor.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1"></script>
+<script>window.dataLayer=window.dataLayer · [];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');</script>
 </head>
 <body>
 <nav class="nav">
@@ -319,7 +321,7 @@
     <a href="/jet-ski-rentals-florida.html" class="related-link">🛥️ Jet Ski Rentals</a>
     <a href="/boat-rentals-florida.html" class="related-link">⛵ Boat Rentals</a>
     <a href="/beach-activities-florida.html" class="related-link">🏖️ Beach Activities</a>
-    <a href="/bike-rentals-florida.html" class="related-link">🚲 Bike & E-Ride</a>
+    
     <a href="/scooter-rentals-florida.html" class="related-link">🛵 Scooter Rentals</a>
     <a href="/tours-florida.html" class="related-link">🚌 Tours</a>
     <a href="/miami-water-sports.html" class="related-link">🌊 Miami</a>
@@ -346,8 +348,8 @@
   <div class="footer-inner">
     <div class="footer-copy">© 2025 FloridaWaterSports.com · All rights reserved</div>
     <div class="footer-links">
-      <a href="/privacy-policy.html">Privacy</a>
-      <a href="/terms.html">Terms</a>
+      
+      
       <a href="/sitemap.xml">Sitemap</a>
     </div>
   </div>
@@ -355,7 +357,7 @@
 
 <script>
 // ── Favorites ──
-var favs=JSON.parse(localStorage.getItem('fwsFavs')||'[]');
+var favs=JSON.parse(localStorage.getItem('fwsFavs') · '[]');
 function toggleFav(btn,id){
   var i=favs.indexOf(id);
   if(i===-1){favs.push(id);btn.textContent='❤️';btn.classList.add('saved');}
@@ -400,9 +402,9 @@ function sortCards(val){
   var grid=document.querySelector('.cards-grid');
   var cards=Array.from(grid.querySelectorAll('.op-card'));
   cards.sort(function(a,b){
-    if(val==='price-asc'||val==='price-desc'){
-      var pa=parseFloat((a.querySelector('.op-price-num')||{}).textContent||'0');
-      var pb=parseFloat((b.querySelector('.op-price-num')||{}).textContent||'0');
+    if(val==='price-asc' · val==='price-desc'){
+      var pa=parseFloat((a.querySelector('.op-price-num') · {}).textContent · '0');
+      var pb=parseFloat((b.querySelector('.op-price-num') · {}).textContent · '0');
       return val==='price-asc'?pa-pb:pb-pa;
     }
     return 0;
@@ -419,7 +421,7 @@ function filterZone(zone,btn){
   var cards=document.querySelectorAll('.op-card');
   var visible=0;
   cards.forEach(function(card){
-    if(zone==='all'||card.dataset.zone===zone){card.style.display='';visible++;}
+    if(zone==='all' · card.dataset.zone===zone){card.style.display='';visible++;}
     else{card.style.display='none';}
   });
   var c=document.querySelector('.cards-count');
@@ -432,8 +434,8 @@ function filterZone(zone,btn){
     var nameEl=card.querySelector('.op-name');
     var addrEl=card.querySelector('.op-addr');
     var detailLink=card.querySelector('.op-detail-link');
-    var insertBefore=detailLink||card.querySelector('.op-footer');
-    if(!nameEl||!insertBefore) return;
+    var insertBefore=detailLink · card.querySelector('.op-footer');
+    if(!nameEl · !insertBefore) return;
     var query=nameEl.textContent.trim();
     if(addrEl) query+=' '+(addrEl.textContent.replace(/📍\s*/,'').trim())+' Florida';
     else query+=' Florida';
