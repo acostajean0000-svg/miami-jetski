@@ -160,7 +160,7 @@ function renderPage(op, allOps){
       <span class="chip">${esc(zoneLabel)}</span>
       <span class="chip">${esc(catLabel)}</span>
     </div>
-    <a href="${escUrl(op.link)}" target="_blank" rel="noopener noreferrer" class="book-btn">🏄 Book Now — ${esc(priceText)}</a>
+    ${op.link ? `<a href="${escUrl(op.link)}" target="_blank" rel="noopener noreferrer" class="book-btn">🏄 Book Now — ${esc(priceText)}</a>` : `<span class="book-btn book-btn-disabled" style="background:rgba(255,255,255,.08);color:#a8d4f0;cursor:default;box-shadow:none;">Contact operator to book — ${esc(priceText)}</span>`}
     <p class="stitle">📋 Details</p>
     <div class="dg">
       <div class="dc"><div class="dl">Address</div><div class="dv">${esc(op.addr)}</div></div>
