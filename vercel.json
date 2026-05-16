@@ -503,12 +503,7 @@
       "permanent": true
     }
   ],
-  "rewrites": [
-    {
-      "source": "/(.*)",
-      "destination": "/operator-template.html"
-    }
-  ],
+  "rewrites": [],
   "headers": [
     {
       "source": "/(.*)",
