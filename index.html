@@ -32,7 +32,7 @@
   <meta name="theme-color" content="#081525">
   <!-- GTM deferred past LCP to avoid forced reflow in critical window -->
   <script>
-    window.dataLayer=window.dataLayer · [];
+    window.dataLayer=window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     window.addEventListener('load',function(){
       setTimeout(function(){
@@ -47,7 +47,7 @@
     });
   </script>
   <!-- Vercel Analytics (enable in Vercel dashboard first) -->
-  <!-- <script>window.va=window.va · function(){(window.vaq=window.vaq · []).push(arguments);};</script> -->
+  <!-- <script>window.va=window.va || function(){(window.vaq=window.vaq || []).push(arguments);};</script> -->
   <!-- <script defer src="/_vercel/insights/script.js"></script> -->
   <!-- LCP image — preload before JSON fetch so it's cached when card renders -->
   <link rel="preload" as="image" href="https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:480/quality=value:75/auto_image/compress/cache=expiry:max/fYlRXu6pQ9yVGrTINaKj" fetchpriority="high">
@@ -1178,7 +1178,7 @@ function escCss(s){return String(s==null?'':s).replace(/['"\\\s]/g,encodeURIComp
 
 // ---- DATA ----
 let allOperators = [];
-const OP_SLUG_MAP = window._OP_SLUG_MAP · {};
+const OP_SLUG_MAP = window._OP_SLUG_MAP || {};
 
 
 
@@ -1232,12 +1232,12 @@ function toggleNearMe() {
 function getFiltered() {
   let ops = allOperators.filter(op => {
     const catOk    = catMatches(activeCat, op);
-    const zoneOk   = nearMeActive · zoneMatches(activeZone, op);
-    const priceOk  = op.price >= priceMin && (priceMax >= (document.getElementById('priceMax') · {max:1000}).max · op.price <= priceMax);
-    const searchOk = !searchQuery · op.name.toLowerCase().includes(searchQuery) · op.zl.toLowerCase().includes(searchQuery) · op.addr.toLowerCase().includes(searchQuery) · (catLabels[op.cat] · '').toLowerCase().includes(searchQuery);
+    const zoneOk   = nearMeActive || zoneMatches(activeZone, op);
+    const priceOk  = op.price >= priceMin && (priceMax >= (document.getElementById('priceMax') || {max:1000}).max || op.price <= priceMax);
+    const searchOk = !searchQuery || op.name.toLowerCase().includes(searchQuery) || op.zl.toLowerCase().includes(searchQuery) || op.addr.toLowerCase().includes(searchQuery) || (catLabels[op.cat] || '').toLowerCase().includes(searchQuery);
     let paxOk = true;
     if (activePax > 0) {
-      const p = op.pax · 0;
+      const p = op.pax || 0;
       if (activePax === 2)  paxOk = p >= 1 && p <= 2;
       else if (activePax === 6)  paxOk = p >= 3 && p <= 6;
       else if (activePax === 12) paxOk = p >= 7 && p <= 12;
@@ -1253,9 +1253,9 @@ function getFiltered() {
   } else if (activeSortBy === 'price_desc') {
     ops.sort((a,b) => b.price - a.price);
   } else if (activeSortBy === 'rating_desc') {
-    ops.sort((a,b) => (b.rating · 0) - (a.rating · 0));
+    ops.sort((a,b) => (b.rating || 0) - (a.rating || 0));
   } else if (activeSortBy === 'reviews_desc') {
-    ops.sort((a,b) => (b.reviews · 0) - (a.reviews · 0));
+    ops.sort((a,b) => (b.reviews || 0) - (a.reviews || 0));
   } else {
     // Default sort: Miami boats first (price asc), then everything else
     const isDefaultView = activeCat === 'all' && activeZone === 'all' && !searchQuery;
@@ -1293,7 +1293,7 @@ function thumbUrl(url) {
     const rest = url.slice(base.length);
     const transforms = 'rotate=deg:exif/resize=width:480/quality=value:75/auto_image/compress/cache=expiry:max/';
     // Query-style: HANDLE/convert?...  → rebuild as path-style
-    if (rest.includes('/convert?') · rest.includes('/convert ')) {
+    if (rest.includes('/convert?') || rest.includes('/convert ')) {
       const handle = rest.split('/')[0];
       if (/^[A-Za-z0-9]{10,30}$/.test(handle)) return base + transforms + handle;
     }
@@ -1314,8 +1314,8 @@ function thumbUrl(url) {
 
 let _cardIndex = 0; // reset each renderCards call
 function cardHTML(op) {
-  const emoji = catEmoji[op.cat] · '🌊';
-  const label = catLabels[op.cat] · op.cat;
+  const emoji = catEmoji[op.cat] || '🌊';
+  const label = catLabels[op.cat] || op.cat;
   const distBadge = op._dist !== undefined ? `<span class="op-distance">📍 ${op._dist.toFixed(1)} mi</span>` : '';
   const inCmp = compareList.some(o=>o.id===op.id);
   const isFav = favorites.has(op.id);
@@ -1329,7 +1329,7 @@ const imgLoad = ci === 0 ? 'fetchpriority="high"' : ci === 1 ? 'loading="eager"'
         onload="this.classList.add('loaded');var s=document.getElementById('shim-${op.id}');if(s)s.remove();"
         onerror="this.style.display='none';var s=document.getElementById('shim-${op.id}');if(s)s.remove();var f=document.getElementById('fall-${op.id}');if(f){f.style.display='flex';f.style.background='${catColors[op.cat]}33';}">
       <span class="op-cat-badge">${catLabels[op.cat]}</span>
-      <span class="op-best-badge">${bestValueSet.has(op.id) ? '🏆 Best Value' : (op.badge · '')}</span>
+      <span class="op-best-badge">${bestValueSet.has(op.id) ? '🏆 Best Value' : (op.badge || '')}</span>
       <button class="fav-toggle${isFav?' saved':''}" id="fav-${op.id}" onclick="event.stopPropagation();toggleFav('${op.id}')" title="${isFav?'Remove from favorites':'Save to favorites'}" aria-label="${isFav?'Remove from favorites':'Save to favorites'}">${isFav?'❤️':'🤍'}</button>
       <button class="compare-toggle${inCmp?' selected':''}" id="cmp-${op.id}" onclick="event.stopPropagation();toggleCompare('${op.id}')" title="Add to compare" aria-label="Add to compare">${inCmp?'✓':'＋'}</button>
       <div style="position:absolute;bottom:9px;right:9px;z-index:3">
@@ -1349,7 +1349,7 @@ const imgLoad = ci === 0 ? 'fetchpriority="high"' : ci === 1 ? 'loading="eager"'
         <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$${op.price.toLocaleString()}</div></div>
         <a href="${escUrl(op.link)}" target="_blank" rel="noopener noreferrer" class="op-book" onclick="event.stopPropagation();trackBookNow('${esc(op.name)}',${op.price})">Book Now <i class="fa-solid fa-arrow-right"></i></a>
       </div>
-      ${(window._OP_SLUG_MAP · {})[op.id] ? `<a href="/${(window._OP_SLUG_MAP · {})[op.id]}" class="op-detail-link" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>` : `<a href="${escUrl(op.link)}" target="_blank" rel="noopener noreferrer" class="op-detail-link" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>`}
+      ${(window._OP_SLUG_MAP || {})[op.id] ? `<a href="/${(window._OP_SLUG_MAP || {})[op.id]}" class="op-detail-link" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>` : `<a href="${escUrl(op.link)}" target="_blank" rel="noopener noreferrer" class="op-detail-link" onclick="event.stopPropagation()">View details <i class="fa-solid fa-chevron-right"></i></a>`}
     </div>
   </div>`;
 }
@@ -1407,7 +1407,7 @@ function updateLoadMore() {
 let _filterTimer = null;
 let _acTimer = null;
 function pushDL(event, params) {
-  window.dataLayer = window.dataLayer · [];
+  window.dataLayer = window.dataLayer || [];
   window.dataLayer.push({event, ...params});
 }
 function filterCat(cat, btn) {
@@ -1466,7 +1466,7 @@ function updateCompareBar() {
     const op=compareList[i];
     if(op){
       html+=`<div class="compare-bar-item">
-        <span style="font-size:.85rem">${catEmoji[op.cat] · '🌊'}</span>
+        <span style="font-size:.85rem">${catEmoji[op.cat] || '🌊'}</span>
         <span class="compare-bar-name">${esc(op.name)}</span>
         <span class="remove-compare" onclick="removeFromCompare('${op.id}')">✕</span>
       </div>`;
@@ -1509,7 +1509,7 @@ function openCompareModal(){
     {label:'Type',     render:op=>`${catEmoji[op.cat]} ${catLabels[op.cat]}`},
     {label:'Location', render:op=>`📍 ${esc(op.zl)}`},
     {label:'Price',    render:(op)=>op.price===minPrice?`<span class="cmp-best">From $${op.price.toLocaleString()} 🏆</span>`:`From $${op.price.toLocaleString()}`},
-    {label:'Badge',    render:op=>op.badge · '—'},
+    {label:'Badge',    render:op=>op.badge || '—'},
     {label:'Book',     render:op=>`<a href="${escUrl(op.link)}" target="_blank" rel="noopener noreferrer" class="cmp-book-btn">Book Now →</a>`},
   ];
   let thead=`<tr><th class="cmp-row-label"></th>${compareList.map(op=>`<th>${esc(op.name)}</th>`).join('')}</tr>`;
@@ -1547,7 +1547,7 @@ function clearSearch() {
 }
 
 // ---- FAVORITES ----
-let favorites = new Set(JSON.parse(localStorage.getItem('fav_ops') · '[]'));
+let favorites = new Set(JSON.parse(localStorage.getItem('fav_ops') || '[]'));
 
 function saveFavs() {
   localStorage.setItem('fav_ops', JSON.stringify([...favorites]));
@@ -1582,7 +1582,7 @@ function updateFavFab() {
 
 function favCardHTML(op) {
   const inCmp = compareList.some(o => o.id === op.id);
-  const emoji = catEmoji[op.cat] · '🌊';
+  const emoji = catEmoji[op.cat] || '🌊';
   const thumb = op.photo
     ? `<img src="${thumbUrl(op.photo)}" alt="${esc(op.name)}"  onerror="this.style.display='none'">`
     : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:2rem;color:var(--teal)">${emoji}</div>`;
@@ -1797,12 +1797,12 @@ function renderDeals() {
   // Show top-rated operators (min 50 reviews, sorted by rating desc, then reviews desc)
   const sorted = [...allOperators]
     .filter(op => op.rating && op.reviews >= 50)
-    .sort((a,b) => (b.rating - a.rating) · (b.reviews - a.reviews))
+    .sort((a,b) => (b.rating - a.rating) || (b.reviews - a.reviews))
     .slice(0, 8);
   const grid = document.getElementById('dealsGrid');
   if (!grid) return;
   grid.innerHTML = sorted.map(op => {
-    const detailSlug = (window._OP_SLUG_MAP · {})[op.id] · '';
+    const detailSlug = (window._OP_SLUG_MAP || {})[op.id] || '';
     const detailUrl  = detailSlug ? `/${detailSlug}` : op.link;
     const stars = op.rating ? `${'★'.repeat(Math.round(op.rating))}${'☆'.repeat(5-Math.round(op.rating))}` : '';
     return `
@@ -1836,14 +1836,14 @@ const SUBCAT_MATCH = {
   scooter: o => o.cat==='bikerental'  && /scooter|moke|vespa|\b\d{2,3}cc\b/i.test(o.name),
 };
 const SUBZONE_MATCH = {
-  tampa:        o => /tampa/i.test(o.zl · ''),
-  destin:       o => /destin/i.test(o.zl · ''),
-  naples:       o => /naples/i.test(o.zl · ''),
-  ftmyers:      o => /fort\s*myers|ft\.?\s*myers/i.test(o.zl · ''),
-  crystalriver: o => /crystal\s*river/i.test(o.zl · ''),
-  orlando:      o => /orlando/i.test(o.zl · ''),
-  daytona:      o => /daytona/i.test(o.zl · ''),
-  jacksonville: o => /jacksonville/i.test(o.zl · ''),
+  tampa:        o => /tampa/i.test(o.zl || ''),
+  destin:       o => /destin/i.test(o.zl || ''),
+  naples:       o => /naples/i.test(o.zl || ''),
+  ftmyers:      o => /fort\s*myers|ft\.?\s*myers/i.test(o.zl || ''),
+  crystalriver: o => /crystal\s*river/i.test(o.zl || ''),
+  orlando:      o => /orlando/i.test(o.zl || ''),
+  daytona:      o => /daytona/i.test(o.zl || ''),
+  jacksonville: o => /jacksonville/i.test(o.zl || ''),
 };
 
 function catMatches(activeCat, op) {
@@ -1856,7 +1856,7 @@ function catMatches(activeCat, op) {
 }
 
 function zoneMatches(activeZone, op) {
-  if (activeZone === 'all' · activeZone === 'florida') return true;
+  if (activeZone === 'all' || activeZone === 'florida') return true;
   if (op.zone === activeZone) return true;
   // Legacy zone-code aliases (pre-normalization data shouldn't exist anymore,
   // but keep them as defense-in-depth).
@@ -1867,7 +1867,7 @@ function zoneMatches(activeZone, op) {
 }
 
 function updateCatCounts() {
-  if (!allOperators · !allOperators.length) return;
+  if (!allOperators || !allOperators.length) return;
   const catMap = {
     'all': allOperators.length,
     'jetski':      allOperators.filter(o=>catMatches('jetski',o)).length,
@@ -1887,7 +1887,7 @@ function updateCatCounts() {
     'snorkel':     allOperators.filter(o=>catMatches('snorkel',o)).length,
   };
   document.querySelectorAll('.cat-tab').forEach(btn => {
-    const fn = btn.getAttribute('onclick') · '';
+    const fn = btn.getAttribute('onclick') || '';
     const m = fn.match(/filterCat\('([^']+)'/);
     if (!m) return;
     const key = m[1];
@@ -1901,11 +1901,11 @@ function updateCatCounts() {
 
   // Hide zone chips that match nothing (e.g. 'gainesville' after data cleanup).
   document.querySelectorAll('.zone-tab').forEach(btn => {
-    const fn = btn.getAttribute('onclick') · '';
+    const fn = btn.getAttribute('onclick') || '';
     const m = fn.match(/filterZone\('([^']+)'/);
     if (!m) return;
     const key = m[1];
-    if (key === 'all' · key === 'florida') return; // always keep
+    if (key === 'all' || key === 'florida') return; // always keep
     const n = allOperators.filter(o => zoneMatches(key, o)).length;
     if (n === 0) btn.style.display = 'none';
   });
@@ -1981,11 +1981,11 @@ function initMap() {
 function buildMarkers() {
   allOperators.forEach(op => {
     if (markers[op.id]) return; // skip if already built
-    if (!op.lat · !op.lng) return; // skip ops without geo coords
-    const color = catColors[op.cat] · '#00d4c8';
-    const catInitials = {jetski:'JS', boat:'⛵', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', jetcar:'🚗', golfcart:'🛺', atv:'🏍️', scooter:'🛵', bikerental:'🚲'}[op.cat] · '●';
+    if (!op.lat || !op.lng) return; // skip ops without geo coords
+    const color = catColors[op.cat] || '#00d4c8';
+    const catInitials = {jetski:'JS', boat:'⛵', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', jetcar:'🚗', golfcart:'🛺', atv:'🏍️', scooter:'🛵', bikerental:'🚲'}[op.cat] || '●';
     const marker = L.marker([op.lat, op.lng], {icon: makeIcon(color, catInitials)});
-    const opSlug = (window._OP_SLUG_MAP · {})[op.id] · '';
+    const opSlug = (window._OP_SLUG_MAP || {})[op.id] || '';
     const priceLabel = (op.price && op.price > 0)
       ? ('From $' + op.price.toLocaleString())
       : 'Contact for pricing';
@@ -2081,17 +2081,17 @@ function scrollToCard(id) {
 // ---- SEARCH AUTOCOMPLETE ----
 let acFocusIdx = -1;
 function updateAC() {
-  const q = (document.getElementById('searchInput').value · '').toLowerCase().trim();
+  const q = (document.getElementById('searchInput').value || '').toLowerCase().trim();
   const dd = document.getElementById('acDropdown');
   if (!dd) return;
-  if (!q · q.length < 2 · !allOperators.length) { closeAC(); return; }
+  if (!q || q.length < 2 || !allOperators.length) { closeAC(); return; }
   const matches = allOperators.filter(op =>
-    op.name.toLowerCase().includes(q) · op.zl.toLowerCase().includes(q)
+    op.name.toLowerCase().includes(q) || op.zl.toLowerCase().includes(q)
   ).slice(0, 6);
   if (!matches.length) { closeAC(); return; }
   acFocusIdx = -1;
   dd.innerHTML = matches.map((op, i) => {
-    const slug = (window._OP_SLUG_MAP · {})[op.id] · '';
+    const slug = (window._OP_SLUG_MAP || {})[op.id] || '';
     return `<div class="ac-item" role="option" data-id="${op.id}" data-slug="${slug}" onclick="acSelect('${op.id}','${slug}')">
       <div><div class="ac-item-name">${esc(op.name)}</div><div class="ac-item-zone">📍 ${esc(op.zl)}</div></div>
       <div class="ac-item-price">$${op.price}</div>
@@ -2108,12 +2108,12 @@ function acSelect(id, slug) {
   closeAC();
   if (slug) { window.open('/' + slug, '_blank'); return; }
   // Fallback: filter cards to that operator
-  document.getElementById('searchInput').value = allOperators.find(o=>o.id===id)?.name · '';
+  document.getElementById('searchInput').value = allOperators.find(o=>o.id===id)?.name || '';
   handleSearch();
 }
 function acKeyNav(e) {
   const dd = document.getElementById('acDropdown');
-  if (!dd · !dd.classList.contains('open')) return;
+  if (!dd || !dd.classList.contains('open')) return;
   const items = dd.querySelectorAll('.ac-item');
   if (e.key === 'ArrowDown') { e.preventDefault(); acFocusIdx = Math.min(acFocusIdx+1, items.length-1); items.forEach((el,i)=>el.classList.toggle('focused',i===acFocusIdx)); }
   else if (e.key === 'ArrowUp') { e.preventDefault(); acFocusIdx = Math.max(acFocusIdx-1, 0); items.forEach((el,i)=>el.classList.toggle('focused',i===acFocusIdx)); }
@@ -2140,19 +2140,19 @@ const RV_KEY = 'fl_recent';
 const RV_MAX = 5;
 
 function trackRecentlyViewed(op) {
-  let rv = JSON.parse(localStorage.getItem(RV_KEY) · '[]');
+  let rv = JSON.parse(localStorage.getItem(RV_KEY) || '[]');
   rv = rv.filter(o => o.id !== op.id);
-  rv.unshift({id:op.id, name:op.name, price:op.price, photo:op.photo, slug: (window._OP_SLUG_MAP · {})[op.id] · ''});
+  rv.unshift({id:op.id, name:op.name, price:op.price, photo:op.photo, slug: (window._OP_SLUG_MAP || {})[op.id] || ''});
   if (rv.length > RV_MAX) rv = rv.slice(0, RV_MAX);
   localStorage.setItem(RV_KEY, JSON.stringify(rv));
   renderRecentlyViewed();
 }
 
 function renderRecentlyViewed() {
-  const rv = JSON.parse(localStorage.getItem(RV_KEY) · '[]');
+  const rv = JSON.parse(localStorage.getItem(RV_KEY) || '[]');
   const section = document.getElementById('rvSection');
   const rail = document.getElementById('rvRail');
-  if (!section · !rail · rv.length === 0) return;
+  if (!section || !rail || rv.length === 0) return;
   section.classList.add('has-items');
   rail.innerHTML = rv.map(o => {
     const url = o.slug ? `/${o.slug}` : '/';
@@ -2163,7 +2163,7 @@ function renderRecentlyViewed() {
 
 function cardClick(id) {
   const op = allOperators.find(o => o.id === id);
-  if(!op · !mapInstance) return;
+  if(!op || !mapInstance) return;
   trackRecentlyViewed(op);
 
   // Reset estilo del pin anterior
@@ -2261,13 +2261,13 @@ if ('IntersectionObserver' in window) {
 // Note: operators-slim.json strips the 'desc' field (unused in index) saving ~68KB (32KB gzipped)
 function _applyLoadedData(data) {
   // Normalize prices: convert any string prices to numbers
-  data.forEach(o => { if (typeof o.price !== 'number') { const s=String(o.price · '').replace(/[^0-9.]/g,''); o.price = s ? parseFloat(s) · 0 : 0; } });
+  data.forEach(o => { if (typeof o.price !== 'number') { const s=String(o.price || '').replace(/[^0-9.]/g,''); o.price = s ? parseFloat(s) || 0 : 0; } });
   // Ensure zl/addr are always strings (prevents search crash)
   data.forEach(o => { if (!o.zl) o.zl=''; if (!o.addr) o.addr=''; });
   allOperators = data;
   // Set price filter range dynamically based on actual max price
-  const maxPrice = Math.max(0, ...data.map(o => o.price · 0));
-  const roundedMax = Math.ceil(maxPrice / 500) * 500 · 1000;
+  const maxPrice = Math.max(0, ...data.map(o => o.price || 0));
+  const roundedMax = Math.ceil(maxPrice / 500) * 500 || 1000;
   ['priceMin','priceMax'].forEach(id => document.getElementById(id).max = roundedMax);
   document.getElementById('priceMax').value = roundedMax;
   priceMax = roundedMax;
@@ -2282,12 +2282,12 @@ function _applyLoadedData(data) {
   }
   if (window._preloadCat) {
     activeCat = window._preloadCat;
-    const btn = [...document.querySelectorAll('.cat-tab')].find(b=>(b.getAttribute('onclick') · '').includes(`'${window._preloadCat}'`));
+    const btn = [...document.querySelectorAll('.cat-tab')].find(b=>(b.getAttribute('onclick') || '').includes(`'${window._preloadCat}'`));
     if (btn) { document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
   }
   if (window._preloadZone) {
     activeZone = window._preloadZone;
-    const btn = [...document.querySelectorAll('.zone-tab')].find(b=>(b.getAttribute('onclick') · '').includes(`'${window._preloadZone}'`));
+    const btn = [...document.querySelectorAll('.zone-tab')].find(b=>(b.getAttribute('onclick') || '').includes(`'${window._preloadZone}'`));
     if (btn) { document.querySelectorAll('.zone-tab').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
   }
   renderCards();
@@ -2635,16 +2635,16 @@ function bwUpdate(){
 <script>
 // ── Quick View Modal ──────────────────────────────────────────
 var _qvOpId = null;
-var _qvFavs = new Set(JSON.parse(localStorage.getItem('fav_ops') · '[]'));
+var _qvFavs = new Set(JSON.parse(localStorage.getItem('fav_ops') || '[]'));
 
 function openQuickView(opId) {
-  var op = (allOperators · []).find(function(o){return o.id===opId;});
+  var op = (allOperators || []).find(function(o){return o.id===opId;});
   if(!op) return;
   _qvOpId = opId;
 
-  var color = catColors[op.cat] · '#00d4c8';
-  var label = catLabels[op.cat] · op.cat;
-  var emoji = ({jetski:'🏄',boat:'⛵',fishing:'🎣',watersports:'🌊',slingshot:'🏎️',jetcar:'🚗',golfcart:'🛺',atv:'🏍️',tour:'🗺️',aerial:'✈️',bikerental:'🚲'})[op.cat] · '🌊';
+  var color = catColors[op.cat] || '#00d4c8';
+  var label = catLabels[op.cat] || op.cat;
+  var emoji = ({jetski:'🏄',boat:'⛵',fishing:'🎣',watersports:'🌊',slingshot:'🏎️',jetcar:'🚗',golfcart:'🛺',atv:'🏍️',tour:'🗺️',aerial:'✈️',bikerental:'🚲'})[op.cat] || '🌊';
   var price = op.price ? '$'+op.price.toLocaleString() : 'See site';
   var slug = (window._OP_SLUG_MAP&&window._OP_SLUG_MAP[op.id]) ? '/'+window._OP_SLUG_MAP[op.id] : null;
   var thumb = (typeof thumbUrl==='function') ? thumbUrl(op.photo) : op.photo;
@@ -2675,7 +2675,7 @@ function openQuickView(opId) {
   // Text fields
   document.getElementById('qvPrice').textContent = price;
   document.getElementById('qvName').textContent = op.name;
-  document.getElementById('qvAddr').textContent = '📍 '+(op.zl · op.addr · 'Florida');
+  document.getElementById('qvAddr').textContent = '📍 '+(op.zl || op.addr || 'Florida');
 
   // Buttons
   var isFav = _qvFavs.has(opId);
@@ -2689,12 +2689,12 @@ function openQuickView(opId) {
   cmpBtn.classList.toggle('selected', inCmp);
 
   // Links
-  document.getElementById('qvBookBtn').href = op.link · '#';
-  document.getElementById('qvDetailLink').href = slug · op.link · '#';
+  document.getElementById('qvBookBtn').href = op.link || '#';
+  document.getElementById('qvDetailLink').href = slug || op.link || '#';
   if (slug) { document.getElementById('qvDetailLink').removeAttribute('target'); } else { document.getElementById('qvDetailLink').setAttribute('target','_blank'); }
 
   // Store for action buttons
-  document.getElementById('qvShrBtn').dataset.url = op.link · window.location.href;
+  document.getElementById('qvShrBtn').dataset.url = op.link || window.location.href;
   document.getElementById('qvShrBtn').dataset.name = op.name;
 
   // Show
@@ -2738,8 +2738,8 @@ function qvToggleFav() {
 }
 
 function qvToggleCmp() {
-  if(!_qvOpId · typeof toggleCompare!=='function') return;
-  var op = (allOperators · []).find(function(o){return o.id===_qvOpId;});
+  if(!_qvOpId || typeof toggleCompare!=='function') return;
+  var op = (allOperators || []).find(function(o){return o.id===_qvOpId;});
   if(!op) return;
   toggleCompare(_qvOpId, op.name);
   var inCmp = compareList.some(function(o){return o.id===_qvOpId;});
@@ -2750,8 +2750,8 @@ function qvToggleCmp() {
 
 function qvShare() {
   var btn = document.getElementById('qvShrBtn');
-  var url = btn.dataset.url · window.location.href;
-  var name = btn.dataset.name · '';
+  var url = btn.dataset.url || window.location.href;
+  var name = btn.dataset.name || '';
   if(navigator.share){
     navigator.share({title:name, url:url}).catch(function(){});
   } else {

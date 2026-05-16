@@ -142,7 +142,7 @@
   <link rel="preconnect" href="https://fareharbor.com" crossorigin>
   <link rel="dns-prefetch" href="https://fareharbor.com">
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1"></script>
-<script>window.dataLayer=window.dataLayer · [];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');</script>
+<script>window.dataLayer=window.dataLayer || [];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');</script>
 </head>
 <body>
 <nav class="nav">
@@ -357,7 +357,7 @@
 
 <script>
 // ── Favorites ──
-var favs=JSON.parse(localStorage.getItem('fwsFavs') · '[]');
+var favs=JSON.parse(localStorage.getItem('fwsFavs') || '[]');
 function toggleFav(btn,id){
   var i=favs.indexOf(id);
   if(i===-1){favs.push(id);btn.textContent='❤️';btn.classList.add('saved');}
@@ -402,9 +402,9 @@ function sortCards(val){
   var grid=document.querySelector('.cards-grid');
   var cards=Array.from(grid.querySelectorAll('.op-card'));
   cards.sort(function(a,b){
-    if(val==='price-asc' · val==='price-desc'){
-      var pa=parseFloat((a.querySelector('.op-price-num') · {}).textContent · '0');
-      var pb=parseFloat((b.querySelector('.op-price-num') · {}).textContent · '0');
+    if(val==='price-asc' || val==='price-desc'){
+      var pa=parseFloat((a.querySelector('.op-price-num') || {}).textContent || '0');
+      var pb=parseFloat((b.querySelector('.op-price-num') || {}).textContent || '0');
       return val==='price-asc'?pa-pb:pb-pa;
     }
     return 0;
@@ -421,7 +421,7 @@ function filterZone(zone,btn){
   var cards=document.querySelectorAll('.op-card');
   var visible=0;
   cards.forEach(function(card){
-    if(zone==='all' · card.dataset.zone===zone){card.style.display='';visible++;}
+    if(zone==='all' || card.dataset.zone===zone){card.style.display='';visible++;}
     else{card.style.display='none';}
   });
   var c=document.querySelector('.cards-count');
@@ -434,8 +434,8 @@ function filterZone(zone,btn){
     var nameEl=card.querySelector('.op-name');
     var addrEl=card.querySelector('.op-addr');
     var detailLink=card.querySelector('.op-detail-link');
-    var insertBefore=detailLink · card.querySelector('.op-footer');
-    if(!nameEl · !insertBefore) return;
+    var insertBefore=detailLink || card.querySelector('.op-footer');
+    if(!nameEl || !insertBefore) return;
     var query=nameEl.textContent.trim();
     if(addrEl) query+=' '+(addrEl.textContent.replace(/📍\s*/,'').trim())+' Florida';
     else query+=' Florida';

@@ -109,7 +109,7 @@ function renderStats(visible,total){
   const byZone={};
   OPS.forEach(o=>{byZone[o.zone]=(byZone[o.zone]||0)+1;});
   const parts=Object.entries(byZone).sort((a,b)=>b[1]-a[1])
-    .map(([z,n])=>'<span><strong>'+n+'</strong> '+(ZONE_LABEL[z]||z)+'</span>').join(' · ');
+    .map(([z,n])=>'<span><strong>'+n+'</strong> '+(ZONE_LABEL[z]||z)+'</span>').join(' || ');
   document.getElementById('statsBar').innerHTML='<span>Showing <strong>'+visible+'</strong> / <strong>'+total+'</strong> operators</span> &nbsp;|&nbsp; '+parts;
 }
 

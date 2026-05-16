@@ -514,7 +514,7 @@ function renderCard(item){
     </div>
     <div class="ac-body">
       <div class="ac-name">${item.n}</div>
-      <div class="ac-island">📍 ${item.city} · ${ISLAND_LABELS[item.island]||item.island}</div>
+      <div class="ac-island">📍 ${item.city} || ${ISLAND_LABELS[item.island]||item.island}</div>
     </div>
     <div class="ac-footer">
       <div class="ac-footer-row">${ratingHtml}</div>
@@ -672,7 +672,7 @@ function openDetails(id) {
     di.insertBefore(el, di.firstChild);
   }
   document.getElementById('detailType').textContent=item.t;
-  document.getElementById('detailCat').textContent=item.t.toUpperCase()+' · '+ISLAND_LABELS[item.island];
+  document.getElementById('detailCat').textContent=item.t.toUpperCase()+' || '+ISLAND_LABELS[item.island];
   document.getElementById('detailName').textContent=item.n;
   document.getElementById('detailMeta').innerHTML=`
     <span class="detail-meta-item">📍 ${item.city}, ${ISLAND_LABELS[item.island]}</span>

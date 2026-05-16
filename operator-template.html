@@ -143,7 +143,7 @@ function renderPage(op, allOps){
   const rel2=related.length<2?allOps.filter(o=>o.id!==op.id&&o.cat===op.cat).slice(0,4):related;
   const relHTML=rel2.map(r=>{
     const rs=SLUG_MAP[r.id]||'';
-    return '<a href="/'+encodeURIComponent(rs)+'" class="rc"><div class="rp" style="background-image:url(\''+escCssUrl(r.photo)+'\')"></div><div class="ri"><div class="rn">'+esc(r.name)+'</div><div class="rm">'+esc(CAT_LABELS[r.cat]||r.cat)+' · '+esc(ZONE_LABELS[r.zone]||r.zl||'')+'</div><div class="rpr">'+fmtPriceShort(r.price)+'</div></div></a>';
+    return '<a href="/'+encodeURIComponent(rs)+'" class="rc"><div class="rp" style="background-image:url(\''+escCssUrl(r.photo)+'\')"></div><div class="ri"><div class="rn">'+esc(r.name)+'</div><div class="rm">'+esc(CAT_LABELS[r.cat]||r.cat)+' || '+esc(ZONE_LABELS[r.zone]||r.zl||'')+'</div><div class="rpr">'+fmtPriceShort(r.price)+'</div></div></a>';
   }).join('');
 
   const lat=Number(op.lat)||0, lng=Number(op.lng)||0;
