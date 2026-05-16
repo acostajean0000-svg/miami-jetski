@@ -408,7 +408,7 @@ function toggleCmp(btn,id,name){
 function renderCmpBar(){
   var bar=document.getElementById('cmpBar');
   var items=document.getElementById('cmpItems');
-  items.innerHTML=cmpList.map(function(x){return '<div class="cmp-chip"><span>'+x.name+'</span><span class="cmp-chip-rm" onclick="removeCmp(''+x.id+'')">✕</span></div>';}).join('');
+  items.innerHTML=cmpList.map(function(x){return '<div class="cmp-chip"><span>'+x.name+'</span><span class="cmp-chip-rm" onclick="removeCmp(\''+x.id+'\')">✕</span></div>';}).join('');
   cmpList.length?bar.classList.add('show'):bar.classList.remove('show');
 }
 function removeCmp(id){

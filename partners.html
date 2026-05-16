@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+  <meta name="theme-color" content="#0a1628">
+  <title>Jhon Doyle's Miami & Broward Activity Guide</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --navy:  #0a1628;
+      --ocean: #0e2a45;
+      --teal:  #0b7fa5;
+      --coral: #e8553e;
+      --sand:  #f4f0e8;
+      --white: #ffffff;
+      --text:  #111827;
+      --muted: #5f6b7a;
+    }
+
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', system-ui, sans-serif;
+      background: var(--sand);
+      color: var(--text);
+      line-height: 1.55;
+      padding-bottom: 72px;
+    }
+    @media (min-width: 768px) { body { padding-bottom: 0; } }
+
+    /* ── Header ── */
+    .site-header {
+      background: var(--navy);
+      padding: 13px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .logo {
+      color: #fff;
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      text-decoration: none;
+    }
+    .logo em { color: var(--coral); font-style: normal; }
+    .header-link {
+      color: rgba(255,255,255,0.65);
+      font-size: 0.76rem;
+      text-decoration: none;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background:
+        radial-gradient(ellipse at 70% 20%, rgba(11,127,165,0.35) 0%, transparent 60%),
+        radial-gradient(ellipse at 20% 80%, rgba(232,85,62,0.12) 0%, transparent 50%),
+        linear-gradient(160deg, #071320 0%, #0e2a45 50%, #0a1f38 100%);
+      padding: 48px 22px 40px;
+      position: relative;
+      overflow: hidden;
+    }
+    /* subtle wave lines */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        repeating-linear-gradient(
+          -20deg,
+          transparent,
+          transparent 38px,
+          rgba(255,255,255,0.025) 38px,
+          rgba(255,255,255,0.025) 39px
+        );
+      pointer-events: none;
+    }
+    .hero-inner { position: relative; max-width: 640px; margin: 0 auto; }
+    .hero-eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: var(--coral);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 14px;
+    }
+    .hero h1 {
+      font-size: clamp(1.8rem, 6vw, 3.2rem);
+      font-weight: 900;
+      color: #fff;
+      line-height: 1.08;
+      letter-spacing: -0.025em;
+      margin-bottom: 12px;
+    }
+    .hero h1 span { color: var(--teal); }
+    .hero-sub {
+      color: rgba(255,255,255,0.62);
+      font-size: 0.93rem;
+      margin-bottom: 32px;
+      max-width: 400px;
+    }
+
+    /* Category quick-links */
+    .cat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+    @media (min-width: 480px) { .cat-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    .cat-chip {
+      background: rgba(255,255,255,0.07);
+      border: 1px solid rgba(255,255,255,0.14);
+      color: rgba(255,255,255,0.88);
+      text-decoration: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 5px;
+      padding: 13px 8px 11px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      transition: background 0.15s, border-color 0.15s, transform 0.12s;
+      text-align: center;
+    }
+    .cat-chip:hover {
+      background: rgba(255,255,255,0.13);
+      border-color: rgba(255,255,255,0.3);
+      transform: translateY(-2px);
+    }
+    .cat-chip:active { transform: scale(0.97); }
+    .cat-chip .ci { font-size: 1.6rem; line-height: 1; }
+
+    .btn-primary {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--coral);
+      color: #fff;
+      font-size: 0.98rem;
+      font-weight: 800;
+      padding: 15px 28px;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+      transition: background 0.15s, transform 0.1s;
+      width: 100%;
+    }
+    .btn-primary:hover  { background: #d0472f; }
+    .btn-primary:active { transform: scale(0.98); }
+
+    /* ── Info strip ── */
+    .info-strip {
+      background: #061020;
+      color: rgba(255,255,255,0.7);
+      font-size: 0.74rem;
+      padding: 9px 20px;
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      overflow-x: auto;
+      white-space: nowrap;
+      -webkit-overflow-scrolling: touch;
+    }
+    .info-strip b { color: #fff; }
+
+    /* ── Trust bar ── */
+    .trust-bar {
+      background: var(--white);
+      border-bottom: 1px solid rgba(0,0,0,0.08);
+      padding: 18px 20px;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+    }
+    .trust-val { font-size: 1.3rem; font-weight: 900; color: var(--navy); }
+    .trust-lbl { font-size: 0.65rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
+
+    /* ── Section ── */
+    .section {
+      padding: 36px 20px;
+      max-width: 980px;
+      margin: 0 auto;
+    }
+    .section-title {
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--navy);
+      margin-bottom: 3px;
+      letter-spacing: -0.02em;
+    }
+    .section-sub {
+      color: var(--muted);
+      font-size: 0.82rem;
+      margin-bottom: 20px;
+    }
+
+    /* Zone tabs */
+    .zone-tabs {
+      display: flex;
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    .zone-tab {
+      padding: 6px 14px;
+      font-size: 0.78rem;
+      font-weight: 700;
+      border: 1.5px solid var(--navy);
+      color: var(--navy);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: background 0.13s, color 0.13s;
+    }
+    .zone-tab:hover, .zone-tab.active {
+      background: var(--navy);
+      color: #fff;
+    }
+
+    /* ── Activity grid ── */
+    .activity-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+    @media (min-width: 560px) { .activity-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 820px) { .activity-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    .act-card {
+      background: var(--white);
+      border: 1px solid rgba(0,0,0,0.08);
+      padding: 18px 14px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      transition: box-shadow 0.18s, transform 0.15s;
+    }
+    .act-card:hover {
+      box-shadow: 0 4px 18px rgba(0,0,0,0.1);
+      transform: translateY(-2px);
+    }
+    .act-card.sling {
+      border-color: rgba(232,85,62,0.4);
+      background: #fff9f8;
+    }
+    .act-icon { font-size: 1.8rem; line-height: 1; }
+    .act-name { font-size: 0.88rem; font-weight: 800; color: var(--navy); }
+    .act-zones {
+      display: flex;
+      gap: 5px;
+      flex-wrap: wrap;
+    }
+    .zone-pill {
+      font-size: 0.62rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      padding: 2px 6px;
+      background: rgba(10,22,40,0.07);
+      color: var(--muted);
+    }
+    .act-desc { font-size: 0.73rem; color: var(--muted); line-height: 1.35; flex: 1; }
+    .act-cta {
+      font-size: 0.71rem;
+      font-weight: 700;
+      color: var(--coral);
+      margin-top: 4px;
+      padding-top: 8px;
+      border-top: 1px solid rgba(0,0,0,0.06);
+    }
+
+    /* ── Divider ── */
+    .divider { border: none; border-top: 1px solid rgba(0,0,0,0.1); margin: 0 20px; }
+
+    /* ── How it works ── */
+    .how-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      text-align: center;
+    }
+    .how-step { padding: 6px; }
+    .how-num {
+      width: 34px; height: 34px;
+      background: var(--navy);
+      color: #fff;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.82rem;
+      font-weight: 800;
+      margin: 0 auto 10px;
+    }
+    .how-title { font-size: 0.8rem; font-weight: 700; color: var(--navy); margin-bottom: 4px; }
+    .how-desc  { font-size: 0.71rem; color: var(--muted); line-height: 1.35; }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--navy);
+      color: rgba(255,255,255,0.5);
+      padding: 30px 20px;
+      text-align: center;
+      font-size: 0.75rem;
+      line-height: 1.7;
+    }
+    .footer-logo { display: block; font-size: 0.92rem; font-weight: 800; color: #fff; margin-bottom: 6px; }
+    .footer a { color: rgba(255,255,255,0.7); }
+
+    /* ── Sticky CTA (mobile only) ── */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: var(--navy);
+      padding: 11px 18px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      z-index: 200;
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.4);
+    }
+    @media (min-width: 768px) { .sticky-bar { display: none; } }
+    .sticky-text { flex: 1; color: #fff; }
+    .sticky-text strong { display: block; font-size: 0.88rem; }
+    .sticky-text span   { font-size: 0.7rem; color: rgba(255,255,255,0.55); }
+    .btn-sticky {
+      background: var(--coral);
+      color: #fff;
+      font-size: 0.82rem;
+      font-weight: 800;
+      padding: 10px 18px;
+      text-decoration: none;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header class="site-header">
+    <a href="https://miamijetskiboatrentals.com" class="logo" target="_blank">Jhon Doyle's <em>Miami</em> Guide</a>
+    <a href="https://miamijetskiboatrentals.com" class="header-link" target="_blank">View All Listings</a>
+  </header>
+
+  <!-- ── Hero ── -->
+  <section class="hero" id="top">
+    <div class="hero-inner">
+      <div class="hero-eyebrow">★ Curated by Jhon Doyle</div>
+      <h1>Miami &amp; Broward<br><span>Water Activities</span></h1>
+      <p class="hero-sub">Jet skis, boats, fishing charters, tours and more — all bookable in minutes, right from your phone.</p>
+
+      <!-- Category quick-links -->
+      <div class="cat-grid">
+        <a class="cat-chip" href="https://miamijetskiboatrentals.com/miami/jetski/?ref=jhondoyle" target="_blank" rel="noopener">
+          <span class="ci">🛥️</span>Jet Ski
+        </a>
+        <a class="cat-chip" href="https://miamijetskiboatrentals.com/miami/boat/?ref=jhondoyle" target="_blank" rel="noopener">
+          <span class="ci">⛵</span>Boats
+        </a>
+        <a class="cat-chip" href="https://miamijetskiboatrentals.com/miami/fishing/?ref=jhondoyle" target="_blank" rel="noopener">
+          <span class="ci">🎣</span>Fishing
+        </a>
+        <a class="cat-chip" href="https://miamijetskiboatrentals.com/miami/watersports/?ref=jhondoyle" target="_blank" rel="noopener">
+          <span class="ci">🏄</span>Watersports
+        </a>
+        <a class="cat-chip" href="https://miamijetskiboatrentals.com/miami/tour/?ref=jhondoyle" target="_blank" rel="noopener">
+          <span class="ci">🗺️</span>Tours
+        </a>
+        <a class="cat-chip" href="https://miamijetskiboatrentals.com/miami/aerial/?ref=jhondoyle" target="_blank" rel="noopener">
+          <span class="ci">🪂</span>Parasailing
+        </a>
+      </div>
+
+      <a class="btn-primary" href="#activities">Browse All Experiences ↓</a>
+    </div>
+  </section>
+
+  <!-- ── Info strip ── -->
+  <div class="info-strip">
+    <span>✅ <b>Instant confirmation</b></span>
+    <span>🔒 <b>Secure checkout</b> via FareHarbor</span>
+    <span>⭐ <b>500+ five-star reviews</b></span>
+    <span>📍 <b>Miami &amp; Broward</b></span>
+  </div>
+
+  <!-- ── Trust bar ── -->
+  <div class="trust-bar">
+    <div>
+      <div class="trust-val">500+</div>
+      <div class="trust-lbl">5-Star Reviews</div>
+    </div>
+    <div>
+      <div class="trust-val">10+</div>
+      <div class="trust-lbl">Years in Miami</div>
+    </div>
+    <div>
+      <div class="trust-val">2,400+</div>
+      <div class="trust-lbl">Experiences</div>
+    </div>
+  </div>
+
+  <!-- ── All Activities ── -->
+  <div class="section" id="activities">
+    <h2 class="section-title">All Activities &amp; Tours</h2>
+    <p class="section-sub">Miami · Fort Lauderdale · Broward County · Biscayne Bay</p>
+
+    <div class="zone-tabs">
+      <a class="zone-tab active" href="https://miamijetskiboatrentals.com/miami/?ref=jhondoyle" target="_blank">Miami</a>
+      <a class="zone-tab" href="https://miamijetskiboatrentals.com/broward/?ref=jhondoyle" target="_blank">Broward</a>
+    </div>
+
+    <div class="activity-grid">
+
+      <a class="act-card" href="https://miamijetskiboatrentals.com/miami/jetski/?ref=jhondoyle" target="_blank" rel="noopener">
+        <div class="act-icon">🛥️</div>
+        <div class="act-name">Jet Ski Rentals</div>
+        <div class="act-zones">
+          <span class="zone-pill">Miami</span>
+          <span class="zone-pill">Broward</span>
+        </div>
+        <div class="act-desc">Solo or tandem — Biscayne Bay, Miami Beach Marina, and Fort Lauderdale waterways. No license needed.</div>
+        <div class="act-cta">Browse listings →</div>
+      </a>
+
+      <a class="act-card" href="https://miamijetskiboatrentals.com/miami/boat/?ref=jhondoyle" target="_blank" rel="noopener">
+        <div class="act-icon">⛵</div>
+        <div class="act-name">Boat Rentals</div>
+        <div class="act-zones">
+          <span class="zone-pill">Miami</span>
+          <span class="zone-pill">Broward</span>
+        </div>
+        <div class="act-desc">Captained charters or bareboat — pontoons, speedboats, catamarans, and luxury yachts.</div>
+        <div class="act-cta">Browse listings →</div>
+      </a>
+
+      <a class="act-card" href="https://miamijetskiboatrentals.com/miami/fishing/?ref=jhondoyle" target="_blank" rel="noopener">
+        <div class="act-icon">🎣</div>
+        <div class="act-name">Fishing Charters</div>
+        <div class="act-zones">
+          <span class="zone-pill">Miami</span>
+          <span class="zone-pill">Broward</span>
+        </div>
+        <div class="act-desc">Deep sea, reef, and inshore fishing with experienced local captains. All gear included.</div>
+        <div class="act-cta">Browse listings →</div>
+      </a>
+
+      <a class="act-card" href="https://miamijetskiboatrentals.com/miami/watersports/?ref=jhondoyle" target="_blank" rel="noopener">
+        <div class="act-icon">🏄</div>
+        <div class="act-name">Watersports</div>
+        <div class="act-zones">
+          <span class="zone-pill">Miami</span>
+        </div>
+        <div class="act-desc">Flyboard, wakeboarding, tube rides, banana boat — adrenaline on the water.</div>
+        <div class="act-cta">Browse listings →</div>
+      </a>
+
+      <a class="act-card" href="https://miamijetskiboatrentals.com/miami/tour/?ref=jhondoyle" target="_blank" rel="noopener">
+        <div class="act-icon">🗺️</div>
+        <div class="act-name">Tours &amp; Excursions</div>
+        <div class="act-zones">
+          <span class="zone-pill">Miami</span>
+          <span class="zone-pill">Broward</span>
+        </div>
+        <div class="act-desc">Miami skyline tours, island hops, Everglades airboat, and sunset cruises.</div>
+        <div class="act-cta">Browse listings →</div>
+      </a>
+
+      <a class="act-card" href="https://miamijetskiboatrentals.com/miami/aerial/?ref=jhondoyle" target="_blank" rel="noopener">
+        <div class="act-icon">🪂</div>
+        <div class="act-name">Parasailing &amp; Aerial</div>
+        <div class="act-zones">
+          <span class="zone-pill">Miami</span>
+          <span class="zone-pill">Broward</span>
+        </div>
+        <div class="act-desc">Soar above Biscayne Bay or Fort Lauderdale Beach — views you won't forget.</div>
+        <div class="act-cta">Browse listings →</div>
+      </a>
+
+      <a class="act-card" href="https://miamijetskiboatrentals.com/miami/bikerental/?ref=jhondoyle" target="_blank" rel="noopener">
+        <div class="act-icon">🚲</div>
+        <div class="act-name">Bike Rentals</div>
+        <div class="act-zones">
+          <span class="zone-pill">Miami</span>
+        </div>
+        <div class="act-desc">E-bikes, beach cruisers, and scooters for South Beach, Wynwood, and Brickell.</div>
+        <div class="act-cta">Browse listings →</div>
+      </a>
+
+      <a class="act-card" href="https://miamijetskiboatrentals.com/miami/atv/?ref=jhondoyle" target="_blank" rel="noopener">
+        <div class="act-icon">🏎️</div>
+        <div class="act-name">ATV Adventures</div>
+        <div class="act-zones">
+          <span class="zone-pill">Miami</span>
+        </div>
+        <div class="act-desc">Off-road Everglades thrills — guided ATV tours through South Florida wilderness.</div>
+        <div class="act-cta">Browse listings →</div>
+      </a>
+
+      <a
+        class="act-card sling"
+        href="https://fareharbor.com/embeds/book/sofloslings/items/559870/calendar/2026/05/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes"
+        target="_blank" rel="noopener"
+      >
+        <div class="act-icon">🏁</div>
+        <div class="act-name">Slingshot Rental</div>
+        <div class="act-zones">
+          <span class="zone-pill">Miami</span>
+        </div>
+        <div class="act-desc">Roush Edition · Automatic · Open-air · From $160. 2400 NW 7th Ave, Miami.</div>
+        <div class="act-cta">Book Now →</div>
+      </a>
+
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <!-- ── How it Works ── -->
+  <div class="section">
+    <h2 class="section-title">How It Works</h2>
+    <p class="section-sub">Book in minutes — no phone calls, no waiting</p>
+    <div class="how-grid">
+      <div class="how-step">
+        <div class="how-num">1</div>
+        <div class="how-title">Pick an Activity</div>
+        <div class="how-desc">Browse and choose your date, time, and group size.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">2</div>
+        <div class="how-title">Book Securely</div>
+        <div class="how-desc">Instant confirmation via FareHarbor. No hidden fees.</div>
+      </div>
+      <div class="how-step">
+        <div class="how-num">3</div>
+        <div class="how-title">Show Up &amp; Enjoy</div>
+        <div class="how-desc">Bring your confirmation — operators handle the rest.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── Footer ── -->
+  <footer class="footer">
+    <span class="footer-logo">Curated by Jhon Doyle</span>
+    <p>In partnership with MiamiStyle Rentals — Miami's trusted activity hub since 2015</p>
+    <p><a href="https://miamijetskiboatrentals.com" target="_blank">miamijetskiboatrentals.com</a></p>
+    <p style="margin-top:10px;font-size:0.68rem;">
+      All bookings processed securely via FareHarbor &nbsp;·&nbsp; © 2026 MiamiStyle Rentals
+    </p>
+  </footer>
+
+  <!-- ── Sticky mobile CTA ── -->
+  <div class="sticky-bar">
+    <div class="sticky-text">
+      <strong>Miami &amp; Broward Activities</strong>
+      <span>Boats · Jet Skis · Fishing · Tours</span>
+    </div>
+    <a class="btn-sticky" href="#activities">Book Now</a>
+  </div>
+
+</body>
+</html>

@@ -446,7 +446,7 @@
 
 <script>
 const IMG = (c) => c ? `https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:380/quality=value:60/auto_image/compress/cache=expiry:max/${c}` : '';
-const FH = (s,id) => `https://fareharbor.com/embeds/book/xtreme/items/247/?asn=fhdn&ref=miamistylerentals&flow=no&full-items=yes&flow=no&full-items=yes
+const FH = (s,id) => `https://fareharbor.com/embeds/book/${s}/items/${id}/?asn=fhdn&ref=miamistylerentals&flow=no&full-items=yes`;
 
 const ITEMS = [
   // WATER SPORTS
@@ -672,7 +672,7 @@ function openDetails(id) {
     di.insertBefore(el, di.firstChild);
   }
   document.getElementById('detailType').textContent=item.t;
-  document.getElementById('detailCat').textContent=item.t.toUpperCase()+' || '+ISLAND_LABELS[item.island];
+  document.getElementById('detailCat').textContent=item.t.toUpperCase()+' · '+ISLAND_LABELS[item.island];
   document.getElementById('detailName').textContent=item.n;
   document.getElementById('detailMeta').innerHTML=`
     <span class="detail-meta-item">📍 ${item.city}, ${ISLAND_LABELS[item.island]}</span>
@@ -696,7 +696,7 @@ function openDetails(id) {
     </div>`).join('');
   const name = item.n.replace(/'/g,"\\'");
   document.getElementById('detailBookBtn').onclick=()=>{closeDetail();openBooking(name,item.s,item.id,item.sec);};
-  document.getElementById('detailFhLink').href=`https://fareharbor.com/embeds/book/xtreme/items/247/?asn=fhdn&ref=miamistylerentals&flow=no&full-items=yes
+  document.getElementById('detailFhLink').href=FH(item.s, item.id);
   document.getElementById('detailModal').classList.add('open');
   document.body.style.overflow='hidden';
 }

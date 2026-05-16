@@ -143,10 +143,11 @@ function renderPage(op, allOps){
   const rel2=related.length<2?allOps.filter(o=>o.id!==op.id&&o.cat===op.cat).slice(0,4):related;
   const relHTML=rel2.map(r=>{
     const rs=SLUG_MAP[r.id]||'';
-    return '<a href="/'+encodeURIComponent(rs)+'" class="rc"><div class="rp" style="background-image:url(\''+escCssUrl(r.photo)+'\')"></div><div class="ri"><div class="rn">'+esc(r.name)+'</div><div class="rm">'+esc(CAT_LABELS[r.cat]||r.cat)+' || '+esc(ZONE_LABELS[r.zone]||r.zl||'')+'</div><div class="rpr">'+fmtPriceShort(r.price)+'</div></div></a>';
+    return '<a href="/'+encodeURIComponent(rs)+'" class="rc"><div class="rp" style="background-image:url(\''+escCssUrl(r.photo)+'\')"></div><div class="ri"><div class="rn">'+esc(r.name)+'</div><div class="rm">'+esc(CAT_LABELS[r.cat]||r.cat)+' · '+esc(ZONE_LABELS[r.zone]||r.zl||'')+'</div><div class="rpr">'+fmtPriceShort(r.price)+'</div></div></a>';
   }).join('');
 
   const lat=Number(op.lat)||0, lng=Number(op.lng)||0;
+  const hasCoords = lat !== 0 && lng !== 0;
   const mapUrl='https://maps.google.com/maps?q='+encodeURIComponent(lat+','+lng)+'&z=15&output=embed';
 
   document.getElementById('main').innerHTML=`
@@ -168,10 +169,10 @@ function renderPage(op, allOps){
       <div class="dc"><div class="dl">Zone</div><div class="dv">${esc(zoneLabel)}</div></div>
       <div class="dc"><div class="dl">Starting Price</div><div class="dv">${esc(priceText)}</div></div>
     </div>
-    <p class="stitle">📍 Location</p>
+    ${hasCoords ? `<p class="stitle">📍 Location</p>
     <div class="map-wrap">
       <iframe src="${escAttr(mapUrl)}" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-    </div>
+    </div>` : ''}
     ${rel2.length?'<p class="stitle">🌊 Similar '+esc(catLabel)+'s Nearby</p><div class="rg">'+relHTML+'</div>':''}
     <p style="margin-top:20px;text-align:center"><a href="${escAttr(catPage)}" style="color:#00d2ff;text-decoration:underline">← All ${esc(catLabel)}s in Florida</a></p>
   `;
