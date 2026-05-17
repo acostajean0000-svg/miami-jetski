@@ -501,6 +501,1761 @@
       "source": "/florida-adventures-kayak-rental-gulf",
       "destination": "/florida-adventures-kayak-rental-marco-island",
       "permanent": true
+    },
+    {
+      "source": "/blue-water-boat-rentals-palm-beach-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/highland-beach-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-sailing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sugarloaf-shores-sailing-key-west-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-much-does-boat-charter-cost-fort-lauderdale",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sand-dollar-boat-tours-naples-naples",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/duck-tour-key-west-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lauderdale-by-sea-snorkel-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-sailing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-eco-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-water-bike-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/everglades-gator-park-miami-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hutchinson-island-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/palatka-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/let-us-fish-key-west-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fernandina-beach-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-bike-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-wakeboard-school-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/gators-parasail-madeira-beach",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-eco-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/panama-city-beach-parasail-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/new-smyrna-dolphin-cruise-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/nassau-sound-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/palm-beach-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-water-taxi-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-parasail-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vilano-beach-watersports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lake-mary-water-sports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-scuba-diving-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-sunset-cruise-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pompano-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-bike-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-jetcar-rentals-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/anastasia-island-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/palm-beach-sailing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/port-st-lucie-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-beach-parasail-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/best-parasailing-key-west",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lake-worth-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/central-fl-wakeboard-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/coconut-grove-sailing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/crescent-lake-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fort-lauderdale-jet-ski-rental-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/east-central-airboat-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-freediving-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/reef-runner-sport-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/longboat-key-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/delray-beach-parasail-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/next-level-jet-ski-sarasota-gulf",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/winter-park-boat-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-sunset-paddle-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/30a-tiki-boat-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fort-walton-beach-watersports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/plantation-key-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-wine-cruise-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-fishing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sand-dollar-boat-tours-naples-port-royal-florida",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/canelo-tours-punta-cana",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bay-adventure-miami-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/holiday-isle-water-sports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/rainbow-river-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/brevard-kayak-eco-tour-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/neptune-beach-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-jet-cars-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cruisin-tikis-st-augustine-matanzas-bay-tours-florida",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-kite-surfing-lessons-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/grassy-key-dolphin-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/biscayne-snorkel-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/destin-jet-ski-rentals-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/flagler-beach-surf-lessons-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ponte-vedra-surf-lessons-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/englewood-beach-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sand-dollar-boat-tours-keewaydin-island-naples-florida",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-slingshot-rentals-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/30a-paddleboard-adventures-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-kayak-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-snorkel-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/coral-reef-adventure-key-largo-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/boca-raton-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/suncoast-parasail-clearwater-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ecomersion-kayak-tours-st-pete-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-coast-eco-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-bike-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/deland-river-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/haulover-jet-ski-miami-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bass-fishing-kissimmee-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-maria-island-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/naples-sailing-school-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-much-does-boat-rental-cost-miami",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fort-walton-beach-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/manatee-springs-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/naples-tiki-fun-tours-sunset-cruise-naples-florida",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/weeki-wachee-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/dania-beach-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/southwest-florida-fishing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lazy-dog-adventures-key-west-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-mangrove-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-biscayne-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cocoa-beach-sunset-cruise-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/naples-tiki-fun-tours-gulf",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lower-keys-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-ghost-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/navarre-beach-water-sports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/calusa-kayak-eco-tours-key-west-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/captiva-island-eco-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/crystal-cove-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fort-walton-beach-water-sports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-jet-ski-rentals-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-dolphin-watch-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-scooter-rentals-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-glass-bottom-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-catamaran-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/de-leon-springs-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/captiva-kayak-eco-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-wakeboard-cable-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/best-jet-ski-rentals-key-west",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/shared-fishing-trip-cancun-cancun-hz",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-dolphin-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/central-fl-airboat-rides-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/central-fl-springs-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tarpon-springs-eco-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/jacksonville-sunset-cruise-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/delray-beach-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fort-lauderdale-sunset-cruise-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bradenton-eco-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-flyboard-biscayne-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/panama-city-beach-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-kiteboarding-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pinellas-fishing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/spring-hill-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fireball-sunset-sail-key-west-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/new-smyrna-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-pirate-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kissimmee-fishing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/suwannee-river-eco-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/green-turtle-water-sports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-wakeboard-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/palmetto-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/brevard-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/best-boat-tours-destin-florida",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/indian-river-kayak-company-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/peanut-island-snorkel-palm-beach-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fury-snorkel-reef-key-west-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ruskin-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fort-lauderdale-kayak-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bradenton-slingshot-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ormond-beach-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/boca-raton-kayak-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/e-bike-florida-st-pete-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ponce-inlet-boat-rentals-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-beach-water-sports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/emerald-coast-parasail-destin-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fort-myers-parasail-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/coral-gables-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sebastian-inlet-watersports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sand-dollar-boat-tours-keewaydin-island-naples",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cocoa-beach-surf-lessons-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hallandale-beach-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/marco-island-parasail-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/paradise-rentals-kw-scooter-key-west",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/looe-key-reef-snorkel-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-whale-watching-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ponte-vedra-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/juniper-springs-canoe-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/boynton-beach-fishing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/snuba-key-west-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/rainbow-river-tubing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-johns-river-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-scooter-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/river-country-canoe-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-kitesurfing-lessons-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-largo-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/venice-fishing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-bay-kayak-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/deering-estate-kayak-miami-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-beach-parasail-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/treasure-coast-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-jet-ski-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/jax-beach-surf-lessons-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/homosassa-river-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lake-toho-bass-guide-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/next-level-jet-ski-rentals-sarasota-florida",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cape-coral-dolphin-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/igfa-museum-fishing-dania-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/coconut-grove-bike-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bradenton-beach-water-sports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/hammock-park-eco-kayak-miami-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/new-smyrna-beach-water-sports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/reef-fishing-cancun-cancun-hz",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vero-beach-parasail-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/rock-springs-run-tube-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vero-beach-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-sunset-dolphin-cruise-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/florida-eco-safaris-st-cloud-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-johns-river-cruise-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/destin-harbor-boat-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vizcaya-kayak-miami-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-eco-discovery-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sebastian-fishing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sealife-miami-kayak-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/jax-beach-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/birthday-water-sports-key-west",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/amelia-island-surf-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/southernmost-watersports-key-west-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/naples-water-sports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/melbourne-beach-water-sports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/salt-springs-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fanning-springs-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/conch-tour-train-key-west-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/north-palm-beach-boat-rentals-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/airboat-miami-everglades-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/weeki-wachee-tube-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/titusville-fishing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fundestin-adventures-sunset-cruise-destin-florida",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/brevard-sailing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-landings-charter-st-pete-beach-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-bay-cruises-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/south-beach-kayak-miami-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/palm-bay-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/shark-tooth-diving-venice-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/leesburg-fishing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/crystal-river-kayak-manatee-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kayak-adventures-daytona-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-sightseeing-boat-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/crystal-river-manatee-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/deland-kayak-spring-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-heli-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fundestin-adventures-westfl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-paddleboard-yoga-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fort-pierce-water-sports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/everglades-ten-thousand-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/florida-keys-parasail-islamorada-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bradenton-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-much-does-yacht-charter-cost-miami",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/deltona-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/big-cypress-airboat-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/the-real-floridians-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/jacksonville-kayak-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/30a-sailing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/best-yacht-charters-miami",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-much-does-parasailing-cost-key-west",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/talbot-island-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/holmes-beach-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/vero-beach-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/west-palm-beach-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/grayton-beach-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/anastasia-island-bike-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/navarre-beach-watersports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-kayak-adventures-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/marathon-kayak-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/captain-memos-pirate-cruise-clearwater-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/naples-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/snuba-fort-lauderdale-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-parasail-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/everglades-city-boat-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/destin-deep-sea-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-beach-atv-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/withlacoochee-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/biscayne-national-park-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cruisin-tikis-st-augustine-matanzas-bay-tours-staugustine",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/punta-gorda-sailing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/nocatee-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sea-isle-water-sports-key-west-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pcb-sunset-cruise-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/north-bay-village-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/buccaneer-pirate-cruise-destin-westfl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/destin-sunset-cruise-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/south-dade-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/marco-island-kayak-eco-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/space-coast-parasail-cocoa-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/cocoa-beach-dolphin-tour-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-beach-scooters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-sunset-cruise-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-bay-fishing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/paddleboard-miami-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/crystal-river-manatee-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/marco-island-dolphin-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/destin-waverunner-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-boat-rentals-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sand-dollar-boat-tours-ten-thousand-islands-naples",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/new-smyrna-surf-lessons-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ginnie-springs-dive-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/kennedy-space-coast-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sebago-watersports-key-west-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-night-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/loggerhead-watersports-palm-beach-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/how-much-does-jet-ski-rental-cost-key-west",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-catamaran-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/family-water-sports-key-west",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bachelorette-water-sports-key-west",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wynwood-bike-tours-miami-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/flagler-county-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ocala-national-forest-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/gainesville-springs-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/caribbean-lake-park-punta-cana",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/florida-city-airboat-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bay-point-boat-rentals-pcb-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sanibel-island-bike-rentals-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/anna-maria-island-parasail-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/john-pennekamp-snorkel-key-largo-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sand-dollar-boat-tours-ten-thousand-islands-marco-island-florida",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/south-beach-slingshot-miami-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/suwannee-river-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-kayak-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/space-coast-standup-paddle-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ocean-saba-dive-key-west-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/naples-bay-resort-water-sports-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/30a-slingshot-rentals-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-parasail-st-pete-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pelican-beach-parasail-pcb-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-fishing-charters-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-fishing-unlimited-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-bioluminescent-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/crescent-beach-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fort-myers-flyboard-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/deepsea-miami-fishing-charter-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/spring-hill-kayak-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/tomoka-outpost-kayak-ormond-beach-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/palm-beach-parasail-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/destin-private-boat-charter-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/gainesville-kayak-springs-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-lobster-dive-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-beach-parasail-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/aventura-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-private-yacht-charter-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/silver-springs-glass-bottom-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/florida-kiteboarding-miami-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/nokomis-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-sailing-biscayne-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/big-pine-kayak-adventures-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/orlando-kayak-adventures-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/ginnie-springs-scuba-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/treasure-island-parasail-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/pcb-bike-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/paradise-rentals-kw-golf-cart-keys-sc5",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-sunset-cruise-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-water-bike-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miramar-beach-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/everglades-city-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lovers-key-kayak-bonita-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/miami-spearfishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-fishing-2-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fort-myers-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/fort-walton-dive-center-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-ghost-boat-tours-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/bonita-beach-jet-ski-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-kayak-snorkel-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/alexander-springs-kayak-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/johns-pass-parasail-madeira-beach",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "rewrites": [],
