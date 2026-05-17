@@ -2256,6 +2256,21 @@
       "source": "/johns-pass-parasail-madeira-beach",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/miami-inshore-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/may-port-fishing-fl",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/lake-okeechobee-fishing-fl",
+      "destination": "/",
+      "permanent": true
     }
   ],
   "rewrites": [],
