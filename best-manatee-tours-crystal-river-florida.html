@@ -239,7 +239,7 @@ footer{background:#030a14;border-top:1px solid var(--border);padding:24px 20px;}
     </div>
   </div>
 </footer>
-<!-- FH_BOOKING_MODAL_v1 -->
+<!-- FH_BOOKING_MODAL_v2 -->
 <style id="fh-modal-style">
 .fh-modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:99999;padding:24px;box-sizing:border-box}
 .fh-modal.open{display:flex}
@@ -248,12 +248,10 @@ footer{background:#030a14;border-top:1px solid var(--border);padding:24px 20px;}
 .fh-modal-title{font-weight:600;font-size:.95rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:12px}
 .fh-modal-close{background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1;padding:0 6px}
 .fh-modal-body{flex:1;position:relative;background:#fff}
-.fh-modal-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#555;font-size:.9rem;background:#fff}
+.fh-modal-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#555;font-size:.9rem;background:#fff;z-index:1}
 .fh-modal-spinner{width:36px;height:36px;border:3px solid #e6e6e6;border-top-color:#0a66c2;border-radius:50%;animation:fhspin 1s linear infinite}
 @keyframes fhspin{to{transform:rotate(360deg)}}
-.fh-modal-iframe-wrap{width:100%;height:100%;display:none}
-.fh-modal-iframe-wrap.show{display:block}
-.fh-modal iframe{width:100%;height:100%;border:0;display:block}
+.fh-modal iframe{width:100%;height:100%;border:0;display:block;position:absolute;inset:0;background:#fff}
 @media(max-width:600px){.fh-modal{padding:0}.fh-modal-card{max-height:100vh;border-radius:0}}
 </style>
 <div class="fh-modal" id="fhModal" role="dialog" aria-modal="true" aria-labelledby="fhModalTitle" onclick="if(event.target===this)closeFhModal()">
@@ -264,7 +262,7 @@ footer{background:#030a14;border-top:1px solid var(--border);padding:24px 20px;}
     </div>
     <div class="fh-modal-body">
       <div class="fh-modal-loading" id="fhModalLoading"><div class="fh-modal-spinner"></div><span>Loading availability…</span></div>
-      <div class="fh-modal-iframe-wrap" id="fhModalWrap"><iframe id="fhModalIframe" title="FareHarbor Booking" loading="lazy" allow="payment"></iframe></div>
+      <iframe id="fhModalIframe" title="FareHarbor Booking" loading="eager" allow="payment"></iframe>
     </div>
   </div>
 </div>
@@ -272,26 +270,31 @@ footer{background:#030a14;border-top:1px solid var(--border);padding:24px 20px;}
 (function(){
   function openFhModal(url,name){
     var modal=document.getElementById('fhModal');var iframe=document.getElementById('fhModalIframe');
-    var wrap=document.getElementById('fhModalWrap');var loading=document.getElementById('fhModalLoading');
+    var loading=document.getElementById('fhModalLoading');
     document.getElementById('fhModalTitle').textContent=name||'Book Now';
-    wrap.classList.remove('show');loading.style.display='flex';iframe.src='';
+    loading.style.display='flex';iframe.src='about:blank';
     modal.classList.add('open');document.body.style.overflow='hidden';
     if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url});
-    requestAnimationFrame(function(){iframe.onload=function(){loading.style.display='none';wrap.classList.add('show');};iframe.src=url;});
+    var hidLoading=false;
+    function hideLoading(){if(!hidLoading){hidLoading=true;loading.style.display='none';}}
+    iframe.onload=function(){if(iframe.src!=='about:blank')hideLoading();};
+    setTimeout(hideLoading,4000); // fallback in case onload doesn't fire
+    requestAnimationFrame(function(){iframe.src=url;});
   }
-  window.closeFhModal=function(){var m=document.getElementById('fhModal');m.classList.remove('open');document.body.style.overflow='';document.getElementById('fhModalIframe').src='';};
+  window.closeFhModal=function(){var m=document.getElementById('fhModal');m.classList.remove('open');document.body.style.overflow='';var i=document.getElementById('fhModalIframe');i.src='about:blank';};
   document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeFhModal();});
   document.addEventListener('click',function(e){
+    if(e.defaultPrevented)return;
     var a=e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
     if(!a)return;
-    if(a.target==='_blank'&&!e.metaKey&&!e.ctrlKey)a.target='';  // strip new-tab open
+    if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
     e.preventDefault();e.stopPropagation();
-    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title||'Book Now';
-    openFhModal(a.href,name.replace(/ \|.*$/,'').trim());
+    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/ \|.*$/,'').trim()||'Book Now';
+    openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;
 })();
 </script>
-<!-- /FH_BOOKING_MODAL_v1 -->
+<!-- /FH_BOOKING_MODAL_v2 -->
 </body>
 </html>
