@@ -1508,7 +1508,7 @@ function openCompareModal(){
   if(compareList.length<2) return;
   const minPrice=Math.min(...compareList.map(o=>o.price));
   const fields=[
-    {label:'Photo',    render:op=>op.photo?`<img src="${op.photo}" class="cmp-photo" onerror="this.style.display='none'" alt="${op">`:'—'},
+    {label:'Photo',    render:op=>op.photo?`<img src="${op.photo}" class="cmp-photo" onerror="this.style.display='none'" alt="${esc(op.name||'operator photo')}">`:'—'},
     {label:'Name',     render:op=>`<strong>${esc(op.name)}</strong>`},
     {label:'Type',     render:op=>`${catEmoji[op.cat]} ${catLabels[op.cat]}`},
     {label:'Location', render:op=>`📍 ${esc(op.zl)}`},
