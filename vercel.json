@@ -2276,6 +2276,51 @@
       "source": "/cozumel-day-trip-by-boat-cozumel",
       "destination": "/",
       "permanent": true
+    },
+    {
+      "source": "/book",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/double-double-freedom-float-boat-rental-westfl",
+      "destination": "/double-freedom-float-boat-rental-westfl",
+      "permanent": true
+    },
+    {
+      "source": "/miami-jetski-boat-rentals",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/categories",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/privacy",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-jet-ski-fishing",
+      "destination": "/northeast-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lake-worth-water-sports",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/operators",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/jupiter-water-sports",
+      "destination": "/palm-beach-activities",
+      "permanent": true
     }
   ],
   "rewrites": [],
