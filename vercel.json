@@ -2321,6 +2321,11 @@
       "source": "/jupiter-water-sports",
       "destination": "/palm-beach-activities",
       "permanent": true
+    },
+    {
+      "source": "/cudjoe-key-boat-rentals-florida-keys-cudjoe-key",
+      "destination": "/florida-keys-water-sports",
+      "permanent": true
     }
   ],
   "rewrites": [],
