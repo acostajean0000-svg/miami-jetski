@@ -2891,6 +2891,236 @@
       "source": "/adrenaline-park-punta-cana-puntacana",
       "destination": "/punta-cana-activities",
       "permanent": true
+    },
+    {
+      "source": "/el-limon-waterfall-bacardi-island-from-la-romana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/parasailing-experience-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/power-cruise-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/whale-watching-bacardi-island-puntacana-to855",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/santo-domingo-full-day-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-catamaran-in-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/catalina-island-alto-de-chavon-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/saman-serenity-city-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/nightfall-buggies-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/power-adventure-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/power-fly-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/deep-sea-private-fishing-charter-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adrenaline-adventure-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/el-limon-waterfall-bacardi-island-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/vip-power-sailing-brunch-private-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/combo-jungle-buggies-zipline-adrenaline-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adventures-land-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/luxury-saona-and-catalina-private-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/full-day-all-access-with-wakeboard-flyboard-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/whale-watching-bacardi-island-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/mountain-ocean-and-tastings-all-in-one-day-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tropical-heaven-adventure-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/zip-lines-adrenaline-adventure-half-day-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/upgrade-your-experience-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/los-haitises-with-monta-a-redonda-adventure-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/eco-tour-finder-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphins-funtastic-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/deep-sea-half-day-shared-fishing-charter-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/complete-pass-full-day-with-wakeboard-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/whales-watching-el-limon-waterfall-adventure-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/greenwheels-eco-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphins-supremacy-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/saona-adventures-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jungle-buggies-adventure-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/combo-jungle-buggies-monkeyland-interaction-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/caribbean-splash-unleashing-the-wild-on-the-sea-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dominican-cultural-safari-full-day-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/shopping-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/buggy-clp-full-experience-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/traditions-tastings-beach-private-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-explorer-experience-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/power-dive-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/complete-pass-full-day-with-wakeboard-locals-or-residents-rates-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/swim-with-dolphins-dolphins-excellence-experience-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/zip-line-adventures-monkeyland-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/monkeyland-interaction-safari-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
     }
   ],
   "rewrites": [],
