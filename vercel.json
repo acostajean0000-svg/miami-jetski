@@ -3641,6 +3641,1271 @@
       "source": "/utv-jungle-safari-cancun-cancun",
       "destination": "/cancun-activities",
       "permanent": true
+    },
+    {
+      "source": "/snorkel-the-keys-key-largo-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-sail-key-west-private-charter-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/take-two-catamaran-sailing-key-largo-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/nothing-better-boat-rentals-cudjoe-key",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-fishing-charters",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-boat-tour-key-west-iii-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/marathon-jet-ski-rentals-wakezone-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-fishing-key-largo-charter-key-largo",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-boat-charter",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tropic-water-sports-key-largo-key-largo",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-fishing-guides-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-sailing-center-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/island-dolphin-care-key-largo-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tart-tales-key-west-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-clothing-optional-keys-bt74",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lagerheads-watersports-sandbar-trips-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-tiki-boat-rental-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-airboat-tours-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fl-keys-food-tour-golf-cart-islamorada",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-boat-tour-key-west-iv-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/offshore-fishing-florida-keys-reel-adventures-marathon",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/big-pine-boat-rentals-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-private-charters-snorkeling-islamorada-florida",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-largo-snorkel-park-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-clothing-optional-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adventures-key-west-fishing-charter-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/keys-kartz-golf-cart-rental-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/island-style-ride-golf-cart-rental-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-private-charters-custom-charter-islamorada-florida",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/southernmost-park-n-play-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/up-the-keys-aquarium-encounters-day-tour-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/marathon-jet-ski-rentals-wakezone-marathon",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paradise-rentals-kw-golf-cart-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cowgirl-45-premium-offshore-fishing-key-west-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-jet-ski-rental-hurricane-hole-florida-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/captain-pips-kokomo-4-seater-golf-cart-marathon-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/book-key-largo-fishing-charter-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sail-away-key-west-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jolly-rover-sailing-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/casual-monday-charters-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-water-tours-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-standup-paddle-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-golf-cart-rental",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fishing-charters-florida",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-sandbar-tours-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/turtle-hospital-tours-marathon-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-largo-adventures-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wakezone-watersports-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-electric-bikes-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atlantic-gulf-fishing-charters-marathon",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/snorkeling-florida-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/marathon-boat-rentals-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/danger-charters-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wakezone-watersports-marathon",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-clothing-optional-keys-js36",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-clothing-optional-keys-bt71",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-helicopter-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-watersports-key-west-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-beach-weekend-key-west-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-boat-rentals",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-boat-tour-key-west-iv-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-deep-sea-fishing-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/island-vibe-charters-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-water-sports-to88",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-boat-tour-key-west-ii-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-adventures-golf-cart-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-largo-glass-bottom-tours-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-eco-sailing-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miss-penny-day-fishing-charter-islamorada",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/marathon-water-sports",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-fishing-key-largo-charter-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tart-tales-key-west-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/florida-keys-sup-kayak-rental-paddle-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adventures-on-water-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-ghost-hunt-walking-tour-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fury-sunset-cruise-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-fishing-charters-florida-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/rumaway-lifestyle-islamorada",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seaeo-nautical-ventures-key-west-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/island-vibe-charters-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/southernmost-park-n-play-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-water-sports",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-largo-jet-ski-rentals-key-largo",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/original-key-west-pub-crawl-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-private-boat-tour-key-west-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/florida-keys-activities",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clear-kayak-tour-of-sugarloaf-key-sugarloaf-key",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-sail-key-west-private-charter-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/silent-world-key-largo-snorkel",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-sandbar-tours-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-clothing-optional-keys-bt72",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fl-keys-food-tour-golf-cart-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/reef-environmental-education-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/coastal-key-west-charters-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-charter-boats-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seaeo-nautical-ventures-marathon-marathon",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/boat-rentals-in-key-west-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/island-watersports-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/insider-s-hemingway-experience-key-west-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-boat-rentals-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/finz-dive-charters-spearfishing-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/things-to-do-florida-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/classic-harbor-line-key-west-sailing-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atlantic-gulf-fishing-charters-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/barefoot-billys-kw-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-largo-diving-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/grassy-key-marina-daily-jet-ski-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-sailing-adventures-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/salty-sandbars-key-west-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/book-key-largo-fishing-charter-key-largo",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paradise-rentals-kw-golf-cart-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fury-golf-cart-rentals-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-private-boat-tour-key-west-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-snuba-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fun-rentals-downtown-golf-cart-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-monkey-divers-florida-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-watersports-key-west-jet-ski-florida-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/salty-soul-charters-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hawaii-activities",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-clothing-optional-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/boat-rentals-florida-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-watersports-key-west-keys-js38",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/golf-cart-rental-key-west-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fury-watersports-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-largo-parasail-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-key-rides-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-key-rides-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-monkey-charters-keys-ws51",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-pirate-ship-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-private-charters-custom-charter-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tropic-water-sports-key-largo-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-tiki-boat-1-rental-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/robbie-of-islamorada-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-boat-tour-key-west-ii-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clear-kayak-tour-of-sugarloaf-key-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/rhum-runner-the-lagoon-at-grassy-key-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-safari-key-west-snorkel-tour",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-boat-rentals-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bone-island-rentals-golf-cart-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-activities",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-fishing-charters-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-private-charters-snorkeling-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sebago-keylargo-snorkel-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-key-west-2-hr-flagship-jet-ski-tour-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-adrenaline-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/insiders-hemingway-experience-key-west-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wakezone-watersports-keys-bt32",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-fishing-charters-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-tiki-boat-rental-key-west-florida",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-snorkel-tour-key-west-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cowboy-cowgirl-sportfishing-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/l-fish-fishing-charter-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-clothing-optional-keys-bt58",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adventures-key-west-fishing-charter-keys-fi6",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fly-key-west-helicopter-discovery-flight-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/southernmost-golf-carts-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/finz-dive-center-2-tank-private-dive-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pirates-cove-water-sports-key-largo",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-key-rides-golf-cart-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-private-charters-florida-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paddle-the-florida-keys-tavernier",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miss-penny-day-fishing-charter-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/spencers-boatyard-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-largo-adventures-islamorada-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-tiki-boat-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-jet-ski",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seaeo-nautical-ventures-marathon-marathon-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/golf-cart-rental-key-west-keys-gc9",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adventures-key-west-fishing-charter-keys-bt57",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/classic-harbor-schooner-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/rhum-runner-the-lagoon-at-grassy-key-marathon",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-monkey-charters-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/golf-cart-rentals-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/offshore-fishing-florida-keys-reel-adventures-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/up-the-keys-aquarium-encounters-day-tour-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-largo-boat-rentals-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seaeo-nautical-ventures-key-west-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/l-fish-fishing-charter-marathon",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/marathon-parasail-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/captain-stewy-s-boat-charters-key-largo-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-sail-key-west-luxury-charter-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/marathon-mermaid-keys-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jetski-rentals-marathon-best-price-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dirtyboat-fishing-charter--islamorada-islamorada",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/barefoot-billys-kw-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/robert-the-doll-after-dark-key-west-ghost-tour-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cowboy-cowgirl-sportfishing-key-west-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-private-charters-private-boat-charter-florida-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-sail-key-west-private-charter-keys-bt78",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/florida-keys-water-sports",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-watersports-key-west-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/marathon-eco-tours-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/original-key-west-pub-crawl-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sail-away-key-west-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-tiki-boat-1-rental-key-west-florida",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/conch-carts-golf-cart-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dirtyboat-fishing-charter-islamorada-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-eco-tours-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/spencers-boatyard-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-helicopter-tour",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/how-much-does-fishing-charter-cost-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-clothing-optional-keys-bt70b",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/z-flight-watersports-marathon-keys-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jetski-rentals-marathon-best-price-marathon",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-fishing-charters-ii-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/salty-soul-charters-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/robbies-of-islamorada-keys-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-beach-weekend-key-west-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/mintys-golf-cart-scooter-rental-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-safari-key-west-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/classic-harbor-line-key-west-sailing-miami",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-monkey-charters-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/salty-sandbars-boston-whaler-key-west-florida",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/captain-stewys-boat-charters-key-largo",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hydrothunder-golf-cart-rental-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pirates-cove-water-sports-key-largo-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aqua-boat-rentals-summerland-key",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/reef-quest-eco-boat-tours-two-hour-tour-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-golf-carts-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cudjoe-key-boat-rentals-florida-keys-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/conch-carts-golf-cart-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/salty-sandbars-half-day-charter-key-west-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-rentals-florida-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/danger-charter-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-water-sports",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/islamorada-boat-rentals-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jimmy-buffett-tour-key-west-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/southernmost-dive-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/finz-dive-center-2-tank-private-dive-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adults-only-swim-sunset-sail-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paddle-florida-keys-tavernier-miami",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paradise-rentals-kw-golf-cart-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-dolphin-watch-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adventures-on-water-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-largo-water-sports",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-sail-key-west-luxury-charter-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/keys-sandbar-adventures-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adventures-key-west-fishing-charter-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/golf-cart-rental-key-west-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/silent-world-key-largo-snorkel-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-boat-tour-key-west-iii-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-charter-snorkel-tour-key-west-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-largo-adventures-islamorada",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fly-key-west-helicopter-discovery-flight-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/coastal-key-west-charters-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/rumaway-lifestyle-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adultsonly-swim-sunset-sail-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/key-west-sailing-center-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/keys-sandbar-adventures-key-west-fl",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/grassy-key-marina-daily-jet-ski-marathon",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wakezone-watersports-jet-car-keys",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/six-fins-key-west-2-hr-flagship-jet-ski-tour-key-west",
+      "destination": "/key-west-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fury-water-adventures-key-west-keywest",
+      "destination": "/key-west-activities",
+      "permanent": true
     }
   ],
   "rewrites": [],
