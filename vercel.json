@@ -2326,6 +2326,571 @@
       "source": "/cudjoe-key-boat-rentals-florida-keys-cudjoe-key",
       "destination": "/florida-keys-water-sports",
       "permanent": true
+    },
+    {
+      "source": "/caribbean-wakeboard-center-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cap-cana-jet-ski-adventure-capcana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-fly-fishing-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fun-cat-watersports-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquazul-tours-bayahibe-saona",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-deep-sea-fishing-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-island-explorer-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-jet-ski-rental-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/caribbean-lake-park-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cap-cana-sport-fishing-charter-capcana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dominican-fun-adventures-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-glass-bottom-boat-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-eco-safari-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-parasailing-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bavaro-jet-ski-tours-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-cenote-swim-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hobie-cat-sailing-pc-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-atv-experience-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jungle-quad-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-city-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/runners-adventures-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bavaro-snorkel-dive-center-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-safari-jeep-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/caribbean-divers-boat-tours-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cap-cana-horseback-riding-capcana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bavaro-excursions-tours-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/canelo-tours-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dive-saona-adventures-bayahibe",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/macao-reef-fishing-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/go-kart-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/manati-park-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/coral-dreams-snorkel-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ocean-adventures-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-night-jeep-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jungle-buggy-tours-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-scuba-diving-bayahibe",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bayahibe-boat-adventures-bayahibe",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/outback-adventures-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ocean-world-adventure-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/zipline-sky-tours-pc-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/marinarium-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-dune-buggy-safari-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bavaro-flyboard-experience-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tropical-watersports-bavaro-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cap-cana-yacht-charter-capcana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-sport-fishing-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hydrobob-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/catalina-island-snorkel-cruise-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/saona-island-dream-catamaran-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bavaro-windsurf-sup-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bayahibe-sport-fishing-bayahibe",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dressel-divers-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-cruise-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-kiteboarding-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bavaro-adventure-park-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/night-fishing-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/coco-loco-watersports-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-sup-kayak-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-parasail-adventures-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bavaro-beach-club-watersports-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/macao-motocross-adventures-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pc-shark-diving-experience-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/saona-island-full-day-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kite-club-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/quadrimania-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/nativos-adventures-pc-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/coco-bongo-night-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/rancho-capote-horseback-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/macao-beach-jet-ski-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/blue-dream-catamaran-tours-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/scape-park-cap-cana-capcana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/runners-adventures-punta-cana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tiki-boat-party-cruise-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fun-buggy-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kite-beach-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/xtreme-adventures-pc-atv-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pink-party-boat-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aqua-action-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-tube-banana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-off-road-tours-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/caribbean-dunes-atv-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atv-zipline-combo-pc-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-jet-ski-beach-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/vive-nature-eco-adventures-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-zip-line-park-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/extreme-watersports-pc-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/macao-surf-school-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/macao-atv-adventures-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/natural-pool-catamaran-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bavaro-balloon-adventures-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bavaro-buggy-adventure-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cap-cana-deep-sea-fishing-capcana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/caribbean-watersports-bavaro-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/caribbean-fishing-adventures-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bavaro-splash-park-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/indigenous-eyes-ecological-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/heliair-punta-cana-tours-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cigar-rum-adventure-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-dream-fishing-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/saona-party-boat-express-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-scuba-academy-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aqua-mundo-boat-tours-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seabob-adventures-pc-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/manatee-divers-sea-tours-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pc-horseback-beach-ride-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/go-crazy-adventures-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/mangrove-kayak-eco-tour-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-pro-divers-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/shared-fishing-trip-bavaro-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/caribbean-charter-fishing-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/caribbean-helicopters-pc-capcana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pc-parasailing-flyboard-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adrenaline-park-punta-cana-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
     }
   ],
   "rewrites": [],
