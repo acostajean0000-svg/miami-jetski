@@ -4906,6 +4906,2336 @@
       "source": "/fury-water-adventures-key-west-keywest",
       "destination": "/keys-activities",
       "permanent": true
+    },
+    {
+      "source": "/birthday-water-sports-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-style-rentals-slingshot-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/little-harbor-watersports-ruskin",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/helicopter-tours-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pedego-electric-bikes-dunedin-dunedin",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-water-sports",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/eagles-air-tours-miami-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-dolphin-boat-tours-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sand-dollar-shelling-tours-goodland-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/broward-golf-cart-rentals-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquarius-boat-rental-miami-beach-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/salt-luxury-miami-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paradise-watersports-port-charlotte-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/madeira-beach-boat-rentals-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sky-tours-miami-south-beach-private-airplane-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/top-line-watersports-parasailing-miami-ws44",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tours-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/space-coast-kayak-eco-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ichetucknee-spring-tubes-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/system-shuttle-key-west-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/siesta-key-scooter-rentals-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atv-rentals-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-speed-boat-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/soflo-water-adventures-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bal-harbour-boat-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lighthouse-point-boat-rentals-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/itchetucknee-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-electric-boat-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/how-much-does-jet-ski-rental-cost-cancun",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/apalachicola-oyster-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-rentals-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-trikke-art-deco-segway-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/florida-island-tours-goodland-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/30a-water-sports",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-snorkeling-punta-cana",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ocean-force-adventures-private-miami-bt14",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-golf-cart-rentals-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/coastal-kayak-charters-tierra-verde-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-miami-rentals-miami-js35",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/golden-gate-airboat-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/horizon-yacht-rentals-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-miami-rentals-jet-car-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquaholic-charters-venice-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sf-jet-ski-rentals-key-biscayne-miami-js33",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ybor-city-golf-cart-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-segway-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/soflo-slings-white-red-roush-automatic-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-wet-watersports-singer-island-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/us2u-key-west-day-trip-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/flwow-rentals-electric-kick-scooter-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/siesta-key-golf-cart-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-tiki-boat-cruise-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-trikke-tours-premium-boat-miami-to34",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/100-miami-luxury-boat-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sole-watersports-miami-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-atv-adventures-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/showdown-atv-rentals-central",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-aqua-tours-nite-sea-party-cruise-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-night-fishing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-aqua-tours-nite-sea-party-cruise-miami-to75",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-boat-tour-vero-beach-river-explorer-verobeach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/travel-to-key-west-bus-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/30a-kayak-paddleboard-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/slingshot-rentals-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/water-sports-miami-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-trikke-tours-premium-boat-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/soflo-water-adventures-e-bike-airboat-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/one-hour-jet-ski-rental-miami-js9",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/100-miami-collins-ave-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sebastian-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wild-gator-airboat-adventures-lake-wales",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pinellas-kayak-adventures-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-activities",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/big-cypress-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/horse-riding-miami-countryside-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/biscayne-sailing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sf-jet-ski-rentals-jet-car-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chassahowitzka-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/100-miami-nw-21st-mega-yacht-miami-bt100",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/watersports-paradise-miami-beach-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/date-night-boat-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/everglades-adventure-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/keys-huka-dive-nokomis-nokomis",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/apalachicola-fishing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hunk-o-mania-male-revue-miami-beach-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sf-jet-ski-rentals-key-biscayne-key-biscayne",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/corporate-team-building-water-sports-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-rentals-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquasport-miami-flyboard-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sf-jet-ski-rentals-key-biscayne-miami-js29",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/conch-republic-seafood-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atv-rentals-florida-guide",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-river-boat-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/deep-sea-fishing-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-coast-atv-adventures-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/soflo-slings-miami-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paradise-powersports-golf-cart-new-smyrna-beach-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bike-rentals-miami-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lake-eola-paddleboat-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sf-jet-ski-rentals-miami-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/suwannee-river-canoe-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/package-deal-boat-jet-ski-atv-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/honeymoon-island-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wakezone-watersports-jet-car-conch-key",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sky-tours-miami-private-airplane-luxury-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aqua-tours-miami-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/florida-keys-water-sports-guide",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-atv-rentals-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/everglades-holiday-park-airboat-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bradenton-jet-ski-rental-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/coconut-grove-boat-rental-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/blue-spring-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/parasailing-miami-water-sports-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquafusion-combo-jet-ski-party-boat-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/doral-golf-cart-tours-miami-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pine-island-fishing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-water-sports-cancun",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/stuart-fishing-charters-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/takeovers-miami-2hr-utv-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/everglades-tours-from-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-car-rentals-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cigar-dinner-cruise-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-and-go-kayaking-weeki-wachee-spring-hill",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-party-boats-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/las-olas-boat-cruise-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/anna-maria-island-beach-rentals-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/us2u-miami-beach-city-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/livin-charters-golf-cart-nokomis-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sf-jet-ski-3-hour-watersport-excursion-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-boat-rentals-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/unlimited-biking-miami-beach-highlights-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/west-florida-water-sports",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lake-louisa-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/water-sports-tampa-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ichetucknee-springs-tubing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-real-yacht-experience-ii-miami-bt12",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-real-yacht-experience-ii-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/boat-rentals-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/north-miami-fishing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/yacht-rentals-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/altamar-trade-miami-river-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/top-line-watersports-jet-car-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/siesta-key-tiki-boat-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wekiva-springs-tube-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/golf-cart-rentals-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lake-toho-fishing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-style-rentals-electric-scooter-miami-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-trikke-tours-premium-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/100-miami-luxury-boat-rental-miami-bt81",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/horse-riding-in-miami-countryside-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ormond-beach-fishing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bayride-electric-boat-miami-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wynwood-art-walk-golf-cart-miami-miami-to57",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-coast-tours-goodland-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-trikke-tours-miami-br2",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tours-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/305-tours-electric-scooter-rental-miami-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/livin-charters-nokomis",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sailfish-marina-charters-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-bay-fun-boat-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sky-tours-miami-premium-aerial-experience-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/100-miami-nw-21st-mega-yacht-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/deerfield-beach-fishing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wekiva-wild-river-tours-longwood",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jupiter-outdoor-center-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-airboat-tours-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-beach-welcome-center-tour-pembroke-pines",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-helicopter-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sf-jet-ski-rentals-key-biscayne-miami-js32",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bobbys-bike-hike-miami-beach-food-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/top-line-watersports-parasailing-miami-ws48",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lido-key-water-sports-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wekiva-island-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jetski-rentals-south-beach-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/30a-golf-cart-rentals-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-aqua-tours-biscayne-bay-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/anna-maria-island-golf-cart-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ocean-force-adventures-marina-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-flyboard-brickell-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/brady-yaks-tours-cape-canaveral-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/vertigo-flyboard-miami-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/scooter-of-miami-miami-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-golf-cart-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/how-much-does-jet-ski-rental-cost-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sky-tours-miami-aerial-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-trikke-tours-boat-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sky-tours-miami-south-beach-private-airplane-tour-miami-to19",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bruschi-boat-rental-small-boat-miami-bt2",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chicago-liaison-tours-south-beach-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-dade-atv-off-road-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-walton-sailing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/florida-springs-kayaking",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/springs-coast-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/100-miami-26-bayliner-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/west-florida-activities",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-miami-rentals-miami-js42",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-boat-rentals-siesta-key-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/xcursions-usa-everglades-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lake-county-bass-fishing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/soflo-slings-whitered-roush-model-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/robin-hood-anna-maria-anna-maria-island",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/grayton-beach-boat-rentals-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/top-line-watersports-parasailing-miami-ws45",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/top-line-watersports-parasailing-miami-ws38",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/happy-cruises-miami-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/blue-spring-adventures-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/big-cypress-nature-tour-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sky-tours-miami-south-beach-private-airplane-tour-miami-to20",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fishing-charters-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-miami-rentals-miami-beach-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-and-go-kayaking-fort-pierce-fort-pierce",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/30a-bike-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-coast-water-sports",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/yaju-boat-tours-premium-miami-bt88",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-stuart-sandbar-cruise-treasure-coast-stuart",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-beach-golf-cart-tours-2-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jetski-rental-north-miami-beach-miami-js4",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-standup-sup-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-beach-welcome-center-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/how-much-does-snorkeling-cost-punta-cana",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-serpent-tours-staugustine-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/distraction-yachts-miami-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/full-day-private-boat-escape-anna-maria-island-annamariaisland",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/walks-nyc-boat-tour-miami-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/brickell-water-sports-miami-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hubbards-marina-deep-sea-madeira-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/yaju-boat-tours-standard-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/top-line-watersports-water-adventure-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gator-night-airboat-tour-sawgrass-recreation-park-fortlauderdale",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/travel-to-key-west-bus-tour-miami-to2",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jupiter-sailing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/family-jet-ski-rental-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-beach-bike-rentals-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tavernier-fishing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/flwow-rentals-50cc-scooter-miami-sc3",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-underground-pool-bike-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tallahassee-slingshot-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/capt-slate-underwater-photos-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/1hour-atv-adventure--miami-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-trikke-tours-premium-boat-miami-to28",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/100-miami-premium-charter-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-pirate-water-taxi-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/1-hour-atv-adventure-miami-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/us2u-everglades-tour-southwest-ranches",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sara-bay-sailing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hawk-cay-water-sports-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sebastian-inlet-surf-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-boat-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/longboat-key-parasail-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-party-yacht-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-car-rentals-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wynwood-art-walk-golf-cart-tour-miami-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunny-isles-water-sports-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/rotor-tour-helicopter-pembroke-pines",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/thriller-miami-speedboat-adventures-miami-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-tour-company-everglades-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-sunset-cruise-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/beach-activities-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/one-hour-jet-ski-rental-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bayside-marketplace-tours-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/parasailing-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/deerfield-beach-jet-ski-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/epic-hotel-boat-jet-ski-combo-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/brevard-parasail-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/takeovers-miami-2-hour-utv-tour-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/island-queen-cruises-miami-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/golf-cart-rentals-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dunedin-kayak-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sawgrass-recreation-park-weston",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-trikke-tours-premium-boat-miami-br10",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/melbourne-fishing-charters-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atv-rentals-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-coast-activities",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/305-tours-electric-scooter-miami-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wekiwa-springs-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-tiki-boat-tours-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jax-beach-golf-cart-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/top-line-watersports-parasailing-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fort-pierce-fishing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/navarre-beach-water-sports",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/robin-hood-golf-cart-anna-maria-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/yak-shack-mangrove-tour-palmetto-tampa-bay",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sweet-florida-rentals-dunnellon",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-boat-rides-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/florida-keys-sup-kayak-rental-paddle-keylargo",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/underground-donut-tour-wynwood-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paddle-hobie-sail-club-windsurfing-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/yaju-boat-tours-premium-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-aqua-tours-boat-tour-combo-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/slingshot-rentals-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-guided-swamp-walk-big-cypress-gallery-ochopee",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquasport-miami-premium-miami-ws27",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wet-rabbit-kayaks-silver-springs",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-trikke-tours-luxury-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-style-rentals-slingshot-miami-sc6",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/treasure-island-golf-cart-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sole-watersports-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aerial-tours-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/polaris-slingshot-rental-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/us2u-key-west-day-trip-miami-to70",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/duck-tours-south-beach-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wynwood-art-walk-golf-cart-miami-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/north-miami-divers-2-tank-dive-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/neptune-beach-surf-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/guided-kayak--beach-yoga-at-shell-key-preserve-tierra-verde",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-kiteboard-lessons-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-boat-rental",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/anna-maria-island-water-sports",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-catamaran-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/rotonda-west-golf-cart-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/305-offroading-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/charlotte-harbor-eco-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hope-and-joy-sanctuary-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/operator-template",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cape-crossing-wildlife-watersports-merritt-island-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/florida-springs-kayaking-silver-springs",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/305-offroading-miami-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/double-decker-bus-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/island-boat-adventures-gulfport",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/flwow-rentals-50cc-beach-scooter-miami-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/coastal-cruises-south-pasadena-south-pasadena",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-style-rentals-slingshot-miami-sl3",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-aqua-tours-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/flwow-rentals-50cc-scooter-miami-sc2",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/levique-tours-and-rentals-madeira-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/estero-bay-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-miami-rentals-edgewater-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-surfing-lessons-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/how-much-does-jet-ski-rental-cost-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lake-apopka-wildlife-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/100-miami-bayshore-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-miami-rentals-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kayaking-with-sassy-silver-springs",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wynwood-art-walk-miami-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hubbards-marina-madeira-beach-madeira-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-seaplane-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/venice-fl-tours-golf-cart-history-venice-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-rentals-miami-watersports-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-wakesurf-wakeboarding-lesson-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/one-hour-jet-ski-rental-miami-js3",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/100-miami-luxury-boat-rental-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-go-kayaking-shell-key-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pine-island-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-rentals-coconut-grove-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/soflo-water-adventures-e-bike-airboat-miami-ws42",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/brickell-slingshot-miami-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/glow-paddle-gulf-breeze-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-gorda-golf-cart-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/largo-water-sports-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-style-rentals-jet-ski-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/madeira-beach-parasail-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/innisfree-island-parasail-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/water-sports-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hunk-o-mania-male-revue-miami-beach-miami-to72",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wynwood-buggies-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/boca-grande-fishing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-jet-ski-jet-car-rentals-jet-car-west-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wannado-tours-miami-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kayaking-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-aqua-tours-nite-sea-party-cruise-miami-bt67",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sky-tours-miami-night-lights-airplane-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jetcar-1-hour-drive-a-car-on-water-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-rental-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/100-miami-nw-river-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-freedom-boat-club-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aura-yacht-experience-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquarius-boat-rental-boating-lesson-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/irb-boat-rental-indian-rocks-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/thriller-miami-tours-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jetski-rental-north-miami-beach-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/madeira-beach-water-sports",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-party-boat-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aerial-tours-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aventura-boat-rentals-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/us2u-miami-beach-city-tour-miami-to32",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-nightlife-boat-cruise-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-gorda-tiki-tiki-boat-cruise-goodland",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-yacht-rentals-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-jet-ski-rentals-miami-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bachelorette-water-sports-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-aqua-tours-nite-sea-party-cruise-miami-to73",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/how-much-does-parasailing-cost-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-trikke-tours-premium-boat-miami-br11",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-aqua-tours-nite-sea-party-cruise-miami-to76",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/high-tide-adventure-co-miramar-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kayak-excursions-pelican-bay-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atv-of-miami-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-kiteboarding-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/scooter-of-miami-premium-scooter-rental-miami-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/top-line-watersports-parasailing-miami-jc3",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/showdown-atv-rentals-mulberry",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/yankee-freedom-iii-dry-tortugas-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-aqua-tours-pirate-boat-cruise-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ami-jetcar-palmetto",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/siesta-key-water-sports-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-bottom-fishing-eight-hours-panamacity",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquarius-boat-rental-miami-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-boat-club-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sky-tours-miami-south-beach-private-airplane-tour-miami-to22",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hernando-beach-fishing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/banana-river-lagoon-canaveral-locks-boat-tour-merrittisland",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/flyso-miami-beach-parasail-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sf-jet-ski-rentals-key-biscayne-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-airboat-tours-2-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/weston-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-eco-adventures-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/merritt-island-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquasport-miami-premium-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/anna-maria-fishing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wynwood-graffiti-experience-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/open-miami-private-everglades-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/red-boat-tours-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tequesta-snorkel-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-style-rentals-biscayne-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/everglades-activities",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-diver-scuba-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/vero-beach-water-sports",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/rock-springs-guest-ranch-sorrento",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquarius-boat-rental-boating-lesson-miami-bt86",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/siesta-key-sailing-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bruschi-boat-rental-small-boat-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/singer-island-water-sports-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/real-florida-adventures-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/scooter-rentals-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crystens-holmes-beach",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sky-tours-miami-south-beach-private-airplane-tour-miami-to11",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hutchinson-island-water-sports-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cooper-city-airboat-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/yak-shack-kayak-rentals-emerson-point-palmetto-tampa-bay",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/305-tours-rentals-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-luxury-jet-ski-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-lobster-diving-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/us2u-key-west-dolphin-spotting-boat-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-golf-cart-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-fishing-trips-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-team-party-golf-cart-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/homestead-airboat-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-parasailing-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/top-line-watersports-atv-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-standup-paddle-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-coast-water-sports-guide",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/three-lakes-wildlife-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/new-smyrna-beach-surf-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-tiki-bar-boat-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/padl-bike-rentals-virginia-key-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-trikke-tours-premium-boat-miami-to10",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-scooter-rentals-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/mount-dora-boat-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-trikke-tours-premium-boat-miami-br3",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/indian-rocks-beach-kayak-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ocean-force-adventures-private-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lake-city-slingshot-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/biscayne-national-underwater-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/juno-beach-surf-lessons-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/slinki-motors-jet-car-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/us2u-miami-beach-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jetski-rental-north-miami-beach-miami-ws43",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/snorkeling-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bike-rentals-florida",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/all-water-excursions-naples-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jupiter-inlet-tours-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/party-boat-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-jet-ski-rentals-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-style-rentals-slingshot-miami-js10",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/nona-adventure-park-fl",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wr-jet-ski-rentals-bradenton-florida",
+      "destination": "/miami-activities",
+      "permanent": true
     }
   ],
   "rewrites": [],
