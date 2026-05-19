@@ -3121,6 +3121,526 @@
       "source": "/monkeyland-interaction-safari-puntacana",
       "destination": "/punta-cana-activities",
       "permanent": true
+    },
+    {
+      "source": "/yoga-sound-bath-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/scuba-diving-beginners-tour-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cozumel-jeep-safari-snorkel-cozumel",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-cruise-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/parasailing-cancun-hotel-zone-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cancun-snorkeling-ruins-combo-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dune-buggy-cancun-tour-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/horseback-riding-beach-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/parasail-cancun-adventures-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/isla-mujeres-golf-cart-day-islamujeres",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sian-kaan-biosphere-expedition-siankaan",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/luxury-cenote-private-tour-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cancun-mangroves-speedboat-tour-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/deep-blue-fishing-charter-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cancun-surf-lessons-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jungle-tour-speed-boat-snorkeling-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/selvatica-adventure-park-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/1-hour-jet-ski-rental-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/deep-sea-fishing-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cancun-kitesurfing-school-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/night-fishing-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/party-catamaran-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/xenotes-cenote-adventure-playadelcarmen",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cozumel-scuba-diving-day-cozumel",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/helicopter-tour-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tequila-tasting-food-pairing-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/searay-50-yacht-charter-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/isla-mujeres-catamaran-day-islamujeres",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cancun-lagoon-jet-ski-vip-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/flyboard-experience-20-mins-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/holbox-island-full-day-tour-holbox",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/azimut-80-luxury-yacht-charter-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/banana-boat-tube-rides-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-sunset-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fly-fishing-yucatan-flats-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/guided-jet-ski-mangrove-tour-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/merida-cenote-day-trip-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/quad-bike-cancun-adventure-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquaworld-water-sports-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cenote-snorkel-dive-tour-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/xel-ha-all-inclusive-water-park-tulum",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cozumel-catamaran-day-trip-cozumel",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-speedboat-charter-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/glass-bottom-boat-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sailing-snorkeling-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bacalar-lagoon-day-trip-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/xikbal-eco-park-all-inclusive-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sport-fishing-cancun-charter-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/xenses-park-half-day-playadelcarmen",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bull-shark-dive-playa-del-carmen-playadelcarmen",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tulum-atv-cenote-combo-tulum",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/coba-ruins-bike-climb-tour-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/coba-tulum-day-tour-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aqua-combo-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/motocross-jungle-cancun-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/catamaran-snorkel-reef-tour-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/skydiving-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/trimaran-snorkel-isla-mujeres-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paddleboard-kayak-rentals-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hot-air-balloon-teotihuacan-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/playa-del-carmen-jet-ski-playadelcarmen",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atvs-cenote-transportation-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/playa-del-carmen-catamaran-playadelcarmen",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wakeboard-water-ski-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/catamaran-to-isla-mujeres-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cancun-photo-tour-sunrise-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cancun-cooking-class-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/luxury-catamaran-party-boat-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hydrobob-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cancun-atv-jungle-cenote-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/holbox-island-speedboat-tour-holbox",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/go-kart-cancun-racing-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/musa-underwater-museum-dive-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/snorkeling-expedition-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aktun-chen-nature-park-playadelcarmen",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/zipline-over-cenote-cancun-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cancun-night-tour-tequila-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/catamaran-al-amanecer-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/30-min-jet-ski-rental-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chichen-itza-day-tour-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tulum-ruins-day-trip-tulum",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/whale-shark-tour-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/snorkeling-zip-lines-rappel-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/xplor-adventure-park-playadelcarmen",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tequila-tasting-at-fishermans-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cancun-city-tour-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tour-to-contoy-isla-mujeres-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/xcaret-park-day-trip-playadelcarmen",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-trek-underwater-walk-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/speedboat-snorkel-tour-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tulum-zip-lines-rappel-snorkel-41-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cancun-atv-jungle-adventure-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-reef-adventure-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cenote-swimming-tour-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/nighttime-snorkeling-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cancun-local-food-experience-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquaworld-catamaran-cancun-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/open-water-diver-course-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tequila-mixology-class-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cancun-tuna-dorado-fishing-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ek-balam-cenote-tour-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jet-ski-isla-mujeres-tour-cancun-hz",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cozumel-fishing-charter-cozumel",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/utv-jungle-safari-cancun-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
     }
   ],
   "rewrites": [],
