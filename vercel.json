@@ -11291,6 +11291,201 @@
       "source": "/your-jamaican-tour-guide-mayfield-falls-palm-bay",
       "destination": "/space-coast-activities",
       "permanent": true
+    },
+    {
+      "source": "/wandering-palm-adventures-orlando-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/stroke-of-art-wheel-throwing-pottery-centralfl",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/raised-by-water-airboat-adventures-sanford",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/venture-outdoors-llc-centralfl",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-french-company-orlando-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/luxe-jet-ski-rental-orlando-centralfl",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/epic-paddle-adventures-orlando-fl",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/nation-van-rentals-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-french-company-orlando-centralfl",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pirates-dinner-adventure-orlando-centralfl",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/raised-by-water-airboat-adventures-centralfl",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/speakeasy-murder-mystery-dinner-show-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/venture-outdoors-llc-apopka-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chocolate-kingdom-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chocolate-kingdom-orlando-fl",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/stroke-of-art-wheel-throwing-pottery-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/nation-van-rentals-orlando-fl",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wandering-palm-adventures-orlando-centralfl",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-and-go-kayaking-winter-park-winter-park",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/epic-paddle-adventures-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-and-go-kayaking-winter-park-winter-park-fl",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pirates-dinner-adventure-orlando-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/swim-with-manatees-homosassa-westfl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/salty-siren-tours-crystal-river-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/florida-springs-kayaking-silver-springs-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/luxe-jet-ski-rental-orlando-clermont",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kachunga-lake-panasoffkee-lake-panasoffkee",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crystal-river-preserve-adventures-westfl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/see-crystal-river-westfl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-go-kayaking-silver-springs-centralfl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kayaking-with-sassy-silver-springs-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kacey-s-custom-adventures-crystalriver",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-and-go-kayaking-weeki-wachee-spring-hill-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-and-go-kayaking-silver-springs-silver-springs",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jones-air-sea-centralfl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paddles-outdoor-rentals-crystal-river-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/explorida-manatee-cruise-crystalriver",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jones-air-sea-tavares",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wet-rabbit-kayaks-silver-springs-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
     }
   ],
   "rewrites": [],
