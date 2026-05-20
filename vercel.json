@@ -8061,6 +8061,1456 @@
       "source": "/palm-beach-scuba-fl",
       "destination": "/palm-beach-activities",
       "permanent": true
+    },
+    {
+      "source": "/top-car-share-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chadillac-adventures-cove-cay-clearwater",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/water-sports-sarasota-florida",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-daddys-3hr-adventure-diving-crystal-river-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/heron-harbor-private-yacht-charter-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/thrill-trek-adventures-tallahassee-tallahassee",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/superior-slingshot-rentals-golf-cart-destin-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/727-slingshots-4seater-st-petersburg-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/venice-slingshot-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ho2-pensacola-beach-pensacola-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/go-local-manatee-tours-crystal-river",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destiny-water-adventures-fort-walton-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-sunset-cruise-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-fishing-charters-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/surfit-usa-sarasota-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hangout-by-the-sea-golf-cart-panama-city-beach-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/little-harbor-watersports-ruskin-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/happy-paddler-kayak-tours-bradenton-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-electric-boat-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/father-daughter-charters-bradenton-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hubbards-marina-deep-sea-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crystal-river-fishing-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/river-safaris-homosassa-homosassa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/helicopter-aerial-tour-tampa-bay-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-beach-golf-cart-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-go-kayaking-crystal-river-springs-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-island-jet-ski-adventure-clearwater-beach-clearwater",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/indian-rocks-golf-cart-rentals-clearwater-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hubbards-marina-madeira-beach-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-slingshot-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/idle-speed-watersports-premium-golf-cart-clearwater-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-andrews-adventures-panama-city-panama-city",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/panama-city-beach-dolphin-sightseeing-cruise-panamacity",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/good-vibes-island-rides-6-seat-electric-golf-cart-sarasota-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aoa-fun-poe-springs-tube-high-springs",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jp-jet-ski-rental-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-petersburg-distillery-tour-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tarpon-springs-sponge-dive-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-coast-excursions-panama-city",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fish-dive-tampa-clearwater-fishing-charter-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-kayak-tours-sarasota-florida",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clear-kayaking-tours-crystal-river-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-city-sightseeing-tour-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/splash-n-dash-jet-ski-rental-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/glow-boats-kayaking-bradenton-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-golf-cart-tours-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-riverwalk-rentals-westfl-jc11",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-scenic-bay-cruise-pensacola-beach-pensacolabeach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fast-and-furious-slingshot-rentals-brooksville-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-beach-scooter-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/panama-city-beach-water-sports",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wr-jet-ski-rentals-bradenton-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/727-slingshots-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-private-yachts-luxury-charter-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kokomo-charters-sarasota-boat-tour-gulf-bt80",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/beach-jetski-llc-wave-runner-dunedin-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/side-x-side-st-pete-westfl-at12",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-manatee-tours-crystal-river-florida",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/homosassa-river-adventures-homosassa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-tiki-boat-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/marco-fun-four-seat-golf-cart-marco-island-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crab-island-luxury-adventures-premium-miramar-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-screamer-panama-city-beach-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/salty-fins-tours-panama-city-beach-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kokomo-charters-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-beach-water-sports",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-flyboard-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-glass-bottom-boat-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-fishing-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/captain-clearwater-belleair-bluffs",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paddle-boards-kayaks-st-pete-beach-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cigar-dinner-cruise-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-catamaran-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-helicopter-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-and-go-kayaking-homosassa-homosassa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquarius-boat-rental-boating-lesson-miami-js40",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pedego-electric-bikes-dunedin-dunedin-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fun-florida-tours-clear-kayak-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crystal-river-preserve-adventures-crystal-river",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/greek-town-golf-carts-tarpon-springs-florida",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/honeymoon-island-jet-ski-tour-clearwater-beach-florida",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-bay-boating-adventures-tampa-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-bay-boating-adventures-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/niceville-kayak-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-bonfire-company-florida",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/j2-boats-madeira-beach-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cbs-outfitters-20ft-pontoon-rental-siesta-key-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-beach-water-sports",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-private-yachts-premium-charter-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-pelican-llc-st-petersburg-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chadillac-adventures-clearwater-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/power-up-watersports-fort-walton-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jungle-prada-site-history-tour-st-pete-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kokomo-charters-sarasota-boat-tour-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/monkey-island-adventures-marina-homosassa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-life-kayak-adventures-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-tiki-cruise-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-slingshot-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/parasail-low-tide-sarasota-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-islands-ferry-bradenton-bradenton",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-and-go-kayaking-robinson-preserve-bradenton-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wet-n-wild-watersports-destin-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-catamaran-tours-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-flyboard-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cruisin-tikis-st-pete-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-slingshot-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-helicopter-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/beach-scooter-bike-rentals-golf-cart-clearwater-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/beach-sand-sculptures-artisan-experience-30a-south-walton",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-wet-fl-jet-car-st-petersburg",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/parasail-low-tide-tours-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-dolphin-cruise-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/helicopter-aerial-tour-tampa-bay-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-flyboard-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-party-boat-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/glow-boats-kayaking-bradenton-bradenton",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-scuba-dive-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/multi-day-e-bike-rental-dunedin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-snorkel-tours-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-catamaran-tours-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-beach-atv-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dockside-watersports-destin-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-coast-kayak-sirenia-vista-park-gulf-ws16",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-snorkel-tours-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tailfins-island-adventure-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dessert-madness-pensacola-food-tour-florida",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-andrews-adventures-golf-cart-panama-city-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/siesta-key-kayak-paradise-adventures-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/monkey-island-adventures-homosassa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/salty-siren-tours-crystal-river",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-golf-cart-tours-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-beach-dolphin-scenic-cruise-florida",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-beach-boat-rentals-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-bay-explorers-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-pink-pelican-tiki-st-pete-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/honeymoon-island-jet-ski-tour-clearwater-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-jet-ski-rentals-destin-florida",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/boogies-watersports-destin-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/town-golf-carts-port-st-joe-port-st-joe",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-islands-ferry-bradenton-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crab-island-luxury-adventures-miramar-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/water-sports-clearwater-florida",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/frisky-mermaid-dolphin-tours-pensacola-beach-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-helicopter-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-water-sports",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-sailing-charters-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-rocket-gulf-coast-parasail-bradenton-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/beach-jetski-llc-wave-runner-rentals-dunedin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cb-s-saltwater-outfitters-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/multi-day-e-bike-rental-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/siesta-key-watersports-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/good-vibes-island-rides-golf-cart-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crystal-river-activities",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/surfit-usa-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/robin-hood-rentals-golf-cart-siesta-key-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-dolphin-watch-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/boat-tours-clearwater",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kayaking-srq--sarasota-kayak-tours-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-parasail-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kitty-hawk-destin-parasailing-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-coast-kayak-sirenia-vista-park-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/johns-pass-parasail-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-atv-tours-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-dolphin-quest-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aoa-fun-poe-springs-kayak-high-springs",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-fishing-charters-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/natures-discovery-crystal-river",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fort-walton-slingshot-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwake-watersports-clearwater-beach-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tarpon-springs-boat-tours-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cbs-outfitters-27ft-pontoon-rental-siesta-key-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/venice-beach-kayak-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aqua-riders-jet-ski-rental-sarasota-florida",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/big-shot-slingshot-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/greek-town-golf-carts-tarpon-springs-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-beach-clear-kayak-tour-clearwater-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lady-delana-alys-fireworks-cruise-miramar-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tropical-mokes-white-moke-rental-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chilly-down-charters-panama-city-panama-city",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fort-walton-beach-water-sports",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crystal-river-water-sports",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/homosassa-springs-diving-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/elite-watersports-st-pete-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/side-x-side-st-pete-st-petersburg",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-beach-weekend-fort-walton-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/low-tide-tours-siesta-key-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-stand-up-paddle-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-coast-kayak-sirenia-vista-park-ii-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/big-angler-fishing-clearwater-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seaeo-nautical-ventures-st-petersburg-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paradise-adventures-sarasota-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/see-crystal-river-crystal-river",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-scuba-diving-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-life-encounter-cruise-sarasota-bay-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/boat-charter-fl-st-petersburg-st-petersburg",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tv-boat-rentals-st-petersburg",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chilly-down-morning-mimosa-cruise-panama-city",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-snorkel-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-sailing-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-riverwalk-rentals-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-flyboard-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/things-to-do-clearwater-water",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fort-walton-golf-cart-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/giraffe-ranch-cybertruck-safari-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/monkey-island-adventures-golf-cart-homosassa-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-parasail-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-beach-parasail-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/portofino-adventures-golf-cart-pensacola-beach-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-pelican-llc-st-petersburg-st-petersburg",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-coast-kayak-sirenia-vista-park-crystal-river",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/irb-boat-rental-indian-rocks-beach-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paddles-outdoor-rentals-crystal-river",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tropical-mokes-white-moke-rental-clearwater",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/suncoast-watersports-st-pete-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/top-car-share-tampa-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-pirate-cruise-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crystal-river-watersports-centralfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-party-boat-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ride-a-moke-golf-cart-rental-siesta-key-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/beachside-motorsports-golf-cart-panama-city-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-sailing-squadron-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-wet-fl-jet-car-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-golf-cart-tours-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tarpon-springs-ghost-tour-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-and-go-kayaking-robinson-preserve-bradenton",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lebarge-tropical-cruises-sarasota-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/splash-n-dash-jet-ski-rental-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-sunset-cruises-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-fishing-charters-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-quest-clearwater-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-beach-golf-cart-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/elite-watersports-st-pete-st-petersburg",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/12person-pontoon-boat-rental--crab-island-destin-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/big-shot-slingshot-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kayaking-srq-sarasota-kayak-tours-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tarpon-springs-water-sports",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sharkeys-glass-bottom-tours-st-pete-beach-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-go-kayaking-crystal-river-springs-crystal-river",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/blue-heaven-river-tours-homosassa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kokomo-charters-sarasota-boat-tour-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seaeo-nautical-ventures-st-petersburg",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-wet-fl-jet-ski-dolphin-excursion-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jp-jet-ski-rental-bradenton",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-island-jet-ski-adventure-clearwater-beach-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/parasail-low-tide-private-parasailing-sarasota-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquaholic-charters-venice",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-crab-island-pontoon-excursion--fort-walton-beach-fort-walton-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bike-the-beach-pcb-manual-slingshot-panama-city-beach-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/morning-eco-tour-latitudes-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-slingshot-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-activities",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crystal-river-scallop-tours-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gators-parasail-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/good-vibes-island-rides-golf-cart-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-pete-beach-slingshot-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-coast-kayak-sirenia-vista-park-ii-crystal-river",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paradise-island-pontoon-rentals-clearwater-beach",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-helicopters-premium-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crab-island-water-sports-destin-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-private-yachts-premium-charter-westfl-to82",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-water-taxi-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clearwater-party-boat-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/boat-charter-fl-st-petersburg-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-beach-water-sports",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crab-island-watersports-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/panama-city-snorkel-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/low-tide-tours-venice-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-riverwalk-rentals-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquaholic-charters-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/john-s-pass-waverunner-madeira-beach-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampas-slingshot-rentals-blue-automatic-lutz-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-helicopters-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adventures-beach-rentals-golf-cart-clearwater-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sarasota-water-sports",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/blackwater-joes-canoes-holt-pensacola",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/charter-finders-dolphin-shelling-cruise-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crystal-river-boat-tours-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crystal-river-diving-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/father-daughter-charters-gulf",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sup-paddle-in-florida-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chadillac-adventures-cove-cay-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/staying-afloat-party-boat-tampa-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-daddys-3hr-adventure-diving-crystal-river-crystal-river",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-water-sports-clearwater-florida",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquaholic-charters-gulf-js39",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/charter-finders-private-dolphin-shelling-cruise-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paradise-adventures-pcb-panama-city-beach-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/weeki-wachee-springs-state-park-weeki-wachee",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/side-x-side-st-pete-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-islands-ferry-bradenton-westfl-js37",
+      "destination": "/west-florida-activities",
+      "permanent": true
     }
   ],
   "rewrites": [],
