@@ -7841,6 +7841,226 @@
       "source": "/key-west-day-tours-broward",
       "destination": "/fort-lauderdale-activities",
       "permanent": true
+    },
+    {
+      "source": "/boca-raton-scuba-fl",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/manatee-kayaking-company-fort-myers-fl",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/palm-beach-golf-cart-tours-fl",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/south-florida-slingshot-rentals-greenacres",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jupiter-outdoor-center-jupiter",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/palm-beach-water-sports",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/boca-raton-water-sports",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pontiki-jupiter-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/boca-raton-sailing-fl",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seaside-bicycle-rentals-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/loggerhead-marinelife-center-guided-tour-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ghosts-of-palm-beach-ghost-tour-palm-beach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/50-private-catamaran-excursion-boca-raton-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-go-kayaking-jupiter-inlet-lighthouse-jupiter-palm-beach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/xela-expeditions-night-shark-drift-snorkel-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/treasure-coast-river-cruises-stuart",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cruisin-tikis-west-palm-beach-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/snorkeling-palm-beach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/palm-beach-boat-tours",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jupiter-florida-water-sports",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/xela-expeditions-night-shark-drift-snorkel-west-palm-beach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cruisin-tikis-west-palm-beach-tiki-boat-tours-florida",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pontiki-jupiter-jupiter",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/visit-palm-beach-snorkel-west-palm-beach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/blue-heron-bridge-snorkel-tour-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-go-kayaking-jupiter-inlet-lighthouse-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/palm-beach-water-sports-guide",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bulk-candy-store-west-palm-beach-fl",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jupiter-outdoor-center-jupiter-fl",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/palm-beach-activities",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ghosts-of-palm-beach-ghost-tour-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/rush-slingshots-blue-automatic-west-palm-beach-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/visit-palm-beach-snorkel-palmbeach-bt44",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/visit-palm-beach-west-palm-beach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/blue-heron-fishing-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/downtown-west-palm-beach-walking-food-tour-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jupiter-water-tours-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/reel-floridian-inshore-fishing-jupiter-ftlauderdale",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/west-palm-beach-water-sports",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/50-private-catamaran-excursion--boca-raton-boca-raton",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/visit-palm-beach-snorkel-palmbeach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/delray-beach-water-sports",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/palm-beach-ebike-rentals-west-palm-beach-fl",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/palm-beach-scuba-fl",
+      "destination": "/palm-beach-activities",
+      "permanent": true
     }
   ],
   "rewrites": [],
