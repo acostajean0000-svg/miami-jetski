@@ -4751,6 +4751,11 @@
       "source": "/salty-rentals-golf-cart-new-smyrna-beach-fl",
       "destination": "/central-florida-activities",
       "permanent": true
+    },
+    {
+      "source": "/jet-ski-rentals-florida",
+      "destination": "/miami-activities",
+      "permanent": true
     }
   ],
   "rewrites": [
