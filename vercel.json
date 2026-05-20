@@ -4068,11 +4068,6 @@
       "permanent": true
     },
     {
-      "source": "/florida-keys-activities",
-      "destination": "/keys-activities",
-      "permanent": true
-    },
-    {
       "source": "/clear-kayak-tour-of-sugarloaf-key-sugarloaf-key",
       "destination": "/keys-activities",
       "permanent": true
@@ -4233,11 +4228,6 @@
       "permanent": true
     },
     {
-      "source": "/hawaii-activities",
-      "destination": "/keys-activities",
-      "permanent": true
-    },
-    {
       "source": "/six-fins-charter-clothing-optional-keys",
       "destination": "/keys-activities",
       "permanent": true
@@ -4334,11 +4324,6 @@
     },
     {
       "source": "/bone-island-rentals-golf-cart-key-west-fl",
-      "destination": "/keys-activities",
-      "permanent": true
-    },
-    {
-      "source": "/key-west-activities",
       "destination": "/keys-activities",
       "permanent": true
     },
@@ -5268,11 +5253,6 @@
       "permanent": true
     },
     {
-      "source": "/tampa-activities",
-      "destination": "/miami-activities",
-      "permanent": true
-    },
-    {
       "source": "/big-cypress-kayak-fl",
       "destination": "/miami-activities",
       "permanent": true
@@ -5878,11 +5858,6 @@
       "permanent": true
     },
     {
-      "source": "/west-florida-activities",
-      "destination": "/miami-activities",
-      "permanent": true
-    },
-    {
       "source": "/jet-ski-miami-rentals-miami-js42",
       "destination": "/miami-activities",
       "permanent": true
@@ -6193,11 +6168,6 @@
       "permanent": true
     },
     {
-      "source": "/beach-activities-florida",
-      "destination": "/miami-activities",
-      "permanent": true
-    },
-    {
       "source": "/one-hour-jet-ski-rental-miami",
       "destination": "/miami-activities",
       "permanent": true
@@ -6264,11 +6234,6 @@
     },
     {
       "source": "/atv-rentals-miami",
-      "destination": "/miami-activities",
-      "permanent": true
-    },
-    {
-      "source": "/gulf-coast-activities",
       "destination": "/miami-activities",
       "permanent": true
     },
@@ -6974,11 +6939,6 @@
     },
     {
       "source": "/miami-style-rentals-biscayne-miami",
-      "destination": "/miami-activities",
-      "permanent": true
-    },
-    {
-      "source": "/everglades-activities",
       "destination": "/miami-activities",
       "permanent": true
     },
@@ -7718,11 +7678,6 @@
       "permanent": true
     },
     {
-      "source": "/fort-lauderdale-activities",
-      "destination": "/fort-lauderdale-activities",
-      "permanent": true
-    },
-    {
       "source": "/fort-lauderdale-tiki-boat-fl",
       "destination": "/fort-lauderdale-activities",
       "permanent": true
@@ -7984,11 +7939,6 @@
     },
     {
       "source": "/jupiter-outdoor-center-jupiter-fl",
-      "destination": "/palm-beach-activities",
-      "permanent": true
-    },
-    {
-      "source": "/palm-beach-activities",
       "destination": "/palm-beach-activities",
       "permanent": true
     },
@@ -8823,11 +8773,6 @@
       "permanent": true
     },
     {
-      "source": "/crystal-river-activities",
-      "destination": "/west-florida-activities",
-      "permanent": true
-    },
-    {
       "source": "/surfit-usa-sarasota",
       "destination": "/west-florida-activities",
       "permanent": true
@@ -9309,11 +9254,6 @@
     },
     {
       "source": "/st-pete-slingshot-fl",
-      "destination": "/west-florida-activities",
-      "permanent": true
-    },
-    {
-      "source": "/destin-activities",
       "destination": "/west-florida-activities",
       "permanent": true
     },
@@ -9968,11 +9908,6 @@
       "permanent": true
     },
     {
-      "source": "/naples-activities",
-      "destination": "/gulf-coast-activities",
-      "permanent": true
-    },
-    {
       "source": "/power-up-watersports-jet-ski-rental-fort-walton-beach-florida",
       "destination": "/gulf-coast-activities",
       "permanent": true
@@ -10069,11 +10004,6 @@
     },
     {
       "source": "/sanibel-island-water-sports",
-      "destination": "/gulf-coast-activities",
-      "permanent": true
-    },
-    {
-      "source": "/fort-myers-activities",
       "destination": "/gulf-coast-activities",
       "permanent": true
     },
@@ -11486,9 +11416,432 @@
       "source": "/wet-rabbit-kayaks-silver-springs-fl",
       "destination": "/central-florida-activities",
       "permanent": true
+    },
+    {
+      "source": "/mertailors-mermaid-aquarium-encounter-lecanto",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/zoom-air-zipline-daytona-beach-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/orlando-atv-polk-city-centralfl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tpa-shuttles-mco-to-tampa-orlando-tampa",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/anastasia-watersports-paddle-rental-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/port-canaveral-fishing-fl",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-waverunner-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ocala-horse-eco-tours-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/punta-cana-scuba-diving-bayahbe",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cocoa-beach-scuba-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/vero-tackle-watersports-vero-beach",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/x-terrains-ohv-adventures-central-florida",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-water-sports-fl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jacksonville-golf-cart-tours-fl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/boat-rentals-fort-lauderdale",
+      "destination": "/fort-lauderdale-activities",
+      "permanent": true
+    },
+    {
+      "source": "/white-red-roush-model-automatic-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/nights-of-lights-tour-st-augustine-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/amelia-island-adventures-yulee-amelia-island",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ami-jetcar-palmetto-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/carriage-tours-events-private-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jacksonville-catamaran-fl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ocala-silver-springs-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-tiki-boat-fl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquazul-tours-bayahbe",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jones-air-sea-premium-centralfl-ae5",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/amelia-island-adventures-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-beach-dolphin-tours-daytona-beach",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tampa-atv-rentals-tampa-area",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/salt-life-expeditions-new-smyrna-beach",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/revolution-offroad-clermont-centralfl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-beach-jet-ski-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tpa-shuttles-mco-to-tampa-centralfl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/everglades-holiday-park-everglades",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paddleboard-new-smyrna-new-smyrna-beach",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/zoom-air-zipline-daytona-beach-nefl-bt56",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wekiwa-springs-kayak-canoe-centralfl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/old-city-carriages-st-augustine-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-tiki-boat-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/corks--forks-food-tour--st-augustine-st.-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/1-hour-atv-adventure-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/amelia-island-golf-cart-fl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/luxe-atv-rentals-bunnell",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/holly-bluff-marina-kayak-canoe-rental-deland",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jacksonville-fishing-2-fl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-golf-cart-tours-fl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-beer-bus-craft-beer-tour-st-augustine-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jacksonville-fishing-fl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/mosquito-lagoon-flats-fishing-oak-hill-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/anderson-s-outdoor-adventures-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/carriage-tours-events-classic-nefl-to65",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cocoa-beach-boat-rentals-fl",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/space-shuttle-excursions-lighthouse-tour-space",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aoa-fun-poe-springs-kayak-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cocoa-beach-water-sports-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aoa-fun-poe-springs-tube-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/carriage-tours-events-classic-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jones-brothers-gator-wildlife-air-tour-centralfl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/zoom-air-zipline-daytona-beach-daytona-beach",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/river-taxi-tours-jacksonville-jacksonville",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/corks-forks-food-tour-st-augustine-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lake-harris-boat-rentals-leesburg",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/titusville-manatee-kayak-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sandsurfer-e-skate-tours-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-boat-rentals-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pink-party-boat-punta-cana-punta-cana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cocoa-beach-golf-cart-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/holly-bluff-marina-houseboat-rental-centralfl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/river-taxi-tours-jacksonville-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-stuart-sandbar-cruise-treasure-coast-centralfl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bioluminescent-comb-jelly-glow-kayak-tour-titusville",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ocala-slingshot-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gainesville-slingshot-fl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/melbourne-kayak-rentals-florida",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/salty-rentals-golf-cart-new-smyrna-beach-fl",
+      "destination": "/central-florida-activities",
+      "permanent": true
     }
   ],
-  "rewrites": [],
+  "rewrites": [
+    {
+      "source": "/fort-lauderdale-activities",
+      "destination": "/broward-activities"
+    },
+    {
+      "source": "/west-florida-activities",
+      "destination": "/gulf-activities"
+    },
+    {
+      "source": "/gulf-coast-activities",
+      "destination": "/gulf-activities"
+    },
+    {
+      "source": "/everglades-activities",
+      "destination": "/miami-activities"
+    },
+    {
+      "source": "/destin-activities",
+      "destination": "/gulf-activities"
+    },
+    {
+      "source": "/naples-activities",
+      "destination": "/gulf-activities"
+    },
+    {
+      "source": "/fort-myers-activities",
+      "destination": "/gulf-activities"
+    },
+    {
+      "source": "/crystal-river-activities",
+      "destination": "/central-florida-activities"
+    },
+    {
+      "source": "/key-west-activities",
+      "destination": "/keys-activities"
+    },
+    {
+      "source": "/florida-keys-activities",
+      "destination": "/keys-activities"
+    },
+    {
+      "source": "/tampa-activities",
+      "destination": "/gulf-activities"
+    },
+    {
+      "source": "/beach-activities-florida",
+      "destination": "/miami-activities"
+    },
+    {
+      "source": "/hawaii-activities",
+      "destination": "/miami-activities"
+    }
+  ],
   "headers": [
     {
       "source": "/(.*)",
