@@ -10811,6 +10811,246 @@
       "source": "/native-guided-fishing-charters-marco-island-gulf",
       "destination": "/gulf-coast-activities",
       "permanent": true
+    },
+    {
+      "source": "/ohana-water-adventures-tiki-boat-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/freedom-float-boat-rental-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wet-n-wild-watersports-destin-destin-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crab-island-luxury-adventures-premium-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/power-up-watersports-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/high-tide-adventure-co-miramar-beach-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wave-cutter-charters-dolphin-cruise-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-tikis-sandbar-cruise-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-coast-excursions-panama-city-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dockside-watersports-destin-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-beach-weekend-fort-walton-beach-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/emerald-island-charters-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chilly-down-charters-private-charter-westfl-bt94",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paradise-adventures-footloose-catamaran-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crab-island-luxury-adventures-premium-westfl-bt99",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chilly-down-charters-private-charter-westfl-bt95",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tailfins-island-adventure-destin-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-tikis-beach-cruise-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-helicopters-westfl-ae8",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/top-shelf-tikis-destin-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/parasailing-in-destin-just-chute-me-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/beach-please-charters-destin-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jolly-sailing-pensacola-beach-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ho2-pensacola-beach-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/double-fun-pontoon-rentals-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/panama-city-beach-dolphin-sightseeing-cruise-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/12-person-pontoon-boat-rental-crab-island-destin-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lady-delana-alys-fireworks-cruise-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chilly-down-charters-private-charter-westfl-bt96",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/heron-harbor-private-yacht-charter-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-andrews-adventures-panama-city-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kitty-hawk-destin-parasailing-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/double-freedom-float-boat-rental-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-crab-island-pontoon-excursion-fort-walton-beach-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-private-yachts-premium-charter-westfl-bt76",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pensacola-history-and-haunting-pensacola-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-bottom-fishing-eight-hours-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/town-golf-carts-port-st-joe-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-scenic-bay-cruise-pensacola-beach-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kings-fishing-charters-pensacola-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/discount-watersports-waverunner-rental-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/code-blue-fishing-dolphin-cruise-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destiny-water-adventures-fort-walton-beach-fl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-private-yachts-premium-charter-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/power-up-watersports-pontoon-rental-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/destin-pontoon-charters-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/chilly-down-charters-private-charter-westfl",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/power-up-watersports-jet-ski-rental-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
     }
   ],
   "rewrites": [],
