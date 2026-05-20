@@ -11051,6 +11051,246 @@
       "source": "/power-up-watersports-jet-ski-rental-destin",
       "destination": "/west-florida-activities",
       "permanent": true
+    },
+    {
+      "source": "/st-augustine-clear-kayak-tour-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-serpent-tours-st-augustine-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-serpent-tours-st-augustine-nefl-to36",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seaside-adventures-ghost-tour-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/st-augustine-sailing-st-augustine-fl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seaside-adventures-ghost-tour-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/100-miami-luxury-boat-rental-miami-to86",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fun-rentals-st-augustine-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gone2sea-boat-rentals-st-augustine-fl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-panda-tours-st-augustine-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/florida-water-tours-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-panda-tours-st-augustine-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/old-city-carriages-st-augustine-nefl-to63",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fun-rentals-st-augustine-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/carriage-tours-events-private-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/old-city-carriages-st-augustine-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-serpent-tours-river-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seaside-adventures-st-augustine-tour-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/carriage-tours-events-romantic-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seaside-adventures-ghost-tour-nefl-to79",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-serpent-tours-st-augustine-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-electric-bikes-daytona-beach-fl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/three-brothers-boards-daytona-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/three-brothers-boards-daytona-daytona-beach",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-electric-bikes-daytona-beach",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/daytona-slingshot-rentals-half-day-daytona-beach-nefl",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/your-jamaican-tour-guide-mayfield-falls-space-to16",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cocoa-beach-catamaran-cocoa-beach",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dirty-dolly-fish-company-port-canaveral",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/island-time-marina-cocoa-beach",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cocoa-beach-surf-fishing-charters-melbourne-beach-fl",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/your-jamaican-tour-guide-mayfield-falls-space-to17",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dirty-dolly-fish-company-space",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cocoa-beach-surf-fishing-charters-melbourne-beach",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/a-day-away-kayak-tours-titusville-fl",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/your-jamaican-tour-guide-mayfield-falls-space",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/escape-cocoa-beach-space",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cape-crossing-boat-rentals-merritt-island",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/island-time-marina-space",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/escape-cocoa-beach-cocoa-beach",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cocoa-kayaking-cocoa-beach-fl",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/banana-river-lagoon-canaveral-locks-boat-tour-centralfl",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-go-kayaking-titusville-centralfl",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/get-up-and-go-kayaking-titusville-titusville",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/a-day-away-kayak-tours-titusville",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cape-crossing-boat-rentals-merritt-island-centralfl",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/new-smyrna-beach-clear-kayak-tour-new-smyrna-beach",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/your-jamaican-tour-guide-mayfield-falls-palm-bay",
+      "destination": "/space-coast-activities",
+      "permanent": true
     }
   ],
   "rewrites": [],
