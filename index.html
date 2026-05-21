@@ -1422,8 +1422,27 @@ function filterZone(zone, btn) {
   if(nearMeActive){ nearMeActive=false; userLat=userLng=null; const nb=document.getElementById('nearMeBtn'); if(nb){nb.classList.remove('active');nb.innerHTML='📍 Near Me';} }
   document.querySelectorAll('.zone-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
+  // Ensure map is loaded so it can zoom to the selected zone
+  if (typeof loadLeafletThenMap === 'function') loadLeafletThenMap();
   clearTimeout(_filterTimer);
-  _filterTimer = setTimeout(renderCards, 80);
+  _filterTimer = setTimeout(() => {
+    renderCards();
+    // Wait a tick for map init + marker build, then explicitly fitBounds to the zone
+    setTimeout(() => {
+      if (!window.jetskiMap) return;
+      try { window.jetskiMap.invalidateSize(); } catch(e) {}
+      if (zone === 'all' || zone === 'florida') {
+        // Florida-wide
+        try { window.jetskiMap.fitBounds([[24.4,-87.6],[31.0,-79.8]], {padding:[20,20], maxZoom:8, animate:true}); } catch(e) {}
+        return;
+      }
+      const ops = (typeof currentOps !== 'undefined' && currentOps.length) ? currentOps : allOperators.filter(o => zoneMatches(zone, o));
+      const latlngs = ops.filter(o => o.lat && o.lng).map(o => [o.lat, o.lng]);
+      if (latlngs.length) {
+        try { window.jetskiMap.fitBounds(latlngs, {padding:[40,40], maxZoom:12, animate:true}); } catch(e) {}
+      }
+    }, 350);
+  }, 80);
   pushDL('filter_zone', {zone});
 }
 
