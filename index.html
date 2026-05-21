@@ -1962,8 +1962,8 @@ function makeIcon(color, label) {
 function initMap() {
   if (mapInstance) return; // prevent double-init
   mapInstance = L.map('jetski-map', {
-    center:[25.77,-80.19],
-    zoom:10,
+    center:[27.8,-82.5],
+    zoom:7,
     zoomControl:true,
     scrollWheelZoom:true,
     minZoom:5
@@ -2060,8 +2060,13 @@ function updateMapMarkers(visibleOps) {
       ? visibleOps.filter(o => miamiBoatIds.has(o.id))
       : visibleOps;
     if(focusOps.length > 0) {
-      const latlngs = focusOps.map(op => [op.lat, op.lng]);
-      try { mapInstance.fitBounds(latlngs, {padding:[40,40], maxZoom:12}); } catch(e) {}
+      if (isDefaultView) {
+        // Default view: show all of Florida (SW: Key West, NE: NW Florida)
+        try { mapInstance.fitBounds([[24.4,-87.6],[31.0,-79.8]], {padding:[20,20], maxZoom:8}); } catch(e) {}
+      } else {
+        const latlngs = focusOps.map(op => [op.lat, op.lng]);
+        try { mapInstance.fitBounds(latlngs, {padding:[40,40], maxZoom:12}); } catch(e) {}
+      }
     }
   }
 }
