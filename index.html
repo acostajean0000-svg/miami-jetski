@@ -796,6 +796,7 @@
         <button class="cat-tab" onclick="filterCat('boat',this)"><span class="cat-emoji">⛵</span><span class="cat-label">Boats &amp; Yachts</span><span class="cat-count">(208)</span></button>
         <button class="cat-tab" onclick="filterCat('fishing',this)"><span class="cat-emoji">🎣</span><span class="cat-label">Fishing</span><span class="cat-count">(83)</span></button>
         <button class="cat-tab" onclick="filterCat('watersports',this)"><span class="cat-emoji">🏄</span><span class="cat-label">Water Sports</span><span class="cat-count">(387)</span></button>
+        <button class="cat-tab" onclick="filterCat('exotic',this)"><span class="cat-emoji">💎</span><span class="cat-label">Exotic Cars</span><span class="cat-count">(27)</span></button>
         <button class="cat-tab" onclick="filterCat('slingshot',this)"><span class="cat-emoji">🏎️</span><span class="cat-label">Slingshot</span><span class="cat-count">(41)</span></button>
         <button class="cat-tab" onclick="filterCat('jetcar',this)"><span class="cat-emoji">🚗</span><span class="cat-label">Jet Cars</span><span class="cat-count">(12)</span></button>
         <button class="cat-tab" onclick="filterCat('golfcart',this)"><span class="cat-emoji">🛺</span><span class="cat-label">Golf Carts</span><span class="cat-count">(78)</span></button>
@@ -1146,7 +1147,7 @@
           <a href="#" class="footer-social"><i class="fa-brands fa-tiktok"></i></a>
         </div>
       </div>
-      <div class="footer-col"><h4>Categories</h4><ul><li></li><li><a href="/boat-rentals-florida">⛵ Boats &amp; Yachts</a></li><li></li><li></li><li></li><li></li><li></li><li><a href="/?cat=atv">🏍️ ATV &amp; Buggies</a></li><li><a href="/?cat=golfcart">🛺 Golf Carts</a></li><li><a href="/?cat=jetcar">🏎️ Jet Cars</a></li><li><a href="/?cat=bike">🚲 Bike &amp; E-Ride</a></li><li><a href="/?cat=kayak">🛶 Kayak &amp; SUP</a></li><li><a href="/?cat=scooter">🛵 Scooters</a></li><li><a href="/?cat=snorkel">🤿 Snorkel</a></li></ul></div>
+      <div class="footer-col"><h4>Categories</h4><ul><li></li><li><a href="/boat-rentals-florida">⛵ Boats &amp; Yachts</a></li><li></li><li></li><li></li><li></li><li></li><li><a href="/?cat=atv">🏍️ ATV &amp; Buggies</a></li><li><a href="/?cat=golfcart">🛺 Golf Carts</a></li><li><a href="/miami-exotic-cars">💎 Exotic Cars (Miami)</a></li><li><a href="/?cat=jetcar">🏎️ Jet Cars</a></li><li><a href="/?cat=bike">🚲 Bike &amp; E-Ride</a></li><li><a href="/?cat=kayak">🛶 Kayak &amp; SUP</a></li><li><a href="/?cat=scooter">🛵 Scooters</a></li><li><a href="/?cat=snorkel">🤿 Snorkel</a></li></ul></div>
       <div class="footer-col"><h4>Zones</h4><ul><li><a href="/miami-activities">🏖️ Miami</a></li><li></li><li></li><li></li><li></li><li></li><li><a href="/space-coast-activities">🚀 Space Coast</a></li><li><a href="/jacksonville-activities">🏙️ Jacksonville</a></li><li><a href="/central-florida-activities">🏞️ Central FL</a></li><li><a href="/jacksonville-activities">🌊 Northeast FL</a></li><li></li><li><a href="/orlando-activities">🎢 Orlando</a></li><li></li><li><a href="/punta-cana-activities">🇩🇴 Punta Cana</a></li></ul></div>
       <div class="footer-col"><h4>Contact</h4><ul><li><a href="mailto:info@miamijetskiboatrentals.com"><i class="fa-solid fa-envelope"></i> Email Us</a></li><li style="color:var(--text-muted);font-size:.85rem;margin-top:8px;">Miami Beach, FL 33139</li><li style="color:var(--text-muted);font-size:.85rem;">Mon–Sun: 8am–8pm</li></ul></div>
     </div>
@@ -1191,8 +1192,8 @@ let markers = {};
 let mapInstance = null;
 
 // ---- CAT COLORS ----
-const catColors = {jetski:'#00d4c8', boat:'#1a6bcc', fishing:'#e06000', watersports:'#9933cc', slingshot:'#dc2828', jetcar:'#ffa500', golfcart:'#22b422', atv:'#b45000', tour:'#643cc8', aerial:'#0099ff', bike:'#e63946', bikerental:'#e63946', scooter:'#ff6b35', kayak:'#00a896', snorkel:'#00bfdb'};
-const catLabels = {jetski:'Jet Ski', boat:'Boat', fishing:'Fishing', watersports:'Water Sport', slingshot:'Slingshot', jetcar:'Jet Car', golfcart:'Golf Cart', atv:'ATV', tour:'Tour', aerial:'Aerial & Fly', bike:'Bike & E-Ride', bikerental:'Bike & E-Ride', scooter:'Scooter', kayak:'Kayak & SUP', snorkel:'Snorkel'};
+const catColors = {jetski:'#00d4c8', boat:'#1a6bcc', fishing:'#e06000', watersports:'#9933cc', slingshot:'#dc2828', exotic:'#d4af37', jetcar:'#ffa500', golfcart:'#22b422', atv:'#b45000', tour:'#643cc8', aerial:'#0099ff', bike:'#e63946', bikerental:'#e63946', scooter:'#ff6b35', kayak:'#00a896', snorkel:'#00bfdb'};
+const catLabels = {jetski:'Jet Ski', boat:'Boat', fishing:'Fishing', watersports:'Water Sport', slingshot:'Slingshot', exotic:'Exotic Car', jetcar:'Jet Car', golfcart:'Golf Cart', atv:'ATV', tour:'Tour', aerial:'Aerial & Fly', bike:'Bike & E-Ride', bikerental:'Bike & E-Ride', scooter:'Scooter', kayak:'Kayak & SUP', snorkel:'Snorkel'};
 
 // ---- NEAR ME ----
 let nearMeActive = false;
@@ -1282,7 +1283,7 @@ function computeBestValue(ops) {
   scored.slice(0, top15pct).forEach(o => bestValueSet.add(o.id));
 }
 
-const catEmoji = {jetski:'🏄',boat:'⛵',fishing:'🎣',watersports:'🌊',slingshot:'🏎️',jetcar:'🚗',golfcart:'🛺',atv:'🏍️',tour:'🗺️',aerial:'✈️',bikerental:'🚲',scooter:'🛵'};
+const catEmoji = {jetski:'🏄',boat:'⛵',fishing:'🎣',watersports:'🌊',slingshot:'🏎️',exotic:'💎',jetcar:'🚗',golfcart:'🛺',atv:'🏍️',tour:'🗺️',aerial:'✈️',bikerental:'🚲',scooter:'🛵'};
 
 // Downsize Filestack images to card thumbnail width (400px) — reduces file size ~85%
 function thumbUrl(url) {
@@ -1893,6 +1894,7 @@ function updateCatCounts() {
     'fishing':     allOperators.filter(o=>catMatches('fishing',o)).length,
     'watersports': allOperators.filter(o=>catMatches('watersports',o)).length,
     'slingshot':   allOperators.filter(o=>catMatches('slingshot',o)).length,
+    'exotic':      allOperators.filter(o=>catMatches('exotic',o)).length,
     'jetcar':      allOperators.filter(o=>catMatches('jetcar',o)).length,
     'golfcart':    allOperators.filter(o=>catMatches('golfcart',o)).length,
     'atv':         allOperators.filter(o=>catMatches('atv',o)).length,
@@ -2001,7 +2003,7 @@ function buildMarkers() {
     if (markers[op.id]) return; // skip if already built
     if (!op.lat || !op.lng) return; // skip ops without geo coords
     const color = catColors[op.cat] || '#00d4c8';
-    const catInitials = {jetski:'JS', boat:'⛵', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', jetcar:'🚗', golfcart:'🛺', atv:'🏍️', scooter:'🛵', bikerental:'🚲'}[op.cat] || '●';
+    const catInitials = {jetski:'JS', boat:'⛵', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', exotic:'💎', jetcar:'🚗', golfcart:'🛺', atv:'🏍️', scooter:'🛵', bikerental:'🚲'}[op.cat] || '●';
     const marker = L.marker([op.lat, op.lng], {icon: makeIcon(color, catInitials)});
     const opSlug = (window._OP_SLUG_MAP || {})[op.id] || '';
     const priceLabel = (op.price && op.price > 0)
@@ -2667,7 +2669,7 @@ function openQuickView(opId) {
 
   var color = catColors[op.cat] || '#00d4c8';
   var label = catLabels[op.cat] || op.cat;
-  var emoji = ({jetski:'🏄',boat:'⛵',fishing:'🎣',watersports:'🌊',slingshot:'🏎️',jetcar:'🚗',golfcart:'🛺',atv:'🏍️',tour:'🗺️',aerial:'✈️',bikerental:'🚲'})[op.cat] || '🌊';
+  var emoji = ({jetski:'🏄',boat:'⛵',fishing:'🎣',watersports:'🌊',slingshot:'🏎️',exotic:'💎',jetcar:'🚗',golfcart:'🛺',atv:'🏍️',tour:'🗺️',aerial:'✈️',bikerental:'🚲'})[op.cat] || '🌊';
   var price = op.price ? '$'+op.price.toLocaleString() : 'See site';
   var slug = (window._OP_SLUG_MAP&&window._OP_SLUG_MAP[op.id]) ? '/'+window._OP_SLUG_MAP[op.id] : null;
   var thumb = (typeof thumbUrl==='function') ? thumbUrl(op.photo) : op.photo;

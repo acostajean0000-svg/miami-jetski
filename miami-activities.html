@@ -82,7 +82,7 @@
   </section>
   <div class="filters" id="filters">
     <span class="cat-chip active" data-cat="all">🌎 All (448)</span>
-    <span class="cat-chip" data-cat="tour">🚌 Tour (159)</span><span class="cat-chip" data-cat="boat">⛵ Boat (151)</span><span class="cat-chip" data-cat="jetski">🛥️ Jet Ski (21)</span><span class="cat-chip" data-cat="watersports">🏄 Water Sports (14)</span><span class="cat-chip" data-cat="bikerental">🚲 Bike & E-Ride (27)</span><span class="cat-chip" data-cat="atv">🏍️ ATV (7)</span><span class="cat-chip" data-cat="aerial">✈️ Aerial Tour (6)</span><span class="cat-chip" data-cat="jetcar">🚗 Jet Car (3)</span><span class="cat-chip" data-cat="slingshot">🏎️ Slingshot (3)</span><span class="cat-chip" data-cat="golfcart">🛺 Golf Cart (2)</span><span class="cat-chip" data-cat="fishing">🎣 Fishing (9)</span>
+    <span class="cat-chip" data-cat="tour">🚌 Tour (132)</span><span class="cat-chip" data-cat="boat">⛵ Boat (151)</span><span class="cat-chip" data-cat="exotic">💎 Exotic Cars (27)</span><span class="cat-chip" data-cat="jetski">🛥️ Jet Ski (21)</span><span class="cat-chip" data-cat="watersports">🏄 Water Sports (14)</span><span class="cat-chip" data-cat="bikerental">🚲 Bike & E-Ride (27)</span><span class="cat-chip" data-cat="atv">🏍️ ATV (7)</span><span class="cat-chip" data-cat="aerial">✈️ Aerial Tour (6)</span><span class="cat-chip" data-cat="jetcar">🚗 Jet Car (3)</span><span class="cat-chip" data-cat="slingshot">🏎️ Slingshot (3)</span><span class="cat-chip" data-cat="golfcart">🛺 Golf Cart (2)</span><span class="cat-chip" data-cat="fishing">🎣 Fishing (9)</span>
   </div>
   <div class="grid" id="grid"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
 </main>
@@ -92,8 +92,8 @@
 <script>
 const ZONE_KEY = "miami";
 const ZL_PATTERN = null;
-const CAT_LABELS = {"jetski": "Jet Ski", "boat": "Boat", "fishing": "Fishing", "watersports": "Water Sports", "slingshot": "Slingshot", "jetcar": "Jet Car", "golfcart": "Golf Cart", "atv": "ATV", "tour": "Tour", "aerial": "Aerial Tour", "bikerental": "Bike & E-Ride"};
-const CAT_EMOJI = {"jetski": "\ud83d\udee5\ufe0f", "boat": "\u26f5", "fishing": "\ud83c\udfa3", "watersports": "\ud83c\udfc4", "slingshot": "\ud83c\udfce\ufe0f", "jetcar": "\ud83d\ude97", "golfcart": "\ud83d\udefa", "atv": "\ud83c\udfcd\ufe0f", "tour": "\ud83d\ude8c", "aerial": "\u2708\ufe0f", "bikerental": "\ud83d\udeb2"};
+const CAT_LABELS = {"jetski": "Jet Ski", "boat": "Boat", "fishing": "Fishing", "watersports": "Water Sports", "slingshot": "Slingshot", "exotic": "Exotic Cars", "jetcar": "Jet Car", "golfcart": "Golf Cart", "atv": "ATV", "tour": "Tour", "aerial": "Aerial Tour", "bikerental": "Bike & E-Ride"};
+const CAT_EMOJI = {"jetski": "\ud83d\udee5\ufe0f", "boat": "\u26f5", "fishing": "\ud83c\udfa3", "watersports": "\ud83c\udfc4", "slingshot": "\ud83c\udfce\ufe0f", "exotic": "\ud83d\udc8e", "jetcar": "\ud83d\ude97", "golfcart": "\ud83d\udefa", "atv": "\ud83c\udfcd\ufe0f", "tour": "\ud83d\ude8c", "aerial": "\u2708\ufe0f", "bikerental": "\ud83d\udeb2"};
 const FALLBACK_IMG = "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80";
 
 function esc(s){return String(s==null?'':s).replace(/[&<>"'`]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"})[c]);}
