@@ -23,7 +23,7 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"How much does it cost to rent an exotic car in Miami?","acceptedAnswer":{"@type":"Answer","text":"Exotic car rentals in Miami start around $50/hr for entry-level luxury vehicles and go up to $3,500/day for premium models like the Lamborghini Aventador or Rolls-Royce Phantom. Daily rates are most common; multi-day discounts are usually available."}},{"@type":"Question","name":"What do I need to rent an exotic car in Miami?","acceptedAnswer":{"@type":"Answer","text":"Most Miami exotic car rentals require a valid driver's license (21+ or 25+ depending on the vehicle), proof of full-coverage insurance, and a credit card for the security deposit. International drivers typically need an IDP."}},{"@type":"Question","name":"Can I rent a Lamborghini for a few hours in Miami?","acceptedAnswer":{"@type":"Answer","text":"Yes — several operators on this page offer hourly Lamborghini rentals starting around $50/hr (entry rate). The Huracán, Urus and Aventador are the most popular hourly options."}},{"@type":"Question","name":"Are these exotic cars insured?","acceptedAnswer":{"@type":"Answer","text":"All vehicles listed are operated by verified rental companies with their own insurance policies. The renter is typically responsible for their own collision/comprehensive coverage; the operator will walk you through the requirements at booking."}}]}</script>
   <link rel="preconnect" href="https://cdn.filestackcontent.com" crossorigin>
   <link rel="preconnect" href="https://fareharbor.com" crossorigin>
-  <script src="/slug-map.js" defer></script>
+  <script src="/slug-map/cat/exotic.js" defer></script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#040d1a;color:#e8f4fd;min-height:100vh;line-height:1.5}
@@ -69,8 +69,7 @@
     @keyframes sk{0%{background-position:200% 0}100%{background-position:-200% 0}}
     @media(max-width:600px){.hero{padding:24px 0 12px}.card .img{height:150px}}
   </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');(function(){var l=false;function ld(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1';document.head.appendChild(s);}if(document.readyState==='complete')ld();else addEventListener('load',ld);['scroll','mousemove','touchstart','click'].forEach(function(e){addEventListener(e,ld,{once:true,passive:true});});})();</script>
 </head>
 <body>
 <nav>
@@ -199,7 +198,7 @@ function setupFilters(){
 
 (async () => {
   try {
-    const r = await fetch('/operators-slim.json');
+    const r = await fetch('/data/cat/exotic.json');
     const ops = await r.json();
     allOps = ops.filter(o => o.cat === 'exotic' && o.zone === ZONE_KEY);
     setupFilters();

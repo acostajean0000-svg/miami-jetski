@@ -22,7 +22,7 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Cancún Activities — 106 Operators", "numberOfItems": 477, "url": "https://miamijetskiboatrentals.com/cancun-activities", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "LocalBusiness", "name": "Xcaret Park Day Trip", "description": "Tour in Cancún", "url": "https://miamijetskiboatrentals.com/xcaret-park-day-trip-playadelcarmen"}}, {"@type": "ListItem", "position": 2, "item": {"@type": "LocalBusiness", "name": "Catamaran to Isla Mujeres", "description": "Boat in Cancún", "url": "https://miamijetskiboatrentals.com/catamaran-to-isla-mujeres-cancun-hz"}}, {"@type": "ListItem", "position": 3, "item": {"@type": "LocalBusiness", "name": "AquaWorld Water Sports Cancún", "description": "Watersports in Cancún", "url": "https://miamijetskiboatrentals.com/aquaworld-water-sports-cancun-cancun-hz"}}, {"@type": "ListItem", "position": 4, "item": {"@type": "LocalBusiness", "name": "Chichén Itzá Day Tour", "description": "Tour in Cancún", "url": "https://miamijetskiboatrentals.com/chichen-itza-day-tour-cancun-hz"}}, {"@type": "ListItem", "position": 5, "item": {"@type": "LocalBusiness", "name": "Jungle Tour – Speed Boat & Snorkeling", "description": "Boat in Cancún", "url": "https://miamijetskiboatrentals.com/jungle-tour-speed-boat-snorkeling-cancun-hz"}}, {"@type": "ListItem", "position": 6, "item": {"@type": "LocalBusiness", "name": "Cancún Mangroves Speedboat Tour", "description": "Boat in Cancún", "url": "https://miamijetskiboatrentals.com/cancun-mangroves-speedboat-tour-cancun-hz"}}, {"@type": "ListItem", "position": 7, "item": {"@type": "LocalBusiness", "name": "Aquaworld Catamaran Cancún", "description": "Boat in Cancún", "url": "https://miamijetskiboatrentals.com/aquaworld-catamaran-cancun-cancun-hz"}}, {"@type": "ListItem", "position": 8, "item": {"@type": "LocalBusiness", "name": "Party Catamaran Cancún", "description": "Boat in Cancún", "url": "https://miamijetskiboatrentals.com/party-catamaran-cancun-cancun-hz"}}, {"@type": "ListItem", "position": 9, "item": {"@type": "LocalBusiness", "name": "Tulum Ruins Day Trip", "description": "Tour in Cancún", "url": "https://miamijetskiboatrentals.com/tulum-ruins-day-trip-tulum"}}, {"@type": "ListItem", "position": 10, "item": {"@type": "LocalBusiness", "name": "Xel-Há All-Inclusive Water Park", "description": "Tour in Cancún", "url": "https://miamijetskiboatrentals.com/xel-ha-all-inclusive-water-park-tulum"}}]}</script>
   <link rel="preconnect" href="https://cdn.filestackcontent.com" crossorigin>
   <link rel="preconnect" href="https://fareharbor.com" crossorigin>
-  <script src="/slug-map.js" defer></script>
+  <script src="/slug-map/cancun.js" defer></script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#040d1a;color:#e8f4fd;min-height:100vh;line-height:1.5}
@@ -60,8 +60,7 @@
     @keyframes sk{0%{background-position:200% 0}100%{background-position:-200% 0}}
     @media(max-width:600px){.hero{padding:24px 0 12px}.card .img{height:150px}}
   </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');(function(){var l=false;function ld(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1';document.head.appendChild(s);}if(document.readyState==='complete')ld();else addEventListener('load',ld);['scroll','mousemove','touchstart','click'].forEach(function(e){addEventListener(e,ld,{once:true,passive:true});});})();</script>
 </head>
 <body>
 <nav>
@@ -108,7 +107,7 @@ function render(){
   }).join('');
 }
 function setupFilters(){document.querySelectorAll('.cat-chip').forEach(c=>{c.addEventListener('click',()=>{document.querySelectorAll('.cat-chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');activeCat=c.dataset.cat;render();});});}
-(async()=>{try{const r=await fetch('/operators-slim.json');const ops=await r.json();allOps=ops.filter(o=>o.zone===ZONE_KEY);setupFilters();render();}catch(e){document.getElementById('grid').innerHTML='<div class="empty" style="grid-column:1/-1"><h2>Could not load operators</h2><p><a href="/" style="color:#00d2ff">Return home</a></p></div>';}}
+(async()=>{try{const r=await fetch('/data/cancun.json');const ops=await r.json();allOps=ops.filter(o=>o.zone===ZONE_KEY);setupFilters();render();}catch(e){document.getElementById('grid').innerHTML='<div class="empty" style="grid-column:1/-1"><h2>Could not load operators</h2><p><a href="/" style="color:#00d2ff">Return home</a></p></div>';}}
 )();
 </script>
 <!-- FH_BOOKING_MODAL_v2 -->

@@ -22,7 +22,7 @@
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "ItemList", "name": "Punta Cana Activities — 112 Operators", "numberOfItems": 84, "url": "https://miamijetskiboatrentals.com/punta-cana-activities", "itemListElement": [{"@type": "ListItem", "position": 1, "item": {"@type": "LocalBusiness", "name": "Scape Park Cap Cana", "description": "Tour in Punta Cana", "url": "https://miamijetskiboatrentals.com/scape-park-cap-cana-capcana"}}, {"@type": "ListItem", "position": 2, "item": {"@type": "LocalBusiness", "name": "Saona Island Full Day", "description": "Tour in Punta Cana", "url": "https://miamijetskiboatrentals.com/saona-island-full-day-puntacana"}}, {"@type": "ListItem", "position": 3, "item": {"@type": "LocalBusiness", "name": "Outback Adventures Punta Cana", "description": "Tour in Punta Cana", "url": "https://miamijetskiboatrentals.com/outback-adventures-punta-cana-puntacana"}}, {"@type": "ListItem", "position": 4, "item": {"@type": "LocalBusiness", "name": "Dolphin Island Explorer", "description": "Tour in Punta Cana", "url": "https://miamijetskiboatrentals.com/dolphin-island-explorer-puntacana"}}, {"@type": "ListItem", "position": 5, "item": {"@type": "LocalBusiness", "name": "Marinarium Punta Cana", "description": "Boat in Punta Cana", "url": "https://miamijetskiboatrentals.com/marinarium-punta-cana-puntacana"}}, {"@type": "ListItem", "position": 6, "item": {"@type": "LocalBusiness", "name": "Dressel Divers Punta Cana", "description": "Boat in Punta Cana", "url": "https://miamijetskiboatrentals.com/dressel-divers-punta-cana-puntacana"}}, {"@type": "ListItem", "position": 7, "item": {"@type": "LocalBusiness", "name": "Rancho Capote Horseback", "description": "Tour in Punta Cana", "url": "https://miamijetskiboatrentals.com/rancho-capote-horseback-puntacana"}}, {"@type": "ListItem", "position": 8, "item": {"@type": "LocalBusiness", "name": "Coco Bongo Night Tour", "description": "Tour in Punta Cana", "url": "https://miamijetskiboatrentals.com/coco-bongo-night-tour-puntacana"}}, {"@type": "ListItem", "position": 9, "item": {"@type": "LocalBusiness", "name": "Quadrimania Punta Cana", "description": "Atv in Punta Cana", "url": "https://miamijetskiboatrentals.com/quadrimania-punta-cana-puntacana"}}, {"@type": "ListItem", "position": 10, "item": {"@type": "LocalBusiness", "name": "Fun Buggy Punta Cana", "description": "Tour in Punta Cana", "url": "https://miamijetskiboatrentals.com/fun-buggy-punta-cana-puntacana"}}]}</script>
   <link rel="preconnect" href="https://cdn.filestackcontent.com" crossorigin>
   <link rel="preconnect" href="https://fareharbor.com" crossorigin>
-  <script src="/slug-map.js" defer></script>
+  <script src="/slug-map/puntacana.js" defer></script>
   <style>
     *{box-sizing:border-box;margin:0;padding:0}
     body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#040d1a;color:#e8f4fd;min-height:100vh;line-height:1.5}
@@ -62,8 +62,7 @@
     @keyframes sk{0%{background-position:200% 0}100%{background-position:-200% 0}}
     @media(max-width:600px){.hero{padding:24px 0 12px}.card .img{height:150px}}
   </style>
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');</script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');(function(){var l=false;function ld(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1';document.head.appendChild(s);}if(document.readyState==='complete')ld();else addEventListener('load',ld);['scroll','mousemove','touchstart','click'].forEach(function(e){addEventListener(e,ld,{once:true,passive:true});});})();</script>
 </head>
 <body>
 <nav>
@@ -156,7 +155,7 @@ function setupFilters(){
 
 (async () => {
   try {
-    const r = await fetch('/operators-slim.json');
+    const r = await fetch('/data/puntacana.json');
     const ops = await r.json();
     allOps = ops.filter(inZone);
     setupFilters();
