@@ -81,8 +81,20 @@
     </div>
   </section>
   <div class="filters" id="filters">
-    <span class="cat-chip active" data-cat="all">🌎 All (181)</span>
-    <span class="cat-chip" data-cat="tour">🚌 Tour (126)</span><span class="cat-chip" data-cat="watersports">🏄 Water Sports (4)</span>
+    <span class="cat-chip active" data-cat="all">🌎 All (188)</span>
+    <span class="cat-chip" data-cat="themepark">🎢 Theme Parks (60)</span>
+    <span class="cat-chip" data-cat="tour">🚌 Tours (130)</span>
+    <span class="cat-chip" data-cat="kayaksup">🛶 Kayak &amp; SUP (17)</span>
+    <span class="cat-chip" data-cat="clearkayak">✨ Clear / Glow Kayak (6)</span>
+    <span class="cat-chip" data-cat="watersports">🏄 Water Sports (31)</span>
+    <span class="cat-chip" data-cat="spa">💆 Spa &amp; Wellness (9)</span>
+    <span class="cat-chip" data-cat="bikerental">🚲 Bike &amp; E-Ride (7)</span>
+    <span class="cat-chip" data-cat="boat">⛵ Boat (8)</span>
+    <span class="cat-chip" data-cat="foodtour">🍽️ Food &amp; Brewery (3)</span>
+    <span class="cat-chip" data-cat="atv">🏍️ ATV (5)</span>
+    <span class="cat-chip" data-cat="airboat">🐊 Airboat (4)</span>
+    <span class="cat-chip" data-cat="aerial">✈️ Aerial Tours (2)</span>
+    <span class="cat-chip" data-cat="fishing">🎣 Fishing (1)</span>
   </div>
   <div class="grid" id="grid"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
 </main>
@@ -92,8 +104,18 @@
 <script>
 const ZONE_KEY = "orlando";
 const ZL_PATTERN = "orlando";
-const CAT_LABELS = {"jetski": "Jet Ski", "boat": "Boat", "fishing": "Fishing", "watersports": "Water Sports", "slingshot": "Slingshot", "jetcar": "Jet Car", "golfcart": "Golf Cart", "atv": "ATV", "tour": "Tour", "aerial": "Aerial Tour", "bikerental": "Bike & E-Ride"};
-const CAT_EMOJI = {"jetski": "\ud83d\udee5\ufe0f", "boat": "\u26f5", "fishing": "\ud83c\udfa3", "watersports": "\ud83c\udfc4", "slingshot": "\ud83c\udfce\ufe0f", "jetcar": "\ud83d\ude97", "golfcart": "\ud83d\udefa", "atv": "\ud83c\udfcd\ufe0f", "tour": "\ud83d\ude8c", "aerial": "\u2708\ufe0f", "bikerental": "\ud83d\udeb2"};
+const CAT_LABELS = {"jetski":"Jet Ski","boat":"Boat","yacht":"Yacht","sunset":"Sunset","airboat":"Airboat","fishing":"Fishing","watersports":"Water Sports","slingshot":"Slingshot","exotic":"Exotic Car","jetcar":"Jet Car","golfcart":"Golf Cart","atv":"ATV","tour":"Tour","aerial":"Aerial Tour","bikerental":"Bike & E-Ride","snorkel":"Snorkel","kayak":"Kayak & SUP","themepark":"Theme Park","clearkayak":"Clear Kayak","kayaksup":"Kayak & SUP","spa":"Spa","foodtour":"Food Tour"};
+const CAT_EMOJI = {"jetski":"\ud83d\udee5\ufe0f","boat":"\u26f5","yacht":"\ud83d\udef3\ufe0f","sunset":"\ud83c\udf05","airboat":"\ud83d\udc0a","fishing":"\ud83c\udfa3","watersports":"\ud83c\udfc4","slingshot":"\ud83c\udfce\ufe0f","exotic":"\ud83d\udc8e","jetcar":"\ud83d\ude97","golfcart":"\ud83d\udefa","atv":"\ud83c\udfcd\ufe0f","tour":"\ud83d\ude8c","aerial":"\u2708\ufe0f","bikerental":"\ud83d\udeb2","snorkel":"\ud83e\udd3f","kayak":"\ud83d\udef6","themepark":"\ud83c\udfa2","clearkayak":"\u2728","kayaksup":"\ud83d\udef6","spa":"\ud83d\udc86","foodtour":"\ud83c\udf7d\ufe0f"};
+
+// Sub-category matchers: filter by operator NAME (not just op.cat) for Orlando verticals
+const SUBCAT_MATCH = {
+  themepark:  o => /disney|universal|seaworld|busch gardens|magic kingdom|epcot|hollywood studios|animal kingdom|legoland|theme park/i.test(o.name||''),
+  clearkayak: o => /clear kayak|glass[- ]?bottom|glow|neon|led/i.test(o.name||''),
+  kayaksup:   o => /\bkayak|\bsup\b|paddle ?board|canoe/i.test(o.name||''),
+  spa:        o => /\bspa\b|massage|wellness|yoga|meditation|pilates/i.test(o.name||''),
+  foodtour:   o => /food tour|brewery|distillery|wine tour|culinary|eats? tour/i.test(o.name||''),
+  airboat:    o => o.cat==='airboat' || /airboat|air ?boat/i.test(o.name||''),
+};
 const FALLBACK_IMG = "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80";
 
 function esc(s){return String(s==null?'':s).replace(/[&<>"'`]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"})[c]);}
@@ -114,9 +136,15 @@ function thumbUrl(u){
   return u;
 }
 
+function catMatches(cat, op){
+  if (cat === 'all') return true;
+  if (op.cat === cat) return true;
+  const m = SUBCAT_MATCH[cat];
+  return m ? m(op) : false;
+}
 function render(){
   const slugMap = (window._OP_SLUG_MAP) || {};
-  const list = allOps.filter(o => activeCat==='all' || o.cat===activeCat);
+  const list = allOps.filter(o => catMatches(activeCat, o));
   const grid = document.getElementById('grid');
   if (!list.length) {
     grid.innerHTML = '<div class="empty" style="grid-column:1/-1"><h2>No operators in this view</h2><p>Try a different category, or <a href="/" style="color:#00d2ff">browse all of Florida</a>.</p></div>';
