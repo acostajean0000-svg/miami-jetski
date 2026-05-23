@@ -95,6 +95,7 @@
     <span class="cat-chip" data-cat="airboat">🐊 Airboat (4)</span>
     <span class="cat-chip" data-cat="aerial">✈️ Aerial Tours (2)</span>
     <span class="cat-chip" data-cat="fishing">🎣 Fishing (1)</span>
+    <span class="cat-chip" data-cat="transport">🚐 Airport Transfer (7)</span>
   </div>
   <div class="grid" id="grid"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
 </main>
@@ -115,6 +116,7 @@ const SUBCAT_MATCH = {
   spa:        o => /\bspa\b|massage|wellness|yoga|meditation|pilates/i.test(o.name||''),
   foodtour:   o => /food tour|brewery|distillery|wine tour|culinary|eats? tour/i.test(o.name||''),
   airboat:    o => o.cat==='airboat' || /airboat|air ?boat/i.test(o.name||''),
+  transport:  o => /\btransfer (?:to|from)\b|\bairport (?:transfer|shuttle|pickup|service|to|from)|\(mco\)|\(tpa\)|\(pie\)|\(srq\)|\(sfb\)|\bshuttle\b|chauffeur|\blimo\b|limousine|private (?:transfer|transportation|shuttle|driver|chauffeur|pickup|ride|car)|town car|black car|party bus|round[- ]?trip pickup|one[- ]?way (?:pickup|dropoff|trip)|hotel (?:to|from|pickup)/i.test(o.name||''),
 };
 const FALLBACK_IMG = "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80";
 

@@ -79,7 +79,9 @@
       <span class="stat">🇲🇽 <strong>Mexico</strong></span>
     </div>
   </section>
-  <div class="filters" id="filters"><span class="cat-chip active" data-cat="all">🌎 All (477)</span><span class="cat-chip" data-cat="tour">🚌 Tour (327)</span><span class="cat-chip" data-cat="boat">⛵ Boat (30)</span><span class="cat-chip" data-cat="watersports">🏄 Water Sports (20)</span><span class="cat-chip" data-cat="jetski">🛥️ Jet Ski (9)</span><span class="cat-chip" data-cat="atv">🏍️ ATV (8)</span><span class="cat-chip" data-cat="fishing">🎣 Fishing (9)</span><span class="cat-chip" data-cat="aerial">✈️ Aerial (5)</span></div>
+  <div class="filters" id="filters"><span class="cat-chip active" data-cat="all">🌎 All (477)</span><span class="cat-chip" data-cat="tour">🚌 Tour (327)</span><span class="cat-chip" data-cat="boat">⛵ Boat (30)</span><span class="cat-chip" data-cat="watersports">🏄 Water Sports (20)</span><span class="cat-chip" data-cat="jetski">🛥️ Jet Ski (9)</span><span class="cat-chip" data-cat="atv">🏍️ ATV (8)</span><span class="cat-chip" data-cat="fishing">🎣 Fishing (9)</span><span class="cat-chip" data-cat="aerial">✈️ Aerial (5)</span>
+    <span class="cat-chip" data-cat="transport">🚐 Airport Shuttle (3)</span>
+  </div>
   <div class="grid" id="grid"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
 </main>
 <footer>
@@ -89,13 +91,22 @@
 const ZONE_KEY="cancun";
 const CAT_LABELS={"jetski":"Jet Ski","boat":"Boat","fishing":"Fishing","watersports":"Water Sports","slingshot":"Slingshot","jetcar":"Jet Car","golfcart":"Golf Cart","atv":"ATV","tour":"Tour","aerial":"Aerial Tour","bikerental":"Bike & E-Ride"};
 const CAT_EMOJI={"jetski":"🛥️","boat":"⛵","fishing":"🎣","watersports":"🏄","slingshot":"🏎️","jetcar":"🚗","golfcart":"🚗","atv":"🏍️","tour":"🚌","aerial":"✈️","bikerental":"🚲"};
+const SUBCAT_MATCH = {
+  transport: o => /transfer (?:to|from)|airport (?:transfer|shuttle|pickup|service|to|from)|\(mco\)|\(tpa\)|\(pie\)|\(srq\)|\(sfb\)|shuttle|chauffeur|limo|limousine|private (?:transfer|transportation|shuttle|driver|chauffeur|pickup|ride|car)|town car|black car|party bus|round[- ]?trip pickup|one[- ]?way (?:pickup|dropoff|trip)|hotel (?:to|from|pickup)/i.test(o.name||''),
+};
+function catMatches(cat, op){
+  if (cat === 'all') return true;
+  if (op.cat === cat) return true;
+  const m = SUBCAT_MATCH[cat];
+  return m ? m(op) : false;
+}
 const FALLBACK_IMG="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80";
 function esc(s){return String(s==null?'':s).replace(/[&<>"'`]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"})[c]);}
 function thumbUrl(u){if(!u)return FALLBACK_IMG;if(u.includes('cdn.filestackcontent.com')){return u.replace(/resize=width:\d+/,'resize=width:480').replace(/quality=value:\d+/,'quality=value:75');}return u;}
 let allOps=[],activeCat='all';
 function render(){
   const slugMap=(window._OP_SLUG_MAP)||{};
-  const list=allOps.filter(o=>activeCat==='all'||o.cat===activeCat);
+  const list=allOps.filter(o => catMatches(activeCat, o));
   const grid=document.getElementById('grid');
   if(!list.length){grid.innerHTML='<div class="empty" style="grid-column:1/-1"><h2>No operators found</h2><p><a href="/" style="color:#00d2ff">Browse all activities</a></p></div>';return;}
   grid.innerHTML=list.map((op,i)=>{
