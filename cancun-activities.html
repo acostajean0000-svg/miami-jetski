@@ -107,7 +107,7 @@ function render(){
   }).join('');
 }
 function setupFilters(){document.querySelectorAll('.cat-chip').forEach(c=>{c.addEventListener('click',()=>{document.querySelectorAll('.cat-chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');activeCat=c.dataset.cat;render();});});}
-(async()=>{try{const r=await fetch('/data/cancun.json');const ops=await r.json();allOps=ops.filter(o=>o.zone===ZONE_KEY);setupFilters();render();}catch(e){document.getElementById('grid').innerHTML='<div class="empty" style="grid-column:1/-1"><h2>Could not load operators</h2><p><a href="/" style="color:#00d2ff">Return home</a></p></div>';}}
+(async()=>{try{const r=await fetch('/data/cancun.json').catch(()=>null).then(x => (x && x.ok) ? x : fetch('/operators-slim.json'));const ops=await r.json();allOps=ops.filter(o=>o.zone===ZONE_KEY);setupFilters();render();}catch(e){document.getElementById('grid').innerHTML='<div class="empty" style="grid-column:1/-1"><h2>Could not load operators</h2><p><a href="/" style="color:#00d2ff">Return home</a></p></div>';}}
 )();
 </script>
 <!-- FH_BOOKING_MODAL_v2 -->

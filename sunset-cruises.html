@@ -145,7 +145,7 @@ function setupFilters(){{
 }}
 (async () => {{
   try {{
-    const r = await fetch('/data/cat/sunset.json');
+    const r = await fetch('/data/cat/sunset.json').catch(()=>null).then(x => (x && x.ok) ? x : fetch('/operators-slim.json'));
     const ops = await r.json();
     allOps = ops.filter(o => o.cat === CAT_KEY);
     setupFilters();

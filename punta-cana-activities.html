@@ -155,7 +155,7 @@ function setupFilters(){
 
 (async () => {
   try {
-    const r = await fetch('/data/puntacana.json');
+    const r = await fetch('/data/puntacana.json').catch(()=>null).then(x => (x && x.ok) ? x : fetch('/operators-slim.json'));
     const ops = await r.json();
     allOps = ops.filter(inZone);
     setupFilters();

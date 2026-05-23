@@ -198,7 +198,7 @@ function setupFilters(){
 
 (async () => {
   try {
-    const r = await fetch('/data/cat/exotic.json');
+    const r = await fetch('/data/cat/exotic.json').catch(()=>null).then(x => (x && x.ok) ? x : fetch('/operators-slim.json'));
     const ops = await r.json();
     allOps = ops.filter(o => o.cat === 'exotic' && o.zone === ZONE_KEY);
     setupFilters();

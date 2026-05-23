@@ -153,7 +153,7 @@ function setupFilters(){
 
 (async () => {
   try {
-    const r = await fetch('/data/space.json');
+    const r = await fetch('/data/space.json').catch(()=>null).then(x => (x && x.ok) ? x : fetch('/operators-slim.json'));
     const ops = await r.json();
     allOps = ops.filter(inZone);
     setupFilters();
