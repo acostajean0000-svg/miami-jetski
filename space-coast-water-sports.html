@@ -18,7 +18,6 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"🚀 <span class=\"teal\">Space Coast</span> Water Sports","numberOfItems":7,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"LocalBusiness","name":"Island Time Marina","address":{"@type":"PostalAddress","streetAddress":"400 W Cocoa Beach Causeway","addressLocality":"Cocoa Beach","addressRegion":"FL","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":28.32,"longitude":-80.6204},"url":"https://miamijetskiboatrentals.com/space-coast-water-sports.html","image":"https://cdn.filestackcontent.com/KaX9fpowQIOftmFRKA8b/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max","priceRange":"From $9","openingHours":"Mo-Su 08:00-20:00"}},{"@type":"ListItem","position":2,"item":{"@type":"LocalBusiness","name":"Dirty Dolly Fish Company","address":{"@type":"PostalAddress","streetAddress":"726 Scallop Dr","addressLocality":"Port Canaveral","addressRegion":"FL","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":28.4093,"longitude":-80.6085},"url":"https://miamijetskiboatrentals.com/space-coast-water-sports.html","image":"https://cdn.filestackcontent.com/bFy8WLIHSHiYcOFOHQly/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max","priceRange":"From $700","openingHours":"Mo-Su 08:00-20:00"}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
   <style>
     :root{--dark:#040d1a;--dark2:#081525;--teal:#00d4c8;--teal2:#00eedd;--teal-dark:#00a89e;--teal-glow:rgba(0,212,200,.1);--border:rgba(255,255,255,.08);--card-bg:#0a1e35;--text-muted:#6b8fa8;--text-light:#c5d8e8;--radius:14px;}
     *{margin:0;padding:0;box-sizing:border-box;}
@@ -105,7 +104,6 @@
     @media(max-width:480px){
       .cards-grid{grid-template-columns:1fr;}
     }
-  
     /* ── Card overlay buttons ── */
     .op-card-img{position:relative;}
     /* Action strip at bottom of card image */
@@ -114,26 +112,21 @@
     /* Keep fav always visible when saved */
     .fav-toggle.saved ~ .card-actions,
     .card-actions:has(.fav-toggle.saved){opacity:1;transform:translateY(0);pointer-events:auto;}
-
     /* Individual buttons */
     .fav-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.88rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
     .fav-toggle:hover{border-color:#ff6b8a;background:rgba(255,60,100,.25);}
     .fav-toggle.saved{background:rgba(220,40,80,.9);border-color:#ff3c64;}
     .fav-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
-
     .cmp-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:#fff;font-weight:700;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
     .cmp-toggle:hover{border-color:#00d4c8;background:rgba(0,212,200,.25);}
     .cmp-toggle.selected{background:#00d4c8;border-color:#00d4c8;color:#040d1a;}
     .cmp-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
-
     .shr-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
     .shr-btn:hover{border-color:#00d4c8;background:rgba(0,212,200,.2);}
     .shr-btn::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
-
     /* View details link */
     .op-detail-link{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:8px;padding:7px 0 3px;border-top:1px solid rgba(255,255,255,.07);font-size:.76rem;color:var(--text-muted);transition:color .2s;text-decoration:none;}
     .op-detail-link:hover{color:#00d4c8;}
-
     /* Compare bar */
     #cmpBar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(8,21,37,.97);backdrop-filter:blur(12px);border-top:1px solid #1c3a58;padding:12px 20px;align-items:center;gap:12px;flex-wrap:wrap;}
     #cmpBar.show{display:flex;}
@@ -145,8 +138,6 @@
     .cmp-go{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;border:none;padding:9px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;}
     .cmp-go:hover{opacity:.9;}
     .cmp-clear{background:transparent;border:1px solid #1c3a58;color:#9bbdd4;padding:9px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;cursor:pointer;}
-
-    
     /* ---- AVAILABILITY / LIGHTBOX ---- */
     .fh-avail-section{margin:32px 0 24px;background:#081525;border:1.5px solid rgba(0,210,255,.15);border-radius:16px;overflow:hidden;}
     .fh-avail-header{padding:20px 24px 14px;border-bottom:1px solid rgba(0,210,255,.1);}
@@ -161,7 +152,6 @@
     .fh-lb-btn{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.85rem;padding:12px 22px;border-radius:50px;white-space:nowrap;text-decoration:none;transition:.2s;flex-shrink:0;}
     .fh-lb-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,212,200,.45);}
     @media(max-width:600px){.fh-lightbox-cta{flex-direction:column;text-align:center;}.fh-lb-btn{width:100%;text-align:center;}}
-
   </style>
   <meta property="og:image" content="https://cdn.filestackcontent.com/3nvPsXfmTTMI1dm4bkED/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max">
   <meta property="og:image:width" content="1200">
@@ -189,15 +179,13 @@
     </div>
   </div>
 </nav>
-
 <div class="breadcrumb">
   <a href="/">Home</a><span class="breadcrumb-sep">›</span>
   <span>Space Coast</span>
 </div>
-
 <section class="page-hero">
   <div class="page-hero-inner">
-    <div class="page-tag"><i class="fa-solid fa-water"></i> Florida's #1 Water Activities Directory</div>
+    <div class="page-tag"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M562.1 383.9c-21.5-2.4-42.1-10.5-57.9-22.9-14.1-11.1-34.2-11.3-48.2 0-37.9 30.4-107.2 30.4-145.7-1.5-13.5-11.2-33-9.1-46.7 2.1-38 31.6-107.9 31.6-145.9 0-13.7-11.2-33.2-13.3-46.7-2.1-15.8 13.1-38.1 21.3-57.9 23.7-17.6 2.2-31.1 16.3-31.1 34v1.2c0 20.6 17.6 37.3 38.1 35 28.2-3.2 54.6-13.7 76.7-26.1 44.9 25 116.7 25 161.5 0 44.9 25 116.7 25 161.5 0 22 12.4 48.5 22.9 76.7 26.1 20.5 2.3 38.1-14.4 38.1-35V418c0-17.7-13.5-31.8-31.1-34zM21.6 24.7c0 30.8-23.8 56.2-54.3 57.2 35.5-1 67.4-21.7 84.3-53.3 13.3-25 18.4-58.8 16.3-92.5-3.6-58.8-50.9-105.3-109.6-105.3-58.7 0-106 46.4-109.6 105.3-2.1 33.7 3 67.5 16.3 92.5 17 31.6 48.9 52.4 84.3 53.3-30.6-1-54.3-26.5-54.3-57.2C-104.4-3.3-65.5-32-21.6-32 22.3-32 61.2-3.3 21.6 24.7z"/></svg> Florida's #1 Water Activities Directory</div>
     <h1>🚀 <span class="teal">Space Coast</span> Water Sports</h1>
     <p>Find 2 operators on Florida's Space Coast — Cocoa Beach, Titusville, Cape Canaveral & more.</p>
     <div class="page-stats">
@@ -207,7 +195,6 @@
     </div>
   </div>
 </section>
-
 <div class="cards-section">
   <div class="cards-count">Showing 2 operators</div>
   <div class="cards-grid">
@@ -247,7 +234,6 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"🚀 <span class=\"teal\">Space Coast</span> Water Sports","numberOfItems":7,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"LocalBusiness","name":"Island Time Marina","address":{"@type":"PostalAddress","streetAddress":"400 W Cocoa Beach Causeway","addressLocality":"Cocoa Beach","addressRegion":"FL","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":28.32,"longitude":-80.6204},"url":"https://miamijetskiboatrentals.com/space-coast-water-sports.html","image":"https://cdn.filestackcontent.com/KaX9fpowQIOftmFRKA8b/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max","priceRange":"From $9","openingHours":"Mo-Su 08:00-20:00"}},{"@type":"ListItem","position":2,"item":{"@type":"LocalBusiness","name":"Dirty Dolly Fish Company","address":{"@type":"PostalAddress","streetAddress":"726 Scallop Dr","addressLocality":"Port Canaveral","addressRegion":"FL","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":28.4093,"longitude":-80.6085},"url":"https://miamijetskiboatrentals.com/space-coast-water-sports.html","image":"https://cdn.filestackcontent.com/bFy8WLIHSHiYcOFOHQly/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max","priceRange":"From $700","openingHours":"Mo-Su 08:00-20:00"}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
   <style>
     :root{--dark:#040d1a;--dark2:#081525;--teal:#00d4c8;--teal2:#00eedd;--teal-dark:#00a89e;--teal-glow:rgba(0,212,200,.1);--border:rgba(255,255,255,.08);--card-bg:#0a1e35;--text-muted:#6b8fa8;--text-light:#c5d8e8;--radius:14px;}
     *{margin:0;padding:0;box-sizing:border-box;}
@@ -334,7 +320,6 @@
     @media(max-width:480px){
       .cards-grid{grid-template-columns:1fr;}
     }
-  
     /* ── Card overlay buttons ── */
     .op-card-img{position:relative;}
     /* Action strip at bottom of card image */
@@ -343,26 +328,21 @@
     /* Keep fav always visible when saved */
     .fav-toggle.saved ~ .card-actions,
     .card-actions:has(.fav-toggle.saved){opacity:1;transform:translateY(0);pointer-events:auto;}
-
     /* Individual buttons */
     .fav-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.88rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
     .fav-toggle:hover{border-color:#ff6b8a;background:rgba(255,60,100,.25);}
     .fav-toggle.saved{background:rgba(220,40,80,.9);border-color:#ff3c64;}
     .fav-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
-
     .cmp-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:#fff;font-weight:700;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
     .cmp-toggle:hover{border-color:#00d4c8;background:rgba(0,212,200,.25);}
     .cmp-toggle.selected{background:#00d4c8;border-color:#00d4c8;color:#040d1a;}
     .cmp-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
-
     .shr-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
     .shr-btn:hover{border-color:#00d4c8;background:rgba(0,212,200,.2);}
     .shr-btn::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
-
     /* View details link */
     .op-detail-link{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:8px;padding:7px 0 3px;border-top:1px solid rgba(255,255,255,.07);font-size:.76rem;color:var(--text-muted);transition:color .2s;text-decoration:none;}
     .op-detail-link:hover{color:#00d4c8;}
-
     /* Compare bar */
     #cmpBar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(8,21,37,.97);backdrop-filter:blur(12px);border-top:1px solid #1c3a58;padding:12px 20px;align-items:center;gap:12px;flex-wrap:wrap;}
     #cmpBar.show{display:flex;}
@@ -374,8 +354,6 @@
     .cmp-go{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;border:none;padding:9px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;}
     .cmp-go:hover{opacity:.9;}
     .cmp-clear{background:transparent;border:1px solid #1c3a58;color:#9bbdd4;padding:9px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;cursor:pointer;}
-
-    
     /* ---- AVAILABILITY / LIGHTBOX ---- */
     .fh-avail-section{margin:32px 0 24px;background:#081525;border:1.5px solid rgba(0,210,255,.15);border-radius:16px;overflow:hidden;}
     .fh-avail-header{padding:20px 24px 14px;border-bottom:1px solid rgba(0,210,255,.1);}
@@ -390,7 +368,6 @@
     .fh-lb-btn{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.85rem;padding:12px 22px;border-radius:50px;white-space:nowrap;text-decoration:none;transition:.2s;flex-shrink:0;}
     .fh-lb-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,212,200,.45);}
     @media(max-width:600px){.fh-lightbox-cta{flex-direction:column;text-align:center;}.fh-lb-btn{width:100%;text-align:center;}}
-
   </style>
   <meta property="og:image" content="https://cdn.filestackcontent.com/3nvPsXfmTTMI1dm4bkED/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max">
   <meta property="og:image:width" content="1200">
@@ -417,15 +394,13 @@
     </div>
   </div>
 </nav>
-
 <div class="breadcrumb">
   <a href="/">Home</a><span class="breadcrumb-sep">›</span>
   <span>Space Coast</span>
 </div>
-
 <section class="page-hero">
   <div class="page-hero-inner">
-    <div class="page-tag"><i class="fa-solid fa-water"></i> Florida's #1 Water Activities Directory</div>
+    <div class="page-tag"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M562.1 383.9c-21.5-2.4-42.1-10.5-57.9-22.9-14.1-11.1-34.2-11.3-48.2 0-37.9 30.4-107.2 30.4-145.7-1.5-13.5-11.2-33-9.1-46.7 2.1-38 31.6-107.9 31.6-145.9 0-13.7-11.2-33.2-13.3-46.7-2.1-15.8 13.1-38.1 21.3-57.9 23.7-17.6 2.2-31.1 16.3-31.1 34v1.2c0 20.6 17.6 37.3 38.1 35 28.2-3.2 54.6-13.7 76.7-26.1 44.9 25 116.7 25 161.5 0 44.9 25 116.7 25 161.5 0 22 12.4 48.5 22.9 76.7 26.1 20.5 2.3 38.1-14.4 38.1-35V418c0-17.7-13.5-31.8-31.1-34zM21.6 24.7c0 30.8-23.8 56.2-54.3 57.2 35.5-1 67.4-21.7 84.3-53.3 13.3-25 18.4-58.8 16.3-92.5-3.6-58.8-50.9-105.3-109.6-105.3-58.7 0-106 46.4-109.6 105.3-2.1 33.7 3 67.5 16.3 92.5 17 31.6 48.9 52.4 84.3 53.3-30.6-1-54.3-26.5-54.3-57.2C-104.4-3.3-65.5-32-21.6-32 22.3-32 61.2-3.3 21.6 24.7z"/></svg> Florida's #1 Water Activities Directory</div>
     <h1>🚀 <span class="teal">Space Coast</span> Water Sports</h1>
     <p>Find 2 operators on Florida's Space Coast — Cocoa Beach, Titusville, Cape Canaveral & more.</p>
     <div class="page-stats">
@@ -435,7 +410,6 @@
     </div>
   </div>
 </section>
-
 <div class="cards-section">
   <div class="cards-count">Showing 2 operators</div>
   <div class="cards-grid">
@@ -492,7 +466,6 @@
   <script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"🚀 <span class=\"teal\">Space Coast</span> Water Sports","numberOfItems":7,"itemListElement":[{"@type":"ListItem","position":1,"item":{"@type":"LocalBusiness","name":"Island Time Marina","address":{"@type":"PostalAddress","streetAddress":"400 W Cocoa Beach Causeway","addressLocality":"Cocoa Beach","addressRegion":"FL","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":28.32,"longitude":-80.6204},"url":"https://miamijetskiboatrentals.com/space-coast-water-sports.html","image":"https://cdn.filestackcontent.com/KaX9fpowQIOftmFRKA8b/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max","priceRange":"From $9","openingHours":"Mo-Su 08:00-20:00"}},{"@type":"ListItem","position":2,"item":{"@type":"LocalBusiness","name":"Dirty Dolly Fish Company","address":{"@type":"PostalAddress","streetAddress":"726 Scallop Dr","addressLocality":"Port Canaveral","addressRegion":"FL","addressCountry":"US"},"geo":{"@type":"GeoCoordinates","latitude":28.4093,"longitude":-80.6085},"url":"https://miamijetskiboatrentals.com/space-coast-water-sports.html","image":"https://cdn.filestackcontent.com/bFy8WLIHSHiYcOFOHQly/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max","priceRange":"From $700","openingHours":"Mo-Su 08:00-20:00"}}]}</script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-  <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"></noscript>
   <style>
     :root{--dark:#040d1a;--dark2:#081525;--teal:#00d4c8;--teal2:#00eedd;--teal-dark:#00a89e;--teal-glow:rgba(0,212,200,.1);--border:rgba(255,255,255,.08);--card-bg:#0a1e35;--text-muted:#6b8fa8;--text-light:#c5d8e8;--radius:14px;}
     *{margin:0;padding:0;box-sizing:border-box;}
@@ -579,7 +552,6 @@
     @media(max-width:480px){
       .cards-grid{grid-template-columns:1fr;}
     }
-  
     /* ── Card overlay buttons ── */
     .op-card-img{position:relative;}
     /* Action strip at bottom of card image */
@@ -588,26 +560,21 @@
     /* Keep fav always visible when saved */
     .fav-toggle.saved ~ .card-actions,
     .card-actions:has(.fav-toggle.saved){opacity:1;transform:translateY(0);pointer-events:auto;}
-
     /* Individual buttons */
     .fav-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.88rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
     .fav-toggle:hover{border-color:#ff6b8a;background:rgba(255,60,100,.25);}
     .fav-toggle.saved{background:rgba(220,40,80,.9);border-color:#ff3c64;}
     .fav-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
-
     .cmp-toggle{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;color:#fff;font-weight:700;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
     .cmp-toggle:hover{border-color:#00d4c8;background:rgba(0,212,200,.25);}
     .cmp-toggle.selected{background:#00d4c8;border-color:#00d4c8;color:#040d1a;}
     .cmp-toggle::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
-
     .shr-btn{width:32px;height:32px;border-radius:50%;border:1.5px solid rgba(255,255,255,.3);background:rgba(0,0,0,.45);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.78rem;transition:all .2s;backdrop-filter:blur(4px);padding:0;flex-shrink:0;position:relative;}
     .shr-btn:hover{border-color:#00d4c8;background:rgba(0,212,200,.2);}
     .shr-btn::after{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);min-width:44px;min-height:44px;}
-
     /* View details link */
     .op-detail-link{display:flex;align-items:center;justify-content:center;gap:5px;margin-top:8px;padding:7px 0 3px;border-top:1px solid rgba(255,255,255,.07);font-size:.76rem;color:var(--text-muted);transition:color .2s;text-decoration:none;}
     .op-detail-link:hover{color:#00d4c8;}
-
     /* Compare bar */
     #cmpBar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:999;background:rgba(8,21,37,.97);backdrop-filter:blur(12px);border-top:1px solid #1c3a58;padding:12px 20px;align-items:center;gap:12px;flex-wrap:wrap;}
     #cmpBar.show{display:flex;}
@@ -619,8 +586,6 @@
     .cmp-go{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;border:none;padding:9px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.8rem;font-weight:700;cursor:pointer;white-space:nowrap;}
     .cmp-go:hover{opacity:.9;}
     .cmp-clear{background:transparent;border:1px solid #1c3a58;color:#9bbdd4;padding:9px 14px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;cursor:pointer;}
-
-    
     /* ---- AVAILABILITY / LIGHTBOX ---- */
     .fh-avail-section{margin:32px 0 24px;background:#081525;border:1.5px solid rgba(0,210,255,.15);border-radius:16px;overflow:hidden;}
     .fh-avail-header{padding:20px 24px 14px;border-bottom:1px solid rgba(0,210,255,.1);}
@@ -635,7 +600,6 @@
     .fh-lb-btn{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.85rem;padding:12px 22px;border-radius:50px;white-space:nowrap;text-decoration:none;transition:.2s;flex-shrink:0;}
     .fh-lb-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,212,200,.45);}
     @media(max-width:600px){.fh-lightbox-cta{flex-direction:column;text-align:center;}.fh-lb-btn{width:100%;text-align:center;}}
-
   </style>
   <meta property="og:image" content="https://cdn.filestackcontent.com/3nvPsXfmTTMI1dm4bkED/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max">
   <meta property="og:image:width" content="1200">
@@ -662,15 +626,13 @@
     </div>
   </div>
 </nav>
-
 <div class="breadcrumb">
   <a href="/">Home</a><span class="breadcrumb-sep">›</span>
   <span>Space Coast</span>
 </div>
-
 <section class="page-hero">
   <div class="page-hero-inner">
-    <div class="page-tag"><i class="fa-solid fa-water"></i> Florida's #1 Water Activities Directory</div>
+    <div class="page-tag"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 576 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M562.1 383.9c-21.5-2.4-42.1-10.5-57.9-22.9-14.1-11.1-34.2-11.3-48.2 0-37.9 30.4-107.2 30.4-145.7-1.5-13.5-11.2-33-9.1-46.7 2.1-38 31.6-107.9 31.6-145.9 0-13.7-11.2-33.2-13.3-46.7-2.1-15.8 13.1-38.1 21.3-57.9 23.7-17.6 2.2-31.1 16.3-31.1 34v1.2c0 20.6 17.6 37.3 38.1 35 28.2-3.2 54.6-13.7 76.7-26.1 44.9 25 116.7 25 161.5 0 44.9 25 116.7 25 161.5 0 22 12.4 48.5 22.9 76.7 26.1 20.5 2.3 38.1-14.4 38.1-35V418c0-17.7-13.5-31.8-31.1-34zM21.6 24.7c0 30.8-23.8 56.2-54.3 57.2 35.5-1 67.4-21.7 84.3-53.3 13.3-25 18.4-58.8 16.3-92.5-3.6-58.8-50.9-105.3-109.6-105.3-58.7 0-106 46.4-109.6 105.3-2.1 33.7 3 67.5 16.3 92.5 17 31.6 48.9 52.4 84.3 53.3-30.6-1-54.3-26.5-54.3-57.2C-104.4-3.3-65.5-32-21.6-32 22.3-32 61.2-3.3 21.6 24.7z"/></svg> Florida's #1 Water Activities Directory</div>
     <h1>🚀 <span class="teal">Space Coast</span> Water Sports</h1>
     <p>Find 2 operators on Florida's Space Coast — Cocoa Beach, Titusville, Cape Canaveral & more.</p>
     <div class="page-stats">
@@ -680,7 +642,6 @@
     </div>
   </div>
 </section>
-
 <div class="cards-section">
   <div class="cards-count">Showing 2 operators</div>
   <div class="cards-grid">
@@ -720,7 +681,6 @@
 </div>
   </div>
 </div>
-
 <section class="related-section">
   <h3>Explore More Florida Activities</h3>
   <div class="related-links">
@@ -730,13 +690,11 @@
     <a href="/northeast-florida-water-sports" class="related-link">Northeast FL</a>
   </div>
 </section>
-
 <section class="cta-banner">
   <h2>Find Your Perfect <span style="color:var(--teal)">Florida Adventure</span></h2>
   <p>Compare all 2,000+ operators, filter by zone or category, and book online instantly.</p>
-  <a href="/" class="btn-primary"><i class="fa-solid fa-magnifying-glass"></i> Browse All Operators</a>
+  <a href="/" class="btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M500.3 443.7l-119.7-119.7c27.22-40.41 40.65-90.9 33.46-144.7C401.8 87.79 326.8 13.32 235.2 1.723C99.01-15.51-15.51 99.01 1.724 235.2c11.6 91.64 86.08 166.7 177.6 178.9c53.8 7.189 104.3-6.236 144.7-33.46l119.7 119.7c15.62 15.62 40.95 15.62 56.57 0C515.9 484.7 515.9 459.3 500.3 443.7zM79.1 208c0-70.58 57.42-128 128-128s128 57.42 128 128c0 70.58-57.42 128-128 128S79.1 278.6 79.1 208z"/></svg> Browse All Operators</a>
 </section>
-
 <footer>
   <div class="footer-inner">
     <p class="footer-copy">© 2026 Miami Jetski &amp; Boat Rentals. Referral platform — bookings via FareHarbor.</p>
@@ -747,7 +705,6 @@
     </div>
   </div>
 </footer>
-
 <script>
 // ── Favorites ──
 var _favs = new Set(JSON.parse(localStorage.getItem('fav_ops_cat')||'[]'));
@@ -760,7 +717,6 @@ function toggleFav(btn,id){
 document.querySelectorAll('.fav-toggle').forEach(function(b){
   if(_favs.has(b.dataset.id)){b.textContent='❤️';b.classList.add('saved');}
 });
-
 // ── Compare ──
 var _cmp = JSON.parse(localStorage.getItem('cmp_ops_cat')||'[]');
 var _MAX_CMP = 3;
@@ -799,7 +755,6 @@ document.querySelectorAll('.cmp-toggle').forEach(function(b){
   if(_cmp.find(function(o){return o.id===b.dataset.id;})){b.textContent='✓';b.classList.add('selected');}
 });
 renderCmpBar();
-
 // ── Share ──
 function shareOp(url,name,btn){
   var shareUrl = url || window.location.href;
@@ -812,15 +767,12 @@ function shareOp(url,name,btn){
     }).catch(function(){});
   }
 }
-
 // ── View Details (go to index with prefilled search) ──
 function viewDetails(name){
   window.location.href='/?q='+encodeURIComponent(name);
 }
-
 function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 </script>
-
 <!-- Compare bar -->
 <div id="cmpBar">
   <span class="cmp-bar-title">⚖️ Compare</span>
@@ -828,8 +780,6 @@ function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(
   <button class="cmp-go" onclick="openCompare()">Compare →</button>
   <button class="cmp-clear" onclick="_cmp=[];localStorage.removeItem('cmp_ops_cat');document.querySelectorAll('.cmp-toggle').forEach(function(b){b.textContent='＋';b.classList.remove('selected');});renderCmpBar();">Clear</button>
 </div>
-
-
 <script>
 window.scrollToCalendar = function(e) {
   if(e) e.preventDefault();
@@ -900,7 +850,6 @@ window.scrollToCalendar = function(e) {
 </script>
 <!-- /FH_BOOKING_MODAL_v2 -->
 <script src="/referral.js" defer></script>
-
 <!-- RELATED_OPERATORS_LINKS -->
 <section style="padding:24px;background:#0a1428;color:#cdd9e8;border-top:1px solid #1a2540;margin-top:32px;font-size:.85rem;line-height:1.8">
   <strong style="color:#9bb5d4">Related operators:</strong> <a href="/4-hour-shark-nearshore-checkmate-fishing-charters-cape-canaveral" style="color:#7fb4ff;text-decoration:none">4 Hour Shark/Nearshore</a> · <a href="/9x6-floating-mat-cape-crossing-boat-rentals-merritt-island" style="color:#7fb4ff;text-decoration:none">9x6 Floating Mat</a> · <a href="/9-9hp-2-person-craigcat-cape-crossing-boat-rentals-merritt-island" style="color:#7fb4ff;text-decoration:none">9.9HP 2-person Craigcat</a> · <a href="/banana-river-lagoon-canaveral-locks-boat-tour-centralfl" style="color:#7fb4ff;text-decoration:none">Banana River Lagoon & Canaveral Loc</a> · <a href="/vero-tackle-sweet-desire-waterfront-escape-eastcoast" style="color:#7fb4ff;text-decoration:none">Vero Tackle - Sweet Desire Waterfro</a>
