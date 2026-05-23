@@ -185,7 +185,7 @@
             <strong style="font-size:.95rem;font-weight:700;color:#e8f4fd;">Instant Availability</strong>
             <span style="font-size:.78rem;color:#7ba3c0;">Click below to open the live booking calendar</span>
           </div>
-          <a href="https://fareharbor.com/embeds/book/orlandohelicopteradventures/items/358192/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" rel="nofollow sponsored" class="fh-lb-btn">Open Booking Calendar →</a>
+          <a data-fh-name="Orlando Helicopter Adventures" href="https://fareharbor.com/embeds/book/orlandohelicopteradventures/items/358192/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" rel="nofollow sponsored" class="fh-lb-btn">Open Booking Calendar →</a>
         </div>
       </div>
     </div>
@@ -197,7 +197,7 @@
         <span style="color:#00d4c8;font-weight:700;">🔥 <span id="weeklyBookings"></span> booked this week</span>
         <span style="color:#7ba3c0;"><span id="viewingNow"></span> viewing now</span>
       </div>
-      <a href="https://fareharbor.com/embeds/book/orlandohelicopteradventures/items/358192/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" rel="nofollow sponsored">Book Orlando Helicopter Adventures — From $130</a>
+      <a data-fh-name="Orlando Helicopter Adventures" href="https://fareharbor.com/embeds/book/orlandohelicopteradventures/items/358192/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" rel="nofollow sponsored">Book Orlando Helicopter Adventures — From $130</a>
     </div>
 
   </div>
@@ -206,7 +206,7 @@
     <div class="booking-card">
       <div class="bc-price">From $130</div>
       <div class="bc-price-sub">total price from</div>
-      <a href="https://fareharbor.com/embeds/book/orlandohelicopteradventures/items/358192/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" rel="nofollow sponsored" class="bc-book">✈️ Book Now →</a>
+      <a data-fh-name="Orlando Helicopter Adventures" href="https://fareharbor.com/embeds/book/orlandohelicopteradventures/items/358192/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" rel="nofollow sponsored" class="bc-book">✈️ Book Now →</a>
       <div class="bc-cancel">✅ Free cancellation 24 hrs before</div>
       <hr class="bc-divider">
       <div class="bc-detail-row"><span class="bc-detail-label">Category</span><span class="bc-detail-val">Aerial & Fly</span></div>
@@ -234,7 +234,7 @@
     <div class="mob-price" id="mobPrice">From $130</div>
     <div class="mob-price-sub">total price from</div>
   </div>
-  <a href="https://fareharbor.com/embeds/book/orlandohelicopteradventures/items/358192/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" rel="nofollow sponsored" class="mob-book-btn">Book Now →</a>
+  <a data-fh-name="Orlando Helicopter Adventures" href="https://fareharbor.com/embeds/book/orlandohelicopteradventures/items/358192/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" rel="nofollow sponsored" class="mob-book-btn">Book Now →</a>
 </div>
 
 <script>
@@ -314,7 +314,7 @@ document.querySelectorAll('.map-frame').forEach(el => obs.observe(el));
     if(!a)return;
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
     e.preventDefault();e.stopPropagation();
-    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/ \|.*$/,'').trim()||'Book Now';
+    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Book Now';
     openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;

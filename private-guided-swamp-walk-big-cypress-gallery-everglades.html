@@ -76,7 +76,7 @@ footer a{color:#00d2ff}
     <span class="chip">Everglades</span>
     <span class="chip">Tour</span>
   </div>
-  <a href="https://fareharbor.com/embeds/book/clydebutcher/items/256618/calendar/2026/05/?asn=fhdn&amp;asn-ref=miamistylerentals&amp;ref=miamistylerentals&amp;marketplace=yes&amp;flow=no&amp;full-items=yes" target="_blank" rel="noopener noreferrer nofollow sponsored" class="book-btn">🏄 Book Now — From $125.0/hr</a>
+  <a data-fh-name="Private Guided Swamp Walk – Big Cypress Gallery" href="https://fareharbor.com/embeds/book/clydebutcher/items/256618/calendar/2026/05/?asn=fhdn&amp;asn-ref=miamistylerentals&amp;ref=miamistylerentals&amp;marketplace=yes&amp;flow=no&amp;full-items=yes" target="_blank" rel="noopener noreferrer nofollow sponsored" class="book-btn">🏄 Book Now — From $125.0/hr</a>
   <p class="stitle">📋 Details</p>
   <div class="dg">
     <div class="dc"><div class="dl">Address</div><div class="dv">Ochopee, FL (Big Cypress National Preserve)</div></div>
@@ -143,7 +143,7 @@ footer a{color:#00d2ff}
     if(!a)return;
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
     e.preventDefault();e.stopPropagation();
-    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/ \|.*$/,'').trim()||'Book Now';
+    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Book Now';
     openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;

@@ -76,7 +76,7 @@ footer a{color:#00d2ff}
     <span class="chip">Northeast Florida</span>
     <span class="chip">Water Sports</span>
   </div>
-  <a href="https://fareharbor.com/embeds/book/getupandgokayaking-rainbowriver/items/109944/calendar/2026/05/?asn=fhdn&amp;asn-ref=miamistylerentals&amp;ref=miamistylerentals&amp;marketplace=yes&amp;flow=no&amp;full-items=yes" target="_blank" rel="noopener noreferrer nofollow sponsored" class="book-btn">🏄 Book Now — From $50.0/hr</a>
+  <a data-fh-name="Rainbow River Clear Kayak Tour" href="https://fareharbor.com/embeds/book/getupandgokayaking-rainbowriver/items/109944/calendar/2026/05/?asn=fhdn&amp;asn-ref=miamistylerentals&amp;ref=miamistylerentals&amp;marketplace=yes&amp;flow=no&amp;full-items=yes" target="_blank" rel="noopener noreferrer nofollow sponsored" class="book-btn">🏄 Book Now — From $50.0/hr</a>
   <p class="stitle">📋 Details</p>
   <div class="dg">
     <div class="dc"><div class="dl">Address</div><div class="dv">KP Hole Park, 9435 SW 190th Avenue Rd, Dunnellon, FL 34432</div></div>
@@ -143,7 +143,7 @@ footer a{color:#00d2ff}
     if(!a)return;
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
     e.preventDefault();e.stopPropagation();
-    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/ \|.*$/,'').trim()||'Book Now';
+    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Book Now';
     openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;

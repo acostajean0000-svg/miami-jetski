@@ -150,7 +150,7 @@ a{color:inherit;text-decoration:none}
       <div class="fh-fallback">
         <h3>Book Helicopter Tours with Jacksonville Helicopter Tours</h3>
         <p>Click below to check live availability and book instantly through FareHarbor.</p>
-        <a class="fh-fallback-btn" href="https://fareharbor.com/embeds/book/zoomairdaytonabeach/items/124086/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&marketplace=yes&flow=no" target="_blank" rel="noopener nofollow sponsored">
+        <a data-fh-name="Jacksonville Helicopter Tours" class="fh-fallback-btn" href="https://fareharbor.com/embeds/book/zoomairdaytonabeach/items/124086/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&marketplace=yes&flow=no" target="_blank" rel="noopener nofollow sponsored">
           📅 Check Availability & Book Now
         </a>
         <div class="fh-fallback-note">Secure booking via FareHarbor · Instant confirmation · Free cancellation on most tours</div>
@@ -179,8 +179,8 @@ a{color:inherit;text-decoration:none}
         <div class="price-note">Helicopter Tours · Jacksonville, FL</div>
       </div>
       <div class="booking-card-body">
-        <a class="book-btn" href="https://fareharbor.com/embeds/book/zoomairdaytonabeach/items/124086/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&marketplace=yes&flow=no&flow=no&marketplace=yes" target="_blank" rel="noopener nofollow sponsored">Book Now – Check Dates</a>
-        <a class="fh-btn" href="https://fareharbor.com/embeds/book/zoomairdaytonabeach/items/124086/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&marketplace=yes&flow=no&flow=no" target="_blank" rel="noopener nofollow sponsored">View All Options on FareHarbor</a>
+        <a data-fh-name="Jacksonville Helicopter Tours" class="book-btn" href="https://fareharbor.com/embeds/book/zoomairdaytonabeach/items/124086/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&marketplace=yes&flow=no&flow=no&marketplace=yes" target="_blank" rel="noopener nofollow sponsored">Book Now – Check Dates</a>
+        <a data-fh-name="Jacksonville Helicopter Tours" class="fh-btn" href="https://fareharbor.com/embeds/book/zoomairdaytonabeach/items/124086/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&marketplace=yes&flow=no&flow=no" target="_blank" rel="noopener nofollow sponsored">View All Options on FareHarbor</a>
         <div class="card-details">
           <span><strong>Location:</strong> Jacksonville, FL</span>
           <span><strong>Address:</strong> 2400 Yankee Clipper Dr, Jacksonville FL 32218</span>
@@ -189,7 +189,7 @@ a{color:inherit;text-decoration:none}
     </div>
   </aside>
 </div>
-<a class="sticky-book" href="https://fareharbor.com/embeds/book/zoomairdaytonabeach/items/124086/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&marketplace=yes&flow=no&flow=no&marketplace=yes" target="_blank" rel="noopener nofollow sponsored">Book Helicopter Tours – Jacksonville →</a>
+<a data-fh-name="Jacksonville Helicopter Tours" class="sticky-book" href="https://fareharbor.com/embeds/book/zoomairdaytonabeach/items/124086/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no&asn-ref=miamistylerentals&ref=miamistylerentals&full-items=yes&marketplace=yes&flow=no&flow=no&marketplace=yes" target="_blank" rel="noopener nofollow sponsored">Book Helicopter Tours – Jacksonville →</a>
 <footer class="footer">
   <p>&copy; 2026 MiamiJetskiBoatRentals.com · <a href="/sitemap.xml">Sitemap</a> · All bookings via FareHarbor</p>
 </footer>
@@ -243,7 +243,7 @@ a{color:inherit;text-decoration:none}
     if(!a)return;
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
     e.preventDefault();e.stopPropagation();
-    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/ \|.*$/,'').trim()||'Book Now';
+    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Book Now';
     openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;

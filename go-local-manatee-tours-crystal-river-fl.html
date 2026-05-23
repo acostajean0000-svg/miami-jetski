@@ -147,7 +147,7 @@ footer.footer a{color:#aaa}
       <div class="fh-fallback">
         <h3>Book Snorkel & Dive with Go Local Manatee Tours</h3>
         <p>Click below to check live availability and book instantly through FareHarbor.</p>
-        <a class="fh-fallback-btn" href="https://fareharbor.com/embeds/book/golocalmanateetours/items/361609/calendar/2026/05/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" target="_blank" rel="noopener nofollow sponsored">📅 Check Availability &amp; Book Now</a>
+        <a data-fh-name="Go Local Manatee Tours" class="fh-fallback-btn" href="https://fareharbor.com/embeds/book/golocalmanateetours/items/361609/calendar/2026/05/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" target="_blank" rel="noopener nofollow sponsored">📅 Check Availability &amp; Book Now</a>
         <div class="fh-fallback-note">Secure booking via FareHarbor · Instant confirmation · Free cancellation on most tours</div>
       </div>
     </div>
@@ -180,8 +180,8 @@ footer.footer a{color:#aaa}
       <div class="booking-card-body">
         <div class="stars">★★★★☆</div>
         <div class="rating-text" style="margin-bottom:14px">⭐ 4.7 · 85+ verified reviews</div>
-        <a class="book-btn" href="https://fareharbor.com/embeds/book/golocalmanateetours/items/361609/calendar/2026/05/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" target="_blank" rel="noopener nofollow sponsored">Book Now – Check Dates</a>
-        <a class="fh-btn" href="https://fareharbor.com/embeds/book/golocalmanateetours/items/?asn=fhdn&asn-ref=miamistylerentals&full-items=yes&flow=no&marketplace=yes" target="_blank" rel="noopener nofollow sponsored">View All Options on FareHarbor</a>
+        <a data-fh-name="Go Local Manatee Tours" class="book-btn" href="https://fareharbor.com/embeds/book/golocalmanateetours/items/361609/calendar/2026/05/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" target="_blank" rel="noopener nofollow sponsored">Book Now – Check Dates</a>
+        <a data-fh-name="Go Local Manatee Tours" class="fh-btn" href="https://fareharbor.com/embeds/book/golocalmanateetours/items/?asn=fhdn&asn-ref=miamistylerentals&full-items=yes&flow=no&marketplace=yes" target="_blank" rel="noopener nofollow sponsored">View All Options on FareHarbor</a>
         <div class="card-details">
           <span><strong>Location:</strong> Crystal River, FL</span>
           <span><strong>Activity:</strong> Snorkel & Dive</span>
@@ -191,7 +191,7 @@ footer.footer a{color:#aaa}
     </div>
   </aside>
 </div>
-<a class="sticky-book" href="https://fareharbor.com/embeds/book/golocalmanateetours/items/361609/calendar/2026/05/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" target="_blank" rel="noopener nofollow sponsored">Book Snorkel & Dive – Crystal River →</a>
+<a data-fh-name="Go Local Manatee Tours" class="sticky-book" href="https://fareharbor.com/embeds/book/golocalmanateetours/items/361609/calendar/2026/05/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" target="_blank" rel="noopener nofollow sponsored">Book Snorkel & Dive – Crystal River →</a>
 <footer class="footer">
   <p>&copy; 2026 MiamiJetskiBoatRentals.com · <a href="/sitemap.xml">Sitemap</a> · All bookings via FareHarbor</p>
 </footer>
@@ -245,7 +245,7 @@ footer.footer a{color:#aaa}
     if(!a)return;
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
     e.preventDefault();e.stopPropagation();
-    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/ \|.*$/,'').trim()||'Book Now';
+    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Book Now';
     openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;

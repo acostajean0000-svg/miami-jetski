@@ -187,7 +187,7 @@
     <div class="book-card">
       <div class="price">From $100</div>
       <div class="price-sub">Per person · Miami</div>
-      <a class="btn-book" href="https://fareharbor.com/embeds/book/toplinewatersports/items/594810/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no" target="_blank" rel="noopener nofollow sponsored" onclick="trackBookNow('Jetski Rentals','79','boat')">Book Now →</a>
+      <a data-fh-name="Jetski Rentals" class="btn-book" href="https://fareharbor.com/embeds/book/toplinewatersports/items/594810/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no" target="_blank" rel="noopener nofollow sponsored" onclick="trackBookNow('Jetski Rentals','79','boat')">Book Now →</a>
       <div class="guarantee">🔄 Free cancellation · Instant confirmation</div>
     </div>
     <div class="book-card" style="padding:16px;">
@@ -208,7 +208,7 @@
     <div style="font-size:1.3rem;font-weight:800;color:var(--teal);">From $100</div>
     <div style="font-size:.75rem;color:var(--muted);">4.6★ · 0 reviews</div>
   </div>
-  <a href="https://fareharbor.com/embeds/book/toplinewatersports/items/594810/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no" target="_blank" rel="noopener nofollow sponsored" class="btn-book" style="width:auto;padding:12px 24px;" onclick="trackBookNow('Jetski Rentals','79','boat')">Book Now →</a>
+  <a data-fh-name="Jetski Rentals" href="https://fareharbor.com/embeds/book/toplinewatersports/items/594810/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no" target="_blank" rel="noopener nofollow sponsored" class="btn-book" style="width:auto;padding:12px 24px;" onclick="trackBookNow('Jetski Rentals','79','boat')">Book Now →</a>
 </div>
 
 <footer class="footer">
@@ -274,7 +274,7 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     if(!a)return;
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
     e.preventDefault();e.stopPropagation();
-    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/ \|.*$/,'').trim()||'Book Now';
+    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Book Now';
     openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;

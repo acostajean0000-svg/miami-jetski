@@ -212,7 +212,7 @@
             <strong>Instant Availability</strong>
             <span>Click below to open the live booking calendar</span>
           </div>
-          <a href="https://fareharbor.com/embeds/book/727slingshots/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" rel="nofollow sponsored" class="fh-lb-btn">Open Booking Calendar →</a>
+          <a data-fh-name="Coastal Cruises South Pasadena" href="https://fareharbor.com/embeds/book/727slingshots/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" rel="nofollow sponsored" class="fh-lb-btn">Open Booking Calendar →</a>
         </div>
       </div>
     </div>
@@ -224,7 +224,7 @@
         <span style="color:#00d4c8;font-weight:700;">🔥 <span id="weeklyBookings"></span> booked this week</span>
         <span style="color:#7ba3c0;"><span id="viewingNow"></span> viewing now</span>
       </div>
-      <a href="https://fareharbor.com/embeds/book/727slingshots/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" rel="nofollow sponsored">Book Coastal Cruises South Pasadena — From $55</a>
+      <a data-fh-name="Coastal Cruises South Pasadena" href="https://fareharbor.com/embeds/book/727slingshots/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" rel="nofollow sponsored">Book Coastal Cruises South Pasadena — From $55</a>
     </div>
 
   </div>
@@ -233,7 +233,7 @@
     <div class="booking-card">
       <div class="bc-price">From $55</div>
       <div class="bc-price-sub">total price from</div>
-      <a href="https://fareharbor.com/embeds/book/727slingshots/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" rel="nofollow sponsored" class="bc-book">⛵ Book Now →</a>
+      <a data-fh-name="Coastal Cruises South Pasadena" href="https://fareharbor.com/embeds/book/727slingshots/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" rel="nofollow sponsored" class="bc-book">⛵ Book Now →</a>
       <div class="bc-cancel">✅ Free cancellation 24 hrs before</div>
       <button onclick="shareOp()" style="width:100%;background:transparent;border:1.5px solid rgba(255,255,255,.1);color:#a8c8e8;border-radius:10px;padding:9px 14px;font-size:.78rem;font-weight:600;cursor:pointer;margin-bottom:10px;display:flex;align-items:center;justify-content:center;gap:6px;transition:.2s;" onmouseover="this.style.borderColor='rgba(0,212,200,.4)'" onmouseout="this.style.borderColor='rgba(255,255,255,.1)'">🔗 Share this experience</button>
       <hr class="bc-divider">
@@ -274,7 +274,7 @@ document.querySelectorAll('.faq-q').forEach(btn => {
     <div class="mob-price" id="mobPrice">From $55</div>
     <div class="mob-price-sub">total price from</div>
   </div>
-  <a href="https://fareharbor.com/embeds/book/727slingshots/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" rel="nofollow sponsored" class="mob-book-btn" id="mobBookBtn" onclick="scrollToCalendar(event)">Book Now →</a>
+  <a data-fh-name="Coastal Cruises South Pasadena" href="https://fareharbor.com/embeds/book/727slingshots/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&marketplace=yes&flow=no&full-items=yes" rel="nofollow sponsored" class="mob-book-btn" id="mobBookBtn" onclick="scrollToCalendar(event)">Book Now →</a>
 </div>
 
 <script>
@@ -358,7 +358,7 @@ window.scrollToCalendar=function(e){
     if(!a)return;
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
     e.preventDefault();e.stopPropagation();
-    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/ \|.*$/,'').trim()||'Book Now';
+    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Book Now';
     openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;
