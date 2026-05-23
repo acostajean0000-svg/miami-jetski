@@ -81,8 +81,23 @@
     </div>
   </section>
   <div class="filters" id="filters">
-    <span class="cat-chip active" data-cat="all">🌎 All (365)</span>
-    <span class="cat-chip" data-cat="tour">🚌 Tour (135)</span>
+    <span class="cat-chip active" data-cat="all">🌎 All (354)</span>
+    <span class="cat-chip" data-cat="tour">🚌 Tours (139)</span>
+    <span class="cat-chip" data-cat="boat">⛵ Boat &amp; Charter (82)</span>
+    <span class="cat-chip" data-cat="watersports">🏄 Water Sports (46)</span>
+    <span class="cat-chip" data-cat="bikerental">🚲 Bike &amp; E-Ride (36)</span>
+    <span class="cat-chip" data-cat="staugustine">🏰 St. Augustine (290)</span>
+    <span class="cat-chip" data-cat="kayaksup">🛶 Kayak &amp; SUP (19)</span>
+    <span class="cat-chip" data-cat="sunset">🌅 Sunset Cruise (20)</span>
+    <span class="cat-chip" data-cat="sailing">⛵ Sailing &amp; Catamaran (18)</span>
+    <span class="cat-chip" data-cat="golfcart">🛺 Golf Cart (15)</span>
+    <span class="cat-chip" data-cat="surf">🏄‍♂️ Surf Lesson (13)</span>
+    <span class="cat-chip" data-cat="ghost">👻 Ghost / Haunted (12)</span>
+    <span class="cat-chip" data-cat="jacksonville">🌆 Jacksonville (9)</span>
+    <span class="cat-chip" data-cat="fishing">🎣 Fishing (4)</span>
+    <span class="cat-chip" data-cat="aerial">✈️ Aerial (3)</span>
+    <span class="cat-chip" data-cat="slingshot">🏎️ Slingshot (3)</span>
+    <span class="cat-chip" data-cat="snorkel">🤿 Snorkel &amp; Dive (2)</span>
   </div>
   <div class="grid" id="grid"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
 </main>
@@ -92,8 +107,18 @@
 <script>
 const ZONE_KEY = "jacksonville";
 const ZL_PATTERN = "jacksonville";
-const CAT_LABELS = {"jetski": "Jet Ski", "boat": "Boat", "fishing": "Fishing", "watersports": "Water Sports", "slingshot": "Slingshot", "jetcar": "Jet Car", "golfcart": "Golf Cart", "atv": "ATV", "tour": "Tour", "aerial": "Aerial Tour", "bikerental": "Bike & E-Ride"};
-const CAT_EMOJI = {"jetski": "\ud83d\udee5\ufe0f", "boat": "\u26f5", "fishing": "\ud83c\udfa3", "watersports": "\ud83c\udfc4", "slingshot": "\ud83c\udfce\ufe0f", "jetcar": "\ud83d\ude97", "golfcart": "\ud83d\udefa", "atv": "\ud83c\udfcd\ufe0f", "tour": "\ud83d\ude8c", "aerial": "\u2708\ufe0f", "bikerental": "\ud83d\udeb2"};
+const CAT_LABELS = {"jetski":"Jet Ski","boat":"Boat","yacht":"Yacht","sunset":"Sunset","airboat":"Airboat","fishing":"Fishing","watersports":"Water Sports","slingshot":"Slingshot","exotic":"Exotic Car","jetcar":"Jet Car","golfcart":"Golf Cart","atv":"ATV","tour":"Tour","aerial":"Aerial Tour","bikerental":"Bike & E-Ride","snorkel":"Snorkel","kayak":"Kayak & SUP","kayaksup":"Kayak & SUP","sailing":"Sailing","ghost":"Ghost Tour","surf":"Surf Lesson","staugustine":"St. Augustine","jacksonville":"Jacksonville"};
+const CAT_EMOJI = {"jetski":"\ud83d\udee5\ufe0f","boat":"\u26f5","yacht":"\ud83d\udef3\ufe0f","sunset":"\ud83c\udf05","airboat":"\ud83d\udc0a","fishing":"\ud83c\udfa3","watersports":"\ud83c\udfc4","slingshot":"\ud83c\udfce\ufe0f","exotic":"\ud83d\udc8e","jetcar":"\ud83d\ude97","golfcart":"\ud83d\udefa","atv":"\ud83c\udfcd\ufe0f","tour":"\ud83d\ude8c","aerial":"\u2708\ufe0f","bikerental":"\ud83d\udeb2","snorkel":"\ud83e\udd3f","kayak":"\ud83d\udef6","kayaksup":"\ud83d\udef6","sailing":"\u26f5","ghost":"\ud83d\udc7b","surf":"\ud83c\udfc4\u200d\u2642\ufe0f","staugustine":"\ud83c\udff0","jacksonville":"\ud83c\udf06"};
+
+// Sub-category matchers \u2014 filter by NAME / zl (not just op.cat) for NE FL verticals
+const SUBCAT_MATCH = {
+  kayaksup:    o => /\bkayak|\bsup\b|paddle ?board|canoe/i.test(o.name||''),
+  sailing:     o => /sail(?:ing)?|catamaran|schooner|sloop/i.test(o.name||''),
+  surf:        o => /surf (?:lesson|school|camp)|surfing|learn to surf/i.test(o.name||''),
+  ghost:       o => /ghost|haunt|paranormal|spooky/i.test(o.name||''),
+  staugustine: o => /st\.? augustine/i.test((o.zl||'') + ' ' + (o.name||'')),
+  jacksonville:o => /jacksonville/i.test((o.zl||'') + ' ' + (o.name||'')),
+};
 const FALLBACK_IMG = "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80";
 
 function esc(s){return String(s==null?'':s).replace(/[&<>"'`]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"})[c]);}
@@ -119,9 +144,15 @@ function thumbUrl(u){
   return u;
 }
 
+function catMatches(cat, op){
+  if (cat === 'all') return true;
+  if (op.cat === cat) return true;
+  const m = SUBCAT_MATCH[cat];
+  return m ? m(op) : false;
+}
 function render(){
   const slugMap = (window._OP_SLUG_MAP) || {};
-  const list = allOps.filter(o => activeCat==='all' || o.cat===activeCat);
+  const list = allOps.filter(o => catMatches(activeCat, o));
   const grid = document.getElementById('grid');
   if (!list.length) {
     grid.innerHTML = '<div class="empty" style="grid-column:1/-1"><h2>No operators in this view</h2><p>Try a different category, or <a href="/" style="color:#00d2ff">browse all of Florida</a>.</p></div>';
