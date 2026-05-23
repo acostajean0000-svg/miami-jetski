@@ -99,7 +99,12 @@ const FALLBACK_IMG = "https://images.unsplash.com/photo-1544551763-46a013bb70d5?
 function esc(s){return String(s==null?'':s).replace(/[&<>"'`]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"})[c]);}
 function inZone(op){
   if (op.zone === ZONE_KEY) return true;
-  if (ZL_PATTERN) return new RegExp(ZL_PATTERN, 'i').test(op.zl||'');
+  if (ZL_PATTERN) {
+    const pat = new RegExp(ZL_PATTERN, 'i');
+    if (pat.test(op.zl||'')) return true;
+    if (pat.test(op.name||'')) return true;
+    if (pat.test(op.addr||'')) return true;
+  }
   return false;
 }
 
