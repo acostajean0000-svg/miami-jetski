@@ -118,6 +118,7 @@
 .mob-cta .mob-cta-btn:hover{transform:translateY(-1px)}
 .fh-modal.open ~ .mob-cta{display:none !important}
 @media(max-width:768px){.mob-cta{display:block}body{padding-bottom:74px}}
+
 </style>
   <script>function trackBookNow(n,p,c){if(window.dataLayer)window.dataLayer.push({event:'book_now_click',operator_name:n,operator_price:p,operator_category:c});if(window.gtag)gtag('event','conversion',{value:parseFloat(p)||0,currency:'USD'});}</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');(function(){var l=false;function ld(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1';document.head.appendChild(s);}if(document.readyState==='complete')ld();else addEventListener('load',ld);['scroll','mousemove','touchstart','click'].forEach(function(e){addEventListener(e,ld,{once:true,passive:true});});})();</script>
@@ -299,6 +300,24 @@ document.querySelectorAll('.faq-q').forEach(q=>{
   bar.setAttribute('aria-label','Sticky booking bar');
   bar.innerHTML = '<div class="mob-cta-row"><div class="mob-cta-info"><div class="mob-cta-name">'+name.replace(/[<>]/g,'')+'</div>'+priceHtml+'</div><a class="mob-cta-btn" href="'+url+'" target="_blank" rel="noopener nofollow sponsored" data-fh-name="'+name.replace(/"/g,'&quot;')+'">Book Now →</a></div>';
   document.body.appendChild(bar);
+})();
+</script>
+<script>
+/* GA4 enhanced ecommerce — operator page */
+(function(){
+  if(!window.dataLayer)window.dataLayer=window.dataLayer||[];
+  var ITEM = {item_id:'bt1294',item_name:'Private After Hours Pink Party Cruise',item_category:'boat',item_category2:'westfl',price:150,currency:"USD"};
+  // view_item — fires on page load
+  dataLayer.push({event:'view_item',ecommerce:{currency:"USD",value:150,items:[ITEM]}});
+  // Intercept FH book links to fire select_item + begin_checkout
+  document.addEventListener('click',function(e){
+    var a = e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
+    if(!a) return;
+    dataLayer.push({event:'select_item',ecommerce:{items:[ITEM]}});
+    setTimeout(function(){
+      dataLayer.push({event:'begin_checkout',ecommerce:{currency:"USD",value:150,items:[ITEM]}});
+    },300);
+  },true);
 })();
 </script>
 </body>

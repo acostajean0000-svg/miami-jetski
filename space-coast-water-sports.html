@@ -169,6 +169,7 @@
 .mob-cta .mob-cta-btn:hover{transform:translateY(-1px)}
 .fh-modal.open ~ .mob-cta{display:none !important}
 @media(max-width:768px){.mob-cta{display:block}body{padding-bottom:74px}}
+
 </style>
   <meta property="og:image" content="https://cdn.filestackcontent.com/3nvPsXfmTTMI1dm4bkED/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max">
   <meta property="og:image:width" content="1200">
@@ -447,5 +448,23 @@ window.scrollToCalendar = function(e) {
   <p>This guided tour runs out of the Space Coast, an area best known for the Indian River Lagoon and Cape Canaveral. Visitors here come for Kennedy Space Center launches and Cocoa Beach surf, and the guided tours on offer typically include cultural, food and sightseeing experiences. Space Coast Water Sports Florida is bookable starting from $9. Before you book, it's worth knowing about the local history each guide highlights — your operator handles the details, but a quick read saves time at check-in.</p>
   <p>What to expect on the day: arrive 15 minutes early, dress for the weather, and bring a valid government-issued ID. Maximum group size is 15 guests, so for larger parties consider splitting across multiple bookings or messaging the operator first through FareHarbor's secure chat. Peak Florida season runs November through April — calm water, low humidity, premium pricing. Summer and shoulder months bring warmer water but more weather variability and lower prices. Book at least 48 hours ahead for weekends and 1-2 weeks ahead during holiday weeks.</p>
 </div>
+<script>
+/* GA4 enhanced ecommerce — operator page */
+(function(){
+  if(!window.dataLayer)window.dataLayer=window.dataLayer||[];
+  var ITEM = {item_id:'to744',item_name:'Space Coast Water Sports Florida',item_category:'tour',item_category2:'space',price:9,currency:"USD"};
+  // view_item — fires on page load
+  dataLayer.push({event:'view_item',ecommerce:{currency:"USD",value:9,items:[ITEM]}});
+  // Intercept FH book links to fire select_item + begin_checkout
+  document.addEventListener('click',function(e){
+    var a = e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
+    if(!a) return;
+    dataLayer.push({event:'select_item',ecommerce:{items:[ITEM]}});
+    setTimeout(function(){
+      dataLayer.push({event:'begin_checkout',ecommerce:{currency:"USD",value:9,items:[ITEM]}});
+    },300);
+  },true);
+})();
+</script>
 </body>
 </html>

@@ -73,7 +73,15 @@
     .sk{background:linear-gradient(90deg,rgba(255,255,255,.04) 0%,rgba(255,255,255,.10) 50%,rgba(255,255,255,.04) 100%);background-size:200% 100%;animation:sk 1.5s infinite;border-radius:14px;height:280px}
     @keyframes sk{0%{background-position:200% 0}100%{background-position:-200% 0}}
     @media(max-width:600px){.hero{padding:24px 0 12px}.card .img{height:150px}}
-  </style>
+  
+
+/* Trust signals strip */
+.trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 22px;padding:14px 18px;background:linear-gradient(135deg,rgba(0,210,255,.06),rgba(0,210,255,.02));border-top:1px solid rgba(0,210,255,.18);border-bottom:1px solid rgba(0,210,255,.18);margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.8rem;color:#cfdde9}
+.trust-strip .trust-item{display:flex;align-items:center;gap:7px;white-space:nowrap}
+.trust-strip .trust-item span:first-child{font-size:1rem;line-height:1}
+.trust-strip .trust-item b{color:#fff;font-weight:700}
+@media(max-width:600px){.trust-strip{gap:8px 14px;padding:12px;font-size:.72rem}.trust-strip .trust-item span:first-child{font-size:.9rem}}
+</style>
 
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');(function(){var l=false;function ld(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1';document.head.appendChild(s);}if(document.readyState==='complete')ld();else addEventListener('load',ld);['scroll','mousemove','touchstart','click'].forEach(function(e){addEventListener(e,ld,{once:true,passive:true});});})();</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Where do most Everglades airboat tours launch from?", "acceptedAnswer": {"@type": "Answer", "text": "Everglades City (10,000 Islands area), Homestead, Coopertown (Tamiami Trail), and Wild Florida (St. Cloud, near Orlando). All three offer 30-60 min rides with alligator + manatee + bird sightings."}}, {"@type": "Question", "name": "How loud are airboat tours?", "acceptedAnswer": {"@type": "Answer", "text": "Loud — operators provide ear protection. Engine noise drops to conversational levels when the boat slows in shallow mangrove tunnels for wildlife viewing."}}, {"@type": "Question", "name": "Will I see alligators on an Everglades airboat tour?", "acceptedAnswer": {"@type": "Answer", "text": "Almost always — operators have ~99% sighting rates year-round. Best months are March-October when alligators are most active basking in the sun."}}]}</script>
@@ -83,8 +91,21 @@
   <a href="/" class="nav-logo">🐊 Florida<span>WaterSports</span></a>
   <a href="/" class="nav-back">← All Florida</a>
 </nav>
+<div class="trust-strip" role="region" aria-label="Trust indicators">
+  <div class="trust-item"><span aria-hidden="true">🛡️</span><b>Verified</b> Operators</div>
+  <div class="trust-item"><span aria-hidden="true">🔒</span><b>Secure</b> via FareHarbor</div>
+  <div class="trust-item"><span aria-hidden="true">⭐</span><b>4.8★</b> Avg Rating</div>
+  <div class="trust-item"><span aria-hidden="true">✓</span><b>Free</b> Cancellation*</div>
+  <div class="trust-item"><span aria-hidden="true">⚡</span><b>Instant</b> Confirmation</div>
+</div>
 <div class="bc"><a href="/">Home</a><span class="sep">›</span><span>Airboat Tours</span></div>
-<main>
+
+<section class="intro-section" style="max-width:1100px;margin:24px auto;padding:20px 22px;background:rgba(0,210,255,.05);border:1px solid rgba(0,210,255,.18);border-radius:14px">
+  <h2 style="font-size:1.15rem;color:#00d2ff;margin-bottom:10px">Everglades airboat tours — Florida's subtropical wilderness</h2>
+  <p style="color:#cfdde9;line-height:1.6;margin-bottom:10px">An airboat tour is the most efficient way to see the Everglades — the only place in the world where alligators and crocodiles co-exist. The flat-bottom airboats glide over inches of water through sawgrass prairies and mangrove tunnels at speeds that wouldn't be possible with a traditional propeller. Most tours run <strong>30-60 minutes</strong>, with <strong>99% alligator sighting rates</strong> year-round, plus chances at bald eagles, ospreys, turtles, manatees, and the occasional river otter.</p>
+  <p style="color:#cfdde9;line-height:1.6;margin-bottom:10px">Main launch hubs: <strong>Everglades City</strong> (the 10,000 Islands gateway, ~90 minutes from Miami), <strong>Coopertown</strong> (Tamiami Trail, ~45 minutes from Miami), <strong>Homestead</strong> (south Everglades entrance), and <strong>Wild Florida / Boggy Creek</strong> (Kissimmee + St. Cloud, ~35 minutes from Disney). Each location offers something slightly different — Everglades City tours run through saltwater estuaries with frequent dolphin sightings; Coopertown and Wild Florida are deeper freshwater sawgrass marsh.</p>
+  <p style="color:#cfdde9;line-height:1.6;margin-bottom:0">What to expect: airboats are loud, so operators provide noise-cancelling earmuffs. Wear closed-toe shoes and bring polarized sunglasses (great for spotting gators below the surface). The best wildlife months are <strong>March-October</strong>, when alligators bask in the sun. Most operators bundle the airboat ride with a small wildlife exhibit (gator nursery, snake encounters) — factor that into your visit time.</p>
+</section><main>
   <section class="hero">
     <h1>🐊 Everglades Airboat Tours</h1>
     <p>Race across the River of Grass on a propeller-driven airboat — 32 verified Everglades airboat tours from Miami, Fort Lauderdale, Naples and the Tamiami Trail. Spot alligators, herons, turtles and Florida panthers in their native habitat. Instant FareHarbor booking.</p>
@@ -162,6 +183,31 @@ function setupFilters(){{
     document.getElementById('grid').innerHTML = '<div class="empty" style="grid-column:1/-1"><h2>Could not load operators</h2><p><a href="/" style="color:#3aa845">Return home</a></p></div>';
   }}
 }})();
+</script>
+<script>
+/* GA4 enhanced ecommerce — landing page */
+(function(){
+  if(!window.dataLayer)window.dataLayer=window.dataLayer||[];
+  // view_item_list fires on page load
+  dataLayer.push({event:'view_item_list',item_list_name:document.title.split(/[·|–—-]/)[0].trim()});
+  // Listen for card clicks to fire select_item
+  document.addEventListener('click',function(e){
+    var card = e.target.closest('a.card');
+    if(!card) return;
+    var name = (card.querySelector('.name')||{}).textContent || '';
+    var priceText = (card.querySelector('.price')||{}).textContent || '';
+    var priceM = priceText.match(/\$([0-9.]+)/);
+    var price = priceM ? parseFloat(priceM[1]) : 0;
+    dataLayer.push({event:'select_item',ecommerce:{items:[{item_name:name.trim(),price:price,currency:"USD"}]}});
+  },true);
+  // FH link click on landings (rare but possible)
+  document.addEventListener('click',function(e){
+    var a = e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
+    if(!a) return;
+    var name = a.getAttribute('data-fh-name')||'';
+    dataLayer.push({event:'begin_checkout',ecommerce:{items:[{item_name:name,currency:"USD"}]}});
+  },true);
+})();
 </script>
 </body>
 </html>

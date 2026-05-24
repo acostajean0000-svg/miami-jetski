@@ -132,6 +132,7 @@
 .mob-cta .mob-cta-btn:hover{transform:translateY(-1px)}
 .fh-modal.open ~ .mob-cta{display:none !important}
 @media(max-width:768px){.mob-cta{display:block}body{padding-bottom:74px}}
+
 </style>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Do I need a motorcycle license to rent a Slingshot in Lake Wales?", "acceptedAnswer": {"@type": "Answer", "text": "No motorcycle license is required. Florida classifies the Polaris Slingshot as an autocycle, so a standard driver's license is all you need."}}, {"@type": "Question", "name": "Where is Kawyre Creations located?", "acceptedAnswer": {"@type": "Answer", "text": "Kawyre Creations is located at 145 Dinner Lake Ave, Lake Wales, FL 33859 — in Polk County, Central Florida, about an hour from both Orlando and Tampa."}}, {"@type": "Question", "name": "How much does a Slingshot rental cost at Kawyre Creations?", "acceptedAnswer": {"@type": "Answer", "text": "Slingshot SL rentals start at $175. Book online through FareHarbor for instant confirmation and live availability."}}, {"@type": "Question", "name": "What is there to see around Lake Wales on a Slingshot?", "acceptedAnswer": {"@type": "Answer", "text": "Lake Wales is home to Bok Tower Gardens, the Lake Wales Ridge, Spook Hill, and miles of scenic country roads through Florida's Heartland — perfect for an open-air Slingshot adventure."}}, {"@type": "Question", "name": "Can two people ride the Slingshot?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — the Polaris Slingshot SL seats two passengers side-by-side, making it ideal for couples or friends."}}]}</script>
   <script type="application/ld+json">{"@context": "https://schema.org", "@type": "WebPage", "speakable": {"@type": "SpeakableSpecification", "cssSelector": [".hero-title", ".desc-text"]}, "url": "https://miamijetskiboatrentals.com/operators/kawyre-creations-slingshot-lake-wales-centralfl"}</script>
@@ -401,6 +402,24 @@ window.scrollToCalendar=function(e){if(e)e.preventDefault();var sec=document.get
   bar.setAttribute('aria-label','Sticky booking bar');
   bar.innerHTML = '<div class="mob-cta-row"><div class="mob-cta-info"><div class="mob-cta-name">'+name.replace(/[<>]/g,'')+'</div>'+priceHtml+'</div><a class="mob-cta-btn" href="'+url+'" target="_blank" rel="noopener nofollow sponsored" data-fh-name="'+name.replace(/"/g,'&quot;')+'">Book Now →</a></div>';
   document.body.appendChild(bar);
+})();
+</script>
+<script>
+/* GA4 enhanced ecommerce — operator page */
+(function(){
+  if(!window.dataLayer)window.dataLayer=window.dataLayer||[];
+  var ITEM = {item_id:'sl10',item_name:'Kawyre Creations',item_category:'slingshot',item_category2:'westfl',price:175,currency:"USD"};
+  // view_item — fires on page load
+  dataLayer.push({event:'view_item',ecommerce:{currency:"USD",value:175,items:[ITEM]}});
+  // Intercept FH book links to fire select_item + begin_checkout
+  document.addEventListener('click',function(e){
+    var a = e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
+    if(!a) return;
+    dataLayer.push({event:'select_item',ecommerce:{items:[ITEM]}});
+    setTimeout(function(){
+      dataLayer.push({event:'begin_checkout',ecommerce:{currency:"USD",value:175,items:[ITEM]}});
+    },300);
+  },true);
 })();
 </script>
 </body>

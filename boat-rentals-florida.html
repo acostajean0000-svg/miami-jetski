@@ -227,7 +227,8 @@
     .fh-lb-btn{background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;font-family:'Montserrat',sans-serif;font-weight:800;font-size:.85rem;padding:12px 22px;border-radius:50px;white-space:nowrap;text-decoration:none;transition:.2s;flex-shrink:0;}
     .fh-lb-btn:hover{transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,212,200,.45);}
     @media(max-width:600px){.fh-lightbox-cta{flex-direction:column;text-align:center;}.fh-lb-btn{width:100%;text-align:center;}}
-  </style>
+  
+</style>
 </style>
   <meta property="og:image" content="https://cdn.filestackcontent.com/qGF2J9DjSnSyRIoyiVDF/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max">
   <meta property="og:image:width" content="1200">
@@ -2269,5 +2270,30 @@ window.scrollToCalendar = function(e) {
 </script>
 <!-- /FH_BOOKING_MODAL_v2 -->
 <script src="/referral.js" defer></script>
+<script>
+/* GA4 enhanced ecommerce — landing page */
+(function(){
+  if(!window.dataLayer)window.dataLayer=window.dataLayer||[];
+  // view_item_list fires on page load
+  dataLayer.push({event:'view_item_list',item_list_name:document.title.split(/[·|–—-]/)[0].trim()});
+  // Listen for card clicks to fire select_item
+  document.addEventListener('click',function(e){
+    var card = e.target.closest('a.card');
+    if(!card) return;
+    var name = (card.querySelector('.name')||{}).textContent || '';
+    var priceText = (card.querySelector('.price')||{}).textContent || '';
+    var priceM = priceText.match(/\$([0-9.]+)/);
+    var price = priceM ? parseFloat(priceM[1]) : 0;
+    dataLayer.push({event:'select_item',ecommerce:{items:[{item_name:name.trim(),price:price,currency:"USD"}]}});
+  },true);
+  // FH link click on landings (rare but possible)
+  document.addEventListener('click',function(e){
+    var a = e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
+    if(!a) return;
+    var name = a.getAttribute('data-fh-name')||'';
+    dataLayer.push({event:'begin_checkout',ecommerce:{items:[{item_name:name,currency:"USD"}]}});
+  },true);
+})();
+</script>
 </body>
 </html>

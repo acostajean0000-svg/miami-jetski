@@ -79,6 +79,13 @@
 .mob-cta .mob-cta-btn:hover{transform:translateY(-1px)}
 .fh-modal.open ~ .mob-cta{display:none !important}
 @media(max-width:768px){.mob-cta{display:block}body{padding-bottom:74px}}
+
+/* Trust signals strip */
+.trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 22px;padding:14px 18px;background:linear-gradient(135deg,rgba(0,210,255,.06),rgba(0,210,255,.02));border-top:1px solid rgba(0,210,255,.18);border-bottom:1px solid rgba(0,210,255,.18);margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.8rem;color:#cfdde9}
+.trust-strip .trust-item{display:flex;align-items:center;gap:7px;white-space:nowrap}
+.trust-strip .trust-item span:first-child{font-size:1rem;line-height:1}
+.trust-strip .trust-item b{color:#fff;font-weight:700}
+@media(max-width:600px){.trust-strip{gap:8px 14px;padding:12px;font-size:.72rem}.trust-strip .trust-item span:first-child{font-size:.9rem}}
 </style>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');(function(){var l=false;function ld(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1';document.head.appendChild(s);}if(document.readyState==='complete')ld();else addEventListener('load',ld);['scroll','mousemove','touchstart','click'].forEach(function(e){addEventListener(e,ld,{once:true,passive:true});});})();</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://miamijetskiboatrentals.com/"},{"@type":"ListItem","position":2,"name":"Central Florida Activities","item":"https://miamijetskiboatrentals.com/central-florida-activities"},{"@type":"ListItem","position":3,"name":"Space Coast Activities 2026","item":"https://miamijetskiboatrentals.com/space-coast-activities"}]}</script>
@@ -89,6 +96,13 @@
   <a href="/" class="nav-logo">💧 Florida<span>WaterSports</span></a>
   <a href="/" class="nav-back">← All Florida</a>
 </nav>
+<div class="trust-strip" role="region" aria-label="Trust indicators">
+  <div class="trust-item"><span aria-hidden="true">🛡️</span><b>Verified</b> Operators</div>
+  <div class="trust-item"><span aria-hidden="true">🔒</span><b>Secure</b> via FareHarbor</div>
+  <div class="trust-item"><span aria-hidden="true">⭐</span><b>4.8★</b> Avg Rating</div>
+  <div class="trust-item"><span aria-hidden="true">✓</span><b>Free</b> Cancellation*</div>
+  <div class="trust-item"><span aria-hidden="true">⚡</span><b>Instant</b> Confirmation</div>
+</div>
 <div class="bc"><a href="/">Home</a><span class="sep">›</span><span>Space Coast Activities</span></div>
 <main>
   <section class="hero">
@@ -514,6 +528,24 @@ function setupFilters(){
   bar.setAttribute('aria-label','Sticky booking bar');
   bar.innerHTML = '<div class="mob-cta-row"><div class="mob-cta-info"><div class="mob-cta-name">'+name.replace(/[<>]/g,'')+'</div>'+priceHtml+'</div><a class="mob-cta-btn" href="'+url+'" target="_blank" rel="noopener nofollow sponsored" data-fh-name="'+name.replace(/"/g,'&quot;')+'">Book Now →</a></div>';
   document.body.appendChild(bar);
+})();
+</script>
+<script>
+/* GA4 enhanced ecommerce — operator page */
+(function(){
+  if(!window.dataLayer)window.dataLayer=window.dataLayer||[];
+  var ITEM = {item_id:'to495',item_name:'Space Coast Activities 2026',item_category:'tour',item_category2:'space',price:9,currency:"USD"};
+  // view_item — fires on page load
+  dataLayer.push({event:'view_item',ecommerce:{currency:"USD",value:9,items:[ITEM]}});
+  // Intercept FH book links to fire select_item + begin_checkout
+  document.addEventListener('click',function(e){
+    var a = e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
+    if(!a) return;
+    dataLayer.push({event:'select_item',ecommerce:{items:[ITEM]}});
+    setTimeout(function(){
+      dataLayer.push({event:'begin_checkout',ecommerce:{currency:"USD",value:9,items:[ITEM]}});
+    },300);
+  },true);
 })();
 </script>
 </body>

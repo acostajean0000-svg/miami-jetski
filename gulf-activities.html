@@ -38,12 +38,26 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;margin:0;background:#0a1428;c
 .ops-index a:hover{text-decoration:underline}
 .footer{padding:24px;text-align:center;color:#7888a3;font-size:.85rem;border-top:1px solid #1a2540;margin-top:48px}
 @media(max-width:700px){.ops-index ul{columns:1}}
+
+/* Trust signals strip */
+.trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:14px 22px;padding:14px 18px;background:linear-gradient(135deg,rgba(0,210,255,.06),rgba(0,210,255,.02));border-top:1px solid rgba(0,210,255,.18);border-bottom:1px solid rgba(0,210,255,.18);margin:0 auto;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;font-size:.8rem;color:#cfdde9}
+.trust-strip .trust-item{display:flex;align-items:center;gap:7px;white-space:nowrap}
+.trust-strip .trust-item span:first-child{font-size:1rem;line-height:1}
+.trust-strip .trust-item b{color:#fff;font-weight:700}
+@media(max-width:600px){.trust-strip{gap:8px 14px;padding:12px;font-size:.72rem}.trust-strip .trust-item span:first-child{font-size:.9rem}}
 </style>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What activities run from Naples, Marco Island and Fort Myers?", "acceptedAnswer": {"@type": "Answer", "text": "The Gulf Coast offers pontoon rentals (10,000 Islands), dolphin sunset cruises, sandbar party boats, kayak eco-tours through mangrove tunnels, shell-collecting trips to Sanibel and Captiva, and parasailing off Naples Beach."}}, {"@type": "Question", "name": "Where's the best shelling in the Gulf?", "acceptedAnswer": {"@type": "Answer", "text": "Cayo Costa State Park (boat-access only), Captiva Island, North Sanibel and the unbridged barrier islands offer the richest shelling. Several Gulf operators run dedicated shelling boat trips on this page."}}, {"@type": "Question", "name": "Can you see dolphins on a Naples boat tour?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — dolphin sightings are near-guaranteed on Naples sunset cruises and 10,000 Islands tours. The protected mangrove waterways host year-round resident pods."}}]}</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://miamijetskiboatrentals.com/"}, {"@type": "ListItem", "position": 2, "name": "Gulf Coast", "item": "https://miamijetskiboatrentals.com/gulf-activities"}]}</script>
 </head>
 <body>
 <nav class="nav"><a href="/">⚓ Miami Jet Ski & Boat Rentals</a></nav>
+<div class="trust-strip" role="region" aria-label="Trust indicators">
+  <div class="trust-item"><span aria-hidden="true">🛡️</span><b>Verified</b> Operators</div>
+  <div class="trust-item"><span aria-hidden="true">🔒</span><b>Secure</b> via FareHarbor</div>
+  <div class="trust-item"><span aria-hidden="true">⭐</span><b>4.8★</b> Avg Rating</div>
+  <div class="trust-item"><span aria-hidden="true">✓</span><b>Free</b> Cancellation*</div>
+  <div class="trust-item"><span aria-hidden="true">⚡</span><b>Instant</b> Confirmation</div>
+</div>
 <header class="hero">
   <h1>Florida Gulf Coast Activities</h1>
   <p>Compare 1550+ verified water sports operators in Florida Gulf Coast. Jet ski rentals, boat charters, fishing, tours, and more.</p>
@@ -353,5 +367,30 @@ body{font-family:'Helvetica Neue',Arial,sans-serif;margin:0;background:#0a1428;c
   </ul>
 </section>
 <footer class="footer">© 2026 MiamiJetskiBoatRentals · <a href="/" style="color:#7fb4ff">Home</a></footer>
+<script>
+/* GA4 enhanced ecommerce — landing page */
+(function(){
+  if(!window.dataLayer)window.dataLayer=window.dataLayer||[];
+  // view_item_list fires on page load
+  dataLayer.push({event:'view_item_list',item_list_name:document.title.split(/[·|–—-]/)[0].trim()});
+  // Listen for card clicks to fire select_item
+  document.addEventListener('click',function(e){
+    var card = e.target.closest('a.card');
+    if(!card) return;
+    var name = (card.querySelector('.name')||{}).textContent || '';
+    var priceText = (card.querySelector('.price')||{}).textContent || '';
+    var priceM = priceText.match(/\$([0-9.]+)/);
+    var price = priceM ? parseFloat(priceM[1]) : 0;
+    dataLayer.push({event:'select_item',ecommerce:{items:[{item_name:name.trim(),price:price,currency:"USD"}]}});
+  },true);
+  // FH link click on landings (rare but possible)
+  document.addEventListener('click',function(e){
+    var a = e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
+    if(!a) return;
+    var name = a.getAttribute('data-fh-name')||'';
+    dataLayer.push({event:'begin_checkout',ecommerce:{items:[{item_name:name,currency:"USD"}]}});
+  },true);
+})();
+</script>
 </body>
 </html>

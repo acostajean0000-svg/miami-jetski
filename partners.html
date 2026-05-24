@@ -348,7 +348,8 @@
       white-space: nowrap;
       flex-shrink: 0;
     }
-  </style>
+  
+</style>
 <meta property="og:url" content="https://miamijetskiboatrentals.com/partners">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://miamijetskiboatrentals.com/images/og-default.jpg">
@@ -639,5 +640,30 @@
 </script>
 <!-- /FH_BOOKING_MODAL_v2 -->
 <script src="/referral.js" defer></script>
+<script>
+/* GA4 enhanced ecommerce — landing page */
+(function(){
+  if(!window.dataLayer)window.dataLayer=window.dataLayer||[];
+  // view_item_list fires on page load
+  dataLayer.push({event:'view_item_list',item_list_name:document.title.split(/[·|–—-]/)[0].trim()});
+  // Listen for card clicks to fire select_item
+  document.addEventListener('click',function(e){
+    var card = e.target.closest('a.card');
+    if(!card) return;
+    var name = (card.querySelector('.name')||{}).textContent || '';
+    var priceText = (card.querySelector('.price')||{}).textContent || '';
+    var priceM = priceText.match(/\$([0-9.]+)/);
+    var price = priceM ? parseFloat(priceM[1]) : 0;
+    dataLayer.push({event:'select_item',ecommerce:{items:[{item_name:name.trim(),price:price,currency:"USD"}]}});
+  },true);
+  // FH link click on landings (rare but possible)
+  document.addEventListener('click',function(e){
+    var a = e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
+    if(!a) return;
+    var name = a.getAttribute('data-fh-name')||'';
+    dataLayer.push({event:'begin_checkout',ecommerce:{items:[{item_name:name,currency:"USD"}]}});
+  },true);
+})();
+</script>
 </body>
 </html>
