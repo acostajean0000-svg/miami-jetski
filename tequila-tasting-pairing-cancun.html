@@ -106,12 +106,24 @@
     .footer{background:var(--dark2);border-top:1px solid var(--border);padding:40px 24px 20px;text-align:center;color:var(--muted);font-size:.82rem;}
     .footer a{color:var(--muted);margin:0 8px;}
     .footer a:hover{color:var(--teal);}
-  </style>
+  
+/* Sticky mobile Book Now bar */
+.mob-cta{display:none;position:fixed;left:0;right:0;bottom:0;z-index:99000;padding:10px 12px env(safe-area-inset-bottom,10px);background:#0a0a0f;border-top:1px solid rgba(0,210,255,.3);box-shadow:0 -4px 18px rgba(0,0,0,.55)}
+.mob-cta .mob-cta-row{display:flex;align-items:center;gap:10px;max-width:600px;margin:0 auto}
+.mob-cta .mob-cta-info{flex:1;min-width:0;color:#fff}
+.mob-cta .mob-cta-name{font-size:.85rem;font-weight:600;line-height:1.2;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mob-cta .mob-cta-price{font-size:.78rem;color:#9bb5d4;margin-top:1px}
+.mob-cta .mob-cta-price b{color:#00d2ff;font-weight:700}
+.mob-cta .mob-cta-btn{flex-shrink:0;background:linear-gradient(135deg,#00d2ff,#0099cc);color:#fff;padding:11px 18px;border-radius:50px;font-size:.85rem;font-weight:700;text-decoration:none;white-space:nowrap;box-shadow:0 2px 8px rgba(0,210,255,.4)}
+.mob-cta .mob-cta-btn:hover{transform:translateY(-1px)}
+.fh-modal.open ~ .mob-cta{display:none !important}
+@media(max-width:768px){.mob-cta{display:block}body{padding-bottom:74px}}
+</style>
   <script>function trackBookNow(n,p,c){if(window.dataLayer)window.dataLayer.push({event:'book_now_click',operator_name:n,operator_price:p,operator_category:c});if(window.gtag)gtag('event','conversion',{value:parseFloat(p)||0,currency:'USD'});}</script>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');(function(){var l=false;function ld(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1';document.head.appendChild(s);}if(document.readyState==='complete')ld();else addEventListener('load',ld);['scroll','mousemove','touchstart','click'].forEach(function(e){addEventListener(e,ld,{once:true,passive:true});});})();</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://miamijetskiboatrentals.com/"},{"@type":"ListItem","position":2,"name":"Canc\u00fan Activities","item":"https://miamijetskiboatrentals.com/cancun-activities"},{"@type":"ListItem","position":3,"name":"Tequila Tasting & Pairing","item":"https://miamijetskiboatrentals.com/tequila-tasting-pairing-cancun"}]}</script>
 </head>
-<body>
+<body data-op-price="50">
 <nav class="nav">
   <a href="/" class="nav-logo">Miami<span>Jetski</span> & Boat Rentals</a>
   <div class="nav-links">
@@ -163,6 +175,12 @@
       <h2>Check Availability & Book</h2>
       <iframe src="https://fareharbor.com/embeds/book/cancuntequilatasting/items/544628/?asn=fhdn-mxn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no" loading="eager" title="Book Tequila Tasting & Pairing"></iframe>
     </div>
+    <div class="section about-extra">
+  <h2>About booking this guided tour in Cancún</h2>
+  <p>Why book Tequila Tasting & Pairing through us? Every guided tour on this site is a verified FareHarbor partner with live, real-time availability — no email back-and-forth, no waiting on a phone call. You see what's open today, this weekend, next month, and you reserve in under two minutes. Free cancellation policies are operator-specific but visible on the FareHarbor checkout before you commit. Your payment is encrypted and processed by FareHarbor, the largest activity-booking platform in the US.</p>
+  <p>This guided tour runs out of Cancún, an area best known for the Mexican Caribbean coastline. Visitors here come for Isla Mujeres day trips, Mayan ruins and cenote swims, and the guided tours on offer typically include cultural, food and sightseeing experiences. Tequila Tasting & Pairing is bookable starting from $50. Before you book, it's worth knowing about the local history each guide highlights — your operator handles the details, but a quick read saves time at check-in.</p>
+  <p>What to expect on the day: arrive 15 minutes early, dress for the weather, and bring a valid government-issued ID. Maximum group size is 10 guests, so for larger parties consider splitting across multiple bookings or messaging the operator first through FareHarbor's secure chat. Peak Florida season runs November through April — calm water, low humidity, premium pricing. Summer and shoulder months bring warmer water but more weather variability and lower prices. Book at least 48 hours ahead for weekends and 1-2 weeks ahead during holiday weeks.</p>
+</div>
     <div class="section">
       <h2>FAQ – Tequila Tasting &amp; Pairing</h2>
       <div class="faq-item"><div class="faq-q">What types of tours does Pink Party Boat offer? <span class="faq-icon">+</span></div><div class="faq-a">Party boat tours with open bar, fishing excursions, sunset cruises, and private group charters.</div></div>
@@ -272,5 +290,22 @@ document.querySelectorAll('.faq-q').forEach(q=>{
 <section style="padding:24px;background:#0a1428;color:#cdd9e8;border-top:1px solid #1a2540;margin-top:32px;font-size:.85rem;line-height:1.8">
   <strong style="color:#9bb5d4">Related operators:</strong> <a href="/areia-beach-club-mayan-monkey-isla-mujeres-cancun" style="color:#7fb4ff;text-decoration:none">Areia Beach Club (Mayan Monkey) Isla Mujeres</a> · <a href="/airport-puerto-morelos-cancun" style="color:#7fb4ff;text-decoration:none">AIRPORT / PUERTO MORELOS</a> · <a href="/areia-beach-club-cancun" style="color:#7fb4ff;text-decoration:none">Areia Beach Club</a>
 </section>
+<script>
+(function(){
+  // Find primary FH URL + name on this page
+  var primary = document.querySelector('a[href*="fareharbor.com/embeds/book/"][data-fh-name]');
+  if(!primary) return;
+  var url = primary.href;
+  var name = primary.getAttribute('data-fh-name') || document.title.replace(/\s*[·|].*$/,'').trim();
+  var price = (document.querySelector('[data-op-price]')||{}).getAttribute && document.querySelector('[data-op-price]').getAttribute('data-op-price');
+  var priceHtml = price ? '<div class="mob-cta-price">from <b>$'+price+'</b></div>' : '';
+  var bar = document.createElement('div');
+  bar.className = 'mob-cta';
+  bar.setAttribute('role','complementary');
+  bar.setAttribute('aria-label','Sticky booking bar');
+  bar.innerHTML = '<div class="mob-cta-row"><div class="mob-cta-info"><div class="mob-cta-name">'+name.replace(/[<>]/g,'')+'</div>'+priceHtml+'</div><a class="mob-cta-btn" href="'+url+'" target="_blank" rel="noopener nofollow sponsored" data-fh-name="'+name.replace(/"/g,'&quot;')+'">Book Now →</a></div>';
+  document.body.appendChild(bar);
+})();
+</script>
 </body>
 </html>

@@ -178,7 +178,7 @@ function render(){
   grid.innerHTML = list.map((op,i) => {
     const slug = slugMap[op.id] || '';
     const href = slug ? '/'+encodeURIComponent(slug) : (op.link || '#');
-    const priceText = (op.price && op.price > 0) ? ('From $'+op.price+'/hr') : 'Contact for pricing';
+    const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'Contact for pricing';
     return `<a class="card" href="${esc(href)}">
       <div class="img" style="background-image:url('${esc(thumbUrl(op.photo))}')">
         <span class="badge">💎 Exotic</span>

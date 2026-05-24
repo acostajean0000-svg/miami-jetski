@@ -133,7 +133,7 @@ function render(){
   grid.innerHTML = list.map((op,i) => {
     const slug = slugMap[op.id] || '';
     const href = slug ? '/'+encodeURIComponent(slug) : (op.link || '#');
-    const priceText = (op.price && op.price > 0) ? ('$'+op.price+'/hr') : 'Contact for pricing';
+    const priceText = (op.price && op.price > 0) ? ('from $'+op.price) : 'Contact for pricing';
     const eager = i < 4 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
     return `<a class="card" href="${esc(href)}">
       <div class="img" style="background-image:url('${esc(thumbUrl(op.photo))}')">
