@@ -8,6 +8,9 @@
   <meta name="description" content="Compare 448+ verified Miami activity operators — jet ski, boat charters, fishing, water sports, tours. ⭐ 4.7 avg rating. Instant booking, free cancellation.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://miamijetskiboatrentals.com/miami-activities">
+  <link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/miami-activities">
+  <link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/miami-activities">
+  <link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/miami-activities">
   <meta name="geo.region" content="US-FL">
   <meta name="geo.placename" content="Miami">
   <meta name="geo.position" content="25.7617;-80.1918">
@@ -75,6 +78,22 @@
 .trust-strip .trust-item span:first-child{font-size:1rem;line-height:1}
 .trust-strip .trust-item b{color:#fff;font-weight:700}
 @media(max-width:600px){.trust-strip{gap:8px 14px;padding:12px;font-size:.72rem}.trust-strip .trust-item span:first-child{font-size:.9rem}}
+
+/* Language switcher */
+.lang-switch{margin-left:auto;display:flex;align-items:center;gap:4px;font-size:.78rem;background:rgba(255,255,255,.04);border:1px solid rgba(0,210,255,.15);border-radius:18px;padding:3px 4px;font-weight:600}
+.lang-switch a,.lang-switch span{padding:4px 9px;border-radius:14px;color:#a8d4f0;text-decoration:none;line-height:1;transition:.15s}
+.lang-switch a:hover{background:rgba(0,210,255,.1);color:#fff}
+.lang-switch .active{background:rgba(0,210,255,.22);color:#00d2ff;cursor:default}
+@media(max-width:480px){.lang-switch{font-size:.72rem}.lang-switch a,.lang-switch span{padding:3px 7px}}
+
+/* Language suggestion banner */
+.lang-banner{display:none;background:linear-gradient(135deg,#0a66c2,#0099cc);color:#fff;padding:9px 16px;text-align:center;font-size:.85rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;z-index:101;position:relative}
+.lang-banner.show{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.lang-banner a{color:#fff;background:rgba(255,255,255,.18);padding:5px 14px;border-radius:50px;text-decoration:none;font-weight:700;white-space:nowrap}
+.lang-banner a:hover{background:rgba(255,255,255,.28)}
+.lang-banner button{background:none;border:none;color:rgba(255,255,255,.7);cursor:pointer;font-size:1.1rem;line-height:1;padding:0 4px;margin-left:4px}
+.lang-banner button:hover{color:#fff}
+@media(max-width:480px){.lang-banner{font-size:.78rem;padding:8px 12px}}
 </style>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');(function(){var l=false;function ld(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1';document.head.appendChild(s);}if(document.readyState==='complete')ld();else addEventListener('load',ld);['scroll','mousemove','touchstart','click'].forEach(function(e){addEventListener(e,ld,{once:true,passive:true});});})();</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are the best things to do in Miami on the water?", "acceptedAnswer": {"@type": "Answer", "text": "Miami's most popular waterborne activities are jet ski rentals (Biscayne Bay & Miami Beach), boat charters around Star Island and Stiltsville, parasailing off South Beach, yacht day trips, ATV tours in the Everglades and exotic car rentals along Ocean Drive. Browse 449+ Miami operators on this page to compare prices and availability."}}, {"@type": "Question", "name": "How much does a jet ski rental cost in Miami?", "acceptedAnswer": {"@type": "Answer", "text": "Miami jet ski rentals run roughly $90-$150 per hour for single rider and $150-$220 for two-rider models. Most operators include fuel and a brief safety orientation. Compare prices from dozens of Miami jet-ski operators on this page."}}, {"@type": "Question", "name": "Do I need a boating license to rent a boat in Miami?", "acceptedAnswer": {"@type": "Answer", "text": "Florida requires a Boating Safety Education ID for anyone born on or after January 1, 1988 who operates a powered boat over 10hp. Most rental companies offer a free 30-minute online course you can complete on-site if you don't have one."}}, {"@type": "Question", "name": "What's the best time of year to visit Miami for water activities?", "acceptedAnswer": {"@type": "Answer", "text": "November through April is peak season — calm water, low humidity, 70-82°F daytime highs. Summer (June-September) has warmer water but more afternoon thunderstorms and higher humidity. Book early for spring break weeks."}}, {"@type": "Question", "name": "Are these Miami operators verified?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Every operator on this page is a vetted FareHarbor partner — established Florida tour and rental businesses with real-time availability calendars, secure online booking, and customer reviews."}}]}</script>
@@ -83,7 +102,7 @@
 <body>
 <nav>
   <a href="/" class="nav-logo">💧 Florida<span>WaterSports</span></a>
-  <a href="/" class="nav-back">← All Florida</a>
+  <div class="lang-switch" role="navigation" aria-label="Language"><span class="active" aria-current="true">🇺🇸 EN</span><a href="https://miamijetskiboatrentals.com/es/miami-activities" aria-label="Español" hreflang="es">🇪🇸 ES</a></div>
 </nav>
 <div class="trust-strip" role="region" aria-label="Trust indicators">
   <div class="trust-item"><span aria-hidden="true">🛡️</span><b>Verified</b> Operators</div>
@@ -724,6 +743,36 @@ function setupFilters(){
     var name = a.getAttribute('data-fh-name')||'';
     dataLayer.push({event:'begin_checkout',ecommerce:{items:[{item_name:name,currency:"USD"}]}});
   },true);
+})();
+</script>
+<script>
+(function(){
+  var ES_URL = '/es/miami-activities';
+  // Only show if user's preferred language starts with 'es'
+  var langs = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+  if (!/(^|,)es/.test(langs)) return;
+  // Respect prior dismissal (30 days)
+  try {
+    var dismissed = localStorage.getItem('lang_banner_dismissed');
+    if (dismissed && (Date.now() - parseInt(dismissed,10)) < 30*24*60*60*1000) return;
+  } catch(e){}
+  // Build + inject banner
+  var b = document.createElement('div');
+  b.className = 'lang-banner show';
+  b.setAttribute('role','dialog');
+  b.setAttribute('aria-label','Language suggestion');
+  b.innerHTML = '<span>🇪🇸 ¿Prefieres este sitio en español?</span>'
+    + '<a href="'+ES_URL+'" hreflang="es">Sí, ver en español →</a>'
+    + '<button type="button" aria-label="Dismiss">✕</button>';
+  document.body.insertBefore(b, document.body.firstChild);
+  b.querySelector('button').addEventListener('click', function(){
+    b.classList.remove('show');
+    try { localStorage.setItem('lang_banner_dismissed', String(Date.now())); } catch(e){}
+  });
+  // Also dismiss when user navigates
+  b.querySelector('a').addEventListener('click', function(){
+    try { localStorage.setItem('lang_banner_dismissed', String(Date.now())); } catch(e){}
+  });
 })();
 </script>
 </body>

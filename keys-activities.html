@@ -8,6 +8,9 @@
   <meta name="description" content="Compare 460+ water sports operators in the Florida Keys: jet ski, boat charters, fishing, snorkel, Dry Tortugas tours, and more. Instant booking.">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://miamijetskiboatrentals.com/keys-activities">
+  <link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/keys-activities">
+  <link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/keys-activities">
+  <link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/keys-activities">
   <meta name="geo.region" content="US-FL">
   <meta name="geo.placename" content="Key West">
   <meta name="geo.position" content="24.5551;-81.7800">
@@ -74,6 +77,22 @@
 .trust-strip .trust-item span:first-child{font-size:1rem;line-height:1}
 .trust-strip .trust-item b{color:#fff;font-weight:700}
 @media(max-width:600px){.trust-strip{gap:8px 14px;padding:12px;font-size:.72rem}.trust-strip .trust-item span:first-child{font-size:.9rem}}
+
+/* Language switcher */
+.lang-switch{margin-left:auto;display:flex;align-items:center;gap:4px;font-size:.78rem;background:rgba(255,255,255,.04);border:1px solid rgba(0,210,255,.15);border-radius:18px;padding:3px 4px;font-weight:600}
+.lang-switch a,.lang-switch span{padding:4px 9px;border-radius:14px;color:#a8d4f0;text-decoration:none;line-height:1;transition:.15s}
+.lang-switch a:hover{background:rgba(0,210,255,.1);color:#fff}
+.lang-switch .active{background:rgba(0,210,255,.22);color:#00d2ff;cursor:default}
+@media(max-width:480px){.lang-switch{font-size:.72rem}.lang-switch a,.lang-switch span{padding:3px 7px}}
+
+/* Language suggestion banner */
+.lang-banner{display:none;background:linear-gradient(135deg,#0a66c2,#0099cc);color:#fff;padding:9px 16px;text-align:center;font-size:.85rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;z-index:101;position:relative}
+.lang-banner.show{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.lang-banner a{color:#fff;background:rgba(255,255,255,.18);padding:5px 14px;border-radius:50px;text-decoration:none;font-weight:700;white-space:nowrap}
+.lang-banner a:hover{background:rgba(255,255,255,.28)}
+.lang-banner button{background:none;border:none;color:rgba(255,255,255,.7);cursor:pointer;font-size:1.1rem;line-height:1;padding:0 4px;margin-left:4px}
+.lang-banner button:hover{color:#fff}
+@media(max-width:480px){.lang-banner{font-size:.78rem;padding:8px 12px}}
 </style>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');(function(){var l=false;function ld(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1';document.head.appendChild(s);}if(document.readyState==='complete')ld();else addEventListener('load',ld);['scroll','mousemove','touchstart','click'].forEach(function(e){addEventListener(e,ld,{once:true,passive:true});});})();</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What's the difference between Key Largo, Marathon and Key West activities?", "acceptedAnswer": {"@type": "Answer", "text": "Key Largo is closest to Miami (~1hr) and known for John Pennekamp Coral Reef snorkel/dive trips. Marathon (mid-Keys) is the dolphin and turtle hospital hub plus 7-Mile Bridge tours. Key West (the end) offers sunset sails, Mallory Square parties, jet-ski island tours and Ernest Hemingway's house."}}, {"@type": "Question", "name": "How early should I book Key West sunset cruises?", "acceptedAnswer": {"@type": "Answer", "text": "Sunset sails sell out 3-7 days ahead in winter, and same-day in summer. Schooner sails (Western Union, America 2.0, Appledore) are the most-booked and require advance reservation."}}, {"@type": "Question", "name": "Can you swim with dolphins in the Florida Keys?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — Dolphin Research Center (Marathon) and Dolphins Plus (Key Largo) offer structured swim and trainer-for-a-day programs. Wild dolphin encounters also happen on most boat tours but aren't guaranteed."}}, {"@type": "Question", "name": "What snorkel tours run from Key West?", "acceptedAnswer": {"@type": "Answer", "text": "Best Western Sunset Reef Cruise, Fury Catamaran, Sebago Snorkel and Sunset, and Wind & Wine combos. Most include gear, instruction and a 2-hr snorkel session on a fringing reef ~5 miles offshore."}}]}</script>
@@ -82,7 +101,7 @@
 <body>
 <nav>
   <a href="/" class="nav-logo">💧 Florida<span>WaterSports</span></a>
-  <a href="/" class="nav-back">← All Activities</a>
+  <div class="lang-switch" role="navigation" aria-label="Language"><span class="active" aria-current="true">🇺🇸 EN</span><a href="https://miamijetskiboatrentals.com/es/keys-activities" aria-label="Español" hreflang="es">🇪🇸 ES</a></div>
 </nav>
 <div class="trust-strip" role="region" aria-label="Trust indicators">
   <div class="trust-item"><span aria-hidden="true">🛡️</span><b>Verified</b> Operators</div>
@@ -696,6 +715,36 @@ function setupFilters(){document.querySelectorAll('.cat-chip').forEach(c=>{c.add
     var name = a.getAttribute('data-fh-name')||'';
     dataLayer.push({event:'begin_checkout',ecommerce:{items:[{item_name:name,currency:"USD"}]}});
   },true);
+})();
+</script>
+<script>
+(function(){
+  var ES_URL = '/es/keys-activities';
+  // Only show if user's preferred language starts with 'es'
+  var langs = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+  if (!/(^|,)es/.test(langs)) return;
+  // Respect prior dismissal (30 days)
+  try {
+    var dismissed = localStorage.getItem('lang_banner_dismissed');
+    if (dismissed && (Date.now() - parseInt(dismissed,10)) < 30*24*60*60*1000) return;
+  } catch(e){}
+  // Build + inject banner
+  var b = document.createElement('div');
+  b.className = 'lang-banner show';
+  b.setAttribute('role','dialog');
+  b.setAttribute('aria-label','Language suggestion');
+  b.innerHTML = '<span>🇪🇸 ¿Prefieres este sitio en español?</span>'
+    + '<a href="'+ES_URL+'" hreflang="es">Sí, ver en español →</a>'
+    + '<button type="button" aria-label="Dismiss">✕</button>';
+  document.body.insertBefore(b, document.body.firstChild);
+  b.querySelector('button').addEventListener('click', function(){
+    b.classList.remove('show');
+    try { localStorage.setItem('lang_banner_dismissed', String(Date.now())); } catch(e){}
+  });
+  // Also dismiss when user navigates
+  b.querySelector('a').addEventListener('click', function(){
+    try { localStorage.setItem('lang_banner_dismissed', String(Date.now())); } catch(e){}
+  });
 })();
 </script>
 </body></html>

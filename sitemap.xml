@@ -1,11 +1,14 @@
 <?xml version='1.0' encoding='UTF-8'?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url><loc>https://miamijetskiboatrentals.com/</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>1.00</priority></url><url><loc>https://miamijetskiboatrentals.com/amelia-island-kayak-fl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/amelia-island-sailing-fl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/amelia-island-water-sports</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/anastasia-watersports-2-hour-paddle-sports-rental-florida</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/anastasia-watersports-st-augustine-fl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/ancient-city-slingshot-st-augustine-nefl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/arcimoto-electric-scooter-rentals-st-augustine</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/beach-sand-sculptures-artisan-experience-westfl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/bioluminescent-comb-jelly-glow-kayak-tour-centralfl</loc><lastmod>2026-05-14</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/boat-rentals-florida</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
-  <url><loc>https://miamijetskiboatrentals.com/cancun-activities</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.90</priority></url>
+  <url><loc>https://miamijetskiboatrentals.com/cancun-activities</loc><lastmod>2026-05-13</lastmod><changefreq>weekly</changefreq><priority>0.90</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/cancun-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/cancun-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/cancun-activities"/></url>
   <url><loc>https://miamijetskiboatrentals.com/cape-canaveral-fishing-fl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/cape-canaveral-rocket-tour-fl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/captain-clearwater-belleair-bluffs-fl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/carriage-tours-events-classic-nefl-to66</loc><lastmod>2026-05-14</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/carriage-tours-events-romantic-nefl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/catboat-escapes-centralfl</loc><lastmod>2026-05-14</lastmod><changefreq>weekly</changefreq><priority>0.70</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/central-florida-activities</loc><lastmod>2026-05-14</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url><url><loc>https://miamijetskiboatrentals.com/coastal-cruises-south-pasadena-westfl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
@@ -32,7 +35,10 @@
   <url><loc>https://miamijetskiboatrentals.com/st-augustine-parasail-fl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/st-augustine-pirate-cruise-fl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/st-augustine-scuba-fl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/st-augustine-water-sports</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/suncoast-watersports-westfl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/sweet-florida-rentals-dunnellon-fl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/the-pink-pelican-tiki-westfl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/treasure-coast-river-cruises-stuart-centralfl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/water-sports-st-augustine-florida</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/x-terrains-ohv-adventures-centralfl</loc><lastmod>2026-05-13</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/broward-activities</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://miamijetskiboatrentals.com/keys-activities</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://miamijetskiboatrentals.com/keys-activities</loc><changefreq>weekly</changefreq><priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/keys-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/keys-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/keys-activities"/></url>
   <url><loc>https://miamijetskiboatrentals.com/gulf-activities</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/marathon-activities</loc><changefreq>weekly</changefreq><priority>0.7</priority></url>
 
@@ -18956,7 +18962,10 @@
   <url><loc>https://miamijetskiboatrentals.com/rainforest-self-guided-kayak-tour-active-oahu-tours-kaaawa-hawaii</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/discover-scuba-diving-hilo-ocean-adventures-hilo-hawaii</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/beach-snorkel-sea-turtle-lagoon-and-black-sand-beach-hilo-ocean-adventures-hilo-hawaii</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://miamijetskiboatrentals.com/hawaii-activities</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://miamijetskiboatrentals.com/hawaii-activities</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/hawaii-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/hawaii-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/hawaii-activities"/></url>
   <url><loc>https://miamijetskiboatrentals.com/the-ultimate-ghost-hunt-experience-key-west</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/insider-s-hemingway-experience-key-west</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/hemingway-food-walking-tour-key-west</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
@@ -19417,4 +19426,103 @@
   <url><loc>https://miamijetskiboatrentals.com/sand-bar-key-west</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/conch-key-key-west</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
   <url><loc>https://miamijetskiboatrentals.com/honeymoon-package-key-west</loc><lastmod>2026-05-20</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>
-<url><loc>https://miamijetskiboatrentals.com/1-jet-ski-adventure-1-hour-atv-adventure-miami</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/huge-deck-boat-rentals-fort-lauderdale</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/jolly-dolphin-blue-angels-practice-and-dolphin-cruise-pensacola</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/jolly-explorer-blue-angels-practice-and-dolphin-cruise-pensacola</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/la-romana-shopping-tour-puntacana</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/ladies-only-introduction-to-handguns-tampa</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/pensacola-haunted-walking-ghost-tour-pensacola</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/private-everglades-airboat-tour-miami</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/small-deck-boat-rentals-fort-lauderdale</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/st-armands-shop-sip-stroll-sarasota</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/walking-red-light-district-pensacola</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/miami-bloom-bar-flowers</loc><lastmod>2026-05-23</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url></urlset>
+<url><loc>https://miamijetskiboatrentals.com/1-jet-ski-adventure-1-hour-atv-adventure-miami</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/huge-deck-boat-rentals-fort-lauderdale</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/jolly-dolphin-blue-angels-practice-and-dolphin-cruise-pensacola</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/jolly-explorer-blue-angels-practice-and-dolphin-cruise-pensacola</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/la-romana-shopping-tour-puntacana</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/ladies-only-introduction-to-handguns-tampa</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/pensacola-haunted-walking-ghost-tour-pensacola</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/private-everglades-airboat-tour-miami</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/small-deck-boat-rentals-fort-lauderdale</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/st-armands-shop-sip-stroll-sarasota</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/walking-red-light-district-pensacola</loc><lastmod>2026-05-22</lastmod><changefreq>monthly</changefreq><priority>0.70</priority></url><url><loc>https://miamijetskiboatrentals.com/miami-bloom-bar-flowers</loc><lastmod>2026-05-23</lastmod><changefreq>weekly</changefreq><priority>0.80</priority></url>  <url>
+    <loc>https://miamijetskiboatrentals.com/es/miami-activities</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/miami-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/miami-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/miami-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/cancun-activities</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/cancun-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/cancun-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/cancun-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/punta-cana-activities</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/punta-cana-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/punta-cana-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/punta-cana-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/keys-activities</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/keys-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/keys-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/keys-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/orlando-activities</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/orlando-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/orlando-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/orlando-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/hawaii-activities</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/hawaii-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/hawaii-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/hawaii-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/yacht-charters</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/yacht-charters"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/yacht-charters"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/yacht-charters"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/sunset-cruises</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/sunset-cruises"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/sunset-cruises"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/sunset-cruises"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/snorkel-tours</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/snorkel-tours"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/snorkel-tours"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/snorkel-tours"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/everglades-airboat-tours</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/everglades-airboat-tours"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/everglades-airboat-tours"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/everglades-airboat-tours"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/miami-exotic-cars</loc>
+    <lastmod>2026-05-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.82</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/miami-exotic-cars"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/miami-exotic-cars"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/miami-exotic-cars"/>
+  </url>
+</urlset>

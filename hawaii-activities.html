@@ -8,6 +8,9 @@
   <meta name="description" content="Compare 487+ verified Hawaii activity operators — snorkel, surf, helicopter tours, luau, boat charters, kayaking. ⭐ 4.7 avg rating. Instant booking...">
   <meta name="robots" content="index,follow">
   <link rel="canonical" href="https://miamijetskiboatrentals.com/hawaii-activities">
+  <link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/hawaii-activities">
+  <link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/hawaii-activities">
+  <link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/hawaii-activities">
   <meta name="geo.region" content="US-HI">
   <meta name="geo.placename" content="Honolulu">
   <meta name="geo.position" content="21.3099;-157.8581">
@@ -75,6 +78,22 @@
 .trust-strip .trust-item span:first-child{font-size:1rem;line-height:1}
 .trust-strip .trust-item b{color:#fff;font-weight:700}
 @media(max-width:600px){.trust-strip{gap:8px 14px;padding:12px;font-size:.72rem}.trust-strip .trust-item span:first-child{font-size:.9rem}}
+
+/* Language switcher */
+.lang-switch{margin-left:auto;display:flex;align-items:center;gap:4px;font-size:.78rem;background:rgba(255,255,255,.04);border:1px solid rgba(0,210,255,.15);border-radius:18px;padding:3px 4px;font-weight:600}
+.lang-switch a,.lang-switch span{padding:4px 9px;border-radius:14px;color:#a8d4f0;text-decoration:none;line-height:1;transition:.15s}
+.lang-switch a:hover{background:rgba(0,210,255,.1);color:#fff}
+.lang-switch .active{background:rgba(0,210,255,.22);color:#00d2ff;cursor:default}
+@media(max-width:480px){.lang-switch{font-size:.72rem}.lang-switch a,.lang-switch span{padding:3px 7px}}
+
+/* Language suggestion banner */
+.lang-banner{display:none;background:linear-gradient(135deg,#0a66c2,#0099cc);color:#fff;padding:9px 16px;text-align:center;font-size:.85rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;z-index:101;position:relative}
+.lang-banner.show{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
+.lang-banner a{color:#fff;background:rgba(255,255,255,.18);padding:5px 14px;border-radius:50px;text-decoration:none;font-weight:700;white-space:nowrap}
+.lang-banner a:hover{background:rgba(255,255,255,.28)}
+.lang-banner button{background:none;border:none;color:rgba(255,255,255,.7);cursor:pointer;font-size:1.1rem;line-height:1;padding:0 4px;margin-left:4px}
+.lang-banner button:hover{color:#fff}
+@media(max-width:480px){.lang-banner{font-size:.78rem;padding:8px 12px}}
 </style>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');(function(){var l=false;function ld(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1';document.head.appendChild(s);}if(document.readyState==='complete')ld();else addEventListener('load',ld);['scroll','mousemove','touchstart','click'].forEach(function(e){addEventListener(e,ld,{once:true,passive:true});});})();</script>
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What's the most popular Hawaii activity to book online?", "acceptedAnswer": {"@type": "Answer", "text": "Snorkel tours to Molokini Crater (Maui), the Road to Hana private tours, Pearl Harbor + USS Arizona Memorial visits (Oahu), Big Island volcano helicopter flights, and Kauai's Na Pali Coast boat tours top the list. Compare 487+ operators across all six main islands on this page."}}, {"@type": "Question", "name": "Which Hawaiian island is best for first-time visitors?", "acceptedAnswer": {"@type": "Answer", "text": "Oahu balances famous beaches (Waikiki), history (Pearl Harbor), hiking (Diamond Head), and convenience (most flights land there). Maui suits couples and adventure-seekers. The Big Island has volcanoes + snorkeling. Kauai is the most scenic and least developed."}}, {"@type": "Question", "name": "Do I need to book Hawaii activities in advance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes for high-demand tours — Pearl Harbor passes, Molokini snorkel cruises, and Road-to-Hana private tours sell out 1-2 weeks ahead. Same-day availability is rare for top-rated operators. Book through this page to lock in your dates."}}, {"@type": "Question", "name": "What should I bring on a Hawaii snorkel tour?", "acceptedAnswer": {"@type": "Answer", "text": "Reef-safe sunscreen (mandatory by Hawaii law — no oxybenzone or octinoxate), a swimsuit, towel, light snack and water. Most operators provide snorkels, masks, fins, flotation noodles and lunch on full-day trips."}}]}</script>
@@ -83,7 +102,7 @@
 <body>
 <nav>
   <a href="/" class="nav-logo">💧 Florida<span>WaterSports</span></a>
-  <a href="/" class="nav-back">← All Florida</a>
+  <div class="lang-switch" role="navigation" aria-label="Language"><span class="active" aria-current="true">🇺🇸 EN</span><a href="https://miamijetskiboatrentals.com/es/hawaii-activities" aria-label="Español" hreflang="es">🇪🇸 ES</a></div>
 </nav>
 <div class="trust-strip" role="region" aria-label="Trust indicators">
   <div class="trust-item"><span aria-hidden="true">🛡️</span><b>Verified</b> Operators</div>
@@ -777,6 +796,36 @@ function setupFilters(){
     var name = a.getAttribute('data-fh-name')||'';
     dataLayer.push({event:'begin_checkout',ecommerce:{items:[{item_name:name,currency:"USD"}]}});
   },true);
+})();
+</script>
+<script>
+(function(){
+  var ES_URL = '/es/hawaii-activities';
+  // Only show if user's preferred language starts with 'es'
+  var langs = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
+  if (!/(^|,)es/.test(langs)) return;
+  // Respect prior dismissal (30 days)
+  try {
+    var dismissed = localStorage.getItem('lang_banner_dismissed');
+    if (dismissed && (Date.now() - parseInt(dismissed,10)) < 30*24*60*60*1000) return;
+  } catch(e){}
+  // Build + inject banner
+  var b = document.createElement('div');
+  b.className = 'lang-banner show';
+  b.setAttribute('role','dialog');
+  b.setAttribute('aria-label','Language suggestion');
+  b.innerHTML = '<span>🇪🇸 ¿Prefieres este sitio en español?</span>'
+    + '<a href="'+ES_URL+'" hreflang="es">Sí, ver en español →</a>'
+    + '<button type="button" aria-label="Dismiss">✕</button>';
+  document.body.insertBefore(b, document.body.firstChild);
+  b.querySelector('button').addEventListener('click', function(){
+    b.classList.remove('show');
+    try { localStorage.setItem('lang_banner_dismissed', String(Date.now())); } catch(e){}
+  });
+  // Also dismiss when user navigates
+  b.querySelector('a').addEventListener('click', function(){
+    try { localStorage.setItem('lang_banner_dismissed', String(Date.now())); } catch(e){}
+  });
 })();
 </script>
 </body>
