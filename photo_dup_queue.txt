@@ -1,0 +1,297 @@
+Photo duplicate clusters within same category — manual fix queue.
+Total clusters: 323, ops affected: 762
+Each line: [category] handle — N ops. Top of list = worst offenders.
+Pattern for fixing in chat:
+  https://cdn.filestackcontent.com/<NEW_HANDLE>/convert?... to https://miamijetskiboatrentals.com/<slug>
+
+=== [tour] qGF2J9DjSnSyRIoyiVDF — 15 ops sharing this photo ===
+  to226 | Marathon Water Sports 2025 — Snorkeling, Diving, F | /marathon-water-sports
+  to269 | Jupiter Florida Water Sports 2025 — Kayaking, Boat | /jupiter-florida-water-sports
+  to317 | Pompano Beach Water Sports 2025 — Jet Skis, Diving | /pompano-beach-water-sports
+  to367 | Best Everglades Tours from Miami 2026 | /everglades-tours-from-miami
+  to400 | Best Water Sports in Miami Beach 2026 | /water-sports-miami-beach
+  to436 | Best Tours in Miami 2026 | /tours-miami
+  to560 | New Smyrna Beach Water Sports 2025 — Surfing, Kaya | /new-smyrna-beach-water-sports
+  to569 | St. Pete Beach Water Sports 2025 — Boat Rentals, K | /st-pete-beach-water-sports
+  ... and 7 more
+
+=== [boat] kVN7dZWeTCiJ9rMhWrFX — 8 ops sharing this photo ===
+  bt2 | Bruschi Boat Rental – Small Boat | /bruschi-boat-rental-small-boat-miami-bt2
+  bt13 | Ocean Force Adventures – Private | /ocean-force-adventures-private-miami
+  bt355 | St. Pete Party Boat | /st-pete-party-boat-fl
+  bt386 | Jungle Queen Riverboat | /jungle-queen-riverboat-fort-lauderdale-fl
+  bt392 | Daytona Tiki Bar Boat | /daytona-tiki-boat-fl
+  bt397 | Cape Coral Boat Tours | /cape-coral-boat-tours-fl
+  bt411 | Key West Tiki Bar Boat | /key-west-tiki-boat-fl
+  bt426 | Jacksonville Catamaran Cruise | /jacksonville-catamaran-fl
+
+=== [watersports] 3ReQdBWdQoSIFJlghYUg — 6 ops sharing this photo ===
+  ws1 | Paddle & Hobie Sail Club – Windsurfing | /paddle-hobie-sail-club-windsurfing-miami
+  ws315 | Bahia Mar Parasailing | /bahia-mar-parasail-fort-lauderdale-fl
+  ws316 | St. Augustine Scuba Diving | /st-augustine-scuba-fl
+  ws319 | Get Up and Go Kayaking | /get-up-and-go-kayaking-homosassa-homosassa
+  ws329 | Marathon Parasailing | /marathon-parasail-fl
+  ws352 | Naples Scuba Diving | /naples-scuba-diving-fl
+
+=== [tour] JtPjWmCQ3qP5hkSEwqcQ — 5 ops sharing this photo ===
+  to2 | Travel to Key West II | /travel-to-key-west-bus-tour-miami-to2
+  to566 | St. Augustine Water Sports | /st-augustine-water-sports-fl
+  to619 | Florida Keys Activities 2026 | /florida-keys-activities
+  to641 | Daytona Beach Activities 2026 | /daytona-activities
+  to698 | Naples Glass Bottom Kayak Tour | /naples-glass-bottom-tour-fl
+
+=== [tour] TCd4rbN7Rx2eVrl0YWgD — 5 ops sharing this photo ===
+  to3 | Chicago Liaison Tours – South Beach | /chicago-liaison-tours-south-beach-miami
+  to642 | Robbie's of Islamorada | /robbie-of-islamorada-fl
+  to700 | Central Florida Activities 2026 | /central-florida-activities
+  to761 | Adventures in Paradise | /adventures-in-paradise-fort-myers-fl
+  to778 | Palm Beach Activities 2026 | /palm-beach-activities
+
+=== [tour] dvuP3dhRFa972uTuPLPf — 5 ops sharing this photo ===
+  to17 | Your Jamaican Tour Guide – Nine Mile & Dunn's Rive | /your-jamaican-tour-guide-mayfield-falls-space-to17
+  to190 | Cancún Snorkeling & Ruins Combo | /cancun-snorkeling-ruins-combo-cancun-hz
+  to513 | Crystal River Activities 2026 | /crystal-river-activities
+  to555 | Biscayne Underwater Trail Snorkel | /biscayne-national-underwater-fl
+  to750 | Island Water Sports Key West | /island-watersports-key-west-fl
+
+=== [boat] 16rZQ8NSpyDLI4UKuvOQ — 5 ops sharing this photo ===
+  bt144 | Dive Saona Adventures | /dive-saona-adventures-bayahibe
+  bt348 | Fort Myers Boat Rentals | /fort-myers-boat-rentals-fl
+  bt366 | Cocoa Beach Catamaran | /cocoa-beach-catamaran-cocoa-beach
+  bt370 | Boca Raton Sailing Adventures | /boca-raton-sailing-fl
+  bt374 | St. Augustine Tiki Bar Cruise | /st-augustine-tiki-boat-fl
+
+=== [tour] X6DuZqgsQwxO4ODcO8Zw — 5 ops sharing this photo ===
+  to230 | Sarasota Water Sports 2025 — Jet Skis, Boat Tours  | /sarasota-water-sports
+  to296 | Clearwater Beach Water Sports 2025 — Boat Rentals, | /clearwater-beach-water-sports
+  to415 | Florida Water Tours | /florida-water-tours-st-augustine-fl
+  to735 | Things to Do Clearwater Beach Water Sports 2025 —  | /things-to-do-clearwater-water
+  to740 | Destin Water Sports 2025 — Yacht Charters, Jet Ski | /destin-water-sports
+
+=== [slingshot] pUgqw14BSjq7tvevkyEo — 5 ops sharing this photo ===
+  sl16 | Best Slingshot Rentals Miami 2026 | /slingshot-rentals-miami
+  sl18 | Sarasota Slingshot Rentals | /sarasota-slingshot-fl
+  sl27 | Destin Slingshot Rentals | /destin-slingshot-fl
+  sl33 | Slingshot Fort Lauderdale | /slingshot-fort-lauderdale-fl
+  sl34 | Fort Myers Slingshot Rentals | /fort-myers-slingshot-fl
+
+=== [tour] 66Qo5P9VSRa7DGKLWUkP — 5 ops sharing this photo ===
+  to572 | Destin Flyboard Adventures | /destin-flyboard-fl
+  to592 | Marathon Mermaid | /marathon-mermaid-keys-fl
+  to606 | Delray Beach Water Sports 2025 — South Florida's V | /delray-beach-water-sports
+  to613 | Bonita Springs Water Sports 2025 — Estero Bay Kaya | /bonita-springs-water-sports
+  to709 | Hollywood Beach Water Sports | /hollywood-beach-water-sports-fl
+
+=== [watersports] Lw9fc7YHSAOIXNNMFqdE — 4 ops sharing this photo ===
+  ws2 | PADL Bike Rentals – Virginia Key | /padl-bike-rentals-virginia-key-miami
+  ws330 | Fort Lauderdale Scuba Diving | /fort-lauderdale-scuba-dive-fl
+  ws366 | Naples Kayak & Eco Adventures | /naples-kayak-eco-fl
+  ws401 | Southernmost Dive Center | /southernmost-dive-key-west-fl
+
+=== [jetski] fLVy5yJqTly6mwvX99X9 — 4 ops sharing this photo ===
+  js12 | Jet Ski Rental – Falcon's Hollywood | /ocean-jet-ski-rentals-pompano-broward
+  js163 | Panama City Beach Waverunner | /pcb-waverunner-fl
+  js183 | Jet Ski Rental | /jet-ski-rental-falcons-hollywood-hollywood
+  js185 | Daytona Beach Jet Ski Rentals | /daytona-beach-jet-ski-fl
+
+=== [boat] CQH4Q4dSQ222BdUzxK4Y — 4 ops sharing this photo ===
+  bt4 | 100 Miami – Luxury Boat | /100-miami-luxury-boat-rental-miami
+  bt12 | The Real Yacht Experience II | /the-real-yacht-experience-ii-miami-bt12
+  bt428 | Key West Charter Boats | /key-west-charter-boats-fl
+  bt451 | Fort Lauderdale Catamaran Cruises | /fort-lauderdale-catamaran-fl
+
+=== [slingshot] AMhe7df4Q0i4hUu4oTxh — 4 ops sharing this photo ===
+  sl4 | TGIF Rides – Slingshot | /tgif-rides-slingshot-broward
+  sl13 | Polaris Slingshot Rental Florida 2026 | /polaris-slingshot-rental-florida
+  sl35 | TGIF Rides | /tgif-rides-slingshot-fort-lauderdale
+  sl43 | Lake City Slingshot Rentals | /lake-city-slingshot-fl
+
+=== [tour] MoZpKbjNSJCo9QoY1ItA — 4 ops sharing this photo ===
+  to5 | Xcursions USA – Everglades Tour | /xcursions-usa-everglades-tour-miami
+  to156 | Punta Cana Night Jeep Tour | /punta-cana-night-jeep-tour-puntacana
+  to600 | Key West Activities 2026 | /key-west-activities
+  to749 | Anastasia Water Sports | /anastasia-watersports-st-augustine-fl
+
+=== [tour] tpFDyNb8Q0Kgsm8oOFpq — 4 ops sharing this photo ===
+  to7 | Miami Beach Welcome Center Tour | /miami-beach-welcome-center-tour-broward
+  to201 | Miami Beach Welcome Center Tour | /miami-beach-welcome-center-tour-pembroke-pines
+  to353 | Treasure Seekers Shell Tours | /treasure-seekers-shell-tours-marco-island
+  to780 | Jacksonville Activities 2026 | /jacksonville-activities
+
+=== [watersports] KMM8cLMeQVaMtJ8uMHjC — 4 ops sharing this photo ===
+  ws9 | Visit Palm Beach – Snorkel | /visit-palm-beach-snorkel-palmbeach
+  ws93 | Seabob Adventures PC | /seabob-adventures-pc-puntacana
+  ws309 | Lake Louisa State Park Kayak | /lake-louisa-kayak-fl
+  ws358 | Pensacola Snorkel Tours | /pensacola-snorkel-fl
+
+=== [tour] U4sHj4fHRRa6NCjosmmJ — 4 ops sharing this photo ===
+  to71 | US2U – Everglades Tour | /us2u-everglades-tour-broward
+  to142 | Indigenous Eyes Ecological Tour | /indigenous-eyes-ecological-tour-puntacana
+  to319 | US2U | /us2u-everglades-tour-southwest-ranches
+  to763 | Pensacola Dolphin Watch | /pensacola-dolphin-watch-fl
+
+=== [fishing] QpSJkWZ0ScuS3VtkxNDf — 4 ops sharing this photo ===
+  fi10 | Native Guided Fishing Charters | /native-guided-fishing-charters-marco-island-gulf
+  fi40 | Cozumel Fishing Charter | /cozumel-fishing-charter-cozumel
+  fi46 | Miami Night Fishing Charters | /miami-night-fishing-fl
+  fi131 | Miss Penny | /miss-penny-day-fishing-charter-islamorada
+
+=== [boat] Iqj95jd2RCugdYYt3e1f — 4 ops sharing this photo ===
+  b466 | Windsong Charters | /windsong-charters-deerfield-beach-fl
+  bt288 | Islamorada Boat Rentals | /islamorada-boat-rentals-fl
+  bt299 | 50' Private Catamaran Excursion | /50-private-catamaran-excursion--boca-raton-boca-raton
+  bt393 | Windsong Charters | /windsong-charters-deerfield-beach
+
+=== [tour] AZ5CoJfEQUSzBfesRVPA — 4 ops sharing this photo ===
+  to248 | Anna Maria Island Water Sports 2025 — Boats, Kayak | /anna-maria-island-water-sports
+  to314 | Fort Myers Beach Water Sports 2025 — Jet Skis, Boa | /fort-myers-beach-water-sports
+  to482 | Captiva Island Water Sports 2025 — Boat Rentals, J | /captiva-island-water-sports
+  to701 | Naples Florida Water Sports 2025 — Complete Guide  | /naples-florida-water-sports
+
+=== [boat] 2xK99DkrQAGI2J8hDSLi — 4 ops sharing this photo ===
+  bt276 | Orlando Scenic Boat Tours | /orlando-boat-tours-fl
+  bt312 | Danger Charters Key West | /danger-charters-key-west-fl
+  bt340 | Destin Catamaran Tours | /destin-catamaran-tours-fl
+  bt364 | J2 Boats Pontoon Rental | /j2-boats-pontoon-rental-madeira-beach-florida
+
+=== [watersports] qGF2J9DjSnSyRIoyiVDF — 4 ops sharing this photo ===
+  ws232 | Best Kayaking in Miami 2026 | /kayaking-miami
+  ws290 | Best Jet Car Rentals Miami 2026 | /jet-car-rentals-miami
+  ws298 | Best Parasailing in Miami 2026 | /parasailing-miami
+  ws331 | Best Snorkeling in Miami 2026 | /snorkeling-miami
+
+=== [golfcart] me8xaQyREKJgZpih3Xyj — 4 ops sharing this photo ===
+  gc55 | Cocoa Beach Golf Cart Rentals | /cocoa-beach-golf-cart-fl
+  gc58 | Fort Myers Golf Cart Tours | /fort-myers-golf-cart-tours-fl
+  gc59 | Golf Cart Rental Key West | /golf-cart-rental-key-west-key-west
+  gc70 | Amelia Island Golf Cart Tours | /amelia-island-golf-cart-fl
+
+=== [boat] qGF2J9DjSnSyRIoyiVDF — 3 ops sharing this photo ===
+  bt1 | Bruschi Boat Rental | /bruschi-boat-rental-small-boat-miami
+  bt341 | Best Party Boats Miami 2026 | /party-boat-miami
+  bt441 | Best Yacht Rentals Miami 2026 | /yacht-rentals-miami
+
+=== [boat] 2Hn6r2JwTdSehD9tStzj — 3 ops sharing this photo ===
+  bt5 | 100 Miami – Premium Charter | /100-miami-premium-charter-miami
+  bt377 | Sarasota Boat Tours | /sarasota-boat-tours-fl
+  bt437 | Danger Charter Key West | /danger-charter-key-west-fl
+
+=== [golfcart] JpKeeYtZR6a8ZkbyiwVk — 3 ops sharing this photo ===
+  gc5 | FL Keys Food Tour – Golf Cart | /fl-keys-food-tour-golf-cart-keys
+  gc69 | Broward Golf Cart Rentals | /broward-golf-cart-rentals-fl
+  gc90 | Sanibel Golf Cart Rentals | /sanibel-golf-cart-rentals-fl
+
+=== [boat] dwkmTqVQmeWXpmuOGR8w — 3 ops sharing this photo ===
+  bt6 | Aura Yacht Experience | /aura-yacht-experience-miami
+  bt217 | Miami Boat Rental | /miami-boat-rental
+  bt388 | Clearwater Party Boat | /clearwater-party-boat-fl
+
+=== [jetski] UHu4AS7tTXa9MBqO75hh — 3 ops sharing this photo ===
+  js24 | Sunset Ski & Watersports | /sunset-ski-watersports-gulf
+  js100 | Beach Jetski LLC | /beach-jetski-llc-wave-runner-rentals-dunedin
+  js176 | Miami Luxury Jet Ski | /miami-luxury-jet-ski-fl
+
+=== [fishing] qijMJE5TSTKc8H7VewYf — 3 ops sharing this photo ===
+  fi5 | Dirty Dolly Fish Company | /dirty-dolly-fish-company-space
+  fi30 | Punta Cana Fly Fishing | /punta-cana-fly-fishing-puntacana
+  fi92 | Cape Canaveral Fishing Charters | /cape-canaveral-fishing-fl
+
+=== [tour] QZtloGUThSiBygmTtngQ — 3 ops sharing this photo ===
+  to8 | System Shuttle – Key West | /system-shuttle-key-west-miami
+  to626 | Frisky Mermaid Dolphin Tours | /frisky-mermaid-dolphin-tours-pensacola-beach-fl
+  to633 | Fury Sunset Cruise Key West | /fury-sunset-cruise-key-west-fl
+
+=== [boat] uK4IGupRVCl8Uim7MRPs — 3 ops sharing this photo ===
+  bt17 | Bluefoot Pirates | /bluefoot-pirates-broward
+  bt342 | Miami Speed Boat Tours | /miami-speed-boat-tours-fl
+  bt427 | Clearwater Sailing | /clearwater-sailing-fl
+
+=== [tour] Jyp3mzNHSBFSJDwbgqZ6 — 3 ops sharing this photo ===
+  to24b | Florida Adventures & Rentals – Goodland Tour | /florida-adventures-marco-island-boat-rental-gulf-to24b
+  to574 | Gulf Coast Activities 2026 | /gulf-coast-activities
+  to639 | Destin Activities 2026 | /destin-activities
+
+=== [jetski] AnAlYohVQnq2WKrrpgv6 — 3 ops sharing this photo ===
+  js11 | 1 Hour Jet Ski Rental – Hollywood Beach | /1-hour-jet-ski-rental-hollywood-beach-broward
+  js123 | Best Jet Ski Rentals Fort Lauderdale 2026 | /jet-ski-rentals-fort-lauderdale
+  js188 | 1 Hour Jet Ski Rental | /1-hour-jet-ski-rental-hollywood-beach-hollywood
+
+=== [watersports] Yns4Rm3RTian7yawGVQq — 3 ops sharing this photo ===
+  ws25 | Tampa Riverwalk Rentals | /tampa-riverwalk-rentals-westfl
+  ws273 | Panama City Beach Snorkel Tours | /panama-city-snorkel-fl
+  ws362 | Snorkeling Palm Beach Florida 2025 — Reef Tours, N | /snorkeling-palm-beach
+
+=== [tour] WooQ8nWpScaBBDJOmQWV — 3 ops sharing this photo ===
+  to32 | US2U – Miami Beach Tour | /us2u-miami-beach-city-tour-miami-to32
+  to173 | Chichén Itzá Day Tour | /chichen-itza-day-tour-cancun-hz
+  to444 | Island Queen Cruises | /island-queen-cruises-miami-fl
+
+=== [watersports] OMmF5tPXQOOUwFxyTntC — 3 ops sharing this photo ===
+  ws29 | HO2 Pensacola Beach | /ho2-pensacola-beach-westfl
+  ws327 | Get Up and Go Kayaking | /get-up-and-go-kayaking-titusville-titusville
+  ws339 | Tequesta Snorkel Adventures | /tequesta-snorkel-fl
+
+=== [tour] hYWCn96dQ3WMdLu2XuVo — 3 ops sharing this photo ===
+  to56 | The Pelican LLC – St. Petersburg | /the-pelican-llc-st-petersburg-westfl
+  to342 | Boca Raton Water Sports 2025 — Boat Rentals, Snork | /boca-raton-water-sports
+  to655 | Spirit of the Swamp Airboat | /spirit-of-the-swamp-fl
+
+=== [boat] rLqH6zeCQKeMlYOCpo5M — 3 ops sharing this photo ===
+  bt52 | Chadillac Adventures | /chadillac-adventures-cove-cay-westfl-bt52
+  bt316 | PG Boat Rental | /pg-boat-rental-punta-gorda
+  bt331 | Yaju Boat Tours | /yaju-boat-tours-standard-miami
+
+=== [tour] 9SMFbuG2TqGF2xvkBhmB — 3 ops sharing this photo ===
+  to65 | Carriage Tours & Events – Romantic | /carriage-tours-events-classic-nefl-to65
+  to705 | Three Lakes Wildlife Kayak | /three-lakes-wildlife-fl
+  to741 | Paradise Adventures Sarasota | /paradise-adventures-sarasota-fl
+
+=== [boat] ZSpyEkLsR6GjRVX0zXdj — 3 ops sharing this photo ===
+  bt93 | Chilly Down Charters – Panama City | /chilly-down-charters-private-charter-westfl
+  bt168 | Playa del Carmen Catamaran | /playa-del-carmen-catamaran-playadelcarmen
+  bt216 | Cooper City Airboat Tours | /cooper-city-airboat-fl
+
+=== [watersports] 3ITe2aTlRc3WvdFma9Ze — 3 ops sharing this photo ===
+  ws60 | Happy Paddler Kayak Tours | /happy-paddler-kayak-tours-bradenton-beach-westfl
+  ws155 | Amelia Island Kayak Excursions | /amelia-island-kayak-fl
+  ws215 | Happy Paddler Kayak Tours | /happy-paddler-kayak-tours-bradenton-beach
+
+=== [boat] YqN3vSmThS8jJVBPpCBI — 3 ops sharing this photo ===
+  bt110 | Coastal Cruises South Pasadena | /coastal-cruises-south-pasadena-westfl
+  bt247 | Dania Beach Sailing Charters | /dania-beach-sailing-fl
+  bt421 | IRB Boat Rental | /irb-boat-rental-indian-rocks-beach
+
+=== [tour] KR8OFpfkQLakqG4uGmwq — 3 ops sharing this photo ===
+  to90 | Cocoa Beach Catamaran | /cocoa-beach-catamaran-centralfl
+  to539 | Holiday Water Sports | /holiday-water-sports-fort-myers-beach-fl
+  to728 | Juno Beach Surf Lessons | /juno-beach-surf-lessons-fl
+
+=== [tour] mQaszLzcRjWGKq8TeirL — 3 ops sharing this photo ===
+  to91 | Runners Adventures | /runners-adventures-puntacana
+  to273 | Runners Adventures | /runners-adventures-punta-cana
+  to470 | SoFlo Water Adventures | /soflo-water-adventures-miami
+
+=== [tour] rCBC9zNTQiCUoNrfRCO3 — 3 ops sharing this photo ===
+  to92 | Canelo Tours | /canelo-tours-puntacana
+  to458 | Jupiter Outdoor Center | /jupiter-outdoor-center-jupiter
+  to730 | Suwannee River Canoe Adventures | /suwannee-river-canoe-fl
+
+=== [boat] MBRZ1g0TgqbTCOn3frmg — 3 ops sharing this photo ===
+  bt111 | Pink Party Boat Punta Cana | /pink-party-boat-punta-cana-puntacana
+  bt179 | Pink Party Boat Punta Cana | /pink-party-boat-punta-cana-punta-cana
+  bt241 | Bal Harbour Boat Tours | /bal-harbour-boat-tours-fl
+
+=== [tour] CQsbP1YiRGJVovIW1JA8 — 3 ops sharing this photo ===
+  to106 | Morning Eco Tour – Latitudes | /morning-eco-tour-latitudes-westfl
+  to199 | Northeast Florida Activities 2026 | /northeast-florida-activities
+  to753 | Wannado Tours | /wannado-tours-miami-fl
+
+=== [watersports] 4aacknz4SeuBVE1JRitC — 3 ops sharing this photo ===
+  b500 | Kayaking SRQ – Sarasota Kayak Tours | /kayaking-srq-sarasota-kayak-tours-gulf
+  ws197 | Brevard Parasail Adventures | /brevard-parasail-fl
+  ws283 | Kayaking SRQ | /kayaking-srq--sarasota-kayak-tours-sarasota
+
+=== [boat] yMnHEabmRQuSFUw7DyJ4 — 3 ops sharing this photo ===
+  bt129 | Blue Dream Catamaran Tours | /blue-dream-catamaran-tours-puntacana
+  bt143 | Sea Pro Divers Punta Cana | /sea-pro-divers-punta-cana-puntacana
+  bt319 | Lighthouse Point Boat Rentals | /lighthouse-point-boat-rentals-fl

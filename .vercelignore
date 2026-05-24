@@ -1,0 +1,104 @@
+# ============================================================
+# Vercel Ignore — exclude dev/pipeline files from production deploy
+# ============================================================
+# Keeps Vercel uploads small and prevents exposing internal data
+# at predictable URLs (e.g. /broward_phase1_plan.json).
+#
+# Anything NOT listed here gets deployed. The runtime essentials —
+# *.html, operators.json, operators-slim.json, slug-map.js,
+# referral.js, sitemap.xml, robots.txt, manifest.json, favicon.ico,
+# *.png, images/ — all stay.
+# ============================================================
+
+# --- Build pipeline outputs (mirror sweep state) ------------
+*_phase1_plan.json
+*_phase2_*.json
+*_phase3_records.json
+*_filtered.json
+*_to_delete.json
+*_restore_slugs.json
+phase1_plan.json
+phase3_new_records.json
+
+# --- Availability + scrape scratch --------------------------
+availability_delete_backup.json
+availability_restore_set.json
+fh_scrape_photos.json
+
+# --- Audit / planning artifacts -----------------------------
+broken_urls.json
+card_audit.json
+diversification_plan.json
+images_needed.json
+images_needed_v2.json
+images_needed_v3.json
+links_needed.json
+unique_images.json
+unique_images_partial.json
+unique_links.json
+unique_links_skipped.json
+
+# --- Dev JS (data fetchers, scrapers — Node CLI tools) ------
+fetch_missing_images.js
+fetch_missing_links.js
+fetch_unique_item_images.js
+scrape_fareharbor_photos.js
+
+# --- All Python pipeline scripts ----------------------------
+*.py
+__pycache__/
+
+# --- FareHarbor CSV pulls (source data, not served) ---------
+*.csv
+fh_avail/
+
+# --- Internal docs / playbooks ------------------------------
+ADDING_OPS_PLAYBOOK.md
+host_outreach_kit.md
+monthly_reconciliation_workflow.md
+
+# --- Scratch text files (keep robots.txt!) ------------------
+everglades_breadcrumb.txt
+photo_dup_queue.txt
+priority_photo_fixes.txt
+swap_preview.txt
+
+# --- Node / build tooling -----------------------------------
+node_modules/
+package-lock.json
+
+# --- OS / editor metadata -----------------------------------
+.DS_Store
+.AppleDouble
+.LSOverride
+Thumbs.db
+Desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# --- Backups / atomic-write leftovers -----------------------
+*.bak
+*.orig
+*.tmp
+*.new
+*.log
+
+# --- Secrets + Vercel local state (CRITICAL) ----------------
+.env
+.env.*
+.env.local
+.env.*.local
+.vercel/
+.vercel
+.git/
+.gitignore
+
+# --- Misc dev scratch ---------------------------------------
+fh_pages/
+fh_html/
+venv/
+.venv/
+*.local

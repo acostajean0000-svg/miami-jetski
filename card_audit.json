@@ -1,0 +1,1015 @@
+{
+  "summary": {
+    "total_files_with_cards": 27,
+    "total_cards": 319,
+    "matched": 194,
+    "mismatched": 8,
+    "orphan_ops": 0,
+    "no_image": 117
+  },
+  "mismatched": [
+    {
+      "file": "florida-keys-water-sports.html",
+      "name": "WakeZone Watersports",
+      "card_img": "https://cdn.filestackcontent.com/AFZOE9VSHS63mEDYaRk6/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "expected": "https://cdn.filestackcontent.com/7ecHWrqeTfCOlj7KtVvW/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "fort-lauderdale-water-sports.html",
+      "name": "Sea Rocket Fort Lauderdale",
+      "card_img": "https://cdn.filestackcontent.com/yMnHEabmRQuSFUw7DyJ4/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "expected": "https://cdn.filestackcontent.com/KgOLKX63S4Wd4i0z7tSe/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "gulf-coast-water-sports.html",
+      "name": "Aqua Voyage Jet Cars",
+      "card_img": "https://cdn.filestackcontent.com/hGLCfMpPSIGTsiGbgQvd/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "expected": "https://cdn.filestackcontent.com/RD5fIm18THWj8bEFs7fw/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-car-rentals-florida.html",
+      "name": "WakeZone Watersports – Jet Car",
+      "card_img": "https://cdn.filestackcontent.com/xzxmLnRnRKDmOKyjy7Wt/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "expected": "https://cdn.filestackcontent.com/CGz8nSr9TvBowzVUXbow/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-car-rentals-florida.html",
+      "name": "Get Wet FL – Jet Car",
+      "card_img": "https://cdn.filestackcontent.com/xzxmLnRnRKDmOKyjy7Wt/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/xzxmLnRnRKDmOKyjy7Wt",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-car-rentals-florida.html",
+      "name": "Top Line Watersports – Jet Car",
+      "card_img": "https://cdn.filestackcontent.com/xzxmLnRnRKDmOKyjy7Wt/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/Lyx5HSyySrWoScEpKVEY",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-car-rentals-florida.html",
+      "name": "Aqua Voyage Jet Cars",
+      "card_img": "https://cdn.filestackcontent.com/hGLCfMpPSIGTsiGbgQvd/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "expected": "https://cdn.filestackcontent.com/RD5fIm18THWj8bEFs7fw/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-car-rentals-florida.html",
+      "name": "Flamingo Yacht Charters – Jet Car",
+      "card_img": "https://cdn.filestackcontent.com/xzxmLnRnRKDmOKyjy7Wt/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "expected": "https://cdn.filestackcontent.com/RDgWBn1xSkuPmlHHAdD3/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    }
+  ],
+  "orphan_ops": [],
+  "no_image": [
+    {
+      "file": "aerial-tours-florida.html",
+      "name": "Parasailing | Miami Water Sports",
+      "card_img": null,
+      "expected": "https://mediacdn.cincopa.com/v2/84367/403!EvGAAAU0nDAd0B/4/2019Sea-Doo-Rental.jpg",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "florida-keys-water-sports.html",
+      "name": "Key Largo: Jet Ski Rentals",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/7T1Q94ARQed6omGfswME/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "florida-keys-water-sports.html",
+      "name": "Tropic Water Sports – Key Largo",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/152aj32CTVS4rWlM4tiB/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "florida-keys-water-sports.html",
+      "name": "Jetski Rentals Marathon – Best Price!",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/kWwemCLjQ62AJZFsI6Rs/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "florida-keys-water-sports.html",
+      "name": "Grassy Key Marina – Daily Jet Ski",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/RpbXUYuuQ0GPkhCK7VE7/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "florida-keys-water-sports.html",
+      "name": "Marathon: Jet Ski Rentals – WakeZone",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/CGz8nSr9TvBowzVUXbow/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "florida-keys-water-sports.html",
+      "name": "Six Fins Key West: 2-Hr Flagship Jet Ski Tour",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rNBDmNNQTSLzmpVtEODa/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "fort-lauderdale-water-sports.html",
+      "name": "1 Hour Jet Ski Rental – Hollywood Beach",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/AnAlYohVQnq2WKrrpgv6/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "fort-lauderdale-water-sports.html",
+      "name": "Jet Ski Rental – Falcon\\'s Hollywood",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/GOXtl3eXSoaXcqyNA7J1/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "fort-lauderdale-water-sports.html",
+      "name": "Bimini Island Day Trip by Fast-Ferry",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/OyH4CrnoRMSmL350YLyD/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "fort-lauderdale-water-sports.html",
+      "name": "Jetski Rental – Fort Lauderdale",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/BvTCi424Ri2ETjhgtqZw/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "fort-lauderdale-water-sports.html",
+      "name": "Jet Ski Rental Pompano Beach",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/ylexT3hbTTiy4pA1hTeJ/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "fort-lauderdale-water-sports.html",
+      "name": "Sun Boat Rental",
+      "card_img": null,
+      "expected": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/8f/6c/6c/caption.jpg?w=500&h=400&s=1",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "fort-lauderdale-water-sports.html",
+      "name": "TGIF Rides – Slingshot",
+      "card_img": null,
+      "expected": "https://img1.wsimg.com/isteam/ip/5fa80ccf-fb4b-4464-8019-4d318aa9c4e7/Miami%20slingshot%20rentals%20south%20beach%20book%20a%20sli.jpg/:/cr=t:0%25,l:4.51%25,w:90.98%25,h:100%25/rs=w:740,h:740,cg:true",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "gulf-coast-water-sports.html",
+      "name": "Florida Adventures – Dolphin Tour",
+      "card_img": null,
+      "expected": "https://img.getmyboat.com/images/62bf90234a926/-processed.jpeg",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "gulf-coast-water-sports.html",
+      "name": "Florida Adventures – Kayak Tour",
+      "card_img": null,
+      "expected": "https://regalyachtingmiami.com/wp-content/uploads/2025/03/Jet-Ski-Rental-in-Miami.jpg",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "gulf-coast-water-sports.html",
+      "name": "Florida Adventures – Kayak Rental",
+      "card_img": null,
+      "expected": "https://www.jetskitx.com/wp-content/uploads/2025/01/Half-Day-Jet-Ski-Rental-image-4.jpg",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-car-rentals-florida.html",
+      "name": "SF Jet Ski Rentals – Jet Car",
+      "card_img": null,
+      "expected": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvswoCuGxnvxqrdmIHWm4hfi_g6Mq7BpCJbQ&s",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "AquaFusion Combo: Jet Ski & Party Boat",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/l1Nq1veSVyMXAUa0SVj9/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Jetski Rental – North Miami Beach",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/X9uaDlnFQ5BLXBaYab4D/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "One Hour Jet Ski Rental",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/EOoSBwdyRzSfbVQOerT5/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Jetski Rentals – South Beach",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/NLokGl1GSIuk1gUEGXsJ/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Package Deal: Boat + Jet Ski + ATV",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/Lvr8JSpeToajX92qTn6x/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Jet Ski Rentals | Miami WaterSports",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/kuY6iXnTbFzacy1ca0ew/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Jet Ski Rentals – Coconut Grove",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/6uIlEGcSr9H54G5mnN3g/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "1 Hour Jet Ski Rental – Hollywood Beach",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/AnAlYohVQnq2WKrrpgv6/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Jet Ski Rental – Falcon\\'s Hollywood",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/GOXtl3eXSoaXcqyNA7J1/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Bimini Island Day Trip by Fast-Ferry",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/OyH4CrnoRMSmL350YLyD/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Jet Ski Rental Pompano Beach",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/ylexT3hbTTiy4pA1hTeJ/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Key Largo: Jet Ski Rentals",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/7T1Q94ARQed6omGfswME/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Tropic Water Sports – Key Largo",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/152aj32CTVS4rWlM4tiB/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Jetski Rentals Marathon – Best Price!",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/kWwemCLjQ62AJZFsI6Rs/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Grassy Key Marina – Daily Jet Ski",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/RpbXUYuuQ0GPkhCK7VE7/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Marathon: Jet Ski Rentals – WakeZone",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/CGz8nSr9TvBowzVUXbow/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "jet-ski-rentals-florida.html",
+      "name": "Six Fins Key West: 2-Hr Flagship Jet Ski Tour",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rNBDmNNQTSLzmpVtEODa/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "miami-water-sports.html",
+      "name": "AquaFusion Combo: Jet Ski & Party Boat",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/l1Nq1veSVyMXAUa0SVj9/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "miami-water-sports.html",
+      "name": "Jetski Rental – North Miami Beach",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/X9uaDlnFQ5BLXBaYab4D/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "miami-water-sports.html",
+      "name": "One Hour Jet Ski Rental",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/EOoSBwdyRzSfbVQOerT5/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "miami-water-sports.html",
+      "name": "Jetski Rentals – South Beach",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/NLokGl1GSIuk1gUEGXsJ/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "miami-water-sports.html",
+      "name": "Package Deal: Boat + Jet Ski + ATV",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/Lvr8JSpeToajX92qTn6x/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "miami-water-sports.html",
+      "name": "Jet Ski Rentals | Miami WaterSports",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/kuY6iXnTbFzacy1ca0ew/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "miami-water-sports.html",
+      "name": "Jet Ski Rentals – Coconut Grove",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/6uIlEGcSr9H54G5mnN3g/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "miami-water-sports.html",
+      "name": "Bruschi Boat Rental",
+      "card_img": null,
+      "expected": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/8f/6c/6c/caption.jpg?w=500&h=400&s=1",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "miami-water-sports.html",
+      "name": "Miami Style Rentals – Biscayne",
+      "card_img": null,
+      "expected": "https://img1.wsimg.com/isteam/ip/5fa80ccf-fb4b-4464-8019-4d318aa9c4e7/rent%20a%20slingshot.jpeg/:/cr=t:12.61%25,l:0%25,w:100%25,h:74.79%25/rs=w:370,h:370,cg:true",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "miami-water-sports.html",
+      "name": "SF Jet Ski Rentals – Jet Car",
+      "card_img": null,
+      "expected": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvswoCuGxnvxqrdmIHWm4hfi_g6Mq7BpCJbQ&s",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "slingshot-rentals-florida.html",
+      "name": "Miami Style Rentals – Biscayne",
+      "card_img": null,
+      "expected": "https://img1.wsimg.com/isteam/ip/5fa80ccf-fb4b-4464-8019-4d318aa9c4e7/rent%20a%20slingshot.jpeg/:/cr=t:12.61%25,l:0%25,w:100%25,h:74.79%25/rs=w:370,h:370,cg:true",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "slingshot-rentals-florida.html",
+      "name": "TGIF Rides – Slingshot",
+      "card_img": null,
+      "expected": "https://img1.wsimg.com/isteam/ip/5fa80ccf-fb4b-4464-8019-4d318aa9c4e7/Miami%20slingshot%20rentals%20south%20beach%20book%20a%20sli.jpg/:/cr=t:0%25,l:4.51%25,w:90.98%25,h:100%25/rs=w:740,h:740,cg:true",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-clearwater-florida.html",
+      "name": "Bradenton Jet Ski Rental",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/kLez3lx2TNazEUrmAlrL",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-clearwater-florida.html",
+      "name": "The Pelican LLC – St. Petersburg",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hYWCn96dQ3WMdLu2XuVo",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-clearwater-florida.html",
+      "name": "TV Boat Rentals",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/AdLwpoj8QOLSF8V0fjeA/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-clearwater-florida.html",
+      "name": "Destin Bonfire Company",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/yMUFhTIkQB2QHrjzJJHN/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-clearwater-florida.html",
+      "name": "Aquaholic Charters – Venice",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/8VlaZciFTCDXtTJsegzj/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-clearwater-florida.html",
+      "name": "Side x Side St. Pete",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/sMxZmknqT2uxwcriinQU/convert?cache=true&amp;compress=true&amp;quality=90&amp;format=webp&amp;rotate=exif&amp;w=800&amp;fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-clearwater-florida.html",
+      "name": "Side x Side St. Pete",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/sMxZmknqT2uxwcriinQU/convert?cache=true&amp;compress=true&amp;quality=90&amp;format=webp&amp;rotate=exif&amp;w=800&amp;fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-clearwater-florida.html",
+      "name": "Cigar Dinner Cruise",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/Hyga6uR5Q4mbPvpEzW3C/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-clearwater-florida.html",
+      "name": "Greek Town Golf Carts – Tarpon Springs",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/13GVYpTuQ3GXOCFCPrIJ/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-clearwater-florida.html",
+      "name": "Aqua Riders Jet Ski Rental – Sarasota",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/Q90j449YRTbOoxdbpDug",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-clearwater-florida.html",
+      "name": "WR Jet Ski Rentals – Bradenton",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/cmIUTtArQE2sskXBwV1w/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-clearwater-florida.html",
+      "name": "Honeymoon Island Jet Ski Tour – Clearwater Beach",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/1ZUgzDiR4iJfTu1VBEY7",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-florida.html",
+      "name": "Florida Adventures – Kayak Tour",
+      "card_img": null,
+      "expected": "https://regalyachtingmiami.com/wp-content/uploads/2025/03/Jet-Ski-Rental-in-Miami.jpg",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-florida.html",
+      "name": "Florida Adventures – Kayak Rental",
+      "card_img": null,
+      "expected": "https://www.jetskitx.com/wp-content/uploads/2025/01/Half-Day-Jet-Ski-Rental-image-4.jpg",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-fort-lauderdale.html",
+      "name": "Bimini Island Day Trip by Fast-Ferry",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/OyH4CrnoRMSmL350YLyD/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-fort-lauderdale.html",
+      "name": "Blue H2O Cruisers",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/RqefLcVWRHmKmRf0kqmB/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-fort-lauderdale.html",
+      "name": "Makers Air – Private Charter Fort Lauderdale",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/v8RbT4bR0KarYdug6pWy/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-fort-lauderdale.html",
+      "name": "100 Pro Boats – Hollywood",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/xsg9dH3xT2OMkgv0bwtS/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-fort-lauderdale.html",
+      "name": "Sun Boat Rental",
+      "card_img": null,
+      "expected": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/32/8f/6c/6c/caption.jpg?w=500&h=400&s=1",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-fort-lauderdale.html",
+      "name": "Baymingo",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/TBo7JzGEQMKOH17jbMiP/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-fort-lauderdale.html",
+      "name": "1 Hour Jet Ski Rental – Hollywood Beach",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/AnAlYohVQnq2WKrrpgv6/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-fort-lauderdale.html",
+      "name": "Jet Ski Rental – Falcon's Hollywood",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/GOXtl3eXSoaXcqyNA7J1/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-fort-lauderdale.html",
+      "name": "Reel Floridian Fishing",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/ajMZl9bjQ4aUCHu44noD",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-fort-lauderdale.html",
+      "name": "TGIF Rides – Slingshot",
+      "card_img": null,
+      "expected": "https://img1.wsimg.com/isteam/ip/5fa80ccf-fb4b-4464-8019-4d318aa9c4e7/Miami%20slingshot%20rentals%20south%20beach%20book%20a%20sli.jpg/:/cr=t:0%25,l:4.51%25,w:90.98%25,h:100%25/rs=w:740,h:740,cg:true",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-fort-lauderdale.html",
+      "name": "EZ Raider Fort Lauderdale",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/boGQJhQGQrqr2fLFmrob/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-naples-florida.html",
+      "name": "Marco Island Boat Charters",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/ewThvR3T0GUdRxZN5osT/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-naples-florida.html",
+      "name": "Florida Adventures – Marco Island Boat Rental",
+      "card_img": null,
+      "expected": "https://d18mr9iuob0gar.cloudfront.net/media/boats/2021/05/rental-Motor-boat-bUNIQ_Sunseeker-75feet-bMarina_Del_Rey-bCA_dwWYDX4.jpg",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-naples-florida.html",
+      "name": "Paradise Watersports – Port Charlotte",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/US5DuBk1SHWYvXZpIRbW/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-naples-florida.html",
+      "name": "It's Jet Ski Time – Naples",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/ritAzjzzSX61wd8wdNHl/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-naples-florida.html",
+      "name": "Florida Adventures – Kayak Rental",
+      "card_img": null,
+      "expected": "https://www.jetskitx.com/wp-content/uploads/2025/01/Half-Day-Jet-Ski-Rental-image-4.jpg",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-naples-florida.html",
+      "name": "WOW Marco Island – 1 Hour Jet Ski Adventure",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/VIje2hpMTXSW8YzkM8Sm",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-naples-florida.html",
+      "name": "Florida Adventures – Kayak Tour",
+      "card_img": null,
+      "expected": "https://regalyachtingmiami.com/wp-content/uploads/2025/03/Jet-Ski-Rental-in-Miami.jpg",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-naples-florida.html",
+      "name": "Aqua Voyage Jet Cars",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/RD5fIm18THWj8bEFs7fw/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-naples-florida.html",
+      "name": "Florida Adventures & Rentals – Wildlife Tour",
+      "card_img": null,
+      "expected": "https://www.shoreexcursionsgroup.com/img/tours/miami-tours-1.jpg",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-naples-florida.html",
+      "name": "Red Boat Tours",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/ny1IR7ZiTWaZX6LxM49I/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-naples-florida.html",
+      "name": "Florida Adventures – Kayak Rental Naples",
+      "card_img": null,
+      "expected": "https://regalyachtingmiami.com/wp-content/uploads/2025/03/Jet-Ski-Rental-in-Miami.jpg",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-naples-florida.html",
+      "name": "Florida Adventures – Paddle Tour Naples",
+      "card_img": null,
+      "expected": "https://mediacdn.cincopa.com/v2/84367/403!EvGAAAU0nDAd0B/4/2019Sea-Doo-Rental.jpg",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-sarasota-florida.html",
+      "name": "Good Vibes Island Rides – Golf Cart",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/5YdPtiTNTQqOuhzhxn9d/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-sarasota-florida.html",
+      "name": "Kokomo Charters",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/KWbbjZCZRuv5OnZ56DLw/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-sarasota-florida.html",
+      "name": "Paradise Watersports – Port Charlotte",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/US5DuBk1SHWYvXZpIRbW/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-sarasota-florida.html",
+      "name": "Big Shot Slingshot",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/4Q0I9YaQnyvtnRMjppoH/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-sarasota-florida.html",
+      "name": "Splash N Dash Jet Ski Rental",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/XQUMNSkrRTavYGw8GMbf/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-sarasota-florida.html",
+      "name": "WOW Marco Island – 1 Hour Jet Ski Adventure",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/VIje2hpMTXSW8YzkM8Sm",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-sarasota-florida.html",
+      "name": "Kokomo Charters – Sarasota Boat Tour",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/q69JT35HSd6lWLE3jXG9/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-sarasota-florida.html",
+      "name": "Red Boat Tours",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/ny1IR7ZiTWaZX6LxM49I/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-sarasota-florida.html",
+      "name": "Hope and Joy Sanctuary",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/evsjLw0ASc69yKGzrEll/convert?cache=true&amp;compress=true&amp;quality=90&amp;format=webp&amp;rotate=exif&amp;w=800&amp;fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-st-augustine-florida.html",
+      "name": "Fun Rentals St. Augustine",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/LvwyZVq3Rn69tPYFRorS/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-st-augustine-florida.html",
+      "name": "Zoom Air – Zipline Daytona Beach",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/AzvfRrF1RXC8tnRRO2gS/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-st-augustine-florida.html",
+      "name": "Sea Serpent Tours – St. Augustine",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/OkEPPAQS2aloRSoQdF7A/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-st-augustine-florida.html",
+      "name": "Anastasia Watersports – 2 Hour Paddle Sports Rental",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/LP2Rx6atTGL5sj4QrphJ/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-st-augustine-florida.html",
+      "name": "SandSurfer E-Skate Tours",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/2LUNCvlSiu1GwMhfgP8I/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-st-augustine-florida.html",
+      "name": "Old City Carriages – St. Augustine",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/MS7fMUPXRQKmXpk0KGeI",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-st-augustine-florida.html",
+      "name": "Daytona Beach Dolphin Tours",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/v1941N2qTTqqBlWVSZZO/convert?cache=true&amp;compress=true&amp;quality=90&amp;format=webp&amp;rotate=exif&amp;w=800&amp;fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-st-augustine-florida.html",
+      "name": "Seaside Adventures – Ghost Tour",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/2LUNCvlSiu1GwMhfgP8I/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-st-augustine-florida.html",
+      "name": "St. Augustine Land & Sea Tours",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/EXACVHqGQuWe1vw90KHZ",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-st-augustine-florida.html",
+      "name": "Carriage Tours & Events – Romantic",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/9SMFbuG2TqGF2xvkBhmB",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-st-augustine-florida.html",
+      "name": "Seaside Adventures – St. Augustine Tour",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/2LUNCvlSiu1GwMhfgP8I/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-st-augustine-florida.html",
+      "name": "Three Brothers Boards – Daytona",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/Rkwa6QhsRzCQR5dyc5Ho/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-tampa-florida.html",
+      "name": "Bradenton Jet Ski Rental",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/kLez3lx2TNazEUrmAlrL",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-tampa-florida.html",
+      "name": "Tampa Riverwalk Rentals",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/et4kGToRjSY6Isfxq2dw/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-tampa-florida.html",
+      "name": "The Pelican LLC – St. Petersburg",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/rotate=deg:exif/resize=width:1200/quality=value:85/auto_image/compress/cache=expiry:max/hYWCn96dQ3WMdLu2XuVo",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-tampa-florida.html",
+      "name": "TV Boat Rentals",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/AdLwpoj8QOLSF8V0fjeA/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-tampa-florida.html",
+      "name": "Destin Bonfire Company",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/yMUFhTIkQB2QHrjzJJHN/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-tampa-florida.html",
+      "name": "Aquaholic Charters – Venice",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/8VlaZciFTCDXtTJsegzj/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-tampa-florida.html",
+      "name": "Side x Side St. Pete",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/sMxZmknqT2uxwcriinQU/convert?cache=true&amp;compress=true&amp;quality=90&amp;format=webp&amp;rotate=exif&amp;w=800&amp;fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-tampa-florida.html",
+      "name": "Helicopter Aerial Tour – Tampa Bay",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/oeLa9uFdRR6D4Ofkyc6B/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-tampa-florida.html",
+      "name": "Side x Side St. Pete",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/sMxZmknqT2uxwcriinQU/convert?cache=true&amp;compress=true&amp;quality=90&amp;format=webp&amp;rotate=exif&amp;w=800&amp;fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-tampa-florida.html",
+      "name": "Glow Boats & Kayaking – Bradenton",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/F9UIDnn1R2usGCRAW4pV/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-tampa-florida.html",
+      "name": "Gulf Islands Ferry – Bradenton",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/l2fW4z8NSASPlcMRLK4A/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max",
+      "matched": false,
+      "op_found": true
+    },
+    {
+      "file": "water-sports-tampa-florida.html",
+      "name": "Cigar Dinner Cruise",
+      "card_img": null,
+      "expected": "https://cdn.filestackcontent.com/Hyga6uR5Q4mbPvpEzW3C/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=800&fit=max",
+      "matched": false,
+      "op_found": true
+    }
+  ]
+}

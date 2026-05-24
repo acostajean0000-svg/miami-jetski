@@ -1,0 +1,1217 @@
+Total swappable: 243
+
+js5    | 305 Tours & Rentals
+  current: LJm1HB6RHa46DSqW13ww
+  new:     QFfjTDz9TretsrvjBC2E
+  scraped: 2 handles
+
+fi1    | L Fish – Fishing Charter
+  current: SAR8qZoTNuEz8EtNV3JA
+  new:     4UXprgHEThqnm7RfGqIr
+  scraped: 2 handles
+
+jc1    | WakeZone Watersports – Jet Car
+  current: Jazp6NqReKlorQHgty1w
+  new:     CGz8nSr9TvBowzVUXbow
+  scraped: 2 handles
+
+bt2    | Bruschi Boat Rental – Small Boat
+  current: kVN7dZWeTCiJ9rMhWrFX
+  new:     IGmMWgZVTwucXjoGpM2d
+  scraped: 2 handles
+
+fi2    | Atlantic Gulf Fishing Charters
+  current: CC8H013CQ8CZZfZc7MTu
+  new:     6RBKaJ5dS0eaPvqUJv37
+  scraped: 2 handles
+
+sl2    | 727 Slingshots
+  current: CitrLuhTd2YxncrgMsRS
+  new:     KtGWEQmPQtWLhdGIp80u
+  scraped: 5 handles
+
+gc2    | Golf Cart Rental Key West
+  current: a7pb1R8LSg20LvAsL5vf
+  new:     7Z22gUdRya3GUJDIATTw
+  scraped: 9 handles
+
+js10   | Miami Style Rentals – Jet Ski Tour
+  current: EOoSBwdyRzSfbVQOerT5
+  new:     sQ4aOHIR0OEMo8ifWB88
+  scraped: 6 handles
+
+bt3    | Altamar Trade – Miami River
+  current: IQWoi1x0R6qqYwKCKlMu
+  new:     SWq87AyzTPGhPVk4iFjv
+  scraped: 3 handles
+
+sl3    | Miami Style Rentals – Biscayne
+  current: 69AuO06qQByUj3M8OEbQ
+  new:     sQ4aOHIR0OEMo8ifWB88
+  scraped: 14 handles
+
+at3    | Top Line Watersports – ATV
+  current: Vix0Sm12QdufW1WrQFvP
+  new:     dw7y5q32QeqxfR6A16lG
+  scraped: 6 handles
+
+gc3    | Paradise Rentals KW – Golf Cart
+  current: 6umrrk0vT7COnxTBQ5MA
+  new:     DTlXTRhsSpuMeMXwKJAS
+  scraped: 2 handles
+
+js12   | Jet Ski Rental – Falcon's Hollywood
+  current: fLVy5yJqTly6mwvX99X9
+  new:     jnuTDKRByF3yY1ewAFXg
+  scraped: 2 handles
+
+bt4    | 100 Miami – Luxury Boat
+  current: CQH4Q4dSQ222BdUzxK4Y
+  new:     bwT4AfCvQuGsDoSAYF8G
+  scraped: 2 handles
+
+gc4    | Conch Carts – Golf Cart
+  current: wf1V5hjTTK6aAA8zYUM5
+  new:     5MuewSv8SuCYILhm16eb
+  scraped: 5 handles
+
+jc4    | Adventure Watersports – Jet Car
+  current: jROAwx4kRa6lK6EdXxGC
+  new:     fwZ9rGQMQyi0T4VemwOs
+  scraped: 6 handles
+
+br4    | Seaside Bicycle Rentals
+  current: Wt6yfKlYR620yaqM6aZm
+  new:     rNU0lLA2RnGQFrTIBWEe
+  scraped: 5 handles
+
+bt5    | 100 Miami – Premium Charter
+  current: 2Hn6r2JwTdSehD9tStzj
+  new:     bwT4AfCvQuGsDoSAYF8G
+  scraped: 2 handles
+
+ws5    | Crystal River Preserve Adventures
+  current: nIHRmbv6SfG1rHujpyot
+  new:     OPFEi7C1RFOQSSTgPNzc
+  scraped: 10 handles
+
+at5    | Side x Side St. Pete
+  current: 9RdauKM2SLOnGuj9jXSJ
+  new:     BZgzey0LR5CDgHftGdHQ
+  scraped: 5 handles
+
+br5    | EZ Raider Fort Lauderdale
+  current: 5yKM0Bm7TyeVZQxva6wh
+  new:     LYY6TQpzRxigwo123EZ8
+  scraped: 3 handles
+
+js23   | It's Jet Ski Time – Naples
+  current: QGb2pjpCT6CeIKoFIGZO
+  new:     ritAzjzzSX61wd8wdNHl
+  scraped: 2 handles
+
+fi8    | Book Key Largo Fishing – Charter
+  current: KOPyfwhXTMaHIBOP4GRb
+  new:     PYY4OzE7Q6yjCczD0ThO
+  scraped: 2 handles
+
+at6    | Showdown ATV Rentals
+  current: 3fUppwTkSZK8r3V6mwAt
+  new:     XTCwAhYiTTeu9hFvl5m0
+  scraped: 2 handles
+
+br6    | Fun Rentals St. Augustine
+  current: EV3srbCOScmxg8OcrZmT
+  new:     S2zDyAE5QeCNjcnWKBS9
+  scraped: 6 handles
+
+bt7    | 100 Miami – NW 21st Mega Yacht
+  current: 2TBWb5UwRgDeS3beRawY
+  new:     bwT4AfCvQuGsDoSAYF8G
+  scraped: 2 handles
+
+ws7    | Florida Adventures – Kayak Tour
+  current: rNbeAT2IQ5qM7IeGh8ku
+  new:     w7RpvRqSRvaGHDewdLZy
+  scraped: 35 handles
+
+to15   | Zoom Air – Zipline Daytona Beach
+  current: HejYtiXQMy8xbFdA3FRE
+  new:     AzvfRrF1RXC8tnRRO2gS
+  scraped: 5 handles
+
+at7    | Captain Steve's Swamp Buggy
+  current: 5ZhDIUCeSkOQfDFXDbEO
+  new:     CZMFTku5R4qW4jAV3Q8A
+  scraped: 2 handles
+
+br7    | SandSurfer E-Skate Tours
+  current: lBDGIwQGSNYYksEFegOr
+  new:     2LUNCvlSiu1GwMhfgP8I
+  scraped: 9 handles
+
+fi5    | Dirty Dolly Fish Company
+  current: qijMJE5TSTKc8H7VewYf
+  new:     fBzqRq8TSZaj3UNuAE7H
+  scraped: 2 handles
+
+ws8    | Florida Adventures – Kayak Rental
+  current: 6ouFi3OROmD3eGLkL38A
+  new:     w7RpvRqSRvaGHDewdLZy
+  scraped: 11 handles
+
+to8    | System Shuttle – Key West
+  current: QZtloGUThSiBygmTtngQ
+  new:     EqRO5pHVQMuqb57bBPoU
+  scraped: 2 handles
+
+at8    | Showdown ATV Rentals
+  current: iH1vgfSaRZepTSvaHgM1
+  new:     XTCwAhYiTTeu9hFvl5m0
+  scraped: 2 handles
+
+gc8    | Good Vibes Island Rides – Golf Cart
+  current: vytUGSnlRa2koioPP1fa
+  new:     5YdPtiTNTQqOuhzhxn9d
+  scraped: 6 handles
+
+br8    | Unlimited Biking – Miami Beach Highlights
+  current: m3HCdTzeT6GzRZX3s2Nj
+  new:     MJtehKKTAaHwyYx7MtbC
+  scraped: 6 handles
+
+bt9    | 100 Miami – Bayshore
+  current: rSAlslVHRiKDEqFAlFhS
+  new:     bwT4AfCvQuGsDoSAYF8G
+  scraped: 2 handles
+
+bt57   | Key West Fishing Charters II
+  current: LnAYJniuRkq7i5aQsKKu
+  new:     qwWa5bysQViY5yIMRNTH
+  scraped: 10 handles
+
+ae1    | Helicopter Aerial Tour – Tampa Bay
+  current: Hty9kxAhQsGJfObtftZy
+  new:     oeLa9uFdRR6D4Ofkyc6B
+  scraped: 6 handles
+
+jc9    | Slinki Motors – Jet Car
+  current: EfEtehwlTOWILInJaSkl
+  new:     rWfaXHgVTSK2eBGldPBC
+  scraped: 2 handles
+
+bt10   | 100 Miami – Collins Ave
+  current: V5MiP3fhRCpxBjvOwCrA
+  new:     bwT4AfCvQuGsDoSAYF8G
+  scraped: 2 handles
+
+fi7    | Miss Penny – ¾ Day Fishing Charter
+  current: zUFXkCDZQy2fOiAjx30z
+  new:     9xg4PDRYQd649oWfKpP2
+  scraped: 2 handles
+
+ae2    | Suncoast Biplanes
+  current: FJYjIDqzSIGIkZ8GzOVm
+  new:     QwKpIrYRN233LniUu4Ba
+  scraped: 2 handles
+
+jc10   | SF Jet Ski Rentals – Jet Car
+  current: qp5uTmmDSBigI4dKcHGl
+  new:     OD43rD8QQe2nK31ccDeO
+  scraped: 2 handles
+
+ws11   | Florida Adventures – Kayak Rental Naples
+  current: FMtVf8kSKaniXADCsXtQ
+  new:     w7RpvRqSRvaGHDewdLZy
+  scraped: 14 handles
+
+to24   | Up the Keys – Aquarium Encounters Day Tour
+  current: fbFmJHrRSumVp54bBHZc
+  new:     410z1QcWKiZwIisXHAp0
+  scraped: 7 handles
+
+ae3    | Eagles Air Tours – Miami
+  current: jIhjuRIQQhWuoOWT9VrY
+  new:     XIJlPXbFRzGjDmDSREsv
+  scraped: 2 handles
+
+at11   | Thrill Trek Adventures – Tallahassee
+  current: GAb7DmhKSbevBfxHERQI
+  new:     E4JVLjYTq6b6w1TBABHA
+  scraped: 12 handles
+
+gc9    | Golf Cart Rental Key West
+  current: zS0hQjuTxi4HGauFPXER
+  new:     7Z22gUdRya3GUJDIATTw
+  scraped: 9 handles
+
+js29   | SF Jet Ski Rentals
+  current: KhmXH8QQv6ZoUfx1tGYT
+  new:     OD43rD8QQe2nK31ccDeO
+  scraped: 2 handles
+
+ws12   | Florida Adventures – Paddle Tour Naples
+  current: p2G6yHHERWENHJBFtJNn
+  new:     w7RpvRqSRvaGHDewdLZy
+  scraped: 18 handles
+
+ae4    | Jones Air & Sea
+  current: qLxrgwdFTKuUcH7aExAm
+  new:     pF7EnMnTLuKYHbDu6zbw
+  scraped: 4 handles
+
+at12   | Side x Side St. Pete
+  current: 41kw8hqBSiupOH8hA8Es
+  new:     BZgzey0LR5CDgHftGdHQ
+  scraped: 5 handles
+
+br12   | SoFlo Water Adventures – E-Bike & Airboat
+  current: KkuVLNDRiuUJhdsfgKyd
+  new:     8VL94jVpQFygJOi3Fdlu
+  scraped: 9 handles
+
+ae5    | Jones Air & Sea – Premium
+  current: Lj1h4ejrSdqyV6XNiNyi
+  new:     pF7EnMnTLuKYHbDu6zbw
+  scraped: 5 handles
+
+at13   | Tampa ATV Rentals
+  current: 41kw8hqBSiupOH8hA8Es
+  new:     pEE0exewTCiC3W7SAP60
+  scraped: 2 handles
+
+js31   | Epic Hotel – Boat + Jet Ski Combo
+  current: irxu3ZQ7RKKmYiSmBYa5
+  new:     OD43rD8QQe2nK31ccDeO
+  scraped: 9 handles
+
+to16   | Your Jamaican Tour Guide – Mayfield Falls
+  current: eBxARhiNRAObUYybYDzI
+  new:     84thj6RlSnOYYijgCCgB
+  scraped: 2 handles
+
+at14   | Revolution Offroad – Clermont
+  current: Ybp0cEnDRnWnfgLzgC3h
+  new:     g7pHeEb0RVGZF1gkHtGJ
+  scraped: 2 handles
+
+bt15   | Aquarius Boat Rental – Boating Lesson
+  current: ZA1pPGKRASmrWeBbEURI
+  new:     Qmdyww8SRzCrsnRDkRxX
+  scraped: 6 handles
+
+ws15   | Get Up & Go Kayaking – Jupiter Inlet Lighthouse
+  current: TVdLveucTs6NRuEIWpZ1
+  new:     S0zwEuUITkBO4FrzROjj
+  scraped: 8 handles
+
+to14   | Stroke of Art – Wheel Throwing Pottery
+  current: sjRYnXivTN2E47h4OZbI
+  new:     8sHi05T8T3CyEUZ6luzx
+  scraped: 2 handles
+
+ae8    | Destin Helicopters – Premium
+  current: elGjH4wsT1C8BKCto5Fw
+  new:     GFIcC3ATLCf20FxjoBay
+  scraped: 2 handles
+
+js33   | SF Jet Ski Rentals – Key Biscayne
+  current: NzpqlaQ4RFavZAITz0zO
+  new:     OD43rD8QQe2nK31ccDeO
+  scraped: 7 handles
+
+ws18   | Finz Dive Center – 2 Tank Private Dive
+  current: amhKzRNDRlmvmYa2ZHUQ
+  new:     zMzHMrkT26ej7MPPXPer
+  scraped: 4 handles
+
+to13   | Ghosts of Palm Beach – Ghost Tour
+  current: 2C6gEEvRk2J3mksSRkCa
+  new:     NMLab1ZSC2HM9yDQ3VHg
+  scraped: 9 handles
+
+at16   | Forrest's Motorsports Rentals
+  current: DtbkUBHcRve7Zt31gpvD
+  new:     PsaTv2HQyKcpiCvtTjGk
+  scraped: 5 handles
+
+ws17   | Gulf Coast Kayak – Sirenia Vista Park II
+  current: U2uYqLvQ8d4o4tlM0wAs
+  new:     lXFhBFdSmIlM5lPBXKuQ
+  scraped: 7 handles
+
+to12   | Beach Sand Sculptures – Artisan Experience
+  current: kDMxivG7QxKLV0ki7ZLX
+  new:     AF6RhTdFR8unNXeCdORe
+  scraped: 2 handles
+
+at17   | Luxe ATV Rentals
+  current: kfsQmcYQ8uRZLDrnU5zt
+  new:     WSEc74NgSAKqiQJr4raa
+  scraped: 5 handles
+
+js2    | Jetski Rental – North Miami Beach
+  current: k6lwtbo8S0Kp7sJPi9Xk
+  new:     rWfaXHgVTSK2eBGldPBC
+  scraped: 2 handles
+
+bt18   | Sun Boat Rental
+  current: beIY20YTm5AjMPfa9TNQ
+  new:     3elI6sZSdCdUYliX7mWg
+  scraped: 11 handles
+
+to24b  | Florida Adventures & Rentals – Goodland Tour
+  current: Jyp3mzNHSBFSJDwbgqZ6
+  new:     w7RpvRqSRvaGHDewdLZy
+  scraped: 12 handles
+
+at18   | Forrest's Motorsports – Trail Ride
+  current: OLpEHSPhRQqPT6C5cJGQ
+  new:     PsaTv2HQyKcpiCvtTjGk
+  scraped: 5 handles
+
+js3    | One Hour Jet Ski Rental
+  current: c2Cb8BHWR3eTTg9b7z4p
+  new:     mzzu875WT9OLPaQhVTpd
+  scraped: 2 handles
+
+ws19   | Yak Shack – Mangrove Tour
+  current: V7IpsE6TR9u2UPkvfpdi
+  new:     id3VlTfWRX69aIOyKvNc
+  scraped: 2 handles
+
+to26   | Florida Adventures & Rentals – Eco Experience
+  current: ClX311gShWRYXDQbrwmA
+  new:     w7RpvRqSRvaGHDewdLZy
+  scraped: 23 handles
+
+js4    | Jetski Rentals – South Beach
+  current: 5Tw5a1TPRfOqjSwjb09i
+  new:     NLokGl1GSIuk1gUEGXsJ
+  scraped: 2 handles
+
+ws22   | Sea Daddys – 3hr Adventure Diving Crystal River
+  current: 43M89tuYSmGrVZtoOdnZ
+  new:     KM1zIf2pQ0e1OZJV7im0
+  scraped: 12 handles
+
+to27   | Florida Adventures & Rentals – Wildlife Tour
+  current: dt2cXQ4R06tJGKmxtNtv
+  new:     w7RpvRqSRvaGHDewdLZy
+  scraped: 13 handles
+
+js6    | Package Deal: Boat + Jet Ski + ATV
+  current: aJBVIk0lSie257JjbkC9
+  new:     RLRQR88qQeild5kKWowA
+  scraped: 2 handles
+
+bt21   | Baymingo
+  current: IOcC8eg4RCGq55Ui9B8f
+  new:     KoILQIcFRs6A8k4FgOpR
+  scraped: 2 handles
+
+ws21   | Xela Expeditions – Night Shark Drift Snorkel
+  current: wGwFwueLTJKgScW7g7Gn
+  new:     u4e5aPs2SaOVYyqwJFWp
+  scraped: 2 handles
+
+ws20   | Yak Shack – Kayak Rentals Emerson Point
+  current: WCzFWnQkTiCWqWW864Xn
+  new:     id3VlTfWRX69aIOyKvNc
+  scraped: 2 handles
+
+to29   | Wild Gator Airboat Adventures
+  current: uAhBFktbTKCiiQjYOgWm
+  new:     lFulQeSdq3vW2lcl34Ew
+  scraped: 8 handles
+
+js9    | Jet Ski Rentals – Coconut Grove
+  current: KTt2N8RoRgaMcLLzvbMf
+  new:     6uIlEGcSr9H54G5mnN3g
+  scraped: 2 handles
+
+ws23   | Wekiwa Springs – Kayak & Canoe
+  current: SO7Ig96wTcaEqzPe2Lit
+  new:     sAkYhAXuT2eVDvWbfshr
+  scraped: 3 handles
+
+to30   | US2U – Miami Beach City Tour
+  current: wt9N5qVvQEWdWNkdZsQw
+  new:     OyH4CrnoRMSmL350YLyD
+  scraped: 6 handles
+
+ws24   | Three Brothers Boards – Daytona
+  current: yHJsC1W9TsP1F0f0xfRB
+  new:     Rkwa6QhsRzCQR5dyc5Ho
+  scraped: 2 handles
+
+to31   | The French Company – Orlando
+  current: HEFNeSgrTSCtkUxE1NIG
+  new:     S3hcyYpzQahQB07QxQpa
+  scraped: 2 handles
+
+js13   | Bimini Island Day Trip by Fast-Ferry
+  current: dNOeySOQ09l00xx7eYWg
+  new:     OyH4CrnoRMSmL350YLyD
+  scraped: 9 handles
+
+ws25   | Tampa Riverwalk Rentals
+  current: Yns4Rm3RTian7yawGVQq
+  new:     6C0ITI7dTKCbR1A3SnLi
+  scraped: 2 handles
+
+js14   | Jetski Rental – Fort Lauderdale
+  current: AKkalD7TaSvhAxCQ187g
+  new:     BvTCi424Ri2ETjhgtqZw
+  scraped: 5 handles
+
+bt27   | Everglades Holiday Park
+  current: 4BBFgqBHQIy8hxmlKH7w
+  new:     PCK8RR3TTSdwdubqXhxq
+  scraped: 5 handles
+
+ws28   | Venture Outdoors LLC
+  current: n1q9UhxVSnOUQIJXYR0e
+  new:     0s2ilMsmS563V6l5QyQf
+  scraped: 6 handles
+
+to35   | Sea Serpent Tours – St. Augustine
+  current: ygH7QuKSwqWrBAoovxyA
+  new:     OkEPPAQS2aloRSoQdF7A
+  scraped: 3 handles
+
+js18   | Tropic Water Sports – Key Largo
+  current: NhOMpFItRZiZg3sxxdgI
+  new:     152aj32CTVS4rWlM4tiB
+  scraped: 3 handles
+
+to36   | Sea Serpent Tours – River
+  current: tR6Z8WcR96Z0OkF4hJHM
+  new:     OkEPPAQS2aloRSoQdF7A
+  scraped: 2 handles
+
+js19   | Jetski Rentals Marathon – Best Price!
+  current: jq0KxwgmQIKRa7CYjF0w
+  new:     kWwemCLjQ62AJZFsI6Rs
+  scraped: 7 handles
+
+to37   | Miami Beach Welcome Center Tour
+  current: Qk6tGnsHQreAapNOC14n
+  new:     2n6IAP41R4KVfSCpGpEU
+  scraped: 2 handles
+
+js20   | Grassy Key Marina – Daily Jet Ski
+  current: FhqEO2j0QJ2D5DSIyT4R
+  new:     RpbXUYuuQ0GPkhCK7VE7
+  scraped: 2 handles
+
+to38   | Raised by Water Airboat Adventures
+  current: PzZqaVs0ROXs10FhocBg
+  new:     yo1aed4rR2GcOmtXNyT6
+  scraped: 2 handles
+
+js21   | Marathon: Jet Ski Rentals – WakeZone
+  current: 8dTpjzPIRhekxbQVQvHG
+  new:     CGz8nSr9TvBowzVUXbow
+  scraped: 2 handles
+
+bt32   | WakeZone Watersports
+  current: GV9zRSpyTTmpV4Dyo2O9
+  new:     CGz8nSr9TvBowzVUXbow
+  scraped: 4 handles
+
+js22   | Six Fins Key West: 2-Hr Flagship Jet Ski Tour
+  current: tTIVwRx0TQKOUDmSBRlm
+  new:     rNBDmNNQTSLzmpVtEODa
+  scraped: 25 handles
+
+ws34   | AOA Fun – Poe Springs Kayak
+  current: NPTI45gJTkyC52cAYG9H
+  new:     3CgeoHhJQ0eWlc6TUwwa
+  scraped: 5 handles
+
+to41   | Kachunga – Lake Panasoffkee
+  current: YoLsqqbiRGyp5pvPPlk5
+  new:     LH4LalusTUqT9YJbEN8e
+  scraped: 4 handles
+
+bt35   | Boat Rentals in Key West
+  current: 3bEOyDZXRFaoIdB4Edqr
+  new:     V4c9PDL7RSCc625qPImB
+  scraped: 1 handles
+
+ws35   | Chadillac Adventures – Cove Cay
+  current: igpy8dNeSGi6Efwts3Nw
+  new:     L6BYJ0fuSxyLqdVcLVS0
+  scraped: 2 handles
+
+to42   | Monkey Island Adventures – Marina
+  current: 2T6hq5URtGv4vqhsBStu
+  new:     zwETruRNT8ut9LXM0PPd
+  scraped: 2 handles
+
+bt36   | Island Vibe Charters
+  current: XKZHwub8QWK9DMZyVp74
+  new:     ZhZZz6UTS5uSR3RsJ0rz
+  scraped: 2 handles
+
+to43   | Speakeasy Murder Mystery Dinner Show
+  current: GiYm8e6DRqWravd3RAhb
+  new:     b3nQMuc7REC4th9yaKYK
+  scraped: 9 handles
+
+bt37   | Sail Away Key West
+  current: Ug459tNTGqQL1JEbwPYw
+  new:     dxNXo7bXTPqm6pExLP6x
+  scraped: 8 handles
+
+to44   | Pirates Dinner Adventure – Orlando
+  current: n9mx7Mv1Tm6rgsExoh0Z
+  new:     pX8flJjtTuu7ylMbwb3T
+  scraped: 4 handles
+
+bt38   | Coastal Key West Charters
+  current: JIzhKW9QzqumRq7GROkI
+  new:     D22WDEGWQw648p2p8zku
+  scraped: 2 handles
+
+ws38   | Parasailing | Miami Water Sports
+  current: uusqeD76Qzeg7xf5Xu2u
+  new:     OD43rD8QQe2nK31ccDeO
+  scraped: 5 handles
+
+to46   | TPA Shuttles – MCO to Tampa
+  current: L1wMMKVRLujziIgtyJiE
+  new:     zo0KENVeQTuxZjxehR4w
+  scraped: 3 handles
+
+ws39   | SF Jet Ski – 3 Hour WaterSport Excursion
+  current: JC2FaOPSW2CIGQAbhwIo
+  new:     OD43rD8QQe2nK31ccDeO
+  scraped: 5 handles
+
+to47   | Space Shuttle Excursions – Lighthouse Tour
+  current: TBnPpfAjTcy0lfpUlQ61
+  new:     xamCg0BQLCYRDECxeO7G
+  scraped: 2 handles
+
+ws40   | AOA Fun – Poe Springs Tube
+  current: 5aXflEeBTy2rS45Ao3dx
+  new:     3CgeoHhJQ0eWlc6TUwwa
+  scraped: 4 handles
+
+to48   | The Panda Tours – St. Augustine
+  current: b2wRABMQaSb0wHzpcSAo
+  new:     avOXoWLBRcuhkuWNxwPv
+  scraped: 2 handles
+
+bt41   | Spencer's Boatyard
+  current: KAmiV2jTpGW48tO7IyQ5
+  new:     XsUqInbqSpeGORktnQiu
+  scraped: 3 handles
+
+ws41   | Sunset Watersports Key West
+  current: 4lsMOvUmRXqIADArG6Eo
+  new:     bQnU0DjuQiGhhHLYIlzx
+  scraped: 7 handles
+
+to49   | Rhum Runner – The Lagoon at Grassy Key
+  current: Sz3eWGToSuOl0sdXRDmA
+  new:     LPGX7BPGRICkadMfo6si
+  scraped: 2 handles
+
+bt42   | Barefoot Billy's KW
+  current: 1e7hmSoLSwWl60Kq9wtT
+  new:     LxJtpWzoSkavm6nFnRtQ
+  scraped: 1 handles
+
+to50   | Escape Cocoa Beach
+  current: 0Q0dNJYqR8msQGAyMLdu
+  new:     vMM6sG9zQaasnTyqoGxd
+  scraped: 4 handles
+
+to51   | Big Tiki Tours – Fort Myers Beach
+  current: cMBqwl8ZRHSSt7u50bV8
+  new:     JYvt1bDSLm4jEulKRH6P
+  scraped: 5 handles
+
+bt44   | Visit Palm Beach
+  current: PJRqigTbRoyEQH7Eyz2o
+  new:     lCy29GUdSSWbyEtq5vIU
+  scraped: 5 handles
+
+ws44   | Top Line Watersports – Water Adventure
+  current: YG58KVNTSCzoLBeOkcgd
+  new:     dw7y5q32QeqxfR6A16lG
+  scraped: 2 handles
+
+bt45   | Florida Island Tours
+  current: d0n7l7QITfaNVXW79FBN
+  new:     pDL443gWTKWDg2KXm9nQ
+  scraped: 2 handles
+
+to53   | Hubbard's Marina – Madeira Beach
+  current: CzTNgHQ56aLuuMOQJgnl
+  new:     q4QuLe20QhiULxVFQMGT
+  scraped: 8 handles
+
+to54   | Hubbard's Marina – Deep Sea
+  current: 4whsIySZWK6fjNPD2ExQ
+  new:     q4QuLe20QhiULxVFQMGT
+  scraped: 5 handles
+
+bt47   | Beach Bums Boat Rentals
+  current: Km4OMUY8SRaFrXScYUeI
+  new:     uUAA4rR7RFqHDGujeSab
+  scraped: 2 handles
+
+to55   | Gulf Islands Ferry – Bradenton
+  current: Dq0Bp77QMK6ShhaVrblQ
+  new:     l2fW4z8NSASPlcMRLK4A
+  scraped: 11 handles
+
+bt48   | PG Boat Rental
+  current: AMFTvyNHQBumMw37Fh6E
+  new:     55cLnQ0KTuels0MYKMv5
+  scraped: 11 handles
+
+to57   | Wynwood Art Walk – Miami
+  current: GP3G6DPsRWKP8K6qLeRP
+  new:     PGlXMOAWQeWfkxZyC8fd
+  scraped: 6 handles
+
+bt50   | Crysten's
+  current: qH2FYP1iTtmicgFHUQw0
+  new:     uqFnXELyR7OLV03JElU4
+  scraped: 6 handles
+
+to58   | Wandering Palm Adventures – Orlando
+  current: e6a8wG9KT1Cd43oq3Yda
+  new:     JURihWMaSpubL6Q9Gho2
+  scraped: 5 handles
+
+bt52   | Chadillac Adventures
+  current: rLqH6zeCQKeMlYOCpo5M
+  new:     L6BYJ0fuSxyLqdVcLVS0
+  scraped: 2 handles
+
+to60   | Everglades Florida Adventures
+  current: MUYQdOomTdqZetesYGai
+  new:     jYwHQydcRfuhqErDe2iw
+  scraped: 2 handles
+
+to62   | St. Augustine Land & Sea Tours
+  current: t5tAp8uwRJ2yDNHq34Wa
+  new:     RhYBIGEJTMNr6y3fiHpN
+  scraped: 19 handles
+
+bt55   | Island Time Marina
+  current: 0DQtrlW9TveetdVw0aY7
+  new:     yzB92F5ZRVSoiL0fomQI
+  scraped: 2 handles
+
+bt56   | Daytona Beach Dolphin Tours
+  current: 1QxtclU7TtiEqeV7KWoh
+  new:     2gKOwGQDTCagjvpQc9Jt
+  scraped: 6 handles
+
+to64   | Carriage Tours & Events – Private
+  current: WqDzymLCSTettpqDGzpI
+  new:     S8o3o000Q8aXKlzppo8M
+  scraped: 2 handles
+
+bt60   | Sea Rocket Fort Lauderdale
+  current: IQbrxbKIRiaRM4k0RIC4
+  new:     KAUwrps3QemgYnDIytr8
+  scraped: 42 handles
+
+bt61   | Keys Huka Dive – Nokomis
+  current: cGCKxq9wQ3i7yHjCqOau
+  new:     UWXIHb8ThepOmCfsfhje
+  scraped: 13 handles
+
+to68   | US2U – Key West Day Trip
+  current: k6f8PXORTtSGPnLZGdiy
+  new:     OyH4CrnoRMSmL350YLyD
+  scraped: 6 handles
+
+to69   | Miami Aqua Tours – Nite Sea Party Cruise
+  current: duvHXQMLQuGWk2yannL4
+  new:     XQmipMYjTTWGNozEgVg7
+  scraped: 9 handles
+
+bt64   | Walks NYC – Boat Tour Miami
+  current: Em9exROJSkiljxVeU2rW
+  new:     ZnrRd9qAR7ya34WbKK9u
+  scraped: 18 handles
+
+bt65   | Miami Tour Company – Everglades
+  current: o4szOc7TDOTnYYWc5Ycw
+  new:     EpFYhOcyS1aknchM9LxF
+  scraped: 3 handles
+
+bt66   | Florida Adventures – Dolphin Tour
+  current: iFPajcCuTV6cbX7s3hd7
+  new:     w7RpvRqSRvaGHDewdLZy
+  scraped: 13 handles
+
+to73   | Miami Aqua Tours – Boat Tour Combo
+  current: Q4TqkMzeT268T2oF8HL6
+  new:     XQmipMYjTTWGNozEgVg7
+  scraped: 11 handles
+
+bt67   | Miami Aqua Tours
+  current: cZg8P5aRLSP5aXTB5OpZ
+  new:     XQmipMYjTTWGNozEgVg7
+  scraped: 10 handles
+
+to74   | Wynwood Graffiti Experience
+  current: id8rdzg5Qfmje7pXFbU4
+  new:     PGlXMOAWQeWfkxZyC8fd
+  scraped: 7 handles
+
+bt68   | Robin Hood Anna Maria
+  current: Flue9iUVSXmJhHABEk3n
+  new:     fy1T1tDKTxPwxrF50xqd
+  scraped: 7 handles
+
+to75   | Miami Aqua Tours – Pirate Boat Cruise
+  current: 1MiQrkgLQeSaMvB8QWg7
+  new:     XQmipMYjTTWGNozEgVg7
+  scraped: 5 handles
+
+to45   | Mertailor's Mermaid Aquarium Encounter
+  current: mOnb2FojSPyT1RpxlNzO
+  new:     Obrt7aHaTcO4eBcdw4YC
+  scraped: 9 handles
+
+to76   | Miami Aqua Tours – Biscayne Bay
+  current: LvwyZVq3Rn69tPYFRorS
+  new:     XQmipMYjTTWGNozEgVg7
+  scraped: 7 handles
+
+bt71   | Six Fins Charter – Boat Tour Key West II
+  current: 3fDyzX0RaicNssy4fhm0
+  new:     szmVLxwSEuTicjxSBE8w
+  scraped: 14 handles
+
+bt73   | Sea Rocket Fort Lauderdale – Boat Tour
+  current: hhFhzl86T6OoSBJgXOfA
+  new:     KAUwrps3QemgYnDIytr8
+  scraped: 35 handles
+
+bt74   | Six Fins Charter – Boat Tour Key West IV
+  current: cShtysZmRVygrqaO5eFT
+  new:     szmVLxwSEuTicjxSBE8w
+  scraped: 15 handles
+
+bt85   | Cypress Cay Pontoon – 12 Passengers Fort Myers
+  current: k7GNBs07SeOymK4tSxZq
+  new:     Tou3voJRZCtRK7VHJ9B6
+  scraped: 2 handles
+
+bt84   | Florida Adventures – Marco Island Boat Rental
+  current: CJfALFcS6ua1AgnbPAPu
+  new:     w7RpvRqSRvaGHDewdLZy
+  scraped: 12 handles
+
+bt83   | Punta Gorda Tiki – Tiki Boat Cruise
+  current: aJuvp99Rqe4O2HZ9LvPA
+  new:     YsIS3pQdRvGCXRxTbQll
+  scraped: 4 handles
+
+bt82   | Boat Charter FL – St. Petersburg
+  current: 4TiJheAcQkSJmlzotADx
+  new:     JXp0gOzQRw2GDDP1vnxw
+  scraped: 4 handles
+
+bt81   | 100 Miami – Luxury Boat Rental
+  current: FhsAwbTTXWEUVfE002JQ
+  new:     bwT4AfCvQuGsDoSAYF8G
+  scraped: 2 handles
+
+bt80   | Kokomo Charters – Sarasota Boat Tour
+  current: AVKKqUNQfGQtWsSNoBy0
+  new:     q69JT35HSd6lWLE3jXG9
+  scraped: 15 handles
+
+bt79   | Sunset Sail Key West – Luxury Charter
+  current: zlZe0qZSOW3eDvI94H9w
+  new:     FibUw9rTiOwtHdIRrSTA
+  scraped: 7 handles
+
+bt87   | Yaju Boat Tours – Standard
+  current: xBRTvqMSi2UiLSch3rs7
+  new:     ua6zQs2XSvOffqgqAcNI
+  scraped: 3 handles
+
+to77   | Seaside Adventures – St. Augustine Tour
+  current: 3RCf1hqaR8ix58APF07N
+  new:     2LUNCvlSiu1GwMhfgP8I
+  scraped: 6 handles
+
+bt89   | Holly Bluff Marina – Houseboat Rental
+  current: zwxR7wqrRp2qPvitbXoB
+  new:     J1GeIveXQhKy1fPfnHqj
+  scraped: 2 handles
+
+to78   | St. Petersburg Distillery Tour
+  current: L0x9sNeQREublME9dD0A
+  new:     jJYZxP95Qo2Wk7ysJg4b
+  scraped: 4 handles
+
+bt90   | Homosassa River Adventures
+  current: 0RA1lnorQBqGbeanuaNG
+  new:     Ta3HDSjS5S2Eh8ibrQBQ
+  scraped: 2 handles
+
+ws48   | Top Line Watersports – Parasailing
+  current: yBmTAeMtTTC6yp71Dj2A
+  new:     dw7y5q32QeqxfR6A16lG
+  scraped: 9 handles
+
+bt92   | Adults-Only Swim & Sunset Sail
+  current: dDxUR1lpRyqgv1SgAfXw
+  new:     S3Jr7OwhRqy3sxzOok9s
+  scraped: 2 handles
+
+to79   | Seaside Adventures – Ghost Tour
+  current: mmbWPOBQsWW2DmKq55wn
+  new:     2LUNCvlSiu1GwMhfgP8I
+  scraped: 6 handles
+
+to80   | Wawa Express – Fort Myers Adventure
+  current: Hb5M1LnfS1OJuD0BdTKl
+  new:     CS7HSh0CQYuMdFLrIOuc
+  scraped: 4 handles
+
+ws49   | Holly Bluff Marina – Kayak & Canoe Rental
+  current: NtBSMobURc63wiF0aX48
+  new:     J1GeIveXQhKy1fPfnHqj
+  scraped: 2 handles
+
+bt93   | Chilly Down Charters – Panama City
+  current: ZSpyEkLsR6GjRVX0zXdj
+  new:     8j1YTektSuyxDO5c75Ol
+  scraped: 2 handles
+
+bt94   | Chilly Down – Morning Mimosa Cruise
+  current: FVklRuiYS6i8ELgFQLK3
+  new:     8j1YTektSuyxDO5c75Ol
+  scraped: 2 handles
+
+bt95   | Chilly Down Charters – Sunset Cruise
+  current: Nb5yZiLfRwSfUQ9AzYvg
+  new:     8j1YTektSuyxDO5c75Ol
+  scraped: 2 handles
+
+bt96   | Chilly Down Charters – Private Charter
+  current: mzz8DDBLSMKI6JNLWbgV
+  new:     8j1YTektSuyxDO5c75Ol
+  scraped: 2 handles
+
+to81   | River Taxi & Tours – Jacksonville
+  current: MCrISQmKGBFMTyerxQAb
+  new:     WV0x5NoZRiGHk9I4EbeO
+  scraped: 4 handles
+
+to82   | Destin Bonfire Company
+  current: KGGDJbE3SNuRbiWSYfs2
+  new:     2666LwOmT4KwALeL79Sa
+  scraped: 10 handles
+
+to83   | Hope and Joy Sanctuary
+  current: sVOjkEmQRigaVKHEozAG
+  new:     uyzvjjNWRNGfUWtuSVnC
+  scraped: 2 handles
+
+ws50   | Melbourne Kayak Rentals
+  current: Bp3D5bQ5QhWGKhxSr3Kt
+  new:     aNvooEUHQXyE3rVkMvuK
+  scraped: 7 handles
+
+to84   | Cigar Dinner Cruise
+  current: Nwpmxc7yT9KgS9pm019C
+  new:     LcJ5d3eAQXu8THai9VAZ
+  scraped: 4 handles
+
+to85   | Red Boat Tours
+  current: buHBr3TpS0dFLFrU9XBg
+  new:     K3wpSmZiRKqq4bu7g0M4
+  scraped: 21 handles
+
+ws51   | Sea Monkey Divers
+  current: RoJFHs3SDKwmk2tyqak8
+  new:     DFPW58iRVOcLMAKIHyBZ
+  scraped: 2 handles
+
+gc12   | Greek Town Golf Carts – Tarpon Springs
+  current: YzvNaRDtQufGy1wUFeUA
+  new:     13GVYpTuQ3GXOCFCPrIJ
+  scraped: 3 handles
+
+ws53   | Anastasia Watersports – 2 Hour Paddle Sports Renta
+  current: zXgPRJKhQjWyS2kVYChw
+  new:     LP2Rx6atTGL5sj4QrphJ
+  scraped: 5 handles
+
+to88   | Islamorada Private Charters – Private Boat Charter
+  current: JK00dVhvRY6noDDLnHPK
+  new:     MGdUIVXHRyejYE7jmUYf
+  scraped: 1 handles
+
+js35   | Jet Ski Miami Rentals – Miami Beach
+  current: 6ZTYRrsCSLyJ6Un2h4wd
+  new:     RLRQR88qQeild5kKWowA
+  scraped: 5 handles
+
+js36   | Six Fins Jet Ski Rental – Hurricane Hole
+  current: ty9msDTCT0O43hXmBhIr
+  new:     elVsswO1S3Kf4yypBY5r
+  scraped: 24 handles
+
+js37   | Bradenton Jet Ski Rental
+  current: Ks0MZMKwSAKuLLLhcgAB
+  new:     SR7LiIUT9SJp0Cr3k0wN
+  scraped: 2 handles
+
+js38   | Sunset Watersports Key West – Jet Ski
+  current: ShBpP1xOQLamFcJATnBu
+  new:     bQnU0DjuQiGhhHLYIlzx
+  scraped: 3 handles
+
+js41   | Paradise Watersports – Port Charlotte
+  current: vqdJJeX7Qx6pAOvHL014
+  new:     US5DuBk1SHWYvXZpIRbW
+  scraped: 2 handles
+
+js42   | Jet Ski Miami Rentals – Edgewater
+  current: xpTOV9sSnuBbJNchUkKE
+  new:     RLRQR88qQeild5kKWowA
+  scraped: 5 handles
+
+js46   | WR Jet Ski Rentals – Bradenton
+  current: 7svEHNyOQZW6u6oD1wPk
+  new:     cmIUTtArQE2sskXBwV1w
+  scraped: 2 handles
+
+jc11   | Tampa Jet Ski & Jet Car Rentals – Jet Car
+  current: AJnYkZ2PSLyVfMVhxQ2W
+  new:     XALMtqlCRTG7lHpSGgur
+  scraped: 2 handles
+
+js48   | Slingshot & Jet Ski Rentals – Fort Lauderdale
+  current: eJQPLWPMRKSg1WPsgTT2
+  new:     BvTCi424Ri2ETjhgtqZw
+  scraped: 5 handles
+
+sc1    | Scooter of Miami – Premium Scooter Rental
+  current: alZFgqiMRLzuJBiGubZb
+  new:     PBn4V0fySGSJIAqXAffi
+  scraped: 2 handles
+
+sc3    | FLWow Rentals – Electric Kick Scooter
+  current: 8ffxV9ITqWoQA6XPKKcy
+  new:     9ZMJuvqmTzyfC8nz0wHG
+  scraped: 2 handles
+
+sc6    | Miami Style Rentals – Electric Scooter
+  current: AsZMIhS1S2CwDHu1NV31
+  new:     sQ4aOHIR0OEMo8ifWB88
+  scraped: 1 handles
+
+bt101  | Freedom Float Boat Rental
+  current: KofYBLsIRF2OBDSalOeU
+  new:     dQf01CLTQG2cDBvTHAGH
+  scraped: 2 handles
+
+bt102  | Double Freedom Float Boat Rental
+  current: KzpCl48Ts2aFH11FZjFQ
+  new:     dQf01CLTQG2cDBvTHAGH
+  scraped: 3 handles
+
+js50   | Power Up Watersports
+  current: kdh0LncuSBqY8e1WyhBZ
+  new:     KtGWEQmPQtWLhdGIp80u
+  scraped: 5 handles
+
+js51   | Bonita Jet Ski & Parasail
+  current: fBBveVWMS3i4t2QORBco
+  new:     ritAzjzzSX61wd8wdNHl
+  scraped: 7 handles
+
+ws55   | Johns Pass Parasail
+  current: zlCcFobjQxinGOIFw6D3
+  new:     KtGWEQmPQtWLhdGIp80u
+  scraped: 5 handles
+
+ws56   | Suncoast Watersports
+  current: 89BEeUiMTVKnMUSbxwr9
+  new:     KtGWEQmPQtWLhdGIp80u
+  scraped: 5 handles
+
+ws57   | Gators Parasail
+  current: 7IDs1yT3QKy7VbxceRv5
+  new:     KtGWEQmPQtWLhdGIp80u
+  scraped: 5 handles
+
+js53   | Luxe Jet Ski Rental – Orlando
+  current: nZrrXNawTD2VmzWFlLWx
+  new:     sgKodnW8TC7ElR9cyzDr
+  scraped: 6 handles
+
+ws58   | Sole Watersports
+  current: 8rl1X456RdyN7BWEGydU
+  new:     QFfjTDz9TretsrvjBC2E
+  scraped: 4 handles
+
+js54   | Jet Ski FL – Fort Lauderdale
+  current: 8FvOF3cSXDXuCQ9qgaHg
+  new:     jnuTDKRByF3yY1ewAFXg
+  scraped: 4 handles
+
+js55   | Beach Jetski LLC – Wave Runner Rentals
+  current: uzvIfUC5TViK7sQmFQkw
+  new:     KtGWEQmPQtWLhdGIp80u
+  scraped: 5 handles
+
+ws59   | SoBe Surf & Paddle
+  current: sdpYM4niTRmFnXj7cU6U
+  new:     sgKodnW8TC7ElR9cyzDr
+  scraped: 6 handles
+
+ws60   | Happy Paddler Kayak Tours
+  current: 3ITe2aTlRc3WvdFma9Ze
+  new:     KtGWEQmPQtWLhdGIp80u
+  scraped: 5 handles
+
+ws61   | Cape Crossing Boat Rentals
+  current: fC43ifRxQJSkCxD3Gij2
+  new:     sgKodnW8TC7ElR9cyzDr
+  scraped: 6 handles
+
+ws62   | PADDLE! the Florida Keys
+  current: 1ruOqV58TVmcsz7SsMAa
+  new:     QFfjTDz9TretsrvjBC2E
+  scraped: 4 handles
+
+ws63   | Get Up and Go Kayaking – Titusville
+  current: r04yMSiRaShlbuaak8IR
+  new:     sgKodnW8TC7ElR9cyzDr
+  scraped: 6 handles
+
+ws64   | Get Up and Go Kayaking – Homosassa
+  current: mRIbTsIvThScBGgMDVNX
+  new:     KtGWEQmPQtWLhdGIp80u
+  scraped: 5 handles
+
+ws65   | Get Up and Go Kayaking – Silver Springs
+  current: a2YXKQpR4ubdRgVwb5tc
+  new:     sgKodnW8TC7ElR9cyzDr
+  scraped: 6 handles
+
+ws66   | Elite Watersports St. Pete
+  current: VJLtI6jRlmrIhGhscXLT
+  new:     KtGWEQmPQtWLhdGIp80u
+  scraped: 5 handles
+
+bt106  | Destin Pontoon Charters
+  current: lCoiuRgxQ4OWBriXDZcX
+  new:     KtGWEQmPQtWLhdGIp80u
+  scraped: 5 handles
+
+bt107  | Classic Harbor Line – Key West Sailing
+  current: rwIn7wiRQDeaU8pineua
+  new:     QFfjTDz9TretsrvjBC2E
+  scraped: 4 handles
+
+bt108  | Treasure Seekers Shell Tours
+  current: KjrBR7IBSOaFxGysBFjF
+  new:     ritAzjzzSX61wd8wdNHl
+  scraped: 7 handles
+
+bt109  | Treasure Coast River Cruises
+  current: jUxoEBWjQTScowKL3Oia
+  new:     sgKodnW8TC7ElR9cyzDr
+  scraped: 6 handles
+
+bt110  | Coastal Cruises South Pasadena
+  current: YqN3vSmThS8jJVBPpCBI
+  new:     KtGWEQmPQtWLhdGIp80u
+  scraped: 5 handles
+
+fi10   | Native Guided Fishing Charters
+  current: QpSJkWZ0ScuS3VtkxNDf
+  new:     ritAzjzzSX61wd8wdNHl
+  scraped: 7 handles
+
+to90   | Cocoa Beach Catamaran
+  current: KR8OFpfkQLakqG4uGmwq
+  new:     sgKodnW8TC7ElR9cyzDr
+  scraped: 6 handles
+
+to91   | Runners Adventures
+  current: mQaszLzcRjWGKq8TeirL
+  new:     auzCUZylRVacz7JL9qIR
+  scraped: 4 handles
+
+ws69   | Caribbean Lake Park
+  current: njF7cst9TTOBxdLrEf98
+  new:     auzCUZylRVacz7JL9qIR
+  scraped: 4 handles
+
+to92   | Canelo Tours
+  current: rCBC9zNTQiCUoNrfRCO3
+  new:     auzCUZylRVacz7JL9qIR
+  scraped: 4 handles
+
+bt111  | Pink Party Boat Punta Cana
+  current: MBRZ1g0TgqbTCOn3frmg
+  new:     auzCUZylRVacz7JL9qIR
+  scraped: 4 handles
+
+ws70   | Punta Cana Scuba Diving
+  current: HQaMdXETSISUkFVS9mU4
+  new:     auzCUZylRVacz7JL9qIR
+  scraped: 4 handles
+
+bt112  | Aquazul Tours
+  current: 6LywayWyRb2DDGBEPbUA
+  new:     auzCUZylRVacz7JL9qIR
+  scraped: 4 handles
+
+b419   | Nation Van Rentals
+  current: 34zKorMR46FzN4b2inQr
+  new:     EdS4CTZTKaQalzC61zc0
+  scraped: 6 handles
+
+b420   | SeaEO Nautical Ventures
+  current: Fnfu3RO7Ruy47BOVJnja
+  new:     op0RuAgjQPGHUJbaOt3G
+  scraped: 33 handles
+
+b421   | SeaEO Nautical Ventures Marathon
+  current: cOY1lGo8T1KHV194iqdX
+  new:     knKXMZ1RSmCJO22geU2W
+  scraped: 39 handles
+
+b422   | SeaEO Nautical Ventures Key West
+  current: 0UBMZ7ERgOrwGzYW9FM0
+  new:     ifqxhc5ETXKNd9gfqedl
+  scraped: 10 handles
+
+b423   | Levique Tours and Rentals
+  current: 0KKrCvxDSweQGOvZUkhU
+  new:     4jv1zoltTkmcu5145BYy
+  scraped: 13 handles
+
+b425   | The Beach Weekend Key West
+  current: iGlpcqbIRCiQM7dV2Vvv
+  new:     o9ElvewoTIeh9pbdAHhe
+  scraped: 7 handles
+
+b427   | AMI Jetcar
+  current: 6jX0PG5iRmmcVg39o2dc
+  new:     xjyYrefZQqufjUfTKWit
+  scraped: 5 handles
+

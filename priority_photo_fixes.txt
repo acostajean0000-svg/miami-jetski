@@ -1,0 +1,213 @@
+PRIORITIZED PHOTO FIX QUEUE — cross-category clusters of 5+ ops
+======================================================================
+
+These photos are shared by multiple operators across different categories.
+Each cluster needs ~N-1 new photos (keep one operator on the current photo).
+
+
+### Cluster #1: handle qGF2J9DjSnSyRIoyiVDF — 28 ops, cats=['aerial', 'atv', 'boat', 'fishing', 'golfcart', 'jetski', 'tour', 'watersports']
+Partner: bruschiboatrental
+Operators using this photo:
+  [aerial]:
+    ae32 | Best Aerial Tours Miami 2026 | /aerial-tours-miami
+  [atv]:
+    at39 | Best ATV Rentals Miami 2026 | /atv-rentals-miami
+  [boat]:
+    bt1 | Bruschi Boat Rental | /bruschi-boat-rental-small-boat-miami
+    bt341 | Best Party Boats Miami 2026 | /party-boat-miami
+    bt441 | Best Yacht Rentals Miami 2026 | /yacht-rentals-miami
+  [fishing]:
+    fi117 | Deep Sea Fishing Miami 2026 | /deep-sea-fishing-miami
+    fi127 | Best Fishing Charters Miami 2026 | /fishing-charters-miami
+  [golfcart]:
+    gc65 | Best Golf Cart Rentals Miami 2026 | /golf-cart-rentals-miami
+  [jetski]:
+    js128 | Best Jet Ski Rentals Miami 2026 | /jet-ski-rentals-miami
+  [tour]:
+    to226 | Marathon Water Sports 2025 — Snorkeling, Diving, F | /marathon-water-sports
+    to269 | Jupiter Florida Water Sports 2025 — Kayaking, Boat | /jupiter-florida-water-sports
+    to317 | Pompano Beach Water Sports 2025 — Jet Skis, Diving | /pompano-beach-water-sports
+    to367 | Best Everglades Tours from Miami 2026 | /everglades-tours-from-miami
+    to400 | Best Water Sports in Miami Beach 2026 | /water-sports-miami-beach
+    to436 | Best Tours in Miami 2026 | /tours-miami
+    to560 | New Smyrna Beach Water Sports 2025 — Surfing, Kaya | /new-smyrna-beach-water-sports
+    to569 | St. Pete Beach Water Sports 2025 — Boat Rentals, K | /st-pete-beach-water-sports
+    to571 | Crystal River Water Sports 2025 — Swim with Manate | /crystal-river-water-sports
+    to584 | Marco Island Water Sports 2025 — Boats, Kayaks, Ec | /marco-island-water-sports
+    to590 | Tarpon Springs Water Sports 2025 — Sponge Diving,  | /tarpon-springs-water-sports
+    to615 | Fort Walton Beach Water Sports 2025 — Snorkeling,  | /fort-walton-beach-water-sports
+    to648 | Madeira Beach Water Sports 2025 — Hubbard's Marina | /madeira-beach-water-sports
+    to690 | Sanibel Island Water Sports 2025 — Kayaking, Shell | /sanibel-island-water-sports
+    to693 | Hollywood Beach Water Sports 2025 — Jet Skis, Para | /hollywood-beach-water-sports
+  [watersports]:
+    ws232 | Best Kayaking in Miami 2026 | /kayaking-miami
+    ws290 | Best Jet Car Rentals Miami 2026 | /jet-car-rentals-miami
+    ws298 | Best Parasailing in Miami 2026 | /parasailing-miami
+    ws331 | Best Snorkeling in Miami 2026 | /snorkeling-miami
+
+### Cluster #2: handle KtGWEQmPQtWLhdGIp80u — 11 ops, cats=['boat', 'jetski', 'slingshot', 'watersports']
+Partner: 727slingshots
+Operators using this photo:
+  [boat]:
+    bt106 | Destin Pontoon Charters | /destin-pontoon-charters-westfl
+    bt110 | Coastal Cruises South Pasadena | /coastal-cruises-south-pasadena-westfl
+  [jetski]:
+    js50 | Power Up Watersports | /power-up-watersports-westfl
+    js55 | Beach Jetski LLC – Wave Runner Rentals | /beach-jetski-llc-wave-runner-dunedin-westfl
+  [slingshot]:
+    sl2 | 727 Slingshots | /727-slingshots-westfl
+  [watersports]:
+    ws55 | Johns Pass Parasail | /johns-pass-parasail-westfl
+    ws56 | Suncoast Watersports | /suncoast-watersports-westfl
+    ws57 | Gators Parasail | /gators-parasail-westfl
+    ws60 | Happy Paddler Kayak Tours | /happy-paddler-kayak-tours-bradenton-beach-westfl
+    ws64 | Get Up and Go Kayaking – Homosassa | /get-up-go-kayaking-homosassa-westfl
+    ws66 | Elite Watersports St. Pete | /elite-watersports-st-pete-westfl
+
+### Cluster #3: handle w7RpvRqSRvaGHDewdLZy — 9 ops, cats=['boat', 'tour', 'watersports']
+Partner: floridaadventuresandrentals
+Operators using this photo:
+  [boat]:
+    bt66 | Florida Adventures – Dolphin Tour | /florida-adventures-marco-island-boat-rental-gulf-bt66
+    bt84 | Florida Adventures – Marco Island Boat Rental | /florida-adventures-marco-island-boat-rental-gulf-bt84
+  [tour]:
+    to24b | Florida Adventures & Rentals – Goodland Tour | /florida-adventures-marco-island-boat-rental-gulf-to24b
+    to26 | Florida Adventures & Rentals – Eco Experience | /florida-adventures-marco-island-boat-rental-gulf-to26
+    to27 | Florida Adventures & Rentals – Wildlife Tour | /florida-adventures-marco-island-boat-rental-gulf-to27
+  [watersports]:
+    ws7 | Florida Adventures – Kayak Tour | /florida-adventures-marco-island-boat-rental-gulf
+    ws8 | Florida Adventures – Kayak Rental | /florida-adventures-marco-island-boat-rental-gulf-ws8
+    ws11 | Florida Adventures – Kayak Rental Naples | /florida-adventures-marco-island-boat-rental-gulf-ws11
+    ws12 | Florida Adventures – Paddle Tour Naples | /florida-adventures-marco-island-boat-rental-gulf-ws12
+
+### Cluster #4: handle AFZOE9VSHS63mEDYaRk6 — 8 ops, cats=['boat', 'fishing', 'jetski', 'tour', 'watersports']
+Partner: wakezonewatersports
+Operators using this photo:
+  [boat]:
+    bt235 | Best Boat Rentals Key West 2026 | /key-west-boat-rentals
+  [fishing]:
+    fi65 | Best Key West Fishing Charters 2026 | /key-west-fishing-charters
+  [jetski]:
+    js153 | Best Jet Ski Rentals Florida Keys 2026 | /jet-ski-rentals-florida-keys
+  [tour]:
+    to217 | Best Water Sports in Key Largo 2026 | /key-largo-water-sports
+    to476 | Key West Water Sports 2025 — Snorkeling, Kayaking, | /key-west-water-sports
+    to776 | Best Things to Do in the Florida Keys 2026 | /things-to-do-florida-keys
+  [watersports]:
+    ws130 | WakeZone Watersports | /wakezone-watersports-jet-car-conch-key
+    ws189 | Best Snorkeling in the Florida Keys 2026 | /snorkeling-florida-keys
+
+### Cluster #5: handle sgKodnW8TC7ElR9cyzDr — 7 ops, cats=['boat', 'jetski', 'tour', 'watersports']
+Partner: thewakeboardcoach
+Operators using this photo:
+  [boat]:
+    bt109 | Treasure Coast River Cruises | /treasure-coast-river-cruises-stuart-centralfl
+  [jetski]:
+    js53 | Luxe Jet Ski Rental – Orlando | /luxe-jet-ski-rental-orlando-centralfl
+  [tour]:
+    to90 | Cocoa Beach Catamaran | /cocoa-beach-catamaran-centralfl
+  [watersports]:
+    ws59 | SoBe Surf & Paddle | /sobe-surf-paddle-indian-harbour-beach-centralfl
+    ws61 | Cape Crossing Boat Rentals | /cape-crossing-boat-rentals-merritt-island-centralfl
+    ws63 | Get Up and Go Kayaking – Titusville | /get-up-go-kayaking-titusville-centralfl
+    ws65 | Get Up and Go Kayaking – Silver Springs | /get-up-go-kayaking-silver-springs-centralfl
+
+### Cluster #6: handle OD43rD8QQe2nK31ccDeO — 6 ops, cats=['jetcar', 'jetski', 'watersports']
+Partner: sfjetskirentals
+Operators using this photo:
+  [jetcar]:
+    jc10 | SF Jet Ski Rentals – Jet Car | /sf-jet-ski-rentals-key-biscayne-miami
+  [jetski]:
+    js29 | SF Jet Ski Rentals | /sf-jet-ski-rentals-key-biscayne-miami-js29
+    js31 | Epic Hotel – Boat + Jet Ski Combo | /epic-hotel-boat-jet-ski-combo-miami
+    js33 | SF Jet Ski Rentals – Key Biscayne | /sf-jet-ski-rentals-key-biscayne-miami-js33
+  [watersports]:
+    ws38 | Parasailing | Miami Water Sports | /top-line-watersports-parasailing-miami-ws38
+    ws39 | SF Jet Ski – 3 Hour WaterSport Excursion | /sf-jet-ski-3-hour-watersport-excursion-miami
+
+### Cluster #7: handle auzCUZylRVacz7JL9qIR — 6 ops, cats=['boat', 'tour', 'watersports']
+Partner: runnersadventures
+Operators using this photo:
+  [boat]:
+    bt111 | Pink Party Boat Punta Cana | /pink-party-boat-punta-cana-puntacana
+    bt112 | Aquazul Tours | /aquazul-tours-bayahibe-saona
+  [tour]:
+    to91 | Runners Adventures | /runners-adventures-puntacana
+    to92 | Canelo Tours | /canelo-tours-puntacana
+  [watersports]:
+    ws69 | Caribbean Lake Park | /caribbean-lake-park-puntacana
+    ws70 | Punta Cana Scuba Diving | /punta-cana-scuba-diving-bayahibe
+
+### Cluster #8: handle AZ5CoJfEQUSzBfesRVPA — 6 ops, cats=['boat', 'jetski', 'tour']
+Partner: runnersadventures
+Operators using this photo:
+  [boat]:
+    bt140 | Punta Cana Glass Bottom Boat | /punta-cana-glass-bottom-boat-puntacana
+  [jetski]:
+    js125 | Jet Ski Rentals Naples FL 2025 — Best Waverunner R | /jet-ski-rentals-naples-fl
+  [tour]:
+    to248 | Anna Maria Island Water Sports 2025 — Boats, Kayak | /anna-maria-island-water-sports
+    to314 | Fort Myers Beach Water Sports 2025 — Jet Skis, Boa | /fort-myers-beach-water-sports
+    to482 | Captiva Island Water Sports 2025 — Boat Rentals, J | /captiva-island-water-sports
+    to701 | Naples Florida Water Sports 2025 — Complete Guide  | /naples-florida-water-sports
+
+### Cluster #9: handle 16rZQ8NSpyDLI4UKuvOQ — 6 ops, cats=['aerial', 'boat']
+Partner: runnersadventures
+Operators using this photo:
+  [aerial]:
+    ae38 | Destin Helicopters | /destin-helicopters-destin
+  [boat]:
+    bt144 | Dive Saona Adventures | /dive-saona-adventures-bayahibe
+    bt348 | Fort Myers Boat Rentals | /fort-myers-boat-rentals-fl
+    bt366 | Cocoa Beach Catamaran | /cocoa-beach-catamaran-cocoa-beach
+    bt370 | Boca Raton Sailing Adventures | /boca-raton-sailing-fl
+    bt374 | St. Augustine Tiki Bar Cruise | /st-augustine-tiki-boat-fl
+
+### Cluster #10: handle nme8B7JS2m90aDNj37Vu — 6 ops, cats=['aerial', 'boat', 'fishing', 'tour']
+Partner: zoomairdaytonabeach
+Operators using this photo:
+  [aerial]:
+    ae19 | Jacksonville Helicopter Tours | /jacksonville-helicopter-fl
+    ae36 | Key West Helicopter Tours | /key-west-helicopter-fl
+  [boat]:
+    bt185 | Boat Tours Fort Lauderdale 2025 — Best Sightseeing | /boat-tours-fort-lauderdale
+    bt317 | Best Party Boats Fort Lauderdale 2026 | /party-boat-fort-lauderdale
+  [fishing]:
+    fi133 | Best Fishing Charters Fort Lauderdale 2026 | /fishing-charters-fort-lauderdale
+  [tour]:
+    to417 | Things to Do in Fort Lauderdale on the Water 2025  | /things-to-do-fort-lauderdale-water
+
+### Cluster #11: handle X6DuZqgsQwxO4ODcO8Zw — 6 ops, cats=['boat', 'tour']
+Partner: 727slingshots
+Operators using this photo:
+  [boat]:
+    bt253 | Boat Tours Clearwater Beach 2025 — Dolphin Cruises | /boat-tours-clearwater
+  [tour]:
+    to230 | Sarasota Water Sports 2025 — Jet Skis, Boat Tours  | /sarasota-water-sports
+    to296 | Clearwater Beach Water Sports 2025 — Boat Rentals, | /clearwater-beach-water-sports
+    to415 | Florida Water Tours | /florida-water-tours-st-augustine-fl
+    to735 | Things to Do Clearwater Beach Water Sports 2025 —  | /things-to-do-clearwater-water
+    to740 | Destin Water Sports 2025 — Yacht Charters, Jet Ski | /destin-water-sports
+
+### Cluster #12: handle 3elI6sZSdCdUYliX7mWg — 5 ops, cats=['boat', 'golfcart', 'tour']
+Partner: sunboatrental
+Operators using this photo:
+  [boat]:
+    bt18 | Sun Boat Rental | /sun-boat-rental-broward
+  [golfcart]:
+    gc31 | Key West Golf Cart Rentals | /key-west-golf-carts-fl
+    gc82 | Punta Gorda Golf Cart Rentals | /punta-gorda-golf-cart-fl
+    gc84 | St. Pete Beach Golf Cart Rentals | /st-pete-beach-golf-cart-fl
+  [tour]:
+    to133 | Bávaro Adventure Park | /bavaro-adventure-park-puntacana
+
+### Cluster #13: handle XQmipMYjTTWGNozEgVg7 — 5 ops, cats=['boat', 'tour']
+Partner: miamiaquatours
+Operators using this photo:
+  [boat]:
+    bt67 | Miami Aqua Tours | /miami-aqua-tours-nite-sea-party-cruise-miami-bt67
+  [tour]:
+    to69 | Miami Aqua Tours – Nite Sea Party Cruise | /miami-aqua-tours-nite-sea-party-cruise-miami
+    to73 | Miami Aqua Tours – Boat Tour Combo | /miami-aqua-tours-nite-sea-party-cruise-miami-to73
+    to75 | Miami Aqua Tours – Pirate Boat Cruise | /miami-aqua-tours-nite-sea-party-cruise-miami-to75
+    to76 | Miami Aqua Tours – Biscayne Bay | /miami-aqua-tours-nite-sea-party-cruise-miami-to76

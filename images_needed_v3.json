@@ -1,0 +1,210 @@
+[
+  {
+    "id": "js8",
+    "name": "Jet Ski Rentals | Miami WaterSports",
+    "cat": "jetski",
+    "partner": "sfjetskirentals",
+    "item_id": "532517",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "to25",
+    "name": "Sky Tours Miami – Premium Aerial Experience",
+    "cat": "aerial",
+    "partner": "skytoursmiami",
+    "item_id": "371946",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "br2",
+    "name": "South Florida Trikke Tours",
+    "cat": "bikerental",
+    "partner": "southfloridatrikketours",
+    "item_id": "160269",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "bt3",
+    "name": "Altamar Trade – Miami River",
+    "cat": "boat",
+    "partner": "altamartrade",
+    "item_id": "668710",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "bt4",
+    "name": "100 Miami – Luxury Boat",
+    "cat": "boat",
+    "partner": "100miami",
+    "item_id": "648184",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "to21",
+    "name": "Fly Key West – Helicopter Discovery Flight",
+    "cat": "aerial",
+    "partner": "fly-keywest",
+    "item_id": "477962",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "ws5",
+    "name": "Crystal River Preserve Adventures",
+    "cat": "watersports",
+    "partner": "crystalriverpreserveadventures",
+    "item_id": "473626",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "at5",
+    "name": "Side x Side St. Pete",
+    "cat": "atv",
+    "partner": "sidexsidestpete",
+    "item_id": "612798",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "br5",
+    "name": "EZ Raider Fort Lauderdale",
+    "cat": "bikerental",
+    "partner": "ezraiderfortlauderdale",
+    "item_id": "721707",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "ws7",
+    "name": "Florida Adventures – Kayak Tour",
+    "cat": "watersports",
+    "partner": "floridaadventuresandrentals",
+    "item_id": "44245",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "to8",
+    "name": "System Shuttle – Key West",
+    "cat": "tour",
+    "partner": "systemshuttle",
+    "item_id": "228152",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "ws9",
+    "name": "Visit Palm Beach – Snorkel",
+    "cat": "watersports",
+    "partner": "visitpalmbeach",
+    "item_id": "101423",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "fi7",
+    "name": "Miss Penny – ¾ Day Fishing Charter",
+    "cat": "fishing",
+    "partner": "misspenny",
+    "item_id": "489240",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "ws13",
+    "name": "Six Fins Charter – Snorkel Tour Key West",
+    "cat": "watersports",
+    "partner": "sixfinscharter",
+    "item_id": "532224",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "bt18",
+    "name": "Sun Boat Rental",
+    "cat": "boat",
+    "partner": "sunboatrental",
+    "item_id": "543184",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "to30",
+    "name": "US2U – Miami Beach City Tour",
+    "cat": "tour",
+    "partner": "us2u",
+    "item_id": "81627",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "ws41",
+    "name": "Sunset Watersports Key West",
+    "cat": "watersports",
+    "partner": "sunsetwatersportskeywest",
+    "item_id": "264240",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "bt59",
+    "name": "Marco Island Boat Charters",
+    "cat": "boat",
+    "partner": "marcoislandboatcharters",
+    "item_id": "423750",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "to69",
+    "name": "Miami Aqua Tours – Nite Sea Party Cruise",
+    "cat": "tour",
+    "partner": "miamiaquatours",
+    "item_id": "337124",
+    "current_photo_handle": ""
+  },
+  {
+    "id": "gc9",
+    "name": "Golf Cart Rental Key West",
+    "cat": "golfcart",
+    "partner": "golfcartrentalkeywest",
+    "item_id": "116411",
+    "current_photo_handle": "me8xaQyREKJgZpih3Xyj"
+  },
+  {
+    "id": "sl3",
+    "name": "Miami Style Rentals – Biscayne",
+    "cat": "slingshot",
+    "partner": "miamistylerentals",
+    "item_id": "339925",
+    "current_photo_handle": "HbjjiVAJQuiZ69w3zeut"
+  },
+  {
+    "id": "fi13",
+    "name": "Cowgirl 45' Premium Offshore Fishing – Key West",
+    "cat": "fishing",
+    "partner": "keywestfishing-charters",
+    "item_id": "104492",
+    "current_photo_handle": "UxWDijTVS9CElGrgZCj8"
+  },
+  {
+    "id": "js10",
+    "name": "Miami Style Rentals – Jet Ski Tour",
+    "cat": "jetski",
+    "partner": "miamistylerentals",
+    "item_id": "326919",
+    "current_photo_handle": "CE61syeCQCp4cJjjqG2A"
+  },
+  {
+    "id": "bt121",
+    "name": "50' Private Catamaran Excursion – Boca Raton",
+    "cat": "boat",
+    "partner": "windsongcharters",
+    "item_id": "500040",
+    "current_photo_handle": "Iqj95jd2RCugdYYt3e1f"
+  },
+  {
+    "id": "to88",
+    "name": "Islamorada Private Charters – Private Boat Charter",
+    "cat": "tour",
+    "partner": "islamoradaprivatecharters",
+    "item_id": "722395",
+    "current_photo_handle": "N5upCqQnRpyyJn2VQunW"
+  },
+  {
+    "id": "to101",
+    "name": "Jones Brothers – Gator & Wildlife Air Tour",
+    "cat": "aerial",
+    "partner": "jonesairandsea",
+    "item_id": "265475",
+    "current_photo_handle": "y64yQkIvSEhxi7hudgEw"
+  }
+]
