@@ -60,7 +60,7 @@
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
     .card{background:rgba(255,255,255,.04);border:1px solid rgba(212,175,55,.12);border-radius:14px;overflow:hidden;transition:.2s;display:flex;flex-direction:column}
     .card:hover{border-color:rgba(212,175,55,.5);transform:translateY(-3px);box-shadow:0 8px 24px rgba(212,175,55,.15)}
-    .card .img{height:180px;background-size:cover;background-position:center;background-color:#0a1929;position:relative}
+    .card .img{height:180px;background:#0a1929;position:relative;overflow:hidden}.card .img img{width:100%;height:100%;object-fit:cover;display:block}
     .card .badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.7);border:1px solid rgba(212,175,55,.45);border-radius:14px;padding:3px 10px;font-size:.7rem;color:#d4af37;font-weight:600}
     .card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
     .card .name{font-size:.95rem;font-weight:700;line-height:1.3;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
@@ -104,6 +104,31 @@
 @media(max-width:480px){.lang-banner{font-size:.78rem;padding:8px 12px}}
 </style>
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');(function(){var l=false;function ld(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1';document.head.appendChild(s);}if(document.readyState==='complete')ld();else addEventListener('load',ld);['scroll','mousemove','touchstart','click'].forEach(function(e){addEventListener(e,ld,{once:true,passive:true});});})();</script>
+<!-- ========== MEASUREMENT (configure IDs before launch) ========== -->
+<!-- Search Console verification -->
+<meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN">
+<meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN">
+
+<!-- Microsoft Clarity (heatmaps + session recordings) -->
+<script>
+(function(c,l,a,r,i,t,y){
+  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+})(window,document,"clarity","script","REPLACE_WITH_CLARITY_ID");
+</script>
+
+<!-- Meta (Facebook) Pixel -->
+<script>
+!function(f,b,e,v,n,t,s){
+  if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
+}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', 'REPLACE_WITH_FB_PIXEL_ID');
+fbq('track', 'PageView');
+</script>
+<!-- ========== / MEASUREMENT ========== -->
 </head>
 <body>
 <nav>
@@ -214,9 +239,7 @@ function render(){
     const href = slug ? '/'+encodeURIComponent(slug) : (op.link || '#');
     const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'Contact for pricing';
     return `<a class="card" href="${esc(href)}">
-      <div class="img" style="background-image:url('${esc(thumbUrl(op.photo))}')">
-        <span class="badge">💎 Exotic</span>
-      </div>
+      <div class="img"><img src="${esc(thumbUrl(op.photo))}" alt="${esc(op.name)}" ${eager} width="480" height="320" onerror="this.src=FALLBACK_IMG"><span class="badge">💎 Exotic</span></div>
       <div class="body">
         <div class="name">${esc(op.name)}</div>
         <div class="zl">📍 ${esc(op.zl || 'Miami')}</div>
