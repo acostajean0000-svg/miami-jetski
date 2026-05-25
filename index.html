@@ -2177,9 +2177,18 @@ function toggleMapView() {
     // Force Leaflet to recalculate map size once it's available.
     setTimeout(() => { if(window.jetskiMap) window.jetskiMap.invalidateSize(); }, 250);
     setTimeout(() => { if(window.jetskiMap) window.jetskiMap.invalidateSize(); }, 800);
-    // After invalidate, refit to current visible ops so the user sees them.
+    // After invalidate, refit so the user sees the right area
     setTimeout(() => {
       if(!window.jetskiMap) return;
+      // Default view (no filters)? Center on Miami at the same zoom as desktop.
+      const _isDefault = (typeof activeCat === 'undefined' || activeCat === 'all') &&
+                         (typeof activeZone === 'undefined' || activeZone === 'all') &&
+                         !(typeof searchQuery !== 'undefined' && searchQuery);
+      if (_isDefault) {
+        try { window.jetskiMap.setView([25.79, -80.20], 10); } catch(e) {}
+        return;
+      }
+      // Filtered view → fit visible ops
       const ops = (typeof currentOps !== 'undefined' && currentOps.length) ? currentOps : allOperators;
       const latlngs = ops.filter(o => o.lat && o.lng).map(o => [o.lat, o.lng]);
       if (latlngs.length) {
