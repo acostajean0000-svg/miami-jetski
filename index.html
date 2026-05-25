@@ -2027,8 +2027,9 @@ function updateMapMarkers(visibleOps) {
       : visibleOps;
     if(focusOps.length > 0) {
       if (isDefaultView) {
-        // Default view: show all of Florida (SW: Key West, NE: NW Florida)
-        try { mapInstance.fitBounds([[24.4,-87.6],[31.0,-79.8]], {padding:[20,20], maxZoom:8}); } catch(e) {}
+        // Default view: Miami metro (matches initial L.map center+zoom)
+        const _isMob = window.matchMedia && window.matchMedia('(max-width:768px)').matches;
+        try { mapInstance.setView([25.79, -80.20], _isMob ? 10 : 11); } catch(e) {}
       } else {
         const latlngs = focusOps.map(op => [op.lat, op.lng]);
         try { mapInstance.fitBounds(latlngs, {padding:[40,40], maxZoom:12}); } catch(e) {}
