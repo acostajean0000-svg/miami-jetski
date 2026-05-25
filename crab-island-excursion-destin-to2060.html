@@ -100,7 +100,7 @@
     .breadcrumb a{color:var(--muted);}
     .breadcrumb a:hover{color:var(--teal);}
     .fh-widget{margin-top:24px;}
-    .fh-widget iframe{width:100%;min-height:500px;border:none;border-radius:10px;}
+    .fh-widget iframe{width:100%;min-height:500px;border:none;border-radius:10px;-webkit-overflow-scrolling:touch}@media(max-width:768px){iframe{min-height:720px}}@media(max-width:480px){iframe{min-height:780px}}
     .mobile-book-bar{display:none;position:fixed;bottom:0;left:0;right:0;background:var(--dark2);border-top:1px solid var(--border);padding:12px 20px;z-index:200;justify-content:space-between;align-items:center;}
     @media(max-width:768px){.mobile-book-bar{display:flex;}}
     .footer{background:var(--dark2);border-top:1px solid var(--border);padding:40px 24px 20px;text-align:center;color:var(--muted);font-size:.82rem;}
