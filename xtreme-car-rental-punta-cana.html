@@ -87,7 +87,11 @@
     .fleet-cat h3{display:inline-block;background:linear-gradient(135deg,#E10F2A,#a00b1f);color:#fff;font-size:.95rem;font-weight:800;padding:8px 16px;border-radius:6px;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
     .fleet-cat .pax-note{display:inline-block;color:#9bb5d4;font-size:.78rem;margin-left:10px;text-transform:uppercase;letter-spacing:.5px}
     .vehicle-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px}
-    .v-card{background:rgba(255,255,255,.04);border:1px solid rgba(225,15,42,.18);border-radius:10px;padding:13px 14px}
+    .v-card{background:rgba(255,255,255,.04);border:1px solid rgba(225,15,42,.18);border-radius:10px;overflow:hidden;transition:.2s}
+    .v-card:hover{border-color:var(--red);transform:translateY(-2px)}
+    .v-thumb{width:100%;aspect-ratio:3/2;background:#fff;display:block;overflow:hidden}
+    .v-thumb img{width:100%;height:100%;object-fit:contain;display:block;padding:6px}
+    .v-info{padding:11px 12px}
     .v-name{font-size:.95rem;font-weight:800;color:var(--light);margin-bottom:5px}
     .v-meta{font-size:.78rem;color:#9bb5d4;line-height:1.5}
     /* POLICY */
@@ -224,15 +228,18 @@
   <!-- FLEET CATALOG -->
   <section class="fleet">
     <h2>Catálogo de Vehículos</h2>
-    <p class="sub">Más de 20 vehículos en 5 categorías. Pregunta por disponibilidad y precios de SUVs y autos sport.</p>
+    <p class="sub">Más de 26 vehículos en 4 categorías. Reserva por WhatsApp.</p>
 
     <div class="fleet-cat">
       <h3>🏁 Buggies & 4x4</h3>
-      <span class="pax-note">capacidad: 1 a 5 pasajeros</span>
+      <span class="pax-note">capacidad: 4 a 5 pasajeros</span>
       <div class="vehicle-grid">
-        <div class="v-card"><div class="v-name">Polaris RZR Turbo</div><div class="v-meta">Año 2021 · Gasolina · 4 plazas</div></div>
-        <div class="v-card"><div class="v-name">Can-Am Maverick 2021</div><div class="v-meta">Año 2021 · Gasolina · 4 plazas</div></div>
-        <div class="v-card"><div class="v-name">Jeep Wrangler</div><div class="v-meta">Año 2019 · Gasolina · 4 plazas</div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/polaris-rzr-orange.jpg" alt="Polaris RZR Turbo naranja" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Polaris RZR Turbo</div><div class="v-meta">Año 2021 · Gasolina · 4 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/polaris-rzr-blue.jpg" alt="Polaris RZR Turbo azul" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Polaris RZR Turbo</div><div class="v-meta">Año 2021 · Gasolina · 4 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/polaris-rzr-black.jpg" alt="Polaris RZR Turbo negro" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Polaris RZR Turbo</div><div class="v-meta">Año 2021 · Gasolina · 4 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/canam-maverick.jpg" alt="Can-Am Maverick 2021" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Can-Am Maverick</div><div class="v-meta">Año 2021 · Gasolina · 4 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/jeep-wrangler-green.jpg" alt="Jeep Wrangler verde" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Jeep Wrangler</div><div class="v-meta">Año 2019 · Gasolina · 4 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/jeep-wrangler-gray.jpg" alt="Jeep Wrangler gris" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Jeep Wrangler</div><div class="v-meta">Año 2019 · Gasolina · 4 plazas</div></div></div>
       </div>
     </div>
 
@@ -240,10 +247,12 @@
       <h3>🏍️ ATVs & Motocross</h3>
       <span class="pax-note">capacidad: 1 a 2 pasajeros</span>
       <div class="vehicle-grid">
-        <div class="v-card"><div class="v-name">Yamaha Raptor 700R</div><div class="v-meta">Año 2021 · Gasolina · 1-2 plazas</div></div>
-        <div class="v-card"><div class="v-name">Honda Rincon 680</div><div class="v-meta">Año 2022 · Gasolina · 1-2 plazas</div></div>
-        <div class="v-card"><div class="v-name">Honda Rancher 520</div><div class="v-meta">Año 2024 · Gasolina · 1-2 plazas</div></div>
-        <div class="v-card"><div class="v-name">Yamaha WR450</div><div class="v-meta">Año 2024 · Gasolina · Motocross</div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/yamaha-raptor-blue.jpg" alt="Yamaha Raptor 700R azul" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Yamaha Raptor 700R</div><div class="v-meta">Año 2021 · Gasolina · 1-2 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/yamaha-raptor-white.jpg" alt="Yamaha Raptor 700R blanco" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Yamaha Raptor 700R</div><div class="v-meta">Año 2021 · Gasolina · 1-2 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/yamaha-raptor-orange.jpg" alt="Yamaha Raptor 700R naranja" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Yamaha Raptor 700R</div><div class="v-meta">Año 2021 · Gasolina · 1-2 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/honda-rincon-680.jpg" alt="Honda Rincon 680" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Honda Rincon 680</div><div class="v-meta">Año 2022 · Gasolina · 1-2 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/honda-rancher-520.jpg" alt="Honda Rancher 520" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Honda Rancher 520</div><div class="v-meta">Año 2024 · Gasolina · 1-2 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/yamaha-wr450.jpg" alt="Yamaha WR450 motocross" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Yamaha WR450</div><div class="v-meta">Año 2024 · Gasolina · Motocross</div></div></div>
       </div>
     </div>
 
@@ -251,16 +260,17 @@
       <h3>🚙 SUVs Familiares</h3>
       <span class="pax-note">capacidad: 5 a 12 pasajeros</span>
       <div class="vehicle-grid">
-        <div class="v-card"><div class="v-name">Cadillac Escalade</div><div class="v-meta">Año 2024 · Gasolina · Lujo</div></div>
-        <div class="v-card"><div class="v-name">Chevrolet Tahoe</div><div class="v-meta">Año 2025 · Gasolina · 7-8 plazas</div></div>
-        <div class="v-card"><div class="v-name">Minibús Hyundai</div><div class="v-meta">Año 2020 · Gasolina · 12 plazas</div></div>
-        <div class="v-card"><div class="v-name">Hyundai Santa Fe</div><div class="v-meta">Año 2023 · Gasolina · 7 plazas</div></div>
-        <div class="v-card"><div class="v-name">Hyundai Santa Fe</div><div class="v-meta">Año 2022 · Gasolina · 5 plazas</div></div>
-        <div class="v-card"><div class="v-name">Honda CRV</div><div class="v-meta">Año 2024 · Gasolina · 5 plazas</div></div>
-        <div class="v-card"><div class="v-name">Honda CRV</div><div class="v-meta">Año 2017 · Gasolina · 5 plazas</div></div>
-        <div class="v-card"><div class="v-name">Honda CRV</div><div class="v-meta">Año 2016 · Gasolina · 5 plazas</div></div>
-        <div class="v-card"><div class="v-name">Kia Sorento</div><div class="v-meta">Año 2022 · Gasolina · 5 plazas</div></div>
-        <div class="v-card"><div class="v-name">Kia Sportage</div><div class="v-meta">Año 2024 · Gasolina · 5 plazas</div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/cadillac-escalade.jpg" alt="Cadillac Escalade 2024" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Cadillac Escalade</div><div class="v-meta">Año 2024 · Gasolina · Lujo</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/chevrolet-tahoe.jpg" alt="Chevrolet Tahoe 2025" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Chevrolet Tahoe</div><div class="v-meta">Año 2025 · Gasolina · 7-8 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/minibus-hyundai.jpg" alt="Minibús Hyundai" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Minibús Hyundai</div><div class="v-meta">Año 2020 · Gasolina · 12 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/hyundai-santa-fe-2023.jpg" alt="Hyundai Santa Fe 2023" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Hyundai Santa Fe</div><div class="v-meta">Año 2023 · Gasolina · 7 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/hyundai-santa-fe-2021.jpg" alt="Hyundai Santa Fe 2021" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Hyundai Santa Fe</div><div class="v-meta">Año 2021 · Gasolina · 5 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/hyundai-santa-fe-2022.jpg" alt="Hyundai Santa Fe 2022" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Hyundai Santa Fe</div><div class="v-meta">Año 2022 · Gasolina · 5 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/honda-crv-2024.jpg" alt="Honda CRV 2024" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Honda CRV</div><div class="v-meta">Año 2024 · Gasolina · 5 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/honda-crv-2017.jpg" alt="Honda CRV 2017" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Honda CRV</div><div class="v-meta">Año 2017 · Gasolina · 5 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/honda-crv-2016.jpg" alt="Honda CRV 2016" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Honda CRV</div><div class="v-meta">Año 2016 · Gasolina · 5 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/kia-sorento.jpg" alt="Kia Sorento 2022" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Kia Sorento</div><div class="v-meta">Año 2022 · Gasolina · 5 plazas</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/kia-sportage.jpg" alt="Kia Sportage 2024" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Kia Sportage</div><div class="v-meta">Año 2024 · Gasolina · 5 plazas</div></div></div>
       </div>
     </div>
 
@@ -268,9 +278,9 @@
       <h3>🏎️ Autos Sport</h3>
       <span class="pax-note">capacidad: 5 pasajeros</span>
       <div class="vehicle-grid">
-        <div class="v-card"><div class="v-name">Chevrolet Camaro ST</div><div class="v-meta">Año 2016 · Gasolina · Sport</div></div>
-        <div class="v-card"><div class="v-name">Ford Mustang GT</div><div class="v-meta">Año 2016 · Gasolina · Sport</div></div>
-        <div class="v-card"><div class="v-name">Suzuki Swift</div><div class="v-meta">Año 2020 · Gasolina · Compacto</div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/camaro.jpg" alt="Chevrolet Camaro ST 2016" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Chevrolet Camaro ST</div><div class="v-meta">Año 2016 · Gasolina · Sport</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/mustang.jpg" alt="Ford Mustang GT 2016" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Ford Mustang GT</div><div class="v-meta">Año 2016 · Gasolina · Sport</div></div></div>
+        <div class="v-card"><div class="v-thumb"><img src="/images/xcr/vehicles/swift.jpg" alt="Suzuki Swift 2020" loading="lazy" decoding="async"></div><div class="v-info"><div class="v-name">Suzuki Swift</div><div class="v-meta">Año 2020 · Gasolina · Compacto</div></div></div>
       </div>
     </div>
   </section>
