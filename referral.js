@@ -205,7 +205,12 @@
   }
 
   // ── STEP 1: capture ref from URL on landing ────────────────
-  log('script loaded. current URL:', window.location.href);
+  log('script loaded. URL parts:', {
+    href: window.location.href,
+    search: window.location.search,
+    hash: window.location.hash,
+    pathname: window.location.pathname
+  });
   var raw = readRefFromUrl();
   var urlRef = sanitizeSlug(raw);
 
@@ -277,7 +282,7 @@
     activeSlug: function () { return activeSlug; },
     FH_SUB_PARAM: FH_SUB_PARAM,
     REF_BASE: REF_BASE,
-    VERSION: '2026-05-25-v3-iframe-patch'
+    VERSION: '2026-05-25-v4-detailed-logs'
   };
   log('ready. type window.__refstay to inspect.');
 })();
