@@ -1889,8 +1889,8 @@ function initMap() {
   if (mapInstance) return; // prevent double-init
   const isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
   mapInstance = L.map('jetski-map', {
-    center:[27.8,-82.5],
-    zoom: isMobile ? 6 : 7,
+    center:[25.79,-80.20],      // Miami / Miami Beach
+    zoom: isMobile ? 10 : 11,   // zoomed to Miami metro by default
     zoomControl: false,         // we add it manually for placement control
     scrollWheelZoom: !isMobile, // tap-to-toggle on mobile is better UX
     tap: true,
