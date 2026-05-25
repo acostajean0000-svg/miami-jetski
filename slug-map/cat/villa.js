@@ -1,0 +1,1 @@
+window._OP_SLUG_MAP=Object.assign(window._OP_SLUG_MAP||{},{"to1310":"villa-reverie-miami","to1311":"villa-ipanema-miami","to1312":"villa-jasper-miami","to1341":"villa-emerald-miami","to1342":"villa-maya-miami","to1343":"villa-summercrest-miami","to1344":"villa-sapphire-miami","to2776":"villa-ruby-miami","to2777":"villa-calabassa-miami"});

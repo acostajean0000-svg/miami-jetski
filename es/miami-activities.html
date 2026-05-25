@@ -141,7 +141,7 @@ fbq('track', 'PageView');
   </section>
   <div class="filters" id="filters">
     <span class="cat-chip active" data-cat="all">🌎 Todos (448)</span>
-    <span class="cat-chip" data-cat="tour">🚌 Tour (132)</span><span class="cat-chip" data-cat="boat">⛵ Barcos (151)</span><span class="cat-chip" data-cat="exotic">💎 Autos Exóticos (27)</span><span class="cat-chip" data-cat="flowers">💐 Bloom Bar (1)</span><span class="cat-chip" data-cat="jetski">🛥️ Motos Acuáticas (21)</span><span class="cat-chip" data-cat="watersports">🏄 Deportes Acuáticos (14)</span><span class="cat-chip" data-cat="bikerental">🚲 Bicicletas (27)</span><span class="cat-chip" data-cat="atv">🏍️ Cuatrimotos (7)</span><span class="cat-chip" data-cat="aerial">✈️ Tour Aéreo (6)</span><span class="cat-chip" data-cat="jetcar">🚗 Auto Acuático (3)</span><span class="cat-chip" data-cat="slingshot">🏎️ Slingshot (3)</span><span class="cat-chip" data-cat="golfcart">🛺 Carro de Golf (2)</span><span class="cat-chip" data-cat="fishing">🎣 Pesca (9)</span>
+    <span class="cat-chip" data-cat="tour">🚌 Tour (118)</span><span class="cat-chip" data-cat="boat">⛵ Barcos (115)</span><span class="cat-chip" data-cat="exotic">💎 Autos Exóticos (27)</span><span class="cat-chip" data-cat="flowers">💐 Bloom Bar (1)</span><span class="cat-chip" data-cat="villa">🏡 Villa de Lujo (9)</span><span class="cat-chip" data-cat="jetski">🛥️ Motos Acuáticas (21)</span><span class="cat-chip" data-cat="watersports">🏄 Deportes Acuáticos (31)</span><span class="cat-chip" data-cat="bikerental">🚲 Bicicletas (27)</span><span class="cat-chip" data-cat="atv">🏍️ Cuatrimotos (7)</span><span class="cat-chip" data-cat="aerial">✈️ Tour Aéreo (6)</span><span class="cat-chip" data-cat="jetcar">🚗 Auto Acuático (3)</span><span class="cat-chip" data-cat="slingshot">🏎️ Slingshot (3)</span><span class="cat-chip" data-cat="golfcart">🛺 Carro de Golf (2)</span><span class="cat-chip" data-cat="fishing">🎣 Pesca (9)</span>
   </div>
   <div class="grid" id="grid"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
 </main>
@@ -151,8 +151,8 @@ fbq('track', 'PageView');
 <script>
 const ZONE_KEY = "miami";
 const ZL_PATTERN = null;
-const CAT_LABELS = {"jetski": "Moto Acuática", "boat": "Barco", "fishing": "Pesca", "watersports": "Deportes Acuáticos", "slingshot": "Slingshot", "exotic": "Auto Exótico", "flowers": "Bloom Bar", "jetcar": "Auto Acuático", "golfcart": "Carro de Golf", "atv": "Cuatrimoto", "tour": "Tour", "aerial": "Tour Aéreo", "bikerental": "Bicicleta"};
-const CAT_EMOJI = {"jetski": "\ud83d\udee5\ufe0f", "boat": "\u26f5", "fishing": "\ud83c\udfa3", "watersports": "\ud83c\udfc4", "slingshot": "\ud83c\udfce\ufe0f", "exotic": "\ud83d\udc8e", "flowers": "\ud83d\udc90", "jetcar": "\ud83d\ude97", "golfcart": "\ud83d\udefa", "atv": "\ud83c\udfcd\ufe0f", "tour": "\ud83d\ude8c", "aerial": "\u2708\ufe0f", "bikerental": "\ud83d\udeb2"};
+const CAT_LABELS = {"jetski": "Moto Acuática", "boat": "Barco", "fishing": "Pesca", "watersports": "Deportes Acuáticos", "slingshot": "Slingshot", "exotic": "Auto Exótico", "flowers": "Bloom Bar", "jetcar": "Auto Acuático", "golfcart": "Carro de Golf", "atv": "Cuatrimoto", "tour": "Tour", "aerial": "Tour Aéreo", "bikerental": "Bicicleta","villa":"Villa de Lujo"};
+const CAT_EMOJI = {"jetski": "\ud83d\udee5\ufe0f", "boat": "\u26f5", "fishing": "\ud83c\udfa3", "watersports": "\ud83c\udfc4", "slingshot": "\ud83c\udfce\ufe0f", "exotic": "\ud83d\udc8e", "flowers": "\ud83d\udc90", "jetcar": "\ud83d\ude97", "golfcart": "\ud83d\udefa", "atv": "\ud83c\udfcd\ufe0f", "tour": "\ud83d\ude8c", "aerial": "\u2708\ufe0f", "bikerental": "\ud83d\udeb2","villa":"🏡"};
 const FALLBACK_IMG = "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80";
 
 function esc(s){return String(s==null?'':s).replace(/[&<>"'`]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"})[c]);}

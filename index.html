@@ -1159,8 +1159,8 @@ let priceMin = 0, priceMax = 1000;
 let markers = {};
 let mapInstance = null;
 // ---- CAT COLORS ----
-const catColors = {jetski:'#00d4c8', boat:'#1a6bcc', yacht:'#0d4a8c', sunset:'#ff7a3d', airboat:'#3aa845', fishing:'#e06000', watersports:'#9933cc', slingshot:'#dc2828', exotic:'#d4af37', flowers:'#e63a8a', jetcar:'#ffa500', golfcart:'#22b422', atv:'#b45000', tour:'#643cc8', aerial:'#0099ff', bike:'#e63946', bikerental:'#e63946', scooter:'#ff6b35', kayak:'#00a896', snorkel:'#00bfdb'};
-const catLabels = {jetski:'Jet Ski', boat:'Boat', yacht:'Yacht', sunset:'Sunset Cruise', airboat:'Airboat', fishing:'Fishing', watersports:'Water Sport', slingshot:'Slingshot', exotic:'Exotic Car', flowers:'Bloom Bar', jetcar:'Jet Car', golfcart:'Golf Cart', atv:'ATV', tour:'Tour', aerial:'Aerial & Fly', bike:'Bike & E-Ride', bikerental:'Bike & E-Ride', scooter:'Scooter', kayak:'Kayak & SUP', snorkel:'Snorkel'};
+const catColors = {jetski:'#00d4c8', boat:'#1a6bcc', yacht:'#0d4a8c', sunset:'#ff7a3d', airboat:'#3aa845', fishing:'#e06000', watersports:'#9933cc', slingshot:'#dc2828', exotic:'#d4af37', flowers:'#e63a8a', jetcar:'#ffa500', golfcart:'#22b422', atv:'#b45000', tour:'#643cc8', aerial:'#0099ff', bike:'#e63946', bikerental:'#e63946', scooter:'#ff6b35', kayak:'#00a896', snorkel:'#00bfdb',"villa":"#8b5cf6"};
+const catLabels = {jetski:'Jet Ski', boat:'Boat', yacht:'Yacht', sunset:'Sunset Cruise', airboat:'Airboat', fishing:'Fishing', watersports:'Water Sport', slingshot:'Slingshot', exotic:'Exotic Car', flowers:'Bloom Bar', jetcar:'Jet Car', golfcart:'Golf Cart', atv:'ATV', tour:'Tour', aerial:'Aerial & Fly', bike:'Bike & E-Ride', bikerental:'Bike & E-Ride', scooter:'Scooter', kayak:'Kayak & SUP', snorkel:'Snorkel',"villa":"Villa"};
 // ---- NEAR ME ----
 let nearMeActive = false;
 let userLat = null, userLng = null;
@@ -1244,7 +1244,7 @@ function computeBestValue(ops) {
   const top15pct = Math.max(1, Math.ceil(scored.length * 0.15));
   scored.slice(0, top15pct).forEach(o => bestValueSet.add(o.id));
 }
-const catEmoji = {jetski:'🏄',boat:'⛵',yacht:'🛳️',sunset:'🌅',airboat:'🐊',fishing:'🎣',watersports:'🌊',slingshot:'🏎️',exotic:'💎',flowers:'💐',jetcar:'🚗',golfcart:'🛺',atv:'🏍️',tour:'🗺️',aerial:'✈️',bikerental:'🚲',scooter:'🛵',snorkel:'🤿',kayak:'🛶'};
+const catEmoji = {jetski:'🏄',boat:'⛵',yacht:'🛳️',sunset:'🌅',airboat:'🐊',fishing:'🎣',watersports:'🌊',slingshot:'🏎️',exotic:'💎',flowers:'💐',jetcar:'🚗',golfcart:'🛺',atv:'🏍️',tour:'🗺️',aerial:'✈️',bikerental:'🚲',scooter:'🛵',snorkel:'🤿',kayak:'🛶',"villa":"🏡"};
 // Downsize Filestack images to card thumbnail width (400px) — reduces file size ~85%
 function thumbUrl(url) {
   if (!url) return url;
@@ -1942,7 +1942,7 @@ function buildMarkers() {
     if (markers[op.id]) return; // skip if already built
     if (!op.lat || !op.lng) return; // skip ops without geo coords
     const color = catColors[op.cat] || '#00d4c8';
-    const catInitials = {jetski:'JS', boat:'⛵', yacht:'🛳️', sunset:'🌅', airboat:'🐊', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', exotic:'💎', flowers:'💐', jetcar:'🚗', golfcart:'🛺', atv:'🏍️', scooter:'🛵', bikerental:'🚲', snorkel:'🤿', kayak:'🛶'}[op.cat] || '●';
+    const catInitials = {jetski:'JS', boat:'⛵', yacht:'🛳️', sunset:'🌅', airboat:'🐊', fishing:'🎣', watersports:'🏄', aerial:'✈️', tour:'🚌', slingshot:'🏎️', exotic:'💎', flowers:'💐', jetcar:'🚗', golfcart:'🛺', atv:'🏍️', scooter:'🛵', bikerental:'🚲', snorkel:'🤿', kayak:'🛶',"villa":"V"}[op.cat] || '●';
     const marker = L.marker([op.lat, op.lng], {icon: makeIcon(color, catInitials)});
     const opSlug = (window._OP_SLUG_MAP || {})[op.id] || '';
     const priceLabel = (op.price && op.price > 0)
