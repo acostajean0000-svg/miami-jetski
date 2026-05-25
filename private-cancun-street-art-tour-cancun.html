@@ -209,7 +209,7 @@ fbq('track', 'PageView');
     <div class="section fh-widget" id="fh-avail">
       <h2>Check Availability & Book</h2>
       <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://fareharbor.com/embeds/book/cityarttoursmexico/items/183463/?asn=fhdn-mxn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no" loading="lazy" title="Book Private Cancun Street Art Tour"></iframe>
-      <div class="fh-fallback"><strong>Calendar not loading?</strong> <a class="fh-open" data-no-modal="true" href="https://fareharbor.com/embeds/book/cityarttoursmexico/items/183463/?asn=fhdn-mxn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no" target="_blank" rel="noopener nofollow sponsored">📅 Open booking →</a><span class="sep">·</span><a href="tel:+16452165021">📞 Call</a><span class="sep">·</span><a href="https://wa.me/16452165021?text=Hi%21%20I%27m%20trying%20to%20book%20on%20your%20site%20but%20the%20calendar%20isn%27t%20loading.%20Can%20you%20help%3F" target="_blank" rel="noopener nofollow">💬 WhatsApp</a></div>
+      <div class="fh-fallback"><strong>Calendar not loading?</strong> <a class="fh-open" href="https://fareharbor.com/embeds/book/cityarttoursmexico/items/183463/?asn=fhdn-mxn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no" target="_blank" rel="noopener nofollow sponsored">📅 Open booking →</a><span class="sep">·</span><a href="tel:+16452165021">📞 Call</a><span class="sep">·</span><a href="https://wa.me/16452165021?text=Hi%21%20I%27m%20trying%20to%20book%20on%20your%20site%20but%20the%20calendar%20isn%27t%20loading.%20Can%20you%20help%3F" target="_blank" rel="noopener nofollow">💬 WhatsApp</a></div>
     </div>
     <div class="section about-extra">
   <h2>About booking this guided tour in Cancún</h2>
@@ -312,7 +312,6 @@ document.querySelectorAll('.faq-q').forEach(q=>{
     if(e.defaultPrevented)return;
     var a=e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
     if(!a)return;
-    if(a.hasAttribute('data-no-modal')||a.target==='_blank')return;  // skip modal for new-tab links
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
     e.preventDefault();e.stopPropagation();
     var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Book Now';
