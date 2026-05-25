@@ -132,6 +132,78 @@
     return n;
   }
 
+  // Also patch any existing iframes (the FareHarbor booking modal uses an iframe
+  // whose src is set programmatically — it doesn't go through our <a> injection).
+  function injectIntoIframe(iframe, slug) {
+    if (!iframe || !iframe.src) return false;
+    if (iframe.src.indexOf(FH_HOST_MATCH) === -1) return false;
+    if (iframe.dataset.refstayInjected === '1') return false;
+    try {
+      var u = new URL(iframe.src);
+      var currentRef = u.searchParams.get(FH_SUB_PARAM) || '';
+      var desiredRef = REF_BASE + '-' + slug;
+      // Only rewrite if not already correct (avoids reload loops)
+      if (currentRef !== desiredRef) {
+        u.searchParams.set(FH_SUB_PARAM, desiredRef);
+        iframe.src = u.toString();
+        log('rewrote iframe.src — ref now:', desiredRef);
+      }
+      iframe.dataset.refstayInjected = '1';
+      return true;
+    } catch (e) { return false; }
+  }
+
+  function injectAllIframes(slug) {
+    if (!slug) return 0;
+    var iframes = document.querySelectorAll('iframe[src*="' + FH_HOST_MATCH + '"]');
+    var n = 0;
+    for (var i = 0; i < iframes.length; i++) {
+      if (injectIntoIframe(iframes[i], slug)) n++;
+    }
+    if (n > 0) log('patched', n, 'FareHarbor iframe(s)');
+    return n;
+  }
+
+  // Hijack the iframe.src setter so ANY FareHarbor iframe URL gets our ref
+  // baked in at the moment it's assigned — even before the iframe loads.
+  // This catches the modal-open path where openFhModal(url) sets iframe.src
+  // with a URL that may not have our ref.
+  function patchIframeSrcSetter() {
+    try {
+      var desc = Object.getOwnPropertyDescriptor(HTMLIFrameElement.prototype, 'src');
+      if (!desc || !desc.set || desc.__refstayPatched) return;
+      var origSet = desc.set;
+      var origGet = desc.get;
+      Object.defineProperty(HTMLIFrameElement.prototype, 'src', {
+        configurable: true,
+        get: origGet,
+        set: function (value) {
+          var v = value;
+          try {
+            if (typeof v === 'string' && v.indexOf(FH_HOST_MATCH) !== -1) {
+              var slug = activeSlug || getRef();
+              if (slug) {
+                var u = new URL(v);
+                var desired = REF_BASE + '-' + slug;
+                if (u.searchParams.get(FH_SUB_PARAM) !== desired) {
+                  u.searchParams.set(FH_SUB_PARAM, desired);
+                  v = u.toString();
+                  log('iframe.src setter — ref injected:', desired);
+                }
+              }
+            }
+          } catch (e) { /* if URL parse fails, just pass through original */ }
+          origSet.call(this, v);
+        }
+      });
+      // Mark as patched so we don't double-wrap on hot reload
+      Object.getOwnPropertyDescriptor(HTMLIFrameElement.prototype, 'src').__refstayPatched = true;
+      log('iframe.src setter patched — all future FareHarbor iframes will get ref injected');
+    } catch (e) {
+      log('iframe.src setter patch failed (will rely on MutationObserver):', e.message);
+    }
+  }
+
   // ── STEP 1: capture ref from URL on landing ────────────────
   log('script loaded. current URL:', window.location.href);
   var raw = readRefFromUrl();
@@ -164,20 +236,29 @@
   function init() {
     if (!activeSlug) return;
     injectAll(activeSlug);
+    injectAllIframes(activeSlug);
 
-    // Watch for dynamically-added links
+    // Watch for dynamically-added links AND iframes (booking modal creates them on demand)
     if ('MutationObserver' in window) {
       var t;
       var obs = new MutationObserver(function () {
         clearTimeout(t);
-        t = setTimeout(function () { injectAll(activeSlug); }, 100);
+        t = setTimeout(function () {
+          injectAll(activeSlug);
+          injectAllIframes(activeSlug);
+        }, 100);
       });
       obs.observe(document.body || document.documentElement, {
         childList: true,
-        subtree: true
+        subtree: true,
+        attributes: true,
+        attributeFilter: ['src']  // watch iframe src changes too
       });
     }
   }
+
+  // Patch iframe.src setter immediately — before any modal can open one
+  patchIframeSrcSetter();
 
   if (document.readyState === 'loading') {
     document.addEventListener('DOMContentLoaded', init);
@@ -196,7 +277,7 @@
     activeSlug: function () { return activeSlug; },
     FH_SUB_PARAM: FH_SUB_PARAM,
     REF_BASE: REF_BASE,
-    VERSION: '2026-05-25-v2'
+    VERSION: '2026-05-25-v3-iframe-patch'
   };
   log('ready. type window.__refstay to inspect.');
 })();
