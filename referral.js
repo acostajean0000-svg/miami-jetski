@@ -14,30 +14,35 @@
  *      (Online Booking Reference column).
  *   3. Fires a GA4 event so attribution shows in Analytics
  *
+ * Designed to be loaded in <head> (no defer) so it runs BEFORE any
+ * other script can clean the URL. Falls back to URL fragment (#ref=)
+ * if query param is stripped.
+ *
+ * Debugging: open DevTools console — every step logs with [refstay] prefix.
+ *
  * No-op safe if no ref present.
  */
 (function () {
   'use strict';
 
   // ── CONFIG ─────────────────────────────────────────────────
-  // FareHarbor URL param used for per-host sub-tracking.
-  // `ref` (Online Booking Reference) — confirmed by FareHarbor support.
-  // Appears as a column in the FHDN Bookings report.
   var FH_SUB_PARAM = 'ref';
-
-  // The distribution-partner shortname FareHarbor expects as the prefix.
-  // Final value will be e.g.  ref=miamistylerentals-maria-x4k2
   var REF_BASE = 'miamistylerentals';
-
-  // Where we store the ref slug locally
   var STORAGE_KEY = 'refstay_ref';
-  // How long the attribution lasts (30 days = standard affiliate window)
   var REF_TTL_DAYS = 30;
-
-  // FareHarbor URLs match this substring
   var FH_HOST_MATCH = 'fareharbor.com';
+  var LOG_PREFIX = '[refstay]';
+  var DEBUG = true; // set false in prod to silence logs
 
   // ── HELPERS ────────────────────────────────────────────────
+  function log() {
+    if (!DEBUG) return;
+    try {
+      var args = [LOG_PREFIX].concat(Array.prototype.slice.call(arguments));
+      console.log.apply(console, args);
+    } catch (e) {}
+  }
+
   function safe(fn) { try { return fn(); } catch (e) { return null; } }
 
   function setRef(slug) {
@@ -47,12 +52,21 @@
         savedAt: Date.now()
       }));
     });
+    // Also mirror to sessionStorage as a same-tab backup (some browsers
+    // wipe localStorage in incognito after the window closes)
+    safe(function () {
+      sessionStorage.setItem(STORAGE_KEY, slug);
+    });
   }
 
   function getRef() {
     return safe(function () {
       var raw = localStorage.getItem(STORAGE_KEY);
-      if (!raw) return null;
+      if (!raw) {
+        // Fallback to sessionStorage
+        var s = sessionStorage.getItem(STORAGE_KEY);
+        return s || null;
+      }
       var parsed = JSON.parse(raw);
       if (!parsed || !parsed.slug) return null;
       var ageDays = (Date.now() - (parsed.savedAt || 0)) / 86400000;
@@ -69,15 +83,35 @@
     return String(s).toLowerCase().replace(/[^a-z0-9-]/g, '').slice(0, 64);
   }
 
+  // Read slug from query param OR fragment (e.g. #ref=jean-acosta)
+  // Fragment is harder to strip — survives most URL cleaners.
+  function readRefFromUrl() {
+    var fromQuery = safe(function () {
+      return new URL(window.location.href).searchParams.get('ref');
+    });
+    if (fromQuery) {
+      log('found ref in query:', fromQuery);
+      return fromQuery;
+    }
+    var fromFragment = safe(function () {
+      var h = window.location.hash || '';
+      if (!h) return null;
+      // hash looks like "#ref=jean-acosta" or "#foo&ref=jean-acosta"
+      var params = new URLSearchParams(h.replace(/^#/, ''));
+      return params.get('ref');
+    });
+    if (fromFragment) {
+      log('found ref in fragment:', fromFragment);
+      return fromFragment;
+    }
+    return null;
+  }
+
   function injectSubIdIntoLink(a, slug) {
     if (!a || !a.href || a.href.indexOf(FH_HOST_MATCH) === -1) return;
-    if (a.dataset.refstayInjected === '1') return; // idempotent
+    if (a.dataset.refstayInjected === '1') return;
     try {
       var u = new URL(a.href);
-      // Overwrite `ref` with `<REF_BASE>-<slug>`. We always rebuild from
-      // REF_BASE rather than appending to whatever was there — this stays
-      // correct even if the original href already had a slug suffix from
-      // a previous render, or if some links were copied without the base.
       u.searchParams.set(FH_SUB_PARAM, REF_BASE + '-' + slug);
       a.href = u.toString();
       a.dataset.refstayInjected = '1';
@@ -85,21 +119,27 @@
   }
 
   function injectAll(slug) {
-    if (!slug) return;
+    if (!slug) return 0;
     var links = document.querySelectorAll('a[href*="' + FH_HOST_MATCH + '"]');
+    var n = 0;
     for (var i = 0; i < links.length; i++) {
-      injectSubIdIntoLink(links[i], slug);
+      if (links[i].dataset.refstayInjected !== '1') {
+        injectSubIdIntoLink(links[i], slug);
+        n++;
+      }
     }
+    if (n > 0) log('injected ref into', n, 'FareHarbor links');
+    return n;
   }
 
-  // ── STEP 1: capture ?ref= from URL on landing ─────────────
-  var urlRef = safe(function () {
-    var p = new URL(window.location.href).searchParams.get('ref');
-    return sanitizeSlug(p);
-  });
+  // ── STEP 1: capture ref from URL on landing ────────────────
+  log('script loaded. current URL:', window.location.href);
+  var raw = readRefFromUrl();
+  var urlRef = sanitizeSlug(raw);
 
   if (urlRef) {
     setRef(urlRef);
+    log('captured & saved slug:', urlRef);
     // Fire GA4 event (no-op safe if gtag isn't loaded yet)
     safe(function () {
       if (typeof window.gtag === 'function') {
@@ -109,17 +149,23 @@
         });
       }
     });
+  } else {
+    log('no ref in URL — will use cached slug if available');
   }
 
-  // ── STEP 2: on every page load, rewrite `ref` on FH links ──
+  // ── STEP 2: on every page load, rewrite ref on FH links ────
   var activeSlug = urlRef || getRef();
+  if (activeSlug) {
+    log('active slug for this session:', activeSlug);
+  } else {
+    log('no active slug — links will not be rewritten');
+  }
 
   function init() {
     if (!activeSlug) return;
     injectAll(activeSlug);
 
-    // Watch for dynamically-added links (defensive; the site is mostly static
-    // but the booking modal logic uses delegated handlers)
+    // Watch for dynamically-added links
     if ('MutationObserver' in window) {
       var t;
       var obs = new MutationObserver(function () {
@@ -145,7 +191,12 @@
     getRef: getRef,
     setRef: setRef,
     sanitizeSlug: sanitizeSlug,
+    readRefFromUrl: readRefFromUrl,
+    injectAll: injectAll,
+    activeSlug: function () { return activeSlug; },
     FH_SUB_PARAM: FH_SUB_PARAM,
-    REF_BASE: REF_BASE
+    REF_BASE: REF_BASE,
+    VERSION: '2026-05-25-v2'
   };
+  log('ready. type window.__refstay to inspect.');
 })();
