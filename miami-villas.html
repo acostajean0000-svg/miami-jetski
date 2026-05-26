@@ -236,6 +236,7 @@ function render(){
     const slug = slugMap[op.id] || '';
     const href = slug ? '/'+encodeURIComponent(slug) : (op.link || '#');
     const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'Contact for pricing';
+    const eager = i < 4 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
     return `<a class="card" href="${esc(href)}">
       <div class="img"><img src="${esc(thumbUrl(op.photo))}" alt="${esc(op.name)}" ${eager} width="480" height="320" onerror="this.src=FALLBACK_IMG"><span class="badge">💎 Exotic</span></div>
       <div class="body">
