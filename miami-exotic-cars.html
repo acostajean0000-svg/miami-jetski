@@ -313,31 +313,6 @@ function setupFilters(){
   },true);
 })();
 </script>
-<script>
-(function(){
-  var ES_URL = '/es/miami-exotic-cars';
-  var langs = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
-  if (!/(^|,)es/.test(langs)) return;
-  try {
-    var dismissed = localStorage.getItem('lang_banner_dismissed');
-    if (dismissed && (Date.now() - parseInt(dismissed,10)) < 30*24*60*60*1000) return;
-  } catch(e){}
-  var b = document.createElement('div');
-  b.className = 'lang-banner show';
-  b.setAttribute('role','dialog');
-  b.setAttribute('aria-label','Language suggestion');
-  b.innerHTML = '<span>🇪🇸 ¿Prefieres este sitio en español?</span>'
-    + '<a href="'+ES_URL+'" hreflang="es">Sí, ver en español →</a>'
-    + '<button type="button" aria-label="Dismiss">✕</button>';
-  document.body.insertBefore(b, document.body.firstChild);
-  b.querySelector('button').addEventListener('click', function(){
-    b.classList.remove('show');
-    try { localStorage.setItem('lang_banner_dismissed', String(Date.now())); } catch(e){}
-  });
-  b.querySelector('a').addEventListener('click', function(){
-    try { localStorage.setItem('lang_banner_dismissed', String(Date.now())); } catch(e){}
-  });
-})();
-</script>
+
 </body>
 </html>

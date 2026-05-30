@@ -674,13 +674,6 @@
 .lang-switch .active{background:rgba(0,210,255,.22);color:#00d2ff;cursor:default}
 @media(max-width:480px){.lang-switch{font-size:.72rem}.lang-switch a,.lang-switch span{padding:3px 7px}}
 
-.lang-banner{display:none;background:linear-gradient(135deg,#0a66c2,#0099cc);color:#fff;padding:9px 16px;text-align:center;font-size:.85rem;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;z-index:101;position:relative}
-.lang-banner.show{display:flex;align-items:center;justify-content:center;gap:14px;flex-wrap:wrap}
-.lang-banner a{color:#fff;background:rgba(255,255,255,.18);padding:5px 14px;border-radius:50px;text-decoration:none;font-weight:700;white-space:nowrap}
-.lang-banner a:hover{background:rgba(255,255,255,.28)}
-.lang-banner button{background:none;border:none;color:rgba(255,255,255,.7);cursor:pointer;font-size:1.1rem;line-height:1;padding:0 4px;margin-left:4px}
-.lang-banner button:hover{color:#fff}
-@media(max-width:480px){.lang-banner{font-size:.78rem;padding:8px 12px}}
 </style>
   <meta property="og:image" content="https://cdn.filestackcontent.com/fYlRXu6pQ9yVGrTINaKj/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max">
   <meta property="og:image:width" content="1200">
@@ -2833,31 +2826,6 @@ document.head.appendChild(qvTooltipStyle);
     var name = a.getAttribute('data-fh-name')||'';
     dataLayer.push({event:'begin_checkout',ecommerce:{items:[{item_name:name,currency:"USD"}]}});
   },true);
-})();
-</script>
-<script>
-(function(){
-  var ES_URL = '/es/';
-  var langs = (navigator.languages || [navigator.language || '']).join(',').toLowerCase();
-  if (!/(^|,)es/.test(langs)) return;
-  try {
-    var dismissed = localStorage.getItem('lang_banner_dismissed');
-    if (dismissed && (Date.now() - parseInt(dismissed,10)) < 30*24*60*60*1000) return;
-  } catch(e){}
-  var b = document.createElement('div');
-  b.className = 'lang-banner show';
-  b.setAttribute('role','dialog');
-  b.innerHTML = '<span>🇪🇸 ¿Prefieres este sitio en español?</span>'
-    + '<a href="'+ES_URL+'" hreflang="es">Sí, ver en español →</a>'
-    + '<button type="button" aria-label="Dismiss">✕</button>';
-  document.body.insertBefore(b, document.body.firstChild);
-  b.querySelector('button').addEventListener('click', function(){
-    b.classList.remove('show');
-    try { localStorage.setItem('lang_banner_dismissed', String(Date.now())); } catch(e){}
-  });
-  b.querySelector('a').addEventListener('click', function(){
-    try { localStorage.setItem('lang_banner_dismissed', String(Date.now())); } catch(e){}
-  });
 })();
 </script>
 </body>
