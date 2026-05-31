@@ -81,11 +81,11 @@
   </script>
   <noscript></noscript>
   <!-- Leaflet — non-blocking, lazy init via IntersectionObserver -->
-  <link href="/vendor/leaflet/leaflet.css" rel="preload" as="style"  onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
-  <noscript><link href="/vendor/leaflet/leaflet.css" rel="stylesheet"  integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous"></noscript>
-  <link href="/vendor/leaflet/MarkerCluster.css" rel="preload" as="style"  onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-pmjIAcz2bAn0xukfxADbZIb3t8oRT9Sv0rvO+BR5Csr6Dhqq+nZs59P0pPKQJkEV" crossorigin="anonymous">
-  <link href="/vendor/leaflet/MarkerCluster.Default.css" rel="preload" as="style"  onload="this.onload=null;this.rel='stylesheet'" integrity="sha384-wgw+aLYNQ7dlhK47ZPK7FRACiq7ROZwgFNg0m04avm4CaXS+Z9Y7nMu8yNjBKYC+" crossorigin="anonymous">
-  <noscript><link href="/vendor/leaflet/MarkerCluster.css" rel="stylesheet"  integrity="sha384-pmjIAcz2bAn0xukfxADbZIb3t8oRT9Sv0rvO+BR5Csr6Dhqq+nZs59P0pPKQJkEV" crossorigin="anonymous"><link href="/vendor/leaflet/MarkerCluster.Default.css" rel="stylesheet"  integrity="sha384-wgw+aLYNQ7dlhK47ZPK7FRACiq7ROZwgFNg0m04avm4CaXS+Z9Y7nMu8yNjBKYC+" crossorigin="anonymous"></noscript>
+  <link rel="preload" as="style" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
+  <link rel="preload" as="style" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"><link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"></noscript>
   <style>
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:-1;}
     .skip-link:focus{position:fixed;left:50%;transform:translateX(-50%);top:8px;width:auto;height:auto;padding:10px 22px;background:var(--teal);color:var(--dark);font-weight:700;border-radius:6px;z-index:9999;font-size:.9rem;}
@@ -2221,10 +2221,10 @@ function loadLeafletThenMap() {
   if (leafletLoaded) return;
   leafletLoaded = true;
   const s1 = document.createElement('script');
-  s1.src = '/vendor/leaflet/leaflet.js';
+  s1.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
   s1.onload = () => {
     const s2 = document.createElement('script');
-    s2.src = '/vendor/leaflet/leaflet.markercluster.js';
+    s2.src = 'https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js';
     s2.onload = () => {
       initMap();
       if (allOperators.length) { buildMarkers(); updateMapMarkers(currentOps); }

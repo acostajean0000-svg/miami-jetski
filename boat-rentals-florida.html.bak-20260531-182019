@@ -1927,7 +1927,7 @@ function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(
   <button class="cmp-go" onclick="openCompare()">Compare →</button>
   <button class="cmp-clear" onclick="_cmp=[];localStorage.removeItem('cmp_ops_cat');document.querySelectorAll('.cmp-toggle').forEach(function(b){b.textContent='＋';b.classList.remove('selected');});renderCmpBar();">Clear</button>
 </div>
-<link href="/vendor/leaflet/leaflet.css" rel="stylesheet" / integrity="sha384-sHL9NAb7lN7rfvG5lfHpm643Xkcjzp4jFvuavGOndn6pjVqS6ny56CAt3nsEVT4H" crossorigin="anonymous">
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"/>
 <script>
 (function(){
   // ── Parse operator geo from JSON-LD ──
@@ -2064,7 +2064,7 @@ function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(
   function loadLeaflet(){
     if(leafletLoaded)return;leafletLoaded=true;
     var s=document.createElement('script');
-    s.src='/vendor/leaflet/leaflet.js';
+    s.src='https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
     s.onload=initMap;
     document.head.appendChild(s);
   }
