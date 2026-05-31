@@ -66,6 +66,7 @@ swap_preview.txt
 # --- Node / build tooling -----------------------------------
 node_modules/
 package-lock.json
+package.json
 
 # --- OS / editor metadata -----------------------------------
 .DS_Store

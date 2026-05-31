@@ -1,15 +1,15 @@
 {
-  "name": "miami-jetski-main",
+  "name": "miami-jetski-rent",
   "version": "1.0.0",
-  "description": "",
-  "main": "fetch_missing_images.js",
+  "private": true,
+  "description": "Static site for miamijetskiboatrentals.com — dev/scrape tooling only. Vercel does not install these.",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "scrape:fareharbor": "node scrape_fareharbor_photos.js",
+    "fetch:images": "node fetch_missing_images.js",
+    "fetch:links": "node fetch_missing_links.js"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
+  "license": "UNLICENSED",
+  "devDependencies": {
     "playwright": "^1.60.0"
   }
 }
