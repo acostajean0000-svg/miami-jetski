@@ -39,7 +39,7 @@
          Lazy-load after window.load OR on first user interaction so it doesn't compete with first paint. -->
     <script>(function(){var l=!1;function ld(){if(l)return;l=!0;var s=document.createElement('script');s.src='/slug-map.js';s.async=!0;document.head.appendChild(s);}if(document.readyState==='complete'){setTimeout(ld,50);}else{addEventListener('load',function(){setTimeout(ld,50);});}['scroll','mousemove','touchstart','click','keydown'].forEach(function(e){addEventListener(e,ld,{once:!0,passive:!0});});})();</script>
   <!-- Refstay referral capture — MUST load early to capture ?ref= before any URL cleaner -->
-  <script src="/referral.js"></script>
+  <script src="/referral.js" defer></script>
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#081525">
   <!-- GTM deferred past LCP to avoid forced reflow in critical window -->
