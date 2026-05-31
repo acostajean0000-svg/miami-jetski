@@ -1247,7 +1247,7 @@ function computeBestValue(ops) {
 const catEmoji = {jetski:'🏄',boat:'⛵',yacht:'🛳️',sunset:'🌅',airboat:'🐊',fishing:'🎣',watersports:'🌊',slingshot:'🏎️',exotic:'💎',flowers:'💐',jetcar:'🚗',golfcart:'🛺',atv:'🏍️',tour:'🗺️',aerial:'✈️',bikerental:'🚲',scooter:'🛵',snorkel:'🤿',kayak:'🛶',"villa":"🏡"};
 // Downsize Filestack images to card thumbnail width (400px) — reduces file size ~85%
 function thumbUrl(url) {
-  if (!url) return url;
+  if (!url) return "data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22/%3E";
   if (url.includes('cdn.filestackcontent.com')) {
     const base = 'https://cdn.filestackcontent.com/';
     const rest = url.slice(base.length);
@@ -1283,10 +1283,12 @@ const imgLoad = ci === 0 ? 'fetchpriority="high"' : ci === 1 ? 'loading="eager"'
   return `<div class="op-card cat-${op.cat}${inCmp?' in-compare':''}" id="card-${op.id}" onclick="cardClick('${op.id}')">
     <div class="op-card-img">
       <div class="img-shimmer" id="shim-${op.id}"></div>
-      <div class="img-fallback" id="fall-${op.id}" style="display:none"><div>${emoji}</div><span>${label}</span></div>
-      <img src="${thumbUrl(op.photo)}" alt="${esc(op.name)}" width="400" height="267" ${imgLoad}
+      ${op.photo ? 
+       `<div class="img-fallback" id="fall-${op.id}" style="display:none"><div>${emoji}</div><span>${label}</span></div>
+       <img src="${thumbUrl(op.photo)}" alt="${esc(op.name)}" width="400" height="267" ${imgLoad}
         onload="this.classList.add('loaded');var s=document.getElementById('shim-${op.id}');if(s)s.remove();"
-        onerror="this.style.display='none';var s=document.getElementById('shim-${op.id}');if(s)s.remove();var f=document.getElementById('fall-${op.id}');if(f){f.style.display='flex';f.style.background='${catColors[op.cat]}33';}">
+        onerror="this.style.display='none';var s=document.getElementById('shim-${op.id}');if(s)s.remove();var f=document.getElementById('fall-${op.id}');if(f){f.style.display='flex';f.style.background='${catColors[op.cat]}33';}">` 
+       : `<div class="img-fallback" id="fall-${op.id}" style="display:flex"><div>${emoji}</div><span>${label}</span></div>`}
       <span class="op-cat-badge">${catLabels[op.cat]}</span>
       <span class="op-best-badge">${bestValueSet.has(op.id) ? '🏆 Best Value' : (op.badge || '')}</span>
       <button class="fav-toggle${isFav?' saved':''}" id="fav-${op.id}" onclick="event.stopPropagation();toggleFav('${op.id}')" title="${isFav?'Remove from favorites':'Save to favorites'}" aria-label="${isFav?'Remove from favorites':'Save to favorites'}">${isFav?'❤️':'🤍'}</button>
@@ -1740,7 +1742,7 @@ function renderDeals() {
     const stars = op.rating ? `${'★'.repeat(Math.round(op.rating))}${'☆'.repeat(5-Math.round(op.rating))}` : '';
     return `
     <div class="deal-card">
-      <div class="deal-img"><img src="${thumbUrl(op.photo)}" alt="${esc(op.name)}" onerror="this.style.display='none'"></div>
+      <div class="deal-img">${op.photo ? `<img src="${thumbUrl(op.photo)}" alt="${esc(op.name)}" onerror="this.style.display='none'">` : `<div style="display:flex;align-items:center;justify-content:center;height:100%;font-size:2rem;background:rgba(0,210,255,.06)">${catEmoji[op.cat]||'🌊'}</div>`}</div>
       <div class="deal-body">
         <div class="deal-name">${esc(op.name)}</div>
         <div class="deal-zone">📍 ${esc(op.zl)}</div>
