@@ -1,0 +1,7261 @@
+{
+  "kokomocharters": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Kokomo Yachts",
+    "zombie": false,
+    "ops": 87
+  },
+  "upgradevacations": {
+    "status": 200,
+    "itemCount": 16,
+    "companyName": "Upgrade Vacations",
+    "zombie": false,
+    "ops": 76
+  },
+  "alemantravelagency": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Aleman Travel Agency",
+    "zombie": false,
+    "ops": 65
+  },
+  "mydeeplife": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Deep Life",
+    "zombie": false,
+    "ops": 61
+  },
+  "partytickets": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Party Tickets",
+    "zombie": false,
+    "ops": 52
+  },
+  "fabulousbuses": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Fabulous Buses",
+    "zombie": false,
+    "ops": 50
+  },
+  "runnersadventures": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Runners Adventures",
+    "zombie": false,
+    "ops": 46
+  },
+  "allwaterexcursionsmarina": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "All Water Excursions",
+    "zombie": false,
+    "ops": 45
+  },
+  "amigotourscancunusd": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Amigo Tours Cancún",
+    "zombie": false,
+    "ops": 43
+  },
+  "sta-sail": {
+    "status": 200,
+    "itemCount": 24,
+    "companyName": "St Augustine Sailing",
+    "zombie": false,
+    "ops": 35
+  },
+  "100miami": {
+    "status": 200,
+    "itemCount": 48,
+    "companyName": "100 Miami Luxury Rentals",
+    "zombie": false,
+    "ops": 29
+  },
+  "alwaysdiving": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Always Diving & Water Sports",
+    "zombie": false,
+    "ops": 31
+  },
+  "bikethebeachpcb": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Bike the Beach",
+    "zombie": false,
+    "ops": 28
+  },
+  "driftersrentals": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Drifters Rentals LLC",
+    "zombie": false,
+    "ops": 27
+  },
+  "destinprivateyachts": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Destin Private Yachts",
+    "zombie": false,
+    "ops": 26
+  },
+  "sunsetwatersportskeywest": {
+    "status": 200,
+    "itemCount": 25,
+    "companyName": "Sunset Watersports",
+    "zombie": false,
+    "ops": 26
+  },
+  "sunserved": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Sun Served",
+    "zombie": false,
+    "ops": 25
+  },
+  "monarcvip": {
+    "status": 200,
+    "itemCount": 28,
+    "companyName": "Monarc VIP",
+    "zombie": false,
+    "ops": 25
+  },
+  "evergladesholidaypark": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Everglades Holiday Park",
+    "zombie": false,
+    "ops": 23
+  },
+  "305toursandrentals": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "305 Tours & Rentals",
+    "zombie": false,
+    "ops": 24
+  },
+  "vip-inmiami": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "VIP IN MIAMI",
+    "zombie": false,
+    "ops": 22
+  },
+  "southfloridatrikketours": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "South Florida Trikke Tours",
+    "zombie": false,
+    "ops": 23
+  },
+  "caribbeanlakepark-usd": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Caribbean Lake Park",
+    "zombie": false,
+    "ops": 21
+  },
+  "marinajungletouradventure": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Marina Jungle Tour Adventure",
+    "zombie": false,
+    "ops": 21
+  },
+  "traditionfishingcharters": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Tradition Charters",
+    "zombie": false,
+    "ops": 20
+  },
+  "us2u": {
+    "status": 200,
+    "itemCount": 19,
+    "companyName": "US2U",
+    "zombie": false,
+    "ops": 20
+  },
+  "leigreeting": {
+    "status": 200,
+    "itemCount": 27,
+    "companyName": "LeiGreeting.com",
+    "zombie": false,
+    "ops": 20
+  },
+  "fortlauderdaleboatrentals": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Best Boat Club and Rentals",
+    "zombie": false,
+    "ops": 18
+  },
+  "flamingoyachtcharters": {
+    "status": 200,
+    "itemCount": 22,
+    "companyName": "Flamingo Yacht Charters",
+    "zombie": false,
+    "ops": 18
+  },
+  "fishheadquarters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Fishing Headquarters",
+    "zombie": false,
+    "ops": 18
+  },
+  "hawaiireisetipps": {
+    "status": 200,
+    "itemCount": 29,
+    "companyName": "DanielsHawaii",
+    "zombie": false,
+    "ops": 17
+  },
+  "destinpontooncharters": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Destin Pontoon Charters",
+    "zombie": false,
+    "ops": 18
+  },
+  "100proboats": {
+    "status": 200,
+    "itemCount": 25,
+    "companyName": "100 Pro Boats",
+    "zombie": false,
+    "ops": 16
+  },
+  "sfjetskirentals": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Jetski Rentals of South Florida",
+    "zombie": false,
+    "ops": 16
+  },
+  "see-manatees": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Manatee Sightseeing and Wildlife Adventures",
+    "zombie": false,
+    "ops": 15
+  },
+  "aquariusboatrental": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Aquarius Boat Rental",
+    "zombie": false,
+    "ops": 15
+  },
+  "adventuresinflorida": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Adventures in Florida",
+    "zombie": false,
+    "ops": 15
+  },
+  "paradiseadventures2": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Paradise Adventures",
+    "zombie": false,
+    "ops": 15
+  },
+  "evergladesviptours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Everglades VIP Tours",
+    "zombie": false,
+    "ops": 14
+  },
+  "baymingo": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "Baymingo",
+    "zombie": false,
+    "ops": 14
+  },
+  "fortlauderdale-doctorjetskirentals": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Doctor Jet Ski - Fort Lauderdale",
+    "zombie": false,
+    "ops": 14
+  },
+  "visitpalmbeach": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Visit Palm Beach",
+    "zombie": false,
+    "ops": 14
+  },
+  "fishnfl": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Fish N FL",
+    "zombie": false,
+    "ops": 14
+  },
+  "threebrothersboards": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Three Brothers Boards Paddle Board Tours",
+    "zombie": false,
+    "ops": 14
+  },
+  "lagoonpontoons": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Lagoon Pontoons",
+    "zombie": false,
+    "ops": 14
+  },
+  "sarasotajunglegardens": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Sarasota Jungle Gardens",
+    "zombie": false,
+    "ops": 14
+  },
+  "capecrossing": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Cape Crossing Boat Rentals",
+    "zombie": false,
+    "ops": 14
+  },
+  "jollysailing": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Jolly Sailing",
+    "zombie": false,
+    "ops": 14
+  },
+  "thewatertraveler": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "The Water Traveler LLC",
+    "zombie": false,
+    "ops": 14
+  },
+  "thewakeboardcoach": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Briscoe's Ride Center Inc.",
+    "zombie": false,
+    "ops": 13
+  },
+  "solanocycle": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Solano Cycle Rentals",
+    "zombie": false,
+    "ops": 13
+  },
+  "bruschiboatrental": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Bruschi Boat Rental",
+    "zombie": false,
+    "ops": 13
+  },
+  "funboattours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Fun Boat Tours",
+    "zombie": false,
+    "ops": 13
+  },
+  "walksnyc": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Walks NYC",
+    "zombie": false,
+    "ops": 13
+  },
+  "ho2pensacola": {
+    "status": 200,
+    "itemCount": 16,
+    "companyName": "Frisky Mermaid Dolphin Tours & Boat Rentals",
+    "zombie": false,
+    "ops": 13
+  },
+  "yourjamaicantourguide": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Your Jamaican Tour Guide",
+    "zombie": false,
+    "ops": 13
+  },
+  "indulgeexperiences": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Indulge Experiences",
+    "zombie": false,
+    "ops": 13
+  },
+  "phptours": {
+    "status": 200,
+    "itemCount": 19,
+    "companyName": "Pacific Historic Parks",
+    "zombie": false,
+    "ops": 13
+  },
+  "funrentals-staugustine": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Fun Rentals St. Augustine",
+    "zombie": false,
+    "ops": 12
+  },
+  "donchingoncancun": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Don Chingon Cancun",
+    "zombie": false,
+    "ops": 12
+  },
+  "bluemoonkayak": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Blue Moon Outdoor Center",
+    "zombie": false,
+    "ops": 12
+  },
+  "cancuntequilatasting": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Cancun Tequila Tasting",
+    "zombie": false,
+    "ops": 12
+  },
+  "makersair": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Makers Air",
+    "zombie": false,
+    "ops": 12
+  },
+  "lowtidetours": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Low Tide Tours",
+    "zombie": false,
+    "ops": 12
+  },
+  "goretro": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Go Retro, Inc",
+    "zombie": false,
+    "ops": 12
+  },
+  "gone2seaboatrentals": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Gone2Sea Boat Rentals",
+    "zombie": false,
+    "ops": 12
+  },
+  "jungleervairboatworld": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Jungle Erv's Airboat Tours",
+    "zombie": false,
+    "ops": 12
+  },
+  "diveoahu": {
+    "status": 200,
+    "itemCount": 19,
+    "companyName": "Dive Oahu",
+    "zombie": false,
+    "ops": 12
+  },
+  "furycat": {
+    "status": 200,
+    "itemCount": 32,
+    "companyName": "Fury Water Adventures",
+    "zombie": false,
+    "ops": 12
+  },
+  "anastasiawatersports": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Anastasia Watersports",
+    "zombie": false,
+    "ops": 11
+  },
+  "floridawatertour": {
+    "status": 200,
+    "itemCount": 18,
+    "companyName": "Florida Water Tours",
+    "zombie": false,
+    "ops": 11
+  },
+  "islanddiverscozumel": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Island Divers Cozumel",
+    "zombie": false,
+    "ops": 11
+  },
+  "toplinewatersports": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Topline Watersports",
+    "zombie": false,
+    "ops": 11
+  },
+  "miamiaquatours": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Miami Aqua Tours",
+    "zombie": false,
+    "ops": 11
+  },
+  "labellavitamalficharter": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "La Bellavita Charter di Francesco Ferrara",
+    "zombie": false,
+    "ops": 11
+  },
+  "captjoeydcharters": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Captain Joey D Charters and Boat Rentals",
+    "zombie": false,
+    "ops": 11
+  },
+  "pensacolahistoryandhauntings": {
+    "status": 200,
+    "itemCount": 19,
+    "companyName": "Pensacola History and Haunting: History Tours, Ghost Tours, Scavenger Hunts, and Events",
+    "zombie": false,
+    "ops": 11
+  },
+  "pedegoelectricbikes-staugustine": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Island Life St. Augustine",
+    "zombie": false,
+    "ops": 11
+  },
+  "sunsetsailkeywest": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Sunset Sail Key West",
+    "zombie": false,
+    "ops": 11
+  },
+  "distractionyachts": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Distraction Yachts",
+    "zombie": false,
+    "ops": 10
+  },
+  "loggerheadbeachservice": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Loggerhead Beach Services",
+    "zombie": false,
+    "ops": 10
+  },
+  "vrxtra-west-tampa": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "VRXtra West Tampa",
+    "zombie": false,
+    "ops": 10
+  },
+  "marcoislandboatcharters": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Sand Dollar Boat Tours",
+    "zombie": false,
+    "ops": 10
+  },
+  "siestakeybikeandkayak": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Siesta Key Bike & Kayak",
+    "zombie": false,
+    "ops": 10
+  },
+  "skmarina": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Safe Harbor Siesta Key Marina",
+    "zombie": false,
+    "ops": 10
+  },
+  "boogieswatersports": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Boogies Watersports",
+    "zombie": false,
+    "ops": 10
+  },
+  "panhandlefishingcharters": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Panhandle Fishing Charters",
+    "zombie": false,
+    "ops": 10
+  },
+  "saltyflamesbonfires": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Salty Flame Bonfires",
+    "zombie": false,
+    "ops": 10
+  },
+  "lagunasadventurepark": {
+    "status": 200,
+    "itemCount": 16,
+    "companyName": "Lagunas Adventure Park",
+    "zombie": false,
+    "ops": 10
+  },
+  "pensacolaluxurycharters": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Pensacola Luxury Charters",
+    "zombie": false,
+    "ops": 10
+  },
+  "cocoabeachcatamaran": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "Cocoa Beach Catamaran LLC",
+    "zombie": false,
+    "ops": 10
+  },
+  "canaveralkings": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Canaveral Kings Sport Fishing Charters",
+    "zombie": false,
+    "ops": 10
+  },
+  "ichetuckneesprings": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "Ichetucknee Springs",
+    "zombie": false,
+    "ops": 10
+  },
+  "kailuasailboards": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Kailua Beach Adventures",
+    "zombie": false,
+    "ops": 10
+  },
+  "wasabi": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Wasabi Tours Hawaii",
+    "zombie": false,
+    "ops": 10
+  },
+  "fly-keywest": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Fly-KeyWest",
+    "zombie": false,
+    "ops": 10
+  },
+  "otterpaddleorlando": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Otter Paddle Orlando",
+    "zombie": false,
+    "ops": 9
+  },
+  "tpashuttlesllc": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "TPA Shuttles LLC",
+    "zombie": false,
+    "ops": 9
+  },
+  "ancientcityslingshot": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Ancient City Slingshots",
+    "zombie": false,
+    "ops": 9
+  },
+  "pinkpartyboat": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Pink Cat Punta Cana",
+    "zombie": false,
+    "ops": 9
+  },
+  "chacchimarina": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Chac Chi Marina",
+    "zombie": false,
+    "ops": 9
+  },
+  "oletariveradventures": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Oleta River Adventures",
+    "zombie": false,
+    "ops": 9
+  },
+  "byobpartypontoon": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "BYOB Party Pontoon",
+    "zombie": false,
+    "ops": 9
+  },
+  "reelseaadventures": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Reel Sea Adventures LLC",
+    "zombie": false,
+    "ops": 9
+  },
+  "fathomcharters": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Fathom Charters",
+    "zombie": false,
+    "ops": 9
+  },
+  "keyculinarytours": {
+    "status": 200,
+    "itemCount": 30,
+    "companyName": "Key Culinary Tours",
+    "zombie": false,
+    "ops": 9
+  },
+  "sarasotakayakrentals": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Sarasota Kayak Rentals",
+    "zombie": false,
+    "ops": 9
+  },
+  "saltygolfcarts": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Salty Golf Carts",
+    "zombie": false,
+    "ops": 9
+  },
+  "panhandlehelicopter": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Panhandle Helicopter",
+    "zombie": false,
+    "ops": 9
+  },
+  "tikiinternational": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Tiki International",
+    "zombie": false,
+    "ops": 9
+  },
+  "niuhidivecharters": {
+    "status": 200,
+    "itemCount": 31,
+    "companyName": "Niuhi Dive Charters",
+    "zombie": false,
+    "ops": 9
+  },
+  "saintaugustinetransfer": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Saint Augustine Transfer Company Inc",
+    "zombie": false,
+    "ops": 9
+  },
+  "epicpaddleadventures": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Epic Paddle Adventures",
+    "zombie": false,
+    "ops": 9
+  },
+  "aharrowingescape": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "A Harrowing Escape",
+    "zombie": false,
+    "ops": 9
+  },
+  "lakefairviewmarina": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Lake Fairview Marina",
+    "zombie": false,
+    "ops": 9
+  },
+  "enoatours": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "E Noa Corporation",
+    "zombie": false,
+    "ops": 9
+  },
+  "seascootersnorkeling": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "My Splash LLC",
+    "zombie": false,
+    "ops": 9
+  },
+  "manacruises": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "MANA Cruises",
+    "zombie": false,
+    "ops": 9
+  },
+  "hawaiibystorm": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Hawaii By Storm Tours, LLC",
+    "zombie": false,
+    "ops": 9
+  },
+  "mermaidcharterskeywest": {
+    "status": 200,
+    "itemCount": 18,
+    "companyName": "Mermaid Charters Key West",
+    "zombie": false,
+    "ops": 9
+  },
+  "restlessnative": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Restless Native Charters",
+    "zombie": false,
+    "ops": 9
+  },
+  "upthekeys": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Up The Keys",
+    "zombie": false,
+    "ops": 9
+  },
+  "pirateadventurecharters": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Pirate Adventure Charters",
+    "zombie": false,
+    "ops": 9
+  },
+  "seasideadventures": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Seaside Adventures",
+    "zombie": false,
+    "ops": 8
+  },
+  "interliv": {
+    "status": 200,
+    "itemCount": 20,
+    "companyName": "Interliv Travel",
+    "zombie": false,
+    "ops": 8
+  },
+  "whalesharktourcancun-mxn": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Whale Shark Tour Cancun",
+    "zombie": false,
+    "ops": 8
+  },
+  "mexicowhaleshark-mxn": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Mexico Whale Shark",
+    "zombie": false,
+    "ops": 8
+  },
+  "wynwoodartwalk": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Wynwood Art Walk",
+    "zombie": false,
+    "ops": 8
+  },
+  "keen-fly": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Keen Fly",
+    "zombie": false,
+    "ops": 8
+  },
+  "ezebike": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Ezebike",
+    "zombie": false,
+    "ops": 8
+  },
+  "ftlauderdaleboatrental": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Fort Lauderdale Boat Rental",
+    "zombie": false,
+    "ops": 8
+  },
+  "heliaf": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "flyVENTURE, LLC",
+    "zombie": false,
+    "ops": 8
+  },
+  "foundaride": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "FOUND-A-RIDE",
+    "zombie": false,
+    "ops": 8
+  },
+  "gofishnaples": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Go Fish Naples",
+    "zombie": false,
+    "ops": 8
+  },
+  "coastandcurrent": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Coast and Current",
+    "zombie": false,
+    "ops": 8
+  },
+  "ultimatekayaksrq": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Ultimate Kayak SRQ",
+    "zombie": false,
+    "ops": 8
+  },
+  "southernstarandbuccaneercruises": {
+    "status": 200,
+    "itemCount": 16,
+    "companyName": "Southern Star and Buccaneer Cruises",
+    "zombie": false,
+    "ops": 8
+  },
+  "doublefunwatersports-dockside": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Double Fun Pontoon Rentals",
+    "zombie": false,
+    "ops": 8
+  },
+  "fundestinadventures": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "FunDestin Adventures",
+    "zombie": false,
+    "ops": 8
+  },
+  "reellegendfishing": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Reel Legend",
+    "zombie": false,
+    "ops": 8
+  },
+  "discountwatersportsdestin": {
+    "status": 200,
+    "itemCount": 16,
+    "companyName": "Happy's Watersports",
+    "zombie": false,
+    "ops": 8
+  },
+  "destinweddingsandevents": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Beachy Bonfires & Events",
+    "zombie": false,
+    "ops": 8
+  },
+  "islandtimesailing": {
+    "status": 200,
+    "itemCount": 16,
+    "companyName": "Island Time Sailing",
+    "zombie": false,
+    "ops": 8
+  },
+  "captainblacksfishing": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Captain Black's Fishing",
+    "zombie": false,
+    "ops": 8
+  },
+  "entertainercharter": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Entertainer Charters",
+    "zombie": false,
+    "ops": 8
+  },
+  "cruisecocoa": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Cruise Cocoa",
+    "zombie": false,
+    "ops": 8
+  },
+  "allguestservices": {
+    "status": 200,
+    "itemCount": 91,
+    "companyName": "All Guest Services",
+    "zombie": false,
+    "ops": 8
+  },
+  "orlandohelitours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "International Heli-Tours",
+    "zombie": false,
+    "ops": 8
+  },
+  "jupebikerentals": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Jup Ebike Rentals",
+    "zombie": false,
+    "ops": 8
+  },
+  "captainjacksairboattours": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Captain Jack's Airboat Tours",
+    "zombie": false,
+    "ops": 8
+  },
+  "experiencemauitours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Experience Hawaii",
+    "zombie": false,
+    "ops": 8
+  },
+  "uniquehawaiiexperience": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Unique Maui Tours",
+    "zombie": false,
+    "ops": 8
+  },
+  "polyad-activities": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Polynesian Adventure Activities",
+    "zombie": false,
+    "ops": 8
+  },
+  "hawaiibackroad": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Big Island Backroad Adventures LLC",
+    "zombie": false,
+    "ops": 8
+  },
+  "activeoahutours": {
+    "status": 200,
+    "itemCount": 18,
+    "companyName": "Active Oahu Tours",
+    "zombie": false,
+    "ops": 8
+  },
+  "adventuresonwater": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Key West Jet Ski Adventures",
+    "zombie": false,
+    "ops": 8
+  },
+  "sailawaykeywest": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Sail Away Key West",
+    "zombie": false,
+    "ops": 8
+  },
+  "reelbluecollarfishingcharters": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Reel Blue Collar Fishing Charters",
+    "zombie": false,
+    "ops": 8
+  },
+  "prideofmaui": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Pride of Maui",
+    "zombie": false,
+    "ops": 8
+  },
+  "dirtydollyfishcompany": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Dirty Dolly Fish Company",
+    "zombie": false,
+    "ops": 7
+  },
+  "altamartrade": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Altamar Trade LLC",
+    "zombie": false,
+    "ops": 7
+  },
+  "unlimitedbiking": {
+    "status": 200,
+    "itemCount": 55,
+    "companyName": "Unlimited Biking",
+    "zombie": false,
+    "ops": 7
+  },
+  "aquablueadventures": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "AquaBlue Adventures",
+    "zombie": false,
+    "ops": 7
+  },
+  "sunsetcharterservices": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Sunset Charter Services",
+    "zombie": false,
+    "ops": 7
+  },
+  "australiansurfingadventures": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Australian Surfing Adventures",
+    "zombie": false,
+    "ops": 7
+  },
+  "southfloridaslingshotrentals": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "South Florida Slingshot Rentals",
+    "zombie": false,
+    "ops": 7
+  },
+  "thetampariverwalkrentals": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "The Tampa Riverwalk Rentals",
+    "zombie": false,
+    "ops": 7
+  },
+  "sunsportsmaine": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Sun Sports",
+    "zombie": false,
+    "ops": 7
+  },
+  "everglades-boattours": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "LiveNow, Inc.",
+    "zombie": false,
+    "ops": 7
+  },
+  "surfitusa": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "SURFit USA",
+    "zombie": false,
+    "ops": 7
+  },
+  "offthehookboating": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Off the Hook Boating",
+    "zombie": false,
+    "ops": 7
+  },
+  "barefoottiki": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Barefoot Tiki LLC",
+    "zombie": false,
+    "ops": 7
+  },
+  "fishingsarasotaflorida": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Tearin’ Em Up! Fishing Charters L.L.C.",
+    "zombie": false,
+    "ops": 7
+  },
+  "legacytrailbikerentals": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Legacy Trail Bike Rentals",
+    "zombie": false,
+    "ops": 7
+  },
+  "emeraldislandcharters": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Emerald Island Charters",
+    "zombie": false,
+    "ops": 7
+  },
+  "destinpoleparties": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Destin Pole Parties",
+    "zombie": false,
+    "ops": 7
+  },
+  "streetlegalgolfcartrentals": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Street Legal Golf Cart Rentals",
+    "zombie": false,
+    "ops": 7
+  },
+  "vitaminseasailing": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Vitamin Sea Sailing Charters",
+    "zombie": false,
+    "ops": 7
+  },
+  "ohanawateradventures": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "Ohana Water Adventures",
+    "zombie": false,
+    "ops": 7
+  },
+  "saltyfinstours": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Salty Fins Dolphin & Snorkeling Tours",
+    "zombie": false,
+    "ops": 7
+  },
+  "ussoriskanydiver": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "H2O Below Dive Charters",
+    "zombie": false,
+    "ops": 7
+  },
+  "surfwithcandice": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Surf with Candice LLC",
+    "zombie": false,
+    "ops": 7
+  },
+  "ghostaugustine": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "GhoSt Augustine",
+    "zombie": false,
+    "ops": 7
+  },
+  "cocoabeachhelicopters": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Cocoa Beach Helicopters",
+    "zombie": false,
+    "ops": 7
+  },
+  "adayawaykayaktours": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "A Day Away Kayak Tours",
+    "zombie": false,
+    "ops": 7
+  },
+  "calypsokayaking": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Calypso Kayaking",
+    "zombie": false,
+    "ops": 7
+  },
+  "wickedbeachrental": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Wicked Pineapple",
+    "zombie": false,
+    "ops": 7
+  },
+  "konacloudforest": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Kona Cloud Forest Sanctuary",
+    "zombie": false,
+    "ops": 7
+  },
+  "stroke-of-art": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Stroke of Art",
+    "zombie": false,
+    "ops": 7
+  },
+  "konaoceanadventures": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Kona Ocean Adventures",
+    "zombie": false,
+    "ops": 7
+  },
+  "bikehawaii": {
+    "status": 200,
+    "itemCount": 21,
+    "companyName": "Bike Hawaii",
+    "zombie": false,
+    "ops": 7
+  },
+  "dangercharters": {
+    "status": 200,
+    "itemCount": 16,
+    "companyName": "Danger Charters",
+    "zombie": false,
+    "ops": 7
+  },
+  "keywestpromotions": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Key West Promotions",
+    "zombie": false,
+    "ops": 7
+  },
+  "mysticbluesailingadventures": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Mystic Blue Sailing Adventures",
+    "zombie": false,
+    "ops": 7
+  },
+  "snuba-keywest": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Snuba of Key West",
+    "zombie": false,
+    "ops": 7
+  },
+  "silvertidecharters": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Silver Tide Charters",
+    "zombie": false,
+    "ops": 7
+  },
+  "atvamazing": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Atv Amazing",
+    "zombie": false,
+    "ops": 6
+  },
+  "caribeangolden": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Golden Caribbean Travel",
+    "zombie": false,
+    "ops": 6
+  },
+  "cityarttoursmexico": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "City Art Tours Mexico",
+    "zombie": false,
+    "ops": 6
+  },
+  "skytoursmiami": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Sky Tours Miami",
+    "zombie": false,
+    "ops": 6
+  },
+  "elitejetski": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Miami Elite Jetski & Yacht Rentals",
+    "zombie": false,
+    "ops": 6
+  },
+  "salt-tours": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "Salt Luxury Miami",
+    "zombie": false,
+    "ops": 6
+  },
+  "soflowateradventures": {
+    "status": 200,
+    "itemCount": 18,
+    "companyName": "SoFlo Water Adventures",
+    "zombie": false,
+    "ops": 6
+  },
+  "watersports-paradise": {
+    "status": 200,
+    "itemCount": 16,
+    "companyName": "Miami Watersports Paradise",
+    "zombie": false,
+    "ops": 6
+  },
+  "seaexperience": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Sea Experience",
+    "zombie": false,
+    "ops": 6
+  },
+  "rentaboatfortlauderdale": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Rent A Boat Ft. Lauderdale",
+    "zombie": false,
+    "ops": 6
+  },
+  "flyflair": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Flair Air Tours LLC",
+    "zombie": false,
+    "ops": 6
+  },
+  "fortlauderdaleboatrentalwithcaptain": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Fort Lauderdale Boat Rentals with Captain",
+    "zombie": false,
+    "ops": 6
+  },
+  "pbebike": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Palm Beach Ebike Rentals",
+    "zombie": false,
+    "ops": 6
+  },
+  "xelaexpeditions": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "XELA Expeditions",
+    "zombie": false,
+    "ops": 6
+  },
+  "tampabayboatingadventures": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Tampa Bay Boating Adventures",
+    "zombie": false,
+    "ops": 6
+  },
+  "mangroveexplorers": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Mangrove Explorers",
+    "zombie": false,
+    "ops": 6
+  },
+  "islandgirltours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Island Girl Tours",
+    "zombie": false,
+    "ops": 6
+  },
+  "discoversarasotatours": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Discover Sarasota Tours",
+    "zombie": false,
+    "ops": 6
+  },
+  "siestakeywatersports": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Siesta Key Watersports",
+    "zombie": false,
+    "ops": 6
+  },
+  "robinhoodrentals": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Robin Hood Rentals",
+    "zombie": false,
+    "ops": 6
+  },
+  "perfectplaypartyrentals": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Perfect Play Party Rentals",
+    "zombie": false,
+    "ops": 6
+  },
+  "crabislandguideservice": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Crab Island Tiki Tours",
+    "zombie": false,
+    "ops": 6
+  },
+  "bluewaterpontooncharters": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Bluewater Pontoon Charters",
+    "zombie": false,
+    "ops": 6
+  },
+  "ahibcharters": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Ahi B Charters",
+    "zombie": false,
+    "ops": 6
+  },
+  "destinpartyboatfishing": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Destin Party Boat Fishing",
+    "zombie": false,
+    "ops": 6
+  },
+  "destinhelicopters": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Destin Helicopters",
+    "zombie": false,
+    "ops": 6
+  },
+  "happylifecruises": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Happy Cruises LLC",
+    "zombie": false,
+    "ops": 6
+  },
+  "charterfishdestin": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Destin Harbor Charter Service",
+    "zombie": false,
+    "ops": 6
+  },
+  "charterboatdestination": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Charter Boat Destination",
+    "zombie": false,
+    "ops": 6
+  },
+  "bikepcb": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Bike PCB",
+    "zombie": false,
+    "ops": 6
+  },
+  "toptobottomfishing": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Top to Bottom Fishing",
+    "zombie": false,
+    "ops": 6
+  },
+  "islandtikitours": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Island Tiki Tours",
+    "zombie": false,
+    "ops": 6
+  },
+  "lagunaspensacolabeach": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Radical Rides",
+    "zombie": false,
+    "ops": 6
+  },
+  "fishhousecharters": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Fish House Charters LLC",
+    "zombie": false,
+    "ops": 6
+  },
+  "sixshootercharter": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Six Shooter Dive Charters",
+    "zombie": false,
+    "ops": 6
+  },
+  "keysailing": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Key Sailing",
+    "zombie": false,
+    "ops": 6
+  },
+  "tikilacruise": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Jax Cruise",
+    "zombie": false,
+    "ops": 6
+  },
+  "rideandtour": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Pineapple Ride & Tour",
+    "zombie": false,
+    "ops": 6
+  },
+  "oldcitybeertours": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "St. Augustine Experiences",
+    "zombie": false,
+    "ops": 6
+  },
+  "thepandatours": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Panda Tours",
+    "zombie": false,
+    "ops": 6
+  },
+  "bradyyaks": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Brady-Yaks Tours and Rentals LLC",
+    "zombie": false,
+    "ops": 6
+  },
+  "cocoabeachtransfers": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Cocoa Beach Transfers",
+    "zombie": false,
+    "ops": 6
+  },
+  "catchdogfishing": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Catch Dog Sport Fishing Charters",
+    "zombie": false,
+    "ops": 6
+  },
+  "revolutionoffroad": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Revolution Adventures",
+    "zombie": false,
+    "ops": 6
+  },
+  "originalorlando-bbmamericallc": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Original Orlando Tours",
+    "zombie": false,
+    "ops": 6
+  },
+  "everglades": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Everglades Alligator Farm",
+    "zombie": false,
+    "ops": 6
+  },
+  "hiprivatetours": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "HI Private Tours",
+    "zombie": false,
+    "ops": 6
+  },
+  "in2scuba": {
+    "status": 200,
+    "itemCount": 24,
+    "companyName": "In2Scuba",
+    "zombie": false,
+    "ops": 6
+  },
+  "waikai-atthelineup": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Wai Kai",
+    "zombie": false,
+    "ops": 6
+  },
+  "chiefsluau": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Chief's Luau",
+    "zombie": false,
+    "ops": 6
+  },
+  "boatrentalsinkeywest": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Fun in the Sun Charters & Boat Rentals",
+    "zombie": false,
+    "ops": 6
+  },
+  "casualmondaycharters": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Casual Monday Charters",
+    "zombie": false,
+    "ops": 6
+  },
+  "goodtimeskeywest": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Good Times Key West",
+    "zombie": false,
+    "ops": 6
+  },
+  "mile0rentals": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Mile 0 Rentals",
+    "zombie": false,
+    "ops": 6
+  },
+  "blusolcharters": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Blusol Charters",
+    "zombie": false,
+    "ops": 6
+  },
+  "jonesairandsea": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Jones Brothers & Co",
+    "zombie": false,
+    "ops": 5
+  },
+  "305offroading": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "305 Offroading",
+    "zombie": false,
+    "ops": 5
+  },
+  "staugustinelandandseatours": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "St. Augustine Land and Sea Tours LLC",
+    "zombie": false,
+    "ops": 5
+  },
+  "staugustinebrewerytours": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "St. Augustine Brewery Tours, LLC",
+    "zombie": false,
+    "ops": 5
+  },
+  "thetastingtours": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "The Tasting Tours",
+    "zombie": false,
+    "ops": 5
+  },
+  "jetskicancun": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Jet Ski Cancun",
+    "zombie": false,
+    "ops": 5
+  },
+  "thecavebikepark": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "The Cave Bike Park",
+    "zombie": false,
+    "ops": 5
+  },
+  "miamiatvrentals": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Miami ATV Rentals",
+    "zombie": false,
+    "ops": 5
+  },
+  "miamipartyboats": {
+    "status": 200,
+    "itemCount": 45,
+    "companyName": "South Beach Party Boats L.L.C.",
+    "zombie": false,
+    "ops": 5
+  },
+  "newageproductions-hom": {
+    "status": 200,
+    "itemCount": 49,
+    "companyName": "New Age Productions - HOM",
+    "zombie": false,
+    "ops": 5
+  },
+  "goldcoastdivecentre": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Gold Coast Dive Centre",
+    "zombie": false,
+    "ops": 5
+  },
+  "happycruisesmiami": {
+    "status": 200,
+    "itemCount": 18,
+    "companyName": "Happy Cruises Miami",
+    "zombie": false,
+    "ops": 5
+  },
+  "divaroyale": {
+    "status": 200,
+    "itemCount": 48,
+    "companyName": "Diva Royale Show",
+    "zombie": false,
+    "ops": 5
+  },
+  "calypsosealife": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Calypso Sea Life",
+    "zombie": false,
+    "ops": 5
+  },
+  "searocketftlauderdale": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Sea Rocket Fort Lauderdale",
+    "zombie": false,
+    "ops": 5
+  },
+  "unchartedwatersnmb": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Uncharted Waters",
+    "zombie": false,
+    "ops": 5
+  },
+  "thegrove_hughtaylorbirch": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "The Grove at Hugh Taylor Birch State Park",
+    "zombie": false,
+    "ops": 5
+  },
+  "lauderdaleadventures": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Lauderdale Adventures",
+    "zombie": false,
+    "ops": 5
+  },
+  "breezytiki": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Breezy Tiki, LLC",
+    "zombie": false,
+    "ops": 5
+  },
+  "westpalmbeachfoodtour": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "West Palm Beach Food Tours",
+    "zombie": false,
+    "ops": 5
+  },
+  "westpalmbeachescaperooms": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "West Palm Beach Escape Rooms",
+    "zombie": false,
+    "ops": 5
+  },
+  "selfiewrldtampa": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Selfie WRLD Tampa",
+    "zombie": false,
+    "ops": 5
+  },
+  "fatbeetfarm": {
+    "status": 200,
+    "itemCount": 38,
+    "companyName": "Fat Beet Farm",
+    "zombie": false,
+    "ops": 5
+  },
+  "piratewatertaxi": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Pirate Water Taxi",
+    "zombie": false,
+    "ops": 5
+  },
+  "sailnaples": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Island Sailing",
+    "zombie": false,
+    "ops": 5
+  },
+  "evergladescityboatrental": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Everglades City Boat Rental",
+    "zombie": false,
+    "ops": 5
+  },
+  "holymackerelcharters": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Holy Mackerel Charters LLC",
+    "zombie": false,
+    "ops": 5
+  },
+  "napoliturista": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Napoli Turista",
+    "zombie": false,
+    "ops": 5
+  },
+  "bonitaboattours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Bonita Boat Tours",
+    "zombie": false,
+    "ops": 5
+  },
+  "gulfbreezecharters": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Gulf Breeze Charters",
+    "zombie": false,
+    "ops": 5
+  },
+  "itsjetskitime": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "It's JetSki Time",
+    "zombie": false,
+    "ops": 5
+  },
+  "causewaymarina": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Causeway Marina",
+    "zombie": false,
+    "ops": 5
+  },
+  "keysofitaly": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Keys of Italy",
+    "zombie": false,
+    "ops": 5
+  },
+  "sunsetfoodtours-sarasota": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Sunset Food Tours - Sarasota",
+    "zombie": false,
+    "ops": 5
+  },
+  "partybargecharters": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Party Barge Charters",
+    "zombie": false,
+    "ops": 5
+  },
+  "fourkeyscharters": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Four Keys Charters",
+    "zombie": false,
+    "ops": 5
+  },
+  "sunchaserrentals": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Sunchaser Rentals",
+    "zombie": false,
+    "ops": 5
+  },
+  "destininshoreguides": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Destin Inshore Guides",
+    "zombie": false,
+    "ops": 5
+  },
+  "sunshinedestin-flipperssnorkeladventure": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Destin Dolphin Cruise",
+    "zombie": false,
+    "ops": 5
+  },
+  "havefuncharters": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Have Fun Charters",
+    "zombie": false,
+    "ops": 5
+  },
+  "destinbonfirecompany": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Destin Bonfire Company",
+    "zombie": false,
+    "ops": 5
+  },
+  "bestdestinfishingcharter": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Fish-In-Daze",
+    "zombie": false,
+    "ops": 5
+  },
+  "huntressfishingcharter": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Huntress Fishing Charter",
+    "zombie": false,
+    "ops": 5
+  },
+  "charterboatphoenix": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Charter Boat Phoenix",
+    "zombie": false,
+    "ops": 5
+  },
+  "brochinexpeditions": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Ultimate Outdoors TV",
+    "zombie": false,
+    "ops": 5
+  },
+  "seasideridesandvibes": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Seaside Rides and Vibes",
+    "zombie": false,
+    "ops": 5
+  },
+  "dolphincruise": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Dolphin Cruise Co.",
+    "zombie": false,
+    "ops": 5
+  },
+  "reelfuncharters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Reelfun Charters",
+    "zombie": false,
+    "ops": 5
+  },
+  "purealohaadventures-dauphinisland": {
+    "status": 200,
+    "itemCount": 19,
+    "companyName": "Pure Aloha Adventures - Alabama",
+    "zombie": false,
+    "ops": 5
+  },
+  "gulfcoastbuggyrents": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Buggyrents, LLC",
+    "zombie": false,
+    "ops": 5
+  },
+  "stricklyfishingcharters": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Strickly Fishing Charters",
+    "zombie": false,
+    "ops": 5
+  },
+  "spyglasstravel": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Spyglass Travel",
+    "zombie": false,
+    "ops": 5
+  },
+  "floridaboatvacations": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Florida Boat Vacations",
+    "zombie": false,
+    "ops": 5
+  },
+  "daytonaelectricbikes": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Daytona Electric Bikes",
+    "zombie": false,
+    "ops": 5
+  },
+  "ventureoutdoorsllc": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Venture Outdoors",
+    "zombie": false,
+    "ops": 5
+  },
+  "cosmiktiki": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Cosmik Tiki",
+    "zombie": false,
+    "ops": 5
+  },
+  "cocoakayaking": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Cocoa Kayaking",
+    "zombie": false,
+    "ops": 5
+  },
+  "cocoabeachsurfschool": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Cocoa Beach Surf School",
+    "zombie": false,
+    "ops": 5
+  },
+  "raisedbywaterairboatadventures": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Raised By Water Airboat",
+    "zombie": false,
+    "ops": 5
+  },
+  "chokoloskeecharters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Chokoloskee Charters",
+    "zombie": false,
+    "ops": 5
+  },
+  "volcanoohana": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Volcano Ohana",
+    "zombie": false,
+    "ops": 5
+  },
+  "seaquesthawaii": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Sea Quest Hawaii",
+    "zombie": false,
+    "ops": 5
+  },
+  "konaboys": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Kona Boys",
+    "zombie": false,
+    "ops": 5
+  },
+  "seamauicharter": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Sea Maui",
+    "zombie": false,
+    "ops": 5
+  },
+  "sailmaui": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Sail Maui",
+    "zombie": false,
+    "ops": 5
+  },
+  "konahonudivers": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "Kona Honu Divers",
+    "zombie": false,
+    "ops": 5
+  },
+  "andyoucreations": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "And You Creations",
+    "zombie": false,
+    "ops": 5
+  },
+  "theadventureboat": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "The Adventure Boat",
+    "zombie": false,
+    "ops": 5
+  },
+  "honesteco-fl": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Honest Eco",
+    "zombie": false,
+    "ops": 5
+  },
+  "barefootbillyskw": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Barefoot Charters",
+    "zombie": false,
+    "ops": 5
+  },
+  "kwahs": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Key West Art & Historical Society, Inc.",
+    "zombie": false,
+    "ops": 5
+  },
+  "golfcartrentalkeywest": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Fun Rentals - Downtown",
+    "zombie": false,
+    "ops": 5
+  },
+  "lowtidecharter": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Low Tide Charter",
+    "zombie": false,
+    "ops": 5
+  },
+  "southpointdiverskw": {
+    "status": 200,
+    "itemCount": 16,
+    "companyName": "Southpoint Divers",
+    "zombie": false,
+    "ops": 5
+  },
+  "offgridsportfishing": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Off Grid Sportfishing",
+    "zombie": false,
+    "ops": 5
+  },
+  "malcolmsportfishing": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Malcolm Sportfishing",
+    "zombie": false,
+    "ops": 5
+  },
+  "laromayachtsflorida": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Laroma Yachts Florida, LLC",
+    "zombie": false,
+    "ops": 5
+  },
+  "secondgenerationfishing": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Second Generation Fishing Charters",
+    "zombie": false,
+    "ops": 5
+  },
+  "727slingshots": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "727 Slingshots LLC",
+    "zombie": false,
+    "ops": 4
+  },
+  "lfish": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "LFish Charters",
+    "zombie": false,
+    "ops": 4
+  },
+  "daytonaslingshotrentals": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Daytona Slingshot Rentals",
+    "zombie": false,
+    "ops": 4
+  },
+  "canelotours": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Canelo Tours",
+    "zombie": false,
+    "ops": 4
+  },
+  "anandayogapuntacana": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Ananda Yoga International",
+    "zombie": false,
+    "ops": 4
+  },
+  "xightseeing": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Xightseeing Xcursions",
+    "zombie": false,
+    "ops": 4
+  },
+  "playatortugascancun": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Playa Tortugas Cancun",
+    "zombie": false,
+    "ops": 4
+  },
+  "catamaransagitario": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Sagitario Catamaran",
+    "zombie": false,
+    "ops": 4
+  },
+  "privatevipcancunwhalesharktours-mxn": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Private VIP Whale Shark Tours",
+    "zombie": false,
+    "ops": 4
+  },
+  "bobbysbikehike": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Bobby's Bike Hike",
+    "zombie": false,
+    "ops": 4
+  },
+  "letzgocitytoursusa": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Letz Go City Tours USA",
+    "zombie": false,
+    "ops": 4
+  },
+  "miamistylerentals": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Miami Style Rentals",
+    "zombie": false,
+    "ops": 4
+  },
+  "aura": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Your Boat Reservation",
+    "zombie": false,
+    "ops": 4
+  },
+  "takeoversmiamiatvrentals": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Takeovers ATV Rentals",
+    "zombie": false,
+    "ops": 4
+  },
+  "miamiseafest": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Miami Seafest",
+    "zombie": false,
+    "ops": 4
+  },
+  "farsideoutfitters": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Farside Outfitters",
+    "zombie": false,
+    "ops": 4
+  },
+  "rotortour": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Rotor Tour Co",
+    "zombie": false,
+    "ops": 4
+  },
+  "captaingetaways": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Captain Getaways",
+    "zombie": false,
+    "ops": 4
+  },
+  "luxurypontooncharterfortlauderdale": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Luxury Pontoon Charter Fort Lauderdale",
+    "zombie": false,
+    "ops": 4
+  },
+  "freakytikicharters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Freaky Tiki Boat Charters LLC",
+    "zombie": false,
+    "ops": 4
+  },
+  "barefootboatrental": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Barefoot Boat Rental",
+    "zombie": false,
+    "ops": 4
+  },
+  "hangloosesurfschool": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Hangloose Surf School",
+    "zombie": false,
+    "ops": 4
+  },
+  "secondwynndcharters": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Second Wynnd Fishing Charters",
+    "zombie": false,
+    "ops": 4
+  },
+  "oceangolfcarrental": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Ocean Golf Car Rental",
+    "zombie": false,
+    "ops": 4
+  },
+  "keylypso": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Keylypso",
+    "zombie": false,
+    "ops": 4
+  },
+  "byrddogcharters": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Byrd Dog Charters/Reel Deal",
+    "zombie": false,
+    "ops": 4
+  },
+  "reelcandyfishing": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Reel Candy, Inc.",
+    "zombie": false,
+    "ops": 4
+  },
+  "stayingafloatpartyboat-tampa": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Staying Afloat Party Boat LLC. - Tampa Bay",
+    "zombie": false,
+    "ops": 4
+  },
+  "yborwalkingtours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Tampa Bay Tours",
+    "zombie": false,
+    "ops": 4
+  },
+  "tampajetskiandjetcarrentals": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Tampa Jetski and Jetcar Rentals",
+    "zombie": false,
+    "ops": 4
+  },
+  "myghostparty": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Ghost Party",
+    "zombie": false,
+    "ops": 4
+  },
+  "thesandshack": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "The Sand Shack by Sand Surf Co.",
+    "zombie": false,
+    "ops": 4
+  },
+  "topcarshare": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Top Car Share",
+    "zombie": false,
+    "ops": 4
+  },
+  "bouncehouseplace": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Bounce Zone",
+    "zombie": false,
+    "ops": 4
+  },
+  "shootersworld-tampa": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "Shooters World - Tampa",
+    "zombie": false,
+    "ops": 4
+  },
+  "cruisintikisnaples": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Naples Tiki Fun Tours",
+    "zombie": false,
+    "ops": 4
+  },
+  "risingtidefl": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Rising Tide",
+    "zombie": false,
+    "ops": 4
+  },
+  "naplesgonefishin": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Chasin' Tales Fishing Charters",
+    "zombie": false,
+    "ops": 4
+  },
+  "luckystrikefishingcharter": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Lucky Strike Fishing Charter",
+    "zombie": false,
+    "ops": 4
+  },
+  "naplesboatadventures": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Naples Boat Adventure",
+    "zombie": false,
+    "ops": 4
+  },
+  "naplesbicycletours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Naples Bicycle Tours",
+    "zombie": false,
+    "ops": 4
+  },
+  "port32marinas-naples": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Port32 Marinas - Naples",
+    "zombie": false,
+    "ops": 4
+  },
+  "sealifekayakadventures": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Sea Life Kayak Adventures",
+    "zombie": false,
+    "ops": 4
+  },
+  "gulfwatertours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Gulf Water Tours",
+    "zombie": false,
+    "ops": 4
+  },
+  "saltcoastrentals": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Salt Coast Rentals",
+    "zombie": false,
+    "ops": 4
+  },
+  "lebargetropicalcruises": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "LeBarge Tropical Cruises",
+    "zombie": false,
+    "ops": 4
+  },
+  "sarasotacoastalboattours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Sarasota Coastal Boat Tours",
+    "zombie": false,
+    "ops": 4
+  },
+  "seaviewkayaktour": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "SeaView Kayak Tour",
+    "zombie": false,
+    "ops": 4
+  },
+  "siestakeysnorkel": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Siesta Key Snorkel",
+    "zombie": false,
+    "ops": 4
+  },
+  "islandtimecharter": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Island Time Charter",
+    "zombie": false,
+    "ops": 4
+  },
+  "champagnecharters": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Champagne Charters",
+    "zombie": false,
+    "ops": 4
+  },
+  "docksidewatersports": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Dockside Watersports",
+    "zombie": false,
+    "ops": 4
+  },
+  "seaquestofdestin": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "SeaQuest",
+    "zombie": false,
+    "ops": 4
+  },
+  "alwaystightfishingcharters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Always Tight Fishing Charters of Destin and Navarre Florida LLC",
+    "zombie": false,
+    "ops": 4
+  },
+  "emeraldcoastpontoonadventure": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Emerald Coast Pontoon Adventures",
+    "zombie": false,
+    "ops": 4
+  },
+  "hollowayyachts": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Holloway Yacht Charters, LLC",
+    "zombie": false,
+    "ops": 4
+  },
+  "endlessweekendpontoons": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Endless Weekend Pontoons",
+    "zombie": false,
+    "ops": 4
+  },
+  "destinseablaster": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Adventures Aboard Sea Blaster",
+    "zombie": false,
+    "ops": 4
+  },
+  "charterboatdaybreak": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Charter Boat Daybreak",
+    "zombie": false,
+    "ops": 4
+  },
+  "ngcdestin": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Nelson Guide Company",
+    "zombie": false,
+    "ops": 4
+  },
+  "marlerislandadventures": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Marler Island Adventures, LLC",
+    "zombie": false,
+    "ops": 4
+  },
+  "oceanventures-jubileefishing": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Jubilee Fishing",
+    "zombie": false,
+    "ops": 4
+  },
+  "fishflatout": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Pensacola Fishing Co./Kings Fishing Charters",
+    "zombie": false,
+    "ops": 4
+  },
+  "glowpaddle": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Glow Paddle",
+    "zombie": false,
+    "ops": 4
+  },
+  "spikedsportfishing": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Spiked Sportfishing",
+    "zombie": false,
+    "ops": 4
+  },
+  "our-nautical-dream": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Our Nautical Dream LLC",
+    "zombie": false,
+    "ops": 4
+  },
+  "fishingnativesons": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Native Son's Fishing Charter",
+    "zombie": false,
+    "ops": 4
+  },
+  "bloodlinefishingcharters": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Port-Side Sportfishing",
+    "zombie": false,
+    "ops": 4
+  },
+  "hotspotscharters": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Hot Spots Fishing Charters",
+    "zombie": false,
+    "ops": 4
+  },
+  "geotrippin": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "GeoTrippin",
+    "zombie": false,
+    "ops": 4
+  },
+  "freeedomphotography": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Freeedom Adventures and Photography LLC",
+    "zombie": false,
+    "ops": 4
+  },
+  "furystaug": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Fury Water Adventures - St. Augustine",
+    "zombie": false,
+    "ops": 4
+  },
+  "seeamericatours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "See America Tours",
+    "zombie": false,
+    "ops": 4
+  },
+  "genungsfishcamp": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Genung's Fish Camp",
+    "zombie": false,
+    "ops": 4
+  },
+  "surf-station": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Surf Station",
+    "zombie": false,
+    "ops": 4
+  },
+  "wildsolkayakingadventures": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Wild Sol Kayaking Adventures",
+    "zombie": false,
+    "ops": 4
+  },
+  "dahliasurf": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Dahlia Surf School",
+    "zombie": false,
+    "ops": 4
+  },
+  "piratebaypaddle": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Pirate Bay Paddle",
+    "zombie": false,
+    "ops": 4
+  },
+  "northemeraldcharters": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Latitude 28 Charters",
+    "zombie": false,
+    "ops": 4
+  },
+  "canaveraloffshore": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Canaveral Fishing Adventures Inc",
+    "zombie": false,
+    "ops": 4
+  },
+  "cocoabeachbio": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "KayaKing Cocoa Beach",
+    "zombie": false,
+    "ops": 4
+  },
+  "wanderingpalmadventures": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Wandering Palm",
+    "zombie": false,
+    "ops": 4
+  },
+  "shuttlelinerofocala": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Shuttleliner Of Ocala",
+    "zombie": false,
+    "ops": 4
+  },
+  "girafferanch": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Giraffe Ranch",
+    "zombie": false,
+    "ops": 4
+  },
+  "evergladesfloridaadventures": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Everglades Florida Adventures",
+    "zombie": false,
+    "ops": 4
+  },
+  "evergladescityfishingcharters": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Everglades City Fishing Charters",
+    "zombie": false,
+    "ops": 4
+  },
+  "thevolcanovan": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "The Volcano Van",
+    "zombie": false,
+    "ops": 4
+  },
+  "northshorebeachbus": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "North Shore Beach Bus",
+    "zombie": false,
+    "ops": 4
+  },
+  "hawaiipacificadventures": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Hawaii Pacific Adventures",
+    "zombie": false,
+    "ops": 4
+  },
+  "heavenlyhawaiian": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Heavenly Hawaiian Coffee Farm",
+    "zombie": false,
+    "ops": 4
+  },
+  "hawaiioceancharters": {
+    "status": 200,
+    "itemCount": 18,
+    "companyName": "Hawaii Ocean Charters",
+    "zombie": false,
+    "ops": 4
+  },
+  "oahuphotographytours": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Oahu Photography Tours",
+    "zombie": false,
+    "ops": 4
+  },
+  "bodyglove": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Body Glove Hawaii",
+    "zombie": false,
+    "ops": 4
+  },
+  "surfhnl": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Surf HNL",
+    "zombie": false,
+    "ops": 4
+  },
+  "holoholo": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Holo Holo Charters",
+    "zombie": false,
+    "ops": 4
+  },
+  "hawaiiforestandtrail": {
+    "status": 200,
+    "itemCount": 22,
+    "companyName": "Hawaii Forest & Trail",
+    "zombie": false,
+    "ops": 4
+  },
+  "keywestfoodtours": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Food Tour (Key West Food Tours)",
+    "zombie": false,
+    "ops": 4
+  },
+  "southernmostparknplay": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Southernmost Park n' Play",
+    "zombie": false,
+    "ops": 4
+  },
+  "floridakeysventures": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Florida Keys Ventures",
+    "zombie": false,
+    "ops": 4
+  },
+  "wakeandbaitcharters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Wake and Bait Charters",
+    "zombie": false,
+    "ops": 4
+  },
+  "spencersboatyard": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Spencer's Boatyard",
+    "zombie": false,
+    "ops": 4
+  },
+  "cruisintikiskeywest": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Cruisin Tikis Key West",
+    "zombie": false,
+    "ops": 4
+  },
+  "conciergedelivers": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Concierge Delivers",
+    "zombie": false,
+    "ops": 4
+  },
+  "lazydog": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Lazy Dog",
+    "zombie": false,
+    "ops": 4
+  },
+  "finzdivecenter": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Finz Dive Charters Corporation",
+    "zombie": false,
+    "ops": 4
+  },
+  "saltysandbars": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Salty Sandbars",
+    "zombie": false,
+    "ops": 4
+  },
+  "deependcharters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "DeepEnd Charters",
+    "zombie": false,
+    "ops": 4
+  },
+  "seaclusion": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Charter SeaClusion",
+    "zombie": false,
+    "ops": 4
+  },
+  "makingmemoriescharters": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Making Memories Charters, LLC",
+    "zombie": false,
+    "ops": 4
+  },
+  "thehappycaptainfl": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "The Happy Captain",
+    "zombie": false,
+    "ops": 4
+  },
+  "thatswhatseasaid": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "That's What Sea Said, LLC",
+    "zombie": false,
+    "ops": 4
+  },
+  "thekeyrides": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "The Key Rides",
+    "zombie": false,
+    "ops": 4
+  },
+  "luxeatvrentalsorl": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Luxe ATV Rentals",
+    "zombie": false,
+    "ops": 3
+  },
+  "kachunga": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Kachunga Airboat Adventures",
+    "zombie": false,
+    "ops": 3
+  },
+  "carriagetoursandevents": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Carriage Tours & Events",
+    "zombie": false,
+    "ops": 3
+  },
+  "suppaddleinflorida": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Savvy Paddles",
+    "zombie": false,
+    "ops": 3
+  },
+  "zoomairdaytonabeach": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Daytona Beach Zipline Adventure by Treetop Trekking",
+    "zombie": false,
+    "ops": 3
+  },
+  "rippleeffectecotours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Ripple Effect Ecotours",
+    "zombie": false,
+    "ops": 3
+  },
+  "islandtimemarina": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Island Time Marina & Restaurant",
+    "zombie": false,
+    "ops": 3
+  },
+  "daytonabeachdolphintours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "World Famous Boat Tours",
+    "zombie": false,
+    "ops": 3
+  },
+  "jungletourcancun": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Jungle Tour Adventure",
+    "zombie": false,
+    "ops": 3
+  },
+  "pixtorephotography": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Pixtore Photography",
+    "zombie": false,
+    "ops": 3
+  },
+  "undergrounddonutour": {
+    "status": 200,
+    "itemCount": 46,
+    "companyName": "Underground Donut Tour",
+    "zombie": false,
+    "ops": 3
+  },
+  "wakeclubmiami": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Wake Club Miami",
+    "zombie": false,
+    "ops": 3
+  },
+  "themiamipartyboat": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "The Miami Party Boat & Rentals",
+    "zombie": false,
+    "ops": 3
+  },
+  "xcursionsusa": {
+    "status": 200,
+    "itemCount": 19,
+    "companyName": "Xcursions USA",
+    "zombie": false,
+    "ops": 3
+  },
+  "vjetsmiami": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "MIAMI JETCAR | V&V OCEAN VIBES",
+    "zombie": false,
+    "ops": 3
+  },
+  "rbchartersmiami": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "RB Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "getupandgokayaking_southmiamibeach": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Get Up and Go Kayaking - South Miami Beach",
+    "zombie": false,
+    "ops": 3
+  },
+  "chicagoliaisontours": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "SoBeach Tours",
+    "zombie": false,
+    "ops": 3
+  },
+  "horselifemiami": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Horse Life Miami",
+    "zombie": false,
+    "ops": 3
+  },
+  "yajuboattours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Yaju Boat Tours",
+    "zombie": false,
+    "ops": 3
+  },
+  "miamitreetoptrekking": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Treetop Trekking Miami",
+    "zombie": false,
+    "ops": 3
+  },
+  "eaglesairtours": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Eagles Airways LLC",
+    "zombie": false,
+    "ops": 3
+  },
+  "gladesmenairboattours": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Gladesmen Airboat Tours",
+    "zombie": false,
+    "ops": 3
+  },
+  "slingshotandjetskirentals": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Slingshot & Jetski Rentals LLC",
+    "zombie": false,
+    "ops": 3
+  },
+  "blueh20cruisers": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Blue H20 Cruisers",
+    "zombie": false,
+    "ops": 3
+  },
+  "stranahanhouse": {
+    "status": 200,
+    "itemCount": 19,
+    "companyName": "Historic Stranahan House Museum",
+    "zombie": false,
+    "ops": 3
+  },
+  "captainsunshinecharters": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Captain Sunshine Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "palmbeachsnorkeling": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Palm Beach Snorkeling",
+    "zombie": false,
+    "ops": 3
+  },
+  "solsearchcharters": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Sol Search Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "hiltonwestpalmbeach": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Hilton West Palm Beach",
+    "zombie": false,
+    "ops": 3
+  },
+  "palmyachts": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Palm Yachts LLC",
+    "zombie": false,
+    "ops": 3
+  },
+  "gurferlady": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "GurferLady LLC",
+    "zombie": false,
+    "ops": 3
+  },
+  "jrscarriage": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "JR’s Carriage Service",
+    "zombie": false,
+    "ops": 3
+  },
+  "pinkcruisestampa": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Pink Cruises Tampa",
+    "zombie": false,
+    "ops": 3
+  },
+  "saltygillzcharters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Salty Gillz",
+    "zombie": false,
+    "ops": 3
+  },
+  "tampatikis": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Cruisin' Tikis Tampa",
+    "zombie": false,
+    "ops": 3
+  },
+  "tpavanrental": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Nation Van Rentals - Tampa",
+    "zombie": false,
+    "ops": 3
+  },
+  "askostours": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Askos Tours",
+    "zombie": false,
+    "ops": 3
+  },
+  "docksbyjen": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Docks by Jen",
+    "zombie": false,
+    "ops": 3
+  },
+  "onlytidesnaples": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "OnlyTides",
+    "zombie": false,
+    "ops": 3
+  },
+  "marcodolphintours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Marco Dolphin Cruise",
+    "zombie": false,
+    "ops": 3
+  },
+  "naplesfishingandtours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Naples Fishing And Tours",
+    "zombie": false,
+    "ops": 3
+  },
+  "happypaddler": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Happy Paddler Kayak Tours & Ecoventures",
+    "zombie": false,
+    "ops": 3
+  },
+  "sarasotabayexplorers": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Sarasota Bay Explorers",
+    "zombie": false,
+    "ops": 3
+  },
+  "liquidblueoutfitters": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Liquid Blue Outfitters",
+    "zombie": false,
+    "ops": 3
+  },
+  "keylifecharters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Key Life Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "floridafunrides": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Florida Fun Rides",
+    "zombie": false,
+    "ops": 3
+  },
+  "sarasotahelicoptertour": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Sarasota Helicopter Tours By Bear & Dog",
+    "zombie": false,
+    "ops": 3
+  },
+  "nextlevelboatclub": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Next Level Boat Club",
+    "zombie": false,
+    "ops": 3
+  },
+  "sarasotaexcursions": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Sarasota Excursions LLC",
+    "zombie": false,
+    "ops": 3
+  },
+  "siesta-funship": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Siesta Funship",
+    "zombie": false,
+    "ops": 3
+  },
+  "siestaskis": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Siesta Skis",
+    "zombie": false,
+    "ops": 3
+  },
+  "runngunfishingcharters": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Run N Gun Fishing Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "dreamsreelized": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Dreams Reelized",
+    "zombie": false,
+    "ops": 3
+  },
+  "destinflboatrentals": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Wet-n-Wild Watersports",
+    "zombie": false,
+    "ops": 3
+  },
+  "sarasotafreegolfcartrentals": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Local Style Rentals",
+    "zombie": false,
+    "ops": 3
+  },
+  "tailfinsislandadventure": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Tailfins Island Adventure",
+    "zombie": false,
+    "ops": 3
+  },
+  "bikkinibottomboat": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Beach Please Charters LLC",
+    "zombie": false,
+    "ops": 3
+  },
+  "eastpasssailing": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "East Pass Sailing Company",
+    "zombie": false,
+    "ops": 3
+  },
+  "destintikis": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Dynamic Investments Tikis LLC.",
+    "zombie": false,
+    "ops": 3
+  },
+  "sweetjodyfish": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Sweet Jody Fishing",
+    "zombie": false,
+    "ops": 3
+  },
+  "luxurycartrentalofdestin": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Luxury Cart Rental of Destin",
+    "zombie": false,
+    "ops": 3
+  },
+  "saltybeachgear": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Salty Beach Gear",
+    "zombie": false,
+    "ops": 3
+  },
+  "gatorbeach": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Gator Beach",
+    "zombie": false,
+    "ops": 3
+  },
+  "destinwakesurf": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Destin Wakesurf",
+    "zombie": false,
+    "ops": 3
+  },
+  "seawinder": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Charter Boat Sea Winder",
+    "zombie": false,
+    "ops": 3
+  },
+  "fintasticpanamacity": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Fintastic Adventures",
+    "zombie": false,
+    "ops": 3
+  },
+  "thehangoutbythesea": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Hangout by the Sea",
+    "zombie": false,
+    "ops": 3
+  },
+  "cruise30a": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Cruise 30A",
+    "zombie": false,
+    "ops": 3
+  },
+  "gotchafishingcharters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Gotcha Fishing Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "pensacolabeachpontoonboatrentals": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Pensacola Beach Pontoon Boat Rentals",
+    "zombie": false,
+    "ops": 3
+  },
+  "bluedolphincruises": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Blue Dolphin Cruises",
+    "zombie": false,
+    "ops": 3
+  },
+  "pensacoladolphincruise": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Premier Dolphin Cruise of Pensacola",
+    "zombie": false,
+    "ops": 3
+  },
+  "condorsailingadventures": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Condor Sailing Adventures",
+    "zombie": false,
+    "ops": 3
+  },
+  "ikesparasail": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Ike's Parasail",
+    "zombie": false,
+    "ops": 3
+  },
+  "piratesofstaugistine": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Pirates of St. Augustine",
+    "zombie": false,
+    "ops": 3
+  },
+  "sunsalsupco": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Sunsal SUP Co.",
+    "zombie": false,
+    "ops": 3
+  },
+  "boattoursstaugustine": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "St. Augustine Boat Tours",
+    "zombie": false,
+    "ops": 3
+  },
+  "redboatwatertours": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Red Boat Water Tours",
+    "zombie": false,
+    "ops": 3
+  },
+  "oldestcitysurfschool": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Oldest City Surf School",
+    "zombie": false,
+    "ops": 3
+  },
+  "cruisintikisstaugustine": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Cruisin Tikis St. Augustine",
+    "zombie": false,
+    "ops": 3
+  },
+  "904orb": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "The 904 Orb",
+    "zombie": false,
+    "ops": 3
+  },
+  "sealovefishing": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Sea Love Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "cocoabeachsurffishingcharters": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Cocoa Beach Surf Fishing Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "slightlyobsessedfishingcharters": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Slightly Obsessed Fishing Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "centralfloridakayaking": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Central Florida Kayaking",
+    "zombie": false,
+    "ops": 3
+  },
+  "theriverfrontcocoabeach": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "The River Front Cocoa Beach",
+    "zombie": false,
+    "ops": 3
+  },
+  "kickin-kayaks": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Kickin' Kayaks",
+    "zombie": false,
+    "ops": 3
+  },
+  "souls-ey": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Soulsey",
+    "zombie": false,
+    "ops": 3
+  },
+  "abstractorlando": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Abstract Orlando",
+    "zombie": false,
+    "ops": 3
+  },
+  "mco2disney": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "MCO2Disney",
+    "zombie": false,
+    "ops": 3
+  },
+  "thefrenchcompany-orlando": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "The French Company Orlando",
+    "zombie": false,
+    "ops": 3
+  },
+  "shootersworld-orlando": {
+    "status": 200,
+    "itemCount": 21,
+    "companyName": "Shooters World - Orlando",
+    "zombie": false,
+    "ops": 3
+  },
+  "huntingiguanas": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Hunting Iguanas",
+    "zombie": false,
+    "ops": 3
+  },
+  "getupandgokayaking-weekiwachee": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Get Up and Go Kayaking - Weeki Wachee",
+    "zombie": false,
+    "ops": 3
+  },
+  "paddlesoutdoor": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Paddles Outdoor Rentals",
+    "zombie": false,
+    "ops": 3
+  },
+  "snorkelwithmanatees": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Swim With Manatees",
+    "zombie": false,
+    "ops": 3
+  },
+  "weekiwachee": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Weeki Fresh Water Adventures",
+    "zombie": false,
+    "ops": 3
+  },
+  "bottomdwellersscubaandcharter": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Bottom Dwellers Scuba and Charters LLC",
+    "zombie": false,
+    "ops": 3
+  },
+  "firearmsadventures": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Florida Firearms Adventures",
+    "zombie": false,
+    "ops": 3
+  },
+  "evergladesjeeptours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Everglades Jeep Tours",
+    "zombie": false,
+    "ops": 3
+  },
+  "wildsidespecialtytours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Wild Side Specialty Tours",
+    "zombie": false,
+    "ops": 3
+  },
+  "malahinitours": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Malahini Tours",
+    "zombie": false,
+    "ops": 3
+  },
+  "mauidreamsdiveco": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Maui Diamond Sea Sports",
+    "zombie": false,
+    "ops": 3
+  },
+  "goscubadivemaui": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Dive Maui",
+    "zombie": false,
+    "ops": 3
+  },
+  "paddleonmaui": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Paddle On! Maui",
+    "zombie": false,
+    "ops": 3
+  },
+  "captcookcruises": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Captain Cook Cruises",
+    "zombie": false,
+    "ops": 3
+  },
+  "kauaisurfschool": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Kauai Surf School",
+    "zombie": false,
+    "ops": 3
+  },
+  "maunaloahelicoptertoursbigisland": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Mauna Loa Helicopter Tours - Big Island",
+    "zombie": false,
+    "ops": 3
+  },
+  "ohanasurfproject": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Ohana Surf Project",
+    "zombie": false,
+    "ops": 3
+  },
+  "mauiunderwater": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Makena Coast Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "konasnorkelandsail": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Kona Style",
+    "zombie": false,
+    "ops": 3
+  },
+  "waikikibeachservices": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Waikiki Beach Services",
+    "zombie": false,
+    "ops": 3
+  },
+  "kauaisoultravelllc": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Kauai Soul Travel LLC",
+    "zombie": false,
+    "ops": 3
+  },
+  "goadventurehawaii": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Go Adventure Hawaii",
+    "zombie": false,
+    "ops": 3
+  },
+  "emountainbiketourmauillc": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Emountain Bike Tour Maui llc",
+    "zombie": false,
+    "ops": 3
+  },
+  "konasnorkeltrips": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Kona Snorkel Trips",
+    "zombie": false,
+    "ops": 3
+  },
+  "mauidragonfruit": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "Maui Dragon Fruit Farm",
+    "zombie": false,
+    "ops": 3
+  },
+  "hawaiifamilyportraits": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Hawaii Family Portraits",
+    "zombie": false,
+    "ops": 3
+  },
+  "hipolotrailrides": {
+    "status": 200,
+    "itemCount": 19,
+    "companyName": "Hawaii Polo Trail Rides",
+    "zombie": false,
+    "ops": 3
+  },
+  "soulsurfingmaui": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Soul Surfing Maui",
+    "zombie": false,
+    "ops": 3
+  },
+  "alohatrikke": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Go Tours Hawaii",
+    "zombie": false,
+    "ops": 3
+  },
+  "coralcrater": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Coral Crater Adventure Park",
+    "zombie": false,
+    "ops": 3
+  },
+  "maukawarriorsluau": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Mauka Warriors Luau",
+    "zombie": false,
+    "ops": 3
+  },
+  "sail-keywest": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Classic Harbor Line - Key West",
+    "zombie": false,
+    "ops": 3
+  },
+  "robertthedollexperience": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Sloan's Key West Ghost Tours",
+    "zombie": false,
+    "ops": 3
+  },
+  "sweetvelocity": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Dauntless Excursions",
+    "zombie": false,
+    "ops": 3
+  },
+  "ultragrandslam": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Ultra Grand Slam",
+    "zombie": false,
+    "ops": 3
+  },
+  "keywestcoastalcharters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Key West Coastal Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "geigerpaddlehut": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "The Paddle Hut at Geiger Key",
+    "zombie": false,
+    "ops": 3
+  },
+  "laidbackkeywest": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Laid Back Key West",
+    "zombie": false,
+    "ops": 3
+  },
+  "papascat": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Papa's Cat",
+    "zombie": false,
+    "ops": 3
+  },
+  "lostreefadventures": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Lost Reef Adventures",
+    "zombie": false,
+    "ops": 3
+  },
+  "keywestfisher": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "The Key West Fisher",
+    "zombie": false,
+    "ops": 3
+  },
+  "islandtoisland": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Island to Island Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "3rddegreecharters": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "3rd Degree Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "namastealldaykeywest": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Namaste Here LLC",
+    "zombie": false,
+    "ops": 3
+  },
+  "reconsportfishing": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Recon Sportfishing Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "saltyslothfishingcharters": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Salty Sloth Fishing Charters",
+    "zombie": false,
+    "ops": 3
+  },
+  "ibisbaypaddlesports": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Ibis Bay Water Sport",
+    "zombie": false,
+    "ops": 3
+  },
+  "xterrains": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Xterrains",
+    "zombie": false,
+    "ops": 2
+  },
+  "beachsandsculptures": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Beach Sand Sculptures",
+    "zombie": false,
+    "ops": 2
+  },
+  "getupandgokayaking-rainbowriver": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Get Up and Go Kayaking - Rainbow Springs",
+    "zombie": false,
+    "ops": 2
+  },
+  "clydebutcher": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Clyde Butcher's Big Cypress Gallery",
+    "zombie": false,
+    "ops": 2
+  },
+  "floridakayaktours": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "Kayaking Florida",
+    "zombie": false,
+    "ops": 2
+  },
+  "seaserpenttours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Sea Serpent Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "wetrabbitkayaks": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Wet Rabbit Kayaks",
+    "zombie": false,
+    "ops": 2
+  },
+  "floridaspringskayaking": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Florida Springs Kayaking LLC",
+    "zombie": false,
+    "ops": 2
+  },
+  "kayakingwithsassy-silversprings": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Kayaking with Sassy - Silversprings",
+    "zombie": false,
+    "ops": 2
+  },
+  "getupandgokayaking-winterpark": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Get Up and Go Kayaking - Winter Park",
+    "zombie": false,
+    "ops": 2
+  },
+  "godivingcancun": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Go Diving Cancun",
+    "zombie": false,
+    "ops": 2
+  },
+  "eatingwithcarmen-mxn": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Eating With Carmen - MXN",
+    "zombie": false,
+    "ops": 2
+  },
+  "envatours": {
+    "status": 200,
+    "itemCount": 18,
+    "companyName": "Envatours",
+    "zombie": false,
+    "ops": 2
+  },
+  "salsamia": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Salsa Mia",
+    "zombie": false,
+    "ops": 2
+  },
+  "key2mia": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Key2MIA",
+    "zombie": false,
+    "ops": 2
+  },
+  "getupandgokayaking_miami": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Get Up and Go Kayaking - Miami",
+    "zombie": false,
+    "ops": 2
+  },
+  "thrillermiami": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Thriller Miami Speedboat Adventures",
+    "zombie": false,
+    "ops": 2
+  },
+  "miamioceantours": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Miami Ocean Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "aquasportmiami": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Aquasport Miami LLC",
+    "zombie": false,
+    "ops": 2
+  },
+  "jetskimiamirentals": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "Jet Ski Miami Rentals",
+    "zombie": false,
+    "ops": 2
+  },
+  "miamiteamparty": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "JETSKI & SLINGSHOT RENTALS LLC",
+    "zombie": false,
+    "ops": 2
+  },
+  "padl-pelicanharbor": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "PADL Bay Club - Pelican Harbor",
+    "zombie": false,
+    "ops": 2
+  },
+  "sofloextremejetskirentals": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Soflo Extreme Jetskis LLC",
+    "zombie": false,
+    "ops": 2
+  },
+  "miamitourcompany": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "Miami Tour Company",
+    "zombie": false,
+    "ops": 2
+  },
+  "padl": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "PADL – Lagoon & Trails",
+    "zombie": false,
+    "ops": 2
+  },
+  "sfairboatadventures": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "South Florida Airboat Adventures",
+    "zombie": false,
+    "ops": 2
+  },
+  "flowvip": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Flow VIP",
+    "zombie": false,
+    "ops": 2
+  },
+  "goldenboatchartersmiami": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Golden Ours Cruises",
+    "zombie": false,
+    "ops": 2
+  },
+  "stayingafloatpartyboat": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Staying Afloat Party Boat LLC",
+    "zombie": false,
+    "ops": 2
+  },
+  "tgifrides": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "SoFlo Slingshot Rentals",
+    "zombie": false,
+    "ops": 2
+  },
+  "junglequeen": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Jungle Queen Riverboats",
+    "zombie": false,
+    "ops": 2
+  },
+  "craftfoodtours": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Craft Food Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "riverfrontcruiseandanticipationyachtcharter": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Riverfront Cruise and Anticipation Yacht Charter LLC",
+    "zombie": false,
+    "ops": 2
+  },
+  "joipicnicandcruise": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Joi Picnic & Cruise",
+    "zombie": false,
+    "ops": 2
+  },
+  "lasolasfoodtours": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Las Olas Food Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "efoilflorida": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "E-Foil Florida LLC",
+    "zombie": false,
+    "ops": 2
+  },
+  "terranea": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Terranea Resort",
+    "zombie": false,
+    "ops": 2
+  },
+  "ezraiderfortlauderdale": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "EZ Raider Fort Lauderdale",
+    "zombie": false,
+    "ops": 2
+  },
+  "intimatewaterwaytours": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Intimate Waterway Tours of Fort Lauderdale",
+    "zombie": false,
+    "ops": 2
+  },
+  "carpevitacharters": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Carpe Vita Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "electricsurfsports": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Electric Surf Sports",
+    "zombie": false,
+    "ops": 2
+  },
+  "ghostsofpalmbeach": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Ghosts of Palm Beach",
+    "zombie": false,
+    "ops": 2
+  },
+  "devoniayacht": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Devonia Yacht Charter",
+    "zombie": false,
+    "ops": 2
+  },
+  "valorcharters": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Valor Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "craft": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Craft",
+    "zombie": false,
+    "ops": 2
+  },
+  "rushslingshots": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Rush Rentals Motor Sports",
+    "zombie": false,
+    "ops": 2
+  },
+  "ddlakehouse": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Dockside Dreams Lakehouse",
+    "zombie": false,
+    "ops": 2
+  },
+  "captaintomsboatadventures": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Captain Tom's Boat Adventures",
+    "zombie": false,
+    "ops": 2
+  },
+  "nationvanrentals-atlanta": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Nation Van Rentals - Atlanta",
+    "zombie": false,
+    "ops": 2
+  },
+  "captkensalosfinfeather": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Fin & Feather Inshore Fishing Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "reelthrillsfishingcharters": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Reel Thrills Fishing Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "getupandgokayaking-naples": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Get Up and Go Kayaking - Wiggins Pass from Naples",
+    "zombie": false,
+    "ops": 2
+  },
+  "naplesnantucketyachtgroup": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Naples Nantucket Yacht Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "marcoecotours": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "La vita é bella - Marco Eco Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "fishflo": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "FishFlo",
+    "zombie": false,
+    "ops": 2
+  },
+  "islesofcaprimarina": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Isles of Capri Marina",
+    "zombie": false,
+    "ops": 2
+  },
+  "kowiachobeeanimalpreserve": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Kowiachobee Animal Preserve",
+    "zombie": false,
+    "ops": 2
+  },
+  "kayakingsrq": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Kayaking SRQ",
+    "zombie": false,
+    "ops": 2
+  },
+  "boattourssarasota": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Sarasota Boat Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "paradiseadventuresfl": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Paradise Adventures Florida",
+    "zombie": false,
+    "ops": 2
+  },
+  "nextleveljetskirental": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Next Level Jet Ski LLC",
+    "zombie": false,
+    "ops": 2
+  },
+  "goodvibesislandrides": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Good Vibes Island Rides",
+    "zombie": false,
+    "ops": 2
+  },
+  "flyingfishfleet": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Flying Fish Fleet",
+    "zombie": false,
+    "ops": 2
+  },
+  "siestakeyjetski": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Siesta Key Jet Ski",
+    "zombie": false,
+    "ops": 2
+  },
+  "parasaillowtide": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Parasail Low Tide",
+    "zombie": false,
+    "ops": 2
+  },
+  "topshelftikis": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Top Shelf Tikis",
+    "zombie": false,
+    "ops": 2
+  },
+  "cruisedestinbay": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Cruise Destin Bay",
+    "zombie": false,
+    "ops": 2
+  },
+  "coastalcruise": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Coastal Cruise",
+    "zombie": false,
+    "ops": 2
+  },
+  "beachcoastgolfcartrental": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Beach Coast Golf Cart Rental",
+    "zombie": false,
+    "ops": 2
+  },
+  "fishingboatsdestin": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Black Diamond Fishing Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "destinbayhopper": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Destin Bay Hopper",
+    "zombie": false,
+    "ops": 2
+  },
+  "affordablecrabislandtours": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Affordable Crab Island Tours LLC",
+    "zombie": false,
+    "ops": 2
+  },
+  "waltonparasail": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Miramar Beach Parasail",
+    "zombie": false,
+    "ops": 2
+  },
+  "sunshinedestin-sunshinewatersports": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Sunshine Watersports",
+    "zombie": false,
+    "ops": 2
+  },
+  "thedestinpartybus": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "The Destin Party Bus",
+    "zombie": false,
+    "ops": 2
+  },
+  "98carts": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "98 Carts",
+    "zombie": false,
+    "ops": 2
+  },
+  "sandcastlerockstars": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Sandcastle Rockstars",
+    "zombie": false,
+    "ops": 2
+  },
+  "trydivingfun": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Try Diving Fun",
+    "zombie": false,
+    "ops": 2
+  },
+  "coldwateroutfitters": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Coldwater Outfitters",
+    "zombie": false,
+    "ops": 2
+  },
+  "emeraldsurfwatersports": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Emerald Surf Water Sports",
+    "zombie": false,
+    "ops": 2
+  },
+  "friendsofcamphelen": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Friends of Camp Helen State Park",
+    "zombie": false,
+    "ops": 2
+  },
+  "chase-n-fins": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Chase-N-Fins",
+    "zombie": false,
+    "ops": 2
+  },
+  "gulfcoastsurfschool": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Gulf Coast Surf School",
+    "zombie": false,
+    "ops": 2
+  },
+  "wavecuttercharters": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Wave Cutter Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "bouttimecharters": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Bout Time Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "anglerupcharters": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Angler Up Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "southernrosedolphintrips": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Top Tier Watersports",
+    "zombie": false,
+    "ops": 2
+  },
+  "portofinoadventures": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Portofino Adventures",
+    "zombie": false,
+    "ops": 2
+  },
+  "theoddmacabrecompany": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "A Night Among Ghosts",
+    "zombie": false,
+    "ops": 2
+  },
+  "staugustineecotours-new": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "St. Augustine Eco Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "coastalcarriagesinc": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Coastal Carriages INC",
+    "zombie": false,
+    "ops": 2
+  },
+  "palatkaboathouseriverfront": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Palatka Boathouse Riverfront",
+    "zombie": false,
+    "ops": 2
+  },
+  "pirateislandcarts": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Pirate Island Carts",
+    "zombie": false,
+    "ops": 2
+  },
+  "afterdarkinvestigations": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "After Dark Investigations - St. Augustine",
+    "zombie": false,
+    "ops": 2
+  },
+  "fortek9training": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Forte K9 Training",
+    "zombie": false,
+    "ops": 2
+  },
+  "claycountychartersandexcursions": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Southern Cove Charters & Excursions",
+    "zombie": false,
+    "ops": 2
+  },
+  "wake2wakefl": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Wake2Wake",
+    "zombie": false,
+    "ops": 2
+  },
+  "polynesianfireproductions": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Polynesian Fire Productions",
+    "zombie": false,
+    "ops": 2
+  },
+  "daytonabeachtikitours": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Daytona Beach Tiki Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "escapecocoabeach": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Escape Cocoa Beach",
+    "zombie": false,
+    "ops": 2
+  },
+  "villagefoodtours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Village Food Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "spacecoastrentals": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Space Coast Rentals",
+    "zombie": false,
+    "ops": 2
+  },
+  "sunnynightskayaktours": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Sunny Nights Kayak Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "getupandgokayaking-verobeach": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Get Up and Go Kayaking - Vero Beach",
+    "zombie": false,
+    "ops": 2
+  },
+  "bananariverboattours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Banana River Boat Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "piratesdinneradventure-orlando": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Pirates Dinner Adventure - Orlando",
+    "zombie": false,
+    "ops": 2
+  },
+  "advancemobilityusa": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Advance Mobility",
+    "zombie": false,
+    "ops": 2
+  },
+  "chocolatekingdom": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Chocolate Kingdom",
+    "zombie": false,
+    "ops": 2
+  },
+  "centralfloridaslingshots": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Central Florida Slingshots",
+    "zombie": false,
+    "ops": 2
+  },
+  "okaydivers": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Ultimate Scuba LLC",
+    "zombie": false,
+    "ops": 2
+  },
+  "getupandgokayaking-crystalsprings": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Get Up and Go Kayaking - Crystal River",
+    "zombie": false,
+    "ops": 2
+  },
+  "getupandgokayaking-silversprings": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Get Up and Go Kayaking - Silver Springs",
+    "zombie": false,
+    "ops": 2
+  },
+  "crystalriverwatersports": {
+    "status": 200,
+    "itemCount": 16,
+    "companyName": "Crystal River Watersports",
+    "zombie": false,
+    "ops": 2
+  },
+  "wildbillsairboattour": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Wild Bill's Airboat Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "naturecoastecotours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Nature Coast Eco Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "evergladesadventuresativeyhouse": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Everglades Adventures Kayak & Eco Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "evergladesnationalparkadventures": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Everglades National Park Adventures",
+    "zombie": false,
+    "ops": 2
+  },
+  "gck": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Garl's Coastal Kayaking Everglades",
+    "zombie": false,
+    "ops": 2
+  },
+  "kohaladivers": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Kohala Divers",
+    "zombie": false,
+    "ops": 2
+  },
+  "alohahawaiitours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Aloha Hawaii Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "konaseasalt": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Kona Sea Salt – The Farm",
+    "zombie": false,
+    "ops": 2
+  },
+  "hawaiioceanrafting": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Hawaii Ocean Rafting",
+    "zombie": false,
+    "ops": 2
+  },
+  "mauiwaveriders-kihei": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Maui Wave Riders- Kihei",
+    "zombie": false,
+    "ops": 2
+  },
+  "hotelmagic-hiltonwaikiki": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Hotel Magic - Hilton Waikiki",
+    "zombie": false,
+    "ops": 2
+  },
+  "hanaandbeyond": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Hana and Beyond",
+    "zombie": false,
+    "ops": 2
+  },
+  "mauireefadventures": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Maui Reef Adventures",
+    "zombie": false,
+    "ops": 2
+  },
+  "hawaiioceansports": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Ocean Sports Cruises",
+    "zombie": false,
+    "ops": 2
+  },
+  "junglezip": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Jungle Zipline",
+    "zombie": false,
+    "ops": 2
+  },
+  "kauaibackcountry": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Kauai Backcountry Adventures",
+    "zombie": false,
+    "ops": 2
+  },
+  "dolphindiscoveries": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Dolphin Discoveries",
+    "zombie": false,
+    "ops": 2
+  },
+  "bigislandvip": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Big Island VIP",
+    "zombie": false,
+    "ops": 2
+  },
+  "gohawaii-watersports": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Go Hawaii Watersports",
+    "zombie": false,
+    "ops": 2
+  },
+  "adventurex": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Adventure X Boat Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "hawaiiislandandoceantours": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Hawaii Island & Ocean Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "hawaiioceanic": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Hawaii Oceanic",
+    "zombie": false,
+    "ops": 2
+  },
+  "hawaiiglassbottomboats-slt": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Ocean Outfitters Hawaii",
+    "zombie": false,
+    "ops": 2
+  },
+  "ziplinetourshawaii": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Hawaii Zipline Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "mauichocolatetour": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Maui Chocolate Tour",
+    "zombie": false,
+    "ops": 2
+  },
+  "sailwinona": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Unicorn Tours of Hawaii Inc",
+    "zombie": false,
+    "ops": 2
+  },
+  "goofyfootsurf": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Goofy Foot Surf School",
+    "zombie": false,
+    "ops": 2
+  },
+  "napalihawaii": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Kauai Offshore Adventures LLC",
+    "zombie": false,
+    "ops": 2
+  },
+  "biketourhawaii": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Bike Tour Hawaii",
+    "zombie": false,
+    "ops": 2
+  },
+  "thesurfbus": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "The Surf Bus",
+    "zombie": false,
+    "ops": 2
+  },
+  "pinksailswaikiki": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "Pink Sails Waikiki",
+    "zombie": false,
+    "ops": 2
+  },
+  "beachtourshawaii": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Beach Tours Hawaii",
+    "zombie": false,
+    "ops": 2
+  },
+  "honoliiestate": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Honoli'i Orchards",
+    "zombie": false,
+    "ops": 2
+  },
+  "hawaiinautical-maui": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Hawaii Nautical - Maui",
+    "zombie": false,
+    "ops": 2
+  },
+  "aliikayaks": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Alii Kayaks",
+    "zombie": false,
+    "ops": 2
+  },
+  "blueplanetadventure": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Blue Planet Adventure Company",
+    "zombie": false,
+    "ops": 2
+  },
+  "ohanaranch": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Ohana Ranch",
+    "zombie": false,
+    "ops": 2
+  },
+  "westinmaui": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Wailele Luau",
+    "zombie": false,
+    "ops": 2
+  },
+  "ahaainaluau": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Royal Hawaiian - Aha'aina Luau",
+    "zombie": false,
+    "ops": 2
+  },
+  "livingoceanscuba": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Living Ocean Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "hilooceanadventures": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Hilo Ocean Adventures",
+    "zombie": false,
+    "ops": 2
+  },
+  "wailuariverkayaking": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Wailua Kayak & Canoe",
+    "zombie": false,
+    "ops": 2
+  },
+  "keywestghosthunt": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "The Original Key West Ghost Hunt",
+    "zombie": false,
+    "ops": 2
+  },
+  "hemingwayinkeywesttours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Hemingway in Key West Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "sixfinsjetskirental": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Six Fins Jet Ski Rental - Perry Marina",
+    "zombie": false,
+    "ops": 2
+  },
+  "tarttales": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Tart Tales, LLC",
+    "zombie": false,
+    "ops": 2
+  },
+  "sixfinsjetskirental-hurricanhole": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Six Fins Jet Ski Rental - Hurricane Hole",
+    "zombie": false,
+    "ops": 2
+  },
+  "keywestfishing-charters": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Cowboy Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "knotty_irish": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Cowboy Cowgirl Sportfishing - Knotty Cowgirl",
+    "zombie": false,
+    "ops": 2
+  },
+  "sailargonavis": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Hindu Charters LLC - Argo Navis",
+    "zombie": false,
+    "ops": 2
+  },
+  "gulfstreamkeywest": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Gulfstream Fishing",
+    "zombie": false,
+    "ops": 2
+  },
+  "charterboatlindad": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Linda D Sportfishing",
+    "zombie": false,
+    "ops": 2
+  },
+  "conchconciergeweddings": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Conch Concierge Weddings",
+    "zombie": false,
+    "ops": 2
+  },
+  "safaricharters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Dolphin Safari",
+    "zombie": false,
+    "ops": 2
+  },
+  "reelparadisecharters": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Reel Paradise Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "keylimebiketours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Key Lime Bike Tours",
+    "zombie": false,
+    "ops": 2
+  },
+  "paradiserentalskw": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Paradise Rentals KW",
+    "zombie": false,
+    "ops": 2
+  },
+  "keywestsebago": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Sebago Watersports",
+    "zombie": false,
+    "ops": 2
+  },
+  "tidentaxi": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Tide N Taxi",
+    "zombie": false,
+    "ops": 2
+  },
+  "brightwild-adventures": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Brightwild Adventures",
+    "zombie": false,
+    "ops": 2
+  },
+  "saltypawskeywest": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Salty Paws Key West LLC",
+    "zombie": false,
+    "ops": 2
+  },
+  "luxuryseacharters": {
+    "status": 200,
+    "itemCount": 3,
+    "companyName": "Luxury Sea Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "mellowventureskeywest": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Mellow Ventures",
+    "zombie": false,
+    "ops": 2
+  },
+  "islandvibecharters": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Island Vibe Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "sandandseakeywestcharters": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Sand & Sea Key West Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "askmekw": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Eat Drink Discover Key West",
+    "zombie": false,
+    "ops": 2
+  },
+  "keywestsailingcenter": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Key West Community Sailing Center, Inc",
+    "zombie": false,
+    "ops": 2
+  },
+  "thebluepearlboat": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "The Blue Pearl",
+    "zombie": false,
+    "ops": 2
+  },
+  "nauticajuncharters": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Nauti Cajun Charters",
+    "zombie": false,
+    "ops": 2
+  },
+  "catamaranecho": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Catamaran Echo",
+    "zombie": false,
+    "ops": 2
+  },
+  "conchcarts": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Conch Carts",
+    "zombie": false,
+    "ops": 2
+  },
+  "speakeasymurder": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Speakeasy Murder",
+    "zombie": false,
+    "ops": 1
+  },
+  "islandboatadventures": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Island Boat Adventures",
+    "zombie": false,
+    "ops": 1
+  },
+  "thepinkpelicantiki": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "The Pink Pelican Tiki",
+    "zombie": false,
+    "ops": 1
+  },
+  "leviquetoursandrentals": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Levique Tours and Rentals",
+    "zombie": false,
+    "ops": 1
+  },
+  "captainclearwater": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Captain Clearwater",
+    "zombie": false,
+    "ops": 1
+  },
+  "sweetfloridarentals": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Sweet Florida Rentals",
+    "zombie": false,
+    "ops": 1
+  },
+  "golocalmanateetours": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Go Local Manatee Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "orlandotreetrek": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Orlando Tree Trek Adventure Park",
+    "zombie": false,
+    "ops": 1
+  },
+  "paddleboardnsb": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Paddleboard New Smyrna",
+    "zombie": false,
+    "ops": 1
+  },
+  "saltlifeexpeditions": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Salt Life Expeditions",
+    "zombie": false,
+    "ops": 1
+  },
+  "getupandgokayaking_newsmyrnabeach": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Get Up and Go Kayaking - New Smyrna Beach",
+    "zombie": false,
+    "ops": 1
+  },
+  "islandkayaktours": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Island Kayak Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "coastalkayakcharters": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Coastal Kayak Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "craigcatadventures": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Catboat Escapes",
+    "zombie": false,
+    "ops": 1
+  },
+  "kawyrecreations": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Kawy Recreations Inc.",
+    "zombie": false,
+    "ops": 1
+  },
+  "ameliaislandkayak": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Amelia Island Kayak Excursions",
+    "zombie": false,
+    "ops": 1
+  },
+  "orlandohelicopteradventures": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Orlando Helicopter Adventures",
+    "zombie": false,
+    "ops": 1
+  },
+  "verotackle": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Vero Tackle & Watersports",
+    "zombie": false,
+    "ops": 1
+  },
+  "sofloslings": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Slingshot Rentals Miami",
+    "zombie": false,
+    "ops": 1
+  },
+  "spaceshuttleexcursions": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Space Shuttle LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "spiritoftheswamp": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Spirit of the Swamp Airboat Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "mayeycatamarans": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Mayey Catamarans",
+    "zombie": false,
+    "ops": 1
+  },
+  "cookinvallarta-mxn": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Cookin' Vallarta",
+    "zombie": false,
+    "ops": 1
+  },
+  "ecotravelmexico": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "EcoColors Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "awesomeflightcozumel": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Awesome Flight Cozumel",
+    "zombie": false,
+    "ops": 1
+  },
+  "miamiculinarytours": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Miami Culinary Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "bjmrentals": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "BJM Rentals",
+    "zombie": false,
+    "ops": 1
+  },
+  "northmiamidivers": {
+    "status": 200,
+    "itemCount": 91,
+    "companyName": "Squalo Divers",
+    "zombie": false,
+    "ops": 1
+  },
+  "systemshuttle": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "System Shuttle Miami",
+    "zombie": false,
+    "ops": 1
+  },
+  "miatouristcenter": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Mia Tourist Center LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "miamisbestgraffitiguide": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Miami’s Best Graffiti Guide",
+    "zombie": false,
+    "ops": 1
+  },
+  "miamifoodtours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Miami Food Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "open-miami": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Open Miami",
+    "zombie": false,
+    "ops": 1
+  },
+  "saltwatertherapy": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Shaping Futures Co",
+    "zombie": false,
+    "ops": 1
+  },
+  "miamibeachwelcomecenter": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "South Beach Welcome Center",
+    "zombie": false,
+    "ops": 1
+  },
+  "paseosenbarcomiami": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Paseos en barco Miami",
+    "zombie": false,
+    "ops": 1
+  },
+  "miamiwowtours": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Miami WOW Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "pelagicpiratecharters": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Pelagic Pirate Charters Inc",
+    "zombie": false,
+    "ops": 1
+  },
+  "jetskisworldmiami": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Jetski’s World Miami LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "cfgsportstraveltech": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "CFG Sports and Travel Tech LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "odyseaboatrentals": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Odysea Rentals LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "miamiaquaticcentre": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Miami Aquatic Centre",
+    "zombie": false,
+    "ops": 1
+  },
+  "sailmiami": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Sail Ahead Miami",
+    "zombie": false,
+    "ops": 1
+  },
+  "oceanforceadventures": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Ocean Force Adventures",
+    "zombie": false,
+    "ops": 1
+  },
+  "miamiluxor": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Miami Luxor llc",
+    "zombie": false,
+    "ops": 1
+  },
+  "305jetskisrental": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "305 Jetskisrental",
+    "zombie": false,
+    "ops": 1
+  },
+  "miajetskirental": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "MIA Jet Ski Rental",
+    "zombie": false,
+    "ops": 1
+  },
+  "vipmiamiclubcrawl": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Miami Epic Crawls",
+    "zombie": false,
+    "ops": 1
+  },
+  "wynwoodbuggies": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Wynwood Buggies",
+    "zombie": false,
+    "ops": 1
+  },
+  "scooterofmiami": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Scooter Of Miami",
+    "zombie": false,
+    "ops": 1
+  },
+  "jericoblue": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Jerico Blue LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "jetskiridingmiami": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Jet Ski Riding Miami",
+    "zombie": false,
+    "ops": 1
+  },
+  "tizamotorsportsllc": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Tiza Motorsports LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "cabdaddy": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Cab Daddy",
+    "zombie": false,
+    "ops": 1
+  },
+  "colnago-usa": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Colnago USA",
+    "zombie": false,
+    "ops": 1
+  },
+  "carriebcruises": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Carrie B Cruises",
+    "zombie": false,
+    "ops": 1
+  },
+  "scubasteveforceescubacenters": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Scuba Steve Force-E Scuba Centers",
+    "zombie": false,
+    "ops": 1
+  },
+  "sunsetscooterrentals": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Sunset Scooter Rentals",
+    "zombie": false,
+    "ops": 1
+  },
+  "flatbottomcharters": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Flat Bottom Fishing Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "captwillie": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "William Howard Enterprises LLC DBA Captain Willie's Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "bulkcandystore": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Bulk Candy Store",
+    "zombie": false,
+    "ops": 1
+  },
+  "saltysoulsecotours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Salty Souls Eco Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "sydneykayak": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Sydney Kayak",
+    "zombie": false,
+    "ops": 1
+  },
+  "palmbeachpartybike": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Palm Beach Party Bike",
+    "zombie": false,
+    "ops": 1
+  },
+  "paulaseayacht": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Paulasea Marine",
+    "zombie": false,
+    "ops": 1
+  },
+  "pbchistory": {
+    "status": 200,
+    "itemCount": 22,
+    "companyName": "Historical Society of Palm Beach County",
+    "zombie": false,
+    "ops": 1
+  },
+  "seedsailingco": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Seed Sailing Co",
+    "zombie": false,
+    "ops": 1
+  },
+  "slingshotofpalmbeach": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Slingshot Rental of Palm Beach",
+    "zombie": false,
+    "ops": 1
+  },
+  "tampabayrydes": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Tampa Bay Rydes",
+    "zombie": false,
+    "ops": 1
+  },
+  "jimbosjumbofoodtour": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Jimbos Jumbo Food Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "liquidfuncharters": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Liquid Fun Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "sea-eo-tampa": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "SeaEO Nautical Ventures - Tampa",
+    "zombie": false,
+    "ops": 1
+  },
+  "seaglasskayaking-tampa": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Seaglass Kayaking - Tampa",
+    "zombie": false,
+    "ops": 1
+  },
+  "crocencounters": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Croc Encounters",
+    "zombie": false,
+    "ops": 1
+  },
+  "sunsetfoodtours-tampa": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Sunset Food Tours - Tampa",
+    "zombie": false,
+    "ops": 1
+  },
+  "fmopa": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Florida Museum of Photographic Arts",
+    "zombie": false,
+    "ops": 1
+  },
+  "sarasotavanrentals": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Nation Van Rentals - Sarasota",
+    "zombie": false,
+    "ops": 1
+  },
+  "miamivanrentals": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Nation Van Rentals - Miami",
+    "zombie": false,
+    "ops": 1
+  },
+  "boredandyachting": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Bored & Yachting",
+    "zombie": false,
+    "ops": 1
+  },
+  "juniorchefsofamerica": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Junior Chefs of America, INC",
+    "zombie": false,
+    "ops": 1
+  },
+  "magiccarpetglide": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Tampa Bay Segway Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "sailefun": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Sail & Fun",
+    "zombie": false,
+    "ops": 1
+  },
+  "marcoislandwatersports": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Marco Island WaterSports",
+    "zombie": false,
+    "ops": 1
+  },
+  "adventurepaddletoursnaples": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Adventure Paddle Tours - Naples",
+    "zombie": false,
+    "ops": 1
+  },
+  "italiatours": {
+    "status": 200,
+    "itemCount": 20,
+    "companyName": "ItaliaTours",
+    "zombie": false,
+    "ops": 1
+  },
+  "napleskayakcompany": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Naples Outfitters",
+    "zombie": false,
+    "ops": 1
+  },
+  "pompeiiwitharchaeologist": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Pompeii with Archaeologist",
+    "zombie": false,
+    "ops": 1
+  },
+  "aquavoyagejetcars": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Aqua Voyage Jet Cars",
+    "zombie": false,
+    "ops": 1
+  },
+  "koolcatecotours": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "KoolCat Eco Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "smokinhooks": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Smokin' Hooks",
+    "zombie": false,
+    "ops": 1
+  },
+  "rookerybay": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Rookery Bay National Estuarine Research Reserve",
+    "zombie": false,
+    "ops": 1
+  },
+  "thegrapery": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Arbor Hill Grapery & Winery",
+    "zombie": false,
+    "ops": 1
+  },
+  "songoriverqueen": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Songo River Queen II",
+    "zombie": false,
+    "ops": 1
+  },
+  "boatnaples": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Boat Naples",
+    "zombie": false,
+    "ops": 1
+  },
+  "glassbottomtours-sarasota": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Sharkey's Glass Bottom Tours - Sarasota",
+    "zombie": false,
+    "ops": 1
+  },
+  "glassbottomtours": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Sharkey's Glass Bottom Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "splashndashjetskirental": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Splash-N-Dash JetSki Rental",
+    "zombie": false,
+    "ops": 1
+  },
+  "sarasotabiketours": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Sarasota Bike Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "sunandfuncharters": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Sun and Fun Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "siestakeyaquaadventures": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Siesta Key Aqua Adventures LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "bookslingshot": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "BigShot Slingshot Rentals",
+    "zombie": false,
+    "ops": 1
+  },
+  "aquaridersjetskirental": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Aqua Riders LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "sandbarcharters": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Sand Bar Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "charterboatshark": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Charter Boat Shark",
+    "zombie": false,
+    "ops": 1
+  },
+  "reeltightfishingcharters": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Reel Tight Fishing Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "wetpaddleboards": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "WET Inc.",
+    "zombie": false,
+    "ops": 1
+  },
+  "destinqueen": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Skipper Luxury Charters LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "seachasecharters": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "SEA Chase Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "hilinercharters": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Hiliner Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "cinnsationalfishing": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Cinnsational Saltwater Fishing",
+    "zombie": false,
+    "ops": 1
+  },
+  "sunshinedestin-justchutemeparasail": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Just Chute Me Parasail",
+    "zombie": false,
+    "ops": 1
+  },
+  "thedestincharterservice": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Destin Charter Service",
+    "zombie": false,
+    "ops": 1
+  },
+  "destinyachtcruise": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Destin Yacht Cruise",
+    "zombie": false,
+    "ops": 1
+  },
+  "kittyhawk": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Kitty Hawk Kites",
+    "zombie": false,
+    "ops": 1
+  },
+  "legacyyachtmgmt": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Legacy Yacht Management",
+    "zombie": false,
+    "ops": 1
+  },
+  "intothebluedestin": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Into The Blue Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "santarosabeachpontoonrental": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Santa Rosa Beach Pontoon Rental LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "superiorslingshotrentalsandtours": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Destin Cart Company",
+    "zombie": false,
+    "ops": 1
+  },
+  "dolphinandsnorkeltours": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Dolphin and Snorkel Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "getupandgokayaking_30a": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Get Up And Go Kayaking - 30A",
+    "zombie": false,
+    "ops": 1
+  },
+  "tryscuba-pcb-denstin": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Try Scuba Diving- FL/Caribbean",
+    "zombie": false,
+    "ops": 1
+  },
+  "supbeachestours": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "SUP Beaches",
+    "zombie": false,
+    "ops": 1
+  },
+  "shellislanddolphins": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Shell Island Dolphin Tours LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "blackmantakayakclub": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Black Manta Kayak Club",
+    "zombie": false,
+    "ops": 1
+  },
+  "orange-beach_saltwater-fishing-charters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Saltwater Fishing Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "southwindmarina": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Southwind Marina",
+    "zombie": false,
+    "ops": 1
+  },
+  "takemeyachting": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Pensacola Yacht Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "vikingdiving": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Viking Diving",
+    "zombie": false,
+    "ops": 1
+  },
+  "sandytoes850": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Sandy Toes Beach Service",
+    "zombie": false,
+    "ops": 1
+  },
+  "funnsuncharters": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Fun-N-Sun Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "floatmyboatrentals": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Float My Boat Rentals",
+    "zombie": false,
+    "ops": 1
+  },
+  "cyclejoint": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Cycle Joint",
+    "zombie": false,
+    "ops": 1
+  },
+  "salth20therapy": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "SaltH20Therapy",
+    "zombie": false,
+    "ops": 1
+  },
+  "exploretoursandpickups": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Explore Tours And Pickups",
+    "zombie": false,
+    "ops": 1
+  },
+  "saintaugustinephototours": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Saint Augustine Photo Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "magichideaway": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Magic Hideaway",
+    "zombie": false,
+    "ops": 1
+  },
+  "staugustinepaddlesports": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "St. Augustine Paddle Sports",
+    "zombie": false,
+    "ops": 1
+  },
+  "oldcitycarriages": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Old City Carriages",
+    "zombie": false,
+    "ops": 1
+  },
+  "getupandgokayaking-lighthouse": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Get Up and Go Kayaking - Lighthouse",
+    "zombie": false,
+    "ops": 1
+  },
+  "staugustinedarksidetours": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "St Augustine Dark Side Tours LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "destinationghost": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Destination Ghost Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "pastimetours": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Pastime Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "twoconchs-staugustine": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Two Conchs - St. Augustine",
+    "zombie": false,
+    "ops": 1
+  },
+  "lastghosttour": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Historic Stroll Society",
+    "zombie": false,
+    "ops": 1
+  },
+  "guyharveyoutpost": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Guy Harvey Outpost",
+    "zombie": false,
+    "ops": 1
+  },
+  "thesalonofsecrets": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "The Salon of Secrets",
+    "zombie": false,
+    "ops": 1
+  },
+  "whetstonechocolates": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Whetstone Chocolates, Inc.",
+    "zombie": false,
+    "ops": 1
+  },
+  "flbicyclerentals": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "FL Bicycle Rentals",
+    "zombie": false,
+    "ops": 1
+  },
+  "getupandgokayaking-titusville": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Get Up and Go Kayaking - Titusville",
+    "zombie": false,
+    "ops": 1
+  },
+  "sobesurf": {
+    "status": 200,
+    "itemCount": 19,
+    "companyName": "SoBe Surf & Paddle",
+    "zombie": false,
+    "ops": 1
+  },
+  "palmbeachadventures": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Sebastian Adventures",
+    "zombie": false,
+    "ops": 1
+  },
+  "dolfuntours": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "DolFun Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "melgeswatersports": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Melges Watersports Center",
+    "zombie": false,
+    "ops": 1
+  },
+  "slingshotadventure-cocoabeach": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Slingshot Adventures - Cocoa Beach",
+    "zombie": false,
+    "ops": 1
+  },
+  "tikicruises": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Tiki Cruises",
+    "zombie": false,
+    "ops": 1
+  },
+  "floridaairtours": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Florida Air Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "orlandovanrentals": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Nation Van Rentals - Orlando",
+    "zombie": false,
+    "ops": 1
+  },
+  "dollaroffdrinks": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Dollar Off Drinks",
+    "zombie": false,
+    "ops": 1
+  },
+  "slidenglide": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Slide N Glide",
+    "zombie": false,
+    "ops": 1
+  },
+  "ktartistry": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "KT Artistry",
+    "zombie": false,
+    "ops": 1
+  },
+  "nativebassfishing": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Native Bass Fishing Charters LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "piratesdinneradventure-sandbox": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Pirates Dinner Adventure - Sandbox",
+    "zombie": false,
+    "ops": 1
+  },
+  "titanicorlando": {
+    "status": 200,
+    "itemCount": 18,
+    "companyName": "EM Group - Titanic: The Artifact Exhibition - Orlando",
+    "zombie": false,
+    "ops": 1
+  },
+  "floridapaddleexcursions": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Florida Paddle Excursions, LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "getupandgokayaking-chaz": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Get Up and Go Kayaking - The Chaz",
+    "zombie": false,
+    "ops": 1
+  },
+  "westgatelakeresorts": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Westgate Lakes Resort & Spa",
+    "zombie": false,
+    "ops": 1
+  },
+  "saltysirentours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Salty Siren Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "crystalriverpreserveadventures": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Crystal River Preserve Adventures",
+    "zombie": false,
+    "ops": 1
+  },
+  "cactusjackstrailrides": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Cactus Jacks Trail Rides, LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "explorida": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Explorida",
+    "zombie": false,
+    "ops": 1
+  },
+  "hollybluff": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Holly Bluff Marina",
+    "zombie": false,
+    "ops": 1
+  },
+  "farmtoursofocala": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Farm Tours of Ocala",
+    "zombie": false,
+    "ops": 1
+  },
+  "clearcanoeing": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Clear Canoeing",
+    "zombie": false,
+    "ops": 1
+  },
+  "seecrystalriver": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "See Crystal River",
+    "zombie": false,
+    "ops": 1
+  },
+  "grandviewclydesdaletours": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Grandview Clydesdale Farm & Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "luxejetskirentalorl": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Luxe Jet Ski Rental",
+    "zombie": false,
+    "ops": 1
+  },
+  "manateetouranddive": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Manatee Tour and Dive",
+    "zombie": false,
+    "ops": 1
+  },
+  "lakelouisastatepark": {
+    "status": 200,
+    "itemCount": 19,
+    "companyName": "Lake Louisa State Park",
+    "zombie": false,
+    "ops": 1
+  },
+  "manateesinparadise": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Manatees in Paradise",
+    "zombie": false,
+    "ops": 1
+  },
+  "ecoventurefl": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Ecoventure Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "kaceyscustomadventures": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Kacey's Custom Adventures",
+    "zombie": false,
+    "ops": 1
+  },
+  "sevensisterscampground": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Seven Sisters Kayaks",
+    "zombie": false,
+    "ops": 1
+  },
+  "silverriverkayakadventures": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Silver River Kayak Adventures",
+    "zombie": false,
+    "ops": 1
+  },
+  "wootenseverglades": {
+    "status": 200,
+    "itemCount": 17,
+    "companyName": "Wooten's Everglades Airboat Tour",
+    "zombie": false,
+    "ops": 1
+  },
+  "xtreme": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "X-Treme Parasail & Diamond Head Parasail",
+    "zombie": false,
+    "ops": 1
+  },
+  "highcountrycharters": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Laid Up Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "napalitours": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Na Pali Coast Hanalei Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "hawaiiislandholidays": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Hawaii Island Holidays",
+    "zombie": false,
+    "ops": 1
+  },
+  "alohacircleisland": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Aloha Circle Island",
+    "zombie": false,
+    "ops": 1
+  },
+  "dolphinexcursions": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Dolphin Excursions",
+    "zombie": false,
+    "ops": 1
+  },
+  "kayakwailua": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Kayak Wailua",
+    "zombie": false,
+    "ops": 1
+  },
+  "starsabovehawaii": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Stars Above Hawaii",
+    "zombie": false,
+    "ops": 1
+  },
+  "waikikimarinesports": {
+    "status": 200,
+    "itemCount": 23,
+    "companyName": "E Sea Diver",
+    "zombie": false,
+    "ops": 1
+  },
+  "maunaloahelicoptertourskauai": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Mauna Loa Helicopter Tours - Kauai",
+    "zombie": false,
+    "ops": 1
+  },
+  "iflykauai": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Ali'i Air Tours & Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "mauipineappletour": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Maui Pineapple Tour",
+    "zombie": false,
+    "ops": 1
+  },
+  "coralreef": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Coral Reef Snorkel Adventures",
+    "zombie": false,
+    "ops": 1
+  },
+  "hawaiiapexcharters": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Hawaii Apex Charters LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "hichocolatefarm": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Kahi Ola Mau Farm, LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "northshorestables": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "North Shore Stables",
+    "zombie": false,
+    "ops": 1
+  },
+  "sheratonkauailuau": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Sheraton Kauai Coconut Beach Resort",
+    "zombie": false,
+    "ops": 1
+  },
+  "alohashakatours": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Aloha Shaka Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "gosurfmaui": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Waves Hawaii Surf School",
+    "zombie": false,
+    "ops": 1
+  },
+  "kaimanatours": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Kaimana Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "bwa": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Botanical World Adventures - Segway Off Road and Zip Isle Zip Line",
+    "zombie": false,
+    "ops": 1
+  },
+  "royallahaina": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Myths of Maui Luau at the Royal Lahaina Resort",
+    "zombie": false,
+    "ops": 1
+  },
+  "hikemaui": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Hike Maui",
+    "zombie": false,
+    "ops": 1
+  },
+  "dynamictourhawaii": {
+    "status": 200,
+    "itemCount": 18,
+    "companyName": "Dynamic Tour Hawaii",
+    "zombie": false,
+    "ops": 1
+  },
+  "kekokauai": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Keko Adventure Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "leilanifarmsanctuary": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Leilani Farm Sanctuary",
+    "zombie": false,
+    "ops": 1
+  },
+  "flyskylandair": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Skyland Air",
+    "zombie": false,
+    "ops": 1
+  },
+  "makaiglass": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Glass Experience Maui",
+    "zombie": false,
+    "ops": 1
+  },
+  "surf-northshore": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Venture Sessions",
+    "zombie": false,
+    "ops": 1
+  },
+  "mauiecotours": {
+    "status": 200,
+    "itemCount": 21,
+    "companyName": "Maui Eco Tours/South Pacific Kayak/Kelii's Kayaks",
+    "zombie": false,
+    "ops": 1
+  },
+  "hanatoursofmaui": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Hana Tours of Maui",
+    "zombie": false,
+    "ops": 1
+  },
+  "airventures": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "AirVentures Hawaii",
+    "zombie": false,
+    "ops": 1
+  },
+  "advparadise": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Adventures in Paradise",
+    "zombie": false,
+    "ops": 1
+  },
+  "divealohascuba": {
+    "status": 200,
+    "itemCount": 16,
+    "companyName": "Aloha Scuba Diving Co.",
+    "zombie": false,
+    "ops": 1
+  },
+  "hawaiianadventureskona": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Hawaiian Adventures",
+    "zombie": false,
+    "ops": 1
+  },
+  "kailanitourshawaii": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Kailani Tours Hawaii",
+    "zombie": false,
+    "ops": 1
+  },
+  "islandmountainguides": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Island Mountain Guides",
+    "zombie": false,
+    "ops": 1
+  },
+  "mauisnorkelcharters": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Maui Snorkel Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "kikostoursoahu": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Kikos Tours Oahu",
+    "zombie": false,
+    "ops": 1
+  },
+  "midpacifictours": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Mid-Pacific Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "hhsurf": {
+    "status": 200,
+    "itemCount": 16,
+    "companyName": "Hans Hedemann South Shore (Queen Kapiolani)",
+    "zombie": false,
+    "ops": 1
+  },
+  "kailuakonaestate": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Kona Kai LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "mauisunriders": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Maui Sunriders Bike Company",
+    "zombie": false,
+    "ops": 1
+  },
+  "mountainriders": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Maui Mountain Riders",
+    "zombie": false,
+    "ops": 1
+  },
+  "snorkelwithturtles": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Snorkel With Turtles",
+    "zombie": false,
+    "ops": 1
+  },
+  "konadeepseacharter": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Ku'uipo Deep Sea Charter",
+    "zombie": false,
+    "ops": 1
+  },
+  "palehuatrailrides": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Palehua Trail Rides LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "mauisurfclinics": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Maui Surf Clinics",
+    "zombie": false,
+    "ops": 1
+  },
+  "alohasunshinetours": {
+    "status": 200,
+    "itemCount": 18,
+    "companyName": "Aloha Sunshine Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "alohaadventurefarms": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Aloha Adventure Farms",
+    "zombie": false,
+    "ops": 1
+  },
+  "mahinahawaii": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Mahina Hawaii",
+    "zombie": false,
+    "ops": 1
+  },
+  "kohanarum": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Ko Hana Distillers",
+    "zombie": false,
+    "ops": 1
+  },
+  "hawaiianshuttles": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Take a Hike Oahu",
+    "zombie": false,
+    "ops": 1
+  },
+  "luau-kalamaku": {
+    "status": 200,
+    "itemCount": 9,
+    "companyName": "Luau Kalamaku",
+    "zombie": false,
+    "ops": 1
+  },
+  "wildlifehawaii": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Wildlife Hawaii",
+    "zombie": false,
+    "ops": 1
+  },
+  "kauaiseariders": {
+    "status": 200,
+    "itemCount": 8,
+    "companyName": "Kauai Sea Rider Adventures",
+    "zombie": false,
+    "ops": 1
+  },
+  "honolulusnorkelcompany": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "Honolulu Snorkel Company",
+    "zombie": false,
+    "ops": 1
+  },
+  "lonohana": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Lonohana Estate Chocolate",
+    "zombie": false,
+    "ops": 1
+  },
+  "supdoghawaii": {
+    "status": 200,
+    "itemCount": 14,
+    "companyName": "SUPDog Hawaii LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "islanddivershi": {
+    "status": 200,
+    "itemCount": 26,
+    "companyName": "Island Divers Hawaii Kai",
+    "zombie": false,
+    "ops": 1
+  },
+  "hawaiiturtletours": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Hawaii Turtle Tours",
+    "zombie": false,
+    "ops": 1
+  },
+  "ziplinehawaii": {
+    "status": 200,
+    "itemCount": 15,
+    "companyName": "Umauma Falls & ZipLine Experience",
+    "zombie": false,
+    "ops": 1
+  },
+  "thehelmsportfishing": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "The Helm Sportfishing",
+    "zombie": false,
+    "ops": 1
+  },
+  "sea-eo-keywest": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "SeaEO Nautical Ventures - Key West, FL",
+    "zombie": false,
+    "ops": 1
+  },
+  "keyssandbaradventures": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Keys Sandbar Adventures",
+    "zombie": false,
+    "ops": 1
+  },
+  "seamonkeycharters": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Sea Monkey Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "keywestghostandmysteriestour": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Key West Ghost & Mysteries Tour",
+    "zombie": false,
+    "ops": 1
+  },
+  "afterhourskeywest": {
+    "status": 200,
+    "itemCount": 18,
+    "companyName": "After Hours Yacht Key West",
+    "zombie": false,
+    "ops": 1
+  },
+  "funrentalskeywest": {
+    "status": 200,
+    "itemCount": 11,
+    "companyName": "Fun Rentals Key West",
+    "zombie": false,
+    "ops": 1
+  },
+  "walktheplankadventures": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Walk The Plank Adventures",
+    "zombie": false,
+    "ops": 1
+  },
+  "saltybottomboats": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Salty Bottom Boat Party’s",
+    "zombie": false,
+    "ops": 1
+  },
+  "sanctuary": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Cowboy Cowgirl Sportfishing - Sanctuary 47 Foot Hatteras",
+    "zombie": false,
+    "ops": 1
+  },
+  "keywestfishing-charters2": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Key West Fishing Deals",
+    "zombie": false,
+    "ops": 1
+  },
+  "learntosailkeywest": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "LEARN TO SAIL KEY WEST LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "keywesthunt": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Southernmost Scavenger Hunt - Key West",
+    "zombie": false,
+    "ops": 1
+  },
+  "keywestconchlifecharters": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Key West Conchlife Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "aquadkeys": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Aqua D’Keys",
+    "zombie": false,
+    "ops": 1
+  },
+  "rveedom": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "RVEEDOM",
+    "zombie": false,
+    "ops": 1
+  },
+  "lloydstropicalbiketour": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Lloyd's Tropical Bike Tour",
+    "zombie": false,
+    "ops": 1
+  },
+  "saltygoatfishingcharters": {
+    "status": 200,
+    "itemCount": 5,
+    "companyName": "Salty Goat Fishing Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "niceguycharters": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Nice Guy Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "havanafleet": {
+    "status": 200,
+    "itemCount": 13,
+    "companyName": "Havana Fleet",
+    "zombie": false,
+    "ops": 1
+  },
+  "wreckedcharters": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "Wrecked Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "corsair2sportfishing": {
+    "status": 200,
+    "itemCount": 6,
+    "companyName": "Corsair Sportfishing LLC",
+    "zombie": false,
+    "ops": 1
+  },
+  "stockislandcharters": {
+    "status": 200,
+    "itemCount": 7,
+    "companyName": "Stock Island Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "lateda-florida": {
+    "status": 200,
+    "itemCount": 12,
+    "companyName": "LaTeDa",
+    "zombie": false,
+    "ops": 1
+  },
+  "keyzlifecharters": {
+    "status": 200,
+    "itemCount": 10,
+    "companyName": "Keyz Life Charters",
+    "zombie": false,
+    "ops": 1
+  },
+  "aquaholicscharters": {
+    "status": 200,
+    "itemCount": 4,
+    "companyName": "Aquaholics Charters",
+    "zombie": false,
+    "ops": 1
+  }
+}

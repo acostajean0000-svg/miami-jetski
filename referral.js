@@ -32,7 +32,7 @@
   var REF_TTL_DAYS = 30;
   var FH_HOST_MATCH = 'fareharbor.com';
   var LOG_PREFIX = '[refstay]';
-  var DEBUG = true; // set false in prod to silence logs
+  var DEBUG = false; // set false in prod to silence logs
 
   // ── HELPERS ────────────────────────────────────────────────
   function log() {

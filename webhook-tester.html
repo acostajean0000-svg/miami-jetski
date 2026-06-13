@@ -29,6 +29,9 @@
   <meta name="description" content="Internal test page.">
   <link rel="canonical" href="https://miamijetskiboatrentals.com/webhook-tester">
   <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
+
+<meta property="og:title" content="Refstay Webhook Tester">
+<meta property="og:description" content="Internal test page.">
 </head>
 <body>
 
@@ -40,7 +43,7 @@
   <input id="url" value="https://refstay.com/api/fareharbor-webhook" />
 
   <label style="margin-top:14px;">Secret</label>
-  <input id="secret" value="b1f9ce9de17b512f28fc500f5a444e922af7b31e85ee5867" />
+  <input id="secret" value="" placeholder="Pega el secret aquí (no se guarda en el código)" />
 
   <label style="margin-top:14px;">Payload (JSON)</label>
   <textarea id="payload">{
@@ -132,7 +135,7 @@ function verdict(status, body) {
   if (status === 401) {
     return `<div class="verdict bad">
       ❌ <strong>Secret no coincide.</strong> El env var <code>FH_WEBHOOK_SECRET</code> en Vercel
-      no es <code>b1f9ce9de17b512f28fc500f5a444e922af7b31e85ee5867</code>. Verifica en
+      no coincide con el secret que enviaste. Verifica en
       Vercel → Settings → Environment Variables.
     </div>`;
   }

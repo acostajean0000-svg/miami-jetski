@@ -50,3 +50,9 @@ yarn-error.log*
 *.log
 .vercel
 .env*.local
+.env*
+
+# Backups locales (no commit)
+operators*.json.bak-*
+shortname_*.json.bak-*
+*.bak-[0-9]*

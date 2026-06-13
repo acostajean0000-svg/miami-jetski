@@ -103,3 +103,6 @@ fh_html/
 venv/
 .venv/
 *.local
+
+# --- Herramienta interna (secret-sensitive, nunca desplegar) ---
+webhook-tester.html

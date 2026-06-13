@@ -1,21 +1,65 @@
 {
-  "name": "Florida Water Sports & Boat Rentals",
-  "short_name": "FL Water Sports",
-  "description": "Find and book jet ski rentals, boat charters, water sports tours across Florida. Compare 550+ operators.",
+  "name": "Florida, Hawaii & Caribbean Watersports Marketplace",
+  "short_name": "Watersports",
+  "description": "Find and book jet ski rentals, boat charters, fishing, tours, snorkel, hotels & 30+ activities across Florida, Hawaii, Cancun & Punta Cana. Compare 4,800+ operators across 14 zones.",
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#040d1a",
   "theme_color": "#00d2ff",
+  "categories": ["travel", "lifestyle", "shopping", "entertainment"],
+  "lang": "en-US",
+  "dir": "ltr",
   "icons": [
     {
       "src": "/apple-touch-icon.png",
       "sizes": "180x180",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "maskable"
     },
     {
       "src": "/og-image.png",
       "sizes": "1200x630",
-      "type": "image/png"
+      "type": "image/png",
+      "purpose": "any"
     }
-  ]
+  ],
+  "shortcuts": [
+    {
+      "name": "Jet Ski Rentals",
+      "short_name": "Jet Ski",
+      "description": "Browse jet ski rentals",
+      "url": "/?cat=jetski",
+      "icons": [{ "src": "/apple-touch-icon.png", "sizes": "180x180" }]
+    },
+    {
+      "name": "Boat Charters",
+      "short_name": "Boats",
+      "description": "Browse boat & yacht charters",
+      "url": "/?cat=boat",
+      "icons": [{ "src": "/apple-touch-icon.png", "sizes": "180x180" }]
+    },
+    {
+      "name": "Fishing Trips",
+      "short_name": "Fishing",
+      "description": "Browse fishing charters",
+      "url": "/?cat=fishing",
+      "icons": [{ "src": "/apple-touch-icon.png", "sizes": "180x180" }]
+    },
+    {
+      "name": "Snorkel Tours",
+      "short_name": "Snorkel",
+      "description": "Browse snorkel & dive trips",
+      "url": "/?cat=snorkel",
+      "icons": [{ "src": "/apple-touch-icon.png", "sizes": "180x180" }]
+    }
+  ],
+  "prefer_related_applications": false
 }

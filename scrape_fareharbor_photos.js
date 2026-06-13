@@ -38,6 +38,7 @@ const CONCURRENCY = parseInt(args.concurrency || 3);
 const LIMIT = parseInt(args.limit || 0);
 const HEADLESS = args.headless !== 'false';
 const RESUME = args.resume !== 'false';
+const TARGETS_FILE = args.targets || null;  // si se da, solo scrape esos op IDs
 const PER_PAGE_TIMEOUT_MS = 25000;
 const MIN_DWELL_MS = 4000; // give widget time to load photos
 
@@ -52,8 +53,16 @@ async function main() {
     console.log(`Resuming from ${Object.keys(out).length} already-scraped operators`);
   }
 
+  // Si TARGETS_FILE existe, restringir a esos IDs
+  let targetIds = null;
+  if (TARGETS_FILE && fs.existsSync(TARGETS_FILE)) {
+    const targets = JSON.parse(fs.readFileSync(TARGETS_FILE, 'utf-8'));
+    targetIds = new Set(targets.map(t => t.id));
+    console.log(`Targets file: ${TARGETS_FILE} → scraping solo ${targetIds.size} ops`);
+  }
   const todo = operators.filter(o => {
     if (out[o.id]) return false;
+    if (targetIds && !targetIds.has(o.id)) return false;
     const link = o.link || '';
     return /fareharbor\.com\/embeds\/book\//.test(link);
   });

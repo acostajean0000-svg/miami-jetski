@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
   <title>Page Not Found — Florida WaterSports (4,800+ Operators)</title>
-<meta name="description" content="This page drifted out to sea. Browse 4,800+ verified Florida, Hawaii, Cancún & Punta Cana watersports operators — jet ski, boat charters, tours, fishing, snorkel & more.">
+<meta name="description" content="This page drifted out to sea. Browse 4,800+ verified Florida, Hawaii, Cancún & Punta Cana watersports operators — jet ski, boat charters, tours, fishing">
   <meta name="robots" content="noindex,follow">
   <link rel="canonical" href="https://miamijetskiboatrentals.com/404">
   <link rel="manifest" href="/manifest.json">
@@ -33,37 +33,67 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-4KJ2DD0HB1');(function(){var l=false;function ld(){if(l)return;l=true;var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-4KJ2DD0HB1';document.head.appendChild(s);}if(document.readyState==='complete')ld();else addEventListener('load',ld);['scroll','mousemove','touchstart','click'].forEach(function(e){addEventListener(e,ld,{once:true,passive:true});});})();</script>
 <meta property="og:url" content="https://miamijetskiboatrentals.com/404">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:image" content="https://miamijetskiboatrentals.com/images/og-default.jpg">
-  <meta property="og:image" content="https://miamijetskiboatrentals.com/images/og-default.jpg">
+  <meta name="twitter:image" content="https://miamijetskiboatrentals.com/og-image.png">
+  <meta property="og:image" content="https://miamijetskiboatrentals.com/og-image.png">
 <meta property="og:type" content="website">
-  <meta property="og:site_name" content="Florida Watersports">
-<!-- ========== MEASUREMENT (configure IDs before launch) ========== -->
-<!-- Search Console verification -->
-<meta name="google-site-verification" content="REPLACE_WITH_GSC_TOKEN">
-<meta name="msvalidate.01" content="REPLACE_WITH_BING_TOKEN">
+  <meta property="og:site_name" content="Miami Jetski & Boat Rentals">
 
-<!-- Microsoft Clarity (heatmaps + session recordings) -->
-<script>
-(function(c,l,a,r,i,t,y){
-  c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-  t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-  y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-})(window,document,"clarity","script","REPLACE_WITH_CLARITY_ID");
-</script>
-
-<!-- Meta (Facebook) Pixel -->
-<script>
-!function(f,b,e,v,n,t,s){
-  if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
-  t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)
-}(window, document,'script','https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', 'REPLACE_WITH_FB_PIXEL_ID');
-fbq('track', 'PageView');
-</script>
-<!-- ========== / MEASUREMENT ========== -->
+<meta property="og:title" content="Page Not Found — Florida WaterSports (4,800+ Operators)">
+<meta property="og:description" content="This page drifted out to sea. Browse 4,800+ verified Florida, Hawaii, Cancún & Punta Cana watersports operators — jet ski, boat charters, tours, fishing">
 </head>
 <body>
+  <!-- Smart zone detection banner -->
+  <div id="smart-banner" style="display:none;background:rgba(0,212,200,.12);border:1.5px solid rgba(0,212,200,.4);border-radius:14px;padding:18px 22px;margin-bottom:32px;max-width:560px;width:100%;">
+    <div style="font-size:.75rem;text-transform:uppercase;letter-spacing:1.5px;color:var(--text-muted);margin-bottom:8px;">¿Buscabas esto?</div>
+    <a id="smart-banner-link" href="/" style="display:block;color:var(--teal);font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.05rem;text-decoration:none;margin-bottom:4px;"></a>
+    <div id="smart-banner-sub" style="font-size:.85rem;color:#cfdde9;"></div>
+  </div>
+  <script>
+  (function() {
+    var path = (location.pathname || '').toLowerCase();
+    // Patrones zone → destino + nombre amigable
+    var ZONES = [
+      [/(puntacana|punta-cana|bavaro|bayahibe|capcana|cap-cana)/, '/punta-cana-activities', 'Actividades en Punta Cana', '477+ operadores en Punta Cana, Bávaro y Bayahíbe'],
+      [/cancun/,                                                    '/cancun-activities',     'Actividades en Cancún',    '477+ operadores en Cancún, Playa del Carmen y la Riviera Maya'],
+      [/(hawaii|honolulu|maui|oahu|kauai|big-island|kona|lahaina|kahului|kapolei|hilo)/,
+                                                                    '/hawaii-activities',     'Actividades en Hawaii',    'Tours en Maui, Oahu, Big Island y más'],
+      [/(fort-lauderdale|broward|hollywood-beach|hallandale)/,      '/broward-activities',    'Actividades en Fort Lauderdale', 'Jet ski, yates y tours en Broward County'],
+      [/palm-beach/,                                                '/palm-beach-activities', 'Actividades en Palm Beach','Boats, parasailing y tours en Palm Beach'],
+      [/(key-west|keys|key-largo|marathon|islamorada)/,             '/keys-activities',       'Actividades en los Cayos', 'Operadores en Key West, Marathon y Key Largo'],
+      [/(jacksonville|st-augustine|amelia|daytona|jax|nefl)/,       '/jacksonville-activities','Actividades en NE Florida','Jacksonville, St. Augustine y Amelia Island'],
+      [/orlando/,                                                   '/orlando-activities',    'Actividades en Orlando',   'Tours y experiencias en Orlando'],
+      [/(space-coast|cape-canaveral|cocoa-beach|merritt-island|titusville|melbourne)/,
+                                                                    '/space-coast-activities','Actividades en Space Coast','Cocoa Beach, Cape Canaveral, Titusville'],
+      [/(central-florida|kissimmee|crystal-river|silver-springs|polk|tavares|deland|sebastian)/,
+                                                                    '/central-florida-activities','Actividades en Central Florida','Crystal River, Silver Springs, Kissimmee'],
+      [/everglades/,                                                '/miami-activities',      'Actividades en Miami (Everglades)','Airboats y tours desde Miami a Everglades'],
+      [/(destin|tampa|naples|sarasota|siesta-key|st-petersburg|st-pete|pensacola|panama-city|pcb|fort-myers|marco|clearwater|nokomis|englewood|gulf)/,
+                                                                    '/gulf-activities',       'Actividades en Gulf Coast','Destin, Tampa, Naples, Sarasota, Pensacola'],
+      [/miami/,                                                     '/miami-activities',      'Actividades en Miami',     '448+ operadores en Miami Beach y alrededores'],
+    ];
+    for (var i=0; i<ZONES.length; i++) {
+      var z = ZONES[i];
+      if (z[0].test(path)) {
+        var banner = document.getElementById('smart-banner');
+        var link   = document.getElementById('smart-banner-link');
+        var sub    = document.getElementById('smart-banner-sub');
+        link.textContent = '→ ' + z[2];
+        link.href        = z[1];
+        sub.textContent  = z[3];
+        banner.style.display = 'block';
+        // Also prefill the search box with the zone slug for context
+        var q = document.getElementById('q');
+        if (q && !q.value) {
+          // Extract a hint word from the path
+          var hint = path.split('/').filter(Boolean)[0] || '';
+          if (hint.length > 3) q.value = hint.replace(/-/g, ' ');
+        }
+        break;
+      }
+    }
+  })();
+  </script>
+
   <div class="wave">🌊</div>
   <div class="big-num">404</div>
   <h1>This page drifted out to sea</h1>
@@ -103,7 +133,7 @@ fbq('track', 'PageView');
   </div>
 
   <div style="margin-top:48px;padding:18px 22px;background:rgba(0,210,255,.05);border:1px dashed rgba(0,210,255,.25);border-radius:12px;max-width:560px;font-size:.88rem;line-height:1.6;color:#a8d4f0">
-    <strong style="color:#fff">Still can't find it?</strong> Call us at <a href="tel:+16452165021" style="color:#00d2ff;font-weight:700">+1 (645) 216-5021</a> or message us on <a href="https://wa.me/16452165021" target="_blank" rel="noopener nofollow" style="color:#00d2ff;font-weight:700">WhatsApp</a> — we'll help you find the right activity.
+    <strong style="color:#fff">Still can't find it?</strong> Call us at  or message us on  — we'll help you find the right activity.
   </div>
 
   <script>
@@ -136,6 +166,19 @@ fbq('track', 'PageView');
     <div class="fh-modal-body">
       <div class="fh-modal-loading" id="fhModalLoading"><div class="fh-modal-spinner"></div><span>Loading availability…</span></div>
       <iframe id="fhModalIframe" title="FareHarbor Booking" loading="eager" allow="payment"></iframe>
+      <div style="padding:10px 20px;background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.08);font-size:.82rem;color:#9bb5d4;text-align:center">
+        Don't see availability? <a href="/" style="color:#00d4c8;text-decoration:underline">Browse similar operators</a>
+      </div>
+  <div id="fhUnavailable" style="display:none;padding:40px 28px;text-align:center;color:#cdd9e8">
+    <div style="font-size:3rem;margin-bottom:12px">😔</div>
+    <h3 style="color:#fff;font-size:1.2rem;margin-bottom:10px">This operator is currently unavailable</h3>
+    <p style="font-size:.95rem;line-height:1.6;margin-bottom:24px;color:#9bb5d4">
+      The booking page is empty. The operator may be paused, closed, or out-of-season.
+    </p>
+    <a href="/" style="display:inline-block;background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;padding:12px 28px;border-radius:50px;font-weight:700;text-decoration:none">
+      Browse similar operators →
+    </a>
+  </div>
     </div>
   </div>
 </div>
@@ -150,11 +193,27 @@ fbq('track', 'PageView');
     if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url});
     var hidLoading=false;
     function hideLoading(){if(!hidLoading){hidLoading=true;loading.style.display='none';}}
-    iframe.onload=function(){if(iframe.src!=='about:blank')hideLoading();};
-    setTimeout(hideLoading,4000); // fallback in case onload doesn't fire
+    iframe.onload=function(){
+      if(iframe.src==='about:blank'||iframe.src==='')return;
+      hideLoading();
+      // Detectar iframe vacío (operador zombie sin items): check después de render
+      setTimeout(function(){
+        try{
+          var b=iframe.contentDocument&&iframe.contentDocument.body;
+          var h=b?b.innerText.length:0;
+          // Si el iframe tiene <500 chars de texto = catálogo vacío
+          if(b&&h<500&&!/item|book|select|date/i.test(b.innerText)){showUnavailable();}
+        }catch(e){/* cross-origin, no podemos chequear — no problem */}
+      },3500);
+    };
+    setTimeout(hideLoading,4000);
     requestAnimationFrame(function(){iframe.src=url;});
   }
-  window.closeFhModal=function(){var m=document.getElementById('fhModal');m.classList.remove('open');document.body.style.overflow='';var i=document.getElementById('fhModalIframe');i.src='about:blank';};
+  function showUnavailable(){
+    var i=document.getElementById('fhModalIframe');var u=document.getElementById('fhUnavailable');
+    if(i)i.style.display='none'; if(u)u.style.display='block';
+  }
+  window.closeFhModal=function(){var u=document.getElementById('fhUnavailable');if(u)u.style.display='none';var i=document.getElementById('fhModalIframe');if(i)i.style.display='';var m=document.getElementById('fhModal');m.classList.remove('open');document.body.style.overflow='';var i=document.getElementById('fhModalIframe');i.src='about:blank';};
   document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeFhModal();});
   document.addEventListener('click',function(e){
     if(e.defaultPrevented)return;
