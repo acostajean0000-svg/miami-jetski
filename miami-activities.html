@@ -57,6 +57,13 @@
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
     .card{background:rgba(255,255,255,.04);border:1px solid rgba(0,210,255,.1);border-radius:14px;overflow:hidden;transition:.2s;display:flex;flex-direction:column}
     .card:hover{border-color:rgba(0,210,255,.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,210,255,.12)}
+    .card.card--active{border-color:#00eedd;box-shadow:0 0 0 2px rgba(0,238,221,.5),0 8px 24px rgba(0,210,255,.25)}
+    /* Active map marker — destaca mucho más al hacer click/hover en un operador */
+    .op-marker>div{transition:transform .18s ease}
+    .op-marker.is-active{z-index:10000!important}
+    .op-marker.is-active>div{transform:scale(1.85);transform-origin:center bottom;filter:drop-shadow(0 0 9px #00eedd) drop-shadow(0 0 3px #00eedd)}
+    .op-marker.is-active>div>div:first-child{border-color:#00eedd!important;animation:pinPulse 1.1s ease-in-out infinite}
+    @keyframes pinPulse{0%,100%{box-shadow:0 0 0 0 rgba(0,238,221,.55)}50%{box-shadow:0 0 0 8px rgba(0,238,221,0)}}
     .card .img{height:180px;background:#0a1929;position:relative;overflow:hidden}.card .img img{width:100%;height:100%;object-fit:cover;display:block}
     .card .badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.7);border:1px solid rgba(0,210,255,.3);border-radius:14px;padding:3px 10px;font-size:.7rem;color:#00d2ff;font-weight:600}
     .card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
@@ -318,7 +325,7 @@ function render(){
     const href = slug ? '/'+encodeURIComponent(slug) : (op.link || '#');
     const priceText = (op.price && op.price > 0) ? ('from $'+op.price) : 'Contact for pricing';
     const eager = i < 4 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
-    return `<a class="card" href="${esc(href)}">
+    return `<a class="card" href="${esc(href)}" data-op-id="${esc(op.id)}">
       <div class="img"><img src="${esc(thumbUrl(op.photo))}" alt="${esc(op.name)}" ${eager} width="480" height="320" onerror="this.src=FALLBACK_IMG"><span class="badge">${CAT_EMOJI[op.cat]||'🌊'} ${esc(CAT_LABELS[op.cat]||op.cat)}</span></div>
       <div class="body">
         <div class="name">${esc(op.name)}</div>
@@ -328,6 +335,41 @@ function render(){
     </a>`;
   }).join('');
 }
+
+// Conecta las tarjetas con los pines del mapa
+(function(){
+  const grid = document.getElementById('grid');
+  if (!grid) return;
+  let hoverT = null, lastActiveCard = null;
+  function setActiveCard(card){
+    if (lastActiveCard) lastActiveCard.classList.remove('card--active');
+    lastActiveCard = card;
+    if (card) card.classList.add('card--active');
+  }
+  grid.addEventListener('mouseover', function(e){
+    const card = e.target.closest('.card[data-op-id]');
+    if (!card || !mapInstance) return;
+    clearTimeout(hoverT);
+    hoverT = setTimeout(function(){
+      const m = (window._markersById||{})[card.getAttribute('data-op-id')];
+      if (m){ mapInstance.panTo(m.getLatLng(), {animate:true, duration:.4}); }
+      highlightMarker(card.getAttribute('data-op-id'), false);
+      setActiveCard(card);
+    }, 90);
+  });
+  // En móvil (sin hover): el primer toque resalta el pin; el segundo abre la ficha
+  grid.addEventListener('click', function(e){
+    if (!window.matchMedia('(hover: none)').matches) return; // solo táctil
+    const card = e.target.closest('.card[data-op-id]');
+    if (!card || !mapInstance) return;
+    if (card !== lastActiveCard){
+      e.preventDefault();
+      document.querySelector('.map-wrap').scrollIntoView({behavior:'smooth', block:'center'});
+      highlightMarker(card.getAttribute('data-op-id'), true);
+      setActiveCard(card);
+    }
+  });
+})();
 
 function setupFilters(){
   document.querySelectorAll('.cat-chip').forEach(c => {
@@ -386,6 +428,8 @@ function initMap(){
 function refreshMarkers(){
   if (!markerCluster) return;
   markerCluster.clearLayers();
+  window._markersById = {};
+  _activeMarker = null;
   const slugMap = window._OP_SLUG_MAP || {};
   const list = allOps.filter(o => (activeCat==='all' || o.cat===activeCat) && o.lat && o.lng);
   const markers = list.map(op => {
@@ -404,10 +448,39 @@ function refreshMarkers(){
       iconAnchor: [22,22],
       popupAnchor: [0,-22]
     });
-    return L.marker([op.lat, op.lng], {icon}).bindPopup(popup);
+    const m = L.marker([op.lat, op.lng], {icon}).bindPopup(popup);
+    m._opId = op.id;
+    window._markersById[op.id] = m;
+    m.on('click', function(){ highlightMarker(op.id, false); });
+    return m;
   });
   markerCluster.addLayers(markers);
   // Mantener zoom actual al filtrar — solo fitBounds en initial load
+}
+
+// Realza el pin de un operador (al hacer click/hover en su tarjeta o en el pin)
+let _activeMarker = null;
+function highlightMarker(opId, pan){
+  const m = (window._markersById || {})[opId];
+  if (!m || !mapInstance) return;
+  function activate(){
+    if (_activeMarker && _activeMarker._icon) _activeMarker._icon.classList.remove('is-active');
+    _activeMarker = m;
+    if (m._icon) m._icon.classList.add('is-active');
+    m.setZIndexOffset(2000);
+    // Solo abre el popup si el pin está visible (evita saltos de zoom al pasar el ratón
+    // por pines agrupados); en modo "focus" (pan) sí lo abrimos siempre.
+    if (m._icon || pan) m.openPopup();
+  }
+  // Si está dentro de un cluster, lo expande antes de resaltar
+  if (markerCluster && markerCluster.zoomToShowLayer && pan) {
+    markerCluster.zoomToShowLayer(m, activate);
+  } else if (pan) {
+    mapInstance.panTo(m.getLatLng(), {animate:true});
+    activate();
+  } else {
+    activate();
+  }
 }
 
 // Lazy-init mapa cuando el usuario haga scroll cerca de él
