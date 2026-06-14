@@ -74,6 +74,7 @@
     .card .zl{font-size:.78rem;color:#7ba3c0}
     .card .rating{font-size:.78rem;color:#fbbf24}
     .card .price{margin-top:auto;font-size:.95rem;font-weight:800;color:#00d2ff}
+    .card .view-details{font-size:.8rem;font-weight:700;color:#00d2ff;display:flex;align-items:center;gap:4px;margin-top:2px}
     .empty{text-align:center;padding:60px 20px;color:#7ba3c0} .empty h2{color:#e8f4fd;margin-bottom:10px}
     footer{background:#020810;border-top:1px solid rgba(0,210,255,.1);padding:32px 20px;text-align:center;color:#4a7a9b;font-size:.85rem}
     footer a{color:#00d2ff}
@@ -248,7 +249,7 @@ function render(){
     const priceText=(op.price&&op.price>0)?('From $'+op.price):'Contact for pricing';
     const eager = i < 4 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
     const ratingHtml=op.rating?`<div class="rating">⭐ ${op.rating} (${op.reviews||0})</div>`:'';
-    return `<a class="card" href="${esc(href)}" data-op-id="${esc(op.id)}"><div class="img"><img src="${esc(thumbUrl(op.photo))}" alt="${esc(op.name)}" ${eager} width="480" height="320" onerror="this.src=FALLBACK_IMG"><span class="badge">${CAT_EMOJI[op.cat]||'🌊'} ${esc(CAT_LABELS[op.cat]||op.cat)}</span></div><div class="body"><div class="name">${esc(op.name)}</div><div class="zl">📍 ${esc(op.zl||'')}</div>${ratingHtml}<div class="price">${priceText}</div></div></a>`;
+    return `<a class="card" href="${esc(href)}" data-op-id="${esc(op.id)}"><div class="img"><img src="${esc(thumbUrl(op.photo))}" alt="${esc(op.name)}" ${eager} width="480" height="320" onerror="this.src=FALLBACK_IMG"><span class="badge">${CAT_EMOJI[op.cat]||'🌊'} ${esc(CAT_LABELS[op.cat]||op.cat)}</span></div><div class="body"><div class="name">${esc(op.name)}</div><div class="zl">📍 ${esc(op.zl||'')}</div>${ratingHtml}<div class="price">${priceText}</div><div class="view-details">View details &rarr;</div></div></a>`;
   }).join('');
 }
 // -- Pin seleccionable: aisla SOLO el operador elegido --
