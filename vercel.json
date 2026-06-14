@@ -918,31 +918,6 @@
       "permanent": true
     },
     {
-      "source": "/es/yacht-charters",
-      "destination": "/miami-activities",
-      "permanent": true
-    },
-    {
-      "source": "/es/sunset-cruises",
-      "destination": "/miami-activities",
-      "permanent": true
-    },
-    {
-      "source": "/es/snorkel-tours",
-      "destination": "/punta-cana-activities",
-      "permanent": true
-    },
-    {
-      "source": "/es/everglades-airboat-tours",
-      "destination": "/central-florida-activities",
-      "permanent": true
-    },
-    {
-      "source": "/es/miami-exotic-cars",
-      "destination": "/miami-activities",
-      "permanent": true
-    },
-    {
       "source": "/best-:cat-rentals-miami",
       "destination": "/miami-activities",
       "permanent": true
