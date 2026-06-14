@@ -68,6 +68,9 @@
     @keyframes pinPulse{0%{box-shadow:0 0 0 0 rgba(0,247,255,.7),0 0 10px #00eedd,0 0 22px #00f0ff}70%{box-shadow:0 0 0 14px rgba(0,247,255,0),0 0 10px #00eedd,0 0 22px #00f0ff}100%{box-shadow:0 0 0 0 rgba(0,247,255,0),0 0 10px #00eedd,0 0 22px #00f0ff}}
     @keyframes pinRing{0%{width:30px;height:30px;opacity:.9}100%{width:78px;height:78px;opacity:0}}
     @keyframes pinFloat{0%,100%{transform:scale(2.1) translateY(0)}50%{transform:scale(2.1) translateY(-2px)}}
+    /* Botón "Ver todos" (modo solo-un-pin) */
+    .show-all-btn{position:absolute;top:12px;left:12px;z-index:500;background:rgba(4,13,26,.92);backdrop-filter:blur(6px);color:#00eedd;border:1px solid #00eedd;padding:9px 16px;border-radius:50px;font-size:.84rem;font-weight:700;cursor:pointer;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(0,238,221,.3);transition:.15s}
+    .show-all-btn:hover{background:rgba(0,238,221,.15)}
     .card .img{height:180px;background:#0a1929;position:relative;overflow:hidden}.card .img img{width:100%;height:100%;object-fit:cover;display:block}
     .card .badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.7);border:1px solid rgba(0,210,255,.3);border-radius:14px;padding:3px 10px;font-size:.7rem;color:#00d2ff;font-weight:600}
     .card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
@@ -276,7 +279,7 @@ document.addEventListener('click',function(e){
   </section>
 
   <div class="filters" id="filters"><span class="cat-chip active" data-cat="all">🌎 All (450)</span><span class="cat-chip" data-cat="boat">⛵ Boat (117)</span><span class="cat-chip" data-cat="tour">🚌 Tour (81)</span><span class="cat-chip" data-cat="watersports">🏄 Water Sports (30)</span><span class="cat-chip" data-cat="bikerental">🚲 Bike & E-Ride (27)</span><span class="cat-chip" data-cat="exotic">💎 Exotic Cars (27)</span><span class="cat-chip" data-cat="atv">🏍️ ATV (25)</span><span class="cat-chip" data-cat="yacht">🛳️ Yacht (23)</span><span class="cat-chip" data-cat="jetski">🛥️ Jet Ski (21)</span><span class="cat-chip" data-cat="segway">🛴 Segway (17)</span><span class="cat-chip" data-cat="airboat">🐊 Airboat (11)</span><span class="cat-chip" data-cat="snorkel">🤿 Snorkel (11)</span><span class="cat-chip" data-cat="fishing">🎣 Fishing (9)</span><span class="cat-chip" data-cat="villa">🏡 Villa (9)</span><span class="cat-chip" data-cat="walking_tour">🚶 Walking Tour (8)</span><span class="cat-chip" data-cat="culinary">🍷 Food & Wine (6)</span><span class="cat-chip" data-cat="aerial">✈️ Aerial Tour (6)</span><span class="cat-chip" data-cat="sunset">🌅 Sunset (6)</span><span class="cat-chip" data-cat="slingshot">🏎️ Slingshot (5)</span><span class="cat-chip" data-cat="golfcart">🛺 Golf Cart (3)</span><span class="cat-chip" data-cat="nightlife">🍸 Nightlife (3)</span><span class="cat-chip" data-cat="jetcar">🚗 Jet Car (3)</span><span class="cat-chip" data-cat="wildlife">🐋 Wildlife (1)</span><span class="cat-chip" data-cat="flowers">💐 Bloom Bar (1)</span></div>
-    <div class="map-wrap" id="mapWrap"><div class="map-wrap-skeleton">Loading map…</div><div id="map"></div><button class="near-me-btn" id="nearMeBtn" type="button" aria-label="Show operators near me">📍 Near Me</button><div class="near-me-info" id="nearMeInfo"></div></div>
+    <div class="map-wrap" id="mapWrap"><div class="map-wrap-skeleton">Loading map…</div><div id="map"></div><button class="near-me-btn" id="nearMeBtn" type="button" aria-label="Show operators near me">📍 Near Me</button><div class="near-me-info" id="nearMeInfo"></div><button class="show-all-btn" id="showAllBtn" type="button" aria-label="Show all operators" style="display:none">← Show all operators</button></div>
 <div class="grid" id="grid"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
 
   <section class="seo-index">
@@ -344,34 +347,29 @@ function render(){
 (function(){
   const grid = document.getElementById('grid');
   if (!grid) return;
-  let hoverT = null, lastActiveCard = null;
-  function setActiveCard(card){
+  let lastActiveCard = null;
+  window._setActiveCard = function(card){
     if (lastActiveCard) lastActiveCard.classList.remove('card--active');
     lastActiveCard = card;
     if (card) card.classList.add('card--active');
-  }
-  grid.addEventListener('mouseover', function(e){
-    const card = e.target.closest('.card[data-op-id]');
-    if (!card || !mapInstance) return;
-    clearTimeout(hoverT);
-    hoverT = setTimeout(function(){
-      const m = (window._markersById||{})[card.getAttribute('data-op-id')];
-      if (m){ mapInstance.panTo(m.getLatLng(), {animate:true, duration:.4}); }
-      highlightMarker(card.getAttribute('data-op-id'), false);
-      setActiveCard(card);
-    }, 90);
-  });
-  // En móvil (sin hover): el primer toque resalta el pin; el segundo abre la ficha
+  };
+  // Seleccionar un operador = aislar SOLO su pin en el mapa para ver su ubicación.
+  // Primer click aísla el pin; segundo click (con el pin ya aislado) abre la ficha.
   grid.addEventListener('click', function(e){
-    if (!window.matchMedia('(hover: none)').matches) return; // solo táctil
     const card = e.target.closest('.card[data-op-id]');
-    if (!card || !mapInstance) return;
-    if (card !== lastActiveCard){
-      e.preventDefault();
-      document.querySelector('.map-wrap').scrollIntoView({behavior:'smooth', block:'center'});
-      highlightMarker(card.getAttribute('data-op-id'), true);
-      setActiveCard(card);
-    }
+    if (!card) return;
+    const id = card.getAttribute('data-op-id');
+    if (_focusedOpId === id) return;        // ya aislado → deja navegar a la ficha
+    e.preventDefault();
+    if (!mapInstance) initMap();
+    document.querySelector('.map-wrap').scrollIntoView({behavior:'smooth', block:'center'});
+    focusOperator(id);
+    window._setActiveCard(card);
+  });
+  const showAllBtn = document.getElementById('showAllBtn');
+  if (showAllBtn) showAllBtn.addEventListener('click', function(){
+    showAllOperators();
+    window._setActiveCard(null);
   });
 })();
 
@@ -382,7 +380,9 @@ function setupFilters(){
       c.classList.add('active');
       activeCat = c.dataset.cat;
       render();
-      if (typeof refreshMarkers === 'function' && mapInstance) refreshMarkers();
+      // Salir del modo "solo un pin" al cambiar de categoría
+      if (_focusedOpId) { showAllOperators(); }
+      else if (typeof refreshMarkers === 'function' && mapInstance) refreshMarkers();
     });
   });
 }
@@ -429,62 +429,75 @@ function initMap(){
   });
 }
 
+// Crea un marcador Leaflet para un operador (reutilizable)
+function makeMarker(op){
+  const slugMap = window._OP_SLUG_MAP || {};
+  const slug = slugMap[op.id] || '';
+  const href = slug ? '/'+slug : (op.link || '#');
+  const emoji = CAT_EMOJI[op.cat] || '🌊';
+  const popup = `<div><div class="pp-cat">${esc(CAT_LABELS[op.cat]||'')}</div><a href="${esc(href)}"><strong>${esc(op.name).slice(0,60)}</strong></a><div class="pp-price">${op.price?'From $'+op.price:''}</div></div>`;
+  const photo = op.photo ? thumbUrl(op.photo) : '';
+  const iconHtml = photo
+    ? '<div style="position:relative"><div style="width:44px;height:44px;border-radius:50%;background:#fff url(\''+photo+'\') center/cover;box-shadow:0 3px 10px rgba(0,0,0,.5);border:3px solid #00d2ff"></div><div style="position:absolute;bottom:-3px;right:-3px;background:#00d2ff;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;border:2px solid #040d1a">'+emoji+'</div></div>'
+    : '<div style="background:linear-gradient(135deg,#00d2ff,#5e9eff);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(0,0,0,.4);border:2px solid #fff;font-size:18px">'+emoji+'</div>';
+  const icon = L.divIcon({ html: iconHtml, className: 'op-marker', iconSize:[44,44], iconAnchor:[22,22], popupAnchor:[0,-22] });
+  const m = L.marker([op.lat, op.lng], {icon}).bindPopup(popup);
+  m._opId = op.id;
+  m.on('click', function(){ focusOperator(op.id); });
+  return m;
+}
+
 function refreshMarkers(){
   if (!markerCluster) return;
   markerCluster.clearLayers();
   window._markersById = {};
-  _activeMarker = null;
-  const slugMap = window._OP_SLUG_MAP || {};
+  clearAllActivePins();
   const list = allOps.filter(o => (activeCat==='all' || o.cat===activeCat) && o.lat && o.lng);
   const markers = list.map(op => {
-    const slug = slugMap[op.id] || '';
-    const href = slug ? '/'+slug : (op.link || '#');
-    const emoji = CAT_EMOJI[op.cat] || '🌊';
-    const popup = `<div><div class="pp-cat">${esc(CAT_LABELS[op.cat]||'')}</div><a href="${esc(href)}"><strong>${esc(op.name).slice(0,60)}</strong></a><div class="pp-price">${op.price?'From $'+op.price:''}</div></div>`;
-    const photo = op.photo ? thumbUrl(op.photo) : '';
-    const iconHtml = photo
-      ? '<div style="position:relative"><div style="width:44px;height:44px;border-radius:50%;background:#fff url(\''+photo+'\') center/cover;box-shadow:0 3px 10px rgba(0,0,0,.5);border:3px solid #00d2ff"></div><div style="position:absolute;bottom:-3px;right:-3px;background:#00d2ff;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;border:2px solid #040d1a">'+emoji+'</div></div>'
-      : '<div style="background:linear-gradient(135deg,#00d2ff,#5e9eff);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(0,0,0,.4);border:2px solid #fff;font-size:18px">'+emoji+'</div>';
-    const icon = L.divIcon({
-      html: iconHtml,
-      className: 'op-marker',
-      iconSize: [44,44],
-      iconAnchor: [22,22],
-      popupAnchor: [0,-22]
-    });
-    const m = L.marker([op.lat, op.lng], {icon}).bindPopup(popup);
-    m._opId = op.id;
+    const m = makeMarker(op);
     window._markersById[op.id] = m;
-    m.on('click', function(){ highlightMarker(op.id, false); });
     return m;
   });
   markerCluster.addLayers(markers);
   // Mantener zoom actual al filtrar — solo fitBounds en initial load
 }
 
-// Realza el pin de un operador (al hacer click/hover en su tarjeta o en el pin)
-let _activeMarker = null;
-function highlightMarker(opId, pan){
-  const m = (window._markersById || {})[opId];
-  if (!m || !mapInstance) return;
-  function activate(){
-    if (_activeMarker && _activeMarker._icon) _activeMarker._icon.classList.remove('is-active');
-    _activeMarker = m;
-    if (m._icon) m._icon.classList.add('is-active');
-    m.setZIndexOffset(2000);
-    // Solo abre el popup si el pin está visible (evita saltos de zoom al pasar el ratón
-    // por pines agrupados); en modo "focus" (pan) sí lo abrimos siempre.
-    if (m._icon || pan) m.openPopup();
-  }
-  // Si está dentro de un cluster, lo expande antes de resaltar
-  if (markerCluster && markerCluster.zoomToShowLayer && pan) {
-    markerCluster.zoomToShowLayer(m, activate);
-  } else if (pan) {
-    mapInstance.panTo(m.getLatLng(), {animate:true});
-    activate();
-  } else {
-    activate();
-  }
+// ── MODO "SOLO ESTE OPERADOR" ───────────────────────────────
+// Aísla un único pin en el mapa para ver su ubicación con claridad.
+let _focusedOpId = null;
+let _soloMarker = null;
+function focusOperator(opId){
+  const op = allOps.find(o => o.id === opId);
+  if (!op || !op.lat || !op.lng) return;
+  if (!mapInstance) { initMap(); setTimeout(function(){ focusOperator(opId); }, 600); return; }
+  // Quita todos los pines y deja solo este
+  markerCluster.clearLayers();
+  if (_soloMarker) { mapInstance.removeLayer(_soloMarker); _soloMarker = null; }
+  _soloMarker = makeMarker(op);
+  _soloMarker.on('click', function(){ /* ya está aislado */ });
+  _soloMarker.addTo(mapInstance);
+  _focusedOpId = opId;
+  mapInstance.setView([op.lat, op.lng], 15, {animate:true});
+  setTimeout(function(){
+    clearAllActivePins();                       // garantiza que NINGÚN otro pin quede encendido
+    if (_soloMarker && _soloMarker._icon) _soloMarker._icon.classList.add('is-active');
+    if (_soloMarker) _soloMarker.openPopup();
+  }, 350);
+  const btn = document.getElementById('showAllBtn');
+  if (btn) btn.style.display = 'flex';
+}
+function showAllOperators(){
+  _focusedOpId = null;
+  if (_soloMarker && mapInstance) { mapInstance.removeLayer(_soloMarker); _soloMarker = null; }
+  clearAllActivePins();
+  refreshMarkers();
+  if (mapInstance) mapInstance.setView([25.7617,-80.1918], 12, {animate:true});
+  const btn = document.getElementById('showAllBtn');
+  if (btn) btn.style.display = 'none';
+}
+// Quita el glow de CUALQUIER pin (lee el DOM en vivo — a prueba de reciclaje del cluster)
+function clearAllActivePins(){
+  document.querySelectorAll('.op-marker.is-active').forEach(function(el){ el.classList.remove('is-active'); });
 }
 
 // Lazy-init mapa cuando el usuario haga scroll cerca de él
