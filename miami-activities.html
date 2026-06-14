@@ -104,6 +104,20 @@
     .mob-book-bar .mb-info b{display:block;font-size:1.05rem;color:#00d2ff;font-weight:800}
     .mob-book-bar .mb-btn{background:linear-gradient(135deg,#00d2ff,#00eedd);color:#040d1a;font-weight:800;font-size:.95rem;padding:12px 26px;border-radius:50px;white-space:nowrap}
     @media(max-width:700px){.mob-book-bar{display:flex}main{padding-bottom:90px}}
+    /* ===== Featured operator (compact) ===== */
+    .featured-op{display:flex;align-items:center;gap:16px;margin:6px 0 24px;padding:12px 16px;border-radius:14px;border:1px solid rgba(0,210,255,.3);background:linear-gradient(135deg,rgba(0,210,255,.09),rgba(94,158,255,.04));scroll-margin-top:70px}
+    .featured-op .fo-img{position:relative;flex:0 0 96px;width:96px;height:72px;border-radius:10px;overflow:hidden;background:#0a1929}
+    .featured-op .fo-img img{width:100%;height:100%;object-fit:cover;display:block}
+    .featured-op .fo-body{flex:1;min-width:0;display:flex;flex-direction:column;gap:3px}
+    .featured-op .fo-eyebrow{font-size:.68rem;font-weight:700;color:#ffb86b;letter-spacing:.4px;text-transform:uppercase}
+    .featured-op .fo-title{font-size:1.05rem;font-weight:800;color:#fff;line-height:1.2}
+    .featured-op .fo-perks{font-size:.76rem;color:#8fd6a8}
+    .featured-op .fo-right{flex:0 0 auto;display:flex;align-items:center;gap:14px}
+    .featured-op .fo-price{font-size:.72rem;color:#7ba3c0;text-align:right}
+    .featured-op .fo-price b{display:block;font-size:1.1rem;color:#00d2ff;font-weight:800;line-height:1.1}
+    .featured-op .fo-cta{background:linear-gradient(135deg,#00d2ff,#00eedd);color:#040d1a;font-weight:800;font-size:.85rem;padding:10px 18px;border-radius:50px;white-space:nowrap;transition:.15s}
+    .featured-op .fo-cta:hover{transform:scale(1.04)}
+    @media(max-width:600px){.featured-op{flex-wrap:wrap;gap:12px}.featured-op .fo-right{flex:1 1 100%;justify-content:space-between}}
   
 
 /* Trust signals strip */
@@ -228,9 +242,26 @@ document.addEventListener('click',function(e){
       <span class="stat">⭐ <strong>4.7</strong> avg rating</span>
     </div>
     <div class="hero-cta-row">
-      <a href="#filters" class="btn-primary" id="heroCta">Browse all 450 activities ↓</a>
+      <a href="#featured-op" class="btn-primary" id="heroCta">⭐ Book with Miami Style Rentals →</a>
+      <a href="#filters" class="btn-ghost">Browse all 450 activities ↓</a>
     </div>
     <p class="urgency-note">🔥 Weekends sell out fast — book at least 48h ahead</p>
+  </section>
+
+  <!-- ===== FEATURED OPERATOR (compact) ===== -->
+  <section class="featured-op" id="featured-op" aria-label="Featured operator">
+    <div class="fo-img">
+      <img src="https://cdn.filestackcontent.com/sQ4aOHIR0OEMo8ifWB88/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=300&fit=max" alt="Miami Style Rentals — jet skis, boats and tours in Miami" loading="eager" width="300" height="225" onerror="this.style.display='none';this.parentElement.style.background='linear-gradient(135deg,#004b7a,#006688)'">
+    </div>
+    <div class="fo-body">
+      <div class="fo-eyebrow">⭐ Featured Operator</div>
+      <h2 class="fo-title">Miami Style Rentals</h2>
+      <div class="fo-perks">Jet skis · boats · tours — book direct ✓ Free cancellation</div>
+    </div>
+    <div class="fo-right">
+      <div class="fo-price">From<b>$50</b></div>
+      <a class="fo-cta" data-fh-name="Miami Style Rentals" href="https://fareharbor.com/embeds/book/miamistylerentals/items/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&flow=613885&full-items=yes" target="_blank" rel="noopener nofollow sponsored">View all & Book →</a>
+    </div>
   </section>
 
   <div class="filters" id="filters"><span class="cat-chip active" data-cat="all">🌎 All (450)</span><span class="cat-chip" data-cat="boat">⛵ Boat (117)</span><span class="cat-chip" data-cat="tour">🚌 Tour (81)</span><span class="cat-chip" data-cat="watersports">🏄 Water Sports (30)</span><span class="cat-chip" data-cat="bikerental">🚲 Bike & E-Ride (27)</span><span class="cat-chip" data-cat="exotic">💎 Exotic Cars (27)</span><span class="cat-chip" data-cat="atv">🏍️ ATV (25)</span><span class="cat-chip" data-cat="yacht">🛳️ Yacht (23)</span><span class="cat-chip" data-cat="jetski">🛥️ Jet Ski (21)</span><span class="cat-chip" data-cat="segway">🛴 Segway (17)</span><span class="cat-chip" data-cat="airboat">🐊 Airboat (11)</span><span class="cat-chip" data-cat="snorkel">🤿 Snorkel (11)</span><span class="cat-chip" data-cat="fishing">🎣 Fishing (9)</span><span class="cat-chip" data-cat="villa">🏡 Villa (9)</span><span class="cat-chip" data-cat="walking_tour">🚶 Walking Tour (8)</span><span class="cat-chip" data-cat="culinary">🍷 Food & Wine (6)</span><span class="cat-chip" data-cat="aerial">✈️ Aerial Tour (6)</span><span class="cat-chip" data-cat="sunset">🌅 Sunset (6)</span><span class="cat-chip" data-cat="slingshot">🏎️ Slingshot (5)</span><span class="cat-chip" data-cat="golfcart">🛺 Golf Cart (3)</span><span class="cat-chip" data-cat="nightlife">🍸 Nightlife (3)</span><span class="cat-chip" data-cat="jetcar">🚗 Jet Car (3)</span><span class="cat-chip" data-cat="wildlife">🐋 Wildlife (1)</span><span class="cat-chip" data-cat="flowers">💐 Bloom Bar (1)</span></div>
@@ -525,40 +556,34 @@ document.head.appendChild(styleEl);
 
 <!-- Sticky mobile booking bar -->
 <div class="mob-book-bar" role="complementary" aria-label="Quick booking bar">
-  <div class="mb-info">Jet skis in Miami<b>From $65</b></div>
-  <a class="mb-btn" href="#filters" id="mobBookBtn">Book Now →</a>
+  <div class="mb-info">Miami Style Rentals<b>From $50</b></div>
+  <a class="mb-btn" data-fh-name="Miami Style Rentals" href="https://fareharbor.com/embeds/book/miamistylerentals/items/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&flow=613885&full-items=yes" target="_blank" rel="noopener nofollow sponsored" id="mobBookBtn">Book Now →</a>
 </div>
 <script>
-/* Conversion tracking: view_promotion + select_promotion on top deals */
+/* Featured operator tracking + UI */
 (function(){
   window.dataLayer = window.dataLayer || [];
-  var deals = document.querySelectorAll('.deal-cta');
-  var items = [];
-  deals.forEach(function(a,i){
-    items.push({promotion_name:'top_deals_miami', item_name:a.getAttribute('data-fh-name')||('deal_'+i), index:i});
-  });
-  if(items.length) dataLayer.push({event:'view_promotion', ecommerce:{items:items}});
+  var FEAT = {promotion_name:'featured_operator_miami', item_name:'Miami Style Rentals'};
+  dataLayer.push({event:'view_promotion', ecommerce:{items:[FEAT]}});
   document.addEventListener('click', function(e){
-    var a = e.target.closest('.deal-cta');
+    var a = e.target.closest('a[data-fh-name="Miami Style Rentals"]');
     if(!a) return;
-    dataLayer.push({event:'select_promotion', ecommerce:{items:[{promotion_name:'top_deals_miami', item_name:a.getAttribute('data-fh-name')||''}]}});
+    dataLayer.push({event:'select_promotion', ecommerce:{items:[FEAT]}});
   }, true);
-  /* Smooth scroll for hero + mobile bar CTAs */
-  ['heroCta','mobBookBtn'].forEach(function(id){
-    var el = document.getElementById(id);
-    if(el) el.addEventListener('click', function(ev){
-      var t = document.getElementById('filters');
-      if(t){ ev.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
-      dataLayer.push({event:'cta_click', cta_id:id});
-    });
+  /* Hero CTA smooth-scrolls to the featured block */
+  var hero = document.getElementById('heroCta');
+  if(hero) hero.addEventListener('click', function(ev){
+    var t = document.getElementById('featured-op');
+    if(t){ ev.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+    dataLayer.push({event:'cta_click', cta_id:'heroCta'});
   });
-  /* Hide mobile bar once user is past the deals section */
+  /* Hide sticky mobile bar while the featured block is on screen */
   var bar = document.querySelector('.mob-book-bar');
-  var dealsEl = document.getElementById('filters');
-  if(bar && dealsEl && 'IntersectionObserver' in window){
+  var feat = document.getElementById('featured-op');
+  if(bar && feat && 'IntersectionObserver' in window){
     new IntersectionObserver(function(en){
       bar.style.display = en[0].isIntersecting ? 'none' : '';
-    },{threshold:.15}).observe(dealsEl);
+    },{threshold:.15}).observe(feat);
   }
 })();
 </script>
