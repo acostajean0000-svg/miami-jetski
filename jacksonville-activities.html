@@ -57,6 +57,17 @@
     .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:18px}
     .card{background:rgba(255,255,255,.04);border:1px solid rgba(0,210,255,.1);border-radius:14px;overflow:hidden;transition:.2s;display:flex;flex-direction:column}
     .card:hover{border-color:rgba(0,210,255,.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,210,255,.12)}
+    .card.card--active{border-color:#00eedd;box-shadow:0 0 0 2px rgba(0,238,221,.6),0 0 24px rgba(0,238,221,.35),0 8px 24px rgba(0,210,255,.25)}
+    .op-marker>div{transition:transform .18s ease}
+    .op-marker.is-active{z-index:10000!important}
+    .op-marker.is-active>div{transform:scale(1);transform-origin:center bottom;animation:pinFloat 1.3s ease-in-out infinite;filter:drop-shadow(0 0 6px #00eedd) drop-shadow(0 0 14px #00eedd) drop-shadow(0 0 26px #00f0ff)}
+    .op-marker.is-active>div>div:first-child{border-color:#00f7ff!important;border-width:3px!important;box-shadow:0 0 10px #00eedd,0 0 22px #00f0ff,inset 0 0 6px rgba(0,247,255,.6)!important;animation:pinPulse 1.05s ease-out infinite}
+    .op-marker.is-active>div::before{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid rgba(0,247,255,.9);animation:pinRing 1.3s ease-out infinite;pointer-events:none}
+    @keyframes pinPulse{0%{box-shadow:0 0 0 0 rgba(0,247,255,.7),0 0 10px #00eedd,0 0 22px #00f0ff}70%{box-shadow:0 0 0 16px rgba(0,247,255,0),0 0 10px #00eedd,0 0 22px #00f0ff}100%{box-shadow:0 0 0 0 rgba(0,247,255,0),0 0 10px #00eedd,0 0 22px #00f0ff}}
+    @keyframes pinRing{0%{width:34px;height:34px;opacity:.9}100%{width:96px;height:96px;opacity:0}}
+    @keyframes pinFloat{0%,100%{transform:scale(1) translateY(0)}50%{transform:scale(1) translateY(-2px)}}
+    .show-all-btn{position:absolute;top:12px;left:12px;z-index:500;background:rgba(4,13,26,.92);backdrop-filter:blur(6px);color:#00eedd;border:1px solid #00eedd;padding:9px 16px;border-radius:50px;font-size:.84rem;font-weight:700;cursor:pointer;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(0,238,221,.3);transition:.15s}
+    .show-all-btn:hover{background:rgba(0,238,221,.15)}
     .card .img{height:180px;background:#0a1929;position:relative;overflow:hidden}.card .img img{width:100%;height:100%;object-fit:cover;display:block}
     .card .badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.7);border:1px solid rgba(0,210,255,.3);border-radius:14px;padding:3px 10px;font-size:.7rem;color:#00d2ff;font-weight:600}
     .card .body{padding:14px 16px 16px;display:flex;flex-direction:column;gap:6px;flex:1}
@@ -212,7 +223,7 @@ document.addEventListener('click',function(e){
     </div>
   </section>
   <div class="filters" id="filters"><span class="cat-chip active" data-cat="all">🌎 All (9)</span><span class="cat-chip" data-cat="tour">🚌 Tour (6)</span><span class="cat-chip" data-cat="aerial">✈️ Aerial Tour (1)</span><span class="cat-chip" data-cat="slingshot">🏎️ Slingshot (1)</span><span class="cat-chip" data-cat="snorkel">🤿 Snorkel (1)</span></div>
-    <div class="map-wrap" id="mapWrap"><div class="map-wrap-skeleton">Loading map…</div><div id="map"></div><button class="near-me-btn" id="nearMeBtn" type="button" aria-label="Show operators near me">📍 Near Me</button><div class="near-me-info" id="nearMeInfo"></div></div>
+    <div class="map-wrap" id="mapWrap"><div class="map-wrap-skeleton">Loading map…</div><div id="map"></div><button class="near-me-btn" id="nearMeBtn" type="button" aria-label="Show operators near me">📍 Near Me</button><div class="near-me-info" id="nearMeInfo"></div><button class="show-all-btn" id="showAllBtn" type="button" aria-label="Show all operators" style="display:none">&larr; Show all operators</button></div>
 <div class="grid" id="grid"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
   <section class="seo-index">
     <h2>📋 All Operators in Jacksonville</h2>
@@ -285,7 +296,7 @@ function render(){
     const href = slug ? '/'+encodeURIComponent(slug) : (op.link || '#');
     const priceText = (op.price && op.price > 0) ? ('from $'+op.price) : 'Contact for pricing';
     const eager = i < 4 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
-    return `<a class="card" href="${esc(href)}">
+    return `<a class="card" href="${esc(href)}" data-op-id="${esc(op.id)}">
       <div class="img"><img src="${esc(thumbUrl(op.photo))}" alt="${esc(op.name)}" ${eager} width="480" height="320" onerror="this.src=FALLBACK_IMG"><span class="badge">${CAT_EMOJI[op.cat]||'🌊'} ${esc(CAT_LABELS[op.cat]||op.cat)}</span></div>
       <div class="body">
         <div class="name">${esc(op.name)}</div>
@@ -296,6 +307,62 @@ function render(){
   }).join('');
 }
 
+// -- Pin seleccionable: aisla SOLO el operador elegido --
+let _focusedOpId = null;
+function clearAllActivePins(){
+  document.querySelectorAll('.op-marker.is-active').forEach(function(el){ el.classList.remove('is-active'); });
+}
+function focusOperator(opId){
+  const op = allOps.find(o => o.id === opId);
+  if (!op || !op.lat || !op.lng) return;
+  if (!mapInstance) { initMap(); setTimeout(function(){ focusOperator(opId); }, 600); return; }
+  markerCluster.clearLayers();
+  clearAllActivePins();
+  const m = (window._markersById || {})[opId];
+  if (m) markerCluster.addLayer(m);
+  _focusedOpId = opId;
+  mapInstance.setView([op.lat, op.lng], 15, {animate:true});
+  setTimeout(function(){
+    clearAllActivePins();
+    const mm = (window._markersById || {})[opId];
+    if (mm && mm._icon) mm._icon.classList.add('is-active');
+    if (mm) mm.openPopup();
+  }, 350);
+  const btn = document.getElementById('showAllBtn');
+  if (btn) btn.style.display = 'flex';
+}
+function showAllOperators(){
+  _focusedOpId = null;
+  clearAllActivePins();
+  refreshMarkers();
+  if (mapInstance) mapInstance.setView([30.3322,-81.6557], 12, {animate:true});
+  const btn = document.getElementById('showAllBtn');
+  if (btn) btn.style.display = 'none';
+}
+(function(){
+  const grid = document.getElementById('grid');
+  if (!grid) return;
+  let lastActiveCard = null;
+  function setActiveCard(card){
+    if (lastActiveCard) lastActiveCard.classList.remove('card--active');
+    lastActiveCard = card;
+    if (card) card.classList.add('card--active');
+  }
+  grid.addEventListener('click', function(e){
+    const card = e.target.closest('.card[data-op-id]');
+    if (!card) return;
+    const id = card.getAttribute('data-op-id');
+    if (_focusedOpId === id) return;
+    e.preventDefault();
+    if (!mapInstance) initMap();
+    const mw = document.querySelector('.map-wrap'); if (mw) mw.scrollIntoView({behavior:'smooth', block:'center'});
+    focusOperator(id);
+    setActiveCard(card);
+  });
+  const showAllBtn = document.getElementById('showAllBtn');
+  if (showAllBtn) showAllBtn.addEventListener('click', function(){ showAllOperators(); setActiveCard(null); });
+})();
+
 function setupFilters(){
   document.querySelectorAll('.cat-chip').forEach(c => {
     c.addEventListener('click', () => {
@@ -303,7 +370,7 @@ function setupFilters(){
       c.classList.add('active');
       activeCat = c.dataset.cat;
       render();
-      if (typeof refreshMarkers === 'function' && mapInstance) refreshMarkers();
+      if (_focusedOpId) { showAllOperators(); } else if (typeof refreshMarkers === 'function' && mapInstance) refreshMarkers();
     });
   });
 }
@@ -358,6 +425,8 @@ function initMap(){
 function refreshMarkers(){
   if (!markerCluster) return;
   markerCluster.clearLayers();
+  window._markersById = {};
+  clearAllActivePins();
   const slugMap = window._OP_SLUG_MAP || {};
   const list = allOps.filter(o => (activeCat==='all' || o.cat===activeCat) && o.lat && o.lng);
   const markers = list.map(op => {
@@ -376,7 +445,11 @@ function refreshMarkers(){
       iconAnchor: [22,22],
       popupAnchor: [0,-22]
     });
-    return L.marker([op.lat, op.lng], {icon}).bindPopup(popup);
+    const m = L.marker([op.lat, op.lng], {icon}).bindPopup(popup);
+    m._opId = op.id;
+    window._markersById[op.id] = m;
+    m.on('click', function(){ focusOperator(op.id); });
+    return m;
   });
   markerCluster.addLayers(markers);
   // Mantener zoom actual al filtrar — solo fitBounds en initial load

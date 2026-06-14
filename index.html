@@ -270,6 +270,18 @@
     /* MAP POPUP */
     /* ── Map popup — white card style ── */
     .op-marker-photo{background:none!important;border:none!important;transition:transform .15s ease}
+    /* Pin seleccionado — efecto neón (tamaño original) */
+    .op-marker-photo.is-active{z-index:10000!important}
+    .op-marker-photo.is-active>div{animation:pinFloat 1.3s ease-in-out infinite;filter:drop-shadow(0 0 6px #00eedd) drop-shadow(0 0 14px #00eedd) drop-shadow(0 0 26px #00f0ff)}
+    .op-marker-photo.is-active>div>div:first-child{border-color:#00f7ff!important;box-shadow:0 0 10px #00eedd,0 0 22px #00f0ff,inset 0 0 6px rgba(0,247,255,.6)!important;animation:pinPulse 1.05s ease-out infinite}
+    .op-marker-photo.is-active>div::before{content:"";position:absolute;left:50%;top:50%;width:44px;height:44px;border-radius:50%;transform:translate(-50%,-50%);border:2px solid rgba(0,247,255,.9);animation:pinRing 1.3s ease-out infinite;pointer-events:none}
+    .leaflet-marker-icon.is-active{filter:drop-shadow(0 0 6px #00eedd) drop-shadow(0 0 14px #00f0ff);z-index:10000!important}
+    @keyframes pinPulse{0%{box-shadow:0 0 0 0 rgba(0,247,255,.7),0 0 10px #00eedd,0 0 22px #00f0ff}70%{box-shadow:0 0 0 16px rgba(0,247,255,0),0 0 10px #00eedd,0 0 22px #00f0ff}100%{box-shadow:0 0 0 0 rgba(0,247,255,0),0 0 10px #00eedd,0 0 22px #00f0ff}}
+    @keyframes pinRing{0%{width:34px;height:34px;opacity:.9}100%{width:96px;height:96px;opacity:0}}
+    @keyframes pinFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-2px)}}
+    .map-panel{position:relative}
+    .show-all-btn{position:absolute;top:12px;left:12px;z-index:600;background:rgba(4,13,26,.92);backdrop-filter:blur(6px);color:#00eedd;border:1px solid #00eedd;padding:9px 16px;border-radius:50px;font-size:.84rem;font-weight:700;cursor:pointer;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(0,238,221,.3);transition:.15s}
+    .show-all-btn:hover{background:rgba(0,238,221,.15)}
     .leaflet-popup-content-wrapper{background:#fff;border:1.5px solid #e0eaf2;border-radius:18px;color:#0a1e36;box-shadow:0 12px 48px rgba(0,0,0,.18);min-width:200px;max-width:calc(100vw - 48px);padding:0;}
     .leaflet-popup-content{margin:0;padding:0;}
     .leaflet-popup-tip-container{margin-top:-1px;}
@@ -966,6 +978,7 @@
     </div>
     <div class="map-panel">
       <div id="jetski-map"></div>
+      <button class="show-all-btn" id="showAllBtn" type="button" aria-label="Show all operators" style="display:none" onclick="indexShowAll()">&larr; Show all operators</button>
     </div>
   </div>
 </section>
@@ -2055,15 +2068,19 @@ function _hasMarkerInLayer(m) {
   return mapInstance.hasLayer(m);
 }
 let selectedMarkerId = null;
+let _indexFocus = false;
 function applyMarkerStyle(id, style) {
   const el = markers[id] && markers[id].getElement();
   if (!el) return;
   if (style === 'selected') {
-    el.style.transform = 'scale(1.5)';
-    el.style.zIndex = '2000';
-    el.style.filter = 'drop-shadow(0 0 8px #f5c842) drop-shadow(0 0 3px #f5c842)';
+    // Efecto neón a tamaño original (mismas cualidades que las páginas de zona)
+    el.style.transform = '';
     el.style.opacity = '1';
-  } else if (style === 'featured') {
+    el.classList.add('is-active');
+    return;
+  }
+  el.classList.remove('is-active');
+  if (style === 'featured') {
     el.style.transform = 'scale(1.3)';
     el.style.zIndex = '1000';
     el.style.filter = 'drop-shadow(0 0 6px #00eedd)';
@@ -2082,6 +2099,9 @@ function applyMarkerStyle(id, style) {
 }
 function updateMapMarkers(visibleOps) {
   if(!mapInstance) return;
+  // Cualquier cambio de filtro/búsqueda sale del modo "solo un pin"
+  _indexFocus = false;
+  const _sab = document.getElementById('showAllBtn'); if (_sab) _sab.style.display = 'none';
   const isDefaultView = activeCat === 'all' && activeZone === 'all' && !searchQuery && !nearMeActive;
   const miamiBoatIds = new Set(
     isDefaultView ? visibleOps.filter(o => o.cat === 'boat' && o.zone === 'miami').map(o => o.id) : []
@@ -2210,20 +2230,27 @@ function renderRecentlyViewed() {
 }
 function cardClick(id) {
   const op = allOperators.find(o => o.id === id);
-  if(!op || !mapInstance) return;
+  if(!op || !mapInstance || !markers[id]) return;
   trackRecentlyViewed(op);
-  // Reset estilo del pin anterior
-  if(selectedMarkerId && selectedMarkerId !== id) {
-    const isDefaultView = activeCat === 'all' && activeZone === 'all' && !searchQuery && !nearMeActive;
-    const wasFeatured = isDefaultView && op.cat === 'boat' && op.zone === 'miami';
-    applyMarkerStyle(selectedMarkerId, wasFeatured ? 'featured' : 'normal');
-  }
-  // Asegurar que el marker esté en el mapa aunque no sea de Miami
-  if(!mapInstance.hasLayer(markers[id])) markers[id].addTo(mapInstance);
-  // Marcar como seleccionado
+  // Aislar SOLO este operador en el mapa para ver su ubicación con claridad
+  _indexFocus = true;
   selectedMarkerId = id;
+  Object.keys(markers).forEach(mid => {
+    if (mid === id) { _addMarkerToLayer(markers[mid]); }
+    else { _removeMarkerFromLayer(markers[mid]); }
+  });
   applyMarkerStyle(id, 'selected');
-  mapInstance.setView([op.lat, op.lng], 14, {animate:true});
+  // Reintento por si el marcador aún no estaba renderizado en el DOM
+  setTimeout(function(){ if (selectedMarkerId === id) applyMarkerStyle(id, 'selected'); }, 350);
+  mapInstance.setView([op.lat, op.lng], 15, {animate:true});
+  const sab = document.getElementById('showAllBtn'); if (sab) sab.style.display = 'flex';
+}
+function indexShowAll() {
+  _indexFocus = false;
+  if (selectedMarkerId && markers[selectedMarkerId]) applyMarkerStyle(selectedMarkerId, 'normal');
+  selectedMarkerId = null;
+  if (typeof currentOps !== 'undefined') updateMapMarkers(currentOps);
+  const sab = document.getElementById('showAllBtn'); if (sab) sab.style.display = 'none';
 }
 // ---- NAV SCROLL ----
 window.addEventListener('scroll', () => {
