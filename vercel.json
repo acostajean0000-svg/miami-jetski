@@ -4061,6 +4061,16 @@
       "source": "/1-5-hour-fun-cruise-pensacola",
       "destination": "/west-florida-activities",
       "permanent": true
+    },
+    {
+      "source": "/aquazul-tours-bayahbe",
+      "destination": "/punta-cana-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aquazul-tours-bayahibe-saona",
+      "destination": "/punta-cana-activities",
+      "permanent": true
     }
   ],
   "rewrites": [
