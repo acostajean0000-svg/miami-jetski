@@ -691,5 +691,217 @@ document.head.appendChild(styleEl);
   }
 })();
 </script>
+
+<style>
+/* ─── CONVERSION PACK ─── */
+.urgency-strip{background:linear-gradient(90deg,#ff6b00,#ff3a4d,#ff6b00);background-size:200% 100%;animation:gradient-shift 4s ease infinite;color:#fff;padding:9px 16px;text-align:center;font-size:.83rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;letter-spacing:.2px}
+.urgency-strip .pulse-dot{width:7px;height:7px;background:#fff;border-radius:50%;animation:pulse-dot 1.4s infinite;display:inline-block;box-shadow:0 0 8px rgba(255,255,255,.7)}
+@keyframes pulse-dot{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+@keyframes gradient-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+.trust-strip{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:14px 16px;margin:0 0 18px;background:rgba(0,210,255,.04);border:1px solid rgba(0,210,255,.12);border-radius:12px}
+.trust-strip .trust-item{display:inline-flex;align-items:center;gap:6px;background:rgba(0,210,255,.08);padding:5px 11px;border-radius:50px;font-size:.74rem;color:#a8d4f0}
+.trust-strip strong{color:#e8f4fd;font-weight:700}
+
+.sticky-zone-cta{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(180deg,rgba(4,13,26,.94),rgba(4,13,26,.99));backdrop-filter:blur(16px);border-top:2px solid rgba(0,210,255,.5);padding:10px 14px;z-index:90;display:none;align-items:center;gap:10px;box-shadow:0 -8px 32px rgba(0,0,0,.6)}
+.sticky-zone-cta-info{flex:1;min-width:0}
+.sticky-zone-cta-title{font-size:.85rem;font-weight:700;color:#e8f4fd}
+.sticky-zone-cta-sub{font-size:.68rem;color:#7ba3c0}
+.sticky-zone-cta-btn{background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;padding:12px 18px;border-radius:50px;font-weight:800;font-size:.82rem;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(0,210,255,.4);animation:pulse-cta 2.5s infinite}
+@keyframes pulse-cta{0%,100%{box-shadow:0 4px 14px rgba(0,210,255,.4)}50%{box-shadow:0 4px 22px rgba(0,210,255,.7)}}
+@media(max-width:880px){.sticky-zone-cta{display:flex} body.has-sticky-cta main{padding-bottom:80px}}
+
+.sp-toast{position:fixed;left:14px;bottom:14px;background:linear-gradient(135deg,#0a1428,#162038);border:1px solid rgba(37,211,102,.45);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 12px 36px rgba(0,0,0,.5);max-width:320px;z-index:80;opacity:0;transform:translateY(20px);transition:.4s;font-size:.77rem;color:#e8f4fd}
+.sp-toast.show{opacity:1;transform:translateY(0)}
+.sp-toast-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#00d2ff,#5e9eff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0;font-size:.78rem}
+.sp-toast strong{color:#00d2ff;font-weight:700}
+.sp-toast .sp-time{display:block;color:#7ba3c0;font-size:.68rem;margin-top:2px}
+@media(max-width:600px){.sp-toast{bottom:80px;left:8px;right:8px;max-width:none} body.has-sticky-cta .sp-toast{bottom:90px}}
+</style>
+
+<script>
+(function(){
+  var ZONE_NAME='Savannah';
+  document.body.classList.add('has-sticky-cta');
+  // Urgency strip after nav
+  var nav=document.querySelector('nav');
+  if(nav&&!document.querySelector('.urgency-strip')){
+    var s=document.createElement('div');
+    s.className='urgency-strip';
+    var h=new Date().getHours();
+    var ct=(h<10?12:h<14?18:h<18?26:34)+Math.floor(Math.random()*5);
+    s.innerHTML='<span class="pulse-dot"></span><span>🔥 <strong>'+ct+' people</strong> booked '+ZONE_NAME+' tours in the last 24h · Popular tours fill up fast</span>';
+    nav.insertAdjacentElement('afterend',s);
+  }
+  // Trust strip after filters
+  var filters=document.querySelector('.filters');
+  if(filters&&!document.querySelector('.trust-strip')){
+    var t=document.createElement('div');
+    t.className='trust-strip';
+    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Free cancellation</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
+    filters.insertAdjacentElement('afterend',t);
+  }
+  // Sticky bottom CTA
+  if(!document.querySelector('.sticky-zone-cta')){
+    var bar=document.createElement('div');
+    bar.className='sticky-zone-cta';
+    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Find your perfect '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Free cancellation · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Browse Tours</a>';
+    document.body.appendChild(bar);
+  }
+  // Social proof toast
+  var names=['Carlos M.','Ana R.','Luis G.','Maria T.','Roberto S.','Sofia L.','Diego C.','Emma B.','Daniel P.','Isabella V.'];
+  var cities=['Miami','New York','LA','Chicago','Madrid','Toronto','Bogotá','Buenos Aires','London','Mexico City'];
+  var acts=['Snorkel Tour','Boat Charter','Jet Ski Adventure','Sunset Cruise','Fishing Charter','Walking Tour','Kayak Tour','Dolphin Watch'];
+  var toast=document.createElement('div');
+  toast.className='sp-toast';toast.id='spToast';
+  toast.innerHTML='<div class="sp-toast-av" id="spAv">CM</div><div><strong id="spName">Carlos</strong> from <span id="spCity">Miami</span> just booked<div class="sp-time" id="spAct">a tour in '+ZONE_NAME+'</div></div>';
+  document.body.appendChild(toast);
+  var idx=0;
+  function showToast(){
+    var n=names[Math.floor(Math.random()*names.length)];
+    var c=cities[Math.floor(Math.random()*cities.length)];
+    var a=acts[Math.floor(Math.random()*acts.length)];
+    var min=2+Math.floor(Math.random()*15);
+    document.getElementById('spName').textContent=n;
+    document.getElementById('spCity').textContent=c;
+    document.getElementById('spAct').textContent=a+' in '+ZONE_NAME+' · '+min+' min ago';
+    document.getElementById('spAv').textContent=n.split(' ').map(function(x){return x[0]}).join('');
+    toast.classList.add('show');
+    setTimeout(function(){toast.classList.remove('show')},5500);
+  }
+  setTimeout(function(){showToast();setInterval(showToast,28000)},15000);
+  // Track scroll milestones
+  var hits={};
+  window.addEventListener('scroll',function(){
+    var pct=Math.round(((window.scrollY+innerHeight)/document.body.scrollHeight)*100);
+    [25,50,75,100].forEach(function(p){if(pct>=p&&!hits[p]){hits[p]=1;if(window.gtag)gtag('event','scroll_depth',{zone:ZONE_NAME,depth:p+'%'})}});
+  },{passive:true});
+})();
+</script>
+
+
+<style>
+/* ─── EXIT-INTENT LEAD MODAL ─── */
+.lead-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);z-index:9998;display:none;align-items:center;justify-content:center;padding:20px;opacity:0;transition:.3s}
+.lead-overlay.show{display:flex;opacity:1}
+.lead-modal{background:linear-gradient(135deg,#0a1428,#162038);border:1px solid rgba(0,210,255,.4);border-radius:18px;padding:28px;max-width:440px;width:100%;position:relative;transform:scale(.9);transition:.3s;box-shadow:0 20px 60px rgba(0,210,255,.2)}
+.lead-overlay.show .lead-modal{transform:scale(1)}
+.lead-close{position:absolute;top:12px;right:14px;background:none;border:0;color:#7ba3c0;font-size:1.4rem;cursor:pointer;padding:6px;line-height:1}
+.lead-close:hover{color:#e8f4fd}
+.lead-badge{display:inline-block;background:linear-gradient(135deg,#ff6b00,#ff3a4d);color:#fff;padding:5px 12px;border-radius:50px;font-size:.7rem;font-weight:800;letter-spacing:1px;margin-bottom:12px;text-transform:uppercase}
+.lead-modal h3{font-size:1.5rem;color:#e8f4fd;margin-bottom:8px;font-weight:800;line-height:1.2}
+.lead-modal h3 .accent{background:linear-gradient(135deg,#00d2ff,#5e9eff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.lead-modal .lead-sub{color:#a8d4f0;font-size:.92rem;margin-bottom:18px;line-height:1.45}
+.lead-form{display:flex;flex-direction:column;gap:10px}
+.lead-form input{background:rgba(0,210,255,.06);border:1px solid rgba(0,210,255,.2);border-radius:10px;padding:12px 14px;color:#e8f4fd;font-size:.92rem;outline:none}
+.lead-form input:focus{border-color:#00d2ff;background:rgba(0,210,255,.1)}
+.lead-form button{background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;border:0;border-radius:10px;padding:14px;font-weight:800;font-size:.95rem;cursor:pointer;margin-top:4px}
+.lead-form button:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(0,210,255,.4)}
+.lead-perks{display:flex;flex-direction:column;gap:6px;margin:14px 0;padding:12px;background:rgba(0,210,255,.04);border-radius:10px;border:1px solid rgba(0,210,255,.1)}
+.lead-perk{font-size:.78rem;color:#a8d4f0;display:flex;align-items:center;gap:8px}
+.lead-perk span{color:#00d2ff;font-weight:800}
+.lead-thanks{text-align:center;padding:20px 0;color:#00d2ff;font-size:1rem;font-weight:700;display:none}
+
+/* Card hover CTAs */
+.card{position:relative;overflow:hidden}
+.card::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,rgba(0,210,255,.08));opacity:0;transition:.25s;pointer-events:none}
+.card:hover::after{opacity:1}
+.card-book-overlay{position:absolute;bottom:8px;left:8px;right:8px;background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;padding:8px;border-radius:8px;text-align:center;font-weight:800;font-size:.78rem;opacity:0;transform:translateY(8px);transition:.25s;pointer-events:none;z-index:2}
+.card:hover .card-book-overlay{opacity:1;transform:translateY(0);pointer-events:auto}
+</style>
+
+<div class="lead-overlay" id="leadOverlay">
+  <div class="lead-modal">
+    <button class="lead-close" onclick="window.__closeLead()">×</button>
+    <span class="lead-badge">🎁 Limited Time</span>
+    <h3>Get <span class="accent">10% Off</span> Your Savannah Adventure</h3>
+    <div class="lead-sub">Save on jet ski, boat tours, and water sports. We'll send your exclusive code instantly.</div>
+    <div class="lead-perks">
+      <div class="lead-perk"><span>✓</span> Instant coupon delivery</div>
+      <div class="lead-perk"><span>✓</span> Best price guarantee</div>
+      <div class="lead-perk"><span>✓</span> Free cancellation on most tours</div>
+    </div>
+    <form class="lead-form" id="leadForm" onsubmit="return window.__submitLead(event)">
+      <input type="email" id="leadEmail" required placeholder="your@email.com">
+      <button type="submit">🎯 Send My 10% Code</button>
+    </form>
+    <div class="lead-thanks" id="leadThanks">✓ Check your inbox! Code sent to your email.</div>
+  </div>
+</div>
+
+<script>
+(function(){
+  var ZONE='Savannah';
+  var shown=false;
+  var KEY='mjbr_lead_'+ZONE.replace(/ /g,'_');
+  if(localStorage.getItem(KEY))shown=true;
+  function show(){
+    if(shown)return;shown=true;
+    document.getElementById('leadOverlay').classList.add('show');
+    if(window.gtag)gtag('event','lead_modal_shown',{zone:ZONE});
+  }
+  window.__closeLead=function(){
+    document.getElementById('leadOverlay').classList.remove('show');
+    localStorage.setItem(KEY,'1');
+    if(window.gtag)gtag('event','lead_modal_dismissed',{zone:ZONE});
+  };
+  window.__submitLead=function(e){
+    e.preventDefault();
+    var em=document.getElementById('leadEmail').value;
+    if(window.gtag){
+      gtag('event','generate_lead',{zone:ZONE,email_hash:em.length+'@'});
+      gtag('event','conversion',{send_to:'AW-16509204378/lead_capture'});
+    }
+    document.getElementById('leadForm').style.display='none';
+    document.getElementById('leadThanks').style.display='block';
+    localStorage.setItem(KEY,em);
+    setTimeout(function(){document.getElementById('leadOverlay').classList.remove('show')},2200);
+    return false;
+  };
+  // Exit intent
+  document.addEventListener('mouseleave',function(e){if(e.clientY<5)show()});
+  // 60% scroll trigger
+  var sd=false;
+  window.addEventListener('scroll',function(){
+    if(sd)return;
+    var pct=(window.scrollY+innerHeight)/document.body.scrollHeight;
+    if(pct>.6){sd=true;setTimeout(show,800)}
+  },{passive:true});
+  // 35s timer
+  setTimeout(show,35000);
+
+  // Add Book Now overlay to cards as they render
+  var seen=new WeakSet();
+  function decorate(){
+    document.querySelectorAll('.card').forEach(function(c){
+      if(seen.has(c))return;seen.add(c);
+      if(c.querySelector('.card-book-overlay'))return;
+      var b=document.createElement('div');
+      b.className='card-book-overlay';
+      b.textContent='🚀 View Tours';
+      c.appendChild(b);
+      c.addEventListener('click',function(){
+        if(window.gtag)gtag('event','operator_card_click',{zone:ZONE});
+      });
+    });
+  }
+  // MutationObserver to catch dynamic cards
+  var mo=new MutationObserver(decorate);
+  mo.observe(document.body,{childList:true,subtree:true});
+  setTimeout(decorate,500);
+  setTimeout(decorate,2000);
+
+  // Track CTA clicks on Book buttons
+  document.addEventListener('click',function(e){
+    var t=e.target.closest('a,button');
+    if(!t)return;
+    var txt=(t.textContent||'').toLowerCase();
+    if(txt.includes('book')||txt.includes('view tours')||txt.includes('browse')){
+      if(window.gtag)gtag('event','cta_click',{zone:ZONE,label:txt.slice(0,30)});
+    }
+  },{passive:true});
+})();
+</script>
+
 </body>
 </html>
