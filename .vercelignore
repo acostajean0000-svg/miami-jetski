@@ -106,3 +106,4 @@ venv/
 
 # --- Herramienta interna (secret-sensitive, nunca desplegar) ---
 webhook-tester.html
+_dev/
