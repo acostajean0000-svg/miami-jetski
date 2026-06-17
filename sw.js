@@ -9,7 +9,7 @@
  * Versionado: incrementar CACHE_NAME al cambiar lógica para invalidar.
  */
 
-const CACHE_NAME = 'mjb-v1.0.5';
+const CACHE_NAME = 'mjb-v1.0.6';
 const STATIC_ASSETS = [
   '/',
   '/operator.css',
@@ -19,7 +19,7 @@ const STATIC_ASSETS = [
   '/slug-map.js'
 ];
 
-const RUNTIME_CACHE = 'mjb-runtime-v5';
+const RUNTIME_CACHE = 'mjb-runtime-v6';
 
 // Install: precache estáticos
 self.addEventListener('install', event => {

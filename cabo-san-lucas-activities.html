@@ -1,6 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+window._OP_LINK_TPL='https://fareharbor.com/embeds/book/{sn}/items/{id}/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no';
+window._OP_PHOTO_TPL='https://cdn.filestackcontent.com/{h}/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max';
+window._expandOp=function(o){if(o.link&&!o.link.startsWith('http')&&o.link.includes('/')){var p=o.link.split('/');o.link=window._OP_LINK_TPL.replace('{sn}',p[0]).replace('{id}',p[1])}if(o.photo&&!o.photo.startsWith('http')&&o.photo.length<50){o.photo=window._OP_PHOTO_TPL.replace('{h}',o.photo)}return o};
+</script>
   <meta charset="UTF-8">
   <meta name="color-scheme" content="dark">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -315,7 +320,7 @@ function showAllOperators(){
 })();
 
 function setupFilters(){document.querySelectorAll('.cat-chip').forEach(c=>{c.addEventListener('click',()=>{document.querySelectorAll('.cat-chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');activeCat=c.dataset.cat;render();if(_focusedOpId){showAllOperators();}else if(typeof refreshMarkers==='function'&&mapInstance)refreshMarkers();});});}
-(async()=>{try{const r = await fetch('/data/cabo.json');const ops=await r.json();allOps=ops.filter(o=>o.zone===ZONE_KEY);setupFilters();render();if(typeof refreshMarkers==='function'&&mapInstance)refreshMarkers();}catch(e){document.getElementById('grid').innerHTML='<div class="empty" style="grid-column:1/-1"><h2>Could not load operators</h2><p><a href="/" style="color:#00d2ff">Return home</a></p></div>';}}
+(async()=>{try{const r = await fetch('/data/cabo.json');const ops=await r.json();allOps=ops.map(window._expandOp).filter(o=>o.zone===ZONE_KEY);setupFilters();render();if(typeof refreshMarkers==='function'&&mapInstance)refreshMarkers();}catch(e){document.getElementById('grid').innerHTML='<div class="empty" style="grid-column:1/-1"><h2>Could not load operators</h2><p><a href="/" style="color:#00d2ff">Return home</a></p></div>';}}
 )();
 
 // ─── MAP INTEGRATION ────────────────────────────────────────

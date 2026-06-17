@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script>
+window._OP_LINK_TPL='https://fareharbor.com/embeds/book/{sn}/items/{id}/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no';
+window._OP_PHOTO_TPL='https://cdn.filestackcontent.com/{h}/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max';
+window._expandOp=function(o){if(o.link&&!o.link.startsWith('http')&&o.link.includes('/')){var p=o.link.split('/');o.link=window._OP_LINK_TPL.replace('{sn}',p[0]).replace('{id}',p[1])}if(o.photo&&!o.photo.startsWith('http')&&o.photo.length<50){o.photo=window._OP_PHOTO_TPL.replace('{h}',o.photo)}return o};
+</script>
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Jet Ski, Slingshot & Boat Rentals Florida</title>
@@ -2410,7 +2416,7 @@ function _applyLoadedData(data) {
   data.forEach(o => { if (typeof o.price !== 'number') { const s=String(o.price || '').replace(/[^0-9.]/g,''); o.price = s ? parseFloat(s) || 0 : 0; } });
   // Ensure zl/addr are always strings (prevents search crash)
   data.forEach(o => { if (!o.zl) o.zl=''; if (!o.addr) o.addr=''; });
-  allOperators = data;
+  allOperators = data.map(window._expandOp);
   // Set price filter range dynamically based on actual max price
   const maxPrice = Math.max(0, ...data.map(o => o.price || 0));
   const roundedMax = Math.ceil(maxPrice / 500) * 500 || 1000;
