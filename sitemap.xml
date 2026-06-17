@@ -11,7 +11,7 @@
   <sitemap><loc>https://miamijetskiboatrentals.com/sitemaps/zone-centralfl.xml</loc><lastmod>2026-06-17</lastmod></sitemap>
   <sitemap><loc>https://miamijetskiboatrentals.com/sitemaps/zone-cozumel.xml</loc><lastmod>2026-06-17</lastmod></sitemap>
   <sitemap><loc>https://miamijetskiboatrentals.com/sitemaps/zone-everglades.xml</loc><lastmod>2026-06-17</lastmod></sitemap>
-  <sitemap><loc>https://miamijetskiboatrentals.com/sitemaps/zone-gulf.xml</loc><lastmod>2026-06-17</lastmod></sitemap>
+  <sitemap><loc>https://miamijetskiboatrentals.com/sitemaps/zone-naples.xml</loc><lastmod>2026-06-17</lastmod></sitemap>
   <sitemap><loc>https://miamijetskiboatrentals.com/sitemaps/zone-hawaii.xml</loc><lastmod>2026-06-17</lastmod></sitemap>
   <sitemap><loc>https://miamijetskiboatrentals.com/sitemaps/zone-keys.xml</loc><lastmod>2026-06-17</lastmod></sitemap>
   <sitemap><loc>https://miamijetskiboatrentals.com/sitemaps/zone-keywest.xml</loc><lastmod>2026-06-17</lastmod></sitemap>
@@ -30,6 +30,58 @@
   </sitemap>
   <sitemap>
     <loc>https://miamijetskiboatrentals.com/sitemaps/zone-charleston.xml</loc>
+    <lastmod>2026-06-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://miamijetskiboatrentals.com/sitemaps/zone-tulum.xml</loc>
+    <lastmod>2026-06-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://miamijetskiboatrentals.com/sitemaps/zone-playadelcarmen.xml</loc>
+    <lastmod>2026-06-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://miamijetskiboatrentals.com/sitemaps/zone-islamujeres.xml</loc>
+    <lastmod>2026-06-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://miamijetskiboatrentals.com/sitemaps/zone-capecod.xml</loc>
+    <lastmod>2026-06-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://miamijetskiboatrentals.com/sitemaps/zone-barharbor.xml</loc>
+    <lastmod>2026-06-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://miamijetskiboatrentals.com/sitemaps/zone-laketahoe.xml</loc>
+    <lastmod>2026-06-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://miamijetskiboatrentals.com/sitemaps/zone-galveston.xml</loc>
+    <lastmod>2026-06-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://miamijetskiboatrentals.com/sitemaps/zone-outerbanks.xml</loc>
+    <lastmod>2026-06-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://miamijetskiboatrentals.com/sitemaps/zone-southpadre.xml</loc>
+    <lastmod>2026-06-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://miamijetskiboatrentals.com/sitemaps/zone-seattle.xml</loc>
+    <lastmod>2026-06-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://miamijetskiboatrentals.com/sitemaps/zone-newportbeach.xml</loc>
+    <lastmod>2026-06-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://miamijetskiboatrentals.com/sitemaps/zone-newportri.xml</loc>
+    <lastmod>2026-06-17</lastmod>
+  </sitemap>
+  <sitemap>
+    <loc>https://miamijetskiboatrentals.com/sitemaps/zone-capemay.xml</loc>
     <lastmod>2026-06-17</lastmod>
   </sitemap>
 </sitemapindex>

@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/gulf-activities",
+      "destination": "/naples-activities",
+      "permanent": true
+    },
+    {
       "source": "/best-step-into-the-wild-private-morning-ecotour-with-captain-adam-gone2sea-boat-rentals-st-augu",
       "destination": "/step-into-the-wild-private-morning-ecotour-with-captain-adam-gone2sea-boat-rentals-st-augu",
       "permanent": true
