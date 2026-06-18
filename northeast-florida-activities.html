@@ -1081,7 +1081,8 @@ function setupFilters(){
 })();
 
 // ─── MAP INTEGRATION ────────────────────────────────────────
-let mapInstance = null, markerCluster = null;
+let mapInstance = null;
+window.mapInstance = null;, markerCluster = null;
 function loadLeaflet(cb){
   if (window.L) return cb();
   const s = document.createElement('script');
@@ -1099,7 +1100,7 @@ function initMap(){
   if (mapInstance) return refreshMarkers();
   loadLeaflet(() => {
     document.querySelector('.map-wrap-skeleton')?.remove();
-    mapInstance = L.map('map',{zoomControl:true, scrollWheelZoom:false}).setView([29.6516,-81.3754],9);
+    mapInstance = window.mapInstance = L.map('map',{zoomControl:true, scrollWheelZoom:false}).setView([29.6516,-81.3754],9);
     L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{
       attribution:'© OpenStreetMap © CARTO', maxZoom:18, subdomains:'abcd'
     }).addTo(mapInstance);
@@ -1633,6 +1634,271 @@ document.head.appendChild(styleEl);
   });
 })();
 /* /SPRINT 11 PWA POLISH */
+</script>
+
+<style>
+/* ─── SPRINT 12 MAP ENHANCEMENT ─── */
+.map-wrap{position:relative}
+.map-controls-overlay{position:absolute;top:14px;right:14px;z-index:500;display:flex;flex-direction:column;gap:8px;pointer-events:none}
+.map-control-btn{background:rgba(4,13,26,.92);color:#e8f4fd;border:1px solid rgba(0,210,255,.4);border-radius:8px;padding:8px 12px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(8px);box-shadow:0 4px 12px rgba(0,0,0,.4);pointer-events:auto;transition:.2s;white-space:nowrap}
+.map-control-btn:hover{background:rgba(0,210,255,.15);border-color:#00d2ff}
+.map-control-btn.active{background:#00d2ff;color:#040d1a;border-color:#00d2ff}
+
+.map-radius-panel{position:absolute;top:14px;left:50%;transform:translateX(-50%);background:rgba(4,13,26,.92);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.3);border-radius:50px;padding:6px;display:none;gap:4px;z-index:500;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.map-radius-panel.show{display:flex}
+.map-radius-panel button{background:transparent;border:0;color:#e8f4fd;padding:7px 14px;border-radius:50px;font-size:.74rem;font-weight:700;cursor:pointer;transition:.2s}
+.map-radius-panel button:hover{background:rgba(0,210,255,.1)}
+.map-radius-panel button.active{background:#00d2ff;color:#040d1a}
+
+.map-search-area{position:absolute;top:14px;left:14px;background:rgba(4,13,26,.92);color:#fff;backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.5);border-radius:50px;padding:8px 18px;font-size:.78rem;font-weight:700;cursor:pointer;display:none;align-items:center;gap:8px;z-index:500;box-shadow:0 4px 12px rgba(0,0,0,.4);animation:fade-in .3s}
+.map-search-area.show{display:flex}
+.map-search-area:hover{background:rgba(0,210,255,.2)}
+@keyframes fade-in{from{opacity:0;transform:translateX(-50%) translateY(-6px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
+
+.map-visible-count{position:absolute;bottom:14px;left:14px;background:rgba(4,13,26,.92);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.3);border-radius:8px;padding:6px 12px;font-size:.74rem;color:#e8f4fd;font-weight:700;z-index:500}
+.map-visible-count strong{color:#00d2ff}
+
+.map-wrap.fullscreen{position:fixed!important;inset:0!important;z-index:9999!important;height:100vh!important;width:100vw!important;border-radius:0!important;border:none!important;margin:0!important}
+.map-wrap.fullscreen #map{height:100%!important}
+
+.map-radius-circle{stroke:#00d2ff;stroke-width:2;fill:rgba(0,210,255,.08);stroke-dasharray:5,5}
+
+/* Custom cluster styling */
+.leaflet-marker-icon.marker-cluster div{background:rgba(0,210,255,.85)!important;color:#040d1a!important;font-weight:800!important;border:3px solid #fff!important;box-shadow:0 4px 12px rgba(0,210,255,.5)!important}
+.leaflet-marker-icon.marker-cluster{background:transparent!important}
+</style>
+
+<script>
+/* ─── SPRINT 12 MAP ENHANCEMENT ─── */
+(function(){
+  var radiusKm=null,radiusCircle=null,radiusCenter=null,satelliteLayer=null,streetLayer=null;
+  var lastMapBounds=null,searchAreaPending=false;
+  
+  function $(s){return document.querySelector(s)}
+  
+  // Wait for map to initialize
+  function waitForMap(cb,attempts){
+    attempts=attempts||0;
+    if(window.mapInstance){cb();return}
+    if(attempts>60)return;
+    setTimeout(function(){waitForMap(cb,attempts+1)},500);
+  }
+  
+  // Inject controls overlay
+  function injectControls(){
+    var wrap=$('.map-wrap');
+    if(!wrap||$('.map-controls-overlay'))return;
+    
+    // Top right: layer toggle + fullscreen
+    var ov=document.createElement('div');
+    ov.className='map-controls-overlay';
+    ov.innerHTML=
+      '<button class="map-control-btn" id="mapRadiusToggle">🎯 Radius</button>'+
+      '<button class="map-control-btn" id="mapLayerToggle" data-mode="street">🛰️ Satellite</button>'+
+      '<button class="map-control-btn" id="mapFullscreenToggle">⛶ Full</button>';
+    wrap.appendChild(ov);
+    
+    // Radius panel
+    var rp=document.createElement('div');
+    rp.className='map-radius-panel';
+    rp.id='mapRadiusPanel';
+    rp.innerHTML='<button data-r="5">5 km</button><button data-r="10">10 km</button><button data-r="25">25 km</button><button data-r="50">50 km</button><button data-r="0">Off</button>';
+    wrap.appendChild(rp);
+    
+    // Search area button
+    var sa=document.createElement('button');
+    sa.className='map-search-area';
+    sa.id='mapSearchArea';
+    sa.innerHTML='🔍 Search this area';
+    wrap.appendChild(sa);
+    
+    // Visible count
+    var vc=document.createElement('div');
+    vc.className='map-visible-count';
+    vc.id='mapVisibleCount';
+    vc.innerHTML='<strong>0</strong> operators in view';
+    wrap.appendChild(vc);
+    
+    bindControls();
+  }
+  
+  function bindControls(){
+    // Radius toggle
+    $('#mapRadiusToggle').onclick=function(){
+      var p=$('#mapRadiusPanel');
+      p.classList.toggle('show');
+    };
+    // Radius buttons
+    $('#mapRadiusPanel').querySelectorAll('button').forEach(function(b){
+      b.onclick=function(){
+        var r=parseInt(b.dataset.r);
+        $('#mapRadiusPanel').querySelectorAll('button').forEach(function(x){x.classList.remove('active')});
+        if(r){b.classList.add('active');applyRadius(r);}
+        else clearRadius();
+        if(window.gtag)gtag('event','map_radius_set',{radius_km:r});
+      };
+    });
+    
+    // Layer toggle
+    $('#mapLayerToggle').onclick=function(){
+      toggleSatellite();
+    };
+    
+    // Fullscreen
+    $('#mapFullscreenToggle').onclick=function(){
+      var wrap=$('.map-wrap');
+      wrap.classList.toggle('fullscreen');
+      this.innerHTML=wrap.classList.contains('fullscreen')?'✕ Exit':'⛶ Full';
+      setTimeout(function(){if(window.mapInstance)mapInstance.invalidateSize()},300);
+      if(window.gtag)gtag('event','map_fullscreen_toggle');
+    };
+    
+    // Search this area
+    $('#mapSearchArea').onclick=function(){
+      filterByMapBounds();
+      this.classList.remove('show');
+      if(window.gtag)gtag('event','map_search_area');
+    };
+    
+    // ESC to exit fullscreen
+    document.addEventListener('keydown',function(e){
+      if(e.key==='Escape'&&$('.map-wrap').classList.contains('fullscreen')){
+        $('.map-wrap').classList.remove('fullscreen');
+        $('#mapFullscreenToggle').innerHTML='⛶ Full';
+        setTimeout(function(){if(window.mapInstance)mapInstance.invalidateSize()},100);
+      }
+    });
+    
+    // Listen to map events
+    waitForMap(function(){
+      mapInstance.on('moveend',function(){
+        updateVisibleCount();
+        if(lastMapBounds){
+          var newBounds=mapInstance.getBounds();
+          if(!lastMapBounds.equals(newBounds)){
+            $('#mapSearchArea').classList.add('show');
+          }
+        }
+        lastMapBounds=mapInstance.getBounds();
+      });
+      mapInstance.on('click',function(e){
+        if(radiusKm){
+          radiusCenter=e.latlng;
+          drawCircle();
+          filterByRadius();
+        }
+      });
+      lastMapBounds=mapInstance.getBounds();
+      setTimeout(updateVisibleCount,1500);
+    });
+  }
+  
+  function toggleSatellite(){
+    if(!window.mapInstance)return;
+    var btn=$('#mapLayerToggle');
+    if(satelliteLayer&&btn.dataset.mode==='satellite'){
+      mapInstance.removeLayer(satelliteLayer);
+      btn.dataset.mode='street';
+      btn.innerHTML='🛰️ Satellite';
+      btn.classList.remove('active');
+    } else {
+      if(!satelliteLayer){
+        satelliteLayer=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{
+          maxZoom:18,attribution:'© Esri'
+        });
+      }
+      satelliteLayer.addTo(mapInstance);
+      satelliteLayer.bringToFront();
+      btn.dataset.mode='satellite';
+      btn.innerHTML='🗺️ Map';
+      btn.classList.add('active');
+    }
+    if(window.gtag)gtag('event','map_layer_change',{layer:btn.dataset.mode});
+  }
+  
+  function applyRadius(km){
+    radiusKm=km;
+    if(!radiusCenter)radiusCenter=mapInstance.getCenter();
+    drawCircle();
+    filterByRadius();
+    $('#mapRadiusPanel').classList.remove('show');
+  }
+  function clearRadius(){
+    radiusKm=null;
+    if(radiusCircle){mapInstance.removeLayer(radiusCircle);radiusCircle=null}
+    if(window.refreshMarkers)window.refreshMarkers();
+  }
+  function drawCircle(){
+    if(radiusCircle)mapInstance.removeLayer(radiusCircle);
+    radiusCircle=L.circle(radiusCenter,{radius:radiusKm*1000,className:'map-radius-circle'}).addTo(mapInstance);
+    mapInstance.fitBounds(radiusCircle.getBounds(),{padding:[20,20]});
+  }
+  function filterByRadius(){
+    if(!radiusCenter||!radiusKm||!window.allOps)return;
+    var c=radiusCenter;
+    var filtered=window.allOps.filter(function(o){
+      if(!o.lat||!o.lng)return false;
+      var d=haversine(c.lat,c.lng,o.lat,o.lng);
+      return d<=radiusKm;
+    });
+    // Update marker cluster
+    if(window.markerCluster){
+      markerCluster.clearLayers();
+      filtered.forEach(function(o){
+        if(window.makeMarker)markerCluster.addLayer(window.makeMarker(o));
+      });
+    }
+    updateVisibleCount(filtered.length);
+  }
+  function filterByMapBounds(){
+    if(!window.mapInstance||!window.allOps)return;
+    var b=mapInstance.getBounds();
+    var filtered=window.allOps.filter(function(o){
+      return o.lat&&o.lng&&b.contains([o.lat,o.lng]);
+    });
+    // Also update the cards grid below
+    var grid=document.getElementById('grid');
+    if(grid&&window.renderCards){
+      window.renderCards(filtered);
+    }
+    updateVisibleCount(filtered.length);
+  }
+  function haversine(lat1,lon1,lat2,lon2){
+    var R=6371;
+    var dLat=(lat2-lat1)*Math.PI/180;
+    var dLon=(lon2-lon1)*Math.PI/180;
+    var a=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)*Math.sin(dLon/2);
+    return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+  }
+  function updateVisibleCount(explicit){
+    var el=$('#mapVisibleCount');
+    if(!el)return;
+    var count=explicit;
+    if(count===undefined&&window.mapInstance&&window.allOps){
+      var b=mapInstance.getBounds();
+      count=window.allOps.filter(function(o){return o.lat&&o.lng&&b.contains([o.lat,o.lng])}).length;
+    }
+    if(count===undefined)count=0;
+    el.innerHTML='<strong>'+count+'</strong> operator'+(count===1?'':'s')+' in view';
+  }
+  
+  // Enable scroll wheel zoom on Ctrl+wheel or touch pinch
+  waitForMap(function(){
+    mapInstance.on('focus',function(){mapInstance.scrollWheelZoom.enable()});
+    mapInstance.on('blur',function(){mapInstance.scrollWheelZoom.disable()});
+    // Allow ctrl+wheel zoom
+    document.getElementById('map').addEventListener('wheel',function(e){
+      if(e.ctrlKey||e.metaKey){
+        if(!mapInstance.scrollWheelZoom.enabled())mapInstance.scrollWheelZoom.enable();
+      }
+    });
+  });
+  
+  // Init when DOM ready
+  if(document.readyState!=='loading')injectControls();
+  else document.addEventListener('DOMContentLoaded',injectControls);
+})();
+/* /SPRINT 12 MAP ENHANCEMENT */
 </script>
 </body>
 </html>
