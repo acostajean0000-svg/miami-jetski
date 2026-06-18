@@ -303,6 +303,86 @@ document.addEventListener('click',function(e){
     <h3 style="font-size:.95rem;margin-bottom:10px;color:#a8d4f0">Popular destinations</h3>
     <div><a href="/miami-activities" style="display:inline-block;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:5px 12px;margin:3px;font-size:.78rem;color:#7ba3c0;text-decoration:none">Miami</a><a href="/hawaii-activities" style="display:inline-block;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:5px 12px;margin:3px;font-size:.78rem;color:#7ba3c0;text-decoration:none">Hawaii</a><a href="/cabo-san-lucas-activities" style="display:inline-block;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:5px 12px;margin:3px;font-size:.78rem;color:#7ba3c0;text-decoration:none">Cabo San Lucas</a><a href="/keys-activities" style="display:inline-block;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:5px 12px;margin:3px;font-size:.78rem;color:#7ba3c0;text-decoration:none">Florida Keys</a><a href="/punta-cana-activities" style="display:inline-block;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:5px 12px;margin:3px;font-size:.78rem;color:#7ba3c0;text-decoration:none">Punta Cana</a><a href="/savannah-activities" style="display:inline-block;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:5px 12px;margin:3px;font-size:.78rem;color:#7ba3c0;text-decoration:none">Savannah</a><a href="/charleston-activities" style="display:inline-block;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:50px;padding:5px 12px;margin:3px;font-size:.78rem;color:#7ba3c0;text-decoration:none">Charleston</a></div>
   </section>
+
+<!-- ─── SPRINT 6 CONTENT AUTHORITY ─── -->
+<style>
+.content-authority{max-width:920px;margin:60px auto 0;padding:0 8px;color:#a8d4f0;line-height:1.7;font-size:.95rem}
+.content-authority h2{font-size:1.7rem;color:#e8f4fd;font-weight:800;margin:36px 0 16px;background:linear-gradient(135deg,#00d2ff,#5e9eff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.content-authority h3{font-size:1.15rem;color:#e8f4fd;font-weight:700;margin:24px 0 10px}
+.content-authority p{margin-bottom:14px}
+.content-authority ul{margin:10px 0 16px;padding-left:22px}
+.content-authority ul li{margin-bottom:7px;list-style:'✓  '}
+.content-authority strong{color:#00d2ff;font-weight:700}
+.faq-list{margin:20px 0}
+.faq-item{background:rgba(0,210,255,.04);border:1px solid rgba(0,210,255,.12);border-radius:12px;margin-bottom:10px;overflow:hidden;transition:.2s}
+.faq-item:hover{border-color:rgba(0,210,255,.25)}
+.faq-q{padding:14px 18px;font-weight:700;color:#e8f4fd;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-size:.95rem;user-select:none}
+.faq-q::after{content:'+';font-size:1.4rem;color:#00d2ff;transition:.2s;font-weight:300}
+.faq-item[open] .faq-q::after{transform:rotate(45deg);content:'×'}
+.faq-a{padding:0 18px 16px;color:#a8d4f0;font-size:.9rem;line-height:1.65}
+.related-zones{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:10px;margin-top:14px}
+.related-zone-card{background:rgba(0,210,255,.05);border:1px solid rgba(0,210,255,.15);border-radius:10px;padding:12px 14px;color:#e8f4fd;text-decoration:none;transition:.2s;display:block}
+.related-zone-card:hover{background:rgba(0,210,255,.1);border-color:#00d2ff;transform:translateY(-2px)}
+.related-zone-name{font-weight:700;color:#00d2ff;font-size:.88rem;margin-bottom:3px}
+.related-zone-meta{font-size:.74rem;color:#7ba3c0}
+.fact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px;margin:16px 0;padding:14px;background:rgba(0,210,255,.04);border:1px solid rgba(0,210,255,.1);border-radius:12px}
+.fact-item{font-size:.82rem}
+.fact-label{color:#7ba3c0;font-size:.7rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:3px}
+.fact-value{color:#e8f4fd;font-weight:700}
+</style>
+
+<section class="content-authority" id="authorityContent">
+  <h2>Complete Guide to Tulum Activities & Tours</h2>
+  
+  <p>Tulum hosts <strong>97+ verified tour operators</strong> across <strong>5 activity categories</strong>, making it one of the most diverse destinations for sightseeing tours and outdoor experiences in Riviera Maya. Whether you're looking for an adrenaline rush on a jet ski, a peaceful sunset cruise, or a family-friendly sightseeing tour, you'll find every operator on this page is verified through FareHarbor and offers instant online booking with secure checkout.</p>
+  
+  <div class="fact-grid">
+    <div class="fact-item"><div class="fact-label">Total Operators</div><div class="fact-value">97+</div></div>
+    <div class="fact-item"><div class="fact-label">Categories</div><div class="fact-value">5</div></div>
+    <div class="fact-item"><div class="fact-label">Avg. Starting Price</div><div class="fact-value">$71</div></div>
+    <div class="fact-item"><div class="fact-label">Peak Season</div><div class="fact-value">Dec-Apr</div></div>
+    <div class="fact-item"><div class="fact-label">Nearest Airport</div><div class="fact-value" style="font-size:.78rem">Cancún (CUN) or Tulum (TQO)</div></div>
+    <div class="fact-item"><div class="fact-label">Climate</div><div class="fact-value" style="text-transform:capitalize">tropical</div></div>
+  </div>
+  
+  <h3>Top Activity Categories in Tulum</h3>
+  <ul><li><strong>63</strong> sightseeing tours</li><li><strong>23</strong> cenote tours</li><li><strong>8</strong> food & wine tours</li><li><strong>2</strong> water sports tours</li><li><strong>1</strong> snorkeling tours</li></ul>
+  
+  <h3>Popular Neighborhoods & Areas</h3>
+  <p>Most Tulum tour operators are concentrated in Tulum. These waterfront and downtown locations offer easy access to marinas, beaches, and tour departure points. When choosing an activity, consider proximity to your hotel or rental — many operators also provide pickup service for groups.</p>
+  
+  <h3>Highly-Rated Operators in Tulum</h3>
+  <ul><li><strong>Tankah Eco-Tour of 4 Cenotes</strong> — Tulum · ⭐ 4.9 (363+ reviews)</li><li><strong>2 Dives in Dos Ojos</strong> — Tulum · ⭐ 4.7 (368+ reviews)</li><li><strong>Artisanal Chocolate Tasting</strong> — Tulum · ⭐ 4.7 (367+ reviews)</li><li><strong>Deep Diver Course</strong> — Tulum · ⭐ 4.6 (370+ reviews)</li><li><strong>Balance For Open Water Course</strong> — Tulum · ⭐ 4.6 (368+ reviews)</li><li><strong>Tulum - Fun Mexican Dining Experience</strong> — Tulum · ⭐ 4.9 (341+ reviews)</li></ul>
+  <p>Browse all 97+ operators in the listings above. Each card shows pricing, ratings, and direct booking through the operator's secure FareHarbor checkout.</p>
+  
+  <h3>Booking Tips for Tulum</h3>
+  <ul>
+    <li><strong>Book early during peak season</strong> (Dec-Apr) — popular tours sell out 1–2 weeks in advance</li>
+    <li><strong>Check cancellation policy</strong> — most operators offer free cancellation 24–48 hours before</li>
+    <li><strong>Read recent reviews</strong> — sort by rating to see top-reviewed experiences first</li>
+    <li><strong>Group discounts</strong> available on many tours for 4+ passengers — contact operators directly</li>
+    <li><strong>Bring sunscreen, water, and a hat</strong> for water-based tours in tropical climate</li>
+    <li><strong>Arrive 15 minutes early</strong> for check-in at the marina or meeting point</li>
+  </ul>
+  
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq-list">
+    <details class="faq-item"><summary class="faq-q">What are the most popular activities in Tulum?</summary><div class="faq-a">The top activities in Tulum are sightseeing tours (63+ operators), cenote tours (23+ operators), and food & wine tours (8+ operators). We list 97+ verified operators across 5 categories.</div></details>
+    <details class="faq-item"><summary class="faq-q">How much do Tulum tours cost?</summary><div class="faq-a">Prices in Tulum start around $71 per person for most tours. Jet ski rentals, snorkeling, and group cruises tend to be in the $50–$150 range, while private boat charters and yacht rentals can range from $300 to $2,000+ depending on size and duration. Use the price filter to find tours that fit your budget.</div></details>
+    <details class="faq-item"><summary class="faq-q">When is the best time to visit Tulum?</summary><div class="faq-a">The peak season in Tulum is Dec-Apr, with the most pleasant weather and longest daylight hours. The climate is tropical. Booking early is recommended during peak months as the best tours fill up quickly. Off-season can offer better prices and smaller crowds.</div></details>
+    <details class="faq-item"><summary class="faq-q">Do I need to book Tulum activities in advance?</summary><div class="faq-a">Yes — popular Tulum tours fill up days or weeks in advance, especially during peak season (Dec-Apr). All operators on this page support instant online booking through FareHarbor with free cancellation on most tours. Booking 1-2 weeks ahead is recommended.</div></details>
+    <details class="faq-item"><summary class="faq-q">How do I get to Tulum?</summary><div class="faq-a">The closest airport is Cancún (CUN) or Tulum (TQO). Most operators are located near Tulum. Once in Tulum, you can reach most tour operators by rental car, taxi, or rideshare. Many waterfront operators offer parking on-site.</div></details>
+    <details class="faq-item"><summary class="faq-q">Are Tulum tours suitable for families and children?</summary><div class="faq-a">Many Tulum operators offer family-friendly tours suitable for children. Look for tours marked as family-friendly in the listings. Boat tours, snorkeling trips with calm waters, walking tours, and wildlife experiences are popular choices for families. Always check age restrictions when booking — minimum age and minimum height requirements vary by activity.</div></details>
+  </div>
+  
+  <h2>Explore Nearby Destinations</h2>
+  <div class="related-zones">
+    <a href="/playa-del-carmen-activities" class="related-zone-card"><div class="related-zone-name">📍 Playa del Carmen</div><div class="related-zone-meta">0+ operators</div></a><a href="/cancun-activities" class="related-zone-card"><div class="related-zone-name">📍 Cancún</div><div class="related-zone-meta">419+ operators</div></a><a href="/isla-mujeres-activities" class="related-zone-card"><div class="related-zone-name">📍 Isla Mujeres</div><div class="related-zone-meta">0+ operators</div></a><a href="/cozumel-activities" class="related-zone-card"><div class="related-zone-name">📍 Cozumel</div><div class="related-zone-meta">151+ operators</div></a>
+  </div>
+</section>
+
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "What are the most popular activities in Tulum?", "acceptedAnswer": {"@type": "Answer", "text": "The top activities in Tulum are sightseeing tours (63+ operators), cenote tours (23+ operators), and food & wine tours (8+ operators). We list 97+ verified operators across 5 categories."}}, {"@type": "Question", "name": "How much do Tulum tours cost?", "acceptedAnswer": {"@type": "Answer", "text": "Prices in Tulum start around $71 per person for most tours. Jet ski rentals, snorkeling, and group cruises tend to be in the $50–$150 range, while private boat charters and yacht rentals can range from $300 to $2,000+ depending on size and duration. Use the price filter to find tours that fit your budget."}}, {"@type": "Question", "name": "When is the best time to visit Tulum?", "acceptedAnswer": {"@type": "Answer", "text": "The peak season in Tulum is Dec-Apr, with the most pleasant weather and longest daylight hours. The climate is tropical. Booking early is recommended during peak months as the best tours fill up quickly. Off-season can offer better prices and smaller crowds."}}, {"@type": "Question", "name": "Do I need to book Tulum activities in advance?", "acceptedAnswer": {"@type": "Answer", "text": "Yes — popular Tulum tours fill up days or weeks in advance, especially during peak season (Dec-Apr). All operators on this page support instant online booking through FareHarbor with free cancellation on most tours. Booking 1-2 weeks ahead is recommended."}}, {"@type": "Question", "name": "How do I get to Tulum?", "acceptedAnswer": {"@type": "Answer", "text": "The closest airport is Cancún (CUN) or Tulum (TQO). Most operators are located near Tulum. Once in Tulum, you can reach most tour operators by rental car, taxi, or rideshare. Many waterfront operators offer parking on-site."}}, {"@type": "Question", "name": "Are Tulum tours suitable for families and children?", "acceptedAnswer": {"@type": "Answer", "text": "Many Tulum operators offer family-friendly tours suitable for children. Look for tours marked as family-friendly in the listings. Boat tours, snorkeling trips with calm waters, walking tours, and wildlife experiences are popular choices for families. Always check age restrictions when booking — minimum age and minimum height requirements vary by activity."}}]}</script>
+
 </main>
 <footer>
   <p>© 2026 <a href="/">FloridaWaterSports</a> · 448+ operators in Miami</p>
@@ -313,6 +393,10 @@ const ZL_PATTERN = null;
 const CAT_LABELS = {"jetski": "Jet Ski", "boat": "Boat", "fishing": "Fishing", "watersports": "Water Sports", "slingshot": "Slingshot", "exotic": "Exotic Cars", "flowers": "Bloom Bar", "jetcar": "Jet Car", "golfcart": "Golf Cart", "atv": "ATV", "tour": "Tour", "aerial": "Aerial Tour", "bikerental": "Bike & E-Ride","villa":"Villa", "hotel":"Hotel & Rooms", "nightlife":"Nightlife", "restaurant":"Restaurant", "shuttle":"Shuttle & Transfer","golf":"Golf","wildlife":"Wildlife","mayan_cenote":"Mayan & Cenote","culinary":"Food & Wine","ghost":"Ghost & Haunted","themepark":"Theme Park","walking_tour":"Walking Tour","lei":"Lei Greeting","segway":"Segway","zipline":"Zipline"};
 const CAT_EMOJI = {"jetski": "\ud83d\udee5\ufe0f", "boat": "\u26f5", "fishing": "\ud83c\udfa3", "watersports": "\ud83c\udfc4", "slingshot": "\ud83c\udfce\ufe0f", "exotic": "\ud83d\udc8e", "flowers": "\ud83d\udc90", "jetcar": "\ud83d\ude97", "golfcart": "\ud83d\udefa", "atv": "\ud83c\udfcd\ufe0f", "tour": "\ud83d\ude8c", "aerial": "\u2708\ufe0f", "bikerental": "\ud83d\udeb2","villa":"🏡", "hotel":"🏨", "nightlife":"🍸", "restaurant":"🍽", "shuttle":"🚐","golf":"⛳","wildlife":"🐋","mayan_cenote":"🏛️","culinary":"🍷","ghost":"👻","themepark":"🎢","walking_tour":"🚶","lei":"🌺","segway":"🛴","zipline":"🪢"};
 const FALLBACK_IMG = "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80";
+window.CAT_EMOJI = (typeof CAT_EMOJI !== 'undefined') ? CAT_EMOJI : {};
+window.CAT_LABELS = (typeof CAT_LABELS !== 'undefined') ? CAT_LABELS : {};
+window.FALLBACK_IMG = (typeof FALLBACK_IMG !== 'undefined') ? FALLBACK_IMG : '';
+
 
 function esc(s){return String(s==null?'':s).replace(/[&<>"'`]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"})[c]);}
 function inZone(op){
@@ -322,7 +406,7 @@ function inZone(op){
 }
 
 let allOps = [];
-let activeCat = 'all';
+let activeCat = 'all'; window.activeCat = "all";
 
 function thumbUrl(u){
   if(!u) return FALLBACK_IMG;
@@ -392,7 +476,7 @@ function setupFilters(){
     c.addEventListener('click', () => {
       document.querySelectorAll('.cat-chip').forEach(x => x.classList.remove('active'));
       c.classList.add('active');
-      activeCat = c.dataset.cat;
+      activeCat = c.dataset.cat; window.activeCat = activeCat;
       render();
       // Salir del modo "solo un pin" al cambiar de categoría
       if (_focusedOpId) { showAllOperators(); }
@@ -900,6 +984,184 @@ document.head.appendChild(styleEl);
       if(window.gtag)gtag('event','cta_click',{zone:ZONE,label:txt.slice(0,30)});
     }
   },{passive:true});
+})();
+</script>
+
+
+<style>
+/* ─── UX POLISH PACK v1 ─── */
+/* Search bar */
+.ux-searchbar{margin:16px 0 12px;position:relative}
+.ux-searchbar input{width:100%;background:rgba(0,210,255,.05);border:1px solid rgba(0,210,255,.18);border-radius:14px;padding:14px 44px 14px 44px;color:#e8f4fd;font-size:1rem;outline:none;transition:.2s}
+.ux-searchbar input:focus{border-color:#00d2ff;background:rgba(0,210,255,.1);box-shadow:0 0 0 3px rgba(0,210,255,.15)}
+.ux-searchbar input::placeholder{color:#7ba3c0}
+.ux-searchbar .ux-search-icon{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:1.1rem;opacity:.7;pointer-events:none}
+.ux-searchbar .ux-clear{position:absolute;right:12px;top:50%;transform:translateY(-50%);background:rgba(255,255,255,.08);border:0;color:#a8d4f0;width:26px;height:26px;border-radius:50%;cursor:pointer;font-size:.85rem;display:none;align-items:center;justify-content:center}
+.ux-searchbar input:not(:placeholder-shown)~.ux-clear{display:flex}
+
+/* Sort + result count row */
+.ux-toolbar{display:flex;align-items:center;justify-content:space-between;gap:10px;margin:6px 0 14px;flex-wrap:wrap}
+.ux-result-count{color:#7ba3c0;font-size:.82rem}
+.ux-result-count strong{color:#00d2ff;font-weight:700}
+.ux-sort{display:flex;align-items:center;gap:6px}
+.ux-sort label{color:#7ba3c0;font-size:.78rem}
+.ux-sort select{background:rgba(0,210,255,.06);border:1px solid rgba(0,210,255,.18);border-radius:8px;padding:7px 12px;color:#e8f4fd;font-size:.82rem;cursor:pointer;outline:none}
+.ux-sort select:focus{border-color:#00d2ff}
+
+/* Chip carousel (mobile horizontal scroll) */
+@media(max-width:760px){
+  .filters{flex-wrap:nowrap !important;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin-right:-20px;padding-right:20px;-webkit-overflow-scrolling:touch;scrollbar-width:none}
+  .filters::-webkit-scrollbar{display:none}
+  .filters .cat-chip{scroll-snap-align:start;flex-shrink:0}
+}
+
+/* Card reveal animation */
+@keyframes ux-reveal{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:translateY(0)}}
+.card.ux-revealed{animation:ux-reveal .5s cubic-bezier(.2,.8,.2,1) both}
+
+/* Skeleton glow improved */
+.sk{background:linear-gradient(110deg,rgba(0,210,255,.04) 8%,rgba(0,210,255,.12) 18%,rgba(0,210,255,.04) 33%);background-size:200% 100%;animation:ux-shimmer 1.4s linear infinite;border-radius:12px;min-height:280px}
+@keyframes ux-shimmer{to{background-position-x:-200%}}
+
+/* Empty state */
+.ux-empty{grid-column:1/-1;text-align:center;padding:40px 16px;color:#a8d4f0}
+.ux-empty h3{color:#e8f4fd;font-size:1.2rem;margin-bottom:8px}
+.ux-empty .ux-empty-clear{display:inline-block;margin-top:14px;background:rgba(0,210,255,.1);border:1px solid rgba(0,210,255,.3);color:#00d2ff;padding:8px 16px;border-radius:8px;cursor:pointer;font-size:.85rem;font-weight:600}
+
+/* Smooth hover on cards */
+.card{transition:transform .25s,box-shadow .25s,border-color .25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,210,255,.18);border-color:rgba(0,210,255,.35)}
+</style>
+
+<script>
+(function(){
+  // ───── Inject search bar + toolbar after .filters ─────
+  function injectUX(){
+    var filters=document.querySelector('.filters');
+    if(!filters||document.querySelector('.ux-searchbar'))return;
+    var search=document.createElement('div');
+    search.className='ux-searchbar';
+    search.innerHTML='<span class="ux-search-icon">🔎</span><input type="search" id="uxSearch" placeholder="Search by name, type, location..." autocomplete="off"><button type="button" class="ux-clear" id="uxClear" aria-label="Clear">×</button>';
+    var tools=document.createElement('div');
+    tools.className='ux-toolbar';
+    tools.innerHTML='<div class="ux-result-count" id="uxCount">Loading…</div><div class="ux-sort"><label for="uxSort">Sort:</label><select id="uxSort"><option value="rec">Recommended</option><option value="rating">⭐ Top rated</option><option value="reviews">💬 Most reviewed</option><option value="price-asc">💰 Price: low → high</option><option value="price-desc">💰 Price: high → low</option><option value="name">A–Z</option></select></div>';
+    // Insert in correct order: filters → search → toolbar → ...
+    filters.insertAdjacentElement('afterend',search);
+    search.insertAdjacentElement('afterend',tools);
+    setupListeners();
+  }
+
+  // ───── Fuzzy match (lightweight) ─────
+  function fuzzyMatch(op, q){
+    if(!q)return true;
+    q=q.toLowerCase().trim();
+    var hay=(op.name+' '+(op.zl||'')+' '+(op.cat||'')).toLowerCase();
+    // simple multi-token AND match with substring (typo-tolerant via prefix)
+    return q.split(/\s+/).every(function(tok){
+      if(tok.length<2)return true;
+      if(hay.indexOf(tok)>=0)return true;
+      // 1-char tolerance for tokens 4+
+      if(tok.length>=4){
+        for(var i=0;i<tok.length;i++){
+          var partial=tok.slice(0,i)+tok.slice(i+1);
+          if(hay.indexOf(partial)>=0)return true;
+        }
+      }
+      return false;
+    });
+  }
+
+  // ───── Hook into render with sort + search ─────
+  var origGrid=null;
+  var debounceT=null;
+  function setupListeners(){
+    var inp=document.getElementById('uxSearch');
+    var clr=document.getElementById('uxClear');
+    var sort=document.getElementById('uxSort');
+    inp&&inp.addEventListener('input',function(){
+      clearTimeout(debounceT);
+      debounceT=setTimeout(applyUX,180);
+    });
+    clr&&clr.addEventListener('click',function(){inp.value='';applyUX()});
+    sort&&sort.addEventListener('change',applyUX);
+  }
+
+  function applyUX(){
+    if(!window.allOps&&!window._uxAllOps)return;
+    var ops=window._uxAllOps||window.allOps||[];
+    var q=(document.getElementById('uxSearch')||{}).value||'';
+    var sort=(document.getElementById('uxSort')||{}).value||'rec';
+    var activeCat=window.activeCat||'all';
+    var filtered=ops.filter(function(o){
+      if(activeCat!=='all'&&o.cat!==activeCat)return false;
+      return fuzzyMatch(o,q);
+    });
+    if(sort==='rating')filtered.sort(function(a,b){return (b.rating||0)-(a.rating||0)});
+    else if(sort==='reviews')filtered.sort(function(a,b){return (b.reviews||0)-(a.reviews||0)});
+    else if(sort==='price-asc')filtered.sort(function(a,b){return (a.price||9999)-(b.price||9999)});
+    else if(sort==='price-desc')filtered.sort(function(a,b){return (b.price||0)-(a.price||0)});
+    else if(sort==='name')filtered.sort(function(a,b){return (a.name||'').localeCompare(b.name||'')});
+    renderGrid(filtered, q);
+    var cnt=document.getElementById('uxCount');
+    if(cnt){
+      cnt.innerHTML='<strong>'+filtered.length+'</strong> operator'+(filtered.length===1?'':'s')+(q?' matching "'+escapeHtml(q)+'"':'');
+    }
+    if(window.gtag&&q&&q.length>2){gtag('event','search',{search_term:q,results:filtered.length})}
+  }
+  function escapeHtml(s){return String(s).replace(/[&<>"']/g,function(c){return ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'})[c]})}
+
+  function renderGrid(list, query){
+    var grid=document.getElementById('grid');
+    if(!grid)return;
+    if(!list.length){
+      grid.innerHTML='<div class="ux-empty"><h3>🔍 No matches</h3><p>Try a different search or category.</p>'+(query?'<button class="ux-empty-clear" onclick="document.getElementById(\'uxSearch\').value=\'\';document.getElementById(\'uxSearch\').dispatchEvent(new Event(\'input\'))">Clear search</button>':'')+'</div>';
+      return;
+    }
+    var slugMap=window._OP_SLUG_MAP||{};
+    var CAT_EMOJI=window.CAT_EMOJI||{};
+    var CAT_LABELS=window.CAT_LABELS||{};
+    var FALLBACK=window.FALLBACK_IMG||'';
+    grid.innerHTML=list.slice(0,200).map(function(op,i){
+      var slug=slugMap[op.id]||'';
+      var href=slug?'/'+encodeURIComponent(slug):(op.link||'#');
+      var priceText=(op.price&&op.price>0)?('from $'+op.price):'Contact for pricing';
+      var photo=op.photo||FALLBACK;
+      if(photo&&photo.includes('cdn.filestackcontent.com')){
+        photo=photo.replace(/resize=width:\d+/,'resize=width:480');
+      }
+      var eager=i<4?'fetchpriority="high" loading="eager"':'loading="lazy" decoding="async"';
+      return '<a class="card" href="'+href+'" data-op-id="'+op.id+'"><div class="img"><img src="'+photo+'" alt="'+escapeHtml(op.name)+'" '+eager+' width="480" height="320" onerror="this.src=FALLBACK_IMG"><span class="badge">'+(CAT_EMOJI[op.cat]||'🌊')+' '+(CAT_LABELS[op.cat]||op.cat)+'</span></div><div class="body"><div class="name">'+escapeHtml(op.name)+'</div><div class="zl">📍 '+escapeHtml(op.zl||'')+'</div><div class="price">'+priceText+'</div><div class="view-details">View details →</div></div></a>';
+    }).join('');
+    // Reveal animation via IntersectionObserver
+    if('IntersectionObserver' in window){
+      var io=new IntersectionObserver(function(es){
+        es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('ux-revealed');io.unobserve(e.target)}});
+      },{threshold:.1});
+      grid.querySelectorAll('.card').forEach(function(c){io.observe(c)});
+    } else {
+      grid.querySelectorAll('.card').forEach(function(c){c.classList.add('ux-revealed')});
+    }
+  }
+
+  // Hook cat-chip clicks to reapply UX
+  document.addEventListener('click',function(e){
+    var chip=e.target.closest('.cat-chip');
+    if(chip){setTimeout(applyUX,30)}
+  });
+
+  // Wait for ops to load, then mirror to _uxAllOps
+  var checkInt=setInterval(function(){
+    if(window.allOps&&window.allOps.length){
+      window._uxAllOps=window.allOps;
+      clearInterval(checkInt);
+      injectUX();
+      setTimeout(applyUX,100);
+    }
+  },200);
+  setTimeout(function(){clearInterval(checkInt)},20000);
+  // First attempt
+  document.addEventListener('DOMContentLoaded',injectUX);
+  if(document.readyState!=='loading')injectUX();
 })();
 </script>
 
