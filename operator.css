@@ -101,3 +101,26 @@
 @keyframes fhspin{to{transform:rotate(360deg)}}
 .fh-modal iframe{width:100%;height:100%;border:0;display:block;position:absolute;inset:0;background:#fff}
 @media(max-width:600px){.fh-modal{padding:0}.fh-modal-card{max-height:100vh;border-radius:0}}
+
+/* ─── SPRINT 9 OPERATOR PAGES ENHANCEMENT ─── */
+.sp9-trust .trust-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin-top:10px}
+.sp9-trust .trust-item{background:rgba(0,210,255,.05);border:1px solid rgba(0,210,255,.15);border-radius:10px;padding:14px 12px;display:flex;flex-direction:column;align-items:center;text-align:center;gap:4px;transition:.2s}
+.sp9-trust .trust-item:hover{border-color:rgba(0,210,255,.35);background:rgba(0,210,255,.08)}
+.sp9-trust .trust-icon{font-size:1.6rem;margin-bottom:4px}
+.sp9-trust .trust-item strong{color:var(--light,#e8f4fd);font-size:.92rem;font-weight:700}
+.sp9-trust .trust-item span{color:var(--muted,#7ba3c0);font-size:.74rem;line-height:1.3}
+.sp9-bring .bring-list{list-style:none;padding:0;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin:10px 0}
+.sp9-bring .bring-list li{display:flex;align-items:center;gap:10px;background:rgba(0,210,255,.04);border:1px solid rgba(0,210,255,.12);border-radius:8px;padding:10px 14px;color:var(--light,#e8f4fd);font-size:.88rem}
+.sp9-bring .bring-icon{font-size:1.3rem;flex-shrink:0}
+.sp9-reviews .reviews-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:14px;margin-top:10px}
+.sp9-reviews .review{background:rgba(0,210,255,.04);border:1px solid rgba(0,210,255,.12);border-radius:10px;padding:16px;display:flex;flex-direction:column;gap:8px}
+.sp9-reviews .review-stars{color:#ffb800;font-size:.85rem;letter-spacing:1px}
+.sp9-reviews .review-text{color:var(--light,#e8f4fd);font-size:.88rem;line-height:1.5;font-style:italic;flex:1}
+.sp9-reviews .review-author{color:var(--muted,#7ba3c0);font-size:.74rem;font-weight:600}
+.sp9-related .rel-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;margin-top:10px}
+.sp9-related .rel-card{background:rgba(0,210,255,.04);border:1px solid rgba(0,210,255,.12);border-radius:10px;overflow:hidden;text-decoration:none;color:var(--light,#e8f4fd);transition:.25s;display:block}
+.sp9-related .rel-card:hover{transform:translateY(-3px);border-color:rgba(0,210,255,.4);box-shadow:0 6px 16px rgba(0,210,255,.12)}
+.sp9-related .rel-card img{width:100%;height:130px;object-fit:cover;display:block;background:rgba(0,210,255,.06)}
+.sp9-related .rel-body{padding:10px 12px}
+.sp9-related .rel-name{font-weight:700;font-size:.86rem;line-height:1.3;color:var(--light,#e8f4fd);margin-bottom:4px}
+.sp9-related .rel-meta{font-size:.74rem;color:var(--muted,#7ba3c0)}
