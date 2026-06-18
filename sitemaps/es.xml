@@ -1,147 +1,316 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/bar-harbor-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/bar-harbor-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/bar-harbor-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/bar-harbor-activities"/>
+  </url>
   <url>
     <loc>https://miamijetskiboatrentals.com/es/broward-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/broward-activities"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/broward-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/broward-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/cabo-san-lucas-activities</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/cabo-san-lucas-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/cabo-san-lucas-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/cabo-san-lucas-activities"/>
   </url>
   <url>
     <loc>https://miamijetskiboatrentals.com/es/cancun-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/cancun-activities"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/cancun-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/cancun-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/cape-cod-activities</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/cape-cod-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/cape-cod-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/cape-cod-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/cape-may-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/cape-may-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/cape-may-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/cape-may-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/catalina-island-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/catalina-island-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/catalina-island-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/catalina-island-activities"/>
   </url>
   <url>
     <loc>https://miamijetskiboatrentals.com/es/central-florida-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/central-florida-activities"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/central-florida-activities"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/central-florida-activities"/>
   </url>
   <url>
-    <loc>https://miamijetskiboatrentals.com/es/everglades-airboat-tours</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/everglades-airboat-tours"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/everglades-airboat-tours"/>
+    <loc>https://miamijetskiboatrentals.com/es/charleston-activities</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/charleston-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/charleston-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/charleston-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/cozumel-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/cozumel-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/cozumel-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/cozumel-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/everglades-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/everglades-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/everglades-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/everglades-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/galveston-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/galveston-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/galveston-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/galveston-activities"/>
   </url>
   <url>
     <loc>https://miamijetskiboatrentals.com/es/gulf-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/gulf-activities"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/gulf-activities"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/gulf-activities"/>
   </url>
   <url>
     <loc>https://miamijetskiboatrentals.com/es/hawaii-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/hawaii-activities"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/hawaii-activities"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/hawaii-activities"/>
   </url>
   <url>
-    <loc>https://miamijetskiboatrentals.com/es</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es"/>
+    <loc>https://miamijetskiboatrentals.com/es/hilton-head-activities</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/hilton-head-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/hilton-head-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/hilton-head-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/isla-mujeres-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/isla-mujeres-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/isla-mujeres-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/isla-mujeres-activities"/>
   </url>
   <url>
     <loc>https://miamijetskiboatrentals.com/es/jacksonville-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/jacksonville-activities"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/jacksonville-activities"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/jacksonville-activities"/>
   </url>
   <url>
     <loc>https://miamijetskiboatrentals.com/es/keys-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/keys-activities"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/keys-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/keys-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/lake-tahoe-activities</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/lake-tahoe-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/lake-tahoe-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/lake-tahoe-activities"/>
   </url>
   <url>
     <loc>https://miamijetskiboatrentals.com/es/miami-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/miami-activities"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/miami-activities"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/miami-activities"/>
   </url>
   <url>
-    <loc>https://miamijetskiboatrentals.com/es/miami-exotic-cars</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/miami-exotic-cars"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/miami-exotic-cars"/>
+    <loc>https://miamijetskiboatrentals.com/es/naples-activities</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/naples-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/naples-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/naples-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/newport-beach-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/newport-beach-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/newport-beach-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/newport-beach-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/newport-ri-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/newport-ri-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/newport-ri-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/newport-ri-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/northeast-florida-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/northeast-florida-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/northeast-florida-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/northeast-florida-activities"/>
   </url>
   <url>
     <loc>https://miamijetskiboatrentals.com/es/orlando-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/orlando-activities"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/orlando-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/orlando-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/outer-banks-activities</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/outer-banks-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/outer-banks-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/outer-banks-activities"/>
   </url>
   <url>
     <loc>https://miamijetskiboatrentals.com/es/palm-beach-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/palm-beach-activities"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/palm-beach-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/palm-beach-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/park-city-activities</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/park-city-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/park-city-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/park-city-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/playa-del-carmen-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/playa-del-carmen-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/playa-del-carmen-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/playa-del-carmen-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/puerto-rico-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/puerto-rico-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/puerto-rico-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/puerto-rico-activities"/>
   </url>
   <url>
     <loc>https://miamijetskiboatrentals.com/es/punta-cana-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/punta-cana-activities"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/punta-cana-activities"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/punta-cana-activities"/>
   </url>
   <url>
-    <loc>https://miamijetskiboatrentals.com/es/snorkel-tours</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/snorkel-tours"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/snorkel-tours"/>
+    <loc>https://miamijetskiboatrentals.com/es/salt-lake-city-activities</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/salt-lake-city-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/salt-lake-city-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/salt-lake-city-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/san-diego-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/san-diego-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/san-diego-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/san-diego-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/savannah-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/savannah-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/savannah-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/savannah-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/seattle-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/seattle-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/seattle-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/seattle-activities"/>
+  </url>
+  <url>
+    <loc>https://miamijetskiboatrentals.com/es/south-padre-island-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/south-padre-island-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/south-padre-island-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/south-padre-island-activities"/>
   </url>
   <url>
     <loc>https://miamijetskiboatrentals.com/es/space-coast-activities</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/space-coast-activities"/>
     <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/space-coast-activities"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/space-coast-activities"/>
   </url>
   <url>
-    <loc>https://miamijetskiboatrentals.com/es/sunset-cruises</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/sunset-cruises"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/sunset-cruises"/>
+    <loc>https://miamijetskiboatrentals.com/es/tulum-activities</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/tulum-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/tulum-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/tulum-activities"/>
   </url>
   <url>
-    <loc>https://miamijetskiboatrentals.com/es/yacht-charters</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/yacht-charters"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/yacht-charters"/>
+    <loc>https://miamijetskiboatrentals.com/es/west-florida-activities</loc>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <lastmod>2026-06-09</lastmod>
+    <priority>0.8</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/west-florida-activities"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/west-florida-activities"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/west-florida-activities"/>
   </url>
 </urlset>

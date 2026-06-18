@@ -1,0 +1,452 @@
+[
+  {
+    "slug": "top-10-things-to-do-in-west-florida",
+    "title": "Top 10 Things to Do in Sarasota & West Florida (2026)",
+    "zone": "westfl",
+    "zone_slug": "west-florida"
+  },
+  {
+    "slug": "best-west-florida-tours",
+    "title": "Best Sarasota & West Florida Tours & Activities for 2026",
+    "zone": "westfl",
+    "zone_slug": "west-florida"
+  },
+  {
+    "slug": "west-florida-family-activities",
+    "title": "Family-Friendly Activities in Sarasota & West Florida for Kids & Parents",
+    "zone": "westfl",
+    "zone_slug": "west-florida"
+  },
+  {
+    "slug": "best-time-to-visit-west-florida",
+    "title": "Best Time to Visit Sarasota & West Florida \u2014 Month-by-Month Guide",
+    "zone": "westfl",
+    "zone_slug": "west-florida"
+  },
+  {
+    "slug": "west-florida-on-a-budget",
+    "title": "Sarasota & West Florida on a Budget: Cheap Tours & Free Activities",
+    "zone": "westfl",
+    "zone_slug": "west-florida"
+  },
+  {
+    "slug": "top-10-things-to-do-in-san-diego",
+    "title": "Top 10 Things to Do in San Diego (2026)",
+    "zone": "sandiego",
+    "zone_slug": "san-diego"
+  },
+  {
+    "slug": "best-san-diego-tours",
+    "title": "Best San Diego Tours & Activities for 2026",
+    "zone": "sandiego",
+    "zone_slug": "san-diego"
+  },
+  {
+    "slug": "san-diego-family-activities",
+    "title": "Family-Friendly Activities in San Diego for Kids & Parents",
+    "zone": "sandiego",
+    "zone_slug": "san-diego"
+  },
+  {
+    "slug": "best-time-to-visit-san-diego",
+    "title": "Best Time to Visit San Diego \u2014 Month-by-Month Guide",
+    "zone": "sandiego",
+    "zone_slug": "san-diego"
+  },
+  {
+    "slug": "san-diego-on-a-budget",
+    "title": "San Diego on a Budget: Cheap Tours & Free Activities",
+    "zone": "sandiego",
+    "zone_slug": "san-diego"
+  },
+  {
+    "slug": "top-10-things-to-do-in-hilton-head",
+    "title": "Top 10 Things to Do in Hilton Head (2026)",
+    "zone": "hiltonhead",
+    "zone_slug": "hilton-head"
+  },
+  {
+    "slug": "best-hilton-head-tours",
+    "title": "Best Hilton Head Tours & Activities for 2026",
+    "zone": "hiltonhead",
+    "zone_slug": "hilton-head"
+  },
+  {
+    "slug": "hilton-head-family-activities",
+    "title": "Family-Friendly Activities in Hilton Head for Kids & Parents",
+    "zone": "hiltonhead",
+    "zone_slug": "hilton-head"
+  },
+  {
+    "slug": "best-time-to-visit-hilton-head",
+    "title": "Best Time to Visit Hilton Head \u2014 Month-by-Month Guide",
+    "zone": "hiltonhead",
+    "zone_slug": "hilton-head"
+  },
+  {
+    "slug": "hilton-head-on-a-budget",
+    "title": "Hilton Head on a Budget: Cheap Tours & Free Activities",
+    "zone": "hiltonhead",
+    "zone_slug": "hilton-head"
+  },
+  {
+    "slug": "top-10-things-to-do-in-hawaii",
+    "title": "Top 10 Things to Do in Hawaii (2026)",
+    "zone": "hawaii",
+    "zone_slug": "hawaii"
+  },
+  {
+    "slug": "best-hawaii-tours",
+    "title": "Best Hawaii Tours & Activities for 2026",
+    "zone": "hawaii",
+    "zone_slug": "hawaii"
+  },
+  {
+    "slug": "hawaii-family-activities",
+    "title": "Family-Friendly Activities in Hawaii for Kids & Parents",
+    "zone": "hawaii",
+    "zone_slug": "hawaii"
+  },
+  {
+    "slug": "best-time-to-visit-hawaii",
+    "title": "Best Time to Visit Hawaii \u2014 Month-by-Month Guide",
+    "zone": "hawaii",
+    "zone_slug": "hawaii"
+  },
+  {
+    "slug": "hawaii-on-a-budget",
+    "title": "Hawaii on a Budget: Cheap Tours & Free Activities",
+    "zone": "hawaii",
+    "zone_slug": "hawaii"
+  },
+  {
+    "slug": "top-10-things-to-do-in-charleston",
+    "title": "Top 10 Things to Do in Charleston (2026)",
+    "zone": "charleston",
+    "zone_slug": "charleston"
+  },
+  {
+    "slug": "best-charleston-tours",
+    "title": "Best Charleston Tours & Activities for 2026",
+    "zone": "charleston",
+    "zone_slug": "charleston"
+  },
+  {
+    "slug": "charleston-family-activities",
+    "title": "Family-Friendly Activities in Charleston for Kids & Parents",
+    "zone": "charleston",
+    "zone_slug": "charleston"
+  },
+  {
+    "slug": "best-time-to-visit-charleston",
+    "title": "Best Time to Visit Charleston \u2014 Month-by-Month Guide",
+    "zone": "charleston",
+    "zone_slug": "charleston"
+  },
+  {
+    "slug": "charleston-on-a-budget",
+    "title": "Charleston on a Budget: Cheap Tours & Free Activities",
+    "zone": "charleston",
+    "zone_slug": "charleston"
+  },
+  {
+    "slug": "top-10-things-to-do-in-puerto-rico",
+    "title": "Top 10 Things to Do in Puerto Rico (2026)",
+    "zone": "puertorico",
+    "zone_slug": "puerto-rico"
+  },
+  {
+    "slug": "best-puerto-rico-tours",
+    "title": "Best Puerto Rico Tours & Activities for 2026",
+    "zone": "puertorico",
+    "zone_slug": "puerto-rico"
+  },
+  {
+    "slug": "puerto-rico-family-activities",
+    "title": "Family-Friendly Activities in Puerto Rico for Kids & Parents",
+    "zone": "puertorico",
+    "zone_slug": "puerto-rico"
+  },
+  {
+    "slug": "best-time-to-visit-puerto-rico",
+    "title": "Best Time to Visit Puerto Rico \u2014 Month-by-Month Guide",
+    "zone": "puertorico",
+    "zone_slug": "puerto-rico"
+  },
+  {
+    "slug": "puerto-rico-on-a-budget",
+    "title": "Puerto Rico on a Budget: Cheap Tours & Free Activities",
+    "zone": "puertorico",
+    "zone_slug": "puerto-rico"
+  },
+  {
+    "slug": "top-10-things-to-do-in-keys",
+    "title": "Top 10 Things to Do in Key West (2026)",
+    "zone": "keywest",
+    "zone_slug": "keys"
+  },
+  {
+    "slug": "best-keys-tours",
+    "title": "Best Key West Tours & Activities for 2026",
+    "zone": "keywest",
+    "zone_slug": "keys"
+  },
+  {
+    "slug": "keys-family-activities",
+    "title": "Family-Friendly Activities in Key West for Kids & Parents",
+    "zone": "keywest",
+    "zone_slug": "keys"
+  },
+  {
+    "slug": "best-time-to-visit-keys",
+    "title": "Best Time to Visit Key West \u2014 Month-by-Month Guide",
+    "zone": "keywest",
+    "zone_slug": "keys"
+  },
+  {
+    "slug": "keys-on-a-budget",
+    "title": "Key West on a Budget: Cheap Tours & Free Activities",
+    "zone": "keywest",
+    "zone_slug": "keys"
+  },
+  {
+    "slug": "top-10-things-to-do-in-lake-tahoe",
+    "title": "Top 10 Things to Do in Lake Tahoe (2026)",
+    "zone": "laketahoe",
+    "zone_slug": "lake-tahoe"
+  },
+  {
+    "slug": "best-lake-tahoe-tours",
+    "title": "Best Lake Tahoe Tours & Activities for 2026",
+    "zone": "laketahoe",
+    "zone_slug": "lake-tahoe"
+  },
+  {
+    "slug": "lake-tahoe-family-activities",
+    "title": "Family-Friendly Activities in Lake Tahoe for Kids & Parents",
+    "zone": "laketahoe",
+    "zone_slug": "lake-tahoe"
+  },
+  {
+    "slug": "best-time-to-visit-lake-tahoe",
+    "title": "Best Time to Visit Lake Tahoe \u2014 Month-by-Month Guide",
+    "zone": "laketahoe",
+    "zone_slug": "lake-tahoe"
+  },
+  {
+    "slug": "lake-tahoe-on-a-budget",
+    "title": "Lake Tahoe on a Budget: Cheap Tours & Free Activities",
+    "zone": "laketahoe",
+    "zone_slug": "lake-tahoe"
+  },
+  {
+    "slug": "top-10-things-to-do-in-miami",
+    "title": "Top 10 Things to Do in Miami (2026)",
+    "zone": "miami",
+    "zone_slug": "miami"
+  },
+  {
+    "slug": "best-miami-tours",
+    "title": "Best Miami Tours & Activities for 2026",
+    "zone": "miami",
+    "zone_slug": "miami"
+  },
+  {
+    "slug": "miami-family-activities",
+    "title": "Family-Friendly Activities in Miami for Kids & Parents",
+    "zone": "miami",
+    "zone_slug": "miami"
+  },
+  {
+    "slug": "best-time-to-visit-miami",
+    "title": "Best Time to Visit Miami \u2014 Month-by-Month Guide",
+    "zone": "miami",
+    "zone_slug": "miami"
+  },
+  {
+    "slug": "miami-on-a-budget",
+    "title": "Miami on a Budget: Cheap Tours & Free Activities",
+    "zone": "miami",
+    "zone_slug": "miami"
+  },
+  {
+    "slug": "top-10-things-to-do-in-savannah",
+    "title": "Top 10 Things to Do in Savannah (2026)",
+    "zone": "savannah",
+    "zone_slug": "savannah"
+  },
+  {
+    "slug": "best-savannah-tours",
+    "title": "Best Savannah Tours & Activities for 2026",
+    "zone": "savannah",
+    "zone_slug": "savannah"
+  },
+  {
+    "slug": "savannah-family-activities",
+    "title": "Family-Friendly Activities in Savannah for Kids & Parents",
+    "zone": "savannah",
+    "zone_slug": "savannah"
+  },
+  {
+    "slug": "best-time-to-visit-savannah",
+    "title": "Best Time to Visit Savannah \u2014 Month-by-Month Guide",
+    "zone": "savannah",
+    "zone_slug": "savannah"
+  },
+  {
+    "slug": "savannah-on-a-budget",
+    "title": "Savannah on a Budget: Cheap Tours & Free Activities",
+    "zone": "savannah",
+    "zone_slug": "savannah"
+  },
+  {
+    "slug": "top-10-things-to-do-in-cancun",
+    "title": "Top 10 Things to Do in Canc\u00fan (2026)",
+    "zone": "cancun",
+    "zone_slug": "cancun"
+  },
+  {
+    "slug": "best-cancun-tours",
+    "title": "Best Canc\u00fan Tours & Activities for 2026",
+    "zone": "cancun",
+    "zone_slug": "cancun"
+  },
+  {
+    "slug": "cancun-family-activities",
+    "title": "Family-Friendly Activities in Canc\u00fan for Kids & Parents",
+    "zone": "cancun",
+    "zone_slug": "cancun"
+  },
+  {
+    "slug": "best-time-to-visit-cancun",
+    "title": "Best Time to Visit Canc\u00fan \u2014 Month-by-Month Guide",
+    "zone": "cancun",
+    "zone_slug": "cancun"
+  },
+  {
+    "slug": "cancun-on-a-budget",
+    "title": "Canc\u00fan on a Budget: Cheap Tours & Free Activities",
+    "zone": "cancun",
+    "zone_slug": "cancun"
+  },
+  {
+    "slug": "top-10-things-to-do-in-northeast-florida",
+    "title": "Top 10 Things to Do in St. Augustine (2026)",
+    "zone": "nefl",
+    "zone_slug": "northeast-florida"
+  },
+  {
+    "slug": "best-northeast-florida-tours",
+    "title": "Best St. Augustine Tours & Activities for 2026",
+    "zone": "nefl",
+    "zone_slug": "northeast-florida"
+  },
+  {
+    "slug": "northeast-florida-family-activities",
+    "title": "Family-Friendly Activities in St. Augustine for Kids & Parents",
+    "zone": "nefl",
+    "zone_slug": "northeast-florida"
+  },
+  {
+    "slug": "best-time-to-visit-northeast-florida",
+    "title": "Best Time to Visit St. Augustine \u2014 Month-by-Month Guide",
+    "zone": "nefl",
+    "zone_slug": "northeast-florida"
+  },
+  {
+    "slug": "northeast-florida-on-a-budget",
+    "title": "St. Augustine on a Budget: Cheap Tours & Free Activities",
+    "zone": "nefl",
+    "zone_slug": "northeast-florida"
+  },
+  {
+    "slug": "top-10-things-to-do-in-broward",
+    "title": "Top 10 Things to Do in Fort Lauderdale (2026)",
+    "zone": "broward",
+    "zone_slug": "broward"
+  },
+  {
+    "slug": "best-broward-tours",
+    "title": "Best Fort Lauderdale Tours & Activities for 2026",
+    "zone": "broward",
+    "zone_slug": "broward"
+  },
+  {
+    "slug": "broward-family-activities",
+    "title": "Family-Friendly Activities in Fort Lauderdale for Kids & Parents",
+    "zone": "broward",
+    "zone_slug": "broward"
+  },
+  {
+    "slug": "best-time-to-visit-broward",
+    "title": "Best Time to Visit Fort Lauderdale \u2014 Month-by-Month Guide",
+    "zone": "broward",
+    "zone_slug": "broward"
+  },
+  {
+    "slug": "broward-on-a-budget",
+    "title": "Fort Lauderdale on a Budget: Cheap Tours & Free Activities",
+    "zone": "broward",
+    "zone_slug": "broward"
+  },
+  {
+    "slug": "top-10-things-to-do-in-seattle",
+    "title": "Top 10 Things to Do in Seattle (2026)",
+    "zone": "seattle",
+    "zone_slug": "seattle"
+  },
+  {
+    "slug": "best-seattle-tours",
+    "title": "Best Seattle Tours & Activities for 2026",
+    "zone": "seattle",
+    "zone_slug": "seattle"
+  },
+  {
+    "slug": "seattle-family-activities",
+    "title": "Family-Friendly Activities in Seattle for Kids & Parents",
+    "zone": "seattle",
+    "zone_slug": "seattle"
+  },
+  {
+    "slug": "best-time-to-visit-seattle",
+    "title": "Best Time to Visit Seattle \u2014 Month-by-Month Guide",
+    "zone": "seattle",
+    "zone_slug": "seattle"
+  },
+  {
+    "slug": "seattle-on-a-budget",
+    "title": "Seattle on a Budget: Cheap Tours & Free Activities",
+    "zone": "seattle",
+    "zone_slug": "seattle"
+  },
+  {
+    "slug": "top-10-things-to-do-in-cape-cod",
+    "title": "Top 10 Things to Do in Cape Cod (2026)",
+    "zone": "capecod",
+    "zone_slug": "cape-cod"
+  },
+  {
+    "slug": "best-cape-cod-tours",
+    "title": "Best Cape Cod Tours & Activities for 2026",
+    "zone": "capecod",
+    "zone_slug": "cape-cod"
+  },
+  {
+    "slug": "cape-cod-family-activities",
+    "title": "Family-Friendly Activities in Cape Cod for Kids & Parents",
+    "zone": "capecod",
+    "zone_slug": "cape-cod"
+  },
+  {
+    "slug": "best-time-to-visit-cape-cod",
+    "title": "Best Time to Visit Cape Cod \u2014 Month-by-Month Guide",
+    "zone": "capecod",
+    "zone_slug": "cape-cod"
+  },
+  {
+    "slug": "cape-cod-on-a-budget",
+    "title": "Cape Cod on a Budget: Cheap Tours & Free Activities",
+    "zone": "capecod",
+    "zone_slug": "cape-cod"
+  }
+]
