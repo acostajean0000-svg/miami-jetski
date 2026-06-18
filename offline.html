@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>You're Offline — Miami Jet Ski & Boat Rentals</title>
+<meta name="theme-color" content="#040d1a">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:#040d1a;color:#e8f4fd;min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:20px;line-height:1.6}
+.offline-icon{font-size:4rem;margin-bottom:20px;opacity:.6}
+h1{font-size:clamp(1.5rem,4vw,2rem);margin-bottom:14px;background:linear-gradient(135deg,#00d2ff,#5e9eff);-webkit-background-clip:text;background-clip:text;color:transparent;text-align:center}
+.sub{color:#a8d4f0;font-size:.95rem;max-width:480px;text-align:center;margin-bottom:30px}
+.retry-btn{background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;padding:14px 28px;border-radius:50px;font-weight:800;text-decoration:none;font-size:.95rem;box-shadow:0 4px 14px rgba(0,210,255,.4);cursor:pointer;border:none;display:inline-flex;align-items:center;gap:8px;transition:.2s}
+.retry-btn:hover{transform:translateY(-2px);box-shadow:0 6px 22px rgba(0,210,255,.6)}
+.cached-zones{margin-top:50px;max-width:600px;width:100%}
+.cached-zones h2{font-size:1.05rem;color:#e8f4fd;text-align:center;margin-bottom:14px;font-weight:700}
+.cached-zones p{color:#7ba3c0;font-size:.82rem;text-align:center;margin-bottom:18px}
+.zone-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(140px,1fr));gap:10px}
+.zone-card{background:rgba(0,210,255,.05);border:1px solid rgba(0,210,255,.15);border-radius:10px;padding:14px;color:#e8f4fd;text-decoration:none;text-align:center;transition:.2s;font-size:.85rem;font-weight:700}
+.zone-card:hover{background:rgba(0,210,255,.1);border-color:#00d2ff;transform:translateY(-2px)}
+.tip{margin-top:30px;color:#7ba3c0;font-size:.78rem;text-align:center;max-width:480px}
+.tip strong{color:#00d2ff}
+.pulse{display:inline-block;width:10px;height:10px;background:#ff6b6b;border-radius:50%;margin-right:8px;animation:p 1.4s infinite;vertical-align:middle}
+@keyframes p{0%,100%{opacity:.4;transform:scale(1)}50%{opacity:1;transform:scale(1.3)}}
+</style>
+</head>
+<body>
+<div class="offline-icon">📡</div>
+<h1>You're Offline</h1>
+<p class="sub"><span class="pulse"></span>No internet connection detected. Don't worry — you can still browse some cached pages, or check your connection and try again.</p>
+<button class="retry-btn" onclick="location.reload()">🔄 Try Again</button>
+
+<div class="cached-zones">
+  <h2>📍 Try a Cached Destination</h2>
+  <p>These zones may still load from cache:</p>
+  <div class="zone-grid">
+    <a href="/miami-activities" class="zone-card">🏖️ Miami</a>
+    <a href="/keys-activities" class="zone-card">🐠 Florida Keys</a>
+    <a href="/cancun-activities" class="zone-card">🇲🇽 Cancún</a>
+    <a href="/cabo-san-lucas-activities" class="zone-card">🌵 Cabo</a>
+    <a href="/punta-cana-activities" class="zone-card">🇩🇴 Punta Cana</a>
+    <a href="/hawaii-activities" class="zone-card">🌺 Hawaii</a>
+    <a href="/san-diego-activities" class="zone-card">🏄 San Diego</a>
+    <a href="/charleston-activities" class="zone-card">🏛️ Charleston</a>
+  </div>
+</div>
+
+<div class="tip">
+  💡 <strong>Tip:</strong> Add this site to your home screen for offline access and faster loading. Look for "Add to Home Screen" in your browser menu.
+</div>
+
+<script>
+// Auto-retry when back online
+window.addEventListener('online', function(){
+  document.querySelector('h1').textContent = '✓ Back Online!';
+  setTimeout(function(){ location.reload(); }, 800);
+});
+</script>
+</body>
+</html>

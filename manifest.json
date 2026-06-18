@@ -1,14 +1,26 @@
 {
-  "name": "Florida, Hawaii & Caribbean Watersports Marketplace",
-  "short_name": "Watersports",
-  "description": "Find and book jet ski rentals, boat charters, fishing, tours, snorkel, hotels & 30+ activities across Florida, Hawaii, Cancun & Punta Cana. Compare 4,800+ operators across 14 zones.",
-  "start_url": "/",
+  "name": "Miami Jet Ski & Boat Rentals \u2014 Watersports Marketplace",
+  "short_name": "MJB Watersports",
+  "description": "Find and book jet ski rentals, boat charters, snorkel, fishing, tours, and 30+ water sports activities across 37 destinations in the US, Mexico, Caribbean. 10,000+ verified operators with instant booking.",
+  "start_url": "/?utm_source=pwa",
+  "id": "/",
   "scope": "/",
   "display": "standalone",
-  "orientation": "portrait-primary",
+  "display_override": [
+    "window-controls-overlay",
+    "standalone",
+    "browser"
+  ],
+  "orientation": "natural",
   "background_color": "#040d1a",
   "theme_color": "#00d2ff",
-  "categories": ["travel", "lifestyle", "shopping", "entertainment"],
+  "categories": [
+    "travel",
+    "lifestyle",
+    "shopping",
+    "entertainment",
+    "navigation"
+  ],
   "lang": "en-US",
   "dir": "ltr",
   "icons": [
@@ -33,33 +45,70 @@
   ],
   "shortcuts": [
     {
-      "name": "Jet Ski Rentals",
-      "short_name": "Jet Ski",
-      "description": "Browse jet ski rentals",
-      "url": "/?cat=jetski",
-      "icons": [{ "src": "/apple-touch-icon.png", "sizes": "180x180" }]
+      "name": "Browse Miami",
+      "short_name": "Miami",
+      "description": "Browse 450+ Miami operators",
+      "url": "/miami-activities",
+      "icons": [
+        {
+          "src": "/apple-touch-icon.png",
+          "sizes": "180x180"
+        }
+      ]
     },
     {
-      "name": "Boat Charters",
-      "short_name": "Boats",
-      "description": "Browse boat & yacht charters",
-      "url": "/?cat=boat",
-      "icons": [{ "src": "/apple-touch-icon.png", "sizes": "180x180" }]
+      "name": "Browse Canc\u00fan",
+      "short_name": "Canc\u00fan",
+      "description": "Browse 419+ Canc\u00fan operators",
+      "url": "/cancun-activities",
+      "icons": [
+        {
+          "src": "/apple-touch-icon.png",
+          "sizes": "180x180"
+        }
+      ]
     },
     {
-      "name": "Fishing Trips",
-      "short_name": "Fishing",
-      "description": "Browse fishing charters",
-      "url": "/?cat=fishing",
-      "icons": [{ "src": "/apple-touch-icon.png", "sizes": "180x180" }]
+      "name": "Browse Hawaii",
+      "short_name": "Hawaii",
+      "description": "Browse 495+ Hawaii operators",
+      "url": "/hawaii-activities",
+      "icons": [
+        {
+          "src": "/apple-touch-icon.png",
+          "sizes": "180x180"
+        }
+      ]
     },
     {
-      "name": "Snorkel Tours",
-      "short_name": "Snorkel",
-      "description": "Browse snorkel & dive trips",
-      "url": "/?cat=snorkel",
-      "icons": [{ "src": "/apple-touch-icon.png", "sizes": "180x180" }]
+      "name": "Browse Cabo",
+      "short_name": "Cabo",
+      "description": "Browse 307+ Cabo operators",
+      "url": "/cabo-san-lucas-activities",
+      "icons": [
+        {
+          "src": "/apple-touch-icon.png",
+          "sizes": "180x180"
+        }
+      ]
     }
   ],
-  "prefer_related_applications": false
+  "screenshots": [
+    {
+      "src": "/og-image.png",
+      "sizes": "1200x630",
+      "type": "image/png",
+      "label": "Browse 10,000+ verified water sports operators"
+    }
+  ],
+  "prefer_related_applications": false,
+  "share_target": {
+    "action": "/?share",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
 }

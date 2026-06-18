@@ -9,17 +9,18 @@
  * Versionado: incrementar CACHE_NAME al cambiar lógica para invalidar.
  */
 
-const CACHE_NAME = 'mjb-v1.0.6';
+const CACHE_NAME = 'mjb-v1.0.7';
 const STATIC_ASSETS = [
   '/',
   '/operator.css',
   '/manifest.json',
   '/og-image.png',
   '/apple-touch-icon.png',
-  '/slug-map.js'
+  '/slug-map.js',
+  '/offline.html'
 ];
 
-const RUNTIME_CACHE = 'mjb-runtime-v6';
+const RUNTIME_CACHE = 'mjb-runtime-v7';
 
 // Install: precache estáticos
 self.addEventListener('install', event => {
@@ -107,10 +108,21 @@ self.addEventListener('fetch', event => {
     return;
   }
 
-  // HTMLs: SIEMPRE network (no cachear nunca). Solo fallback offline.
+  // HTMLs: network-first, fallback al offline page si todo falla
   if (request.headers.get('Accept')?.includes('text/html')) {
     event.respondWith(
-      fetch(request).catch(() => caches.match('/'))
+      fetch(request).then(response => {
+        // Cache successful HTML responses for offline access
+        if (response.ok && url.origin === location.origin) {
+          const clone = response.clone();
+          caches.open(RUNTIME_CACHE).then(c => c.put(request, clone)).catch(() => {});
+        }
+        return response;
+      }).catch(() =>
+        caches.match(request).then(cached =>
+          cached || caches.match('/offline.html') || caches.match('/')
+        )
+      )
     );
     return;
   }

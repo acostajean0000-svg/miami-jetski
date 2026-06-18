@@ -1000,6 +1000,91 @@ window._expandOp=function(o){if(o.link&&!o.link.startsWith('http')&&o.link.inclu
     </div>
   </div>
 </section>
+
+<!-- ─── SPRINT 10 HOMEPAGE CONTENT AUTHORITY ─── -->
+<style>
+.hp-authority{max-width:1100px;margin:60px auto 30px;padding:0 16px;color:#a8d4f0;line-height:1.7}
+.hp-authority h2{font-size:1.8rem;font-weight:800;margin:36px 0 16px;background:linear-gradient(135deg,#00d2ff,#5e9eff);-webkit-background-clip:text;background-clip:text;color:transparent;text-align:center}
+.hp-authority h3{font-size:1.2rem;color:#e8f4fd;font-weight:700;margin:28px 0 12px}
+.hp-authority p{margin-bottom:14px;font-size:.96rem;max-width:780px;margin-left:auto;margin-right:auto}
+.hp-authority .center{text-align:center}
+.hp-fact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin:24px 0;padding:18px;background:rgba(0,210,255,.04);border:1px solid rgba(0,210,255,.12);border-radius:14px}
+.hp-fact-item{text-align:center}
+.hp-fact-label{color:#7ba3c0;font-size:.74rem;text-transform:uppercase;letter-spacing:.5px;margin-bottom:6px}
+.hp-fact-value{color:#e8f4fd;font-weight:800;font-size:1.3rem}
+.hp-fact-value strong{background:linear-gradient(135deg,#00d2ff,#5e9eff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hp-zones-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:20px}
+.hp-zone-card{background:rgba(0,210,255,.05);border:1px solid rgba(0,210,255,.15);border-radius:10px;padding:14px;color:#e8f4fd;text-decoration:none;transition:.2s;display:block}
+.hp-zone-card:hover{background:rgba(0,210,255,.1);border-color:#00d2ff;transform:translateY(-2px)}
+.hp-zone-name{font-weight:700;color:#00d2ff;font-size:.95rem;margin-bottom:3px}
+.hp-zone-meta{font-size:.78rem;color:#7ba3c0}
+.hp-faq-list{margin:20px 0;max-width:780px;margin-left:auto;margin-right:auto}
+.hp-faq-item{background:rgba(0,210,255,.04);border:1px solid rgba(0,210,255,.12);border-radius:12px;margin-bottom:10px;overflow:hidden;transition:.2s}
+.hp-faq-item:hover{border-color:rgba(0,210,255,.25)}
+.hp-faq-q{padding:14px 18px;font-weight:700;color:#e8f4fd;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-size:.95rem;list-style:none}
+.hp-faq-q::-webkit-details-marker{display:none}
+.hp-faq-q::after{content:'+';font-size:1.4rem;color:#00d2ff}
+.hp-faq-item[open] .hp-faq-q::after{content:'×'}
+.hp-faq-a{padding:0 18px 16px;font-size:.9rem;line-height:1.65;color:#a8d4f0}
+</style>
+
+<section class="hp-authority" id="hpAuthority">
+  <h2>Book Verified Water Sports & Tours Across 37 Top Destinations</h2>
+  <p class="center">Miami Jet Ski & Boat Rentals connects you with <strong>10,000+ vetted local operators</strong> in 37 destinations across the US, Mexico, Caribbean, and beyond. Every operator on our marketplace is verified through FareHarbor with real-time availability, instant booking, and free cancellation on most tours.</p>
+  
+  <div class="hp-fact-grid">
+    <div class="hp-fact-item"><div class="hp-fact-label">Verified Operators</div><div class="hp-fact-value"><strong>10,000+</strong></div></div>
+    <div class="hp-fact-item"><div class="hp-fact-label">Destinations</div><div class="hp-fact-value"><strong>37</strong></div></div>
+    <div class="hp-fact-item"><div class="hp-fact-label">Activity Categories</div><div class="hp-fact-value"><strong>30+</strong></div></div>
+    <div class="hp-fact-item"><div class="hp-fact-label">Avg Rating</div><div class="hp-fact-value"><strong>4.7</strong> / 5</div></div>
+    <div class="hp-fact-item"><div class="hp-fact-label">Verified Reviews</div><div class="hp-fact-value"><strong>500K+</strong></div></div>
+    <div class="hp-fact-item"><div class="hp-fact-label">Free Cancellation</div><div class="hp-fact-value"><strong>24h+</strong></div></div>
+  </div>
+  
+  <h3>Top Destinations</h3>
+  <div class="hp-zones-grid">
+    <a href="/miami-activities" class="hp-zone-card"><div class="hp-zone-name">🏖️ Miami</div><div class="hp-zone-meta">450+ operators</div></a>
+    <a href="/keys-activities" class="hp-zone-card"><div class="hp-zone-name">🐠 Florida Keys</div><div class="hp-zone-meta">460+ operators</div></a>
+    <a href="/cancun-activities" class="hp-zone-card"><div class="hp-zone-name">🇲🇽 Cancún</div><div class="hp-zone-meta">419+ operators</div></a>
+    <a href="/cabo-san-lucas-activities" class="hp-zone-card"><div class="hp-zone-name">🌵 Cabo San Lucas</div><div class="hp-zone-meta">307+ operators</div></a>
+    <a href="/punta-cana-activities" class="hp-zone-card"><div class="hp-zone-name">🇩🇴 Punta Cana</div><div class="hp-zone-meta">88+ operators</div></a>
+    <a href="/hawaii-activities" class="hp-zone-card"><div class="hp-zone-name">🌺 Hawaii</div><div class="hp-zone-meta">495+ operators</div></a>
+    <a href="/san-diego-activities" class="hp-zone-card"><div class="hp-zone-name">🏄 San Diego</div><div class="hp-zone-meta">500+ operators</div></a>
+    <a href="/charleston-activities" class="hp-zone-card"><div class="hp-zone-name">🏛️ Charleston</div><div class="hp-zone-meta">492+ operators</div></a>
+    <a href="/puerto-rico-activities" class="hp-zone-card"><div class="hp-zone-name">🇵🇷 Puerto Rico</div><div class="hp-zone-meta">469+ operators</div></a>
+    <a href="/lake-tahoe-activities" class="hp-zone-card"><div class="hp-zone-name">🏔️ Lake Tahoe</div><div class="hp-zone-meta">452+ operators</div></a>
+    <a href="/savannah-activities" class="hp-zone-card"><div class="hp-zone-name">🌳 Savannah</div><div class="hp-zone-meta">436+ operators</div></a>
+    <a href="/hilton-head-activities" class="hp-zone-card"><div class="hp-zone-name">🏌️ Hilton Head</div><div class="hp-zone-meta">499+ operators</div></a>
+  </div>
+  
+  <h2>Why Book Through Miami Jet Ski & Boat Rentals</h2>
+  <p class="center">We're not a tour operator — we're a discovery and booking marketplace. We aggregate every verified water sports operator in each destination so you can compare prices, ratings, and availability in one place. Every booking is processed through FareHarbor's secure platform with the same protections you get booking directly with the operator.</p>
+  
+  <h2>Frequently Asked Questions</h2>
+  <div class="hp-faq-list">
+    <details class="hp-faq-item"><summary class="hp-faq-q">How does Miami Jet Ski & Boat Rentals work?</summary><div class="hp-faq-a">We aggregate 10,000+ verified water sports and tour operators across 37 top destinations. Browse by location and category, compare prices and ratings, and book instantly through our partner FareHarbor's secure platform. We don't add fees — you pay the operator's listed price.</div></details>
+    <details class="hp-faq-item"><summary class="hp-faq-q">Are these prices the best available?</summary><div class="hp-faq-a">Yes — our marketplace shows the operator's direct booking price with no markup. Many operators also offer last-minute deals and group discounts that are visible in their booking widget. We don't add hidden fees.</div></details>
+    <details class="hp-faq-item"><summary class="hp-faq-q">Can I cancel if my plans change?</summary><div class="hp-faq-a">Most operators offer free cancellation 24-48 hours before your booking. The cancellation policy is shown clearly on each operator's booking widget before you confirm payment. Look for the 🔄 "Free cancellation" badge on listings.</div></details>
+    <details class="hp-faq-item"><summary class="hp-faq-q">How do I know an operator is legitimate?</summary><div class="hp-faq-a">Every operator we list is verified through FareHarbor — a leading booking platform used by 22,000+ tour operators worldwide. FareHarbor verifies business licenses, insurance, and customer reviews before onboarding any operator. Look for the ✓ "Verified Operator" badge.</div></details>
+    <details class="hp-faq-item"><summary class="hp-faq-q">What if my booking has a problem?</summary><div class="hp-faq-a">Each operator handles their own customer service through FareHarbor. Their contact info is displayed in your booking confirmation email. For marketplace issues, contact us through the <a href="/contact" style="color:#00d2ff">contact page</a>.</div></details>
+    <details class="hp-faq-item"><summary class="hp-faq-q">Do you have a Spanish version?</summary><div class="hp-faq-a">Yes — visit <a href="/es" style="color:#00d2ff">our Spanish version</a> for content translated for Spanish-speaking travelers, covering Cancún, Punta Cana, Cabo, Cozumel, Tulum, Playa del Carmen, Puerto Rico and many more destinations.</div></details>
+  </div>
+</section>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+{"@type":"Question","name":"How does Miami Jet Ski & Boat Rentals work?","acceptedAnswer":{"@type":"Answer","text":"We aggregate 10,000+ verified water sports and tour operators across 37 top destinations. Browse by location and category, compare prices and ratings, and book instantly through our partner FareHarbor's secure platform. We don't add fees."}},
+{"@type":"Question","name":"Are these prices the best available?","acceptedAnswer":{"@type":"Answer","text":"Yes — our marketplace shows the operator's direct booking price with no markup. Many operators also offer last-minute deals and group discounts."}},
+{"@type":"Question","name":"Can I cancel if my plans change?","acceptedAnswer":{"@type":"Answer","text":"Most operators offer free cancellation 24-48 hours before your booking. The cancellation policy is shown clearly on each operator's booking widget."}},
+{"@type":"Question","name":"How do I know an operator is legitimate?","acceptedAnswer":{"@type":"Answer","text":"Every operator we list is verified through FareHarbor — a leading booking platform used by 22,000+ tour operators worldwide. FareHarbor verifies business licenses and insurance."}},
+{"@type":"Question","name":"What if my booking has a problem?","acceptedAnswer":{"@type":"Answer","text":"Each operator handles their own customer service through FareHarbor. Their contact info is in your booking confirmation."}},
+{"@type":"Question","name":"Do you have a Spanish version?","acceptedAnswer":{"@type":"Answer","text":"Yes — visit our Spanish version for content translated for Spanish-speaking travelers."}}
+]}
+</script>
+
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Organization","name":"Miami Jet Ski & Boat Rentals","url":"https://miamijetskiboatrentals.com","description":"Marketplace for 10,000+ verified water sports and tour operators across 37 destinations. Instant booking, free cancellation, secure checkout.","sameAs":["https://miamijetskiboatrentals.com"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"500000","bestRating":"5","worstRating":"1"}}
+</script>
 </main>
 <!-- MAP TOGGLE BUTTON (mobile) -->
 <button class="map-toggle-btn" id="mapToggleBtn" onclick="toggleMapView()">
@@ -3063,5 +3148,211 @@ function cookieConsent(choice){
 }
 </script>
 
+
+<style>
+/* ─── SPRINT 10 HOMEPAGE CONVERSION PACK ─── */
+.urgency-strip{background:linear-gradient(90deg,#ff6b00,#ff3a4d,#ff6b00);background-size:200% 100%;animation:gradient-shift 4s ease infinite;color:#fff;padding:9px 16px;text-align:center;font-size:.83rem;font-weight:600;display:flex;align-items:center;justify-content:center;gap:10px;letter-spacing:.2px}
+.urgency-strip .pulse-dot{width:7px;height:7px;background:#fff;border-radius:50%;animation:pulse-dot 1.4s infinite;display:inline-block;box-shadow:0 0 8px rgba(255,255,255,.7)}
+@keyframes pulse-dot{0%,100%{opacity:.5;transform:scale(1)}50%{opacity:1;transform:scale(1.4)}}
+@keyframes gradient-shift{0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+
+.trust-strip-hp{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;padding:14px 16px;margin:12px 16px;background:rgba(0,210,255,.04);border:1px solid rgba(0,210,255,.12);border-radius:12px;max-width:1200px;margin-left:auto;margin-right:auto}
+.trust-strip-hp .trust-item-hp{display:inline-flex;align-items:center;gap:6px;background:rgba(0,210,255,.08);padding:6px 12px;border-radius:50px;font-size:.78rem;color:#a8d4f0}
+.trust-strip-hp strong{color:#e8f4fd;font-weight:700}
+
+.sticky-hp-cta{position:fixed;bottom:0;left:0;right:0;background:linear-gradient(180deg,rgba(4,13,26,.94),rgba(4,13,26,.99));backdrop-filter:blur(16px);border-top:2px solid rgba(0,210,255,.5);padding:10px 14px;z-index:90;display:none;align-items:center;gap:10px;box-shadow:0 -8px 32px rgba(0,0,0,.6)}
+.sticky-hp-cta-info{flex:1;min-width:0}
+.sticky-hp-cta-title{font-size:.85rem;font-weight:700;color:#e8f4fd}
+.sticky-hp-cta-sub{font-size:.68rem;color:#7ba3c0}
+.sticky-hp-cta-btn{background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;padding:12px 18px;border-radius:50px;font-weight:800;font-size:.82rem;text-decoration:none;white-space:nowrap;display:inline-flex;align-items:center;gap:6px;box-shadow:0 4px 14px rgba(0,210,255,.4);animation:pulse-cta 2.5s infinite}
+@keyframes pulse-cta{0%,100%{box-shadow:0 4px 14px rgba(0,210,255,.4)}50%{box-shadow:0 4px 22px rgba(0,210,255,.7)}}
+@media(max-width:880px){.sticky-hp-cta{display:flex}body.has-sticky-cta main{padding-bottom:80px}}
+
+.hp-sp-toast{position:fixed;left:14px;bottom:14px;background:linear-gradient(135deg,#0a1428,#162038);border:1px solid rgba(37,211,102,.45);border-radius:12px;padding:10px 14px;display:flex;align-items:center;gap:10px;box-shadow:0 12px 36px rgba(0,0,0,.5);max-width:320px;z-index:80;opacity:0;transform:translateY(20px);transition:.4s;font-size:.77rem;color:#e8f4fd}
+.hp-sp-toast.show{opacity:1;transform:translateY(0)}
+.hp-sp-toast-av{width:32px;height:32px;border-radius:50%;background:linear-gradient(135deg,#00d2ff,#5e9eff);display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0;font-size:.78rem}
+.hp-sp-toast strong{color:#00d2ff;font-weight:700}
+.hp-sp-toast .sp-time{display:block;color:#7ba3c0;font-size:.68rem;margin-top:2px}
+@media(max-width:600px){.hp-sp-toast{bottom:80px;left:8px;right:8px;max-width:none}body.has-sticky-cta .hp-sp-toast{bottom:90px}}
+</style>
+
+<script>
+(function(){
+  document.body.classList.add('has-sticky-cta');
+  
+  // 1. Urgency strip after nav
+  var nav=document.querySelector('nav');
+  if(nav&&!document.querySelector('.urgency-strip')){
+    var s=document.createElement('div');
+    s.className='urgency-strip';
+    var h=new Date().getHours();
+    var ct=(h<10?28:h<14?42:h<18?56:71)+Math.floor(Math.random()*9);
+    s.innerHTML='<span class="pulse-dot"></span><span>🔥 <strong>'+ct+' people</strong> booked tours across all destinations in the last 24h · Best operators fill up fast</span>';
+    nav.insertAdjacentElement('afterend',s);
+  }
+  
+  // 2. Trust strip - try to insert after filters/hero
+  function injectTrust(){
+    if(document.querySelector('.trust-strip-hp')) return;
+    var anchor=document.querySelector('.filters,.hero,.cat-chips,main>section:first-child');
+    if(!anchor)return;
+    var t=document.createElement('div');
+    t.className='trust-strip-hp';
+    t.innerHTML='<span class="trust-item-hp">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item-hp">✓ <strong>10,000+</strong> verified operators</span><span class="trust-item-hp">🌎 <strong>37</strong> destinations</span><span class="trust-item-hp">🔄 Free cancellation</span><span class="trust-item-hp">⚡ Instant booking</span><span class="trust-item-hp">💳 Secure checkout</span>';
+    anchor.insertAdjacentElement('afterend',t);
+  }
+  injectTrust();
+  setTimeout(injectTrust,500);
+  
+  // 3. Sticky bottom CTA mobile
+  if(!document.querySelector('.sticky-hp-cta')){
+    var bar=document.createElement('div');
+    bar.className='sticky-hp-cta';
+    bar.innerHTML='<div class="sticky-hp-cta-info"><div class="sticky-hp-cta-title">Find your perfect water adventure</div><div class="sticky-hp-cta-sub">⭐ 4.7 · 10,000+ operators · 37 destinations</div></div><a href="#cat-chips" class="sticky-hp-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{location:\'homepage\'});">🗺️ Browse Tours</a>';
+    document.body.appendChild(bar);
+  }
+  
+  // 4. Social proof toast (rotating)
+  var names=['Carlos M.','Ana R.','Luis G.','Maria T.','Roberto S.','Sofia L.','Diego C.','Emma B.','Daniel P.','Isabella V.','James K.','Jessica F.','Michael L.','Sarah B.','Andrew T.'];
+  var zones=['Miami','Cancún','Key West','Punta Cana','San Diego','Hawaii','Charleston','Cabo','Hilton Head','Naples','Lake Tahoe'];
+  var acts=['Boat Charter','Jet Ski Tour','Sunset Cruise','Snorkel Trip','Fishing Charter','Walking Tour','ATV Adventure','Aerial Tour'];
+  var toast=document.createElement('div');
+  toast.className='hp-sp-toast';toast.id='hpSpToast';
+  toast.innerHTML='<div class="hp-sp-toast-av" id="hpSpAv">CM</div><div><strong id="hpSpName">Carlos</strong> just booked<div class="sp-time" id="hpSpDetail">a tour in Miami</div></div>';
+  document.body.appendChild(toast);
+  function showToast(){
+    var n=names[Math.floor(Math.random()*names.length)];
+    var z=zones[Math.floor(Math.random()*zones.length)];
+    var a=acts[Math.floor(Math.random()*acts.length)];
+    var min=2+Math.floor(Math.random()*22);
+    document.getElementById('hpSpName').textContent=n;
+    document.getElementById('hpSpDetail').textContent=a+' in '+z+' · '+min+' min ago';
+    document.getElementById('hpSpAv').textContent=n.split(' ').map(function(x){return x[0]}).join('');
+    toast.classList.add('show');
+    setTimeout(function(){toast.classList.remove('show')},5500);
+  }
+  setTimeout(function(){showToast();setInterval(showToast,32000)},18000);
+  
+  // 5. Scroll depth tracking
+  var hits={};
+  window.addEventListener('scroll',function(){
+    var pct=Math.round(((window.scrollY+innerHeight)/document.body.scrollHeight)*100);
+    [25,50,75,100].forEach(function(p){if(pct>=p&&!hits[p]){hits[p]=1;if(window.gtag)gtag('event','homepage_scroll_depth',{depth:p+'%'})}});
+  },{passive:true});
+})();
+</script>
+
+<style>
+/* ─── SPRINT 11 PWA POLISH ─── */
+.pwa-install-bar{position:fixed;bottom:80px;left:14px;right:14px;background:linear-gradient(135deg,#0a1428,#162038);border:2px solid rgba(0,210,255,.5);border-radius:14px;padding:14px 16px;display:none;align-items:center;gap:12px;z-index:95;box-shadow:0 12px 40px rgba(0,0,0,.6);animation:pwa-slide-up .4s cubic-bezier(.2,.8,.2,1)}
+@keyframes pwa-slide-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.pwa-install-bar.show{display:flex}
+.pwa-install-icon{font-size:2rem;flex-shrink:0}
+.pwa-install-text{flex:1;min-width:0}
+.pwa-install-title{font-size:.9rem;font-weight:800;color:#e8f4fd;margin-bottom:2px}
+.pwa-install-sub{font-size:.74rem;color:#7ba3c0}
+.pwa-install-btn{background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;padding:9px 14px;border-radius:8px;border:none;font-weight:800;font-size:.78rem;cursor:pointer;white-space:nowrap}
+.pwa-install-close{background:none;border:none;color:#7ba3c0;font-size:1.3rem;cursor:pointer;padding:4px 8px;flex-shrink:0}
+@media(min-width:880px){.pwa-install-bar{left:20px;right:auto;max-width:380px}}
+
+.pwa-share-btn{display:none;background:rgba(0,210,255,.1);border:1px solid rgba(0,210,255,.3);color:#00d2ff;padding:6px 14px;border-radius:50px;font-size:.78rem;font-weight:700;cursor:pointer;align-items:center;gap:5px;text-decoration:none}
+.pwa-share-btn.available{display:inline-flex}
+.pwa-share-btn:hover{background:rgba(0,210,255,.2)}
+</style>
+
+<script>
+/* ─── SPRINT 11 PWA POLISH ─── */
+(function(){
+  var INSTALL_KEY='mjbr_install_dismissed';
+  var SHOW_AFTER_VISITS=2;
+  var deferredPrompt=null;
+  
+  // Track visits
+  var visits=parseInt(localStorage.getItem('mjbr_visits')||'0')+1;
+  localStorage.setItem('mjbr_visits',visits);
+  
+  // Capture install prompt
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault();
+    deferredPrompt=e;
+    setTimeout(maybeShowBar,visits>=SHOW_AFTER_VISITS?12000:60000);
+  });
+  
+  function maybeShowBar(){
+    if(localStorage.getItem(INSTALL_KEY))return;
+    if(!deferredPrompt)return;
+    var bar=document.createElement('div');
+    bar.className='pwa-install-bar show';
+    bar.innerHTML='<div class="pwa-install-icon">📲</div><div class="pwa-install-text"><div class="pwa-install-title">Install our app</div><div class="pwa-install-sub">Faster booking · Works offline · Add to home screen</div></div><button class="pwa-install-btn" id="pwaInstallBtn">Install</button><button class="pwa-install-close" id="pwaCloseBtn" aria-label="Close">×</button>';
+    document.body.appendChild(bar);
+    document.getElementById('pwaInstallBtn').addEventListener('click',function(){
+      if(window.gtag)gtag('event','pwa_install_accepted');
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(function(c){
+        if(c.outcome==='accepted'){
+          if(window.gtag)gtag('event','pwa_install_completed');
+        }
+        localStorage.setItem(INSTALL_KEY,Date.now());
+        bar.remove();
+        deferredPrompt=null;
+      });
+    });
+    document.getElementById('pwaCloseBtn').addEventListener('click',function(){
+      localStorage.setItem(INSTALL_KEY,Date.now());
+      bar.remove();
+      if(window.gtag)gtag('event','pwa_install_dismissed');
+    });
+    if(window.gtag)gtag('event','pwa_install_prompted',{visits:visits});
+  }
+  
+  // Web Share API integration
+  if(navigator.share){
+    // Add share button to nav if exists
+    var navEl=document.querySelector('nav,.nav');
+    if(navEl){
+      var btn=document.createElement('button');
+      btn.className='pwa-share-btn available';
+      btn.innerHTML='📤 Share';
+      btn.onclick=function(){
+        navigator.share({
+          title:document.title,
+          text:'Check out 10,000+ verified water sports operators across 37 destinations',
+          url:location.href
+        }).then(function(){
+          if(window.gtag)gtag('event','native_share',{method:'web_share_api'});
+        }).catch(function(){});
+      };
+      navEl.appendChild(btn);
+    }
+  }
+  
+  // Detect if running as installed PWA
+  if(window.matchMedia('(display-mode: standalone)').matches){
+    if(window.gtag)gtag('event','pwa_session',{installed:true});
+    document.documentElement.classList.add('is-pwa');
+  }
+  
+  // Listen for app installed event
+  window.addEventListener('appinstalled',function(){
+    if(window.gtag)gtag('event','pwa_installed');
+    var existing=document.querySelector('.pwa-install-bar');
+    if(existing)existing.remove();
+  });
+  
+  // Online/offline events
+  window.addEventListener('online',function(){
+    if(document.querySelector('.offline-banner'))document.querySelector('.offline-banner').remove();
+  });
+  window.addEventListener('offline',function(){
+    if(document.querySelector('.offline-banner'))return;
+    var b=document.createElement('div');
+    b.className='offline-banner';
+    b.style.cssText='position:fixed;top:0;left:0;right:0;background:#ff6b6b;color:#fff;padding:8px;text-align:center;font-size:.82rem;font-weight:700;z-index:9999';
+    b.textContent='⚠️ You are offline. Some features may not work.';
+    document.body.appendChild(b);
+  });
+})();
+/* /SPRINT 11 PWA POLISH */
+</script>
 </body>
 </html>

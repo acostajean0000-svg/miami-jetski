@@ -924,5 +924,118 @@ document.head.appendChild(styleEl);
 })();
 </script>
 
+
+<style>
+/* ─── SPRINT 11 PWA POLISH ─── */
+.pwa-install-bar{position:fixed;bottom:80px;left:14px;right:14px;background:linear-gradient(135deg,#0a1428,#162038);border:2px solid rgba(0,210,255,.5);border-radius:14px;padding:14px 16px;display:none;align-items:center;gap:12px;z-index:95;box-shadow:0 12px 40px rgba(0,0,0,.6);animation:pwa-slide-up .4s cubic-bezier(.2,.8,.2,1)}
+@keyframes pwa-slide-up{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.pwa-install-bar.show{display:flex}
+.pwa-install-icon{font-size:2rem;flex-shrink:0}
+.pwa-install-text{flex:1;min-width:0}
+.pwa-install-title{font-size:.9rem;font-weight:800;color:#e8f4fd;margin-bottom:2px}
+.pwa-install-sub{font-size:.74rem;color:#7ba3c0}
+.pwa-install-btn{background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;padding:9px 14px;border-radius:8px;border:none;font-weight:800;font-size:.78rem;cursor:pointer;white-space:nowrap}
+.pwa-install-close{background:none;border:none;color:#7ba3c0;font-size:1.3rem;cursor:pointer;padding:4px 8px;flex-shrink:0}
+@media(min-width:880px){.pwa-install-bar{left:20px;right:auto;max-width:380px}}
+
+.pwa-share-btn{display:none;background:rgba(0,210,255,.1);border:1px solid rgba(0,210,255,.3);color:#00d2ff;padding:6px 14px;border-radius:50px;font-size:.78rem;font-weight:700;cursor:pointer;align-items:center;gap:5px;text-decoration:none}
+.pwa-share-btn.available{display:inline-flex}
+.pwa-share-btn:hover{background:rgba(0,210,255,.2)}
+</style>
+
+<script>
+/* ─── SPRINT 11 PWA POLISH ─── */
+(function(){
+  var INSTALL_KEY='mjbr_install_dismissed';
+  var SHOW_AFTER_VISITS=2;
+  var deferredPrompt=null;
+  
+  // Track visits
+  var visits=parseInt(localStorage.getItem('mjbr_visits')||'0')+1;
+  localStorage.setItem('mjbr_visits',visits);
+  
+  // Capture install prompt
+  window.addEventListener('beforeinstallprompt',function(e){
+    e.preventDefault();
+    deferredPrompt=e;
+    setTimeout(maybeShowBar,visits>=SHOW_AFTER_VISITS?12000:60000);
+  });
+  
+  function maybeShowBar(){
+    if(localStorage.getItem(INSTALL_KEY))return;
+    if(!deferredPrompt)return;
+    var bar=document.createElement('div');
+    bar.className='pwa-install-bar show';
+    bar.innerHTML='<div class="pwa-install-icon">📲</div><div class="pwa-install-text"><div class="pwa-install-title">Install our app</div><div class="pwa-install-sub">Faster booking · Works offline · Add to home screen</div></div><button class="pwa-install-btn" id="pwaInstallBtn">Install</button><button class="pwa-install-close" id="pwaCloseBtn" aria-label="Close">×</button>';
+    document.body.appendChild(bar);
+    document.getElementById('pwaInstallBtn').addEventListener('click',function(){
+      if(window.gtag)gtag('event','pwa_install_accepted');
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(function(c){
+        if(c.outcome==='accepted'){
+          if(window.gtag)gtag('event','pwa_install_completed');
+        }
+        localStorage.setItem(INSTALL_KEY,Date.now());
+        bar.remove();
+        deferredPrompt=null;
+      });
+    });
+    document.getElementById('pwaCloseBtn').addEventListener('click',function(){
+      localStorage.setItem(INSTALL_KEY,Date.now());
+      bar.remove();
+      if(window.gtag)gtag('event','pwa_install_dismissed');
+    });
+    if(window.gtag)gtag('event','pwa_install_prompted',{visits:visits});
+  }
+  
+  // Web Share API integration
+  if(navigator.share){
+    // Add share button to nav if exists
+    var navEl=document.querySelector('nav,.nav');
+    if(navEl){
+      var btn=document.createElement('button');
+      btn.className='pwa-share-btn available';
+      btn.innerHTML='📤 Share';
+      btn.onclick=function(){
+        navigator.share({
+          title:document.title,
+          text:'Check out 10,000+ verified water sports operators across 37 destinations',
+          url:location.href
+        }).then(function(){
+          if(window.gtag)gtag('event','native_share',{method:'web_share_api'});
+        }).catch(function(){});
+      };
+      navEl.appendChild(btn);
+    }
+  }
+  
+  // Detect if running as installed PWA
+  if(window.matchMedia('(display-mode: standalone)').matches){
+    if(window.gtag)gtag('event','pwa_session',{installed:true});
+    document.documentElement.classList.add('is-pwa');
+  }
+  
+  // Listen for app installed event
+  window.addEventListener('appinstalled',function(){
+    if(window.gtag)gtag('event','pwa_installed');
+    var existing=document.querySelector('.pwa-install-bar');
+    if(existing)existing.remove();
+  });
+  
+  // Online/offline events
+  window.addEventListener('online',function(){
+    if(document.querySelector('.offline-banner'))document.querySelector('.offline-banner').remove();
+  });
+  window.addEventListener('offline',function(){
+    if(document.querySelector('.offline-banner'))return;
+    var b=document.createElement('div');
+    b.className='offline-banner';
+    b.style.cssText='position:fixed;top:0;left:0;right:0;background:#ff6b6b;color:#fff;padding:8px;text-align:center;font-size:.82rem;font-weight:700;z-index:9999';
+    b.textContent='⚠️ You are offline. Some features may not work.';
+    document.body.appendChild(b);
+  });
+})();
+/* /SPRINT 11 PWA POLISH */
+</script>
 </body>
 </html>
