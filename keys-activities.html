@@ -388,8 +388,8 @@ function setupFilters(){document.querySelectorAll('.cat-chip').forEach(c=>{c.add
 )();
 
 // ─── MAP INTEGRATION ────────────────────────────────────────
-let mapInstance = null;
-window.mapInstance = null;, markerCluster = null;
+let mapInstance = null, markerCluster = null;
+window.mapInstance = null;
 function loadLeaflet(cb){
   if (window.L) return cb();
   const s = document.createElement('script');
@@ -1040,7 +1040,7 @@ document.head.appendChild(styleEl);
     var rp=document.createElement('div');
     rp.className='map-radius-panel';
     rp.id='mapRadiusPanel';
-    rp.innerHTML='<button data-r="5">5 km</button><button data-r="10">10 km</button><button data-r="25">25 km</button><button data-r="50">50 km</button><button data-r="0">Off</button>';
+    rp.innerHTML='<button data-r="3">3 mi</button><button data-r="6">6 mi</button><button data-r="10">10 mi</button><button data-r="15">15 mi</button><button data-r="0">Off</button>';
     wrap.appendChild(rp);
     
     // Search area button
@@ -1073,7 +1073,7 @@ document.head.appendChild(styleEl);
         $('#mapRadiusPanel').querySelectorAll('button').forEach(function(x){x.classList.remove('active')});
         if(r){b.classList.add('active');applyRadius(r);}
         else clearRadius();
-        if(window.gtag)gtag('event','map_radius_set',{radius_km:r});
+        if(window.gtag)gtag('event','map_radius_set',{radius_mi:r});
       };
     });
     
@@ -1168,7 +1168,7 @@ document.head.appendChild(styleEl);
   }
   function drawCircle(){
     if(radiusCircle)mapInstance.removeLayer(radiusCircle);
-    radiusCircle=L.circle(radiusCenter,{radius:radiusKm*1000,className:'map-radius-circle'}).addTo(mapInstance);
+    radiusCircle=L.circle(radiusCenter,{radius:radiusKm*1609,className:'map-radius-circle'}).addTo(mapInstance);
     mapInstance.fitBounds(radiusCircle.getBounds(),{padding:[20,20]});
   }
   function filterByRadius(){
@@ -1177,7 +1177,7 @@ document.head.appendChild(styleEl);
     var filtered=window.allOps.filter(function(o){
       if(!o.lat||!o.lng)return false;
       var d=haversine(c.lat,c.lng,o.lat,o.lng);
-      return d<=radiusKm;
+      return d<=radiusKm*1.60934;
     });
     // Update marker cluster
     if(window.markerCluster){
