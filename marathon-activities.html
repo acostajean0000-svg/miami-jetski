@@ -411,7 +411,7 @@ window.activeCat = (typeof activeCat !== 'undefined') ? activeCat : 'all';
     var FALLBACK=window.FALLBACK_IMG||'';
     grid.innerHTML=list.slice(0,200).map(function(op,i){
       var slug=slugMap[op.id]||'';
-      var href=slug?'/'+encodeURIComponent(slug):(op.link||'#');
+      var href='/' + encodeURIComponent(slug || (op.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)+'-'+(op.zone||''));
       var priceText=(op.price&&op.price>0)?('from $'+op.price):'Contact for pricing';
       var photo=op.photo||FALLBACK;
       if(photo&&photo.includes('cdn.filestackcontent.com')){

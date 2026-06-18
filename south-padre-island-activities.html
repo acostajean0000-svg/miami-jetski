@@ -415,7 +415,7 @@ function render(){
   }
   grid.innerHTML = list.map((op,i) => {
     const slug = slugMap[op.id] || '';
-    const href = slug ? '/'+encodeURIComponent(slug) : (op.link || '#');
+    const href = '/' + encodeURIComponent(slug || (op.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)+'-'+(op.zone||''));
     const priceText = (op.price && op.price > 0) ? ('from $'+op.price) : 'Contact for pricing';
     const eager = i < 4 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
     return `<a class="card" href="${esc(href)}" data-op-id="${esc(op.id)}">
@@ -521,7 +521,7 @@ function initMap(){
 function makeMarker(op){
   const slugMap = window._OP_SLUG_MAP || {};
   const slug = slugMap[op.id] || '';
-  const href = slug ? '/'+slug : (op.link || '#');
+  const href = '/' + (slug || (op.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)+'-'+(op.zone||''));
   const emoji = CAT_EMOJI[op.cat] || '🌊';
   const popup = `<div><div class="pp-cat">${esc(CAT_LABELS[op.cat]||'')}</div><a href="${esc(href)}"><strong>${esc(op.name).slice(0,60)}</strong></a><div class="pp-price">${op.price?'From $'+op.price:''}</div></div>`;
   const photo = op.photo ? thumbUrl(op.photo) : '';
@@ -989,7 +989,7 @@ document.head.appendChild(styleEl);
     var FALLBACK=window.FALLBACK_IMG||'';
     grid.innerHTML=list.slice(0,200).map(function(op,i){
       var slug=slugMap[op.id]||'';
-      var href=slug?'/'+encodeURIComponent(slug):(op.link||'#');
+      var href='/' + encodeURIComponent(slug || (op.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)+'-'+(op.zone||''));
       var priceText=(op.price&&op.price>0)?('from $'+op.price):'Contact for pricing';
       var photo=op.photo||FALLBACK;
       if(photo&&photo.includes('cdn.filestackcontent.com')){
