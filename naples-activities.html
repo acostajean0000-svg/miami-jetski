@@ -126,11 +126,11 @@ window._expandOp=function(o){if(o.link&&!o.link.startsWith('http')&&o.link.inclu
     .seo-index-list .ix-cat{color:#7ba3c0;font-size:.75rem;flex-shrink:0}
     .seo-index-toggle{background:rgba(0,210,255,.1);border:1px solid rgba(0,210,255,.3);color:#00d2ff;padding:6px 14px;border-radius:50px;font-size:.78rem;font-weight:600;cursor:pointer;margin-top:14px;transition:.15s}
     .seo-index-toggle:hover{background:rgba(0,210,255,.18)}
-    .near-me-btn{position:absolute;top:12px;right:12px;z-index:500;background:linear-gradient(135deg,#10c876,#0a9d5d);color:#fff;border:none;padding:10px 18px;border-radius:50px;font-size:.85rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(16,200,118,.45);display:flex;align-items:center;gap:6px;transition:.2s}
+    .near-me-btn{position:absolute;bottom:60px;right:12px;z-index:501;background:linear-gradient(135deg,#10c876,#0a9d5d);color:#fff;border:none;padding:10px 18px;border-radius:50px;font-size:.85rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(16,200,118,.45);display:flex;align-items:center;gap:6px;transition:.2s}
     .near-me-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(16,200,118,.6)}
     .near-me-btn:disabled{opacity:.7;cursor:wait}
     .near-me-btn.active{background:linear-gradient(135deg,#ff6b6b,#e63946);box-shadow:0 4px 14px rgba(230,57,70,.45)}
-    .near-me-info{position:absolute;top:62px;right:12px;z-index:499;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);color:#fff;padding:8px 14px;border-radius:8px;font-size:.78rem;display:none}
+    .near-me-info{position:absolute;bottom:110px;right:12px;z-index:499;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);color:#fff;padding:8px 14px;border-radius:8px;font-size:.78rem;display:none}
     .near-me-info.show{display:block}
 </style>
 <script>
@@ -406,17 +406,7 @@ function showAllOperators(){
     lastActiveCard = card;
     if (card) card.classList.add('card--active');
   }
-  grid.addEventListener('click', function(e){
-    const card = e.target.closest('.card[data-op-id]');
-    if (!card) return;
-    const id = card.getAttribute('data-op-id');
-    if (_focusedOpId === id) return;
-    e.preventDefault();
-    if (!mapInstance) initMap();
-    const mw = document.querySelector('.map-wrap'); if (mw) mw.scrollIntoView({behavior:'smooth', block:'center'});
-    focusOperator(id);
-    setActiveCard(card);
-  });
+  // Sprint 9: card click navega directo a HTML estática
   const showAllBtn = document.getElementById('showAllBtn');
   if (showAllBtn) showAllBtn.addEventListener('click', function(){ showAllOperators(); setActiveCard(null); });
 })();
@@ -437,7 +427,7 @@ function setupFilters(){
   try {
     const r = await fetch('/data/naples.json');
     const ops = await r.json();
-    allOps=ops.map(window._expandOp).filter(inZone);
+    window.allOps=allOps=ops.map(window._expandOp).filter(inZone);
     setupFilters();
     render();
     if(typeof refreshMarkers==='function'&&mapInstance)refreshMarkers();
@@ -555,6 +545,9 @@ function initMap(){
       attribution:'© OpenStreetMap © CARTO', maxZoom:18, subdomains:'abcd'
     }).addTo(mapInstance);
     markerCluster = L.markerClusterGroup({showCoverageOnHover:false, maxClusterRadius:40, spiderfyOnMaxZoom:true, disableClusteringAtZoom:16});
+    window.markerCluster = markerCluster;
+    window.makeMarker = makeMarker;
+    window.refreshMarkers = refreshMarkers;
     mapInstance.addLayer(markerCluster);
     refreshMarkers();
   });
@@ -1240,7 +1233,16 @@ document.head.appendChild(styleEl);
         }
       });
       lastMapBounds=mapInstance.getBounds();
-      setTimeout(updateVisibleCount,1500);
+      // Robust polling: retry until both allOps and map are ready
+      var pollCount=0;
+      var pollVC=setInterval(function(){
+        pollCount++;
+        if(window.allOps&&window.allOps.length&&window.mapInstance){
+          updateVisibleCount();
+          if(pollCount>3){clearInterval(pollVC)}
+        }
+        if(pollCount>40){clearInterval(pollVC)}
+      },800);
     });
   }
   
@@ -1350,6 +1352,474 @@ document.head.appendChild(styleEl);
   else document.addEventListener('DOMContentLoaded',injectControls);
 })();
 /* /SPRINT 12 MAP ENHANCEMENT */
+</script>
+
+<style>
+/* ─── SPRINT 13 MAP PRO ─── */
+.mp-search-bar{position:absolute;top:14px;left:50%;transform:translateX(-50%);background:rgba(4,13,26,.95);backdrop-filter:blur(12px);border:1px solid rgba(0,210,255,.4);border-radius:50px;padding:6px 8px 6px 16px;display:flex;align-items:center;gap:6px;z-index:600;box-shadow:0 4px 20px rgba(0,0,0,.5);min-width:240px;max-width:400px;width:calc(100% - 100px)}
+.mp-search-bar input{background:transparent;border:0;color:#e8f4fd;font-size:.85rem;outline:none;flex:1;min-width:0;padding:6px 0}
+.mp-search-bar input::placeholder{color:#7ba3c0}
+.mp-search-bar .mp-search-icon{font-size:.95rem;opacity:.7;flex-shrink:0}
+.mp-search-bar button{background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;border:0;border-radius:50px;padding:6px 12px;font-weight:800;font-size:.74rem;cursor:pointer;flex-shrink:0}
+.mp-search-results{position:absolute;top:60px;left:50%;transform:translateX(-50%);background:rgba(4,13,26,.97);backdrop-filter:blur(12px);border:1px solid rgba(0,210,255,.3);border-radius:12px;width:calc(100% - 100px);max-width:400px;max-height:240px;overflow-y:auto;z-index:600;display:none;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.mp-search-results.show{display:block}
+.mp-search-results .mp-result{padding:10px 14px;color:#e8f4fd;cursor:pointer;font-size:.82rem;border-bottom:1px solid rgba(0,210,255,.1)}
+.mp-search-results .mp-result:hover{background:rgba(0,210,255,.1)}
+.mp-search-results .mp-result:last-child{border-bottom:0}
+
+.mp-filter-chips{position:absolute;bottom:60px;left:14px;right:14px;display:flex;flex-wrap:wrap;gap:6px;z-index:500;justify-content:flex-start;pointer-events:none}
+.mp-chip{background:rgba(4,13,26,.92);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.3);color:#e8f4fd;padding:6px 12px;border-radius:50px;font-size:.74rem;font-weight:700;cursor:pointer;pointer-events:auto;display:inline-flex;align-items:center;gap:5px;transition:.2s}
+.mp-chip:hover{border-color:#00d2ff;background:rgba(0,210,255,.15)}
+.mp-chip.active{background:#00d2ff;color:#040d1a;border-color:#00d2ff}
+
+.mp-fav-btn{background:rgba(4,13,26,.92);border:1px solid rgba(0,210,255,.4);color:#e8f4fd;border-radius:8px;padding:8px 12px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(8px);box-shadow:0 4px 12px rgba(0,0,0,.4);pointer-events:auto;transition:.2s}
+.mp-fav-btn:hover{background:rgba(255,100,150,.15);border-color:#ff6b9b}
+.mp-fav-btn .mp-fav-count{background:#ff6b9b;color:#fff;border-radius:50px;padding:1px 8px;font-size:.68rem;font-weight:800;min-width:18px;text-align:center}
+
+/* Rich popup */
+.leaflet-popup-content-wrapper{border-radius:14px!important;padding:0!important;overflow:hidden;border:2px solid rgba(0,210,255,.3)}
+.leaflet-popup-content{margin:0!important;width:280px!important}
+.mp-popup{font-family:-apple-system,sans-serif;color:#0a1e36}
+.mp-popup-img{width:100%;height:140px;object-fit:cover;display:block;background:#e0eaf2}
+.mp-popup-body{padding:12px 14px}
+.mp-popup-name{font-weight:800;font-size:.95rem;line-height:1.2;margin-bottom:6px;color:#0a1e36}
+.mp-popup-meta{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;font-size:.78rem}
+.mp-popup-rating{color:#ffa500;font-weight:700}
+.mp-popup-price{color:#0066cc;font-weight:800}
+.mp-popup-distance{font-size:.74rem;color:#5a7896;margin-bottom:8px;display:flex;align-items:center;gap:4px}
+.mp-popup-actions{display:flex;gap:6px;margin-top:8px}
+.mp-popup-btn{flex:1;background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;padding:8px;border-radius:8px;text-align:center;font-weight:800;font-size:.78rem;text-decoration:none;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:4px}
+.mp-popup-btn.secondary{background:rgba(0,102,204,.08);color:#0066cc;border:1px solid rgba(0,102,204,.3)}
+.mp-popup-btn.fav{background:none;color:#5a7896;border:1px solid rgba(90,120,150,.3);flex:0 0 36px;padding:8px 0;font-size:1rem}
+.mp-popup-btn.fav.active{color:#ff6b9b;border-color:#ff6b9b}
+
+/* Compare bar */
+.mp-compare-bar{position:fixed;bottom:80px;left:50%;transform:translateX(-50%);background:rgba(4,13,26,.96);backdrop-filter:blur(12px);border:2px solid rgba(0,210,255,.5);border-radius:50px;padding:8px 12px;display:none;align-items:center;gap:10px;z-index:9000;box-shadow:0 10px 36px rgba(0,210,255,.3)}
+.mp-compare-bar.show{display:flex}
+.mp-compare-bar .mp-cmp-count{background:#00d2ff;color:#040d1a;border-radius:50px;padding:4px 10px;font-weight:800;font-size:.82rem}
+.mp-compare-bar button{background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;border:0;border-radius:50px;padding:8px 16px;font-weight:800;font-size:.78rem;cursor:pointer}
+.mp-compare-bar .mp-cmp-clear{background:transparent;color:#7ba3c0;border:1px solid rgba(123,163,192,.3);padding:8px 10px}
+
+/* Compare modal */
+.mp-modal-overlay{position:fixed;inset:0;background:rgba(0,0,0,.85);backdrop-filter:blur(8px);z-index:9999;display:none;align-items:center;justify-content:center;padding:20px}
+.mp-modal-overlay.show{display:flex}
+.mp-modal{background:#0a1428;border:1px solid rgba(0,210,255,.4);border-radius:18px;max-width:900px;width:100%;max-height:90vh;overflow-y:auto;padding:24px;position:relative}
+.mp-modal-close{position:absolute;top:14px;right:14px;background:none;border:0;color:#a8d4f0;font-size:1.4rem;cursor:pointer}
+.mp-modal h3{color:#e8f4fd;font-size:1.3rem;margin-bottom:18px;font-weight:800}
+.mp-cmp-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.mp-cmp-card{background:rgba(0,210,255,.04);border:1px solid rgba(0,210,255,.15);border-radius:12px;overflow:hidden}
+.mp-cmp-card img{width:100%;height:140px;object-fit:cover}
+.mp-cmp-card .mp-cmp-body{padding:12px}
+.mp-cmp-card h4{color:#e8f4fd;font-size:.92rem;font-weight:700;margin-bottom:6px;line-height:1.3}
+.mp-cmp-card .mp-cmp-attr{display:flex;justify-content:space-between;padding:6px 0;border-bottom:1px solid rgba(0,210,255,.08);font-size:.78rem;color:#a8d4f0}
+.mp-cmp-card .mp-cmp-attr strong{color:#00d2ff}
+.mp-cmp-card .mp-cmp-book{display:block;background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;padding:10px;text-align:center;text-decoration:none;border-radius:8px;font-weight:800;font-size:.82rem;margin-top:10px}
+</style>
+
+<script>
+/* ─── SPRINT 13 MAP PRO ─── */
+(function(){
+  // Detect which map var to use (jetskiMap for homepage, mapInstance for zones)
+  function getMap(){return window.jetskiMap||window.mapInstance||null}
+  function getOps(){return window.allOperators||window.allOps||window._uxAllOps||[]}
+  function getSlug(op){var sm=window._OP_SLUG_MAP||{};return sm[op.id]||((op.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)+'-'+(op.zone||''))}
+  function getMapContainer(){return document.querySelector('.map-panel')||document.querySelector('.map-wrap')||document.querySelector('#mapWrap')}
+  
+  // ─── Geolocation ─── (silent, no prompt)
+  var userLoc=null;
+  function tryGetLocation(){
+    try{
+      var cached=localStorage.getItem('mp_geo');
+      if(cached){var c=JSON.parse(cached);if(Date.now()-c.t<86400000){userLoc=c.loc;return}}
+      if(navigator.geolocation){
+        navigator.geolocation.getCurrentPosition(function(p){
+          userLoc={lat:p.coords.latitude,lng:p.coords.longitude};
+          localStorage.setItem('mp_geo',JSON.stringify({loc:userLoc,t:Date.now()}));
+        },function(){},{timeout:5000,maximumAge:86400000});
+      }
+    }catch(e){}
+  }
+  tryGetLocation();
+  
+  function haversineMi(lat1,lon1,lat2,lon2){
+    var R=3958.8;
+    var dLat=(lat2-lat1)*Math.PI/180;
+    var dLon=(lon2-lon1)*Math.PI/180;
+    var a=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)*Math.sin(dLon/2);
+    return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+  }
+  
+  // ─── Favorites (localStorage) ─── 
+  function getFavs(){try{return JSON.parse(localStorage.getItem('mp_favs')||'[]')}catch(e){return[]}}
+  function setFavs(arr){localStorage.setItem('mp_favs',JSON.stringify(arr));updateFavBtn();}
+  function toggleFav(opId){
+    var f=getFavs();
+    var i=f.indexOf(opId);
+    if(i>-1)f.splice(i,1);else f.push(opId);
+    setFavs(f);
+    if(window.gtag)gtag('event','map_favorite_toggle',{op_id:opId,action:i>-1?'remove':'add'});
+    return i===-1;
+  }
+  function isFav(opId){return getFavs().indexOf(opId)>-1}
+  function updateFavBtn(){
+    var btn=document.getElementById('mpFavBtn');
+    if(!btn)return;
+    var cnt=getFavs().length;
+    var cntEl=btn.querySelector('.mp-fav-count');
+    if(cnt>0){if(cntEl){cntEl.textContent=cnt}else{btn.innerHTML='❤️ Favs <span class="mp-fav-count">'+cnt+'</span>'}}
+    else{btn.innerHTML='❤️ Favs'}
+  }
+  
+  // ─── Compare list (session, max 3) ─── 
+  var compareList=[];
+  function addToCompare(opId){
+    if(compareList.indexOf(opId)>-1)return;
+    if(compareList.length>=3){alert('Maximum 3 operators for comparison');return}
+    compareList.push(opId);
+    updateCompareBar();
+    if(window.gtag)gtag('event','map_compare_add',{op_id:opId,total:compareList.length});
+  }
+  function clearCompare(){compareList=[];updateCompareBar()}
+  function updateCompareBar(){
+    var bar=document.getElementById('mpCompareBar');
+    if(!bar){
+      bar=document.createElement('div');
+      bar.className='mp-compare-bar';
+      bar.id='mpCompareBar';
+      bar.innerHTML='<span class="mp-cmp-count" id="mpCmpCount">0</span><span style="color:#e8f4fd;font-size:.82rem">selected to compare</span><button id="mpCmpShow">Compare →</button><button class="mp-cmp-clear" id="mpCmpClear">Clear</button>';
+      document.body.appendChild(bar);
+      document.getElementById('mpCmpShow').onclick=showCompareModal;
+      document.getElementById('mpCmpClear').onclick=clearCompare;
+    }
+    var cnt=compareList.length;
+    document.getElementById('mpCmpCount').textContent=cnt;
+    if(cnt>=2)bar.classList.add('show');
+    else bar.classList.remove('show');
+  }
+  function showCompareModal(){
+    var ops=getOps().filter(function(o){return compareList.indexOf(o.id)>-1});
+    var modal=document.getElementById('mpCmpModal');
+    if(!modal){
+      modal=document.createElement('div');
+      modal.className='mp-modal-overlay';
+      modal.id='mpCmpModal';
+      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpCmpModal\').classList.remove(\'show\')">×</button><h3>Compare Operators</h3><div class="mp-cmp-grid" id="mpCmpGrid"></div></div>';
+      document.body.appendChild(modal);
+    }
+    var grid=document.getElementById('mpCmpGrid');
+    grid.innerHTML=ops.map(function(o){
+      var photo=o.photo&&o.photo.includes('http')?o.photo:(o.photo?'https://cdn.filestackcontent.com/'+o.photo+'/convert?w=400&format=webp':'');
+      var distanceHtml=userLoc&&o.lat?'<div class="mp-cmp-attr">📏 Distance <strong>'+haversineMi(userLoc.lat,userLoc.lng,o.lat,o.lng).toFixed(1)+' mi</strong></div>':'';
+      return '<div class="mp-cmp-card"><img src="'+photo+'" alt="'+(o.name||'').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'"><div class="mp-cmp-body"><h4>'+(o.name||'').slice(0,60)+'</h4><div class="mp-cmp-attr">⭐ Rating <strong>'+(o.rating||'4.7')+'/5</strong></div><div class="mp-cmp-attr">💬 Reviews <strong>'+(o.reviews||'100')+'+</strong></div><div class="mp-cmp-attr">💰 Price <strong>$'+(o.price||'50')+'+</strong></div><div class="mp-cmp-attr">📍 Location <strong>'+(o.zl||o.zone||'').slice(0,20)+'</strong></div>'+distanceHtml+'<a href="/'+getSlug(o)+'" class="mp-cmp-book">View Details →</a></div></div>';
+    }).join('');
+    modal.classList.add('show');
+    if(window.gtag)gtag('event','map_compare_view',{count:ops.length});
+  }
+  
+  // ─── Geocoder (Nominatim) ─── 
+  var searchTimer=null;
+  var CAT_KEYWORDS={
+    jetski:['jet ski','jetski','motos','moto de agua','wave runner','sea doo'],
+    boat:['boat','lancha','yacht','catamaran','pontoon','speedboat'],
+    fishing:['fishing','pesca','charter','offshore'],
+    snorkel:['snorkel','snuba','dive','reef'],
+    watersports:['water sports','watersport','wakeboard','flyboard','parasail','jet pack','tube','banana boat','paddleboard','sup','kayak'],
+    tour:['tour','sightseeing','excursion','sightsee','city tour'],
+    yacht:['yacht','luxury'],
+    atv:['atv','quad','buggy','utv','dune'],
+    aerial:['aerial','helicopter','plane','seaplane','airplane','flight','parachute'],
+    walking_tour:['walking','walk tour','ghost tour','food tour'],
+    bikerental:['bike','bicycle','e-bike','cycling'],
+    exotic:['exotic','lamborghini','ferrari','porsche','luxury car','supercar'],
+    segway:['segway','scooter'],
+    airboat:['airboat','everglades'],
+    sunset:['sunset','sunset cruise','dinner cruise','sunset sail'],
+    culinary:['food','wine','culinary','cooking','tasting'],
+    villa:['villa','rental','accommodation'],
+    wildlife:['wildlife','dolphin','whale','manatee','animal'],
+    slingshot:['slingshot','sling shot','polaris'],
+    golfcart:['golf cart','golf','cart'],
+    jetcar:['jet car','jetcar'],
+    nightlife:['nightlife','club','party','bar']
+  };
+  function matchOpsKeyword(q){
+    var ops=getOps();
+    var ql=q.toLowerCase().trim();
+    if(!ql)return [];
+    var matches=[];
+    var seen={};
+    ops.forEach(function(o){
+      if(seen[o.id])return;
+      var score=0;
+      var n=(o.name||'').toLowerCase();
+      var z=(o.zl||'').toLowerCase();
+      var c=(o.cat||'').toLowerCase();
+      // Direct keyword match
+      if(n.indexOf(ql)>-1)score+=10;
+      if(z.indexOf(ql)>-1)score+=5;
+      if(c.indexOf(ql)>-1)score+=8;
+      // Category keyword match (cross-reference dictionary)
+      Object.keys(CAT_KEYWORDS).forEach(function(catKey){
+        var kws=CAT_KEYWORDS[catKey];
+        for(var i=0;i<kws.length;i++){
+          if(ql.indexOf(kws[i])>-1){
+            if(o.cat===catKey)score+=15;
+          }
+        }
+      });
+      if(score>0){
+        seen[o.id]=1;
+        matches.push({op:o,score:score});
+      }
+    });
+    matches.sort(function(a,b){
+      // Sort: keyword score, then rating
+      if(b.score!==a.score)return b.score-a.score;
+      return (b.op.rating||0)-(a.op.rating||0);
+    });
+    return matches.slice(0,8).map(function(x){return x.op});
+  }
+  
+  function renderSearchResults(opResults,placeResults){
+    var box=document.getElementById('mpSearchResults');
+    if(!box)return;
+    var html='';
+    if(opResults.length){
+      html+='<div style="padding:6px 14px;color:#7ba3c0;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(0,210,255,.04)">🛥️ Operators</div>';
+      opResults.forEach(function(o){
+        var slug=getSlug(o);
+        var emoji='🌊';
+        var cat=(o.cat||'').toLowerCase();
+        if(cat==='jetski')emoji='🛥️';else if(cat==='boat')emoji='⛵';else if(cat==='fishing')emoji='🎣';else if(cat==='snorkel')emoji='🤿';else if(cat==='atv')emoji='🏍️';else if(cat==='tour')emoji='🚌';else if(cat==='exotic')emoji='💎';else if(cat==='slingshot')emoji='🏎️';else if(cat==='aerial')emoji='✈️';else if(cat==='sunset')emoji='🌅';else if(cat==='watersports')emoji='🏄';
+        html+='<a href="/'+slug+'" class="mp-result" style="display:block;text-decoration:none">'+emoji+' '+(o.name||'').slice(0,60)+'<span style="color:#7ba3c0;font-size:.72rem;margin-left:6px">⭐ '+(o.rating||'4.7')+' · $'+(o.price||'50')+'+</span></a>';
+      });
+    }
+    if(placeResults.length){
+      html+='<div style="padding:6px 14px;color:#7ba3c0;font-size:.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.5px;background:rgba(0,210,255,.04)">📍 Locations</div>';
+      placeResults.forEach(function(r){
+        html+='<div class="mp-result" data-lat="'+r.lat+'" data-lon="'+r.lon+'">📍 '+r.display_name.slice(0,80)+'</div>';
+      });
+    }
+    if(!html){html='<div class="mp-result">No results</div>'}
+    box.innerHTML=html;
+    box.classList.add('show');
+    // Bind clicks on location results
+    box.querySelectorAll('.mp-result[data-lat]').forEach(function(el){
+      el.onclick=function(){
+        var lat=parseFloat(el.dataset.lat),lng=parseFloat(el.dataset.lon);
+        var m=getMap();
+        if(m){m.setView([lat,lng],14);if(window.gtag)gtag('event','map_search_result',{type:'place'})}
+        box.classList.remove('show');
+        document.getElementById('mpSearchInput').value='';
+      };
+    });
+    box.querySelectorAll('a.mp-result').forEach(function(el){
+      el.addEventListener('click',function(){if(window.gtag)gtag('event','map_search_result',{type:'operator'})});
+    });
+  }
+  
+  function isPureActivityQuery(q){
+    var ql=q.toLowerCase().trim();
+    // Pure activity words que no son ubicaciones
+    var activities=['jet ski','jetski','slingshot','snorkel','snuba','atv','exotic','aerial','tour','boat','yacht','fishing','watersport','water sport','sunset','dolphin','whale','wildlife','airboat','segway','helicopter','culinary','food tour','bike','kayak','paddleboard','sup','parasail','ghost'];
+    for(var i=0;i<activities.length;i++){if(ql===activities[i])return true}
+    // If contains common location words, not pure activity
+    var locWords=['beach','marina','bay','port','dock','harbor','park','island','street','avenue','road','plaza','hotel','airport','near','from'];
+    for(var i=0;i<locWords.length;i++){if(ql.indexOf(locWords[i])>-1)return false}
+    // Pure short activity-only queries
+    return ql.split(' ').length<=2&&ql.length<10;
+  }
+  
+  function searchPlaces(q){
+    if(!q||q.length<2)return;
+    var opResults=matchOpsKeyword(q);
+    // Show op results immediately
+    renderSearchResults(opResults,[]);
+    // Skip location search for pure activity queries
+    if(isPureActivityQuery(q)&&opResults.length>=3){
+      return;
+    }
+    (function(){
+      var m=getMap();var vb='';
+      if(m){var b=m.getBounds();vb='&viewbox='+b.getWest()+','+b.getSouth()+','+b.getEast()+','+b.getNorth()+'&bounded=1'}
+      // Restringir a países turísticos relevantes: US, MX, Dominican Rep, Puerto Rico, Bahamas, Canada
+      var cc='&countrycodes=us,mx,do,pr,bs,ca';
+      return fetch('https://nominatim.openstreetmap.org/search?q='+encodeURIComponent(q)+'&format=json&limit=4&addressdetails=1'+vb+cc);
+    })()
+      .then(function(r){return r.json()})
+      .then(function(results){renderSearchResults(opResults,results||[])})
+      .catch(function(){renderSearchResults(opResults,[])});
+  }
+  
+  // ─── Smart filter chips ─── 
+  var filters={cat:null,minRating:null,maxPrice:null};
+  function applyFilters(){
+    var ops=getOps().filter(function(o){
+      if(filters.cat&&o.cat!==filters.cat)return false;
+      if(filters.minRating&&(o.rating||0)<filters.minRating)return false;
+      if(filters.maxPrice&&(o.price||9999)>filters.maxPrice)return false;
+      return true;
+    });
+    // Detect cluster (zone uses window.markerCluster, homepage uses window.mapClusterGroup)
+    var cluster=window.markerCluster||window.mapClusterGroup;
+    var mkFn=window.makeMarker;
+    if(cluster&&mkFn){
+      cluster.clearLayers();
+      ops.forEach(function(o){if(o.lat&&o.lng){try{cluster.addLayer(mkFn(o))}catch(e){}}});
+    } else if(window.refreshMarkers){
+      window.refreshMarkers();
+    } else if(cluster) {
+      // Fallback: just remove pins not matching, no re-add
+      cluster.clearLayers();
+    }
+    // Update visible count
+    var vc=document.getElementById('mapVisibleCount')||document.getElementById('hpVisibleCount');
+    if(vc)vc.innerHTML='<strong>'+ops.length+'</strong> operator'+(ops.length===1?'':'s')+' in view';
+    if(window.gtag)gtag('event','map_filter_apply',filters);
+  }
+  
+  // ─── Inject UI ─── 
+  function injectUI(){
+    var wrap=getMapContainer();
+    if(!wrap||document.getElementById('mpSearchInput'))return;
+    
+    // Search bar
+    var sb=document.createElement('div');
+    sb.className='mp-search-bar';
+    sb.innerHTML='<span class="mp-search-icon">🔎</span><input type="search" id="mpSearchInput" placeholder="Search jet ski, boat, marina, address..." autocomplete="off"><button id="mpSearchBtn">Go</button>';
+    wrap.appendChild(sb);
+    
+    var sr=document.createElement('div');
+    sr.className='mp-search-results';
+    sr.id='mpSearchResults';
+    wrap.appendChild(sr);
+    
+    document.getElementById('mpSearchInput').addEventListener('input',function(e){
+      clearTimeout(searchTimer);
+      searchTimer=setTimeout(function(){searchPlaces(e.target.value)},400);
+    });
+    document.getElementById('mpSearchBtn').onclick=function(){
+      searchPlaces(document.getElementById('mpSearchInput').value);
+    };
+    document.getElementById('mpSearchInput').addEventListener('keydown',function(e){
+      if(e.key==='Enter')searchPlaces(e.target.value);
+    });
+    
+    // Filter chips
+    var fc=document.createElement('div');
+    fc.className='mp-filter-chips';
+    fc.innerHTML='';fc.style.display='none';
+    wrap.appendChild(fc);
+    
+    fc.querySelectorAll('.mp-chip').forEach(function(chip){
+      chip.onclick=function(){
+        var f=chip.dataset.filter,v=parseFloat(chip.dataset.val);
+        var was=chip.classList.contains('active');
+        // De-activate same-filter siblings
+        fc.querySelectorAll('.mp-chip[data-filter="'+f+'"]').forEach(function(c){c.classList.remove('active')});
+        if(!was){
+          chip.classList.add('active');
+          if(f==='rating')filters.minRating=v;
+          else if(f==='price')filters.maxPrice=v;
+        } else {
+          if(f==='rating')filters.minRating=null;
+          else if(f==='price')filters.maxPrice=null;
+        }
+        applyFilters();
+      };
+    });
+    
+    // Favorites button (junto a otros map controls)
+    var controlsContainer=document.querySelector('.map-controls-overlay')||document.querySelector('.hp-map-controls');
+    if(controlsContainer&&!document.getElementById('mpFavBtn')){
+      var favBtn=document.createElement('button');
+      favBtn.className='mp-fav-btn';
+      favBtn.id='mpFavBtn';
+      favBtn.innerHTML='❤️ Favs';
+      favBtn.onclick=showFavoritesModal;
+      controlsContainer.appendChild(favBtn);
+      updateFavBtn();
+    }
+  }
+  
+  function showFavoritesModal(){
+    var favs=getFavs();
+    var ops=getOps().filter(function(o){return favs.indexOf(o.id)>-1});
+    var modal=document.getElementById('mpFavModal');
+    if(!modal){
+      modal=document.createElement('div');
+      modal.className='mp-modal-overlay';
+      modal.id='mpFavModal';
+      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpFavModal\').classList.remove(\'show\')">×</button><h3>❤️ My Favorites</h3><div class="mp-cmp-grid" id="mpFavGrid"></div></div>';
+      document.body.appendChild(modal);
+    }
+    var grid=document.getElementById('mpFavGrid');
+    if(!ops.length){
+      grid.innerHTML='<p style="color:#a8d4f0;grid-column:1/-1;text-align:center;padding:30px">No favorites yet. Click ❤️ on any operator pin to save it here.</p>';
+    } else {
+      grid.innerHTML=ops.map(function(o){
+        var photo=o.photo&&o.photo.includes('http')?o.photo:(o.photo?'https://cdn.filestackcontent.com/'+o.photo+'/convert?w=400&format=webp':'');
+        return '<div class="mp-cmp-card"><img src="'+photo+'" alt="'+(o.name||'').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'"><div class="mp-cmp-body"><h4>'+(o.name||'').slice(0,60)+'</h4><div class="mp-cmp-attr">⭐ <strong>'+(o.rating||'4.7')+'</strong> · 💰 $'+(o.price||'50')+'+</div><a href="/'+getSlug(o)+'" class="mp-cmp-book">View Details →</a></div></div>';
+      }).join('');
+    }
+    modal.classList.add('show');
+  }
+  
+  // ─── Override popup to be rich ─── 
+  function enrichPopup(map){
+    map.on('popupopen',function(e){
+      var pop=e.popup;
+      var marker=pop._source;
+      if(!marker||!marker._opId)return;
+      var op=getOps().find(function(o){return o.id===marker._opId});
+      if(!op)return;
+      
+      var photo=op.photo&&op.photo.includes('http')?op.photo:(op.photo?'https://cdn.filestackcontent.com/'+op.photo+'/convert?w=400&format=webp&quality=80':'');
+      var slug=getSlug(op);
+      var distance=userLoc&&op.lat?haversineMi(userLoc.lat,userLoc.lng,op.lat,op.lng).toFixed(1)+' mi away':'';
+      var fav=isFav(op.id);
+      var directionsUrl='https://www.google.com/maps/dir/?api=1&destination='+op.lat+','+op.lng;
+      
+      var html='<div class="mp-popup">'+
+        (photo?'<img class="mp-popup-img" src="'+photo+'" alt="">':'')+
+        '<div class="mp-popup-body">'+
+        '<div class="mp-popup-name">'+(op.name||'').slice(0,80)+'</div>'+
+        '<div class="mp-popup-meta"><span class="mp-popup-rating">⭐ '+(op.rating||'4.7')+' ('+(op.reviews||'100')+'+)</span><span class="mp-popup-price">$'+(op.price||'50')+'+</span></div>'+
+        (distance?'<div class="mp-popup-distance">📏 '+distance+'</div>':'')+
+        '<div class="mp-popup-actions">'+
+        '<a href="/'+slug+'" class="mp-popup-btn">View Details</a>'+
+        '<a href="'+directionsUrl+'" target="_blank" rel="noopener" class="mp-popup-btn secondary" onclick="if(window.gtag)gtag(\'event\',\'map_directions\',{op_id:\''+op.id+'\'})">🧭</a>'+
+        '<button class="mp-popup-btn fav '+(fav?'active':'')+'" onclick="this.classList.toggle(\'active\');window.MPtoggle(\''+op.id+'\');if(!this.classList.contains(\'active\'))this.style.color=\'\'">'+(fav?'❤️':'🤍')+'</button>'+
+        '</div>'+
+        '<button class="mp-popup-btn secondary" style="width:100%;margin-top:8px" onclick="window.MPcompare(\''+op.id+'\')">+ Add to Compare</button>'+
+        '</div></div>';
+      
+      pop.setContent(html);
+    });
+  }
+  
+  // Expose for popup buttons
+  window.MPtoggle=toggleFav;
+  window.MPcompare=addToCompare;
+  
+  // Inject UI immediately (doesn't need map ready)
+  function init(){
+    injectUI();
+    // Enrich popup waits for map
+    waitForMapReady();
+  }
+  function waitForMapReady(attempts){
+    attempts=attempts||0;
+    var m=getMap();
+    if(m){enrichPopup(m);return}
+    if(attempts>120)return;
+    setTimeout(function(){waitForMapReady(attempts+1)},500);
+  }
+  
+  if(document.readyState!=='loading')setTimeout(init,800);
+  else document.addEventListener('DOMContentLoaded',function(){setTimeout(init,800)});
+})();
+/* /SPRINT 13 MAP PRO */
 </script>
 </body>
 </html>
