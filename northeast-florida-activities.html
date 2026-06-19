@@ -1096,8 +1096,8 @@ function initMap(){
     }).addTo(mapInstance);
     markerCluster = L.markerClusterGroup({showCoverageOnHover:false, maxClusterRadius:40, spiderfyOnMaxZoom:true, disableClusteringAtZoom:16});
     window.markerCluster = markerCluster;
-    window.makeMarker = makeMarker;
-    window.refreshMarkers = refreshMarkers;
+    try{window.makeMarker = makeMarker;}catch(e){}
+    try{window.refreshMarkers = refreshMarkers;}catch(e){}
     mapInstance.addLayer(markerCluster);
     refreshMarkers();
   });
@@ -2095,9 +2095,17 @@ document.head.appendChild(styleEl);
     var ops=getOps();
     var ql=q.toLowerCase().trim();
     if(!ql)return [];
+    // Filter to current map viewport bounds — solo ops visibles
+    var m=getMap();
+    var bounds=null;
+    if(m){try{bounds=m.getBounds()}catch(e){}}
     var matches=[];
     var seen={};
     ops.forEach(function(o){
+      // Skip ops fuera del viewport del mapa
+      if(bounds&&o.lat&&o.lng){
+        if(!bounds.contains([o.lat,o.lng]))return;
+      }
       if(seen[o.id])return;
       var score=0;
       var n=(o.name||'').toLowerCase();
@@ -2245,7 +2253,30 @@ document.head.appendChild(styleEl);
     
     document.getElementById('mpSearchInput').addEventListener('input',function(e){
       clearTimeout(searchTimer);
-      searchTimer=setTimeout(function(){searchPlaces(e.target.value)},400);
+      var val=e.target.value.trim();
+      if(!val){
+        // Empty input: hide dropdown immediately
+        var box=document.getElementById('mpSearchResults');
+        if(box){box.classList.remove('show');box.innerHTML='';}
+        return;
+      }
+      searchTimer=setTimeout(function(){searchPlaces(val)},400);
+    });
+    // Hide results when clicking outside
+    document.addEventListener('click',function(e){
+      var box=document.getElementById('mpSearchResults');
+      var bar=document.querySelector('.mp-search-bar');
+      if(box&&bar&&!bar.contains(e.target)&&!box.contains(e.target)){
+        box.classList.remove('show');
+      }
+    });
+    // ESC key to clear
+    document.getElementById('mpSearchInput').addEventListener('keydown',function(e){
+      if(e.key==='Escape'){
+        e.target.value='';
+        var box=document.getElementById('mpSearchResults');
+        if(box){box.classList.remove('show');box.innerHTML='';}
+      }
     });
     document.getElementById('mpSearchBtn').onclick=function(){
       searchPlaces(document.getElementById('mpSearchInput').value);
@@ -2369,6 +2400,148 @@ document.head.appendChild(styleEl);
   else document.addEventListener('DOMContentLoaded',function(){setTimeout(init,800)});
 })();
 /* /SPRINT 13 MAP PRO */
+</script>
+
+<style>
+/* ─── SPRINT 14 MAP CAT FILTER CHIPS ─── */
+.mp-cat-chips{position:absolute;bottom:14px;left:14px;right:14px;display:flex;flex-wrap:nowrap;gap:6px;z-index:500;pointer-events:none;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;max-width:calc(100% - 28px)}
+.mp-cat-chips::-webkit-scrollbar{display:none}
+.mp-cat-chip{background:rgba(4,13,26,.92);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.3);color:#e8f4fd;padding:6px 12px;border-radius:50px;font-size:.73rem;font-weight:700;cursor:pointer;pointer-events:auto;display:inline-flex;align-items:center;gap:5px;transition:.2s;white-space:nowrap;flex-shrink:0}
+.mp-cat-chip:hover{border-color:#00d2ff;background:rgba(0,210,255,.15)}
+.mp-cat-chip.active{background:#00d2ff;color:#040d1a;border-color:#00d2ff;font-weight:800}
+.mp-cat-chip .mp-cat-count{background:rgba(255,255,255,.2);padding:1px 7px;border-radius:50px;font-size:.65rem;font-weight:800}
+.mp-cat-chip.active .mp-cat-count{background:rgba(4,13,26,.25);color:#040d1a}
+.mp-cat-chips-clear{background:rgba(255,100,150,.15);border:1px solid rgba(255,100,150,.4);color:#ff6b9b;padding:6px 10px;border-radius:50px;font-size:.7rem;font-weight:700;cursor:pointer;pointer-events:auto;display:none;align-items:center;gap:4px;flex-shrink:0}
+.mp-cat-chips-clear.show{display:inline-flex}
+
+@media(max-width:600px){.mp-cat-chips{bottom:8px;left:8px;right:8px;gap:4px}.mp-cat-chip{padding:5px 10px;font-size:.7rem}}
+</style>
+
+<script>
+/* ─── SPRINT 14 MAP CAT FILTER CHIPS ─── */
+(function(){
+  var selectedCats=new Set();
+  
+  function getMapLocal(){return window.jetskiMap||window.mapInstance||null}
+  function getOpsLocal(){return window.allOperators||window.allOps||window._uxAllOps||[]}
+  
+  // Top categorías más comunes según datos
+  var CAT_DISPLAY={
+    jetski:{label:'Jet Ski',emoji:'🛥️'},
+    boat:{label:'Boat',emoji:'⛵'},
+    snorkel:{label:'Snorkel',emoji:'🤿'},
+    fishing:{label:'Fishing',emoji:'🎣'},
+    yacht:{label:'Yacht',emoji:'🛳️'},
+    tour:{label:'Tour',emoji:'🚌'},
+    sunset:{label:'Sunset',emoji:'🌅'},
+    watersports:{label:'Water Sports',emoji:'🏄'},
+    atv:{label:'ATV',emoji:'🏍️'},
+    aerial:{label:'Aerial',emoji:'✈️'}
+  };
+  
+  function injectCatChips(){
+    var wrap=document.querySelector('.map-wrap')||document.querySelector('.map-panel');
+    if(!wrap||document.querySelector('.mp-cat-chips'))return;
+    
+    // Calcular qué cats existen en esta zona (con counts)
+    var ops=getOpsLocal();
+    var catCounts={};
+    ops.forEach(function(o){if(o.cat){catCounts[o.cat]=(catCounts[o.cat]||0)+1}});
+    
+    // Solo mostrar cats con al menos 3 ops, ordenados por count
+    var topCats=Object.keys(catCounts).filter(function(c){return catCounts[c]>=3&&CAT_DISPLAY[c]}).sort(function(a,b){return catCounts[b]-catCounts[a]}).slice(0,8);
+    
+    if(!topCats.length)return; // No mostrar si no hay cats
+    
+    var bar=document.createElement('div');
+    bar.className='mp-cat-chips';
+    
+    var html='';
+    topCats.forEach(function(c){
+      var d=CAT_DISPLAY[c];
+      html+='<button class="mp-cat-chip" data-cat="'+c+'">'+d.emoji+' '+d.label+' <span class="mp-cat-count">'+catCounts[c]+'</span></button>';
+    });
+    html+='<button class="mp-cat-chips-clear" id="mpCatChipsClear">✕ Clear</button>';
+    
+    bar.innerHTML=html;
+    wrap.appendChild(bar);
+    
+    bar.querySelectorAll('.mp-cat-chip').forEach(function(chip){
+      chip.onclick=function(){
+        var cat=chip.dataset.cat;
+        if(selectedCats.has(cat)){
+          selectedCats.delete(cat);
+          chip.classList.remove('active');
+        } else {
+          selectedCats.add(cat);
+          chip.classList.add('active');
+        }
+        // Show/hide clear button
+        var clearBtn=document.getElementById('mpCatChipsClear');
+        if(clearBtn){
+          if(selectedCats.size>0)clearBtn.classList.add('show');
+          else clearBtn.classList.remove('show');
+        }
+        applyMapCatFilter();
+        if(window.gtag)gtag('event','map_cat_chip_toggle',{cat:cat,active:selectedCats.has(cat)});
+      };
+    });
+    
+    document.getElementById('mpCatChipsClear').onclick=function(){
+      selectedCats.clear();
+      bar.querySelectorAll('.mp-cat-chip').forEach(function(c){c.classList.remove('active')});
+      this.classList.remove('show');
+      applyMapCatFilter();
+      if(window.gtag)gtag('event','map_cat_chips_clear');
+    };
+  }
+  
+  function applyMapCatFilter(){
+    var ops=getOpsLocal();
+    var cluster=window.markerCluster||window.mapClusterGroup;
+    if(!cluster)return;
+    
+    cluster.clearLayers();
+    
+    var filtered=ops.filter(function(o){
+      if(!o.lat||!o.lng)return false;
+      if(selectedCats.size===0)return true; // sin filter = todos
+      return selectedCats.has(o.cat);
+    });
+    
+    // Inyectar markers con makeMarker si existe, sino crear inline simple
+    var mkFn=window.makeMarker;
+    if(mkFn){
+      filtered.forEach(function(o){
+        try{cluster.addLayer(mkFn(o))}catch(e){}
+      });
+    } else if(window.refreshMarkers){
+      // Fallback: usar refreshMarkers — pero respeta activeCat global, no nuestro filter
+      // Workaround: temporalmente cambiar window.allOps a filtered
+      var origAllOps=window.allOps;
+      window.allOps=filtered;
+      window.refreshMarkers();
+      window.allOps=origAllOps;
+    }
+    
+    // Update visible count
+    var vc=document.getElementById('mapVisibleCount')||document.getElementById('hpVisibleCount');
+    if(vc){
+      var label=selectedCats.size>0?' filtered':' in view';
+      vc.innerHTML='<strong>'+filtered.length+'</strong> operator'+(filtered.length===1?'':'s')+label;
+    }
+  }
+  
+  // Init when DOM + data ready
+  var pollInit=setInterval(function(){
+    if(getOpsLocal().length>0){
+      clearInterval(pollInit);
+      injectCatChips();
+    }
+  },500);
+  setTimeout(function(){clearInterval(pollInit);if(getOpsLocal().length>0)injectCatChips()},25000);
+})();
+/* /SPRINT 14 MAP CAT FILTER CHIPS */
 </script>
 </body>
 </html>
