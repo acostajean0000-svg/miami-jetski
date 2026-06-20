@@ -129,11 +129,11 @@ window._expandOp=function(o){if(o.link&&!o.link.startsWith('http')&&o.link.inclu
     .seo-index-list .ix-cat{color:#7ba3c0;font-size:.75rem;flex-shrink:0}
     .seo-index-toggle{background:rgba(0,210,255,.1);border:1px solid rgba(0,210,255,.3);color:#00d2ff;padding:6px 14px;border-radius:50px;font-size:.78rem;font-weight:600;cursor:pointer;margin-top:14px;transition:.15s}
     .seo-index-toggle:hover{background:rgba(0,210,255,.18)}
-    .near-me-btn{position:absolute;bottom:60px;right:12px;z-index:501;background:linear-gradient(135deg,#10c876,#0a9d5d);color:#fff;border:none;padding:10px 18px;border-radius:50px;font-size:.85rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(16,200,118,.45);display:flex;align-items:center;gap:6px;transition:.2s}
+    .near-me-btn{position:absolute;bottom:14px;right:12px;z-index:501;background:linear-gradient(135deg,#10c876,#0a9d5d);color:#fff;border:none;padding:10px 18px;border-radius:50px;font-size:.85rem;font-weight:700;cursor:pointer;box-shadow:0 4px 14px rgba(16,200,118,.45);display:flex;align-items:center;gap:6px;transition:.2s}
     .near-me-btn:hover{transform:translateY(-1px);box-shadow:0 6px 20px rgba(16,200,118,.6)}
     .near-me-btn:disabled{opacity:.7;cursor:wait}
     .near-me-btn.active{background:linear-gradient(135deg,#ff6b6b,#e63946);box-shadow:0 4px 14px rgba(230,57,70,.45)}
-    .near-me-info{position:absolute;bottom:110px;right:12px;z-index:499;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);color:#fff;padding:8px 14px;border-radius:8px;font-size:.78rem;display:none}
+    .near-me-info{position:absolute;bottom:60px;right:12px;z-index:499;background:rgba(0,0,0,.8);backdrop-filter:blur(6px);color:#fff;padding:8px 14px;border-radius:8px;font-size:.78rem;display:none}
     .near-me-info.show{display:block}
 </style>
 <script>
@@ -374,7 +374,7 @@ function showAllOperators(){
 })();
 
 function setupFilters(){document.querySelectorAll('.cat-chip').forEach(c=>{c.addEventListener('click',()=>{document.querySelectorAll('.cat-chip').forEach(x=>x.classList.remove('active'));c.classList.add('active');activeCat=c.dataset.cat; window.activeCat = activeCat;render();if(_focusedOpId){showAllOperators();}else if(typeof refreshMarkers==='function'&&mapInstance)refreshMarkers();});});}
-(async()=>{try{const r = await fetch('/data/keywest.json');const ops=await r.json();allOps=ops.map(window._expandOp).filter(o => o.zone==='keywest' || o.zone==='keys' || o.zone==='marathon');setupFilters();render();if(typeof refreshMarkers==='function'&&mapInstance)refreshMarkers();}catch(e){document.getElementById('grid').innerHTML='<div class="empty" style="grid-column:1/-1"><h2>Could not load operators</h2><p><a href="/" style="color:#00d2ff">Return home</a></p></div>';}}
+(async()=>{try{const r = await fetch('/data/keywest.json');const ops=await r.json();window.allOps=allOps=ops.map(window._expandOp).filter(o => o.zone==='keywest' || o.zone==='keys' || o.zone==='marathon');setupFilters();render();if(typeof refreshMarkers==='function'&&mapInstance)refreshMarkers();}catch(e){document.getElementById('grid').innerHTML='<div class="empty" style="grid-column:1/-1"><h2>Could not load operators</h2><p><a href="/" style="color:#00d2ff">Return home</a></p></div>';}}
 )();
 
 // ─── MAP INTEGRATION ────────────────────────────────────────
@@ -975,13 +975,13 @@ document.head.appendChild(styleEl);
 .map-control-btn:hover{background:rgba(0,210,255,.15);border-color:#00d2ff}
 .map-control-btn.active{background:#00d2ff;color:#040d1a;border-color:#00d2ff}
 
-.map-radius-panel{position:absolute;top:14px;left:50%;transform:translateX(-50%);background:rgba(4,13,26,.92);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.3);border-radius:50px;padding:6px;display:none;gap:4px;z-index:500;box-shadow:0 4px 12px rgba(0,0,0,.4)}
-.map-radius-panel.show{display:flex}
+.map-radius-panel{position:absolute;top:64px;right:14px;background:rgba(4,13,26,.95);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.4);border-radius:50px;padding:6px;display:none;gap:4px;z-index:700;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.map-radius-panel.show{display:flex;animation:fade-in-down .25s}
 .map-radius-panel button{background:transparent;border:0;color:#e8f4fd;padding:7px 14px;border-radius:50px;font-size:.74rem;font-weight:700;cursor:pointer;transition:.2s}
 .map-radius-panel button:hover{background:rgba(0,210,255,.1)}
 .map-radius-panel button.active{background:#00d2ff;color:#040d1a}
 
-.map-search-area{position:absolute;top:14px;left:14px;background:rgba(4,13,26,.92);color:#fff;backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.5);border-radius:50px;padding:8px 18px;font-size:.78rem;font-weight:700;cursor:pointer;display:none;align-items:center;gap:8px;z-index:500;box-shadow:0 4px 12px rgba(0,0,0,.4);animation:fade-in .3s}
+.map-search-area{position:absolute;top:60px;left:14px;background:rgba(4,13,26,.92);color:#fff;backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.5);border-radius:50px;padding:8px 18px;font-size:.78rem;font-weight:700;cursor:pointer;display:none;align-items:center;gap:8px;z-index:500;box-shadow:0 4px 12px rgba(0,0,0,.4);animation:fade-in .3s}
 .map-search-area.show{display:flex}
 .map-search-area:hover{background:rgba(0,210,255,.2)}
 @keyframes fade-in{from{opacity:0;transform:translateX(-50%) translateY(-6px)}to{opacity:1;transform:translateX(-50%) translateY(0)}}
@@ -1238,6 +1238,7 @@ document.head.appendChild(styleEl);
   if(document.readyState!=='loading')injectControls();
   else document.addEventListener('DOMContentLoaded',injectControls);
 })();
+@keyframes fade-in-down{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 /* /SPRINT 12 MAP ENHANCEMENT */
 </script>
 
@@ -1254,7 +1255,7 @@ document.head.appendChild(styleEl);
 .mp-search-results .mp-result:hover{background:rgba(0,210,255,.1)}
 .mp-search-results .mp-result:last-child{border-bottom:0}
 
-.mp-filter-chips{position:absolute;bottom:60px;left:14px;right:14px;display:flex;flex-wrap:wrap;gap:6px;z-index:500;justify-content:flex-start;pointer-events:none}
+.mp-filter-chips{position:absolute;bottom:85px;left:14px;right:14px;display:flex;flex-wrap:wrap;gap:6px;z-index:500;justify-content:flex-start;pointer-events:none}
 .mp-chip{background:rgba(4,13,26,.92);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.3);color:#e8f4fd;padding:6px 12px;border-radius:50px;font-size:.74rem;font-weight:700;cursor:pointer;pointer-events:auto;display:inline-flex;align-items:center;gap:5px;transition:.2s}
 .mp-chip:hover{border-color:#00d2ff;background:rgba(0,210,255,.15)}
 .mp-chip.active{background:#00d2ff;color:#040d1a;border-color:#00d2ff}
@@ -1742,7 +1743,7 @@ document.head.appendChild(styleEl);
 
 <style>
 /* ─── SPRINT 14 MAP CAT FILTER CHIPS ─── */
-.mp-cat-chips{position:absolute;bottom:14px;left:14px;right:14px;display:flex;flex-wrap:nowrap;gap:6px;z-index:500;pointer-events:none;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;max-width:calc(100% - 28px)}
+.mp-cat-chips{position:absolute;bottom:50px;left:14px;right:14px;display:flex;flex-wrap:nowrap;gap:6px;z-index:500;pointer-events:none;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;max-width:calc(100% - 28px)}
 .mp-cat-chips::-webkit-scrollbar{display:none}
 .mp-cat-chip{background:rgba(4,13,26,.92);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.3);color:#e8f4fd;padding:6px 12px;border-radius:50px;font-size:.73rem;font-weight:700;cursor:pointer;pointer-events:auto;display:inline-flex;align-items:center;gap:5px;transition:.2s;white-space:nowrap;flex-shrink:0}
 .mp-cat-chip:hover{border-color:#00d2ff;background:rgba(0,210,255,.15)}
@@ -1752,7 +1753,7 @@ document.head.appendChild(styleEl);
 .mp-cat-chips-clear{background:rgba(255,100,150,.15);border:1px solid rgba(255,100,150,.4);color:#ff6b9b;padding:6px 10px;border-radius:50px;font-size:.7rem;font-weight:700;cursor:pointer;pointer-events:auto;display:none;align-items:center;gap:4px;flex-shrink:0}
 .mp-cat-chips-clear.show{display:inline-flex}
 
-@media(max-width:600px){.mp-cat-chips{bottom:8px;left:8px;right:8px;gap:4px}.mp-cat-chip{padding:5px 10px;font-size:.7rem}}
+@media(max-width:600px){.mp-cat-chips{bottom:46px;left:8px;right:8px;gap:4px}.mp-cat-chip{padding:5px 10px;font-size:.7rem}}
 </style>
 
 <script>
@@ -1807,10 +1808,12 @@ document.head.appendChild(styleEl);
     bar.querySelectorAll('.mp-cat-chip').forEach(function(chip){
       chip.onclick=function(){
         var cat=chip.dataset.cat;
-        if(selectedCats.has(cat)){
-          selectedCats.delete(cat);
-          chip.classList.remove('active');
-        } else {
+        var wasActive=selectedCats.has(cat);
+        // SINGLE-SELECT: clear all + activate this one
+        selectedCats.clear();
+        bar.querySelectorAll('.mp-cat-chip').forEach(function(c){c.classList.remove('active')});
+        if(!wasActive){
+          // Activate this chip (toggle off if clicking the active one)
           selectedCats.add(cat);
           chip.classList.add('active');
         }
@@ -1821,7 +1824,7 @@ document.head.appendChild(styleEl);
           else clearBtn.classList.remove('show');
         }
         applyMapCatFilter();
-        if(window.gtag)gtag('event','map_cat_chip_toggle',{cat:cat,active:selectedCats.has(cat)});
+        if(window.gtag)gtag('event','map_cat_chip_select',{cat:cat,active:selectedCats.has(cat)});
       };
     });
     
@@ -1881,4 +1884,165 @@ document.head.appendChild(styleEl);
 })();
 /* /SPRINT 14 MAP CAT FILTER CHIPS */
 </script>
+
+<style>
+/* ─── SPRINT 15 MAP-CARD SYNC ─── */
+.mp-sync-btn{position:absolute;top:110px;left:14px;background:rgba(4,13,26,.92);color:#e8f4fd;border:1px solid rgba(0,210,255,.4);border-radius:50px;padding:8px 14px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(8px);box-shadow:0 4px 12px rgba(0,0,0,.4);z-index:501;transition:.2s}
+.mp-sync-btn:hover{background:rgba(0,210,255,.15);border-color:#00d2ff}
+.mp-sync-btn.active{background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;border-color:#00d2ff;font-weight:800}
+.mp-sync-btn .mp-sync-icon{font-size:1rem}
+@media(max-width:600px){.mp-sync-btn{top:100px;font-size:.72rem;padding:6px 11px}}
+
+.card[data-mp-sync-distance]::before{content:attr(data-mp-sync-distance);position:absolute;top:8px;right:8px;background:rgba(4,13,26,.85);backdrop-filter:blur(4px);color:#00d2ff;font-size:.7rem;font-weight:800;padding:3px 8px;border-radius:50px;z-index:3;border:1px solid rgba(0,210,255,.3);display:none}
+.card.mp-show-distance::before{display:block}
+
+.grid.mp-sync-transition .card{transition:transform .4s cubic-bezier(.2,.8,.2,1)}
+</style>
+
+<script>
+/* ─── SPRINT 15 MAP-CARD SYNC ─── */
+(function(){
+  var syncEnabled=false;
+  var moveTimer=null;
+  
+  function getMapLocal(){return window.jetskiMap||window.mapInstance||null}
+  function getOpsLocal(){return window.allOperators||window.allOps||window._uxAllOps||[]}
+  function haversineMi2(lat1,lon1,lat2,lon2){
+    var R=3958.8;
+    var dLat=(lat2-lat1)*Math.PI/180;
+    var dLon=(lon2-lon1)*Math.PI/180;
+    var a=Math.sin(dLat/2)*Math.sin(dLat/2)+Math.cos(lat1*Math.PI/180)*Math.cos(lat2*Math.PI/180)*Math.sin(dLon/2)*Math.sin(dLon/2);
+    return R*2*Math.atan2(Math.sqrt(a),Math.sqrt(1-a));
+  }
+  
+  function injectSyncBtn(){
+    var wrap=document.querySelector('.map-wrap')||document.querySelector('.map-panel');
+    if(!wrap||document.querySelector('.mp-sync-btn'))return;
+    
+    var btn=document.createElement('button');
+    btn.className='mp-sync-btn';
+    btn.id='mpSyncBtn';
+    btn.innerHTML='<span class="mp-sync-icon">🔄</span> Sort by map';
+    btn.title='Reorder cards by distance from map center';
+    wrap.appendChild(btn);
+    
+    btn.onclick=function(){
+      syncEnabled=!syncEnabled;
+      if(syncEnabled){
+        btn.classList.add('active');
+        btn.innerHTML='<span class="mp-sync-icon">✓</span> Sorted by map';
+        sortCardsByDistance();
+        document.querySelectorAll('.card').forEach(function(c){c.classList.add('mp-show-distance')});
+      } else {
+        btn.classList.remove('active');
+        btn.innerHTML='<span class="mp-sync-icon">🔄</span> Sort by map';
+        // Clear distance attrs
+        document.querySelectorAll('.card[data-mp-sync-distance]').forEach(function(c){
+          c.removeAttribute('data-mp-sync-distance');
+          c.classList.remove('mp-show-distance');
+          c.style.order='';
+        });
+      }
+      if(window.gtag)gtag('event','map_card_sync_toggle',{active:syncEnabled});
+    };
+  }
+  
+  function sortCardsByDistance(){
+    var m=getMapLocal();
+    if(!m)return;
+    var center=m.getCenter();
+    var ops=getOpsLocal();
+    var slugMap=window._OP_SLUG_MAP||{};
+    
+    // Build op_id → distance map
+    var opDist={};
+    ops.forEach(function(o){
+      if(!o.lat||!o.lng)return;
+      opDist[o.id]={dist:haversineMi2(center.lat,center.lng,o.lat,o.lng),op:o};
+    });
+    
+    var grid=document.getElementById('grid');
+    if(!grid)return;
+    
+    // Apply CSS Grid order via inline styles (works with existing grid)
+    grid.classList.add('mp-sync-transition');
+    grid.style.display='flex';
+    grid.style.flexWrap='wrap';
+    
+    var cards=grid.querySelectorAll('.card[data-op-id]');
+    var cardsWithDist=[];
+    cards.forEach(function(card){
+      var opId=card.getAttribute('data-op-id');
+      var d=opDist[opId];
+      if(d){
+        cardsWithDist.push({card:card,dist:d.dist});
+        // Set distance label
+        var distLabel=d.dist<1?Math.round(d.dist*5280)+' ft':d.dist.toFixed(1)+' mi';
+        card.setAttribute('data-mp-sync-distance','📏 '+distLabel);
+      } else {
+        cardsWithDist.push({card:card,dist:99999});
+      }
+    });
+    
+    // Sort
+    cardsWithDist.sort(function(a,b){return a.dist-b.dist});
+    
+    // Apply order via flexbox order or DOM reorder
+    cardsWithDist.forEach(function(item,idx){
+      item.card.style.order=idx;
+    });
+    
+    if(window.gtag)gtag('event','map_card_sync_apply',{count:cardsWithDist.length});
+  }
+  
+  // Listen to map movements (debounced)
+  function listenToMap(){
+    var m=getMapLocal();
+    if(!m){setTimeout(listenToMap,1000);return}
+    m.on('moveend',function(){
+      if(!syncEnabled)return;
+      clearTimeout(moveTimer);
+      moveTimer=setTimeout(sortCardsByDistance,300);
+    });
+  }
+  
+  // Init when DOM + map ready
+  var pollInit=setInterval(function(){
+    var wrap=document.querySelector('.map-wrap')||document.querySelector('.map-panel');
+    if(wrap){
+      clearInterval(pollInit);
+      injectSyncBtn();
+      listenToMap();
+    }
+  },500);
+  setTimeout(function(){clearInterval(pollInit)},25000);
+})();
+/* /SPRINT 15 MAP-CARD SYNC */
+</script>
+
+<style>
+/* ─── SPRINT 15 LAYOUT FIX: mobile responsive ─── */
+@media(max-width:600px){
+  .map-controls-overlay,.hp-map-controls{top:10px;right:10px}
+  .map-control-btn,.hp-map-btn{padding:6px 10px;font-size:.72rem}
+  .mp-search-bar{top:10px;width:calc(100% - 90px);max-width:none;min-width:auto;padding:4px 8px 4px 12px}
+  .mp-search-bar input{font-size:.78rem;padding:5px 0}
+  .mp-search-bar button{padding:5px 10px;font-size:.7rem}
+  .map-search-area{top:54px;left:10px;font-size:.72rem;padding:6px 12px}
+  .mp-sync-btn{top:94px;left:10px;font-size:.7rem;padding:6px 11px}
+  .map-visible-count,.hp-visible-count,.mp-visible-count{bottom:10px;left:10px;font-size:.7rem;padding:5px 10px}
+  .near-me-btn{bottom:10px;right:10px;padding:8px 14px;font-size:.78rem}
+  .mp-fav-btn{font-size:.72rem;padding:5px 10px}
+  /* Cat chips horizontal scroll en mobile, by encima de bottom buttons */
+  .mp-cat-chips{bottom:40px;left:10px;right:10px;gap:4px}
+  .mp-cat-chip{padding:5px 9px;font-size:.68rem}
+  .mp-cat-chips-clear{padding:5px 8px;font-size:.65rem}
+}
+
+/* Desktop: ensure no overlap entre controls overlay y nada más */
+@media(min-width:601px){
+  /* Cat chips abajo, deja espacio para visible count + near me */
+  .mp-cat-chips{padding-bottom:0}
+}
+</style>
 </body></html>
