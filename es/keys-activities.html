@@ -901,12 +901,12 @@ document.head.appendChild(styleEl);
 <style>@keyframes fade-in-down{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}</style>
 <style>
 /* ─── SPRINT 13 MAP PRO ─── */
-.mp-search-bar{position:absolute;top:14px;left:50%;transform:translateX(-50%);background:rgba(4,13,26,.95);backdrop-filter:blur(12px);border:1px solid rgba(0,210,255,.4);border-radius:50px;padding:6px 8px 6px 16px;display:flex;align-items:center;gap:6px;z-index:600;box-shadow:0 4px 20px rgba(0,0,0,.5);min-width:240px;max-width:400px;width:calc(100% - 100px)}
+.mp-search-bar{position:absolute;top:14px;left:50%;transform:translateX(-50%);background:rgba(4,13,26,.95);backdrop-filter:blur(12px);border:1px solid rgba(0,210,255,.4);border-radius:50px;padding:6px 8px 6px 16px;display:flex;align-items:center;gap:6px;z-index:600;box-shadow:0 4px 20px rgba(0,0,0,.5);min-width:240px;max-width:400px;width:calc(100% - 100px);display:none!important}
 .mp-search-bar input{background:transparent;border:0;color:#e8f4fd;font-size:.85rem;outline:none;flex:1;min-width:0;padding:6px 0}
 .mp-search-bar input::placeholder{color:#7ba3c0}
 .mp-search-bar .mp-search-icon{font-size:.95rem;opacity:.7;flex-shrink:0}
 .mp-search-bar button{background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;border:0;border-radius:50px;padding:6px 12px;font-weight:800;font-size:.74rem;cursor:pointer;flex-shrink:0}
-.mp-search-results{position:absolute;top:60px;left:50%;transform:translateX(-50%);background:rgba(4,13,26,.97);backdrop-filter:blur(12px);border:1px solid rgba(0,210,255,.3);border-radius:12px;width:calc(100% - 100px);max-width:400px;max-height:240px;overflow-y:auto;z-index:600;display:none;box-shadow:0 8px 24px rgba(0,0,0,.5)}
+.mp-search-results{position:absolute;top:60px;left:50%;transform:translateX(-50%);background:rgba(4,13,26,.97);backdrop-filter:blur(12px);border:1px solid rgba(0,210,255,.3);border-radius:12px;width:calc(100% - 100px);max-width:400px;max-height:240px;overflow-y:auto;z-index:600;display:none!important;box-shadow:0 8px 24px rgba(0,0,0,.5)}
 .mp-search-results.show{display:block}
 .mp-search-results .mp-result{padding:10px 14px;color:#e8f4fd;cursor:pointer;font-size:.82rem;border-bottom:1px solid rgba(0,210,255,.1)}
 .mp-search-results .mp-result:hover{background:rgba(0,210,255,.1)}
@@ -963,8 +963,8 @@ document.head.appendChild(styleEl);
 </style>
 <style>
 /* ─── SPRINT 14 MAP CAT FILTER CHIPS ─── */
-.mp-cat-chips{position:absolute;bottom:50px;left:14px;right:14px;display:flex;flex-wrap:nowrap;gap:6px;z-index:500;pointer-events:none;overflow-x:auto;scrollbar-width:none;padding-bottom:4px;max-width:calc(100% - 28px)}
-.mp-cat-chips::-webkit-scrollbar{display:none}
+.mp-cat-chips{position:absolute;bottom:50px;left:14px;right:14px;display:flex;flex-wrap:nowrap;gap:6px;z-index:500;pointer-events:none;overflow-x:auto;scrollbar-width:thin;scrollbar-color:rgba(0,210,255,.6) rgba(4,13,26,.4);-webkit-mask-image:linear-gradient(to right,#000 calc(100% - 22px),transparent);mask-image:linear-gradient(to right,#000 calc(100% - 22px),transparent);padding-bottom:4px;max-width:calc(100% - 28px)}
+.mp-cat-chips::-webkit-scrollbar{height:6px}.mp-cat-chips::-webkit-scrollbar-thumb{background:rgba(0,210,255,.6);border-radius:50px}.mp-cat-chips::-webkit-scrollbar-track{background:rgba(4,13,26,.4);border-radius:50px}
 .mp-cat-chip{background:rgba(4,13,26,.92);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.3);color:#e8f4fd;padding:6px 12px;border-radius:50px;font-size:.73rem;font-weight:700;cursor:pointer;pointer-events:auto;display:inline-flex;align-items:center;gap:5px;transition:.2s;white-space:nowrap;flex-shrink:0}
 .mp-cat-chip:hover{border-color:#00d2ff;background:rgba(0,210,255,.15)}
 .mp-cat-chip.active{background:#00d2ff;color:#040d1a;border-color:#00d2ff;font-weight:800}
