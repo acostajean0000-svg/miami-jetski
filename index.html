@@ -2151,36 +2151,46 @@ function initMap() {
   // Build markers if operators already loaded; otherwise buildMarkers() is called after fetch
   if (allOperators.length) buildMarkers();
 }
-function buildMarkers() {
+// Construye UN marcador de operador (sin añadirlo al mapa)
+function makeOpMarker(op) {
   const isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
   const popupMax = isMobile ? Math.min(window.innerWidth - 60, 280) : 280;
-  allOperators.forEach(op => {
-    if (markers[op.id]) return; // skip if already built
-    if (!op.lat || !op.lng) return; // skip ops without geo coords
-    const color = catColors[op.cat] || '#00d4c8';
-    const emoji = catEmoji[op.cat] || '🌊';
-    const icon = op.photo
-      ? makePhotoIcon(op.photo, emoji, color)
-      : makeIcon(color, (op.name||'?').trim().charAt(0).toUpperCase());
-    const marker = L.marker([op.lat, op.lng], {icon});
-    const opSlug = (window._OP_SLUG_MAP || {})[op.id] || '';
-    const priceLabel = (op.price && op.price > 0)
-      ? ('From $' + op.price.toLocaleString())
-      : 'Contact for pricing';
-    const popupHTML = `<div class="map-popup">
+  const color = catColors[op.cat] || '#00d4c8';
+  const emoji = catEmoji[op.cat] || '🌊';
+  const icon = op.photo
+    ? makePhotoIcon(op.photo, emoji, color)
+    : makeIcon(color, (op.name||'?').trim().charAt(0).toUpperCase());
+  const marker = L.marker([op.lat, op.lng], {icon});
+  const opSlug = (window._OP_SLUG_MAP || {})[op.id] || '';
+  const priceLabel = (op.price && op.price > 0)
+    ? ('From $' + op.price.toLocaleString())
+    : 'Contact for pricing';
+  const popupHTML = `<div class="map-popup">
       <div class="map-popup-name">${esc(op.name)}</div>
       <div class="map-popup-price">${esc(priceLabel)}</div>
       <a class="map-popup-btn" href="${escUrl(op.link)}" data-fh-name="${esc(op.name)}" target="_blank" rel="noopener noreferrer">Book Now →</a>
       ${opSlug ? `` : ''}
     </div>`;
-    marker.bindPopup(popupHTML, {maxWidth:popupMax, minWidth:200, autoPan:true, autoPanPadding:[20,20], closeButton:true});
-    marker.on('click', () => {
-      cardClick(op.id);
-      marker.openPopup();
-    });
-    markers[op.id] = marker;
+  marker.bindPopup(popupHTML, {maxWidth:popupMax, minWidth:200, autoPan:true, autoPanPadding:[20,20], closeButton:true});
+  marker.on('click', () => {
+    cardClick(op.id);
+    marker.openPopup();
   });
+  return marker;
 }
+// Lazy: crea (y cachea) el marcador de un operador SOLO cuando se necesita mostrar.
+// Evita construir de golpe los ~10k marcadores; antes esto bloqueaba el hilo principal.
+function ensureMarker(op) {
+  if (!op) return null;
+  if (markers[op.id]) return markers[op.id];
+  if (!op.lat || !op.lng) return null;
+  const m = makeOpMarker(op);
+  markers[op.id] = m;
+  return m;
+}
+// Compat: ya no construye todo por adelantado; los marcadores se crean on-demand
+// en updateMapMarkers()/cardClick(). Se mantiene como no-op para los llamadores existentes.
+function buildMarkers() { /* lazy build — ver ensureMarker() */ }
 // Helper: add/remove marker to current layer (cluster group if available, else map directly)
 function _addMarkerToLayer(m) {
   if (window.mapClusterGroup) window.mapClusterGroup.addLayer(m);
@@ -2244,16 +2254,20 @@ function updateMapMarkers(visibleOps) {
   );
   // En vista por defecto solo mostrar pins de botes Miami; en otras vistas mostrar todos los visibles
   const showIds = isDefaultView ? miamiBoatIds : new Set(visibleOps.map(op => op.id));
+  // Construir + mostrar SOLO los operadores visibles (lazy: el marcador se crea on-demand)
+  const _showList = isDefaultView ? visibleOps.filter(o => miamiBoatIds.has(o.id)) : visibleOps;
+  _showList.forEach(op => {
+    const m = ensureMarker(op);
+    if(!m) return;
+    if(!_hasMarkerInLayer(m)) _addMarkerToLayer(m);
+    // Estilo: selected > featured (miami boat) > normal
+    if(op.id === selectedMarkerId) applyMarkerStyle(op.id, 'selected');
+    else if(miamiBoatIds.has(op.id)) applyMarkerStyle(op.id, 'featured');
+    else applyMarkerStyle(op.id, 'normal');
+  });
+  // Ocultar los marcadores ya construidos que no están en la vista actual
   Object.keys(markers).forEach(id => {
-    if(showIds.has(id)) {
-      if(!_hasMarkerInLayer(markers[id])) _addMarkerToLayer(markers[id]);
-      // Estilo: selected > featured (miami boat) > normal
-      if(id === selectedMarkerId) applyMarkerStyle(id, 'selected');
-      else if(miamiBoatIds.has(id)) applyMarkerStyle(id, 'featured');
-      else applyMarkerStyle(id, 'normal');
-    } else {
-      if(_hasMarkerInLayer(markers[id])) _removeMarkerFromLayer(markers[id]);
-    }
+    if(!showIds.has(id) && _hasMarkerInLayer(markers[id])) _removeMarkerFromLayer(markers[id]);
   });
   // Fit bounds solo si no hay un marker seleccionado
   if (!selectedMarkerId) {
@@ -2366,7 +2380,8 @@ function renderRecentlyViewed() {
 }
 function cardClick(id) {
   const op = allOperators.find(o => o.id === id);
-  if(!op || !mapInstance || !markers[id]) return;
+  if(!op || !mapInstance) return;
+  if(!ensureMarker(op)) return; // lazy: construye su pin si aún no existe
   trackRecentlyViewed(op);
   // Restaura el icono del pin previamente seleccionado
   if (selectedMarkerId && selectedMarkerId !== id) applyMarkerStyle(selectedMarkerId, 'normal');
