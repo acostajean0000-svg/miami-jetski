@@ -298,6 +298,15 @@ window._expandOp=function(o){if(o.link&&!o.link.startsWith('http')&&o.link.inclu
     .map-popup-name{font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:800;margin-bottom:6px;line-height:1.3;color:#0a1e36;padding-right:20px;}
     .map-popup-price{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:900;color:#00c4b8;margin-bottom:14px;}
     .map-popup-btn{display:block;text-align:center;background:#00d4c8;color:#081525;padding:11px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:800;letter-spacing:.3px;text-decoration:none;transition:background .2s,box-shadow .2s;}
+/* ── Pulido móvil (legibilidad + áreas táctiles ≥44px) ── */
+@media(max-width:768px){
+  .op-cat-badge,.qv-cat-badge,.qv-price-from,.op-addr{font-size:.72rem}
+  .zone-tab{min-height:44px;display:inline-flex;align-items:center}
+  .map-popup-btn{min-height:44px;display:flex;align-items:center;justify-content:center}
+  .pwa-share-btn{min-height:44px;min-width:44px;justify-content:center}
+  .cat-tab{min-height:48px;justify-content:center}
+  .fav-toggle,.cmp-toggle,.shr-btn{min-width:40px;min-height:40px}
+}
 .op-marker.is-toppick{z-index:1000 !important;overflow:visible}
 .tp-wrap{position:relative;width:58px;height:58px}
 .tp-wrap::before{content:"";position:absolute;top:3px;left:3px;width:52px;height:52px;border-radius:50%;border:2px solid #ffc107;animation:tp-pulse 2s ease-out infinite;pointer-events:none}
