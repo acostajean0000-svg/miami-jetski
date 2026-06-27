@@ -82,6 +82,8 @@ Desktop.ini
 
 # --- Backups / atomic-write leftovers -----------------------
 *.bak
+*.bak-*
+*.bak.*
 *.orig
 *.tmp
 *.new
@@ -107,3 +109,17 @@ venv/
 # --- Herramienta interna (secret-sensitive, nunca desplegar) ---
 webhook-tester.html
 _dev/
+
+# --- Heavy audit/check JSON files (no usados en runtime) ---
+shortname_verified.json
+link-check-results.json
+shortname_audit.json
+zombie_shortnames.json
+operator_freshness_report.json
+retest_429_results.json
+shortname_items.json
+proposed_new_ops.json
+link-check-v3-broken.json
+photo_targets.json
+archive/
+archive/**

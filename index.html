@@ -3204,14 +3204,8 @@ function cookieConsent(choice){
   injectTrust();
   setTimeout(injectTrust,500);
   
-  // 3. Sticky bottom CTA mobile
-  if(!document.querySelector('.sticky-hp-cta')){
-    var bar=document.createElement('div');
-    bar.className='sticky-hp-cta';
-    bar.innerHTML='<div class="sticky-hp-cta-info"><div class="sticky-hp-cta-title">Find your perfect water adventure</div><div class="sticky-hp-cta-sub">⭐ 4.7 · 10,000+ operators · 37 destinations</div></div><a href="#cat-chips" class="sticky-hp-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{location:\'homepage\'});">🗺️ Browse Tours</a>';
-    document.body.appendChild(bar);
-  }
-  
+  // 3. Sticky bottom CTA mobile — removed per request
+
   // 4. Social proof toast (rotating)
   var names=['Carlos M.','Ana R.','Luis G.','Maria T.','Roberto S.','Sofia L.','Diego C.','Emma B.','Daniel P.','Isabella V.','James K.','Jessica F.','Michael L.','Sarah B.','Andrew T.'];
   var zones=['Miami','Cancún','Key West','Punta Cana','San Diego','Hawaii','Charleston','Cabo','Hilton Head','Naples','Lake Tahoe'];
@@ -3363,7 +3357,7 @@ function cookieConsent(choice){
 .hp-map-btn:hover{background:rgba(0,210,255,.15);border-color:#00d2ff}
 .hp-map-btn.active{background:#00d2ff;color:#040d1a;border-color:#00d2ff}
 
-.hp-radius-panel{position:absolute;top:64px;right:14px;background:rgba(4,13,26,.95);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.4);border-radius:50px;padding:6px;display:none;gap:4px;z-index:700;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.hp-radius-panel{position:absolute;top:64px;right:14px;background:rgba(4,13,26,.95);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.4);border-radius:16px;padding:6px;display:none;gap:4px;flex-wrap:wrap;max-width:212px;justify-content:flex-end;z-index:700;box-shadow:0 4px 12px rgba(0,0,0,.4)}
 .hp-radius-panel.show{display:flex;animation:fade-in-down .25s}
 .hp-radius-panel button{background:transparent;border:0;color:#e8f4fd;padding:7px 14px;border-radius:50px;font-size:.74rem;font-weight:700;cursor:pointer;transition:.2s}
 .hp-radius-panel button:hover{background:rgba(0,210,255,.1)}
@@ -3412,7 +3406,7 @@ function cookieConsent(choice){
     var rp=document.createElement('div');
     rp.className='hp-radius-panel';
     rp.id='hpRadiusPanel';
-    rp.innerHTML='<button data-r="3">3 mi</button><button data-r="6">6 mi</button><button data-r="10">10 mi</button><button data-r="15">15 mi</button><button data-r="0">Off</button>';
+    rp.innerHTML='<button data-r="0.047348">250 ft</button><button data-r="0.094697">500 ft</button><button data-r="0.189394">1,000 ft</button><button data-r="0.284091">1,500 ft</button><button data-r="0.473485">2,500 ft</button><button data-r="0.757576">4,000 ft</button><button data-r="0">Off</button>';
     wrap.appendChild(rp);
     
     var sa=document.createElement('button');
@@ -3436,7 +3430,7 @@ function cookieConsent(choice){
     };
     $('#hpRadiusPanel').querySelectorAll('button').forEach(function(b){
       b.onclick=function(){
-        var r=parseInt(b.dataset.r);
+        var r=parseFloat(b.dataset.r);
         $('#hpRadiusPanel').querySelectorAll('button').forEach(function(x){x.classList.remove('active')});
         if(r){b.classList.add('active');applyRadius(r);}
         else clearRadius();
@@ -3589,9 +3583,9 @@ function cookieConsent(choice){
   if(document.readyState!=='loading')injectControls();
   else document.addEventListener('DOMContentLoaded',injectControls);
 })();
-@keyframes fade-in-down{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 /* /SPRINT 12 HOMEPAGE MAP ENHANCEMENT */
 </script>
+<style>@keyframes fade-in-down{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}</style>
 
 <style>
 /* ─── SPRINT 13 MAP PRO ─── */
@@ -3670,12 +3664,7 @@ function cookieConsent(choice){
     try{
       var cached=localStorage.getItem('mp_geo');
       if(cached){var c=JSON.parse(cached);if(Date.now()-c.t<86400000){userLoc=c.loc;return}}
-      if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(function(p){
-          userLoc={lat:p.coords.latitude,lng:p.coords.longitude};
-          localStorage.setItem('mp_geo',JSON.stringify({loc:userLoc,t:Date.now()}));
-        },function(){},{timeout:5000,maximumAge:86400000});
-      }
+      // Auto-prompt de ubicación eliminado: la ubicación solo se pide al pulsar "Cerca de mí" / "Near Me".
     }catch(e){}
   }
   tryGetLocation();
@@ -3732,7 +3721,7 @@ function cookieConsent(choice){
     }
     var cnt=compareList.length;
     document.getElementById('mpCmpCount').textContent=cnt;
-    if(cnt>=2)bar.classList.add('show');
+    if(cnt>=1)bar.classList.add('show');
     else bar.classList.remove('show');
   }
   function showCompareModal(){
@@ -4117,16 +4106,38 @@ function cookieConsent(choice){
   
   // Top categorías más comunes según datos
   var CAT_DISPLAY={
-    jetski:{label:'Jet Ski',emoji:'🛥️'},
-    boat:{label:'Boat',emoji:'⛵'},
-    snorkel:{label:'Snorkel',emoji:'🤿'},
-    fishing:{label:'Fishing',emoji:'🎣'},
-    yacht:{label:'Yacht',emoji:'🛳️'},
     tour:{label:'Tour',emoji:'🚌'},
-    sunset:{label:'Sunset',emoji:'🌅'},
+    boat:{label:'Boat',emoji:'⛵'},
+    bikerental:{label:'Bike & E-Ride',emoji:'🚲'},
+    kayak:{label:'Kayak & SUP',emoji:'🛶'},
+    fishing:{label:'Fishing',emoji:'🎣'},
+    shuttle:{label:'Shuttle & Transfer',emoji:'🚐'},
+    walking_tour:{label:'Walking Tour',emoji:'🚶'},
+    ghost:{label:'Ghost & Haunted',emoji:'👻'},
+    culinary:{label:'Food & Wine',emoji:'🍷'},
+    airboat:{label:'Airboat',emoji:'🐊'},
+    yacht:{label:'Yacht',emoji:'🛳️'},
     watersports:{label:'Water Sports',emoji:'🏄'},
+    hotel:{label:'Hotel & Rooms',emoji:'🏨'},
+    aerial:{label:'Aerial Tour',emoji:'✈️'},
+    sunset:{label:'Sunset',emoji:'🌅'},
+    jetski:{label:'Jet Ski',emoji:'🛥️'},
+    snorkel:{label:'Snorkel',emoji:'🤿'},
+    golfcart:{label:'Golf Cart',emoji:'🛺'},
+    jetcar:{label:'Jet Car',emoji:'🚗'},
+    slingshot:{label:'Slingshot',emoji:'🏎️'},
     atv:{label:'ATV',emoji:'🏍️'},
-    aerial:{label:'Aerial',emoji:'✈️'}
+    wildlife:{label:'Whale & Wildlife',emoji:'🐋'},
+    zipline:{label:'Zipline',emoji:'🪢'},
+    mayan_cenote:{label:'Mayan & Cenote',emoji:'🏛️'},
+    golf:{label:'Golf',emoji:'⛳'},
+    nightlife:{label:'Nightlife',emoji:'🍸'},
+    themepark:{label:'Theme Park',emoji:'🎢'},
+    segway:{label:'Segway',emoji:'🛴'},
+    lei:{label:'Lei Greeting',emoji:'🌺'},
+    exotic:{label:'Exotic Cars',emoji:'💎'},
+    villa:{label:'Villa',emoji:'🏡'},
+    flowers:{label:'Bloom Bar',emoji:'💐'}
   };
   
   function injectCatChips(){
@@ -4139,7 +4150,7 @@ function cookieConsent(choice){
     ops.forEach(function(o){if(o.cat){catCounts[o.cat]=(catCounts[o.cat]||0)+1}});
     
     // Solo mostrar cats con al menos 3 ops, ordenados por count
-    var topCats=Object.keys(catCounts).filter(function(c){return catCounts[c]>=3&&CAT_DISPLAY[c]}).sort(function(a,b){return catCounts[b]-catCounts[a]}).slice(0,8);
+    var topCats=Object.keys(catCounts).filter(function(c){return catCounts[c]>=1&&CAT_DISPLAY[c]}).sort(function(a,b){return catCounts[b]-catCounts[a]});
     
     if(!topCats.length)return; // No mostrar si no hay cats
     
@@ -4189,38 +4200,23 @@ function cookieConsent(choice){
   }
   
   function applyMapCatFilter(){
+    var cat=selectedCats.size>0?Array.from(selectedCats)[0]:'all';
     var ops=getOpsLocal();
-    var cluster=window.markerCluster||window.mapClusterGroup;
-    if(!cluster)return;
-    
-    cluster.clearLayers();
-    
-    var filtered=ops.filter(function(o){
-      if(!o.lat||!o.lng)return false;
-      if(selectedCats.size===0)return true; // sin filter = todos
-      return selectedCats.has(o.cat);
-    });
-    
-    // Inyectar markers con makeMarker si existe, sino crear inline simple
-    var mkFn=window.makeMarker;
-    if(mkFn){
-      filtered.forEach(function(o){
-        try{cluster.addLayer(mkFn(o))}catch(e){}
-      });
-    } else if(window.refreshMarkers){
-      // Fallback: usar refreshMarkers — pero respeta activeCat global, no nuestro filter
-      // Workaround: temporalmente cambiar window.allOps a filtered
-      var origAllOps=window.allOps;
-      window.allOps=filtered;
-      window.refreshMarkers();
-      window.allOps=origAllOps;
+    // Route through the homepage's own pipeline: sets activeCat + re-renders cards
+    if(typeof filterCat==='function'){
+      var tab=[].slice.call(document.querySelectorAll('.cat-tab')).filter(function(t){return (t.getAttribute('onclick')||'').indexOf("'"+cat+"'")>=0||t.dataset.cat===cat;})[0];
+      filterCat(cat, tab||document.createElement('button'));
     }
-    
-    // Update visible count
+    // Immediate map update (don't wait for requestAnimationFrame, which is throttled in background tabs)
+    if(typeof updateMapMarkers==='function'){
+      var filtered=(cat==='all')?ops.filter(function(o){return o.lat&&o.lng}):ops.filter(function(o){return o.lat&&o.lng&&o.cat===cat});
+      updateMapMarkers(filtered);
+    }
+    // Update visible count (only meaningful when a category is selected)
     var vc=document.getElementById('mapVisibleCount')||document.getElementById('hpVisibleCount');
-    if(vc){
-      var label=selectedCats.size>0?' filtered':' in view';
-      vc.innerHTML='<strong>'+filtered.length+'</strong> operator'+(filtered.length===1?'':'s')+label;
+    if(vc&&selectedCats.size>0){
+      var n=ops.filter(function(o){return o.lat&&o.lng&&o.cat===cat}).length;
+      vc.innerHTML='<strong>'+n+'</strong> operator'+(n===1?'':'s')+' filtered';
     }
   }
   

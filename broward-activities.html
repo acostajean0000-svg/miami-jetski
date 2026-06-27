@@ -549,6 +549,7 @@ function initMap(){
     try{window.makeMarker = makeMarker;}catch(e){}
     try{window.refreshMarkers = refreshMarkers;}catch(e){}
     mapInstance.addLayer(markerCluster);
+    mapInstance.on('click',function(){try{if(typeof _focusedOpId!=='undefined'&&_focusedOpId){_focusedOpId=null;if(typeof _soloMarker!=='undefined'&&_soloMarker){mapInstance.removeLayer(_soloMarker);_soloMarker=null;}if(typeof clearAllActivePins==='function')clearAllActivePins();if(typeof refreshMarkers==='function')refreshMarkers();var _b=document.getElementById('showAllBtn');if(_b)_b.style.display='none';}}catch(e){}});
     refreshMarkers();
   });
 }
@@ -1088,7 +1089,7 @@ document.head.appendChild(styleEl);
 .map-control-btn:hover{background:rgba(0,210,255,.15);border-color:#00d2ff}
 .map-control-btn.active{background:#00d2ff;color:#040d1a;border-color:#00d2ff}
 
-.map-radius-panel{position:absolute;top:64px;right:14px;background:rgba(4,13,26,.95);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.4);border-radius:50px;padding:6px;display:none;gap:4px;z-index:700;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.map-radius-panel{position:absolute;top:64px;right:14px;background:rgba(4,13,26,.95);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.4);border-radius:16px;padding:6px;display:none;gap:4px;flex-wrap:wrap;max-width:212px;justify-content:flex-end;z-index:700;box-shadow:0 4px 12px rgba(0,0,0,.4)}
 .map-radius-panel.show{display:flex;animation:fade-in-down .25s}
 .map-radius-panel button{background:transparent;border:0;color:#e8f4fd;padding:7px 14px;border-radius:50px;font-size:.74rem;font-weight:700;cursor:pointer;transition:.2s}
 .map-radius-panel button:hover{background:rgba(0,210,255,.1)}
@@ -1146,7 +1147,7 @@ document.head.appendChild(styleEl);
     var rp=document.createElement('div');
     rp.className='map-radius-panel';
     rp.id='mapRadiusPanel';
-    rp.innerHTML='<button data-r="3">3 mi</button><button data-r="6">6 mi</button><button data-r="10">10 mi</button><button data-r="15">15 mi</button><button data-r="0">Off</button>';
+    rp.innerHTML='<button data-r="0.047348">250 ft</button><button data-r="0.094697">500 ft</button><button data-r="0.189394">1,000 ft</button><button data-r="0.284091">1,500 ft</button><button data-r="0.473485">2,500 ft</button><button data-r="0.757576">4,000 ft</button><button data-r="0">Off</button>';
     wrap.appendChild(rp);
     
     // Search area button
@@ -1175,7 +1176,7 @@ document.head.appendChild(styleEl);
     // Radius buttons
     $('#mapRadiusPanel').querySelectorAll('button').forEach(function(b){
       b.onclick=function(){
-        var r=parseInt(b.dataset.r);
+        var r=parseFloat(b.dataset.r);
         $('#mapRadiusPanel').querySelectorAll('button').forEach(function(x){x.classList.remove('active')});
         if(r){b.classList.add('active');applyRadius(r);}
         else clearRadius();
@@ -1294,11 +1295,14 @@ document.head.appendChild(styleEl);
       var d=haversine(c.lat,c.lng,o.lat,o.lng);
       return d<=radiusKm*1.60934;
     });
-    // Update marker cluster
-    if(window.markerCluster){
-      markerCluster.clearLayers();
+    // Update marker cluster (reusa marcadores ya construidos; fallback a makeMarker)
+    var __cl=window.markerCluster||window.mapClusterGroup;
+    if(__cl){
+      __cl.clearLayers();
+      var __by=window._markersById||{};
       filtered.forEach(function(o){
-        if(window.makeMarker)markerCluster.addLayer(window.makeMarker(o));
+        var __m=__by[o.id]||(window.makeMarker?window.makeMarker(o):null);
+        if(__m)__cl.addLayer(__m);
       });
     }
     updateVisibleCount(filtered.length);
@@ -1351,9 +1355,9 @@ document.head.appendChild(styleEl);
   if(document.readyState!=='loading')injectControls();
   else document.addEventListener('DOMContentLoaded',injectControls);
 })();
-@keyframes fade-in-down{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}
 /* /SPRINT 12 MAP ENHANCEMENT */
 </script>
+<style>@keyframes fade-in-down{from{opacity:0;transform:translateY(-8px)}to{opacity:1;transform:translateY(0)}}</style>
 
 <style>
 /* ─── SPRINT 13 MAP PRO ─── */
@@ -1388,6 +1392,7 @@ document.head.appendChild(styleEl);
 .mp-popup-rating{color:#ffa500;font-weight:700}
 .mp-popup-price{color:#0066cc;font-weight:800}
 .mp-popup-distance{font-size:.74rem;color:#5a7896;margin-bottom:8px;display:flex;align-items:center;gap:4px}
+.mp-popup-tags{font-size:.72rem;color:#5a7896;margin:2px 0 6px;line-height:1.35}
 .mp-popup-actions{display:flex;gap:6px;margin-top:8px}
 .mp-popup-btn{flex:1;background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#040d1a;padding:8px;border-radius:8px;text-align:center;font-weight:800;font-size:.78rem;text-decoration:none;border:0;cursor:pointer;display:inline-flex;align-items:center;justify-content:center;gap:4px}
 .mp-popup-btn.secondary{background:rgba(0,102,204,.08);color:#0066cc;border:1px solid rgba(0,102,204,.3)}
@@ -1432,12 +1437,7 @@ document.head.appendChild(styleEl);
     try{
       var cached=localStorage.getItem('mp_geo');
       if(cached){var c=JSON.parse(cached);if(Date.now()-c.t<86400000){userLoc=c.loc;return}}
-      if(navigator.geolocation){
-        navigator.geolocation.getCurrentPosition(function(p){
-          userLoc={lat:p.coords.latitude,lng:p.coords.longitude};
-          localStorage.setItem('mp_geo',JSON.stringify({loc:userLoc,t:Date.now()}));
-        },function(){},{timeout:5000,maximumAge:86400000});
-      }
+      // Auto-prompt de ubicación eliminado: la ubicación solo se pide al pulsar "Cerca de mí" / "Near Me".
     }catch(e){}
   }
   tryGetLocation();
@@ -1494,7 +1494,7 @@ document.head.appendChild(styleEl);
     }
     var cnt=compareList.length;
     document.getElementById('mpCmpCount').textContent=cnt;
-    if(cnt>=2)bar.classList.add('show');
+    if(cnt>=1)bar.classList.add('show');
     else bar.classList.remove('show');
   }
   function showCompareModal(){
@@ -1808,7 +1808,7 @@ document.head.appendChild(styleEl);
       
       var photo=op.photo&&op.photo.includes('http')?op.photo:(op.photo?'https://cdn.filestackcontent.com/'+op.photo+'/convert?w=400&format=webp&quality=80':'');
       var slug=getSlug(op);
-      var distance=userLoc&&op.lat?haversineMi(userLoc.lat,userLoc.lng,op.lat,op.lng).toFixed(1)+' mi away':'';
+      var __ll=userLoc||(window.mapInstance&&window.mapInstance.getCenter?window.mapInstance.getCenter():null);var __dmi=(__ll&&op.lat&&typeof haversineMi==='function')?haversineMi(__ll.lat,__ll.lng,op.lat,op.lng):null;var distance=(__dmi!=null)?('~'+Math.max(1,Math.round(__dmi*20))+' min walk · '+__dmi.toFixed(1)+' mi'):'';
       var fav=isFav(op.id);
       var directionsUrl='https://www.google.com/maps/dir/?api=1&destination='+op.lat+','+op.lng;
       
@@ -1817,12 +1817,13 @@ document.head.appendChild(styleEl);
         '<div class="mp-popup-body">'+
         '<div class="mp-popup-name">'+(op.name||'').slice(0,80)+'</div>'+
         '<div class="mp-popup-meta"><span class="mp-popup-rating">⭐ '+(op.rating||'4.7')+' ('+(op.reviews||'100')+'+)</span><span class="mp-popup-price">$'+(op.price||'50')+'+</span></div>'+
-        (distance?'<div class="mp-popup-distance">📏 '+distance+'</div>':'')+
+        ((function(){var t=[];var em=(window.CAT_EMOJI&&window.CAT_EMOJI[op.cat])||'';if(op.badge)t.push((em?em+' ':'')+op.badge);if(op.zl)t.push('📍 '+op.zl);if(op.pax)t.push('👥 up to '+op.pax);return t.length?'<div class="mp-popup-tags">'+t.join(' · ')+'</div>':'';})())+(distance?'<div class="mp-popup-distance">📍 '+distance+'</div>':'')+
         '<div class="mp-popup-actions">'+
-        '<a href="/'+slug+'" class="mp-popup-btn">View Details</a>'+
+        ((op.link&&op.link.indexOf('http')===0)?'<a href="'+op.link+'" target="_blank" rel="noopener" class="mp-popup-btn">⚡ Book Now</a>':'<a href="/'+slug+'" class="mp-popup-btn">View Details</a>')+
         '<a href="'+directionsUrl+'" target="_blank" rel="noopener" class="mp-popup-btn secondary" onclick="if(window.gtag)gtag(\'event\',\'map_directions\',{op_id:\''+op.id+'\'})">🧭</a>'+
         '<button class="mp-popup-btn fav '+(fav?'active':'')+'" onclick="this.classList.toggle(\'active\');window.MPtoggle(\''+op.id+'\');if(!this.classList.contains(\'active\'))this.style.color=\'\'">'+(fav?'❤️':'🤍')+'</button>'+
         '</div>'+
+        '<a href="/'+slug+'" class="mp-popup-btn secondary" style="width:100%;margin-top:6px">View Details</a>'+
         '<button class="mp-popup-btn secondary" style="width:100%;margin-top:8px" onclick="window.MPcompare(\''+op.id+'\')">+ Add to Compare</button>'+
         '</div></div>';
       
@@ -1879,16 +1880,29 @@ document.head.appendChild(styleEl);
   
   // Top categorías más comunes según datos
   var CAT_DISPLAY={
-    jetski:{label:'Jet Ski',emoji:'🛥️'},
     boat:{label:'Boat',emoji:'⛵'},
+    tour:{label:'Tour',emoji:'🚌'},
+    watersports:{label:'Water Sports',emoji:'🏄'},
+    bikerental:{label:'Bike & E-Ride',emoji:'🚲'},
+    exotic:{label:'Exotic Cars',emoji:'💎'},
+    atv:{label:'ATV',emoji:'🏍️'},
+    yacht:{label:'Yacht',emoji:'🛳️'},
+    jetski:{label:'Jet Ski',emoji:'🛥️'},
+    segway:{label:'Segway',emoji:'🛴'},
+    airboat:{label:'Airboat',emoji:'🐊'},
     snorkel:{label:'Snorkel',emoji:'🤿'},
     fishing:{label:'Fishing',emoji:'🎣'},
-    yacht:{label:'Yacht',emoji:'🛳️'},
-    tour:{label:'Tour',emoji:'🚌'},
+    villa:{label:'Villa',emoji:'🏡'},
+    walking_tour:{label:'Walking Tour',emoji:'🚶'},
+    culinary:{label:'Food & Wine',emoji:'🍷'},
+    aerial:{label:'Aerial Tour',emoji:'✈️'},
     sunset:{label:'Sunset',emoji:'🌅'},
-    watersports:{label:'Water Sports',emoji:'🏄'},
-    atv:{label:'ATV',emoji:'🏍️'},
-    aerial:{label:'Aerial',emoji:'✈️'}
+    slingshot:{label:'Slingshot',emoji:'🏎️'},
+    golfcart:{label:'Golf Cart',emoji:'🛺'},
+    nightlife:{label:'Nightlife',emoji:'🍸'},
+    jetcar:{label:'Jet Car',emoji:'🚗'},
+    wildlife:{label:'Wildlife',emoji:'🐋'},
+    flowers:{label:'Bloom Bar',emoji:'💐'}
   };
   
   function injectCatChips(){
@@ -1901,7 +1915,7 @@ document.head.appendChild(styleEl);
     ops.forEach(function(o){if(o.cat){catCounts[o.cat]=(catCounts[o.cat]||0)+1}});
     
     // Solo mostrar cats con al menos 3 ops, ordenados por count
-    var topCats=Object.keys(catCounts).filter(function(c){return catCounts[c]>=3&&CAT_DISPLAY[c]}).sort(function(a,b){return catCounts[b]-catCounts[a]}).slice(0,8);
+    var topCats=Object.keys(catCounts).filter(function(c){return catCounts[c]>=1&&CAT_DISPLAY[c]}).sort(function(a,b){return catCounts[b]-catCounts[a]});
     
     if(!topCats.length)return; // No mostrar si no hay cats
     
@@ -1936,7 +1950,7 @@ document.head.appendChild(styleEl);
           if(selectedCats.size>0)clearBtn.classList.add('show');
           else clearBtn.classList.remove('show');
         }
-        applyMapCatFilter();
+        triggerMainCat(selectedCats.size>0?cat:'all');
         if(window.gtag)gtag('event','map_cat_chip_select',{cat:cat,active:selectedCats.has(cat)});
       };
     });
@@ -1945,11 +1959,19 @@ document.head.appendChild(styleEl);
       selectedCats.clear();
       bar.querySelectorAll('.mp-cat-chip').forEach(function(c){c.classList.remove('active')});
       this.classList.remove('show');
-      applyMapCatFilter();
+      triggerMainCat('all');
       if(window.gtag)gtag('event','map_cat_chips_clear');
     };
   }
   
+  function triggerMainCat(cat){
+    // Reuse the proven main #filters handler (sets activeCat + render + refreshMarkers)
+    var mainChip=document.querySelector('#filters .cat-chip[data-cat="'+cat+'"]');
+    if(mainChip){mainChip.click();return;}
+    // Fallback to globals if the main row isn't present
+    window.activeCat=cat;
+    if(typeof window.refreshMarkers==='function')window.refreshMarkers();
+  }
   function applyMapCatFilter(){
     var ops=getOpsLocal();
     var cluster=window.markerCluster||window.mapClusterGroup;
@@ -2158,5 +2180,27 @@ document.head.appendChild(styleEl);
   .mp-cat-chips{padding-bottom:0}
 }
 </style>
+
+<script>/* persist+share category state */
+(function(){
+  document.addEventListener('click',function(e){
+    var c=e.target.closest&&e.target.closest('#filters .cat-chip');
+    if(!c)return;
+    try{var cat=c.dataset.cat;
+      if(cat&&cat!=='all'){localStorage.setItem('mp_cat',cat);history.replaceState(null,'',location.pathname+'?cat='+encodeURIComponent(cat));}
+      else{localStorage.removeItem('mp_cat');history.replaceState(null,'',location.pathname);}
+    }catch(_){}
+  });
+  var applied=false;
+  function apply(){
+    if(applied)return; if(!(window.allOps&&window.allOps.length))return;
+    applied=true;
+    var saved=null;try{saved=new URLSearchParams(location.search).get('cat')||localStorage.getItem('mp_cat');}catch(_){}
+    if(saved&&saved!=='all'){var chip=document.querySelector('#filters .cat-chip[data-cat="'+saved+'"]');if(chip)chip.click();}
+  }
+  var iv=setInterval(function(){apply();if(applied)clearInterval(iv);},300);
+  setTimeout(function(){clearInterval(iv);},15000);
+})();
+</script>
 </body>
 </html>

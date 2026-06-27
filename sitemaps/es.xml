@@ -98,14 +98,6 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/galveston-activities"/>
   </url>
   <url>
-    <loc>https://miamijetskiboatrentals.com/es/gulf-activities</loc>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-    <xhtml:link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/gulf-activities"/>
-    <xhtml:link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/gulf-activities"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/gulf-activities"/>
-  </url>
-  <url>
     <loc>https://miamijetskiboatrentals.com/es/hawaii-activities</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
