@@ -298,6 +298,15 @@ window._expandOp=function(o){if(o.link&&!o.link.startsWith('http')&&o.link.inclu
     .map-popup-name{font-family:'Montserrat',sans-serif;font-size:.95rem;font-weight:800;margin-bottom:6px;line-height:1.3;color:#0a1e36;padding-right:20px;}
     .map-popup-price{font-family:'Montserrat',sans-serif;font-size:1.3rem;font-weight:900;color:#00c4b8;margin-bottom:14px;}
     .map-popup-btn{display:block;text-align:center;background:#00d4c8;color:#081525;padding:11px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:800;letter-spacing:.3px;text-decoration:none;transition:background .2s,box-shadow .2s;}
+.op-marker.is-toppick{z-index:1000 !important;overflow:visible}
+.tp-wrap{position:relative;width:58px;height:58px}
+.tp-wrap::before{content:"";position:absolute;top:3px;left:3px;width:52px;height:52px;border-radius:50%;border:2px solid #ffc107;animation:tp-pulse 2s ease-out infinite;pointer-events:none}
+@keyframes tp-pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+.tp-photo{width:54px;height:54px;border-radius:50%;background-position:center;background-size:cover;background-color:#fff;border:3px solid #ffc107;box-shadow:0 4px 16px rgba(255,193,7,.65);position:absolute;top:2px;left:2px}
+.tp-circle{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#ffc107,#ff9800);display:flex;align-items:center;justify-content:center;font-size:22px;border:2px solid #fff;box-shadow:0 4px 16px rgba(255,193,7,.65);position:absolute;top:4px;left:4px}
+.tp-emoji{position:absolute;bottom:2px;right:0;background:#ffc107;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;border:2px solid #040d1a}
+.tp-crown{position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-size:16px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6));z-index:2}
+.tp-ribbon{position:absolute;bottom:-13px;left:50%;transform:translateX(-50%);background:#ffc107;color:#040d1a;font-size:8px;font-weight:800;letter-spacing:.4px;padding:1px 6px;border-radius:6px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.45)}
     .map-popup-btn:hover{background:#00eedd;box-shadow:0 4px 18px rgba(0,212,200,.45);}
     .map-popup-details{display:block;text-align:center;border:1.5px solid #d0dde8;color:#4a6a85;padding:9px 20px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;margin-top:8px;transition:border-color .2s,color .2s;}
     .map-popup-details:hover{border-color:#00d4c8;color:#00c4b8;}
@@ -2269,6 +2278,24 @@ function updateMapMarkers(visibleOps) {
   Object.keys(markers).forEach(id => {
     if(!showIds.has(id) && _hasMarkerInLayer(markers[id])) _removeMarkerFromLayer(markers[id]);
   });
+  // ── TOP PICK: resalta el mejor operador visible (rating × reseñas) ──
+  (function(){try{
+    var best=null,bs=-1;
+    _showList.forEach(function(o){var rt=parseFloat(o.rating)||0;if(!rt)return;var s=rt*Math.log10((parseFloat(o.reviews)||0)+1);if(s>bs){bs=s;best=o;}});
+    // Restaurar el pin del top pick anterior si cambió
+    if(window._homeTopPickId && (!best || window._homeTopPickId!==best.id) && markers[window._homeTopPickId]){
+      var prev=allOperators.find(function(o){return o.id===window._homeTopPickId;});
+      if(prev) markers[window._homeTopPickId].setIcon(_opIcon(prev, window._homeTopPickId===selectedMarkerId));
+    }
+    window._homeTopPickId = best?best.id:null;
+    if(!best) return;
+    var mk=markers[best.id]; if(!mk) return;
+    var em=(typeof catEmoji!=='undefined'&&catEmoji[best.cat])||'🌊';
+    var ph=best.photo?thumbUrl(best.photo):'';
+    var h=ph?'<div class="tp-wrap"><div class="tp-crown">👑</div><div class="tp-photo" style="background-image:url(\''+ph+'\')"></div><div class="tp-emoji">'+em+'</div><div class="tp-ribbon">TOP PICK</div></div>':'<div class="tp-wrap"><div class="tp-crown">👑</div><div class="tp-circle">'+em+'</div><div class="tp-ribbon">TOP PICK</div></div>';
+    mk.setIcon(L.divIcon({className:'op-marker is-toppick',html:h,iconSize:[58,58],iconAnchor:[29,29],popupAnchor:[0,-32]}));
+    if(mk.setZIndexOffset) mk.setZIndexOffset(1000);
+  }catch(e){}})();
   // Fit bounds solo si no hay un marker seleccionado
   if (!selectedMarkerId) {
     const focusOps = isDefaultView

@@ -544,23 +544,12 @@ function makeMarker(op){
   const slug = slugMap[op.id] || '';
   const href = '/' + (slug || (op.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)+'-'+(op.zone||''));
   const emoji = CAT_EMOJI[op.cat] || '🌊';
-  const isTop = op.id === window._topPickId;
-  const ratingLine = op.rating ? '<div class="pp-rating">⭐ '+op.rating+(op.reviews?' · '+op.reviews+' reviews':'')+'</div>' : '';
-  const topLine = isTop ? '<div class="pp-toppick">👑 TOP PICK</div>' : '';
-  const popup = `<div>${topLine}<div class="pp-cat">${esc(CAT_LABELS[op.cat]||'')}</div><a href="${esc(href)}"><strong>${esc(op.name).slice(0,60)}</strong></a>${ratingLine}<div class="pp-price">${op.price?'From $'+op.price:''}</div></div>`;
+  const popup = `<div><div class="pp-cat">${esc(CAT_LABELS[op.cat]||'')}</div><a href="${esc(href)}"><strong>${esc(op.name).slice(0,60)}</strong></a><div class="pp-price">${op.price?'From $'+op.price:''}</div></div>`;
   const photo = op.photo ? thumbUrl(op.photo) : '';
-  let iconHtml, cls='op-marker', sz=44, anc=22;
-  if(isTop){
-    cls='op-marker is-toppick'; sz=56; anc=28;
-    iconHtml = photo
-      ? '<div class="tp-wrap"><div class="tp-crown">👑</div><div class="tp-photo" style="background-image:url(\''+photo+'\')"></div><div class="tp-emoji">'+emoji+'</div><div class="tp-ribbon">TOP PICK</div></div>'
-      : '<div class="tp-wrap"><div class="tp-crown">👑</div><div class="tp-circle">'+emoji+'</div><div class="tp-ribbon">TOP PICK</div></div>';
-  } else {
-    iconHtml = photo
-      ? '<div style="position:relative"><div style="width:44px;height:44px;border-radius:50%;background:#fff url(\''+photo+'\') center/cover;box-shadow:0 3px 10px rgba(0,0,0,.5);border:3px solid #00d2ff"></div><div style="position:absolute;bottom:-3px;right:-3px;background:#00d2ff;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;border:2px solid #040d1a">'+emoji+'</div></div>'
-      : '<div style="background:linear-gradient(135deg,#00d2ff,#5e9eff);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(0,0,0,.4);border:2px solid #fff;font-size:18px">'+emoji+'</div>';
-  }
-  const icon = L.divIcon({ html: iconHtml, className: cls, iconSize:[sz,sz], iconAnchor:[anc,anc], popupAnchor:[0,-anc] });
+  const iconHtml = photo
+    ? '<div style="position:relative"><div style="width:44px;height:44px;border-radius:50%;background:#fff url(\''+photo+'\') center/cover;box-shadow:0 3px 10px rgba(0,0,0,.5);border:3px solid #00d2ff"></div><div style="position:absolute;bottom:-3px;right:-3px;background:#00d2ff;width:18px;height:18px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;border:2px solid #040d1a">'+emoji+'</div></div>'
+    : '<div style="background:linear-gradient(135deg,#00d2ff,#5e9eff);width:38px;height:38px;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 3px 8px rgba(0,0,0,.4);border:2px solid #fff;font-size:18px">'+emoji+'</div>';
+  const icon = L.divIcon({ html: iconHtml, className: 'op-marker', iconSize:[44,44], iconAnchor:[22,22], popupAnchor:[0,-22] });
   const m = L.marker([op.lat, op.lng], {icon}).bindPopup(popup);
   m._opId = op.id;
   m.on('click', function(){ focusOperator(op.id); });
@@ -573,22 +562,13 @@ function refreshMarkers(){
   window._markersById = {};
   clearAllActivePins();
   const list = allOps.filter(o => (activeCat==='all' || o.cat===activeCat) && o.lat && o.lng);
-  // Top Pick: mejor operador visible por rating ponderado con nº de reseñas (desempate: más reseñas)
-  window._topPickId = (function(){
-    let best=null, bs=-1;
-    list.forEach(function(o){
-      if(!o.rating) return;
-      var s = o.rating * Math.log10((o.reviews||0)+1);
-      if(s>bs || (s===bs && (o.reviews||0) > ((best&&best.reviews)||0))){ bs=s; best=o; }
-    });
-    return best ? best.id : null;
-  })();
   const markers = list.map(op => {
     const m = makeMarker(op);
     window._markersById[op.id] = m;
     return m;
   });
   markerCluster.addLayers(markers);
+  /* TOPPICK */(function(){try{var bp=null,bs=-1;list.forEach(function(o){if(!o.rating)return;var s=o.rating*Math.log10((o.reviews||0)+1);if(s>bs){bs=s;bp=o;}});if(!bp)return;var mk=window._markersById[bp.id];if(!mk)return;var em=(window.CAT_EMOJI&&window.CAT_EMOJI[bp.cat])||"🌊";var ph=bp.photo&&typeof thumbUrl==="function"?thumbUrl(bp.photo):"";var h=ph?'<div class="tp-wrap"><div class="tp-crown">👑</div><div class="tp-photo" style="background-image:url(\''+ph+'\')"></div><div class="tp-emoji">'+em+'</div><div class="tp-ribbon">TOP PICK</div></div>':'<div class="tp-wrap"><div class="tp-crown">👑</div><div class="tp-circle">'+em+'</div><div class="tp-ribbon">TOP PICK</div></div>';mk.setIcon(L.divIcon({html:h,className:"op-marker is-toppick",iconSize:[56,56],iconAnchor:[28,28],popupAnchor:[0,-28]}));mk.setZIndexOffset(1000);var pu=mk.getPopup();if(pu){var c=pu.getContent();var rl=bp.rating?'<div class="pp-rating">⭐ '+bp.rating+(bp.reviews?' · '+bp.reviews+' reviews':'')+'</div>':'';pu.setContent('<div class="pp-toppick">👑 TOP PICK</div>'+rl+(typeof c==="string"?c:""));}}catch(e){}})();
   // Mantener zoom actual al filtrar — solo fitBounds en initial load
 }
 

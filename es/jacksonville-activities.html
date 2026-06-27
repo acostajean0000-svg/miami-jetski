@@ -902,7 +902,7 @@ function setupFilters(){
     var m=L.marker([op.lat,op.lng],{icon}).bindPopup(popup); m._opId=op.id; return m;
   }
   window.makeMarker=mk;
-  function refreshMarkers(){ if(!markerCluster)return; markerCluster.clearLayers(); var ops=window.allOps||[]; var ac=window.activeCat||'all'; var list=ops.filter(function(o){return (ac==='all'||o.cat===ac)&&o.lat&&o.lng}); markerCluster.addLayers(list.map(mk)); }
+  function refreshMarkers(){ if(!markerCluster)return; markerCluster.clearLayers(); var ops=window.allOps||[]; var ac=window.activeCat||'all'; var list=ops.filter(function(o){return (ac==='all'||o.cat===ac)&&o.lat&&o.lng}); var ms=list.map(mk); (function(){try{var bi=-1,bs=-1;for(var i=0;i<list.length;i++){var o=list[i];var rt=parseFloat(o.rating)||0;if(!rt)continue;var sc=rt*Math.log10((parseFloat(o.reviews)||0)+1);if(sc>bs){bs=sc;bi=i;}}if(bi<0)return;var o=list[bi];var em=(window.CAT_EMOJI&&window.CAT_EMOJI[o.cat])||'🌊';var ph=o.photo&&typeof thumbUrl==='function'?thumbUrl(o.photo):'';var h=ph?'<div class="tp-wrap"><div class="tp-crown">👑</div><div class="tp-photo" style="background-image:url(\''+ph+'\')"></div><div class="tp-emoji">'+em+'</div><div class="tp-ribbon">TOP PICK</div></div>':'<div class="tp-wrap"><div class="tp-crown">👑</div><div class="tp-circle">'+em+'</div><div class="tp-ribbon">TOP PICK</div></div>';ms[bi].setIcon(L.divIcon({html:h,className:'op-marker is-toppick',iconSize:[56,56],iconAnchor:[28,28],popupAnchor:[0,-28]}));if(ms[bi].setZIndexOffset)ms[bi].setZIndexOffset(1000);}catch(e){}})(); markerCluster.addLayers(ms); }
   window.refreshMarkers=refreshMarkers;
   function initMap(){ if(mapInstance){refreshMarkers();return;} loadLeaflet(function(){ var sk=document.querySelector('.map-wrap-skeleton'); if(sk)sk.remove(); mapInstance=window.mapInstance=L.map('map',{zoomControl:true,scrollWheelZoom:false}).setView([30.3322,-81.6557],9); L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap © CARTO',maxZoom:18,subdomains:'abcd'}).addTo(mapInstance); markerCluster=window.markerCluster=L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:40,spiderfyOnMaxZoom:true,disableClusteringAtZoom:16}); mapInstance.addLayer(markerCluster);
     mapInstance.on('click',function(){try{if(typeof _focusedOpId!=='undefined'&&_focusedOpId){_focusedOpId=null;if(typeof _soloMarker!=='undefined'&&_soloMarker){mapInstance.removeLayer(_soloMarker);_soloMarker=null;}if(typeof clearAllActivePins==='function')clearAllActivePins();if(typeof refreshMarkers==='function')refreshMarkers();var _b=document.getElementById('showAllBtn');if(_b)_b.style.display='none';}}catch(e){}}); refreshMarkers(); }); }
@@ -920,6 +920,15 @@ function setupFilters(){
 <style>
 /* ─── SPRINT 12 MAP ENHANCEMENT ─── */
 .map-wrap{position:relative}
+.op-marker.is-toppick{z-index:1000 !important;overflow:visible}
+.tp-wrap{position:relative;width:56px;height:56px}
+.tp-wrap::before{content:"";position:absolute;top:2px;left:2px;width:52px;height:52px;border-radius:50%;border:2px solid #ffc107;animation:tp-pulse 2s ease-out infinite;pointer-events:none}
+@keyframes tp-pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}
+.tp-photo{width:52px;height:52px;border-radius:50%;background-position:center;background-size:cover;background-color:#fff;border:3px solid #ffc107;box-shadow:0 4px 16px rgba(255,193,7,.65);position:absolute;top:2px;left:2px}
+.tp-circle{width:48px;height:48px;border-radius:50%;background:linear-gradient(135deg,#ffc107,#ff9800);display:flex;align-items:center;justify-content:center;font-size:22px;border:2px solid #fff;box-shadow:0 4px 16px rgba(255,193,7,.65);position:absolute;top:4px;left:4px}
+.tp-emoji{position:absolute;bottom:2px;right:0;background:#ffc107;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;border:2px solid #040d1a}
+.tp-crown{position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-size:16px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6));z-index:2}
+.tp-ribbon{position:absolute;bottom:-13px;left:50%;transform:translateX(-50%);background:#ffc107;color:#040d1a;font-size:8px;font-weight:800;letter-spacing:.4px;padding:1px 6px;border-radius:6px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.45)}
 .map-controls-overlay{position:absolute;top:14px;right:14px;z-index:500;display:flex;flex-direction:column;gap:8px;pointer-events:none}
 .map-control-btn{background:rgba(4,13,26,.92);color:#e8f4fd;border:1px solid rgba(0,210,255,.4);border-radius:8px;padding:8px 12px;font-size:.78rem;font-weight:700;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(8px);box-shadow:0 4px 12px rgba(0,0,0,.4);pointer-events:auto;transition:.2s;white-space:nowrap}
 .map-control-btn:hover{background:rgba(0,210,255,.15);border-color:#00d2ff}
