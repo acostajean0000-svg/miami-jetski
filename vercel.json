@@ -4371,6 +4371,11 @@
       "source": "/cocoa-beach-catamaran-centralfl",
       "destination": "/central-florida-activities",
       "permanent": true
+    },
+    {
+      "source": "/punta-cana-tours-puntacana",
+      "destination": "/punta-cana-activities",
+      "permanent": true
     }
   ],
   "rewrites": [
