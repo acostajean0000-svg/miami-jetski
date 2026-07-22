@@ -206,7 +206,7 @@ function renderCards(list){
       '<div class="nm">'+esc(o.name).slice(0,70)+'</div>'+
       '<div class="loc">📍 '+esc(o.zl||'San Diego')+(o.pax?' · 👥 up to '+o.pax:'')+'</div>'+
       '<div class="row"><span class="rt">⭐ '+(o.rating||'4.6')+' ('+(o.reviews||'100')+'+)</span><span class="pr">$'+(o.price||100)+'</span></div>'+
-      '<a class="btn btn-book" href="'+esc(bookUrl(o))+'" target="_blank" rel="noopener" onclick="event.stopPropagation();if(window.gtag)gtag(\'event\',\'lp_book\',{op:\''+esc(o.id)+'\'})">⚡ Book Now →</a>'+
+      '<a class="btn btn-book" href="'+esc(bookUrl(o))+'" target="_blank" rel="noopener" onclick="event.stopPropagation();if(window.gtag)gtag(\'event\',\'lp_book\',{op:\''+esc(o.id)+'\',value:'+(o.price||100)+',currency:\'USD\'})">⚡ Book Now →</a>'+
       '</div></div>';
   }).join('');
   document.querySelectorAll('#cards .card').forEach(function(card){
@@ -231,11 +231,11 @@ function makePin(o){
     : '<div class="jet-pin"><span>🎣</span></div>';
   var icon=L.divIcon({className:'op-marker',html:pinHtml,iconSize:[54,54],iconAnchor:[27,27],popupAnchor:[0,-30]});
   var dir='https://www.google.com/maps/dir/?api=1&destination='+o.lat+','+o.lng;
-  var html='<div class="lp-pop">'+(o.photo?'<img src="'+esc(o.photo)+'" alt="">':'')+
+  var html='<div class="lp-pop">'+(o.photo?'<img src="'+esc(o.photo)+'" alt="" loading="lazy" decoding="async">':'')+
     '<div class="b"><div class="nm">'+esc(o.name).slice(0,70)+'</div>'+
     '<div class="meta"><span class="rt">⭐ '+(o.rating||'4.6')+' ('+(o.reviews||'100')+'+)</span><span class="pr">$'+(o.price||100)+'</span></div>'+
     '<div class="loc">📍 '+esc(o.zl||'San Diego')+(o.pax?' · 👥 up to '+o.pax:'')+'</div>'+
-    '<div class="acts"><a class="book" href="'+esc(bookUrl(o))+'" target="_blank" rel="noopener" onclick="if(window.gtag)gtag(\'event\',\'lp_book_pin\',{op:\''+esc(o.id)+'\'})">⚡ Book Now</a>'+
+    '<div class="acts"><a class="book" href="'+esc(bookUrl(o))+'" target="_blank" rel="noopener" onclick="if(window.gtag)gtag(\'event\',\'lp_book_pin\',{op:\''+esc(o.id)+'\',value:'+(o.price||100)+',currency:\'USD\'})">⚡ Book Now</a>'+
     '<a class="dir" href="'+dir+'" target="_blank" rel="noopener" title="Directions">🧭</a></div></div></div>';
   var m=L.marker([o.lat,o.lng],{icon:icon}).bindPopup(html,{minWidth:210,maxWidth:240});
   m._opId=o.id;markersById[o.id]=m;return m;
