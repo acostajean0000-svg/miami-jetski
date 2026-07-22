@@ -145,19 +145,19 @@
 <script>
 const CAT_KEY = "airboat";
 const FALLBACK_IMG = "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=900&q=80";
-function esc(s){{return String(s==null?'':s).replace(/[&<>"'`]/g,c=>({{"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"}})[c]);}}
+function esc(s){return String(s==null?'':s).replace(/[&<>"'`]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;","`":"&#96;"})[c]);}
 let allOps = [];
 let activeZone = 'all';
-function thumbUrl(u){{if(!u) return FALLBACK_IMG; if(u.includes('cdn.filestackcontent.com')){{return u.replace(/w=\d+/, 'w=480').replace(/quality=\d+/, 'quality=75');}} return u;}}
-function render(){{
-  const slugMap = (window._OP_SLUG_MAP) || {{}};
+function thumbUrl(u){if(!u) return FALLBACK_IMG; if(u.includes('cdn.filestackcontent.com')){return u.replace(/w=\d+/, 'w=480').replace(/quality=\d+/, 'quality=75');} return u;}
+function render(){
+  const slugMap = (window._OP_SLUG_MAP) || {};
   const list = allOps.filter(o => activeZone==='all' || o.zone === activeZone);
   const grid = document.getElementById('grid');
-  if (!list.length) {{
+  if (!list.length) {
     grid.innerHTML = '<div class="empty" style="grid-column:1/-1"><h2>No operators in this zone</h2><p>Try All Zones, or <a href="/" style="color:#3aa845">browse Florida</a>.</p></div>';
     return;
-  }}
-  grid.innerHTML = list.map((op,i) => {{
+  }
+  grid.innerHTML = list.map((op,i) => {
     const slug = slugMap[op.id] || '';
     const href = slug ? '/'+encodeURIComponent(slug) : (op.link || '#');
     const priceText = (op.price && op.price > 0) ? ('Desde $'+op.price) : 'Consultar precio';
@@ -169,29 +169,29 @@ function render(){{
         <div class="price">${priceText}</div>
       </div>
     </a>`;
-  }}).join('');
-}}
-function setupFilters(){{
-  document.querySelectorAll('.cat-chip').forEach(c => {{
-    c.addEventListener('click', () => {{
+  }).join('');
+}
+function setupFilters(){
+  document.querySelectorAll('.cat-chip').forEach(c => {
+    c.addEventListener('click', () => {
       document.querySelectorAll('.cat-chip').forEach(x => x.classList.remove('active'));
       c.classList.add('active');
       activeZone = c.dataset.zone;
       render();
-    }});
-  }});
-}}
-(async () => {{
-  try {{
+    });
+  });
+}
+(async () => {
+  try {
     const r = await fetch('/data/cat/airboat.json').catch(()=>null).then(x => (x && x.ok) ? x : fetch('/operators-slim.json'));
     const ops = await r.json();
     allOps = ops.filter(o => o.cat === CAT_KEY);
     setupFilters();
     render();
-  }} catch(e) {{
+  } catch(e) {
     document.getElementById('grid').innerHTML = '<div class="empty" style="grid-column:1/-1"><h2>No se pudo cargar la lista</h2><p><a href="/" style="color:#3aa845">Volver al inicio</a></p></div>';
-  }}
-}})();
+  }
+})();
 </script>
 <script>
 /* GA4 enhanced ecommerce — landing page */
