@@ -7,9 +7,9 @@
   <meta name="description" content="Compara 4,800+ operadores verificados de actividades acuáticas en Florida, Hawái, Cancún y Punta Cana — jet ski, yates, snorkel, charters, tours y más. ⭐ 4.8 estrellas. Reserva instantánea.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://miamijetskiboatrentals.com/es/">
-  <link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/">
+  
   <link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/">
-  <link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/">
+  
   <meta name="geo.region" content="US-FL">
   <meta name="geo.placename" content="Miami">
   <meta name="geo.position" content="25.7617;-80.1918">
@@ -79,11 +79,11 @@
   </script>
   <noscript></noscript>
   <!-- Leaflet — non-blocking, lazy init via IntersectionObserver -->
-  <link rel="preload" as="style" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"></noscript>
-  <link rel="preload" as="style" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css" onload="this.onload=null;this.rel='stylesheet'">
-  <link rel="preload" as="style" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css" onload="this.onload=null;this.rel='stylesheet'">
-  <noscript><link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.css"><link rel="stylesheet" href="https://unpkg.com/leaflet.markercluster@1.5.3/dist/MarkerCluster.Default.css"></noscript>
+  <link rel="preload" as="style" href="/vendor/leaflet/leaflet.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/vendor/leaflet/leaflet.css"></noscript>
+  <link rel="preload" as="style" href="/vendor/leaflet/MarkerCluster.css" onload="this.onload=null;this.rel='stylesheet'">
+  <link rel="preload" as="style" href="/vendor/leaflet/MarkerCluster.Default.css" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="/vendor/leaflet/MarkerCluster.css"><link rel="stylesheet" href="/vendor/leaflet/MarkerCluster.Default.css"></noscript>
   <style>
     .skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:-1;}
     .skip-link:focus{position:fixed;left:50%;transform:translateX(-50%);top:8px;width:auto;height:auto;padding:10px 22px;background:var(--teal);color:var(--dark);font-weight:700;border-radius:6px;z-index:9999;font-size:.9rem;}
@@ -2177,10 +2177,10 @@ function loadLeafletThenMapa() {
   if (leafletLoaded) return;
   leafletLoaded = true;
   const s1 = document.createElement('script');
-  s1.src = 'https://unpkg.com/leaflet@1.9.4/dist/leaflet.js';
+  s1.src = '/vendor/leaflet/leaflet.js';
   s1.onload = () => {
     const s2 = document.createElement('script');
-    s2.src = 'https://unpkg.com/leaflet.markercluster@1.5.3/dist/leaflet.markercluster.js';
+    s2.src = '/vendor/leaflet/leaflet.markercluster.js';
     s2.onload = () => {
       initMapa();
       if (allOperators.length) { buildMarkers(); updateMapaMarkers(currentOps); }
