@@ -5561,7 +5561,7 @@
       ]
     },
     {
-      "source": "/(operators(?:-slim)?\\.json|slug-map\\.js)",
+      "source": "/(operators(?:-slim|-top)?\\.json|slug-map\\.js)",
       "headers": [
         {
           "key": "Cache-Control",
