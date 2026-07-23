@@ -4376,6 +4376,16 @@
       "source": "/punta-cana-tours-puntacana",
       "destination": "/punta-cana-activities",
       "permanent": true
+    },
+    {
+      "source": "/havasu-activities",
+      "destination": "/lake-havasu-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lakemead-activities",
+      "destination": "/lake-mead-activities",
+      "permanent": true
     }
   ],
   "rewrites": [
