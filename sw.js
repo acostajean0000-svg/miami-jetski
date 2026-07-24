@@ -9,7 +9,7 @@
  * Versionado: incrementar CACHE_NAME al cambiar lógica para invalidar.
  */
 
-const CACHE_NAME = 'mjb-v1.0.7';
+const CACHE_NAME = 'mjb-v1.0.8';
 const STATIC_ASSETS = [
   '/',
   '/operator.css',
@@ -20,7 +20,7 @@ const STATIC_ASSETS = [
   '/offline.html'
 ];
 
-const RUNTIME_CACHE = 'mjb-runtime-v7';
+const RUNTIME_CACHE = 'mjb-runtime-v8';
 
 // Install: precache estáticos
 self.addEventListener('install', event => {
@@ -46,7 +46,7 @@ self.addEventListener('activate', event => {
     ).then(() => self.clients.claim()).then(() => {
       // Notificar a clients que el nuevo SW está activo
       return self.clients.matchAll().then(clients => {
-        clients.forEach(c => c.postMessage({type: 'SW_UPDATED', version: '1.0.5'}));
+        clients.forEach(c => c.postMessage({type: 'SW_UPDATED', version: '1.0.8'}));
       });
     })
   );
