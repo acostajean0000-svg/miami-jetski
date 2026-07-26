@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tours de Kayak en Seattle desde $55 | Reserva Online | FloridaWaterSports</title>
+<meta name="description" content="Reserva tours de kayak en Seattle desde $55. Compara 20 operadores verificados en un mapa en vivo por Seattle. Reserva online instantánea, cancelación gratis.">
+<meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1">
+<link rel="canonical" href="https://miamijetskiboatrentals.com/es/seattle-kayak-tours">
+<link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/seattle-kayak-tours">
+<link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/seattle-kayak-tours">
+<link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/seattle-kayak-tours">
+<link rel="preload" href="/data/seattle-kayak.json" as="fetch" type="application/json" crossorigin="anonymous"><meta name="geo.region" content="US-WA"><meta name="geo.placename" content="Seattle, Washington"><meta name="geo.position" content="47.6062;-122.3336"><meta name="ICBM" content="47.6062, -122.3336">
+<meta name="theme-color" content="#040d1a">
+<link rel="preconnect" href="https://fareharbor.com"><link rel="preconnect" href="https://cdn.filestackcontent.com"><link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossorigin>
+<meta property="og:type" content="website"><meta property="og:site_name" content="FloridaWaterSports"><meta property="og:locale" content="en_US">
+<meta property="og:url" content="https://miamijetskiboatrentals.com/es/seattle-kayak-tours"><meta property="og:title" content="Tours de Kayak en Seattle desde $55 — Reserva Online"><meta property="og:description" content="Reserva tours de kayak en Seattle desde $55. Compara 20 operadores verificados en un mapa en vivo por Seattle. Reserva online instantánea, cancelación gratis."><meta property="og:image" content="https://miamijetskiboatrentals.com/og/seattle-kayak-tours.png">
+<meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tours de Kayak en Seattle desde $55"><meta name="twitter:description" content="Reserva tours de kayak en Seattle desde $55. Compara 20 operadores verificados en un mapa en vivo por Seattle. Reserva online instantánea, cancelación gratis."><meta name="twitter:image" content="https://miamijetskiboatrentals.com/og/seattle-kayak-tours.png">
+<link href="/vendor/leaflet/leaflet.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="/vendor/leaflet/leaflet.css" rel="stylesheet"></noscript>
+<link href="/vendor/leaflet/MarkerCluster.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"><link href="/vendor/leaflet/MarkerCluster.Default.css" rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'"><noscript><link href="/vendor/leaflet/MarkerCluster.css" rel="stylesheet"><link href="/vendor/leaflet/MarkerCluster.Default.css" rel="stylesheet"></noscript>
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#040d1a;--bg2:#0a1726;--cyan:#00d2ff;--cyan2:#5e9eff;--ok:#10c876;--text:#e8f4fd;--muted:#7ba3c0}
+body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;background:var(--bg);color:var(--text);line-height:1.5;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 18px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-weight:800;border:0;border-radius:50px;cursor:pointer;transition:.15s;text-align:center}
+.btn-primary{background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#04121f;padding:15px 28px;font-size:1.05rem;box-shadow:0 8px 24px rgba(0,210,255,.35)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(0,210,255,.5)}
+.btn-ghost{background:rgba(255,255,255,.06);color:var(--text);border:1px solid rgba(0,210,255,.4);padding:14px 24px;font-size:1rem}
+.btn-book{background:linear-gradient(135deg,#10c876,#0a9d5d);color:#fff;padding:11px 18px;font-size:.9rem;width:100%;box-shadow:0 4px 14px rgba(16,200,118,.4)}
+.btn-book:hover{transform:translateY(-1px)}
+.topbar{position:sticky;top:0;z-index:1000;background:rgba(4,13,26,.92);backdrop-filter:blur(10px);border-bottom:1px solid rgba(0,210,255,.12)}
+.topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{font-weight:900;font-size:1.15rem;color:#fff}.logo span{color:var(--cyan)}
+.topbar .btn-primary{padding:9px 18px;font-size:.88rem}
+/* hero split */
+.hero{position:relative;overflow:hidden;background:radial-gradient(900px 460px at 70% -10%,rgba(0,210,255,.16),transparent 60%),linear-gradient(180deg,#06121f,#040d1a);padding:34px 0 40px}
+.hero-grid{display:grid;grid-template-columns:1.02fr 1.1fr;gap:32px;align-items:center}
+.hero-copy h1{font-size:2.6rem;font-weight:900;line-height:1.08;letter-spacing:-.5px;margin-bottom:14px}
+.hero-copy h1 .hl{background:linear-gradient(135deg,#00d2ff,#5e9eff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.hero-copy p.sub{font-size:1.15rem;color:#c4dcf0;margin-bottom:20px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.price-pill{display:inline-block;background:rgba(16,200,118,.15);border:1px solid rgba(16,200,118,.5);color:#3ee98f;font-weight:800;border-radius:50px;padding:5px 16px;font-size:.92rem;margin-bottom:14px}
+.trust{display:flex;gap:7px 18px;flex-wrap:wrap;font-size:.85rem;color:#cfe4f5;font-weight:600}
+.trust span{display:inline-flex;align-items:center;gap:6px}
+/* map panel */
+.map-panel{position:relative;border-radius:18px;overflow:hidden;border:1px solid rgba(0,210,255,.25);box-shadow:0 18px 50px rgba(0,0,0,.45)}
+#map{height:460px;background:#0a1428}
+.map-chips{position:absolute;top:12px;left:12px;right:62px;z-index:600;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none;padding-bottom:2px}
+.map-chips::-webkit-scrollbar{display:none}
+.map-chip{flex:0 0 auto;background:rgba(4,13,26,.9);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.35);color:#e8f4fd;font-weight:700;font-size:.76rem;padding:7px 13px;border-radius:50px;cursor:pointer;white-space:nowrap;transition:.15s}
+.map-chip.active{background:#00d2ff;color:#04121f;border-color:#00d2ff}
+.map-ctrls{position:absolute;top:12px;right:12px;z-index:600;display:flex;flex-direction:column;gap:8px}
+.map-ctrl{width:40px;height:40px;border-radius:10px;background:rgba(4,13,26,.92);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.35);color:#e8f4fd;font-size:1.05rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:.15s}
+.map-ctrl:hover{border-color:#00d2ff;background:rgba(0,210,255,.15)}
+.map-ctrl.active{background:#00d2ff;color:#04121f;border-color:#00d2ff}
+.radius-panel{position:absolute;top:12px;right:60px;z-index:650;background:rgba(4,13,26,.95);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.4);border-radius:14px;padding:6px;display:none;flex-direction:column;gap:3px;box-shadow:0 8px 20px rgba(0,0,0,.5)}
+.radius-panel.show{display:flex}
+.radius-panel button{background:transparent;border:0;color:#e8f4fd;padding:7px 16px;border-radius:8px;font-size:.78rem;font-weight:700;cursor:pointer;white-space:nowrap;text-align:left}
+.radius-panel button:hover{background:rgba(0,210,255,.12)}
+.radius-panel button.active{background:#00d2ff;color:#04121f}
+.search-area-btn{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);z-index:600;background:rgba(4,13,26,.92);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.45);color:#e8f4fd;font-weight:700;font-size:.78rem;padding:7px 16px;border-radius:50px;cursor:pointer;display:none;align-items:center;gap:6px;box-shadow:0 4px 12px rgba(0,0,0,.4)}
+.search-area-btn.show{display:inline-flex}
+.radius-circle{stroke:#00d2ff;stroke-width:2;fill:rgba(0,210,255,.08);stroke-dasharray:5,5}
+.near-btn{position:absolute;bottom:14px;right:12px;z-index:600;background:linear-gradient(135deg,#10c876,#0a9d5d);color:#fff;border:0;border-radius:50px;padding:10px 16px;font-weight:800;font-size:.85rem;cursor:pointer;box-shadow:0 4px 14px rgba(16,200,118,.45);display:flex;align-items:center;gap:6px}
+.near-btn:disabled{opacity:.7;cursor:wait}
+.map-count{position:absolute;bottom:14px;left:12px;z-index:600;background:rgba(4,13,26,.9);backdrop-filter:blur(8px);border:1px solid rgba(0,210,255,.3);color:#cfe4f5;font-size:.78rem;font-weight:700;padding:6px 12px;border-radius:50px}
+.map-panel.fs{position:fixed;inset:0;z-index:3000;border-radius:0;border:0}
+.map-panel.fs #map{height:100vh}
+.op-marker .jet-pin{width:32px;height:32px;background:linear-gradient(135deg,#00d2ff,#5e9eff);border:2.5px solid #fff;border-radius:50% 50% 50% 0;transform:rotate(-45deg);box-shadow:0 4px 10px rgba(0,0,0,.45);display:flex;align-items:center;justify-content:center;transition:box-shadow .15s,filter .15s}
+.op-marker .jet-pin span{transform:rotate(45deg);font-size:15px;line-height:1}
+.op-marker.hot .jet-pin{box-shadow:0 0 0 4px rgba(0,210,255,.55),0 6px 16px rgba(0,0,0,.5);filter:brightness(1.08)}
+.op-marker .photo-pin{width:54px;height:54px;border-radius:50%;border:3px solid #fff;background:#5e9eff center/cover no-repeat;box-shadow:0 5px 14px rgba(0,0,0,.5);position:relative;transition:transform .2s cubic-bezier(.34,1.56,.64,1),box-shadow .2s;animation:pinIn .4s cubic-bezier(.34,1.56,.64,1) both}
+.op-marker .photo-pin::after{content:"";position:absolute;inset:-5px;border-radius:50%;border:2px solid rgba(0,210,255,.65);opacity:0;animation:pinPulse 2.6s ease-out infinite;pointer-events:none}
+.op-marker .photo-pin .bdg{position:absolute;bottom:-2px;right:-2px;width:22px;height:22px;border-radius:50%;background:linear-gradient(135deg,#00d2ff,#5e9eff);border:2px solid #040d1a;display:flex;align-items:center;justify-content:center;font-size:11px;line-height:1}
+.op-marker.hot .photo-pin{transform:scale(1.2) translateY(-3px);box-shadow:0 0 0 3px #00d2ff,0 12px 26px rgba(0,0,0,.6);z-index:1000}
+@keyframes pinIn{from{transform:scale(0) translateY(-14px);opacity:0}to{transform:scale(1) translateY(0);opacity:1}}
+@keyframes pinPulse{0%{transform:scale(.8);opacity:.75}70%{opacity:0}100%{transform:scale(1.55);opacity:0}}
+.lp-pop{font-family:inherit;color:#0a1e36;min-width:210px}
+.lp-pop img{width:100%;height:120px;object-fit:cover;display:block;background:#dde}
+.lp-pop .b{padding:11px 13px}
+.lp-pop .nm{font-weight:800;font-size:.92rem;line-height:1.2;color:#0a1e36}
+.lp-pop .meta{display:flex;justify-content:space-between;font-size:.8rem;margin:5px 0 8px}
+.lp-pop .rt{color:#f5a300;font-weight:700}.lp-pop .pr{color:#0066cc;font-weight:800}
+.lp-pop .loc{font-size:.74rem;color:#5a7896;margin-bottom:8px}
+.lp-pop .acts{display:flex;gap:6px}
+.lp-pop .book{flex:1;background:linear-gradient(135deg,#10c876,#0a9d5d);color:#fff;padding:9px;border-radius:8px;text-align:center;font-weight:800;font-size:.82rem}
+.lp-pop .dir{flex:0 0 40px;background:#eef4fb;color:#0066cc;border:1px solid #cfe0f2;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:1rem}
+section{padding:42px 0}
+h2{font-size:1.7rem;font-weight:900;text-align:center;margin-bottom:6px}
+.sec-sub{text-align:center;color:var(--muted);margin-bottom:24px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(265px,1fr));gap:16px}
+.card{background:var(--bg2);border:1px solid rgba(0,210,255,.12);border-radius:16px;overflow:hidden;display:flex;flex-direction:column;transition:.18s;cursor:pointer}
+.card:hover,.card.hot{border-color:rgba(0,210,255,.55);transform:translateY(-3px);box-shadow:0 12px 30px rgba(0,210,255,.18)}
+.card .img{height:160px;background:#0a1428 center/cover no-repeat;position:relative}
+.card .tag{position:absolute;top:10px;left:10px;background:rgba(16,200,118,.92);color:#fff;font-size:.72rem;font-weight:800;padding:3px 10px;border-radius:50px}
+.card .mapbtn{position:absolute;bottom:10px;right:10px;background:rgba(4,13,26,.85);color:#00d2ff;border:1px solid rgba(0,210,255,.4);font-size:.72rem;font-weight:700;padding:4px 10px;border-radius:50px}
+.card .body{padding:13px 14px;display:flex;flex-direction:column;gap:7px;flex:1}
+.card .nm{font-weight:800;font-size:.96rem;line-height:1.25}
+.card .row{display:flex;justify-content:space-between;align-items:center;font-size:.85rem}
+.card .rt{color:#f5a300;font-weight:700}.card .pr{color:var(--cyan);font-weight:800;font-size:1.05rem}
+.card .loc{color:var(--muted);font-size:.8rem;display:flex;align-items:center;gap:4px}
+.card .btn-book{margin-top:auto}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+.step{background:var(--bg2);border:1px solid rgba(0,210,255,.1);border-radius:14px;padding:22px;text-align:center}
+.step .n{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#04121f;font-weight:900;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-size:1.1rem}
+.step h3{font-size:1.05rem;margin-bottom:6px}.step p{color:var(--muted);font-size:.9rem}
+.faq details{background:var(--bg2);border:1px solid rgba(0,210,255,.1);border-radius:12px;margin-bottom:10px;padding:0 16px}
+.faq summary{cursor:pointer;font-weight:700;padding:15px 0;list-style:none}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';float:right;color:var(--cyan);font-weight:900}
+.faq details[open] summary::after{content:'–'}
+.faq p{color:var(--muted);padding:0 0 15px;font-size:.92rem}
+.sticky-cta{position:fixed;bottom:0;left:0;right:0;z-index:1200;background:rgba(4,13,26,.96);backdrop-filter:blur(12px);border-top:1px solid rgba(0,210,255,.25);padding:10px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;box-shadow:0 -6px 24px rgba(0,0,0,.4)}
+.sticky-cta .txt{font-size:.9rem;font-weight:700}.sticky-cta .txt small{display:block;color:var(--muted);font-weight:500;font-size:.76rem}
+.sticky-cta .btn-primary{padding:12px 22px;font-size:.95rem;white-space:nowrap}
+footer{text-align:center;color:var(--muted);font-size:.82rem;padding:30px 18px 90px;border-top:1px solid rgba(255,255,255,.06)}
+@media(max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:20px}
+  .hero{padding:26px 0 30px}.hero-copy{text-align:center}.cta-row{justify-content:center}.trust{justify-content:center}
+  #map{height:60vh;min-height:380px}
+}
+@media(max-width:640px){.hero-copy h1{font-size:2rem}.topbar .btn-primary{display:none}h2{font-size:1.4rem}}
+
+.cat-nav{background:var(--bg2);border-top:1px solid rgba(0,210,255,.1);border-bottom:1px solid rgba(0,210,255,.12);position:sticky;top:60px;z-index:900}
+.cat-nav .wrap{padding:0 18px}
+.cat-nav-row{display:flex;gap:8px;overflow-x:auto;padding:11px 0;scrollbar-width:none}
+.cat-nav-row::-webkit-scrollbar{display:none}
+.cat-nav-pill{flex:0 0 auto;display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.04);border:1px solid rgba(0,210,255,.25);color:var(--text);font-weight:700;font-size:.83rem;padding:8px 14px;border-radius:50px;white-space:nowrap;transition:.15s}
+.cat-nav-pill:hover{border-color:#00d2ff;background:rgba(0,210,255,.12)}
+.cat-nav-pill.active{background:linear-gradient(135deg,#00d2ff,#5e9eff);color:#04121f;border-color:#00d2ff}
+@media(max-width:640px){.cat-nav{top:0}}
+
+.foot-cats{max-width:1040px;margin:0 auto 16px;font-size:.82rem;line-height:2;color:var(--muted)}
+.foot-cats strong{color:#cfe4f5}.foot-cats a{color:#9fc4e0}.foot-cats a:hover{color:#00d2ff}
+.op-marker.is-toppick{z-index:1000 !important;overflow:visible}.tp-wrap{position:relative;width:58px;height:58px}.tp-wrap::before{content:"";position:absolute;top:3px;left:3px;width:52px;height:52px;border-radius:50%;border:2px solid #ffc107;animation:tp-pulse 2s ease-out infinite;pointer-events:none}@keyframes tp-pulse{0%{transform:scale(1);opacity:.7}100%{transform:scale(1.7);opacity:0}}.tp-photo{width:54px;height:54px;border-radius:50%;background-position:center;background-size:cover;background-color:#fff;border:3px solid #ffc107;box-shadow:0 4px 16px rgba(255,193,7,.65);position:absolute;top:2px;left:2px}.tp-circle{width:50px;height:50px;border-radius:50%;background:linear-gradient(135deg,#ffc107,#ff9800);display:flex;align-items:center;justify-content:center;font-size:22px;border:2px solid #fff;box-shadow:0 4px 16px rgba(255,193,7,.65);position:absolute;top:4px;left:4px}.tp-emoji{position:absolute;bottom:2px;right:0;background:#ffc107;width:20px;height:20px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:11px;border:2px solid #040d1a}.tp-crown{position:absolute;top:-15px;left:50%;transform:translateX(-50%);font-size:16px;filter:drop-shadow(0 1px 2px rgba(0,0,0,.6));z-index:2}.tp-ribbon{position:absolute;bottom:-13px;left:50%;transform:translateX(-50%);background:#ffc107;color:#040d1a;font-size:8px;font-weight:800;letter-spacing:.4px;padding:1px 6px;border-radius:6px;white-space:nowrap;box-shadow:0 2px 6px rgba(0,0,0,.45)}.pp-tp-badge{display:inline-block;background:#ffc107;color:#040d1a;font-size:.58rem;font-weight:800;padding:2px 7px;border-radius:6px;margin-bottom:4px;letter-spacing:.5px}</style>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "Product", "name": "Tours de Kayak en Seattle", "description": "tours de kayak en Seattle desde $55 — 20 operadores verificados. Instant online booking with free cancellation.", "image": "https://miamijetskiboatrentals.com/og-image.png", "brand": {"@type": "Brand", "name": "FloridaWaterSports"}, "offers": {"@type": "AggregateOffer", "lowPrice": "50", "priceCurrency": "USD", "offerCount": "124", "availability": "https://schema.org/InStock", "highPrice": "100"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.7", "reviewCount": "2491", "bestRating": "5", "worstRating": "1"}}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://miamijetskiboatrentals.com/"}, {"@type": "ListItem", "position": 2, "name": "Tours de Kayak en Seattle", "item": "https://miamijetskiboatrentals.com/es/seattle-kayak-tours"}]}</script>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cuánto cuestan los tours de kayak en Seattle?", "acceptedAnswer": {"@type": "Answer", "text": "La mayoría de los tours de kayak en Seattle comienzan alrededor de $55. Compara precios en vivo de cada operador en el mapa y las tarjetas de arriba."}}, {"@type": "Question", "name": "¿Cómo reservo tours de kayak en Seattle?", "acceptedAnswer": {"@type": "Answer", "text": "Elige un operador en el mapa o las tarjetas y reserva online a través de FareHarbor — disponibilidad en tiempo real, pago seguro y confirmación instantánea. Sin necesidad de cuenta."}}, {"@type": "Question", "name": "¿Puedo cancelar gratis?", "acceptedAnswer": {"@type": "Answer", "text": "La mayoría de los operadores ofrecen cancelación gratis. Verás la política exacta y recibirás confirmación instantánea al reservar online."}}, {"@type": "Question", "name": "¿Dónde encuentro tours de kayak en Seattle?", "acceptedAnswer": {"@type": "Answer", "text": "Los operadores están repartidos por Seattle — filtra por zona en el mapa de arriba para encontrar el más cercano."}}, {"@type": "Question", "name": "¿Necesito reservar con antelación?", "acceptedAnswer": {"@type": "Answer", "text": "Los tours de kayak populares se llenan los fines de semana y festivos. Se recomienda reservar con 1–2 semanas de antelación, y la reserva online instantánea está disponible."}}]}</script>
+<link rel="prefetch" href="/vendor/leaflet/leaflet.js">
+<link rel="prefetch" href="/vendor/leaflet/leaflet.markercluster.js">
+</head>
+<body>
+<div class="topbar"><div class="wrap"><a class="logo" href="/">💧 Florida<span>WaterSports</span></a><a href="/seattle-kayak-tours" hreflang="en" style="display:inline-flex;align-items:center;gap:4px;margin-right:12px;padding:6px 12px;border:1px solid rgba(0,210,255,.25);border-radius:50px;font-size:.8rem;color:#a8d4f0;text-decoration:none">🇺🇸 EN</a>
+  <a class="btn btn-primary" href="#operators">⚡ Reservar</a></div></div>
+<section class="hero"><div class="wrap"><div class="hero-grid">
+<div class="hero-copy">
+<div class="price-pill">🛶 Tours de Kayak en Seattle · desde $55</div>
+<h1>Reserva un Tour de Kayak en <span class="hl">Seattle</span></h1>
+<p class="sub">Encuentra los tours de kayak más cercanos en el mapa en vivo por Seattle. Compara 20 operadores verificados y reserva online en 2 minutos.</p>
+<div class="cta-row"><a class="btn btn-primary" href="#operators">⚡ Reservar</a><button class="btn btn-ghost" onclick="document.getElementById('nearBtn').click()">📍 Buscar cerca de mí</button></div>
+<div class="trust"><span>⭐ <strong>4.7</strong> prom.</span><span>🛡️ Verificado</span><span>✓ Cancelación gratis</span><span>⚡ Confirmación instantánea</span><span>🔒 Seguro vía FareHarbor</span></div>
+</div>
+<div class="map-panel" id="mapPanel">
+<div class="map-chips" id="areaChips"></div>
+<div class="map-ctrls"><button class="map-ctrl" id="radiusBtn" title="Distance radius">🎯</button><button class="map-ctrl" id="satBtn" title="Satellite view">🛰️</button><button class="map-ctrl" id="fsBtn" title="Fullscreen">⛶</button><button class="map-ctrl" id="zinBtn" title="Zoom in">+</button><button class="map-ctrl" id="zoutBtn" title="Zoom out">−</button></div>
+<div class="radius-panel" id="radiusPanel"></div>
+<button class="search-area-btn" id="searchAreaBtn">🔍 Buscar en esta zona</button>
+<div id="map"><div style="height:100%;display:flex;align-items:center;justify-content:center;color:#7ba3c0">🗺️ Cargando mapa…</div></div>
+<button class="near-btn" id="nearBtn">📍 Cerca de mí</button>
+<div class="map-count" id="mapCount">20 tours de kayak</div>
+</div></div></div></section>
+<nav class="cat-nav" aria-label="Seattle activity categories"><div class="wrap"><div class="cat-nav-row"><a class="cat-nav-pill cat-nav-zone" href="/seattle-activities">🌎 Todo Seattle</a><a class="cat-nav-pill" href="/es/seattle-tours">🚌 Tours</a><a class="cat-nav-pill" href="/es/seattle-boat-rentals">⛵ Boat Rentals</a><a class="cat-nav-pill" href="/es/seattle-walking-tours">🚶 Walking Tours</a><a class="cat-nav-pill active" href="/seattle-kayak-tours" aria-current="page">🛶 Kayak Tours</a></div></div></nav>
+<section id="operators"><div class="wrap"><h2>Top Tours de Kayak en Seattle</h2><p class="sec-sub">Toca una tarjeta para verla en el mapa · reserva en 2 minutos</p><div class="grid" id="cards"></div></div></section>
+<section style="background:var(--bg2)"><div class="wrap"><h2>Cómo Funciona</h2><p class="sec-sub">Reservar tours de kayak en Seattle toma minutos</p>
+<div class="steps"><div class="step"><div class="n">1</div><h3>Elige tu lugar</h3><p>Compara ubicaciones y precios en el mapa en vivo por Seattle.</p></div><div class="step"><div class="n">2</div><h3>Reserva online</h3><p>Disponibilidad en tiempo real vía FareHarbor. Pago seguro, sin necesidad de cuenta.</p></div><div class="step"><div class="n">3</div><h3>Llega y disfruta</h3><p>Confirmación instantánea por correo. Llega 15 minutos antes con identificación con foto válida.</p></div></div></div></section>
+<section><div class="wrap" style="max-width:760px"><h2>Tours de Kayak en Seattle  — Preguntas Frecuentes</h2><div class="faq" style="margin-top:20px"><details open><summary>¿Cuánto cuestan los tours de kayak en Seattle?</summary><p>La mayoría de los tours de kayak en Seattle comienzan alrededor de $55. Compara precios en vivo de cada operador en el mapa y las tarjetas de arriba.</p></details><details><summary>¿Cómo reservo tours de kayak en Seattle?</summary><p>Elige un operador en el mapa o las tarjetas y reserva online a través de FareHarbor — disponibilidad en tiempo real, pago seguro y confirmación instantánea. Sin necesidad de cuenta.</p></details><details><summary>¿Puedo cancelar gratis?</summary><p>La mayoría de los operadores ofrecen cancelación gratis. Verás la política exacta y recibirás confirmación instantánea al reservar online.</p></details><details><summary>¿Dónde encuentro tours de kayak en Seattle?</summary><p>Los operadores están repartidos por Seattle — filtra por zona en el mapa de arriba para encontrar el más cercano.</p></details><details><summary>¿Necesito reservar con antelación?</summary><p>Los tours de kayak populares se llenan los fines de semana y festivos. Se recomienda reservar con 1–2 semanas de antelación, y la reserva online instantánea está disponible.</p></details></div></div></section>
+<div class="sticky-cta"><div class="txt">🛶 tours de kayak en Seattle desde $55<small>Cancelación gratis · Confirmación instantánea</small></div><a class="btn btn-primary" href="#operators">⚡ Reservar</a></div>
+<footer>
+<div class="wrap"><section class="xzone-links" style="max-width:1100px;margin:30px auto;padding:18px 22px;background:rgba(255,255,255,.02);border:1px solid rgba(0,210,255,.08);border-radius:14px"><h2 style="font-size:1rem;margin-bottom:8px;color:#00d2ff">Kayak tours en otros destinos</h2><div><a href="/es/cape-cod-kayak-tours" style="display:inline-block;background:rgba(0,210,255,.06);border:1px solid rgba(0,210,255,.18);border-radius:50px;padding:6px 13px;margin:3px;font-size:.8rem;color:#a8d4f0;text-decoration:none">Cape Cod</a><a href="/es/hilton-head-kayak-tours" style="display:inline-block;background:rgba(0,210,255,.06);border:1px solid rgba(0,210,255,.18);border-radius:50px;padding:6px 13px;margin:3px;font-size:.8rem;color:#a8d4f0;text-decoration:none">Hilton Head</a></div></section><div class="foot-cats"><strong>Explora actividades en Seattle:</strong> <a href="/seattle-activities">Todas las Actividades en Seattle</a> · <a href="/es/seattle-tours">Seattle Tours</a> · <a href="/es/seattle-boat-rentals">Seattle Boat Rentals</a> · <a href="/es/seattle-walking-tours">Seattle Walking Tours</a> · <a href="/seattle-kayak-tours">Tours de Kayak en Seattle</a></div></div>
+© 2026 <a href="/" style="color:var(--cyan)">FloridaWaterSports</a> · tours de kayak en Seattle · Reserva segura vía FareHarbor<br><a href="/" style="color:var(--muted)">Todas las actividades en Seattle</a></footer>
+<script>
+var LINK_TPL='https://fareharbor.com/embeds/book/{sn}/items/{id}/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no';
+var PHOTO_TPL='https://cdn.filestackcontent.com/{h}/convert?cache=true&compress=true&quality=85&format=webp&w=600&fit=max';
+function expand(o){
+  if(o.link&&o.link.indexOf('http')!==0&&o.link.indexOf('/')>-1){var p=o.link.split('/');o.link=LINK_TPL.replace('{sn}',p[0]).replace('{id}',p[1]);}
+  if(o.photo&&o.photo.indexOf('http')!==0&&o.photo.length<50){o.photo=PHOTO_TPL.replace('{h}',o.photo);}
+  return o;
+}
+function esc(s){return String(s==null?'':s).replace(/[&<>"]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c];});}
+function bookUrl(o){return o.link&&o.link.indexOf('http')===0?o.link:'/miami-activities';}
+var NOUN='kayak tours';var OPS=[],markersById={},map,cluster,userMarker=null,curArea='all',baseLayer=null,satLayer=null,isSat=false,radiusMi=null,radiusCircle=null;
+
+fetch('/data/seattle-kayak.json').then(function(r){return r.json();}).then(function(d){
+  OPS=d.filter(function(o){return o.lat&&o.lng;}).map(expand).sort(function(a,b){return (b.reviews||0)-(a.reviews||0);});
+  buildAreaChips();
+  renderCards(OPS);
+  initMap();
+}).catch(function(){document.getElementById('cards').innerHTML='<p style="color:#7ba3c0">No se pudieron cargar los operadores. .</p>';});
+
+function areasList(){var s={};OPS.forEach(function(o){var a=o.zl||'Seattle';s[a]=(s[a]||0)+1;});return s;}
+function buildAreaChips(){
+  var s=areasList();var html='<button class="map-chip active" data-area="all">All ('+OPS.length+')</button>';
+  Object.keys(s).sort(function(a,b){return s[b]-s[a];}).forEach(function(a){html+='<button class="map-chip" data-area="'+esc(a)+'">'+esc(a)+' ('+s[a]+')</button>';});
+  var bar=document.getElementById('areaChips');bar.innerHTML=html;
+  bar.querySelectorAll('.map-chip').forEach(function(c){c.onclick=function(){
+    bar.querySelectorAll('.map-chip').forEach(function(x){x.classList.remove('active');});c.classList.add('active');
+    setArea(c.dataset.area);
+  };});
+}
+function filtered(){return curArea==='all'?OPS:OPS.filter(function(o){return (o.zl||'Seattle')===curArea;});}
+function setArea(a){curArea=a;var f=filtered();renderCards(f);drawMarkers(f);document.getElementById('mapCount').textContent=f.length+' '+NOUN;}
+
+function renderCards(list){
+  document.getElementById('cards').innerHTML=list.map(function(o){
+    return '<div class="card" data-id="'+esc(o.id)+'">'+
+      '<div class="img" style="background-image:url(\''+esc(o.photo||'')+'\')"><span class="tag">Desde $'+(o.price||100)+'</span><span class="mapbtn">📍 Mapa</span></div>'+
+      '<div class="body">'+
+      '<div class="nm">'+esc(o.name).slice(0,70)+'</div>'+
+      '<div class="loc">📍 '+esc(o.zl||'Seattle')+(o.pax?' · 👥 hasta '+o.pax:'')+'</div>'+
+      '<div class="row"><span class="rt">⭐ '+(o.rating||'4.6')+' ('+(o.reviews||'100')+'+)</span><span class="pr">$'+(o.price||100)+'</span></div>'+
+      '<a class="btn btn-book" href="'+esc(bookUrl(o))+'" target="_blank" rel="noopener" onclick="event.stopPropagation();if(window.gtag)gtag(\'event\',\'lp_book\',{op:\''+esc(o.id)+'\',value:'+(o.price||100)+',currency:\'USD\'})">⚡ Reservar →</a>'+
+      '</div></div>';
+  }).join('');
+  document.querySelectorAll('#cards .card').forEach(function(card){
+    var id=card.dataset.id;
+    card.addEventListener('click',function(){focusOp(id);});
+    card.addEventListener('mouseenter',function(){hot(id,true);});
+    card.addEventListener('mouseleave',function(){hot(id,false);});
+  });
+}
+function hot(id,on){var m=markersById[id];if(m&&m._icon)m._icon.classList.toggle('hot',on);var c=document.querySelector('#cards .card[data-id="'+id+'"]');if(c)c.classList.toggle('hot',on);}
+function focusOp(id){
+  var o=OPS.find(function(x){return x.id===id;});var m=markersById[id];if(!o||!map)return;
+  document.getElementById('mapPanel').scrollIntoView({behavior:'smooth',block:'center'});
+  map.setView([o.lat,o.lng],15,{animate:true});
+  setTimeout(function(){if(m){cluster.zoomToShowLayer(m,function(){m.openPopup();});}},400);
+}
+
+function loadLeaflet(cb){if(window.L)return cb();var s=document.createElement('script');s.src='/vendor/leaflet/leaflet.js';s.onload=function(){var c=document.createElement('script');c.src='/vendor/leaflet/leaflet.markercluster.js';c.onload=cb;document.head.appendChild(c);};document.head.appendChild(s);}
+function makePin(o){
+  var pinHtml=o.photo
+    ? '<div class="photo-pin" style="background-image:url(\''+esc(o.photo)+'\')"><div class="bdg">🛶</div></div>'
+    : '<div class="jet-pin"><span>🛶</span></div>';
+  var icon=L.divIcon({className:'op-marker',html:pinHtml,iconSize:[54,54],iconAnchor:[27,27],popupAnchor:[0,-30]});
+  var dir='https://www.google.com/maps/dir/?api=1&destination='+o.lat+','+o.lng;
+  var html='<div class="lp-pop">'+(o.photo?'<img src="'+esc(o.photo)+'" alt="" loading="lazy" decoding="async">':'')+
+    '<div class="b"><div class="nm">'+esc(o.name).slice(0,70)+'</div>'+
+    '<div class="meta"><span class="rt">⭐ '+(o.rating||'4.6')+' ('+(o.reviews||'100')+'+)</span><span class="pr">$'+(o.price||100)+'</span></div>'+
+    '<div class="loc">📍 '+esc(o.zl||'Seattle')+(o.pax?' · 👥 hasta '+o.pax:'')+'</div>'+
+    '<div class="acts"><a class="book" href="'+esc(bookUrl(o))+'" target="_blank" rel="noopener" onclick="if(window.gtag)gtag(\'event\',\'lp_book_pin\',{op:\''+esc(o.id)+'\',value:'+(o.price||100)+',currency:\'USD\'})">⚡ Reservar</a>'+
+    '<a class="dir" href="'+dir+'" target="_blank" rel="noopener" title="Directions">🧭</a></div></div></div>';
+  var m=L.marker([o.lat,o.lng],{icon:icon}).bindPopup(html,{minWidth:210,maxWidth:240});
+  m._opId=o.id;markersById[o.id]=m;return m;
+}
+function drawMarkers(list,noFit){
+  if(!cluster)return;cluster.clearLayers();markersById={};
+  var ms=list.map(makePin);ms.forEach(function(m){cluster.addLayer(m);});
+  /* TOPPICK */(function(){try{var bp=null,bs=-1;list.forEach(function(o){var rt=parseFloat(o.rating)||0;if(!rt)return;var s=rt*Math.log10((parseFloat(o.reviews)||0)+1);if(s>bs){bs=s;bp=o;}});if(!bp)return;var mk=markersById[bp.id];if(!mk)return;var ph=bp.photo?esc(bp.photo):"";var h=ph?'<div class="tp-wrap"><div class="tp-crown">👑</div><div class="tp-photo" style="background-image:url(\''+ph+'\')"></div><div class="tp-emoji">🛶</div><div class="tp-ribbon">TOP PICK</div></div>':'<div class="tp-wrap"><div class="tp-crown">👑</div><div class="tp-circle">🛶</div><div class="tp-ribbon">TOP PICK</div></div>';mk.setIcon(L.divIcon({className:"op-marker is-toppick",html:h,iconSize:[58,58],iconAnchor:[29,29],popupAnchor:[0,-32]}));mk.setZIndexOffset(1000);var pu=mk.getPopup();if(pu){var c=pu.getContent();pu.setContent('<div class="pp-tp-badge">👑 TOP PICK</div>'+(typeof c==="string"?c:""));}}catch(e){}})();
+  if(!noFit){try{if(ms.length)map.fitBounds(cluster.getBounds(),{padding:[40,40],maxZoom:14});}catch(e){}}
+}
+function radiusCenter(){return userMarker?userMarker.getLatLng():map.getCenter();}
+function buildRadiusPanel(){
+  var opts=[['0.5','½ mile'],['1','1 mile'],['2','2 miles'],['3','3 miles'],['5','5 miles'],['10','10 miles']];
+  var p=document.getElementById('radiusPanel');
+  p.innerHTML=opts.map(function(o){return '<button data-r="'+o[0]+'">'+o[1]+'</button>';}).join('')+'<button data-r="0">Off</button>';
+  p.querySelectorAll('button').forEach(function(b){b.onclick=function(){
+    p.querySelectorAll('button').forEach(function(x){x.classList.remove('active');});
+    var r=parseFloat(b.dataset.r);
+    if(r){b.classList.add('active');applyRadius(r);}else{clearRadius();}
+  };});
+}
+function applyRadius(mi){
+  radiusMi=mi;var c=radiusCenter();
+  if(radiusCircle)map.removeLayer(radiusCircle);
+  radiusCircle=L.circle(c,{radius:mi*1609,className:'radius-circle'}).addTo(map);
+  var f=filtered().filter(function(o){return dist(c.lat,c.lng,o.lat,o.lng)<=mi*1.60934;});
+  drawMarkers(f,true);renderCards(f);
+  document.getElementById('mapCount').textContent=f.length+' '+NOUN+' within '+(mi<1?'½ mi':mi+' mi');
+  try{map.fitBounds(radiusCircle.getBounds(),{padding:[30,30]});}catch(e){}
+}
+function clearRadius(){radiusMi=null;if(radiusCircle){map.removeLayer(radiusCircle);radiusCircle=null;}setArea(curArea);}
+function initMap(){
+  loadLeaflet(function(){
+    document.getElementById('map').innerHTML='';
+    map=L.map('map',{zoomControl:false,scrollWheelZoom:false}).setView([47.6062,-122.3336], 12);
+    map.on('focus',function(){map.scrollWheelZoom.enable();});
+    baseLayer=L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap © CARTO',maxZoom:18,subdomains:'abcd'}).addTo(map);
+    cluster=L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:36,spiderfyOnMaxZoom:true});
+    map.addLayer(cluster);
+    drawMarkers(filtered());
+    document.getElementById('zinBtn').onclick=function(){map.zoomIn();};
+    document.getElementById('zoutBtn').onclick=function(){map.zoomOut();};
+    document.getElementById('fsBtn').onclick=function(){var p=document.getElementById('mapPanel');p.classList.toggle('fs');this.textContent=p.classList.contains('fs')?'✕':'⛶';setTimeout(function(){map.invalidateSize();},250);};
+    document.getElementById('nearBtn').onclick=function(){
+      if(!navigator.geolocation)return;var b=this;b.disabled=true;b.textContent='Locating…';
+      navigator.geolocation.getCurrentPosition(function(p){
+        var u=[p.coords.latitude,p.coords.longitude];
+        if(userMarker)map.removeLayer(userMarker);
+        userMarker=L.circleMarker(u,{radius:8,color:'#fff',weight:2,fillColor:'#10c876',fillOpacity:1}).addTo(map).bindPopup('You are here');
+        var f=filtered().slice().sort(function(a,b){return dist(u[0],u[1],a.lat,a.lng)-dist(u[0],u[1],b.lat,b.lng);});
+        renderCards(f);
+        map.setView(u,13,{animate:true});
+        b.disabled=false;b.textContent='📍 Cerca de mí';
+        if(window.gtag)gtag('event','lp_near_me');
+      },function(){b.disabled=false;b.textContent='📍 Cerca de mí';},{timeout:8000});
+    };
+    // Satellite toggle
+    document.getElementById('satBtn').onclick=function(){
+      if(!satLayer)satLayer=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:'© Esri'});
+      if(isSat){map.removeLayer(satLayer);baseLayer.addTo(map);this.textContent='🛰️';this.classList.remove('active');}
+      else{map.removeLayer(baseLayer);satLayer.addTo(map);this.textContent='🗺️';this.classList.add('active');}
+      isSat=!isSat;
+    };
+    // Radius
+    buildRadiusPanel();
+    document.getElementById('radiusBtn').onclick=function(){this.classList.toggle('active');document.getElementById('radiusPanel').classList.toggle('show');};
+    // Search this area
+    var sab=document.getElementById('searchAreaBtn');
+    map.on('dragend zoomend',function(){if(!radiusMi)sab.classList.add('show');});
+    sab.onclick=function(){
+      var bb=map.getBounds();var f=filtered().filter(function(o){return bb.contains([o.lat,o.lng]);});
+      renderCards(f);document.getElementById('mapCount').textContent=f.length+' '+NOUN+' in view';
+      this.classList.remove('show');if(window.gtag)gtag('event','lp_search_area');
+    };
+  });
+}
+function dist(a,b,c,d){var R=6371,x=(c-a)*Math.PI/180,y=(d-b)*Math.PI/180,s=Math.sin(x/2)*Math.sin(x/2)+Math.cos(a*Math.PI/180)*Math.cos(c*Math.PI/180)*Math.sin(y/2)*Math.sin(y/2);return R*2*Math.atan2(Math.sqrt(s),Math.sqrt(1-s));}
+</script>
+</body>
+</html>
