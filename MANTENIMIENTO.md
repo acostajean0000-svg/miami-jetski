@@ -93,6 +93,27 @@ flujo:  rsync miami-jetski-main → iCloud…/GitHub/miami-jetski → commit →
    — un jet ski a $50 en Tahoe (nativos a $130) es placeholder, no ganga. Nunca dejar que un
    placeholder se convierta en el "desde $X" de una landing.
 
+## ⚠️ Reglas añadidas (28 jul)
+
+3. **El "desde $X" de una landing se calcula EXCLUYENDO los `to*` a $50.** El mínimo crudo
+   incluye placeholders de importación y hunde el precio anunciado. Fórmula correcta:
+   `min([p for p in precios if not (p==50 and id.startswith('to'))])`.
+   Yo mismo rebajé 3 landings a $50 usando el mínimo crudo antes de detectarlo.
+   Si TODOS los precios del data file son `to*`-$50, no hay dato: el "$50" es desconocido,
+   no barato (afecta a 48 landings de categoría `tour` — se arregla refrescando FareHarbor).
+
+4. **Las tarjetas `rel-card` se reparten por anillo, no por top.** El generador antiguo ponía
+   siempre los mismos 3 mejores de la zona: 49.192 enlaces concentrados en 2.740 destinos y
+   8.045 operadores sin ningún enlace interno rastreable. Ahora cada operador enlaza a sus
+   3 vecinos en el orden por rating dentro de zona+categoría (con caída a zona si el grupo
+   es pequeño): cobertura 10.981/11.076, ~3 entrantes cada uno, 0 autoenlaces.
+   Script: recrea el anillo tras CUALQUIER reclasificación de categoría.
+
+5. **Reclasificar un operador toca 8 sitios**: operators.json, operators-slim, operators-top,
+   `data/{zona}.json`, `data/{zona}-{cat_vieja}.json` (quitar), `data/{zona}-{cat_nueva}.json`
+   (añadir, ojo al formato de `link` de cada archivo: unos usan shortcode y otros URL completa),
+   los conteos horneados de AMBAS landings EN+ES, y el "View all X in Y" de su propia página.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
