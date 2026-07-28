@@ -80,6 +80,19 @@ flujo:  rsync miami-jetski-main → iCloud…/GitHub/miami-jetski → commit →
 - Los 4 productos Cozumel cross-listados en Cancún canonicalizan a la versión Cozumel y están FUERA del sitemap.
 - Cache: HTML no-cache; data/*.json 1h+SWR; og/, icons/, vendor/ inmutables. Al cambiar lógica del SW, subir versión en `sw.js` (CACHE_NAME/RUNTIME_CACHE).
 
+
+## ⚠️ Dos reglas aprendidas a golpes (26 jul)
+
+1. **Todo cambio de datos se propaga a AMBOS idiomas.** Al reclasificar 5 jet skis se actualizaron
+   las landings EN pero no las ES (y en el arreglo posterior, al revés). La paridad EN↔ES
+   (conteos, floor, offerCount, mapCount, data file) debe verificarse en cada cambio:
+   comparar `N verified operators` vs `N operadores verificados` de cada par.
+
+2. **$50 es el precio placeholder de las importaciones masivas** (80% de los registros `to*`).
+   Al reclasificar un operador importado, revisar su precio contra la mediana de su zona+categoría
+   — un jet ski a $50 en Tahoe (nativos a $130) es placeholder, no ganga. Nunca dejar que un
+   placeholder se convierta en el "desde $X" de una landing.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
