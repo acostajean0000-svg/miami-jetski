@@ -114,6 +114,16 @@ flujo:  rsync miami-jetski-main → iCloud…/GitHub/miami-jetski → commit →
    (añadir, ojo al formato de `link` de cada archivo: unos usan shortcode y otros URL completa),
    los conteos horneados de AMBAS landings EN+ES, y el "View all X in Y" de su propia página.
 
+6. **`/blog` lo sirve `blog.html`, NO `blog/index.html`.** Con `cleanUrls`, `/blog` resuelve
+   a `blog.html`; `blog/index.html` solo se serviría en `/blog/`, que con `trailingSlash:false`
+   redirige a `/blog`. Existían las dos y divergieron: la servida listaba 75 de 87 guías.
+   Al publicar un post nuevo hay que enlazarlo en **`blog.html`** (y en `sitemaps/blog.xml`).
+   Cuidado con `grep -c` en estos archivos: están minificados en una línea y cuenta 1.
+
+7. **`<meta charset>` va inmediatamente después de `<head>`.** La plantilla metía antes un
+   `<script>` con los TPL y en `index.html` el charset caía en el byte 1257 — pasado el
+   límite de 1024 que garantiza la decodificación (riesgo de mojibake en acentos).
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
