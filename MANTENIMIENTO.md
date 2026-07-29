@@ -132,6 +132,26 @@ flujo:  rsync miami-jetski-main → iCloud…/GitHub/miami-jetski → commit →
    4.005 `src` relativos (imágenes rotas). Hay además URLs del dominio antiguo
    `www.filepicker.io` (88): son válidas, no las trates como error.
 
+9. **Los conteos viven en 6 sitios por landing, no en 2.** Además de `N verified operators` y
+   `offerCount` están: `og:description` y `twitter:description` (con la variante
+   `N verified <categoría> operators`), el chip `id="mapCount"`, y el precio del FAQ
+   (`start around $X`). Verificar los seis o el desajuste sobrevive en el snippet de Google.
+
+10. **Nunca sustituir conteos con regex de texto plano sobre toda la página.** Una landing de
+    categoría contiene DOS conteos legítimos: el de su categoría (meta, mapCount) y el de su
+    zona (dentro del nodo JSON-LD `TouristDestination`). Un `re.sub` global machaca uno con el
+    otro — me pasó. Los nodos de zona se editan parseando el JSON, no por texto.
+
+11. **Fuga de la plantilla de Naples en JSON-LD de zona** (43 páginas): `"264 verified activity
+    operators"` (conteo de Naples), `"url": ".../gulf-activities"` (URL legacy 301) y
+    `"Florida Watersports Marketplace"` en destinos de Texas, Nevada, Bahamas y Carolina del Sur.
+    Al clonar una zona, revisar SIEMPRE los nodos `TouristDestination`/`WebSite`.
+
+12. **La página partner `xtreme-car-rental-punta-cana-en` se tradujo a medias.** Los detectores
+    de idioma por "3+ palabras funcionales en un nodo de texto" no ven: `alt` de imagen, mensajes
+    pre-rellenados de `wa.me`, cadenas dentro del JS y frases cortas ("Sí, 0% prepago").
+    Al auditar idioma hay que mirar esos cuatro sitios además del texto visible.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
