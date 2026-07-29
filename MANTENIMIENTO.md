@@ -315,6 +315,24 @@ Al generar o tocar una página ES:
 - El blog solo existe en inglés y **ninguna página ES lo enlaza**: si algún día se traduce, habrá
   que añadir esos enlaces.
 
+## ⚠️ El campo `price` NO es el precio del producto (hallazgo 28 jul)
+
+**105 de los 130 data files de zona+categoría tienen UN ÚNICO precio para todos sus operadores**
+(austin-boat: 235 operadores todos a $95; cabo-tour: 241 todos a $50). En los 11.076 registros del
+maestro solo existen **47 precios distintos**, y `50` aparece 4.538 veces. Es decir: `price` es una
+**estimación asignada por categoría**, no el precio real de cada producto.
+
+Consecuencias que hay que tener presentes:
+- El "desde $X" de cada landing es una estimación de categoría, no el mínimo real.
+- Todas las tarjetas de una landing muestran el mismo precio.
+- El `data-fh-price` que alimenta el valor de conversión de Google Ads lleva esa estimación.
+- `lowPrice`/`offers` del JSON-LD declaran ese mismo número.
+- Mi trabajo previo sobre "placeholders de $50" estaba alineando páginas con un número sintético:
+  $50 no es el placeholder de unas importaciones, es el valor de la categoría `tour` entera.
+
+**Para tener precios reales hay que traerlos de FareHarbor.** Hasta entonces, no interpretar las
+diferencias de precio entre operadores de una misma categoría como información real.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
