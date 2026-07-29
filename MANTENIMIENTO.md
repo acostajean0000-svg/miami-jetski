@@ -197,6 +197,17 @@ flujo:  rsync miami-jetski-main → iCloud…/GitHub/miami-jetski → commit →
     mientras listaban 30 ítems. Además 38 tenían el `url` del ItemList apuntando a
     `/miami-activities`. Fuente: la plantilla ES de zona se clonó de Miami.
 
+20. **Checklist al publicar un post de blog** (los 12 últimos se quedaron a medias en todo esto):
+    enlazarlo en **`blog.html`** y en `sitemaps/blog.xml`; bloque `related-posts` con los posts
+    hermanos de su destino; CTA a la **landing** concreta, no a `/?cat=X&zone=Y` (la home filtrada);
+    y `BreadcrumbList` en JSON-LD. Faltaban breadcrumbs en 75 de 87 posts.
+
+21. **El bloque `related-posts` se enlazaba a sí mismo en los 75 posts** que lo tenían. Al generar
+    listas de "relacionados", excluir siempre la propia página.
+
+22. **La zona `keywest` tiene DOS prefijos de slug**: `keys-activities` para la página de zona y
+    `key-west-*` para las landings de categoría. Cualquier mapeo automático zona→slug falla aquí.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
