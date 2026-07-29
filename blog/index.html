@@ -29,7 +29,41 @@
 .post-card p{color:#9bbdd4;font-size:.88rem;line-height:1.5;flex:1;}
 .post-card .post-meta{color:#6a8aa0;font-size:.78rem;margin-top:12px;}
 </style>
-</head>
+<script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-CMH3XLRFH6');
+gtag('config','AW-16509204378');
+(function(){
+  var l=false;
+  function ld(){
+    if(l)return;l=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id=AW-16509204378';
+    document.head.appendChild(s);
+  }
+  if(document.readyState==='complete')ld();
+  else addEventListener('load',ld);
+  ['scroll','mousemove','touchstart','click'].forEach(function(e){
+    addEventListener(e,ld,{once:true,passive:true});
+  });
+})();
+// Google Ads conversion: trackear click en Book Now (cualquier link a FareHarbor)
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
+  if(!a)return;
+  var price=parseFloat((a.getAttribute('data-fh-price')||'0').replace(/[^0-9.]/g,''))||0;
+  if(typeof gtag==='function'){
+    gtag('event','conversion',{
+      'send_to':'AW-16509204378/Od7PCNePlKAcEJrvmcA9',
+      'value':price,
+      'currency':'USD'
+    });
+  }
+},true);
+</script></head>
 <body>
 <nav class="nav"><div class="nav-inner"><a href="/" class="logo"><span class="logo-icon">🌊</span>Florida <span>Watersports</span></a></div></nav>
 

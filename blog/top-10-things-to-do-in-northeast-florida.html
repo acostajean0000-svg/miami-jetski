@@ -62,7 +62,41 @@ article strong{color:#00d2ff;font-weight:700}
 footer{background:#020815;border-top:1px solid rgba(0,210,255,.1);padding:30px 20px;text-align:center;color:#7ba3c0;font-size:.82rem;margin-top:60px}
 footer a{color:#00d2ff;text-decoration:none}
 </style>
-<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://miamijetskiboatrentals.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://miamijetskiboatrentals.com/blog"}, {"@type": "ListItem", "position": 3, "name": "Top 10 Things to Do in St. Augustine (2026)", "item": "https://miamijetskiboatrentals.com/blog/top-10-things-to-do-in-northeast-florida"}]}</script></head>
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://miamijetskiboatrentals.com/"}, {"@type": "ListItem", "position": 2, "name": "Blog", "item": "https://miamijetskiboatrentals.com/blog"}, {"@type": "ListItem", "position": 3, "name": "Top 10 Things to Do in St. Augustine (2026)", "item": "https://miamijetskiboatrentals.com/blog/top-10-things-to-do-in-northeast-florida"}]}</script><script>
+window.dataLayer=window.dataLayer||[];
+function gtag(){dataLayer.push(arguments);}
+gtag('js',new Date());
+gtag('config','G-CMH3XLRFH6');
+gtag('config','AW-16509204378');
+(function(){
+  var l=false;
+  function ld(){
+    if(l)return;l=true;
+    var s=document.createElement('script');
+    s.async=true;
+    s.src='https://www.googletagmanager.com/gtag/js?id=AW-16509204378';
+    document.head.appendChild(s);
+  }
+  if(document.readyState==='complete')ld();
+  else addEventListener('load',ld);
+  ['scroll','mousemove','touchstart','click'].forEach(function(e){
+    addEventListener(e,ld,{once:true,passive:true});
+  });
+})();
+// Google Ads conversion: trackear click en Book Now (cualquier link a FareHarbor)
+document.addEventListener('click',function(e){
+  var a=e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
+  if(!a)return;
+  var price=parseFloat((a.getAttribute('data-fh-price')||'0').replace(/[^0-9.]/g,''))||0;
+  if(typeof gtag==='function'){
+    gtag('event','conversion',{
+      'send_to':'AW-16509204378/Od7PCNePlKAcEJrvmcA9',
+      'value':price,
+      'currency':'USD'
+    });
+  }
+},true);
+</script></head>
 <body>
 <nav>
   <a href="/" class="nav-logo">🛥️ <span>Miami</span> Jet Ski</a>

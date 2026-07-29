@@ -208,6 +208,22 @@ flujo:  rsync miami-jetski-main → iCloud…/GitHub/miami-jetski → commit →
 22. **La zona `keywest` tiene DOS prefijos de slug**: `keys-activities` para la página de zona y
     `key-west-*` para las landings de categoría. Cualquier mapeo automático zona→slug falla aquí.
 
+## Medición (revisado 28 jul)
+
+- **Propiedad GA4 única: `G-CMH3XLRFH6`.** Había una segunda, `G-4KJ2DD0HB1`, en 2.889 páginas de
+  operador: los datos estaban partidos entre dos propiedades. Unificadas todas a la primera.
+- **Google Ads: `AW-16509204378`**, etiqueta de conversión `AW-16509204378/Od7PCNePlKAcEJrvmcA9`.
+- El bloque de etiqueta canónico está en `miami-activities.html`: carga diferida de `gtag.js` al
+  primer scroll/click, `config` de GA4 y de Ads, y un listener global que registra `conversion`
+  en **cualquier** enlace a `fareharbor.com/embeds/book/`, leyendo el importe de `data-fh-price`.
+- **Por eso todo `<a>` a FareHarbor debe llevar `data-fh-price="<precio>"`**; sin él la conversión
+  llega a Ads con valor 0. Las 22 flagships de jet ski no lo tenían.
+- Las flagships además disparan `lp_book` y `lp_book_pin` con `value` y `currency`. Ojo: en el
+  código van dentro de una cadena JS con comillas escapadas (`\'lp_book\'`), así que un grep de
+  `'lp_book'` NO los encuentra — a mí me hizo creer que faltaban.
+- Estado: home, 101 zonas, 88 posts y las 22 flagships con etiqueta. **Siguen sin medir 215
+  landings de categoría y 931 páginas de operador** — pendiente de decisión.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
