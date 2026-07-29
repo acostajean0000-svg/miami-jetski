@@ -124,6 +124,14 @@ flujo:  rsync miami-jetski-main → iCloud…/GitHub/miami-jetski → commit →
    `<script>` con los TPL y en `index.html` el charset caía en el byte 1257 — pasado el
    límite de 1024 que garantiza la decodificación (riesgo de mojibake en acentos).
 
+8. **El campo `photo` tiene DOS formatos y hay que soportar los dos.** 9.641 operadores lo
+   guardan como URL completa y 1.435 como **clave suelta** (`SAGFuZPvQRQUqwevup8Y`).
+   Regla: `url = photo if photo.startswith('http') else PHOTO_TPL % photo`.
+   Esta suposición ha roto cosas dos veces: el generador de `og:image` dejó 1.339 páginas con
+   una foto genérica de Unsplash teniendo foto propia, y mi generador de `rel-card` produjo
+   4.005 `src` relativos (imágenes rotas). Hay además URLs del dominio antiguo
+   `www.filepicker.io` (88): son válidas, no las trates como error.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
