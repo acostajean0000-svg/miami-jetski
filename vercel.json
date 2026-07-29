@@ -5688,6 +5688,15 @@
           "value": "/"
         }
       ]
+    },
+    {
+      "source": "/:path((?!.*\\.[a-zA-Z0-9]+$).*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "no-cache, must-revalidate"
+        }
+      ]
     }
   ]
 }
