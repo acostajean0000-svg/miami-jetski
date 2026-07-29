@@ -185,6 +185,18 @@ flujo:  rsync miami-jetski-main → iCloud…/GitHub/miami-jetski → commit →
     debe ser una biyección con el maestro, con página HTML para cada slug.
     Estado al 28 jul: 177 data files, ambos derivados y las 11.076 entradas del slug-map, en sincronía.
 
+18. **Nunca recortes el NOMBRE del operador para que quepa la meta description.** Mi primer
+    `fix_desc.py` acortaba el nombre y dejó 1.146 descripciones tipo *"South Beach Private… in
+    Miami Beach"* — perdiendo justo "Kayak Tour", la palabra por la que se busca. Orden correcto:
+    nombre y categoría primero, relleno al final, y se recorta el relleno. Google trunca la cola,
+    así que lo importante debe ir delante. Ojo al medir longitud: hazlo sobre el texto **ya
+    escapado**, porque `&quot;` y `&#x27;` cuentan como 6 caracteres.
+
+19. **`numberOfItems` de un ItemList debe igualar el número de elementos que enumera**, no el
+    total de la zona. 32 páginas declaraban el total (y 30 de ellas heredaban el 448 de Miami)
+    mientras listaban 30 ítems. Además 38 tenían el `url` del ItemList apuntando a
+    `/miami-activities`. Fuente: la plantilla ES de zona se clonó de Miami.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
