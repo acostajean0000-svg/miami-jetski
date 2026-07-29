@@ -15,6 +15,7 @@ Sitio estático (~12.000 HTML) en **Vercel**, con `cleanUrls: true` y `trailingS
 | `slug-map.js` | `window._OP_SLUG_MAP = {id: slug}` — 11.076 entradas |
 | `data/{zona}.json` | Operadores de una zona (para páginas -activities) |
 | `data/{zona}-{cat}.json` | Operadores de zona+categoría (para landings) |
+| `data/cat/{cat}.json` | **Se olvida siempre.** 7 archivos por categoría global que usan 5 landings ES (snorkel-tours, yacht-charters, sunset-cruises, everglades-airboat-tours, miami-exotic-cars). Están fuera del patrón `data/*.json`, así que los scripts de propagación no los tocan |
 
 **Regla de oro:** los data files y las páginas son DERIVADOS de operators.json.
 Si cambias un operador (precio, rating, categoría), hay que propagar a: operators-slim,
@@ -151,6 +152,38 @@ flujo:  rsync miami-jetski-main → iCloud…/GitHub/miami-jetski → commit →
     de idioma por "3+ palabras funcionales en un nodo de texto" no ven: `alt` de imagen, mensajes
     pre-rellenados de `wa.me`, cadenas dentro del JS y frases cortas ("Sí, 0% prepago").
     Al auditar idioma hay que mirar esos cuatro sitios además del texto visible.
+
+13. **Una traducción automática rompió el JavaScript de `es/index.html`** (28 jul): `classList`
+    → `classLista` (83 veces) y `addEventListener` → `addEventListaener` (15), sin ningún
+    `addEventListener` correcto en el archivo. La home española no enganchaba ni un evento:
+    filtros, buscador, mapa, comparador y favoritos estaban muertos. **El `node --check` NO lo
+    detecta**: es sintaxis válida, falla en tiempo de ejecución. Al traducir, la lista negra de
+    identificadores intocables es: `classList, addEventListener, removeEventListener,
+    querySelector(All), getElementById, textContent, innerHTML, dataset, Map, Date, List, Name`.
+    Comprobación rápida tras cualquier traducción:
+    `grep -c '\.addEventListener(' archivo` debe ser > 0.
+
+14. **`vercel.json`: la regla `no-cache` de HTML no cubría las URLs reales.** Era
+    `source: "/(.*\\.html)"`, pero con `cleanUrls` se sirve `/miami-jet-ski-rentals` sin
+    extensión. Añadida `"/:path((?!.*\\.[a-zA-Z0-9]+$).*)"` al final de `headers` — coge solo
+    rutas sin extensión, así que no toca `/data/`, `/og/`, `/vendor/` ni el CSS.
+
+15. **Al auditar en vivo, usar siempre un parámetro anticaché** (`?nocache=fecha`). Una lectura
+    normal me devolvió una copia antigua de la landing de Miami y me hizo pensar que faltaba el
+    selector de idioma, que sí estaba publicado.
+
+16. **`data/cat/*.json` llevaba 2 meses sin regenerarse** (fechados 30 mayo): 570 de 648
+    registros con coordenadas obsoletas — uno situaba un operador en Cancún estando en Cozumel,
+    80 km de error — más 10 precios y 1 categoría. Causa: el glob de propagación es `data/*.json`
+    y estos viven en `data/cat/`. **Al propagar datos, usar `data/**/*.json`.**
+    Siguen sin contener las zonas importadas después de mayo (snorkel 282 de 461, sunset 167 de
+    219, yacht 129 de 153): decidir si esas 5 landings ES deben ampliar su alcance o no.
+
+17. **Comprobación de la regla de oro, para repetir tras cada cambio de datos:** cada registro de
+    `data/**/*.json`, `operators-slim.json` y `operators-top.json` debe coincidir con
+    `operators.json` en lat, lng, price, cat, rating, reviews, name, zl y zone; y `slug-map.js`
+    debe ser una biyección con el maestro, con página HTML para cada slug.
+    Estado al 28 jul: 177 data files, ambos derivados y las 11.076 entradas del slug-map, en sincronía.
 
 ## Historial de la gran sesión (jul 2026) — para contexto
 

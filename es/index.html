@@ -39,14 +39,14 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <!-- slug-map.js is large (~60 KB gz) and only needed for "View details" link routing.
          Lazy-load after window.load OR on first user interaction so it doesn't compete with first paint. -->
-    <script>(function(){var l=!1;function ld(){if(l)return;l=!0;var s=document.createElement('script');s.src='/slug-map.js';s.async=!0;document.head.appendChild(s);}if(document.readyState==='complete'){setTimeout(ld,50);}else{addEventListaener('load',function(){setTimeout(ld,50);});}['scroll','mousemove','touchstart','click','keydown'].forEach(function(e){addEventListaener(e,ld,{once:!0,passive:!0});});})();</script>
+    <script>(function(){var l=!1;function ld(){if(l)return;l=!0;var s=document.createElement('script');s.src='/slug-map.js';s.async=!0;document.head.appendChild(s);}if(document.readyState==='complete'){setTimeout(ld,50);}else{addEventListener('load',function(){setTimeout(ld,50);});}['scroll','mousemove','touchstart','click','keydown'].forEach(function(e){addEventListener(e,ld,{once:!0,passive:!0});});})();</script>
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#081525">
   <!-- GTM deferred past LCP to avoid forced reflow in critical window -->
   <script>
     window.dataLayer=window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
-    window.addEventListaener('load',function(){
+    window.addEventListener('load',function(){
       setTimeout(function(){
         var s=document.createElement('script');
         s.async=true;
@@ -70,15 +70,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
   <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Open+Sans:wght@400;500;600&display=swap"></noscript>
   <!-- Icons inlined as SVG (Font Awesome removed for perf — saved ~230 KB) -->
-  <script type="application/ld+json">
-  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
-    {"@type":"Question","name":"How do I find the best jet ski rental in Miami?","acceptedAnswer":{"@type":"Answer","text":"Use the category filter on our homepage to select 'Jet Ski', then sort by price or location. All operators are FareHarbor-verified with instant online booking. Filtrar by zone (Miami, Broward, Keys) to find operators near you."}},
-    {"@type":"Question","name":"What is the cheapest water activity in Florida?","acceptedAnswer":{"@type":"Answer","text":"Kayak and paddleboard rentals start desde $4–$15 per hour. Jet ski tours start around $99. Boat rentals desde $260. Use the price filter on our homepage to find activities within any budget."}},
-    {"@type":"Question","name":"Do I need a license to rent a jet ski in Florida?","acceptedAnswer":{"@type":"Answer","text":"Anyone born after January 1, 1988 must complete a boating safety course and carry a Florida Boating Safety Education ID card. Most rental operators provide a brief safety orientation. Captained charters are available if you prefer not to drive."}},
-    {"@type":"Question","name":"What is the best time of year for water sports in Miami?","acceptedAnswer":{"@type":"Answer","text":"Miami water sports are available year-round. Peak season is November–April with calmer seas and pleasant temperatures. Summer (June–September) is warmest but afternoon storms are common. Most operators run 7 days a week from 8am–6pm."}},
-    {"@type":"Question","name":"Can I book same-day water sports in Florida?","acceptedAnswer":{"@type":"Answer","text":"Yes. Most operators listed on our site offer same-day and next-day booking through FareHarbor. Select your date on any operator's booking page to check real-time availability."}}
-  ]}
-  </script>
+  <script type="application/ld+json">{"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "¿Cómo encuentro el mejor alquiler de motos acuáticas en Miami?", "acceptedAnswer": {"@type": "Answer", "text": "Usa el filtro de categoría de la portada para seleccionar 'Jet Ski' y ordena por precio o ubicación. Todos los operadores están verificados por FareHarbor y permiten reserva online instantánea. Filtra por zona (Miami, Broward, Cayos) para encontrar operadores cerca de ti."}}, {"@type": "Question", "name": "¿Cuál es la actividad acuática más barata de Florida?", "acceptedAnswer": {"@type": "Answer", "text": "El alquiler de kayak y paddleboard arranca entre $4 y $15 por hora. Los tours en moto acuática parten de unos $99 y el alquiler de barcos desde $260. Usa el filtro de precio de la portada para encontrar actividades que encajen en cualquier presupuesto."}}, {"@type": "Question", "name": "¿Necesito licencia para alquilar una moto acuática en Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Quien haya nacido después del 1 de enero de 1988 debe completar un curso de seguridad náutica y llevar el carné Florida Boating Safety Education. La mayoría de operadores imparte una breve orientación de seguridad. También hay chárters con patrón si prefieres no conducir."}}, {"@type": "Question", "name": "¿Cuál es la mejor época del año para los deportes acuáticos en Miami?", "acceptedAnswer": {"@type": "Answer", "text": "En Miami hay deportes acuáticos todo el año. La temporada alta va de noviembre a abril, con mar más tranquilo y temperaturas agradables. El verano (de junio a septiembre) es el más caluroso, pero son habituales las tormentas de tarde. La mayoría de operadores abre los 7 días, de 8:00 a 18:00."}}, {"@type": "Question", "name": "¿Puedo reservar actividades acuáticas para el mismo día en Florida?", "acceptedAnswer": {"@type": "Answer", "text": "Sí. La mayoría de los operadores de nuestra web permite reservar para el mismo día o el siguiente a través de FareHarbor. Elige tu fecha en la página de reserva de cualquier operador para ver la disponibilidad en tiempo real."}}]}</script>
   <noscript></noscript>
   <!-- Leaflet — non-blocking, lazy init via IntersectionObserver -->
   <link rel="preload" as="style" href="/vendor/leaflet/leaflet.css" onload="this.onload=null;this.rel='stylesheet'">
@@ -703,7 +695,7 @@
       <a href="/miami-activities">Miami</a>
       <a href="/cancun-activities">🇲🇽 Cancún</a>
       <a href="/punta-cana-activities">🇩🇴 Punta Cana</a>
-      <a href="#reviews">Reviews</a>
+      <a href="#reviews">Opiniones</a>
       <a href="#operators" class="nav-cta">Reservar</a>
     </div>
     <button class="hamburger" id="hamburger" aria-label="Menu">
@@ -713,42 +705,42 @@
 <div class="lang-switch" role="navigation" aria-label="Idioma"><a href="https://miamijetskiboatrentals.com/" hreflang="en">🇺🇸 EN</a><span class="active" aria-current="true">🇪🇸 ES</span></div>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
-  <a href="/miami-activities" onclick="closeMobile()">🌊 Miami Activities</a>
-  <a href="/cancun-activities" onclick="closeMobile()">🇲🇽 Cancún Activities</a>
+  <a href="/miami-activities" onclick="closeMobile()">🌊 Actividades en Miami</a>
+  <a href="/cancun-activities" onclick="closeMobile()">🇲🇽 Actividades en Cancún</a>
   <a href="/punta-cana-activities" onclick="closeMobile()">🇩🇴 Punta Cana</a>
-  <a href="#operators" onclick="closeMobile()">🔍 Compare Todos los Operadores</a>
-  <a href="#reviews" onclick="closeMobile()">⭐ Reviews</a>
+  <a href="#operators" onclick="closeMobile()">🔍 Comparar Todos los Operadores</a>
+  <a href="#reviews" onclick="closeMobile()">⭐ Opiniones</a>
 </div>
 <!-- HERO -->
 <section class="hero">
   <div class="hero-inner">
     <div class="hero-tag">🌊 Florida's #1 Water Activities Directory</div>
     <h1>Jet Ski, Boats &amp; <span class="teal">Water Adventures</span> Across Florida</h1>
-    <p>Compare 11,000+ operators — jet ski rentals, boat charters, slingshots, aerial tours, ATV, bike rentals, golf carts, fishing trips &amp; more. From Miami Beach to Key West, Gulf Coast to Space Coast. Book online instantly.</p>
+    <p>Compara más de 11.000 operadores: alquiler de motos acuáticas, chárters de barco, slingshots, tours aéreos, ATV, alquiler de bicicletas, carritos de golf, pesca y mucho más. De Miami Beach a Cayo Hueso, de la Costa del Golfo a la Space Coast. Reserva online al instante.</p>
     <!-- BOOKING WIDGET -->
     <div class="hero-bw">
       <div class="hero-bw-title">Encuentra tu actividad perfecta</div>
       <div class="hero-bw-row">
         <div>
-          <label class="hero-bw-label" for="bwLoc">📍 Location</label>
+          <label class="hero-bw-label" for="bwLoc">📍 Ubicación</label>
           <select id="bwLoc" class="hero-bw-select" onchange="bwUpdate()">
-            <option value="">All Florida</option>
-            <option value="miami-activities">🌊 Miami (466 operators)</option>
-            <option value="fort-lauderdale-activities">⛵ Fort Lauderdale (121 operators)</option>
-            <option value="keys-activities">🗝️ Florida Keys (473 operators)</option>
-            <option value="west-florida-activities">🌴 West Florida (379 operators)</option>
-            <option value="gulf-coast-activities">🐚 Gulf Coast (260 operators)</option>
-            <option value="orlando-activities">🎡 Zona de Orlando (106 operators)</option>
-            <option value="jacksonville-activities">🌊 Jacksonville (112 operators)</option>
-            <option value="palm-beach-activities">🌴 Palm Beach (44 operators)</option>
-            <option value="cancun-activities">🇲🇽 Cancún (479 operators)</option>
-            <option value="punta-cana-activities">🇩🇴 Punta Cana (89 operators)</option>
+            <option value="">Toda Florida</option>
+            <option value="miami-activities">🌊 Miami (450 operadores)</option>
+            <option value="broward-activities">⛵ Fort Lauderdale (325 operadores)</option>
+            <option value="keys-activities">🗝️ Florida Keys (460 operadores)</option>
+            <option value="west-florida-activities">🌴 West Florida (1630 operadores)</option>
+            <option value="naples-activities">🐚 Gulf Coast (264 operadores)</option>
+            <option value="orlando-activities">🎡 Zona de Orlando (182 operadores)</option>
+            <option value="jacksonville-activities">🌊 Jacksonville (357 operadores)</option>
+            <option value="palm-beach-activities">🌴 Palm Beach (110 operadores)</option>
+            <option value="cancun-activities">🇲🇽 Cancún (419 operadores)</option>
+            <option value="punta-cana-activities">🇩🇴 Punta Cana (87 operadores)</option>
           </select>
         </div>
         <div>
           <label class="hero-bw-label" for="bwCat">🏄 Activity</label>
           <select id="bwCat" class="hero-bw-select" onchange="bwUpdate()">
-            <option value="">All Activities</option>
+            <option value="">Todas las Actividades</option>
             <option value="jetski">🏄 Jet Ski</option>
             <option value="boat">⛵ Boat Charter</option>
             <option value="sail">🌅 Sailing</option>
@@ -758,16 +750,16 @@
             <option value="watersports">🤿 Water Sports</option>
           </select>
         </div>
-        <a id="bwGoBtn" href="#operators" class="hero-bw-btn">See Options →</a>
+        <a id="bwGoBtn" href="#operators" class="hero-bw-btn">Ver Opciones →</a>
       </div>
       <div class="hero-bw-trust">
         <span>🔄 Cancelación gratis</span>
         <span>✅ Confirmación instantánea</span>
-        <span>💳 No hidden fees</span>
+        <span>💳 Sin cargos ocultos</span>
       </div>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num" id="heroOpCount">652</div><div class="hero-stat-label">Operators</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" id="heroOpCount">652</div><div class="hero-stat-label">Operadores</div></div>
       <div class="hero-stat"><div class="hero-stat-num">$4</div><div class="hero-stat-label">Starting From</div></div>
       <div class="hero-stat"><div class="hero-stat-num">13</div><div class="hero-stat-label">Categories</div></div>
       <div class="hero-stat"><div class="hero-stat-num">FL</div><div class="hero-stat-label">Statewide</div></div>
@@ -797,7 +789,7 @@
         <span class="search-hint" id="searchHint"></span>
       </div>
       <div class="cat-tabs">
-        <button class="cat-tab active" onclick="filterCat('all',this)"><span class="cat-emoji">🌎</span><span class="cat-label">All</span><span class="cat-count">(1053)</span></button>
+        <button class="cat-tab active" onclick="filterCat('all',this)"><span class="cat-emoji">🌎</span><span class="cat-label">Todas</span><span class="cat-count">(1053)</span></button>
         <button class="cat-tab" onclick="filterCat('jetski',this)"><span class="cat-emoji">🛥️</span><span class="cat-label">Jet Ski</span><span class="cat-count">(86)</span></button>
         <button class="cat-tab" onclick="filterCat('boat',this)"><span class="cat-emoji">⛵</span><span class="cat-label">Boats</span><span class="cat-count">(208)</span></button>
         <button class="cat-tab" onclick="filterCat('yacht',this)"><span class="cat-emoji">🛳️</span><span class="cat-label">Yachts &amp; Catamarans</span><span class="cat-count">(130)</span></button>
@@ -820,7 +812,7 @@
         <button class="cat-tab" onclick="filterCat('snorkel',this)"><span class="cat-emoji">🤿</span><span class="cat-label">Snorkel</span><span class="cat-count">(3)</span></button>
       </div>
       <div class="zone-tabs">
-        <button class="zone-tab active" data-zone="all" onclick="filterZone('all',this)">🗺️ All Florida</button>
+        <button class="zone-tab active" data-zone="all" onclick="filterZone('all',this)">🗺️ Toda Florida</button>
         <button class="zone-tab" onclick="filterZone('miami',this)">🏖️ Miami</button>
         <button class="zone-tab" onclick="filterZone('broward',this)">🌅 Broward</button>
         <button class="zone-tab" onclick="filterZone('keys',this)">🐠 Florida Keys</button>
@@ -841,9 +833,9 @@
         <button class="zone-tab" onclick="filterZone('crystalriver',this)">🐟 Crystal River</button>
         <button class="zone-tab" onclick="filterZone('daytona',this)">🏁 Daytona</button>
         <button class="zone-tab" onclick="filterZone('gainesville',this)">🎓 Gainesville</button>
-        <button class="zone-tab" onclick="filterZone('florida',this)">🌞 All FL</button>
+        <button class="zone-tab" onclick="filterZone('florida',this)">🌞 Toda FL</button>
       </div>
-      <button class="nearme-btn" id="nearMeBtn" onclick="toggleNearMe()">📍 Near Me</button>
+      <button class="nearme-btn" id="nearMeBtn" onclick="toggleNearMe()">📍 Cerca de mí</button>
       <div class="price-filter">
         <span class="price-filter-label">💰 Price</span>
         <div class="price-range-wrap">
@@ -880,12 +872,12 @@
         <a data-fh-name="Reservar →" href="https://fareharbor.com/embeds/book/miamistylerentals/items/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&flow=613885&full-items=yes" target="_blank" rel="noopener noreferrer nofollow sponsored" class="featured-btn">Reservar →</a>
       </div>
       <div class="cards-toolbar">
-        <div class="cards-count" id="cardsCount">Showing 11,000+ operators</div>
+        <div class="cards-count" id="cardsCount">Mostrando 11.000+ operadores</div>
         <select class="sort-select" id="sortSelect" onchange="activeOrdenarBy=this.value;renderCards();pushDL('sort_operators',{sort_by:this.value})">
           <option value="default">Ordenar: Default</option>
           <option value="price_asc">Price: Low → High</option>
           <option value="price_desc">Price: High → Low</option>
-          <option value="rating_desc">⭐ Top Rated</option>
+          <option value="rating_desc">⭐ Mejor Valorados</option>
           <option value="reviews_desc">Most Reviewed</option>
         </select>
       </div>
@@ -900,64 +892,64 @@
 <!-- MAP TOGGLE BUTTON (mobile) -->
 <button class="map-toggle-btn" id="mapToggleBtn" onclick="toggleMapaView()">
   <span class="btn-icon">🗺️</span>
-  <span class="btn-text">View Mapa</span>
+  <span class="btn-text">Ver Mapa</span>
 </button>
 <!-- LOCATION CARDS -->
 <section class="loc-section">
   <div class="container">
     <div class="section-tag">Explora por Ubicación</div>
-    <h2 class="section-title">Florida's Top <span class="teal">Activity Hubs</span></h2>
-    <p class="section-sub">Click any destination to see all operators with real-time availability and instant booking.</p>
+    <h2 class="section-title">Principales Destinos de <span class="teal">Florida</span></h2>
+    <p class="section-sub">Pulsa cualquier destino para ver todos los operadores con disponibilidad en tiempo real y reserva instantánea.</p>
     <div class="loc-grid">
       <a href="/miami-activities" class="loc-card">
         <div class="loc-card-top"><span class="loc-card-emoji">🌊</span><span class="loc-card-count">450 ops</span></div>
         <div class="loc-card-name">Miami</div>
-        <div class="loc-card-cta">Browse Activities →</div>
+        <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/broward-activities" class="loc-card">
         <div class="loc-card-top"><span class="loc-card-emoji">⛵</span><span class="loc-card-count">473 ops</span></div>
         <div class="loc-card-name">Fort Lauderdale</div>
-        <div class="loc-card-cta">Browse Activities →</div>
+        <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/keys-activities" class="loc-card">
         <div class="loc-card-top"><span class="loc-card-emoji">🗝️</span><span class="loc-card-count">1448 ops</span></div>
         <div class="loc-card-name">Florida Keys</div>
-        <div class="loc-card-cta">Browse Activities →</div>
+        <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/west-florida-activities" class="loc-card">
         <div class="loc-card-top"><span class="loc-card-emoji">🌴</span><span class="loc-card-count">299 ops</span></div>
         <div class="loc-card-name">West Florida</div>
-        <div class="loc-card-cta">Browse Activities →</div>
+        <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/naples-activities" class="loc-card">
         <div class="loc-card-top"><span class="loc-card-emoji">🐚</span><span class="loc-card-count">199 ops</span></div>
         <div class="loc-card-name">Gulf Coast</div>
-        <div class="loc-card-cta">Browse Activities →</div>
+        <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/orlando-activities" class="loc-card">
         <div class="loc-card-top"><span class="loc-card-emoji">🎡</span><span class="loc-card-count">499 ops</span></div>
         <div class="loc-card-name">Orlando Area</div>
-        <div class="loc-card-cta">Browse Activities →</div>
+        <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/jacksonville-activities" class="loc-card">
         <div class="loc-card-top"><span class="loc-card-emoji">🌊</span><span class="loc-card-count">138 ops</span></div>
         <div class="loc-card-name">Jacksonville</div>
-        <div class="loc-card-cta">Browse Activities →</div>
+        <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/palm-beach-activities" class="loc-card">
         <div class="loc-card-top"><span class="loc-card-emoji">🌴</span><span class="loc-card-count">479 ops</span></div>
         <div class="loc-card-name">Palm Beach</div>
-        <div class="loc-card-cta">Browse Activities →</div>
+        <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/cancun-activities" class="loc-card" style="border-color:rgba(0,212,200,.25);">
         <div class="loc-card-top"><span class="loc-card-emoji">🇲🇽</span><span class="loc-card-count">7 ops</span></div>
         <div class="loc-card-name">Cancún</div>
-        <div class="loc-card-cta">Browse Activities →</div>
+        <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/punta-cana-activities" class="loc-card" style="border-color:rgba(0,212,200,.25);">
         <div class="loc-card-top"><span class="loc-card-emoji">🇩🇴</span><span class="loc-card-count">6 ops</span></div>
         <div class="loc-card-name">Punta Cana</div>
-        <div class="loc-card-cta">Browse Activities →</div>
+        <div class="loc-card-cta">Ver Actividades →</div>
       </a>
     </div>
   </div>
@@ -973,8 +965,8 @@
   <div class="container">
     <div class="text-center">
       <div class="section-tag">⭐ Editor's Picks</div>
-      <h2 class="section-title">Highest <span class="teal">Rated Operators</span></h2>
-      <p class="section-sub" style="margin-bottom:0">Top-reviewed water sports operators across Florida, ranked by real customer ratings.</p>
+      <h2 class="section-title">Operadores <span class="teal">Mejor Valorados</span></h2>
+      <p class="section-sub" style="margin-bottom:0">Los operadores de deportes acuáticos mejor valorados de Florida, ordenados por las opiniones reales de los clientes.</p>
     </div>
     <div class="deals-grid" id="dealsGrid"></div>
   </div>
@@ -982,14 +974,14 @@
 <!-- REVIEWS -->
 <section class="testimonials" id="reviews">
   <div class="container text-center">
-    <div class="section-tag">Reviews</div>
+    <div class="section-tag">Opiniones</div>
     <h2 class="section-title">What Our <span class="teal">Customers Say</span></h2>
     <p class="section-sub">Thousands of happy adventurers across Florida.</p>
     <div class="reviews-grid">
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Found AquaFusion in 2 minutes — instructor was amazing and we had a blast on the party boat combo. 10/10!"</p><div class="review-author">Jessica M.</div><div class="review-location">Miami Beach, FL</div></div>
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Booked Six Fins Key West for a 2-hour jet ski tour. The reef views were incredible. Best experience in the Keys!"</p><div class="review-author">Carlos R.</div><div class="review-location">Key West, FL</div></div>
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"The comparison tool is genius. Found Bruschi Boat Rental on the Miami River — perfect for our group of 8. Easy booking!"</p><div class="review-author">Amanda K.</div><div class="review-location">Fort Lauderdale, FL</div></div>
-      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Used this to find a fishing charter in Marathon. L Fish was incredible — caught grouper and snapper on the same trip!"</p><div class="review-author">Mike T.</div><div class="review-location">Marathon, FL</div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Encontré AquaFusion en 2 minutos. El instructor fue estupendo y nos lo pasamos genial con el combo de party boat. ¡10/10!"</p><div class="review-author">Jessica M.</div><div class="review-location">Miami Beach, FL</div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Reservé Six Fins Key West para un tour de 2 horas en moto acuática. Las vistas del arrecife eran increíbles. ¡La mejor experiencia de los Cayos!"</p><div class="review-author">Carlos R.</div><div class="review-location">Key West, FL</div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"El comparador es una maravilla. Encontré Bruschi Boat Rental en el río Miami, perfecto para nuestro grupo de 8. ¡Reserva facilísima!"</p><div class="review-author">Amanda K.</div><div class="review-location">Fort Lauderdale, FL</div></div>
+      <div class="review-card"><div class="review-stars">★★★★★</div><p class="review-text">"Lo usé para encontrar un chárter de pesca en Marathon. L Fish fue increíble: ¡pescamos mero y pargo en la misma salida!"</p><div class="review-author">Mike T.</div><div class="review-location">Marathon, FL</div></div>
     </div>
   </div>
 </section>
@@ -1000,32 +992,32 @@
     <h2 class="section-title">Frequently Asked <span class="teal">Questions</span></h2>
     <div class="faq-list">
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">¿Cómo reservo jet ski or boat rental?<span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Click "Reservar" on any operator card. You'll be taken directly to their FareHarbor booking page where you can select date, time and number of riders. All bookings are confirmed instantly online.</p></div>
+        <div class="faq-q">¿Cómo reservo una moto acuática o un barco?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Pulsa "Reservar" en la tarjeta de cualquier operador. Irás directamente a su página de reserva en FareHarbor, donde eliges fecha, hora y número de personas. Todas las reservas se confirman al instante online.</p></div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">Do I need a license to rent a jet ski in Florida?<span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>In Florida, anyone born after January 1, 1988 must have a boating safety ID card to operate a personal watercraft. Most rental operators offer a brief safety course on-site. Always confirm with the operator before booking.</p></div>
+        <div class="faq-q">¿Necesito licencia para alquilar una moto acuática en Florida?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>En Florida, quien haya nacido después del 1 de enero de 1988 necesita el carné de seguridad náutica para conducir una moto acuática. La mayoría de operadores imparten un curso breve in situ. Confírmalo siempre con el operador antes de reservar.</p></div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">What is the minimum age for jet ski rentals?<span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Most operators require riders to be at least 18 years old to drive a jet ski. Passengers can typically be younger. Age requirements vary by operator — check their listing for specifics.</p></div>
+        <div class="faq-q">¿Cuál es la edad mínima para alquilar una moto acuática?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>La mayoría de operadores exige tener 18 años como mínimo para conducir. Los acompañantes suelen poder ser menores. Los requisitos varían según el operador: consulta su ficha para el detalle.</p></div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">Are the operators on this site licensed and insured?<span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Yes. All operators listed on MiamiJetskiBoatRentals.com are active FareHarbor partners operating legally in Florida. We recommend confirming insurance details directly with each operator before your activity.</p></div>
+        <div class="faq-q">¿Los operadores de esta web tienen licencia y seguro?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Sí. Todos los operadores listados en MiamiJetskiBoatRentals.com son socios activos de FareHarbor y operan legalmente en Florida. Recomendamos confirmar los detalles del seguro directamente con cada operador antes de la actividad.</p></div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">Can I cancel or reschedule my booking?<span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>Cancellation and rescheduling policies vary by operator. Most allow free cancellation 24–48 hours before the activity. Review the specific cancellation policy on each operator's FareHarbor booking page before confirming.</p></div>
+        <div class="faq-q">¿Puedo cancelar o cambiar la fecha de mi reserva?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Las políticas de cancelación y cambio varían según el operador. La mayoría permite cancelar gratis entre 24 y 48 horas antes de la actividad. Revisa la política concreta en la página de reserva de FareHarbor de cada operador antes de confirmar.</p></div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">What areas of Florida do you cover?<span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>We cover operators statewide — Miami Beach, Fort Lauderdale, Florida Keys, Gulf Coast (Naples, Fort Myers, Sarasota, St. Petersburg), Palm Beach, Space Coast, Everglades, Central Florida and Northeast FL.</p></div>
+        <div class="faq-q">¿Qué zonas de Florida cubrís?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Cubrimos operadores de todo el estado: Miami Beach, Fort Lauderdale, los Cayos de Florida, la Costa del Golfo (Naples, Fort Myers, Sarasota, St. Petersburg), Palm Beach, la Space Coast, los Everglades, Florida Central y el nordeste del estado.</p></div>
       </div>
       <div class="faq-item" onclick="toggleFaq(this)">
-        <div class="faq-q">What's the difference between a Slingshot and a Jet Car?<span class="faq-icon">+</span></div>
-        <div class="faq-a"><p>A Polaris Slingshot is a 3-wheeled open-air autocycle you drive on roads. A Jet Car (also called a Jet Capsule or Water Car) is a vehicle that drives on water like a speedboat but looks like a sports car. Both are unique Florida experiences!</p></div>
+        <div class="faq-q">¿Qué diferencia hay entre un Slingshot y un Jet Car?<span class="faq-icon">+</span></div>
+        <div class="faq-a"><p>Un Polaris Slingshot es un autociclo descubierto de 3 ruedas que se conduce por carretera. Un Jet Car (también llamado Jet Capsule o Water Car) es un vehículo que navega sobre el agua como una lancha, pero con aspecto de coche. Ambos se alquilan en Miami y no requieren carné náutico si van con patrón.</p></div>
       </div>
     </div>
   </div>
@@ -1034,9 +1026,9 @@
 <section class="cta-section">
   <div>
     <h2>Ready to <span class="teal">Ride the Waves?</span></h2>
-    <p>Browse 11,000+ operators, compare prices, and book your Florida water adventure in minutes.</p>
+    <p>Explora más de 11.000 operadores, compara precios y reserva tu aventura acuática en Florida en minutos.</p>
     <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">
-      <a href="#operators" class="btn btn-primary" style="font-size:1rem;padding:16px 36px;">🌊 Browse Todos los Operadores</a>
+      <a href="#operators" class="btn btn-primary" style="font-size:1rem;padding:16px 36px;">🌊 Ver Todos los Operadores</a>
     </div>
   </div>
 </section>
@@ -1044,9 +1036,9 @@
 <section style="background:var(--dark2);padding:70px 0;border-top:1px solid var(--border);" id="best-of">
   <div style="max-width:1200px;margin:0 auto;padding:0 24px;">
     <div style="text-align:center;margin-bottom:48px;">
-      <div class="section-tag">🏆 Expert Rankings</div>
-      <h2 style="font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;margin-bottom:12px;">Best Water Sports — <span class="teal">Ranked & Reviewed</span></h2>
-      <p style="color:var(--text-muted);font-size:1rem;max-width:560px;margin:0 auto;">Independently ranked guides to help you find the top operators in every destination.</p>
+      <div class="section-tag">🏆 Rankings de Expertos</div>
+      <h2 style="font-size:clamp(1.8rem,4vw,2.5rem);font-weight:900;margin-bottom:12px;">Best Water Sports — <span class="teal">Clasificados y Valorados</span></h2>
+      <p style="color:var(--text-muted);font-size:1rem;max-width:560px;margin:0 auto;">Guías con clasificaciones independientes para ayudarte a encontrar los mejores operadores en cada destino.</p>
     </div>
     <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;">
       
@@ -1068,14 +1060,14 @@
 </section>
 <!-- NEWSLETTER -->
 <section class="newsletter-section">
-  <div class="section-tag">📬 Stay Updated</div>
-  <h3 style="margin-top:16px;">Get the <span class="teal">Best Deals</span> in Your Inbox</h3>
-  <p>New operators, exclusive discounts and Florida water sports tips — weekly.</p>
+  <div class="section-tag">📬 Mantente al Día</div>
+  <h3 style="margin-top:16px;">Recibe las <span class="teal">Mejores Ofertas</span> en tu Correo</h3>
+  <p>Nuevos operadores, descuentos exclusivos y consejos de deportes acuáticos en Florida, cada semana.</p>
   <form class="newsletter-form" onsubmit="submitNewsletter(event)">
     <input type="email" class="newsletter-input" placeholder="your@email.com" required>
     <button type="submit" class="newsletter-btn"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480V396.4c0-4 1.5-7.8 4.2-10.7L331.8 202.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8 17.7 316.6C7.1 311.3 .3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg> Subscribe</button>
   </form>
-  <p class="newsletter-note">No spam. Unsubscribe anytime. 🌊</p>
+  <p class="newsletter-note">Sin spam. Cancela cuando quieras. 🌊</p>
 </section>
 <!-- FOOTER -->
 <footer>
@@ -1083,7 +1075,7 @@
     <div class="footer-grid">
       <div class="footer-brand">
         <div class="logo"><div class="logo-icon">🌊</div><div>Miami <span>Jetski</span> &amp; Boat Rentals</div></div>
-        <p>Florida's #1 water activities comparison platform. We connect you with the best operators from Miami to Key West, Gulf Coast to Space Coast.</p>
+        <p>La plataforma n.º 1 de comparación de actividades acuáticas en Florida. Te conectamos con los mejores operadores, de Miami a Cayo Hueso y de la Costa del Golfo a la Space Coast.</p>
         <div class="footer-socials">
           <a href="#" class="footer-social"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/></svg></a>
           <a href="#" class="footer-social"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z"/></svg></a>
@@ -1099,7 +1091,7 @@
     <div style="border-top:1px solid var(--border);padding-top:20px;margin-bottom:24px;font-size:.82rem;color:var(--text-muted)"><strong style="color:var(--teal);text-transform:uppercase;letter-spacing:1px;font-size:.8rem">🛥️ Alquiler de Jet Ski por Ciudad:</strong> <a href="/es/miami-jet-ski-rentals">Miami</a> · <a href="/es/fort-lauderdale-jet-ski-rentals">Fort Lauderdale</a> · <a href="/es/key-west-jet-ski-rentals">Key West</a> · <a href="/es/west-florida-jet-ski-rentals">West Florida</a> · <a href="/es/cancun-jet-ski-rentals">Cancún</a> · <a href="/es/myrtle-beach-jet-ski-rentals">Myrtle Beach</a> · <a href="/es/lake-havasu-jet-ski-rentals">Lake Havasu</a> · <a href="/es/lake-tahoe-jet-ski-rentals">Lake Tahoe</a> · <a href="/es/punta-cana-jet-ski-rentals">Punta Cana</a> · <a href="/es/puerto-rico-jet-ski-rentals">Puerto Rico</a> · <a href="/es/south-padre-jet-ski-rentals">South Padre</a></div>
     <div class="footer-bottom">
       <p>© 2026 Miami Jetski &amp; Boat Rentals. All rights reserved.</p>
-      <p class="footer-disclaimer">We are a referral platform. Bookings processed by each operator via FareHarbor.</p>
+      <p class="footer-disclaimer">Somos una plataforma de referencia. Cada operador procesa sus reservas a través de FareHarbor.</p>
     </div>
   </div>
 </footer>
@@ -1144,22 +1136,22 @@ function toggleNearMe() {
   const btn=document.getElementById('nearMeBtn');
   if(nearMeActive){
     nearMeActive=false; userLat=userLng=null;
-    btn.classLista.remove('active'); btn.innerHTML='📍 Near Me';
+    btn.classList.remove('active'); btn.innerHTML='📍 Cerca de mí';
     renderCards(); return;
   }
   if(!navigator.geolocation){ alert('Geolocation not supported by your browser.'); return; }
-  btn.classLista.add('loading'); btn.innerHTML='⏳ Locating…';
+  btn.classList.add('loading'); btn.innerHTML='⏳ Locating…';
   navigator.geolocation.getCurrentPosition(
     pos => {
       userLat=pos.coords.latitude; userLng=pos.coords.longitude;
       nearMeActive=true;
-      btn.classLista.remove('loading'); btn.classLista.add('active'); btn.innerHTML='📍 Near Me ✓';
+      btn.classList.remove('loading'); btn.classList.add('active'); btn.innerHTML='📍 Cerca de mí ✓';
       activeZone='all';
-      document.querySelectorAll('.zone-tab').forEach(b=>b.classLista.remove('active'));
-      document.querySelector('.zone-tab[data-zone="all"]').classLista.add('active');
+      document.querySelectorAll('.zone-tab').forEach(b=>b.classList.remove('active'));
+      document.querySelector('.zone-tab[data-zone="all"]').classList.add('active');
       renderCards();
     },
-    () => { btn.classLista.remove('loading'); btn.innerHTML='📍 Near Me'; alert('Could not get your location. Allow location access and try again.'); }
+    () => { btn.classList.remove('loading'); btn.innerHTML='📍 Cerca de mí'; alert('Could not get your location. Allow location access and try again.'); }
   );
 }
 // ---- FILTERED LIST ----
@@ -1256,7 +1248,7 @@ const imgLoad = ci === 0 ? 'fetchpriority="high"' : ci === 1 ? 'loading="eager"'
       <div class="img-shimmer" id="shim-${op.id}"></div>
       <div class="img-fallback" id="fall-${op.id}" style="display:none"><div>${emoji}</div><span>${label}</span></div>
       <img src="${thumbUrl(op.photo)}" alt="${esc(op.name)}" width="400" height="267" ${imgLoad}
-        onload="this.classLista.add('loaded');var s=document.getElementById('shim-${op.id}');if(s)s.remove();"
+        onload="this.classList.add('loaded');var s=document.getElementById('shim-${op.id}');if(s)s.remove();"
         onerror="this.style.display='none';var s=document.getElementById('shim-${op.id}');if(s)s.remove();var f=document.getElementById('fall-${op.id}');if(f){f.style.display='flex';f.style.background='${catColors[op.cat]}33';}">
       <span class="op-cat-badge">${catLabels[op.cat]}</span>
       <span class="op-best-badge">${bestValueSet.has(op.id) ? '🏆 Best Value' : (op.badge || '')}</span>
@@ -1336,17 +1328,17 @@ function pushDL(event, params) {
 }
 function filterCat(cat, btn) {
   activeCat = cat;
-  document.querySelectorAll('.cat-tab').forEach(b => b.classLista.remove('active'));
-  btn.classLista.add('active');
+  document.querySelectorAll('.cat-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
   clearTimeout(_filterTimer);
   _filterTimer = setTimeout(renderCards, 80);
   pushDL('filter_category', {category: cat});
 }
 function filterZone(zone, btn) {
   activeZone = zone;
-  if(nearMeActive){ nearMeActive=false; userLat=userLng=null; const nb=document.getElementById('nearMeBtn'); if(nb){nb.classLista.remove('active');nb.innerHTML='📍 Near Me';} }
-  document.querySelectorAll('.zone-tab').forEach(b => b.classLista.remove('active'));
-  btn.classLista.add('active');
+  if(nearMeActive){ nearMeActive=false; userLat=userLng=null; const nb=document.getElementById('nearMeBtn'); if(nb){nb.classList.remove('active');nb.innerHTML='📍 Cerca de mí';} }
+  document.querySelectorAll('.zone-tab').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
   // Ensure map is loaded so it can zoom to the selected zone
   if (typeof loadLeafletThenMapa === 'function') loadLeafletThenMapa();
   clearTimeout(_filterTimer);
@@ -1382,9 +1374,9 @@ function toggleCompare(id) {
   } else {
     if(compareLista.length>=MAX_COMPARE){
       const removed=compareLista.shift();
-      document.getElementById('card-'+removed.id)?.classLista.remove('in-compare');
+      document.getElementById('card-'+removed.id)?.classList.remove('in-compare');
       const oldBtn=document.getElementById('cmp-'+removed.id);
-      if(oldBtn){oldBtn.classLista.remove('selected');oldBtn.textContent='＋';}
+      if(oldBtn){oldBtn.classList.remove('selected');oldBtn.textContent='＋';}
     }
     compareLista.push(op);
   }
@@ -1392,8 +1384,8 @@ function toggleCompare(id) {
   const card=document.getElementById('card-'+id);
   const btn=document.getElementById('cmp-'+id);
   const inCmp=compareLista.some(o=>o.id===id);
-  card?.classLista.toggle('in-compare',inCmp);
-  if(btn){btn.classLista.toggle('selected',inCmp);btn.textContent=inCmp?'✓':'＋';}
+  card?.classList.toggle('in-compare',inCmp);
+  if(btn){btn.classList.toggle('selected',inCmp);btn.textContent=inCmp?'✓':'＋';}
   updateCompareBar();
   try{localStorage.setItem('fl_compare',JSON.stringify(compareLista))}catch(e){}
 }
@@ -1414,7 +1406,7 @@ function updateCompareBar() {
     }
   }
   itemsEl.innerHTML=html;
-  bar.classLista.toggle('show',compareLista.length>0);
+  bar.classList.toggle('show',compareLista.length>0);
   document.getElementById('openCompareBtn').disabled=compareLista.length<2;
   syncFavCompareBtn();
 }
@@ -1423,15 +1415,15 @@ function removeFromCompare(id){
   if(idx>-1) compareLista.splice(idx,1);
   const card=document.getElementById('card-'+id);
   const btn=document.getElementById('cmp-'+id);
-  card?.classLista.remove('in-compare');
-  if(btn){btn.classLista.remove('selected');btn.textContent='＋';}
+  card?.classList.remove('in-compare');
+  if(btn){btn.classList.remove('selected');btn.textContent='＋';}
   updateCompareBar();
 }
 function clearCompare(){
   compareLista.forEach(op=>{
-    document.getElementById('card-'+op.id)?.classLista.remove('in-compare');
+    document.getElementById('card-'+op.id)?.classList.remove('in-compare');
     const btn=document.getElementById('cmp-'+op.id);
-    if(btn){btn.classLista.remove('selected');btn.textContent='＋';}
+    if(btn){btn.classList.remove('selected');btn.textContent='＋';}
   });
   compareLista=[];
   updateCompareBar();
@@ -1452,17 +1444,17 @@ function openCompareModal(){
   let tbody=fields.map(f=>`<tr><td class="cmp-row-label">${f.label}</td>${compareLista.map(op=>`<td>${f.render(op)}</td>`).join('')}</tr>`).join('');
   document.getElementById('cmpTableHead').innerHTML=thead;
   document.getElementById('cmpTableBody').innerHTML=tbody;
-  document.getElementById('compareOverlay').classLista.add('show');
+  document.getElementById('compareOverlay').classList.add('show');
 }
 function closeCompareModal(){
-  document.getElementById('compareOverlay').classLista.remove('show');
+  document.getElementById('compareOverlay').classList.remove('show');
 }
 // ---- SEARCH ----
 let searchQuery = '';
 function handleSearch() {
   const inp = document.getElementById('searchInput');
   searchQuery = inp.value.trim().toLowerCase();
-  document.getElementById('searchClear').classLista.toggle('show', searchQuery.length > 0);
+  document.getElementById('searchClear').classList.toggle('show', searchQuery.length > 0);
   const hint = document.getElementById('searchHint');
   hint.textContent = searchQuery ? '' : '';
   clearTimeout(_filterTimer);
@@ -1471,7 +1463,7 @@ function handleSearch() {
 function clearSearch() {
   document.getElementById('searchInput').value = '';
   searchQuery = '';
-  document.getElementById('searchClear').classLista.remove('show');
+  document.getElementById('searchClear').classList.remove('show');
   renderCards();
 }
 // ---- FAVORITES ----
@@ -1489,7 +1481,7 @@ function toggleFav(id) {
   // update card button in place
   const btn = document.getElementById('fav-' + id);
   if (btn) {
-    btn.classLista.toggle('saved', favorites.has(id));
+    btn.classList.toggle('saved', favorites.has(id));
     btn.textContent = favorites.has(id) ? '❤️' : '🤍';
     btn.title = favorites.has(id) ? 'Remove from favorites' : 'Save to favorites';
   }
@@ -1500,7 +1492,7 @@ function updateFavFab() {
   const fab = document.getElementById('favFab');
   const cnt = document.getElementById('favFabCount');
   if (!fab) return;
-  fab.classLista.toggle('show', favorites.size > 0);
+  fab.classList.toggle('show', favorites.size > 0);
   cnt.textContent = favorites.size;
 }
 function favCardHTML(op) {
@@ -1551,7 +1543,7 @@ function refreshFavPanel() {
 function openFavPanel() {
   const overlay = document.getElementById('favOverlay');
   refreshFavPanel();
-  overlay.classLista.add('show');
+  overlay.classList.add('show');
 }
 function syncFavCompareBtn() {
   const btn  = document.getElementById('favCompareBtn');
@@ -1562,7 +1554,7 @@ function syncFavCompareBtn() {
   const total    = compareLista.length;
   btn.disabled   = total < 2;
   if (total === 0) {
-    hint.innerHTML = 'Select 2–3 operators with <strong>＋</strong> to compare';
+    hint.innerHTML = 'Selecciona 2–3 operadores con <strong>＋</strong> to compare';
   } else if (total === 1) {
     hint.innerHTML = `<span class="fav-compare-count">${total} selected</span> — add 1 more`;
   } else {
@@ -1575,27 +1567,27 @@ function compareFromFavs() {
   setTimeout(openCompareModal, 200); // small delay for panel close animation
 }
 function closeFavPanel() {
-  document.getElementById('favOverlay').classLista.remove('show');
+  document.getElementById('favOverlay').classList.remove('show');
 }
 // ---- SHARE ----
 let _openShare = null;
 function toggleShare(id) {
   const pop = document.getElementById('share-' + id);
   if (!pop) return;
-  const isOpen = pop.classLista.contains('open');
+  const isOpen = pop.classList.contains('open');
   // close any open popover
   if (_openShare && _openShare !== id) {
     const prev = document.getElementById('share-' + _openShare);
-    if (prev) prev.classLista.remove('open');
+    if (prev) prev.classList.remove('open');
   }
-  pop.classLista.toggle('open', !isOpen);
+  pop.classList.toggle('open', !isOpen);
   _openShare = isOpen ? null : id;
 }
 // close share popover when clicking outside
-document.addEventListaener('click', () => {
+document.addEventListener('click', () => {
   if (_openShare) {
     const pop = document.getElementById('share-' + _openShare);
-    if (pop) pop.classLista.remove('open');
+    if (pop) pop.classList.remove('open');
     _openShare = null;
   }
 }, true);
@@ -1619,10 +1611,10 @@ function copyLink(id) {
   navigator.clipboard.writeText(url).then(() => {
     const btn = document.getElementById('copy-' + id);
     if (btn) {
-      btn.classLista.add('share-copied');
+      btn.classList.add('share-copied');
       btn.innerHTML = '<span class="share-icon">✓</span>Copied!';
       setTimeout(() => {
-        btn.classLista.remove('share-copied');
+        btn.classList.remove('share-copied');
         btn.innerHTML = '<span class="share-icon" style="background:#4a6fa5">🔗</span>Copy Link';
       }, 2000);
     }
@@ -1636,10 +1628,10 @@ function copyLink(id) {
     document.body.removeChild(ta);
     const btn = document.getElementById('copy-' + id);
     if (btn) {
-      btn.classLista.add('share-copied');
+      btn.classList.add('share-copied');
       btn.innerHTML = '<span class="share-icon">✓</span>Copied!';
       setTimeout(() => {
-        btn.classLista.remove('share-copied');
+        btn.classList.remove('share-copied');
         btn.innerHTML = '<span class="share-icon" style="background:#4a6fa5">🔗</span>Copy Link';
       }, 2000);
     }
@@ -1648,7 +1640,7 @@ function copyLink(id) {
 }
 function closeShare(id) {
   const pop = document.getElementById('share-' + id);
-  if (pop) pop.classLista.remove('open');
+  if (pop) pop.classList.remove('open');
   _openShare = null;
 }
 // ---- URL PARAMS: ?q= ?cat= ?zone= pre-filter on load ----
@@ -1691,7 +1683,7 @@ function resetPrice() {
 function setPaxFiltrar(pax) {
   activePax = pax;
   document.querySelectorAll('.pax-chip').forEach(el => {
-    el.classLista.toggle('active', parseInt(el.dataset.pax) === pax);
+    el.classList.toggle('active', parseInt(el.dataset.pax) === pax);
   });
   renderCards();
   pushDL('filter_group_size', {pax});
@@ -1823,9 +1815,9 @@ function trackBookNow(name, price) {
 }
 // ---- FAQ TOGGLE ----
 function toggleFaq(item) {
-  const isOpen = item.classLista.contains('open');
-  document.querySelectorAll('.faq-item.open').forEach(el => el.classLista.remove('open'));
-  if (!isOpen) item.classLista.add('open');
+  const isOpen = item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+  if (!isOpen) item.classList.add('open');
 }
 // ---- NEWSLETTER ----
 function submitNewsletter(e) {
@@ -2009,12 +2001,12 @@ function updateMapaMarkers(visibleOps) {
 }
 function scrollToCard(id) {
   // Highlight card
-  document.querySelectorAll('.op-card').forEach(c => c.classLista.remove('highlighted'));
+  document.querySelectorAll('.op-card').forEach(c => c.classList.remove('highlighted'));
   const card = document.getElementById('card-' + id);
   if(card) {
-    card.classLista.add('highlighted');
+    card.classList.add('highlighted');
     card.scrollIntoView({behavior:'smooth', block:'center'});
-    setTimeout(() => card.classLista.remove('highlighted'), 2500);
+    setTimeout(() => card.classList.remove('highlighted'), 2500);
   }
 }
 // ---- SEARCH AUTOCOMPLETE ----
@@ -2036,11 +2028,11 @@ function updateAC() {
       <div class="ac-item-price">$${op.price}</div>
     </div>`;
   }).join('');
-  dd.classLista.add('open');
+  dd.classList.add('open');
 }
 function closeAC() {
   const dd = document.getElementById('acDropdown');
-  if (dd) { dd.classLista.remove('open'); dd.innerHTML = ''; }
+  if (dd) { dd.classList.remove('open'); dd.innerHTML = ''; }
   acFocusIdx = -1;
 }
 function acSelect(id, slug) {
@@ -2052,14 +2044,14 @@ function acSelect(id, slug) {
 }
 function acKeyNav(e) {
   const dd = document.getElementById('acDropdown');
-  if (!dd || !dd.classLista.contains('open')) return;
+  if (!dd || !dd.classList.contains('open')) return;
   const items = dd.querySelectorAll('.ac-item');
-  if (e.key === 'ArrowDown') { e.preventDefault(); acFocusIdx = Math.min(acFocusIdx+1, items.length-1); items.forEach((el,i)=>el.classLista.toggle('focused',i===acFocusIdx)); }
-  else if (e.key === 'ArrowUp') { e.preventDefault(); acFocusIdx = Math.max(acFocusIdx-1, 0); items.forEach((el,i)=>el.classLista.toggle('focused',i===acFocusIdx)); }
+  if (e.key === 'ArrowDown') { e.preventDefault(); acFocusIdx = Math.min(acFocusIdx+1, items.length-1); items.forEach((el,i)=>el.classList.toggle('focused',i===acFocusIdx)); }
+  else if (e.key === 'ArrowUp') { e.preventDefault(); acFocusIdx = Math.max(acFocusIdx-1, 0); items.forEach((el,i)=>el.classList.toggle('focused',i===acFocusIdx)); }
   else if (e.key === 'Enter' && acFocusIdx >= 0) { items[acFocusIdx].click(); }
   else if (e.key === 'Escape') { closeAC(); }
 }
-document.addEventListaener('click', e => { if (!e.target.closest('.search-bar-wrap')) closeAC(); });
+document.addEventListener('click', e => { if (!e.target.closest('.search-bar-wrap')) closeAC(); });
 // ---- SOCIAL PROOF COUNTER ----
 (function() {
   const el = document.getElementById('spViewers');
@@ -2088,7 +2080,7 @@ function renderRecentlyViewed() {
   const section = document.getElementById('rvSection');
   const rail = document.getElementById('rvRail');
   if (!section || !rail || rv.length === 0) return;
-  section.classLista.add('has-items');
+  section.classList.add('has-items');
   rail.innerHTML = rv.map(o => {
     const url = o.slug ? `/${o.slug}` : '/';
     const img = o.photo ? `<img class="rv-card-img" src="${thumbUrl(o.photo)}" alt="${esc(o.name)}" loading="lazy" onerror="this.style.display='none'">` : '';
@@ -2113,15 +2105,15 @@ function cardClick(id) {
   mapInstance.setView([op.lat, op.lng], 14, {animate:true});
 }
 // ---- NAV SCROLL ----
-window.addEventListaener('scroll', () => {
-  document.getElementById('navbar').classLista.toggle('scrolled', window.scrollY > 60);
-  document.getElementById('backTop').classLista.toggle('visible', window.scrollY > 400);
+window.addEventListener('scroll', () => {
+  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 60);
+  document.getElementById('backTop').classList.toggle('visible', window.scrollY > 400);
 }, {passive: true});
 // ---- HAMBURGER ----
-document.getElementById('hamburger').addEventListaener('click', () => {
-  document.getElementById('mobileMenu').classLista.toggle('open');
+document.getElementById('hamburger').addEventListener('click', () => {
+  document.getElementById('mobileMenu').classList.toggle('open');
 });
-function closeMobile() { document.getElementById('mobileMenu').classLista.remove('open'); }
+function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
 // MAP / LIST TOGGLE (mobile)
 let mapVisible = false;
 function toggleMapaView() {
@@ -2131,11 +2123,11 @@ function toggleMapaView() {
   const text = btn.querySelector('.btn-text');
   mapVisible = !mapVisible;
   if (mapVisible) {
-    body.classLista.remove('mobile-map-hidden');
-    body.classLista.add('mobile-map-visible');
+    body.classList.remove('mobile-map-hidden');
+    body.classList.add('mobile-map-visible');
     icon.textContent = '📋';
     text.textContent = 'View Lista';
-    btn.classLista.add('map-active');
+    btn.classList.add('map-active');
     // On mobile, the map panel was display:none so IntersectionObserver never
     // fired — load Leaflet now if it hasn't been loaded yet.
     if (typeof loadLeafletThenMapa === 'function') loadLeafletThenMapa();
@@ -2157,22 +2149,22 @@ function toggleMapaView() {
       }
     }, 350);
   } else {
-    body.classLista.remove('mobile-map-visible');
-    body.classLista.add('mobile-map-hidden');
+    body.classList.remove('mobile-map-visible');
+    body.classList.add('mobile-map-hidden');
     icon.textContent = '🗺️';
     text.textContent = 'View Mapa';
-    btn.classLista.remove('map-active');
+    btn.classList.remove('map-active');
     // Scroll back up to where the toggle was visible
     window.scrollTo({top: 0, behavior:'smooth'});
   }
 }
 // ---- COOKIE ----
 function cookieChoice(accept) {
-  document.getElementById('cookieBar').classLista.remove('show');
+  document.getElementById('cookieBar').classList.remove('show');
   localStorage.setItem('cookie_consent', accept ? '1' : '0');
 }
 if(!localStorage.getItem('cookie_consent')) {
-  setTimeout(() => document.getElementById('cookieBar').classLista.add('show'), 2000);
+  setTimeout(() => document.getElementById('cookieBar').classList.add('show'), 2000);
 }
 // ---- LEAFLET LAZY LOAD (with marker clustering for perf) ----
 let leafletLoaded = false;
@@ -2208,8 +2200,8 @@ if ('IntersectionObserver' in window) {
     }, {rootMargin:'200px'}).observe(mapEl);
   }
 } else {
-  window.addEventListaener('scroll', function onScroll() {
-    loadLeafletThenMapa(); window.removeEventListaener('scroll', onScroll);
+  window.addEventListener('scroll', function onScroll() {
+    loadLeafletThenMapa(); window.removeEventListener('scroll', onScroll);
   }, {once: true, passive: true});
 }
 // ---- INIT (fetch operators-slim.json) ----
@@ -2233,17 +2225,17 @@ function _applyLoadedData(data) {
   }
   if (window._preloadSearch) {
     const inp = document.getElementById('searchInput');
-    if (inp) { inp.value = window._preloadSearch; searchQuery = window._preloadSearch.toLowerCase(); document.getElementById('searchClear').classLista.add('show'); }
+    if (inp) { inp.value = window._preloadSearch; searchQuery = window._preloadSearch.toLowerCase(); document.getElementById('searchClear').classList.add('show'); }
   }
   if (window._preloadCat) {
     activeCat = window._preloadCat;
     const btn = [...document.querySelectorAll('.cat-tab')].find(b=>(b.getAttribute('onclick') || '').includes(`'${window._preloadCat}'`));
-    if (btn) { document.querySelectorAll('.cat-tab').forEach(b=>b.classLista.remove('active')); btn.classLista.add('active'); }
+    if (btn) { document.querySelectorAll('.cat-tab').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
   }
   if (window._preloadZone) {
     activeZone = window._preloadZone;
     const btn = [...document.querySelectorAll('.zone-tab')].find(b=>(b.getAttribute('onclick') || '').includes(`'${window._preloadZone}'`));
-    if (btn) { document.querySelectorAll('.zone-tab').forEach(b=>b.classLista.remove('active')); btn.classLista.add('active'); }
+    if (btn) { document.querySelectorAll('.zone-tab').forEach(b=>b.classList.remove('active')); btn.classList.add('active'); }
   }
   renderCards();
   renderDeals();
@@ -2300,20 +2292,20 @@ function fetchOperators(retry) {
       }
     });
 }
-document.addEventListaener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', () => {
   fetchOperators();
   // Mobile sticky CTA: show when hero leaves viewport
   const heroEl = document.getElementById('hero');
   const ctaBar = document.getElementById('mobCtaBar');
   if (heroEl && ctaBar && window.innerWidth <= 768) {
     const obs = new IntersectionObserver(entries => {
-      ctaBar.classLista.toggle('show', !entries[0].isIntersecting);
+      ctaBar.classList.toggle('show', !entries[0].isIntersecting);
     }, {threshold: 0.1});
     obs.observe(heroEl);
   }
 });
 // Handle bfcache restore (browser Back button) — DOMContentLoaded doesn't fire in this case
-window.addEventListaener('pageshow', (e) => {
+window.addEventListener('pageshow', (e) => {
   if (!e.persisted) return; // Normal load — already handled by DOMContentLoaded
   if (allOperators && allOperators.length > 0) {
     // Data already in memory — just re-render (bfcache preserved it)
@@ -2340,7 +2332,7 @@ function bwUpdate(){
 </script>
 <noscript>
 <div id="seo-operator-list" style="position:absolute;left:-9999px;top:0;visibility:hidden;" aria-hidden="true">
-<h2>Florida Water Sports &amp; Activities — 11,000+ operators</h2>
+<h2>Deportes Acuáticos y Actividades en Florida — 11.000+ operadores</h2>
 <ul>
 <li><a data-fh-name="AquaFusion Combo: Jet Ski &amp; Party Boat" href="https://fareharbor.com/embeds/book/bjmrentals/items/313688/?asn=fhdn&amp;asn-ref=miamistylerentals&amp;ref=miamistylerentals&amp;bookable-only=yes&amp;full-items=yes&amp;marketplace=yes&amp;flow=no&amp;branding=no" rel="nofollow sponsored">AquaFusion Combo: Jet Ski & Party Boat</a> — Jet Ski, Miami Beach, FL — Desde $150</li>
 <li><a data-fh-name="Jetski Rental – North Miami Beach" href="https://fareharbor.com/embeds/book/slingkimotors/items/571874/?asn=fhdn&amp;asn-ref=miamistylerentals&amp;ref=miamistylerentals&amp;bookable-only=yes&amp;full-items=yes&amp;marketplace=yes&amp;flow=no&amp;branding=no" rel="nofollow sponsored">Jetski Rental – North Miami Beach</a> — Jet Ski, Miami Beach, FL — Desde $130</li>
@@ -2503,10 +2495,10 @@ function bwUpdate(){
 </noscript>
 <!-- ── COMPARE BAR ── -->
 <div class="compare-bar" id="compareBar">
-  <span class="compare-bar-label">⚡ Compare</span>
+  <span class="compare-bar-label">⚡ Comparar</span>
   <div class="compare-bar-items" id="compareBarItems"></div>
   <div class="compare-bar-actions">
-    <button class="compare-open-btn" id="openCompareBtn" onclick="openCompareModal()" disabled>Compare ↗</button>
+    <button class="compare-open-btn" id="openCompareBtn" onclick="openCompareModal()" disabled>Comparar ↗</button>
     <button class="compare-clear-btn" onclick="clearCompare()">Clear</button>
   </div>
 </div>
@@ -2526,7 +2518,7 @@ function bwUpdate(){
   </div>
 </div>
 <!-- MOBILE STICKY CTA -->
-<div class="mob-cta-bar" id="mobCtaBar" onclick="document.getElementById('marketplace').scrollIntoView({behavior:'smooth'});document.getElementById('mobCtaBar').classLista.remove('show')">
+<div class="mob-cta-bar" id="mobCtaBar" onclick="document.getElementById('marketplace').scrollIntoView({behavior:'smooth'});document.getElementById('mobCtaBar').classList.remove('show')">
   🌊 Browse <span id="mobCtaCount">652</span> Operators ↓
 </div>
 <!-- ── FAVORITES FAB ── -->
@@ -2544,8 +2536,8 @@ function bwUpdate(){
       <div class="fav-grid" id="favGrid"></div>
     </div>
     <div class="fav-panel-footer">
-      <button class="fav-compare-btn" id="favCompareBtn" onclick="compareFromFavs()" disabled>⚡ Compare Selected</button>
-      <span class="fav-compare-hint" id="favCompareHint">Select 2–3 operators with <strong>＋</strong> to compare</span>
+      <button class="fav-compare-btn" id="favCompareBtn" onclick="compareFromFavs()" disabled>⚡ Comparar Selección</button>
+      <span class="fav-compare-hint" id="favCompareHint">Selecciona 2–3 operadores con <strong>＋</strong> to compare</span>
     </div>
   </div>
 </div>
@@ -2572,11 +2564,11 @@ function bwUpdate(){
       <div class="qv-addr" id="qvAddr"></div>
       <div class="qv-actions">
         <button class="qv-btn-fav" id="qvFavBtn" onclick="qvToggleFav()">🤍 Save</button>
-        <button class="qv-btn-cmp" id="qvCmpBtn" onclick="qvToggleCmp()">＋ Compare</button>
+        <button class="qv-btn-cmp" id="qvCmpBtn" onclick="qvToggleCmp()">＋ Comparar</button>
         <button class="qv-btn-shr" id="qvShrBtn" onclick="qvShare()">🔗 Share</button>
       </div>
       <a class="qv-book" id="qvBookBtn" href="#" target="_blank" rel="noopener noreferrer">Reservar →</a>
-      <a class="qv-detail" id="qvDetailLink" href="#">View full details →</a>
+      <a class="qv-detail" id="qvDetailLink" href="#">Ver todos los detalles →</a>
     </div>
   </div>
 </div>
@@ -2623,24 +2615,24 @@ function openQuickView(opId) {
   var isFav = _qvFavs.has(opId);
   var favBtn = document.getElementById('qvFavBtn');
   favBtn.innerHTML = isFav ? '❤️ Saved' : '🤍 Save';
-  favBtn.classLista.toggle('saved', isFav);
+  favBtn.classList.toggle('saved', isFav);
   var inCmp = (typeof compareLista!=='undefined') && compareLista.some(function(o){return o.id===opId;});
   var cmpBtn = document.getElementById('qvCmpBtn');
-  cmpBtn.innerHTML = inCmp ? '✓ Added' : '＋ Compare';
-  cmpBtn.classLista.toggle('selected', inCmp);
+  cmpBtn.innerHTML = inCmp ? '✓ Added' : '＋ Comparar';
+  cmpBtn.classList.toggle('selected', inCmp);
   // Links
   var bookBtn = document.getElementById('qvBookBtn');
   if (op.link) {
     bookBtn.href = op.link;
     bookBtn.style.display = '';
     bookBtn.textContent = 'Reservar →';
-    bookBtn.classLista.remove('qv-book-disabled');
+    bookBtn.classList.remove('qv-book-disabled');
     bookBtn.setAttribute('target', '_blank');
   } else {
     bookBtn.removeAttribute('href');
     bookBtn.removeAttribute('target');
     bookBtn.textContent = 'Contacto operator to book';
-    bookBtn.classLista.add('qv-book-disabled');
+    bookBtn.classList.add('qv-book-disabled');
   }
   document.getElementById('qvDetailLink').href = slug || op.link || '#';
   if (slug) { document.getElementById('qvDetailLink').removeAttribute('target'); } else { document.getElementById('qvDetailLink').setAttribute('target','_blank'); }
@@ -2649,16 +2641,16 @@ function openQuickView(opId) {
   document.getElementById('qvShrBtn').dataset.name = op.name;
   // Show
   var overlay = document.getElementById('qvOverlay');
-  overlay.classLista.add('show');
+  overlay.classList.add('show');
   document.body.style.overflow = 'hidden';
   document.getElementById('qvModal').scrollTop = 0;
   // Escape key
-  document.addEventListaener('keydown', _qvEscHandler);
+  document.addEventListener('keydown', _qvEscHandler);
 }
 function closeQV() {
-  document.getElementById('qvOverlay').classLista.remove('show');
+  document.getElementById('qvOverlay').classList.remove('show');
   document.body.style.overflow = '';
-  document.removeEventListaener('keydown', _qvEscHandler);
+  document.removeEventListener('keydown', _qvEscHandler);
   _qvOpId = null;
 }
 function _qvEscHandler(e){ if(e.key==='Escape') closeQV(); }
@@ -2668,18 +2660,18 @@ function qvToggleFav() {
   if(_qvFavs.has(_qvOpId)){
     _qvFavs.delete(_qvOpId);
     btn.innerHTML = '🤍 Save';
-    btn.classLista.remove('saved');
+    btn.classList.remove('saved');
   } else {
     _qvFavs.add(_qvOpId);
     btn.innerHTML = '❤️ Saved';
-    btn.classLista.add('saved');
+    btn.classList.add('saved');
   }
   localStorage.setItem('fav_ops', JSON.stringify([..._qvFavs]));
   // Sync with card fav button if visible
   var cardBtn = document.querySelector('.fav-toggle[data-id="'+_qvOpId+'"]');
   if(cardBtn) {
     cardBtn.textContent = _qvFavs.has(_qvOpId) ? '❤️' : '🤍';
-    cardBtn.classLista.toggle('saved', _qvFavs.has(_qvOpId));
+    cardBtn.classList.toggle('saved', _qvFavs.has(_qvOpId));
   }
 }
 function qvToggleCmp() {
@@ -2689,8 +2681,8 @@ function qvToggleCmp() {
   toggleCompare(_qvOpId, op.name);
   var inCmp = compareLista.some(function(o){return o.id===_qvOpId;});
   var btn = document.getElementById('qvCmpBtn');
-  btn.innerHTML = inCmp ? '✓ Added' : '＋ Compare';
-  btn.classLista.toggle('selected', inCmp);
+  btn.innerHTML = inCmp ? '✓ Added' : '＋ Comparar';
+  btn.classList.toggle('selected', inCmp);
 }
 function qvShare() {
   var btn = document.getElementById('qvShrBtn');
@@ -2745,7 +2737,7 @@ document.head.appendChild(qvTooltipStyle);
     var loading=document.getElementById('fhModalLoading');
     document.getElementById('fhModalTitle').textContent=name||'Reservar';
     loading.style.display='flex';iframe.src='about:blank';
-    modal.classLista.add('open');document.body.style.overflow='hidden';
+    modal.classList.add('open');document.body.style.overflow='hidden';
     if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url});
     var hidLoading=false;
     function hideLoading(){if(!hidLoading){hidLoading=true;loading.style.display='none';}}
@@ -2753,9 +2745,9 @@ document.head.appendChild(qvTooltipStyle);
     setTimeout(hideLoading,4000); // fallback in case onload doesn't fire
     requestAnimationFrame(function(){iframe.src=url;});
   }
-  window.closeFhModal=function(){var m=document.getElementById('fhModal');m.classLista.remove('open');document.body.style.overflow='';var i=document.getElementById('fhModalIframe');i.src='about:blank';};
-  document.addEventListaener('keydown',function(e){if(e.key==='Escape')window.closeFhModal();});
-  document.addEventListaener('click',function(e){
+  window.closeFhModal=function(){var m=document.getElementById('fhModal');m.classList.remove('open');document.body.style.overflow='';var i=document.getElementById('fhModalIframe');i.src='about:blank';};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeFhModal();});
+  document.addEventListener('click',function(e){
     if(e.defaultPrevented)return;
     var a=e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
     if(!a)return;
@@ -2778,7 +2770,7 @@ document.head.appendChild(qvTooltipStyle);
   // view_item_list fires on page load
   dataLayer.push({event:'view_item_list',item_list_name:document.title.split(/[·|–—-]/)[0].trim()});
   // Listaen for card clicks to fire select_item
-  document.addEventListaener('click',function(e){
+  document.addEventListener('click',function(e){
     var card = e.target.closest('a.card');
     if(!card) return;
     var name = (card.querySelector('.name')||{}).textContent || '';
@@ -2788,7 +2780,7 @@ document.head.appendChild(qvTooltipStyle);
     dataLayer.push({event:'select_item',ecommerce:{items:[{item_name:name.trim(),price:price,currency:"USD"}]}});
   },true);
   // FH link click on landings (rare but possible)
-  document.addEventListaener('click',function(e){
+  document.addEventListener('click',function(e){
     var a = e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
     if(!a) return;
     var name = a.getAttribute('data-fh-name')||'';
