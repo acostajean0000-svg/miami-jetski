@@ -223,6 +223,24 @@ flujo:  rsync miami-jetski-main → iCloud…/GitHub/miami-jetski → commit →
   `'lp_book'` NO los encuentra — a mí me hizo creer que faltaban.
 - Estado: home, 101 zonas, 88 posts y las 22 flagships con etiqueta. **Siguen sin medir 215
   landings de categoría y 931 páginas de operador** — pendiente de decisión.
+- `data-fh-price` cubierto en 11.063 páginas de operador (29.363 enlaces), las 2 homes, 99 zonas,
+  263 landings y los 88 posts. Antes lo tenían solo 53 landings y 88 zonas: **3.879 páginas de
+  operador con Ads enviaban la conversión con valor 0**.
+- En las 5 páginas de categoría global (snorkel-tours, yacht-charters, sunset-cruises,
+  everglades-airboat-tours, miami-exotic-cars) las tarjetas enlazan a la **página interna** del
+  operador y FareHarbor es solo fallback: ahí `data-fh-price` no aplica, la conversión se mide
+  en la página de operador.
+
+## Secuela del bug de slug-map (at119)
+
+`swamp-cottage-rental-clyde-butchers-big-cypress-gallery-everglades` es la página huérfana
+intencional. Cuando el slug de **at119** (Orlando ATV Polk City) apuntaba aquí, `fix_desc.py`
+escribió en ella la ficha del ATV. Se arregló el slug-map pero **no la página**, que durante
+semanas anunció "ATV adventure in Polk City, near Orlando. From $187" bajo el H1 "Swamp Cottage
+Rental", con etiquetas de ATV, tarjetas de ATV de Central FL y `var ITEM = {item_id:'at119',
+item_category:'atv', price:0}` en la analítica. Restaurada al producto real (Ochopee, Big Cypress,
+$45, `clydebutcher/256631`).
+**Lección: arreglar el índice no arregla las páginas que ya se generaron con el índice roto.**
 
 ## Historial de la gran sesión (jul 2026) — para contexto
 
