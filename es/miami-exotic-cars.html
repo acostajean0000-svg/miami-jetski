@@ -109,7 +109,7 @@
   <div class="trust-item"><span aria-hidden="true">✓</span><b>Cancelación</b> Gratis*</div>
   <div class="trust-item"><span aria-hidden="true">⚡</span><b>Confirmación</b> Instantánea</div>
 </div>
-<div class="bc"><a href="/">Inicio</a><span class="sep">›</span><a href="/miami-activities">Miami</a><span class="sep">›</span><span>Exotic Car Rentals</span></div>
+<div class="bc"><a href="/">Inicio</a><span class="sep">›</span><a href="/es/miami-activities">Miami</a><span class="sep">›</span><span>Exotic Car Rentals</span></div>
 <main>
   <section class="hero">
     <h1>Alquiler de Autos Exóticos en Miami</h1>
@@ -161,7 +161,7 @@
   </section>
 </main>
 <footer>
-  <p>© 2026 <a href="/">FloridaWaterSports</a> · 27 exotic cars in Miami · <a href="/miami-activities">All Miami activities</a></p>
+  <p>© 2026 <a href="/">FloridaWaterSports</a> · 27 exotic cars in Miami · <a href="/es/miami-activities">All Miami activities</a></p>
 </footer>
 <script>
 const ZONE_KEY = "miami";
@@ -198,7 +198,7 @@ function render(){
   const list = allOps.filter(match);
   const grid = document.getElementById('grid');
   if (!list.length) {
-    grid.innerHTML = '<div class="empty" style="grid-column:1/-1"><h2>No cars in this brand</h2><p>Try a different brand, or <a href="/miami-activities" style="color:#d4af37">browse all Miami activities</a>.</p></div>';
+    grid.innerHTML = '<div class="empty" style="grid-column:1/-1"><h2>No cars in this brand</h2><p>Try a different brand, or <a href="/es/miami-activities" style="color:#d4af37">browse all Miami activities</a>.</p></div>';
     return;
   }
   grid.innerHTML = list.map((op,i) => {
@@ -235,7 +235,7 @@ function setupFilters(){
     setupFilters();
     render();
   } catch(e) {
-    document.getElementById('grid').innerHTML = '<div class="empty" style="grid-column:1/-1"><h2>No se pudo cargar la lista</h2><p><a href="/miami-activities" style="color:#d4af37">Return to Miami activities</a></p></div>';
+    document.getElementById('grid').innerHTML = '<div class="empty" style="grid-column:1/-1"><h2>No se pudo cargar la lista</h2><p><a href="/es/miami-activities" style="color:#d4af37">Return to Miami activities</a></p></div>';
   }
 })();
 </script>

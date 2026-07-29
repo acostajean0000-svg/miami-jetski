@@ -302,6 +302,19 @@ frente a 631 y cero preguntas frecuentes**: le faltaban la guía SEO, el FAQ y e
 Portados y traducidos (ratio 0,72). El resto de pares bajos son de plantilla distinta, no
 traducciones incompletas — comprobar antes de "arreglar".
 
+## Los enlaces internos de /es/ deben quedarse en /es/ (28 jul)
+
+Las 182 páginas ES tenían **1.438 enlaces en el cuerpo apuntando a la versión inglesa** de páginas
+que sí existen en español: el visitante hispanohablante salía del idioma al primer clic. Corregidos.
+Al generar o tocar una página ES:
+- Todo `href="/X"` del **body** debe ser `href="/es/X"` si existe `es/X.html`.
+- **Excepción: el selector de idioma**, que se identifica por `hreflang="en"` o el emoji 🇺🇸.
+  Son 137 y deben seguir apuntando a la raíz. Si los reescribes, el usuario no puede volver al inglés.
+- Los `<link rel="alternate">` viven en el `<head>`: no tocar el head en esta operación.
+- Comprobación inversa: 139 enlaces EN→`/es/` y todos son el selector 🇪🇸. Correcto.
+- El blog solo existe en inglés y **ninguna página ES lo enlaza**: si algún día se traduce, habrá
+  que añadir esos enlaces.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
