@@ -242,6 +242,28 @@ item_category:'atv', price:0}` en la analítica. Restaurada al producto real (Oc
 $45, `clydebutcher/256631`).
 **Lección: arreglar el índice no arregla las páginas que ya se generaron con el índice roto.**
 
+Comprobación para detectar esta clase de daño: comparar el H1 de cada página con el sujeto de su
+meta description. Al 28 jul, 0 páginas de operador discrepan (las 120 que salta el detector son
+landings donde el H1 es una frase comercial — "Rent a Boat in Austin" — y es correcto).
+
+## Enlazado interno de operadores: 11.076/11.076 (28 jul)
+
+Hay **tres marcados distintos** de bloque "relacionados" en las páginas de operador, y cualquier
+script que solo conozca uno deja fuera al resto:
+1. `rel-grid` + `rel-card` con imagen (10.900 páginas) — el que gestiona el script de anillo.
+2. Chips con estilos en línea, sin CSS propio (50 páginas de plantilla antigua).
+3. 67 páginas que no tenían ningún bloque; se les añadió el formato de chips, porque **esa
+   plantilla no carga el CSS de `rel-card`** y las tarjetas saldrían sin estilo.
+
+Los 69 huérfanos finales se resolvieron insertando cada uno como tarjeta extra en un vecino de su
+zona que sí tuviera `rel-grid`. Al hacerlo en bucle, varios huérfanos de una misma zona caen en el
+mismo anfitrión: hay que deduplicar después (a mí me dejó 6 tarjetas repetidas en una página).
+
+**`rosé-fireworks-sail-hiltonhead` (bt99) es el único slug con carácter no ASCII.** Funciona
+—canonical, og:url, sitemap y sus 5 enlaces entrantes usan todos la forma con tilde, así que no hay
+URL duplicada— pero cualquier regex `[a-z0-9-]+` lo pierde y lo cuenta como huérfano. No renombrar:
+es una URL ya indexada y el beneficio sería marginal.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
