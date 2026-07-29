@@ -284,6 +284,24 @@ Variantes legítimas encontradas:
   `bookable-only`): pendiente de decidir si conviene homogeneizarlos.
 El único `ref` distinto de `miamistylerentals` en todo el sitio es el del socio, en `partners.html`.
 
+## Conteos: los cinco sitios del BODY (además de los seis del head)
+
+Corregir el `<head>` no basta. En las páginas de zona el total propio aparece también en:
+1. el pie `© 2026 … · N+ operators in X` (35 con conteo viejo, y **43 pies en inglés dentro de
+   páginas ES**), 2. el encabezado `All operators in X (N)`, 3. el enlace de la guía
+   `(N+ operators) →`, 4. el chip `id="mapCount"`, 5. las respuestas del FAQ.
+Cuidado con el regex del pie: entre `©` y el conteo hay un `<a>`, así que `[^<]{0,80}` **no
+coincide** — y si usas el mismo patrón para verificar, te dará un "limpio" falso. A mí me pasó.
+Los conteos de otras zonas y de categorías en la misma página son legítimos: no los toques.
+
+## Paridad de contenido EN↔ES (28 jul)
+
+Ratio de palabras ES/EN: mediana 1,08 (el español ocupa algo más, es lo normal). 26 pares por
+debajo de 0,70 merecen revisión; el caso extremo era **`es/daytona-activities` con 196 palabras
+frente a 631 y cero preguntas frecuentes**: le faltaban la guía SEO, el FAQ y el bloque FAQPage.
+Portados y traducidos (ratio 0,72). El resto de pares bajos son de plantilla distinta, no
+traducciones incompletas — comprobar antes de "arreglar".
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
