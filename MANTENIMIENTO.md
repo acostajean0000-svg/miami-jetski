@@ -264,6 +264,26 @@ mismo anfitrión: hay que deduplicar después (a mí me dejó 6 tarjetas repetid
 URL duplicada— pero cualquier regex `[a-z0-9-]+` lo pierde y lo cuenta como huérfano. No renombrar:
 es una URL ya indexada y el beneficio sería marginal.
 
+## `partners.html` — página de un socio, NO del sitio (28 jul)
+
+Es la página co-marcada de **Jhon Doyle**: sus 16 enlaces internos llevan `?ref=jhondoyle` y su
+enlace a FareHarbor va con `asn-ref=miamistylerentals&ref=jhondoyle`. Los `ref` son intencionados
+y **no se tocan**. Lo que estaba mal era su alcance: aparecía en `sitemaps/static.xml`, era
+indexable y se enlazaba como "Partners" desde el pie de `about.html` y desde `contact.html`, así
+que el tráfico orgánico del sitio acababa acreditando comisión al socio.
+Ahora: `noindex,follow`, fuera del sitemap y sin enlaces entrantes.
+**Si algún día se crea una página real de reclutamiento de afiliados, que sea otra URL.**
+
+## Parámetros de los enlaces de FareHarbor (42.221 enlaces)
+
+Combinación estándar: `asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no`
+Variantes legítimas encontradas:
+- `asn=fhdn-mxn` (2.806), `fhdn-eur` (105), `fhdn-aud` (65) — variantes de divisa por operador.
+- `branding=no` (668) y `flow=613885` (88) — flujos concretos, no tocar sin comprobar.
+- 172 enlaces con solo `asn/asn-ref/ref` (les faltan `full-items`, `marketplace`, `flow`,
+  `bookable-only`): pendiente de decidir si conviene homogeneizarlos.
+El único `ref` distinto de `miamistylerentals` en todo el sitio es el del socio, en `partners.html`.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
