@@ -328,7 +328,7 @@ function setupFilters(){
     if(!a)return;
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
     e.preventDefault();e.stopPropagation();
-    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Book Now';
+    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Reservar';
     openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;
@@ -1398,7 +1398,7 @@ function setupFilters(){
       modal=document.createElement('div');
       modal.className='mp-modal-overlay';
       modal.id='mpCmpModal';
-      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpCmpModal\').classList.remove(\'show\')">×</button><h3>Compare Operators</h3><div class="mp-cmp-grid" id="mpCmpGrid"></div></div>';
+      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpCmpModal\').classList.remove(\'show\')">×</button><h3>Comparar operadores</h3><div class="mp-cmp-grid" id="mpCmpGrid"></div></div>';
       document.body.appendChild(modal);
     }
     var grid=document.getElementById('mpCmpGrid');
@@ -1681,7 +1681,7 @@ function setupFilters(){
     }
     var grid=document.getElementById('mpFavGrid');
     if(!ops.length){
-      grid.innerHTML='<p style="color:#a8d4f0;grid-column:1/-1;text-align:center;padding:30px">No favorites yet. Click ❤️ on any operator pin to save it here.</p>';
+      grid.innerHTML='<p style="color:#a8d4f0;grid-column:1/-1;text-align:center;padding:30px">Aún no tienes favoritos. Pulsa ❤️ en cualquier operador del mapa para guardarlo aquí.</p>';
     } else {
       grid.innerHTML=ops.map(function(o){
         var photo=o.photo&&o.photo.includes('http')?o.photo:(o.photo?'https://cdn.filestackcontent.com/'+o.photo+'/convert?w=400&format=webp':'');

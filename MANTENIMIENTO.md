@@ -355,6 +355,24 @@ internos a fichas de operador.
 - Guardarse de `str.find()` devolviendo −1: insertar en `h[:-1]` rompe el HTML. Verificar siempre
   que el archivo siga cerrando en `</html>`. A mí me pasó en la flagship de Miami.
 
+## Auditar idioma: los CINCO escondites (barrido completo 28 jul)
+
+Un detector que solo mire el texto visible deja pasar la mayoría. Hay que revisar los cinco:
+1. **Texto visible** entre etiquetas.
+2. **`alt` y `title`** de imágenes.
+3. **`aria-label` y `placeholder`** — invisibles en pantalla pero es lo que **lee un lector de
+   pantalla**: había 74 páginas ES con `aria-label="Show operators near me"`, `"Close booking"`,
+   `"Clear"`, 21 con `"Quick booking bar"`, y un placeholder en spanglish
+   (*"Buscar operadores **and** locations"*).
+4. **Mensajes pre-rellenados de `wa.me`** (el texto que aparece escrito en WhatsApp del usuario).
+5. **Cadenas dentro del JS**, y en particular **el HTML generado con `innerHTML`**: ahí vivían
+   `'Book Now'` (82), `>Compare Operators<` (76), `"No favorites yet. Click ❤️ on any operator
+   pin…"` (76) y `"Free cancellation · Instant booking"` (31). Un regex que excluya cadenas con
+   `<>{}` para "evitar código" se salta justo este escondite — fue mi error en el primer barrido.
+
+Cuidado al filtrar: los **nombres de producto de los operadores sí están en inglés** y no se
+traducen ("Chassahowitzka River Clear Kayak Tour"). Estado final: 0 residuos salvo esos nombres.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,

@@ -220,7 +220,7 @@ document.addEventListener('click',function(e){
     <div class="stats"><span class="stat"><strong>24</strong> opciones</span><span class="stat">Desde <strong>$100</strong></span><span class="stat">⚡ Reserva instantánea</span></div>
   </section>
   <div class="filters" id="filters"><span class="cat-chip active" data-cat="all">🌎 Todo (24)</span></div>
-    <div class="map-wrap" id="mapWrap"><div class="map-wrap-skeleton">Cargando mapa…</div><div id="map"></div><button class="near-me-btn" id="nearMeBtn" type="button" aria-label="Show operators near me">📍 Cerca de mí</button><div class="near-me-info" id="nearMeInfo"></div><button class="show-all-btn" id="showAllBtn" type="button" aria-label="Mostrar todos los operadores" style="display:none">&larr; Mostrar todos los operadores</button></div>
+    <div class="map-wrap" id="mapWrap"><div class="map-wrap-skeleton">Cargando mapa…</div><div id="map"></div><button class="near-me-btn" id="nearMeBtn" type="button" aria-label="Mostrar operadores cerca de mí">📍 Cerca de mí</button><div class="near-me-info" id="nearMeInfo"></div><button class="show-all-btn" id="showAllBtn" type="button" aria-label="Mostrar todos los operadores" style="display:none">&larr; Mostrar todos los operadores</button></div>
 <div class="grid" id="grid"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
   <section class="seo-index">
     <h2>📋 Todos los Operadores en Austin y Lake Travis, Texas</h2>
@@ -419,7 +419,7 @@ function setupFilters(){
   <div class="fh-modal-card">
     <div class="fh-modal-header">
       <span class="fh-modal-title" id="fhModalTitle">Reservar Ahora</span>
-      <button class="fh-modal-close" type="button" onclick="closeFhModal()" aria-label="Close booking">✕</button>
+      <button class="fh-modal-close" type="button" onclick="closeFhModal()" aria-label="Cerrar reserva">✕</button>
     </div>
     <div class="fh-modal-body">
       <div class="fh-modal-loading" id="fhModalLoading"><div class="fh-modal-spinner"></div><span>Cargando disponibilidad…</span></div>
@@ -435,7 +435,7 @@ function setupFilters(){
   function openFhModal(url,name){
     var modal=document.getElementById('fhModal');var iframe=document.getElementById('fhModalIframe');
     var loading=document.getElementById('fhModalLoading');
-    document.getElementById('fhModalTitle').textContent=name||'Book Now';
+    document.getElementById('fhModalTitle').textContent=name||'Reservar';
     loading.style.display='flex';iframe.src='about:blank';
     modal.classList.add('open');document.body.style.overflow='hidden';
     if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url});
@@ -453,7 +453,7 @@ function setupFilters(){
     if(!a)return;
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;
     e.preventDefault();e.stopPropagation();
-    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Book Now';
+    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Reservar';
     openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;
@@ -710,14 +710,14 @@ document.head.appendChild(styleEl);
   if(filters&&!document.querySelector('.trust-strip')){
     var t=document.createElement('div');
     t.className='trust-strip';
-    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Free cancellation</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
+    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Cancelación gratuita</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
     filters.insertAdjacentElement('afterend',t);
   }
   // Sticky bottom CTA
   if(!document.querySelector('.sticky-zone-cta')){
     var bar=document.createElement('div');
     bar.className='sticky-zone-cta';
-    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Encuentra tu '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Free cancellation · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Ver Tours</a>';
+    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Encuentra tu '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Cancelación gratuita · Reserva instantánea</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Ver Tours</a>';
     document.body.appendChild(bar);
   }
   // Social proof toast
@@ -805,7 +805,7 @@ document.head.appendChild(styleEl);
     if(!filters||document.querySelector('.ux-searchbar'))return;
     var search=document.createElement('div');
     search.className='ux-searchbar';
-    search.innerHTML='<span class="ux-search-icon">🔎</span><input type="search" id="uxSearch" placeholder="Busca por nombre, tipo, ubicación..." autocomplete="off"><button type="button" class="ux-clear" id="uxClear" aria-label="Clear">×</button>';
+    search.innerHTML='<span class="ux-search-icon">🔎</span><input type="search" id="uxSearch" placeholder="Busca por nombre, tipo, ubicación..." autocomplete="off"><button type="button" class="ux-clear" id="uxClear" aria-label="Borrar">×</button>';
     var tools=document.createElement('div');
     tools.className='ux-toolbar';
     tools.innerHTML='<div class="ux-result-count" id="uxCount">Cargando…</div><div class="ux-sort"><label for="uxSort">Ordenar:</label><select id="uxSort"><option value="rec">Recomendados</option><option value="rating">⭐ Mejor valorados</option><option value="reviews">💬 Más reseñas</option><option value="price-asc">💰 Precio: menor a mayor</option><option value="price-desc">💰 Precio: mayor a menor</option><option value="name">A–Z</option></select></div>';
@@ -1403,7 +1403,7 @@ document.head.appendChild(styleEl);
       modal=document.createElement('div');
       modal.className='mp-modal-overlay';
       modal.id='mpCmpModal';
-      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpCmpModal\').classList.remove(\'show\')">×</button><h3>Compare Operators</h3><div class="mp-cmp-grid" id="mpCmpGrid"></div></div>';
+      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpCmpModal\').classList.remove(\'show\')">×</button><h3>Comparar operadores</h3><div class="mp-cmp-grid" id="mpCmpGrid"></div></div>';
       document.body.appendChild(modal);
     }
     var grid=document.getElementById('mpCmpGrid');
@@ -1686,7 +1686,7 @@ document.head.appendChild(styleEl);
     }
     var grid=document.getElementById('mpFavGrid');
     if(!ops.length){
-      grid.innerHTML='<p style="color:#a8d4f0;grid-column:1/-1;text-align:center;padding:30px">No favorites yet. Click ❤️ on any operator pin to save it here.</p>';
+      grid.innerHTML='<p style="color:#a8d4f0;grid-column:1/-1;text-align:center;padding:30px">Aún no tienes favoritos. Pulsa ❤️ en cualquier operador del mapa para guardarlo aquí.</p>';
     } else {
       grid.innerHTML=ops.map(function(o){
         var photo=o.photo&&o.photo.includes('http')?o.photo:(o.photo?'https://cdn.filestackcontent.com/'+o.photo+'/convert?w=400&format=webp':'');

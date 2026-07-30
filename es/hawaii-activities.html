@@ -227,7 +227,7 @@ document.addEventListener('click',function(e){
     </div>
   </section>
   <div class="filters" id="filters"><span class="cat-chip active" data-cat="all">🌎 All (495)</span><span class="cat-chip" data-cat="tour">🚌 Tour(139)</span><span class="cat-chip" data-cat="watersports">🏄 Deportes Acuáticos(119)</span><span class="cat-chip" data-cat="snorkel">🤿 Snorkel(98)</span><span class="cat-chip" data-cat="boat">⛵ Lancha(48)</span><span class="cat-chip" data-cat="lei">🌺 Lei(20)</span><span class="cat-chip" data-cat="bikerental">🚲 Bike & E-Bicicleta(17)</span><span class="cat-chip" data-cat="sunset">🌅 Atardecer(15)</span><span class="cat-chip" data-cat="aerial">✈️ Tour Aéreo(15)</span><span class="cat-chip" data-cat="hotel">🏨 Hotel(5)</span><span class="cat-chip" data-cat="fishing">🎣 Pesca(5)</span><span class="cat-chip" data-cat="culinary">🍷 Gastronomía(5)</span><span class="cat-chip" data-cat="atv">🏍️ ATV(4)</span><span class="cat-chip" data-cat="wildlife">🐋 Fauna(2)</span><span class="cat-chip" data-cat="walking_tour">🚶 Tour a Pie(1)</span><span class="cat-chip" data-cat="yacht">🛳️ Yate(1)</span><span class="cat-chip" data-cat="shuttle">🚐 Traslado(1)</span></div>
-    <div class="map-wrap" id="mapWrap"><div class="map-wrap-skeleton">Cargando mapa…</div><div id="map"></div><button class="near-me-btn" id="nearMeBtn" type="button" aria-label="Show operators near me">📍 Cerca de mí</button><div class="near-me-info" id="nearMeInfo"></div><button class="show-all-btn" id="showAllBtn" type="button" aria-label="Mostrar todos los operadores" style="display:none">&larr; Mostrar todos los operadores</button></div>
+    <div class="map-wrap" id="mapWrap"><div class="map-wrap-skeleton">Cargando mapa…</div><div id="map"></div><button class="near-me-btn" id="nearMeBtn" type="button" aria-label="Mostrar operadores cerca de mí">📍 Cerca de mí</button><div class="near-me-info" id="nearMeInfo"></div><button class="show-all-btn" id="showAllBtn" type="button" aria-label="Mostrar todos los operadores" style="display:none">&larr; Mostrar todos los operadores</button></div>
 <div class="grid" id="grid"><div class="sk"></div><div class="sk"></div><div class="sk"></div><div class="sk"></div></div>
   <section class="seo-index">
     <h2>📋 Todos los Operadores en Hawaii</h2>
@@ -671,7 +671,7 @@ document.head.appendChild(styleEl);
   <div class="fh-modal-card">
     <div class="fh-modal-header">
       <span class="fh-modal-title" id="fhModalTitle">Reservar Ahora</span>
-      <button class="fh-modal-close" type="button" onclick="closeFhModal()" aria-label="Close booking">✕</button>
+      <button class="fh-modal-close" type="button" onclick="closeFhModal()" aria-label="Cerrar reserva">✕</button>
     </div>
     <div class="fh-modal-body">
       <div class="fh-modal-loading" id="fhModalLoading"><div class="fh-modal-spinner"></div><span>Cargando disponibilidad…</span></div>
@@ -825,7 +825,7 @@ document.head.appendChild(styleEl);
     if(!filters||document.querySelector('.ux-searchbar'))return;
     var search=document.createElement('div');
     search.className='ux-searchbar';
-    search.innerHTML='<span class="ux-search-icon">🔎</span><input type="search" id="uxSearch" placeholder="Busca por nombre, tipo, ubicación..." autocomplete="off"><button type="button" class="ux-clear" id="uxClear" aria-label="Clear">×</button>';
+    search.innerHTML='<span class="ux-search-icon">🔎</span><input type="search" id="uxSearch" placeholder="Busca por nombre, tipo, ubicación..." autocomplete="off"><button type="button" class="ux-clear" id="uxClear" aria-label="Borrar">×</button>';
     var tools=document.createElement('div');
     tools.className='ux-toolbar';
     tools.innerHTML='<div class="ux-result-count" id="uxCount">Cargando…</div><div class="ux-sort"><label for="uxSort">Ordenar:</label><select id="uxSort"><option value="rec">Recomendados</option><option value="rating">⭐ Mejor valorados</option><option value="reviews">💬 Más reseñas</option><option value="price-asc">💰 Precio: menor a mayor</option><option value="price-desc">💰 Precio: mayor a menor</option><option value="name">A–Z</option></select></div>';
@@ -1423,7 +1423,7 @@ document.head.appendChild(styleEl);
       modal=document.createElement('div');
       modal.className='mp-modal-overlay';
       modal.id='mpCmpModal';
-      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpCmpModal\').classList.remove(\'show\')">×</button><h3>Compare Operators</h3><div class="mp-cmp-grid" id="mpCmpGrid"></div></div>';
+      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpCmpModal\').classList.remove(\'show\')">×</button><h3>Comparar operadores</h3><div class="mp-cmp-grid" id="mpCmpGrid"></div></div>';
       document.body.appendChild(modal);
     }
     var grid=document.getElementById('mpCmpGrid');
@@ -1706,7 +1706,7 @@ document.head.appendChild(styleEl);
     }
     var grid=document.getElementById('mpFavGrid');
     if(!ops.length){
-      grid.innerHTML='<p style="color:#a8d4f0;grid-column:1/-1;text-align:center;padding:30px">No favorites yet. Click ❤️ on any operator pin to save it here.</p>';
+      grid.innerHTML='<p style="color:#a8d4f0;grid-column:1/-1;text-align:center;padding:30px">Aún no tienes favoritos. Pulsa ❤️ en cualquier operador del mapa para guardarlo aquí.</p>';
     } else {
       grid.innerHTML=ops.map(function(o){
         var photo=o.photo&&o.photo.includes('http')?o.photo:(o.photo?'https://cdn.filestackcontent.com/'+o.photo+'/convert?w=400&format=webp':'');
