@@ -422,6 +422,24 @@ página ES. Al quitar los topónimos antes de aplicar el filtro aparecieron **10
 *"operadores verificados en Fort Lauderdale **and** Broward — luxury yacht charters"*).
 Traducidos todos; 997 scripts ES verificados sin errores.
 
+## Séptimo escondite: el CONTENIDO del JSON-LD (28 jul)
+
+Validar que el JSON-LD *parsea* no dice nada de lo que declara. Al revisar el texto de cada campo:
+- **226 campos en inglés dentro de páginas ES** (`description`, `@graph/description`,
+  `mainEntity/acceptedAnswer/text`, `mainEntity/name`). Es lo que Google lee para los resultados
+  enriquecidos, así que un usuario buscando en español veía el fragmento en inglés.
+- **20 páginas ES declaraban un FAQPage entero sobre Miami** — Bar Harbor, Seattle, Park City,
+  Lake Tahoe… con preguntas como *"What are the best things to do in Miami on the water?"*.
+  Tenían DOS bloques: el correcto en español y este heredado de la plantilla de Miami. Eliminado
+  el de Miami en las 20.
+- **20 FAQPage vacíos** (`mainEntity: []`) en páginas EN: ruido inútil, eliminados.
+- **22 páginas con dos FAQPage, ambos con preguntas válidas y distintas.** Google pide uno por
+  página. **Fusionados** en lugar de borrar: la home pasa de 5+6 a 11 preguntas,
+  northeast-florida de 2+6 a 8. Deduplicadas 6 preguntas repetidas (una la introduje yo al
+  añadir el FAQ de Daytona).
+
+Regla: **un solo FAQPage por página, sin `mainEntity` vacío, y en el idioma de la página.**
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
