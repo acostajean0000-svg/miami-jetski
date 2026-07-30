@@ -373,6 +373,22 @@ Un detector que solo mire el texto visible deja pasar la mayoría. Hay que revis
 Cuidado al filtrar: los **nombres de producto de los operadores sí están en inglés** y no se
 traducen ("Chassahowitzka River Clear Kayak Tour"). Estado final: 0 residuos salvo esos nombres.
 
+## Idioma en el sentido inverso, y jerarquía de encabezados (28 jul)
+
+Aplicando el método de los cinco escondites a las páginas **inglesas** buscando español:
+- 315 coincidencias en texto visible y `alt` son **nombres de producto en español** de operadores
+  de Cabo, Cancún y Tulum ("Tour de Puesta de Sol en Caborey"). Legítimos, no traducir.
+- `CAT_KEYWORDS` de la home incluye a propósito términos en español (`moto de agua`, `lancha`)
+  para que una búsqueda en español encuentre la categoría. **No tocar.**
+- Un único fallo real: la home **inglesa** tenía el botón `Ver más (${remaining} restantes) ▼`.
+
+Jerarquía de encabezados, ahora correcta en las 11.546 páginas:
+- 57 páginas tenían un `<h2>` de subtítulo **antes** del `<h1>` (el banner superior va sobre el
+  hero). Convertidos a `<p>` conservando sus estilos en línea: mismo aspecto, esquema correcto.
+- 21 saltaban de `h1` a `h3` (el `h3` del widget de reserva, "📅 Check Availability & Book").
+  Renivelados a `h2` **con los estilos del h3 en línea**, porque `h3{font-size:1.1rem;
+  font-weight:800}` sí tiene regla propia y un cambio de etiqueta a secas habría alterado el diseño.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
