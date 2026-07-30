@@ -1423,7 +1423,7 @@ document.head.appendChild(styleEl);
       modal=document.createElement('div');
       modal.className='mp-modal-overlay';
       modal.id='mpCmpModal';
-      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpCmpModal\').classList.remove(\'show\')">×</button><h3>Comparar operadores</h3><div class="mp-cmp-grid" id="mpCmpGrid"></div></div>';
+      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpCmpModal\').classList.remove(\'show\')" aria-label="Cerrar">×</button><h3>Comparar operadores</h3><div class="mp-cmp-grid" id="mpCmpGrid"></div></div>';
       document.body.appendChild(modal);
     }
     var grid=document.getElementById('mpCmpGrid');
@@ -1701,7 +1701,7 @@ document.head.appendChild(styleEl);
       modal=document.createElement('div');
       modal.className='mp-modal-overlay';
       modal.id='mpFavModal';
-      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpFavModal\').classList.remove(\'show\')">×</button><h3>❤️ My Favorites</h3><div class="mp-cmp-grid" id="mpFavGrid"></div></div>';
+      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpFavModal\').classList.remove(\'show\')" aria-label="Cerrar">×</button><h3>❤️ My Favorites</h3><div class="mp-cmp-grid" id="mpFavGrid"></div></div>';
       document.body.appendChild(modal);
     }
     var grid=document.getElementById('mpFavGrid');

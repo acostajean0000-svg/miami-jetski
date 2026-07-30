@@ -389,6 +389,17 @@ Jerarquía de encabezados, ahora correcta en las 11.546 páginas:
   Renivelados a `h2` **con los estilos del h3 en línea**, porque `h3{font-size:1.1rem;
   font-weight:800}` sí tiene regla propia y un cambio de etiqueta a secas habría alterado el diseño.
 
+## Validez HTML y accesibilidad de controles (28 jul)
+
+- **`id` duplicados: ninguno** en las 11.546 páginas. Ojo al comprobarlo: el patrón `\bid="` también
+  coincide con `data-id="`, y esos SÍ pueden repetirse — me dio 4 falsos positivos. Usar
+  `(?<=[\s"\'])id="`.
+- **251 botones sin nombre accesible** (los ✕/× de cerrar modales, paneles y lightbox) en 127
+  archivos: un lector de pantalla los anunciaba solo como "botón". Etiquetados con `aria-label`
+  según el idioma de la página ("Close"/"Cerrar"). Incluye los botones generados dentro de
+  plantillas JS, que también los necesitan; verificados los 1.444 scripts afectados sin errores.
+- Inputs sin etiqueta: ninguno (todos tienen `placeholder` o `aria-label`).
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,

@@ -2507,7 +2507,7 @@ function bwUpdate(){
   <div class="compare-modal">
     <div class="compare-modal-hdr">
       <div class="compare-modal-title">⚡ Side-by-Side <span style="color:var(--teal)">Comparison</span></div>
-      <button class="compare-close" onclick="closeCompareModal()">✕</button>
+      <button class="compare-close" onclick="closeCompareModal()" aria-label="Cerrar">✕</button>
     </div>
     <div style="overflow-x:auto">
       <table class="compare-table">
@@ -2530,7 +2530,7 @@ function bwUpdate(){
   <div class="fav-panel">
     <div class="fav-panel-hdr">
       <div class="fav-panel-title">❤️ My <span style="color:var(--teal)">Favorites</span></div>
-      <button class="fav-close" onclick="closeFavPanel()">✕</button>
+      <button class="fav-close" onclick="closeFavPanel()" aria-label="Cerrar">✕</button>
     </div>
     <div class="fav-panel-body">
       <div class="fav-grid" id="favGrid"></div>

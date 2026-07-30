@@ -2821,7 +2821,7 @@ function bwUpdate(){
   <div class="compare-modal">
     <div class="compare-modal-hdr">
       <div class="compare-modal-title">⚡ Side-by-Side <span style="color:var(--teal)">Comparison</span></div>
-      <button class="compare-close" onclick="closeCompareModal()">✕</button>
+      <button class="compare-close" onclick="closeCompareModal()" aria-label="Close">✕</button>
     </div>
     <div style="overflow-x:auto">
       <table class="compare-table">
@@ -2844,7 +2844,7 @@ function bwUpdate(){
   <div class="fav-panel">
     <div class="fav-panel-hdr">
       <div class="fav-panel-title">❤️ My <span style="color:var(--teal)">Favorites</span></div>
-      <button class="fav-close" onclick="closeFavPanel()">✕</button>
+      <button class="fav-close" onclick="closeFavPanel()" aria-label="Close">✕</button>
     </div>
     <div class="fav-panel-body">
       <div class="fav-grid" id="favGrid"></div>
@@ -3764,7 +3764,7 @@ function cookieConsent(choice){
       modal=document.createElement('div');
       modal.className='mp-modal-overlay';
       modal.id='mpCmpModal';
-      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpCmpModal\').classList.remove(\'show\')">×</button><h3>Compare Operators</h3><div class="mp-cmp-grid" id="mpCmpGrid"></div></div>';
+      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpCmpModal\').classList.remove(\'show\')" aria-label="Close">×</button><h3>Compare Operators</h3><div class="mp-cmp-grid" id="mpCmpGrid"></div></div>';
       document.body.appendChild(modal);
     }
     var grid=document.getElementById('mpCmpGrid');
@@ -4042,7 +4042,7 @@ function cookieConsent(choice){
       modal=document.createElement('div');
       modal.className='mp-modal-overlay';
       modal.id='mpFavModal';
-      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpFavModal\').classList.remove(\'show\')">×</button><h3>❤️ My Favorites</h3><div class="mp-cmp-grid" id="mpFavGrid"></div></div>';
+      modal.innerHTML='<div class="mp-modal"><button class="mp-modal-close" onclick="document.getElementById(\'mpFavModal\').classList.remove(\'show\')" aria-label="Close">×</button><h3>❤️ My Favorites</h3><div class="mp-cmp-grid" id="mpFavGrid"></div></div>';
       document.body.appendChild(modal);
     }
     var grid=document.getElementById('mpFavGrid');
