@@ -400,6 +400,28 @@ Jerarquía de encabezados, ahora correcta en las 11.546 páginas:
   plantillas JS, que también los necesitan; verificados los 1.444 scripts afectados sin errores.
 - Inputs sin etiqueta: ninguno (todos tienen `placeholder` o `aria-label`).
 
+## Ampliación de `data/cat/*.json` (28 jul) y el sexto escondite del idioma
+
+Estado tras revisar el alcance declarado de cada página:
+- `everglades-airboat-tours` (32/32) y `miami-exotic-cars` (27/27): **ya completas**.
+- `snorkel-tours` decía "Florida, Hawaii **& Caribbean**" y le faltaban 84 de Puerto Rico, 5 de
+  Cozumel y 2 de Nassau — todos caribeños, **dentro** de su alcance. Añadidos: 282 → 373.
+  Regeneradas las pestañas de zona (había una de "Gulf Coast" con 0 operadores y varios conteos
+  viejos), el precio mínimo ($65 → $55, real del dato), el `priceRange` del JSON-LD y las metas.
+- `yacht-charters` y `sunset-cruises` dicen "Florida & Caribbean" y lo que les falta es Austin,
+  Myrtle, Havasu y Lake Mead — **fuera** de ese alcance. No ampliadas: primero habría que decidir
+  si esas páginas pasan a ser globales y reescribir su título y descripción.
+
+**Sexto escondite del idioma: una frase en inglés con un nombre propio acentuado.**
+Mi filtro descartaba como "español" cualquier texto con á/é/í/ó/ú/ñ. Eso ocultó frases como
+*"Explore the reefs, wrecks and marine life of Hawaii, **Cancún**, Key West…"* — inglesa, en la
+página ES. Al quitar los topónimos antes de aplicar el filtro aparecieron **105 fragmentos más** en
+37 páginas ES: párrafos de guía completos y spanglish de plantilla
+(*"La temporada alta en Newport Beach es May-Oct, with the most pleasant weather"*,
+*"Los precios en the Florida Keys comienzan alrededor de $91 per person for most tours"*,
+*"operadores verificados en Fort Lauderdale **and** Broward — luxury yacht charters"*).
+Traducidos todos; 997 scripts ES verificados sin errores.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
