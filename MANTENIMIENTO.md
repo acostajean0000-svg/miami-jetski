@@ -333,6 +333,28 @@ Consecuencias que hay que tener presentes:
 **Para tener precios reales hay que traerlos de FareHarbor.** Hasta entonces, no interpretar las
 diferencias de precio entre operadores de una misma categoría como información real.
 
+## Bloque `lp-insights` de las landings (creado 28 jul)
+
+250 landings (EN+ES) llevan una sección `class="lp-insights"` **generada desde su data file**, para
+que cada página tenga contenido propio en vez de plantilla compartida:
+- reparto real de operadores por área (`zl`), 2. los 5 mejor valorados con enlace a su ficha,
+  rating y nº de reseñas, 3. total de reseñas y valoración media.
+
+Efecto medido: palabras propias mediana 326 → 444; similitud entre hermanas (Jaccard de 5-gramas)
+boat-rentals 0,52 → 0,38 (máx 0,70 → 0,50), jet-ski 0,47 → 0,38. Añade además ~1.250 enlaces
+internos a fichas de operador.
+
+**Reglas al regenerarlo:**
+- **NO usa el campo `price`**, que es una estimación por categoría (ver sección anterior).
+  Sí usa `reviews` (392 valores distintos, varía de verdad) y `rating` (8 niveles).
+- Los enlaces a operador van **siempre a la raíz**, nunca a `/es/`: las fichas no tienen versión ES.
+  Mi primer intento generó `/es/{slug}` y habrían sido 1.250 enlaces roots.
+- Ancla de inserción: antes de la sección del FAQ; si no hay, antes de `</main>`; si no, antes de
+  `<footer`. Buscar el FAQ **solo después de `</head>`**, porque "Preguntas frecuentes" aparece
+  también en la meta description y el `find` te devuelve la posición del head.
+- Guardarse de `str.find()` devolviendo −1: insertar en `h[:-1]` rompe el HTML. Verificar siempre
+  que el archivo siga cerrando en `</html>`. A mí me pasó en la flagship de Miami.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
