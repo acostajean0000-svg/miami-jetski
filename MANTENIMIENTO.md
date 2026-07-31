@@ -464,6 +464,22 @@ recorrer los nodos y verificar `Offer.price`, `AggregateRating.ratingValue`/`rev
 `operators.json`, y `AggregateOffer.lowPrice`/`highPrice`/`offerCount` contra el data file de la
 página. Estado: 24.050 bloques, 0 rotos, 0 problemas semánticos.
 
+## La propiedad `image` del JSON-LD es el OCTAVO sitio donde vive una imagen
+
+Al arreglar las fotos genéricas actualicé `og:image` y `twitter:image`, pero **no la propiedad
+`image` del JSON-LD**, que es la que Google usa para los resultados enriquecidos. Resultado:
+1.352 páginas seguían declarando una foto de stock de Unsplash. Corregidas, más:
+- 210 landings cuyo `image` era el logo genérico `/og-image.png` teniendo su OG propia en `/og/`.
+- 81 páginas de operador con **dos fotos válidas distintas** en `image` y `og:image`; alineadas
+  con la del maestro.
+
+También sincronizados: 121 nodos sin `inLanguage` (ahora `es-ES`/`en-US` según la página),
+37 `PostalAddress` sin `addressLocality`, 4 `GeoCoordinates` que no coincidían con `operators.json`.
+
+**Los ocho sitios donde vive el mismo dato** (comprobar los ocho tras cualquier cambio):
+data file · maestros (operators/slim/top) · texto visible · meta description · og · twitter ·
+JSON-LD (`Offer.price`, `AggregateRating`, `AggregateOffer`, `image`, `geo`) · `data-fh-price`.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
