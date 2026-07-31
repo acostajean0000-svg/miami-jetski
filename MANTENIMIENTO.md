@@ -440,6 +440,30 @@ Validar que el JSON-LD *parsea* no dice nada de lo que declara. Al revisar el te
 
 Regla: **un solo FAQPage por página, sin `mainEntity` vacío, y en el idioma de la página.**
 
+## Semántica del JSON-LD, no solo que parsee (28 jul)
+
+Que un bloque parsee no dice nada de si Google lo entiende. Revisando tipos, propiedades y valores:
+
+**Tipos y propiedades corrompidos por la traducción — todo en `es/index.html`:**
+`"@type":"ListaItem"` ×61, `"BreadcrumbLista"`, `"ItemLista"` y la propiedad
+`"itemListaElement"` ×2. Con el tipo Y la propiedad inválidos, **la ItemList de 60 operadores y
+los breadcrumbs de la home española eran completamente invisibles para Google.** Es el mismo
+daño que `classList`→`classLista`: al traducir, la lista negra debe incluir los tipos y
+propiedades de schema.org, no solo los identificadores de JavaScript.
+
+**Valores que no cuadraban con el dato** (lo que Google compara con la página):
+- 66 `Offer.price`, 7 `reviewCount` y 2 `ratingValue` en páginas de operador. **Causa: mis propias
+  correcciones de precio de esta sesión llegaron al data file y al texto visible, pero no al
+  JSON-LD.** El JSON-LD es el séptimo sitio donde vive un precio.
+- 154 `offerCount`, 116 `lowPrice` y 140 `highPrice` en `AggregateOffer` de landings; varios
+  llevaban el total de la zona en lugar del de su categoría (bar-harbor-bike-rentals declaraba
+  124, el total de Bar Harbor, en vez de sus 23 bicicletas).
+
+Comprobación a repetir tras cualquier cambio de datos o precios:
+recorrer los nodos y verificar `Offer.price`, `AggregateRating.ratingValue`/`reviewCount` contra
+`operators.json`, y `AggregateOffer.lowPrice`/`highPrice`/`offerCount` contra el data file de la
+página. Estado: 24.050 bloques, 0 rotos, 0 problemas semánticos.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
