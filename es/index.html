@@ -782,7 +782,7 @@
       <div class="search-bar-wrap">
         <div class="search-bar">
           <span aria-hidden="true" style="font-size:1rem;color:var(--text-muted)">🔍</span>
-          <input type="text" id="searchInput" placeholder="Buscar operadores, locations…" oninput="handleSearch();_acTimer&&clearTimeout(_acTimer);_acTimer=setTimeout(updateAC,120)" onkeydown="acKeyNav(event)" autocomplete="off" aria-label="Buscar operadores and locations" aria-autocomplete="list" aria-controls="acDropdown">
+          <input type="text" id="searchInput" placeholder="Buscar operadores, locations…" oninput="handleSearch();_acTimer&&clearTimeout(_acTimer);_acTimer=setTimeout(updateAC,120)" onkeydown="acKeyNav(event)" autocomplete="off" aria-label="Buscar operadores y ubicaciones" aria-autocomplete="list" aria-controls="acDropdown">
           <button class="search-clear" id="searchClear" onclick="clearSearch();closeAC()" title="Clear search" aria-label="Borrar búsqueda">✕</button>
         </div>
         <div class="ac-dropdown" id="acDropdown" role="listbox"></div>
@@ -1534,7 +1534,7 @@ function refreshFavPanel() {
   if (!grid) return;
   const favOps = allOperators.filter(o => favorites.has(o.id));
   if (!favOps.length) {
-    grid.innerHTML = '<div class="fav-empty"><div class="fav-empty-icon">🤍</div><p>Aún no has guardado favoritos.<br>Tap the heart on any operator card.</p></div>';
+    grid.innerHTML = '<div class="fav-empty"><div class="fav-empty-icon">🤍</div><p>Aún no has guardado favoritos.<br>Pulsa el corazón en cualquier tarjeta de operador.</p></div>';
   } else {
     grid.innerHTML = favOps.map(op => favCardHTML(op)).join('');
   }
@@ -2266,7 +2266,7 @@ function fetchOperators(retry) {
   _fetchController = new AbortController();
   const grid = document.getElementById('cardsGrid');
   if (!retry && grid) grid.innerHTML =
-    '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text-muted)"><div style="font-size:2.5rem;margin-bottom:12px">🌊</div><div style="font-family:Montserrat,sans-serif;font-weight:700">Loading operators…</div></div>';
+    '<div style="grid-column:1/-1;text-align:center;padding:60px 20px;color:var(--text-muted)"><div style="font-size:2.5rem;margin-bottom:12px">🌊</div><div style="font-family:Montserrat,sans-serif;font-weight:700">Cargando operadores…</div></div>';
   const signal = _fetchController.signal;
   const cacheOpt = retry ? {cache:'no-cache'} : {};
   // Try slim JSON first (no desc field, ~68KB smaller); fall back to full JSON

@@ -544,6 +544,71 @@ tiene detección de "catálogo vacío" que muestra un aviso si el operador ya no
 Excepciones legítimas: `miami-bloom-bar-flowers` y `xtreme-car-rental-punta-cana` reservan por
 WhatsApp y no tienen ancla a FareHarbor, así que no llevan modal.
 
+## JavaScript común de las páginas de zona en archivo externo (29 jul)
+
+Las 90 páginas de zona llevaban ~50 KB de JS **idéntico** cada una (bloques "SPRINT 11-15", mapa,
+buscador). Extraído a dos archivos cacheados:
+
+| archivo | KB | páginas |
+|---|---|---|
+| `/js/zone-en.<hash>.js` | 50,7 | 45 |
+| `/js/zone-es.<hash>.js` | 47,8 | 42 |
+
+Peso mediano de una página de zona: **138 KB → 80 KB (-42%)**; 5,6 MB menos de HTML en el sitio.
+En la segunda visita el archivo ya está en caché y no se descarga.
+
+**Reglas para no romperlo:**
+- Los bloques comunes van **seguidos al final** de la secuencia de scripts, después del bloque
+  propio de cada zona (`ZONE_KEY`, `ZONE_NAME`). El `<script src>` va **en esa misma posición y
+  sin `async`/`defer`**: son IIFE que dependen del orden de ejecución.
+- El bundle debe ser **byte a byte** la concatenación de lo que había en línea. Comprobarlo antes
+  de desplegar; así el comportamiento es idéntico por construcción.
+- **El nombre lleva el hash del contenido** porque la cabecera es `immutable` con un año. Si
+  editas el bundle, hay que regenerar el hash y actualizar las 45/42 referencias, o los
+  navegadores nunca verán el cambio.
+- Regla en `vercel.json`: `/js/(.*)` → `max-age=31536000, immutable`.
+
+**3 páginas siguen en línea** (`es/keys`, `es/jacksonville`, `es/daytona`) porque su secuencia de
+scripts difiere: jacksonville y daytona vienen de la plantilla de **operador** (llevan
+`openFhModal` y un bloque `BASE MAP jacksonville` — ojo, daytona también lo lleva con ese nombre).
+
+De paso, cadenas en inglés encontradas en el JS español: `🔍 No matches`, `Compare →`, `Clear`,
+`No results` en el bundle (42 páginas) y 8 más en `es/keys-activities`. Un barrido que exija dos
+palabras inglesas no las ve: son de una sola palabra.
+
+## Auditoría de cierre (29 jul) — qué comprobar y qué NO son errores
+
+**Estado: 11.546 páginas sin un solo problema** de estructura, head, JSON-LD, recursos, datos,
+enlaces internos ni ruta de reserva. 6.812 scripts únicos (39.815 instancias) sin errores.
+
+**Cómo verificar la sintaxis JS de todo el sitio en segundos**: deduplicar por hash MD5 y validar
+los únicos con `new vm.Script(code)` en UN proceso de node. Lanzar `node --check` por script
+(39.815 procesos) no termina nunca.
+
+**Falsos positivos recurrentes — comprobarlos antes de "arreglar":**
+- `/_vercel/insights/script.js` "no existe": está dentro de un comentario HTML y además lo sirve
+  Vercel en runtime.
+- Una landing de categoría contiene DOS conteos correctos: el suyo en las metas y el de su zona
+  dentro del nodo `TouristDestination`. Excluir el JSON-LD al comparar contra el data file.
+- `twitter:description` distinta de `og:description` suele ser solo una variante más larga.
+- Los nombres de producto de operadores están en inglés en páginas ES (y en español en páginas EN)
+  y **no se traducen**.
+
+**Fugas encontradas y corregidas en esta auditoría** (todas ya publicadas como limpias antes):
+- 89 páginas ES con `Instant online booking with free cancellation.` en el JSON-LD.
+- 74 con `✓ Verified FareHarbor operators` y `⚡ Instant booking` en `innerHTML`.
+- 76 con las plantillas `N verified activity operators in`, `Compare and book N+ verified
+  watersports operators`, `Marketplace of N+ watersports operators`, `Watersports Marketplace —`.
+- 4 cadenas en el bundle `zone-es.js` (afectaban a 42 páginas) y 8 en `es/keys-activities`.
+- **14 páginas con la fuga de Naples en `twitter:description`**: *"Compara 388+ verified operators
+  on Austin y Lake Travis, Texas — Austin, Austin, **Sanibel, Fort Myers**. Pontoon rentals..."*
+  en Austin, Havasu, Lake Mead, Ozarks, Myrtle y Nassau. Corregido igualando a `og:description`.
+- `yacht-charters` declaraba 130 con 129 en el dato (quedó de eliminar un registro huérfano).
+
+**Lección:** cada barrido de idioma que hice dio "cero residuos" y el siguiente, con el umbral o el
+filtro ajustado, encontró más. Un detector que exige 2 palabras inglesas no ve `Loading…`; uno que
+descarta textos con tilde no ve una frase inglesa que mencione *Cancún*.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
