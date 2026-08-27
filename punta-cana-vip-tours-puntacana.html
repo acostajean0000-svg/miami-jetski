@@ -52,6 +52,21 @@ h1{font-size:clamp(1.4rem,4vw,2rem);font-weight:800;margin-bottom:12px}
 footer{background:#020810;border-top:1px solid rgba(0,210,255,.1);padding:28px 20px;text-align:center;color:#4a7a9b;font-size:.82rem}
 footer a{color:#00d2ff}
 @media(max-width:600px){.hero-photo{height:220px}.map-wrap iframe{height:240px}}
+
+.fh-modal.open ~ .mob-cta{display:none !important}
+.fh-modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:99999;padding:24px;box-sizing:border-box}
+.fh-modal.open{display:flex}
+.fh-modal-card{background:#fff;width:100%;max-width:1100px;height:100%;max-height:92vh;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.fh-modal-header{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:#0a0a0a;color:#fff;flex-shrink:0}
+.fh-modal-title{font-weight:600;font-size:.95rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:12px}
+.fh-modal-close{background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1;padding:0 6px}
+.fh-modal-body{flex:1;position:relative;background:#fff}
+.fh-modal-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#555;font-size:.9rem;background:#fff;z-index:1}
+.fh-modal-spinner{width:36px;height:36px;border:3px solid #e6e6e6;border-top-color:#0a66c2;border-radius:50%;animation:fhspin 1s linear infinite}
+.fh-modal iframe{width:100%;height:100%;border:0;display:block;position:absolute;inset:0;background:#fff}
+.fh-modal{padding:0}
+.fh-modal-card{max-height:100vh;border-radius:0}
+@keyframes fhspin{to{transform:rotate(360deg)}}
 </style>
 </head>
 <body>
@@ -94,5 +109,74 @@ footer a{color:#00d2ff}
 <footer>
   <p>© 2026 <a href="/">FloridaWaterSports</a> · 550+ operators across Florida</p>
 </footer>
-<div class="mobile-book-bar"> <div> <div style="font-size:1.3rem;font-weight:800;color:var(--teal);">From $100</div> </div> <a data-fh-price="100" data-fh-name="Punta Cana VIP Tours" href="https://fareharbor.com/embeds/book/puntacanavip/?asn=fhdn&amp;asn-ref=miamistylerentals&amp;ref=miamistylerentals&amp;full-items=yes&amp;marketplace=yes&amp;flow=no&amp;branding=no" target="_blank" rel="noopener nofollow sponsored" class="btn-book" style="width:auto;padding:12px 24px;">Book Now →</a> </div></body>
+<div class="mobile-book-bar"> <div> <div style="font-size:1.3rem;font-weight:800;color:var(--teal);">From $100</div> </div> <a data-fh-price="100" data-fh-name="Punta Cana VIP Tours" href="https://fareharbor.com/embeds/book/puntacanavip/?asn=fhdn&amp;asn-ref=miamistylerentals&amp;ref=miamistylerentals&amp;full-items=yes&amp;marketplace=yes&amp;flow=no&amp;branding=no" target="_blank" rel="noopener nofollow sponsored" class="btn-book" style="width:auto;padding:12px 24px;">Book Now →</a> </div><div class="fh-modal" id="fhModal" role="dialog" aria-modal="true" aria-labelledby="fhModalTitle" onclick="if(event.target===this)closeFhModal()">
+  <div class="fh-modal-card">
+    <div class="fh-modal-header">
+      <span class="fh-modal-title" id="fhModalTitle">Book Now</span>
+      <button class="fh-modal-close" type="button" onclick="closeFhModal()" aria-label="Close booking">✕</button>
+    </div>
+    <div class="fh-modal-body">
+      <div class="fh-modal-loading" id="fhModalLoading"><div class="fh-modal-spinner"></div><span>Loading availability…</span></div>
+      <iframe id="fhModalIframe" title="FareHarbor Booking" loading="eager" allow="payment"></iframe>
+      <div style="padding:10px 20px;background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.08);font-size:.82rem;color:#9bb5d4;text-align:center">
+        Don't see availability? <a href="/" style="color:#00d4c8;text-decoration:underline">Browse similar operators</a>
+      </div>
+  <div id="fhUnavailable" style="display:none;padding:40px 28px;text-align:center;color:#cdd9e8">
+    <div style="font-size:3rem;margin-bottom:12px">😔</div>
+    <h3 style="color:#fff;font-size:1.2rem;margin-bottom:10px">This operator is currently unavailable</h3>
+    <p style="font-size:.95rem;line-height:1.6;margin-bottom:24px;color:#9bb5d4">
+      The booking page is empty. The operator may be paused, closed, or out-of-season.
+    </p>
+    <a href="/" style="display:inline-block;background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;padding:12px 28px;border-radius:50px;font-weight:700;text-decoration:none">
+      Browse similar operators →
+    </a>
+  </div>
+    </div>
+  </div>
+</div>
+<script>(function(){
+  function openFhModal(url,name){
+    var modal=document.getElementById('fhModal');var iframe=document.getElementById('fhModalIframe');
+    var loading=document.getElementById('fhModalLoading');
+    document.getElementById('fhModalTitle').textContent=name||'Book Now';
+    loading.style.display='flex';iframe.src='about:blank';
+    modal.classList.add('open');document.body.style.overflow='hidden';
+    if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url});
+    var hidLoading=false;
+    function hideLoading(){if(!hidLoading){hidLoading=true;loading.style.display='none';}}
+    iframe.onload=function(){
+      if(iframe.src==='about:blank'||iframe.src==='')return;
+      hideLoading();
+      // Detectar iframe vacío (operador zombie sin items): check después de render
+      setTimeout(function(){
+        try{
+          var b=iframe.contentDocument&&iframe.contentDocument.body;
+          var h=b?b.innerText.length:0;
+          // Si el iframe tiene <500 chars de texto = catálogo vacío
+          if(b&&h<500&&!/item|book|select|date/i.test(b.innerText)){showUnavailable();}
+        }catch(e){/* cross-origin, no podemos chequear — no problem */}
+      },3500);
+    };
+    setTimeout(hideLoading,4000);
+    requestAnimationFrame(function(){iframe.src=url;});
+  }
+  function showUnavailable(){
+    var i=document.getElementById('fhModalIframe');var u=document.getElementById('fhUnavailable');
+    if(i)i.style.display='none'; if(u)u.style.display='block';
+  }
+  window.closeFhModal=function(){var u=document.getElementById('fhUnavailable');if(u)u.style.display='none';var i=document.getElementById('fhModalIframe');if(i)i.style.display='';var m=document.getElementById('fhModal');m.classList.remove('open');document.body.style.overflow='';var i=document.getElementById('fhModalIframe');i.src='about:blank';};
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeFhModal();});
+  document.addEventListener('click',function(e){
+    if(e.defaultPrevented)return;
+    var a=e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
+    if(!a)return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
+    e.preventDefault();e.stopPropagation();
+    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Book Now';
+    openFhModal(a.href,name);
+  },true);
+  window.openFhModal=openFhModal;
+})();
+</script>
+</body>
 </html>

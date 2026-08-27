@@ -523,6 +523,27 @@ barra estática, la tapaba (z-index 99000 sobre 200), dependía de JS y **genera
 `<div class="mobile-book-bar">` + precio + `<a data-fh-price data-fh-name href={link FH} class="btn-book">`.
 Verificado: 11.076 con una sola barra, precio coincidente con `operators.json`, 0 sin enlace.
 
+### El modal, ahora en las 11.074 fichas con reserva FareHarbor (29 jul)
+
+Antes solo lo tenían 6.254; en las otras 4.822 los botones abrían FareHarbor en pestaña nueva y
+**no se disparaba el evento `book_now_click`**, así que ese clic no se medía.
+
+Cómo funciona: un listener en `document` (fase de captura) intercepta **cualquier**
+`a[href*="fareharbor.com/embeds/book/"]` de la página, hace `preventDefault` y abre el iframe en
+capa. Por eso unifica de golpe el CTA del hero, la tarjeta lateral, la barra móvil y el enlace de
+respaldo. Respeta cmd/ctrl/shift para abrir en pestaña nueva, cierra con Escape o clic fuera, y
+tiene detección de "catálogo vacío" que muestra un aviso si el operador ya no tiene items.
+
+**Piezas necesarias — las tres o no funciona:**
+1. HTML: `<div class="fh-modal" id="fhModal">` con los ids `fhModalIframe`, `fhModalLoading`,
+   `fhModalTitle` y `fhUnavailable`.
+2. JS: la IIFE con `openFhModal` / `window.closeFhModal`.
+3. CSS: las 14 reglas `.fh-modal*` + `@keyframes fhspin`. Están en `operator.css`, **pero 105
+   fichas no lo cargan** y llevan su CSS en línea: a esas hay que inyectarles también las reglas.
+
+Excepciones legítimas: `miami-bloom-bar-flowers` y `xtreme-car-rental-punta-cana` reservan por
+WhatsApp y no tienen ancla a FareHarbor, así que no llevan modal.
+
 ## Historial de la gran sesión (jul 2026) — para contexto
 
 Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas de operador,
