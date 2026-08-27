@@ -274,6 +274,32 @@ que el tráfico orgánico del sitio acababa acreditando comisión al socio.
 Ahora: `noindex,follow`, fuera del sitemap y sin enlaces entrantes.
 **Si algún día se crea una página real de reclutamiento de afiliados, que sea otra URL.**
 
+## ⚠️ PARÁMETROS DUPLICADOS = COMISIÓN PERDIDA (29 jul)
+
+Una reserva real (cliente Jesse Morones, Bruschi Boat Rental, $529,56) **no generó comisión**.
+Soporte de FareHarbor identificó la causa: el enlace llevaba los parámetros de seguimiento
+**repetidos literalmente**:
+
+```
+?flow=48216&asn=fhdn&asn-ref=X&asn-ref=X&ref=X&ref=X      ← ROTO, no atribuye
+?asn=fhdn&asn-ref=X&ref=X&…                                ← correcto
+```
+
+**Llevar `asn-ref` Y `ref` a la vez es CORRECTO.** Lo que rompe la atribución es que cualquiera de
+ellos aparezca **dos veces** en la misma URL.
+
+Auditado el sitio a raíz de esto: **58 enlaces en 20 páginas** (todas de la tanda `*-fl.html`)
+tenían los parámetros duplicados, porque el bloque de tracking se añadió dos veces al construirlas.
+Cada reserva salida de esas páginas perdía la comisión. Corregidos deduplicando y conservando el
+orden original; los 46.177 enlaces del sitio están ahora limpios.
+
+**Comprobación obligatoria antes de cada deploy:**
+```python
+ks=[k for k,_ in urllib.parse.parse_qsl(urlparse(u).query)]
+assert len(ks)==len(set(ks)), 'parámetro duplicado: comisión perdida'
+```
+Excepción legítima: `partners.html` usa `ref=jhondoyle` (página del socio, ver más arriba).
+
 ## Parámetros de los enlaces de FareHarbor (42.221 enlaces)
 
 Combinación estándar: `asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no`
