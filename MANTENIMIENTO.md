@@ -293,6 +293,14 @@ tenían los parámetros duplicados, porque el bloque de tracking se añadió dos
 Cada reserva salida de esas páginas perdía la comisión. Corregidos deduplicando y conservando el
 orden original; los 46.177 enlaces del sitio están ahora limpios.
 
+### Calendario con fecha fija = cliente en un mes pasado
+
+Otro fallo de la misma auditoría: **104 enlaces llevaban `/calendar/2026/05/`** (y 2 con `2026/04`)
+incrustado en la ruta. En agosto de 2026 el cliente pulsaba "reservar" y aterrizaba en el calendario
+de FareHarbor abierto en **mayo**, sin disponibilidad. 30 páginas y 34 registros del dato.
+Eliminado el segmento: sin fecha, FareHarbor abre en el mes actual y no vuelve a caducar.
+**Nunca fijes el mes en la URL.**
+
 **Comprobación obligatoria antes de cada deploy:**
 ```python
 ks=[k for k,_ in urllib.parse.parse_qsl(urlparse(u).query)]
