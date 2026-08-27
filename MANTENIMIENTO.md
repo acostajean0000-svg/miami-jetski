@@ -333,6 +333,28 @@ Consecuencias que hay que tener presentes:
 **Para tener precios reales hay que traerlos de FareHarbor.** Hasta entonces, no interpretar las
 diferencias de precio entre operadores de una misma categoría como información real.
 
+### 64 precios reales recuperados de la home (28 jul)
+
+La lista estática del pie de `index.html` conservaba los precios ORIGINALES: **87 valores distintos
+en 156 operadores**, frente a los 11 del maestro para ese mismo grupo. Es anterior al aplanamiento
+por categoría. Cruzando por el item de FareHarbor se recuperaron 64 precios que contradecían al
+maestro, algunos de forma grave:
+
+| operador | real | decía el maestro |
+|---|---|---|
+| Pretender Multi-Day Private Luxury Charter | $4.000 | $75 |
+| 38' Top Shelf Private Coastal Day Yacht | $2.399 | $150 |
+| 65 ALISA | $2.000 | $100 |
+| Cowgirl 45' Premium Offshore Fishing | $1.050 | $150 |
+
+Restaurados y propagados a los ocho sitios: 3 maestros, 119 registros en data files, 64 fichas de
+operador (191 `data-fh-price`, 158 textos, 192 metas, 63 `Offer.price`), 176 tarjetas rel-card en
+166 archivos y 32 landings (20 `lowPrice`, 18 `highPrice`, 86 textos, 20 respuestas de FAQ).
+
+**Quedan ~11.000 operadores con la estimación de categoría.** Si aparece otra fuente con precios
+reales (un export de FareHarbor, o HTML antiguo sin regenerar), cruzar por
+`shortname/item-id` del enlace, que es la clave estable — no por nombre ni por slug.
+
 ## Bloque `lp-insights` de las landings (creado 28 jul)
 
 250 landings (EN+ES) llevan una sección `class="lp-insights"` **generada desde su data file**, para
@@ -479,6 +501,27 @@ También sincronizados: 121 nodos sin `inLanguage` (ahora `es-ES`/`en-US` según
 **Los ocho sitios donde vive el mismo dato** (comprobar los ocho tras cualquier cambio):
 data file · maestros (operators/slim/top) · texto visible · meta description · og · twitter ·
 JSON-LD (`Offer.price`, `AggregateRating`, `AggregateOffer`, `image`, `geo`) · `data-fh-price`.
+
+## Camino de reserva en la ficha de operador (unificado 29 jul)
+
+Cada ficha tenía hasta **cinco mecanismos de reserva** compitiendo, y de forma desigual entre
+páginas. Estado anterior: 4.760 fichas con DOS barras fijas solapadas en móvil, 3.891 sin ninguna,
+67 solo con la de JavaScript. Ahora **las 11.076 tienen exactamente una**.
+
+**Mecanismos que se conservan, en este orden de prioridad:**
+1. `fh-widget` — iframe de FareHarbor con el calendario. Es la reserva de verdad (10.998 fichas).
+2. `fh-fallback` — "Calendar not loading?" con enlace directo. Red de seguridad, ocupa poco.
+3. `book-card` en el lateral (escritorio) y `mobile-book-bar` fija abajo (móvil).
+4. `fh-modal` — solo donde ya existía; abre FareHarbor en capa sin salir de la página.
+
+**Eliminado:** el `<script>` que creaba una segunda barra `mob-cta` por JavaScript. Duplicaba la
+barra estática, la tapaba (z-index 99000 sobre 200), dependía de JS y **generaba el botón sin
+`data-fh-price`**, así que esas conversiones llegaban a Google Ads con valor 0.
+
+**La barra que se conserva es la estática** porque funciona sin JavaScript, lleva el precio y el
+`data-fh-price` correcto. Si hay que regenerarla, el marcado es:
+`<div class="mobile-book-bar">` + precio + `<a data-fh-price data-fh-name href={link FH} class="btn-book">`.
+Verificado: 11.076 con una sola barra, precio coincidente con `operators.json`, 0 sin enlace.
 
 ## Historial de la gran sesión (jul 2026) — para contexto
 

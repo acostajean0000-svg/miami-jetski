@@ -6,6 +6,11 @@
 <title>InmoRD — Torre Serrallés 305 · Análisis solar y térmico</title>
 <meta name="description" content="Análisis completo de la Torre Serrallés 305, Santo Domingo: rotación del sol en 3D, temperatura y sensación térmica por apartamento, brisa, confort interior y costo estimado de aire acondicionado.">
 <meta name="theme-color" content="#0b1f2a">
+<link rel="manifest" href="manifest.json">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <!-- Vista previa al compartir (WhatsApp, Facebook, X). Si cambias de dominio, actualiza SITE_URL abajo. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="InmoRD">
@@ -69,8 +74,37 @@
   .map-ctrl:hover{border-color:var(--accent);color:var(--accent)}
   #locateBtn{top:14px;right:14px}
   #fitBtn{top:14px;right:170px}
-  .mode-toggle{position:absolute;top:16px;left:50%;transform:translateX(-50%);z-index:820;background:linear-gradient(135deg,#ff7a1e,#ffb703 55%,#ffd23f);color:#3a1e00;border:0;border-radius:50px;font-weight:800;font-size:.95rem;letter-spacing:.2px;cursor:pointer;padding:14px 28px;display:inline-flex;align-items:center;gap:9px;box-shadow:0 6px 20px rgba(255,150,20,.45),0 2px 6px rgba(0,0,0,.25);animation:solPulse 2.6s ease-in-out infinite}
-  .mode-toggle:hover{transform:translateX(-50%) translateY(-1px);box-shadow:0 9px 28px rgba(255,160,30,.65),0 2px 6px rgba(0,0,0,.25)}
+  #poiBtn{top:60px;right:14px}
+  #poiBtn.on{background:var(--accent);color:#fff;border-color:var(--accent)}
+  .poi-pin{width:36px;height:36px;border-radius:50%;background:#fff;border:2.5px solid var(--accent);display:flex;align-items:center;justify-content:center;font-size:1.1rem;box-shadow:0 3px 10px rgba(0,0,0,.35)}
+  .mode-toggle{position:absolute;top:16px;left:50%;transform:translateX(-50%);z-index:820;overflow:hidden;
+    background:
+      radial-gradient(circle at 16% 42%, rgba(255,255,255,.32), transparent 46%),
+      repeating-linear-gradient(-55deg, rgba(255,255,255,.12) 0 7px, rgba(255,255,255,0) 7px 15px),
+      linear-gradient(120deg,#ff3d00,#ff7a00 38%,#ffb300 70%,#ffd54d);
+    background-size:auto,auto,220% 100%;
+    color:#fff;text-shadow:0 1px 3px rgba(90,30,0,.6);border:2px solid rgba(255,255,255,.6);border-radius:50px;
+    font-weight:900;font-size:1.04rem;letter-spacing:.4px;cursor:pointer;padding:15px 30px 15px 24px;
+    display:inline-flex;align-items:center;gap:11px;
+    box-shadow:0 0 0 4px rgba(255,140,0,.18),0 8px 26px rgba(255,90,0,.55),0 2px 6px rgba(0,0,0,.3);
+    animation:solPulse 2.4s ease-in-out infinite, solFlow 6s linear infinite}
+  .mode-toggle:hover{transform:translateX(-50%) translateY(-2px) scale(1.04);box-shadow:0 0 0 7px rgba(255,140,0,.24),0 14px 38px rgba(255,90,0,.75),0 2px 6px rgba(0,0,0,.3)}
+  .mode-toggle::after{content:"";position:absolute;top:-4px;bottom:-4px;left:-70%;width:45%;
+    background:linear-gradient(105deg,transparent,rgba(255,255,255,.6) 50%,transparent);
+    transform:skewX(-22deg);animation:solShine 3.4s ease-in-out infinite;pointer-events:none}
+  @keyframes solFlow{0%{background-position:0 0,0 0,0% 50%}100%{background-position:0 0,0 0,220% 50%}}
+  @keyframes solShine{0%{left:-70%}45%{left:135%}100%{left:135%}}
+  /* sol dibujado con rayos giratorios */
+  .mt-sun{width:26px;height:26px;flex:none;border-radius:50%;position:relative;
+    background:
+      radial-gradient(circle, #fffbe0 0 30%, rgba(255,251,224,0) 33%),
+      repeating-conic-gradient(rgba(255,248,200,.95) 0 13deg, rgba(255,248,200,0) 13deg 30deg);
+    filter:drop-shadow(0 0 6px rgba(255,235,150,.9));
+    animation:sunSpin 14s linear infinite}
+  @keyframes sunSpin{to{transform:rotate(360deg)}}
+  .mode-toggle.active::after{display:none}
+  .mode-toggle.active .mt-sun{display:none}
+  @media(prefers-reduced-motion:reduce){.mode-toggle::after{animation:none}.mt-sun{animation:none}}
   .mode-toggle .mt-ico{font-size:1.2rem;line-height:1}
   .mode-toggle.active{background:#0b1f2a;color:#fff;animation:none;box-shadow:0 4px 14px rgba(0,0,0,.4)}
   @keyframes solPulse{0%,100%{box-shadow:0 6px 20px rgba(255,150,20,.4),0 2px 6px rgba(0,0,0,.25)}50%{box-shadow:0 6px 30px rgba(255,190,50,.8),0 2px 6px rgba(0,0,0,.25)}}
@@ -96,6 +130,60 @@
   .sol-facades .sf-note{font-size:.68rem;color:#8fb0c0;margin-top:7px;line-height:1.4}
   .thm-row{display:flex;align-items:center;gap:8px;margin:8px 0;cursor:pointer;border-radius:8px;padding:2px 4px;transition:background .15s}
   .thm-row:hover{background:rgba(255,255,255,.08)}
+  /* botón flotante y cierre del termómetro (solo móvil) */
+  .thm-fab{display:none;position:absolute;top:56px;right:10px;z-index:730;
+    background:rgba(9,24,33,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    color:#fff;border:1px solid rgba(255,183,3,.55);border-radius:50px;
+    font-weight:700;font-size:.78rem;letter-spacing:.4px;padding:11px 19px;align-items:center;gap:8px;
+    box-shadow:0 6px 22px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.12);cursor:pointer;
+    transition:transform .18s, box-shadow .18s, border-color .18s}
+  .thm-fab:hover{transform:translateY(-1px);border-color:#ffb703;box-shadow:0 9px 28px rgba(0,0,0,.5), 0 0 14px rgba(255,183,3,.35), inset 0 1px 0 rgba(255,255,255,.12)}
+  .thm-close{display:none;position:absolute;top:8px;right:8px;width:32px;height:32px;border-radius:50%;border:0;background:rgba(255,255,255,.14);color:#fff;font-size:1.05rem;align-items:center;justify-content:center;cursor:pointer}
+  .thm-fab.hide{display:none!important}
+  /* botón Comparar flotante bajo el Termómetro, sobre la vista del edificio */
+  .cmp-fab{display:flex;position:absolute;top:104px;right:14px;z-index:730;
+    background:rgba(9,24,33,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    color:#fff;border:1px solid rgba(84,196,219,.55);border-radius:50px;
+    font-weight:700;font-size:.78rem;letter-spacing:.4px;padding:11px 19px;align-items:center;gap:8px;
+    box-shadow:0 6px 22px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.12);cursor:pointer;
+    transition:transform .18s, box-shadow .18s, border-color .18s}
+  .cmp-fab:hover{transform:translateY(-1px);border-color:#54c4db;box-shadow:0 9px 28px rgba(0,0,0,.5), 0 0 14px rgba(84,196,219,.35), inset 0 1px 0 rgba(255,255,255,.12)}
+  .trv-fab{display:flex;position:absolute;top:152px;right:14px;z-index:730;
+    background:rgba(9,24,33,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    color:#fff;border:1px solid rgba(178,132,244,.55);border-radius:50px;
+    font-weight:700;font-size:.78rem;letter-spacing:.4px;padding:11px 19px;align-items:center;gap:8px;
+    box-shadow:0 6px 22px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.12);cursor:pointer;
+    transition:transform .18s, box-shadow .18s, border-color .18s}
+  .trv-fab:hover{transform:translateY(-1px);border-color:#b284f4;box-shadow:0 9px 28px rgba(0,0,0,.5), 0 0 14px rgba(178,132,244,.35), inset 0 1px 0 rgba(255,255,255,.12)}
+  .rec-fab{display:flex;position:absolute;top:200px;right:14px;z-index:730;
+    background:rgba(9,24,33,.78);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+    color:#fff;border:1px solid rgba(255,138,194,.55);border-radius:50px;
+    font-weight:700;font-size:.78rem;letter-spacing:.4px;padding:11px 19px;align-items:center;gap:8px;
+    box-shadow:0 6px 22px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.12);cursor:pointer;
+    transition:transform .18s, box-shadow .18s, border-color .18s}
+  .rec-fab:hover{transform:translateY(-1px);border-color:#ff8ac2;box-shadow:0 9px 28px rgba(0,0,0,.5), 0 0 14px rgba(255,138,194,.35), inset 0 1px 0 rgba(255,255,255,.12)}
+  /* tarjetas de trivia — coloridas y divertidas */
+  #trvModal .cmp-card{background:linear-gradient(160deg,#14324a,#0f2835 55%,#132c3e);border:1px solid rgba(178,132,244,.35);overflow:hidden;position:relative}
+  #trvModal .cmp-card::before{content:"";position:absolute;top:-70px;right:-70px;width:210px;height:210px;border-radius:50%;background:radial-gradient(circle, var(--trvc, #b284f4) 0%, transparent 65%);opacity:.28;pointer-events:none}
+  .trv-head{display:flex;align-items:center;gap:12px;margin-bottom:4px}
+  .trv-emoji{width:58px;height:58px;flex:none;border-radius:18px;display:flex;align-items:center;justify-content:center;font-size:1.9rem;
+    background:linear-gradient(145deg, var(--trvc,#b284f4), rgba(255,255,255,.12));box-shadow:0 6px 18px rgba(0,0,0,.35), inset 0 2px 0 rgba(255,255,255,.35);
+    animation:trvBounce 2.2s ease-in-out infinite}
+  @keyframes trvBounce{0%,100%{transform:translateY(0) rotate(-4deg)}50%{transform:translateY(-6px) rotate(5deg)}}
+  .trv-chip{display:inline-block;background:color-mix(in srgb, var(--trvc,#b284f4) 22%, transparent);border:1.5px solid var(--trvc,#b284f4);color:#fff;border-radius:50px;padding:4px 13px;font-size:.7rem;font-weight:900;letter-spacing:.6px;text-transform:uppercase}
+  .trv-q{font-size:1.3rem;font-weight:900;line-height:1.35;margin:14px 0 16px;background:linear-gradient(90deg,#fff, color-mix(in srgb, var(--trvc,#b284f4) 65%, #fff));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .trv-a{background:rgba(255,255,255,.06);border:1.5px solid var(--trvc,#b284f4);border-radius:14px;padding:15px 17px;font-size:.95rem;line-height:1.6;
+    box-shadow:0 0 22px color-mix(in srgb, var(--trvc,#b284f4) 30%, transparent), inset 0 1px 0 rgba(255,255,255,.1);
+    animation:trvPop .35s cubic-bezier(.34,1.56,.64,1)}
+  .trv-a b{color:var(--trvc,#ffcf7a)}
+  @keyframes trvPop{0%{transform:scale(.85);opacity:0}100%{transform:scale(1);opacity:1}}
+  .trv-reveal{background:linear-gradient(135deg, var(--trvc,#7c4fd0), color-mix(in srgb, var(--trvc,#b284f4) 55%, #ffffff));color:#0b1f2a;border:0;border-radius:50px;font-weight:900;font-size:.9rem;padding:12px 26px;cursor:pointer;box-shadow:0 6px 18px color-mix(in srgb, var(--trvc,#b284f4) 45%, transparent);transition:transform .15s}
+  .trv-reveal:hover{transform:translateY(-2px) scale(1.03)}
+  #trvModal .btn-mini{background:rgba(255,255,255,.1);color:#cfe0ea;border:1px solid rgba(255,255,255,.25)}
+  .trv-nav{display:flex;gap:10px;margin-top:18px;align-items:center;flex-wrap:wrap}
+  .trv-count{margin-left:auto;font-size:.74rem;color:#cfe0ea;font-weight:800}
+  .trv-bar{height:7px;border-radius:5px;background:rgba(255,255,255,.12);overflow:hidden;margin-top:14px}
+  .trv-bar span{display:block;height:100%;border-radius:5px;background:linear-gradient(90deg,#ffc300,#ff6b4a,#b284f4,#4ac6ff);transition:width .3s}
   /* desglose por tipo */
   .tdet{position:fixed;inset:0;background:rgba(4,13,18,.74);backdrop-filter:blur(6px);display:none;z-index:2000000;align-items:center;justify-content:center;padding:20px}
   .tdet.open{display:flex}
@@ -128,7 +216,7 @@
   .tdet-chart .bar.sel{background:rgba(255,207,122,.18)}
   .tdet-chart.fcmp{gap:2px;height:108px}
   .tdet-chart.fcmp .bar i{width:86%}
-  .tdet-chart.fcmp .bar small.bmax{font-size:.5rem}
+  .tdet-chart.fcmp .bar small.bmax{font-size:.5rem;white-space:nowrap;min-height:9px}
   .tdet-chart.fcmp .bar .bmn{font-size:.52rem}
   /* Comparador de pisos (modal independiente) */
   .cmp{position:fixed;inset:0;z-index:2000000;background:rgba(4,12,18,.72);backdrop-filter:blur(3px);display:none;align-items:center;justify-content:center;padding:20px}
@@ -212,62 +300,8 @@
   .thm-val b{font-size:.74rem;font-weight:800}
   .thm-h{font-size:.62rem;color:#9fc0d0;font-weight:700;white-space:nowrap}
   .thm-scale{display:flex;justify-content:space-between;font-size:.64rem;color:#8fb0c0;margin-top:2px}
-  @media(max-width:860px){
-    /* Vista 3D inmersiva a pantalla completa en móvil */
-    .sol3d-pane.show{position:fixed;inset:0;z-index:1500}
-    .mode-toggle{top:10px;padding:9px 16px;font-size:.82rem}
-    .sol-hud{top:54px;left:8px;padding:9px 12px;min-width:0;max-width:52%}
-    .sol-hud .hud-time{font-size:1.45rem}
-    .sol-hud .hud-sub{font-size:.72rem;margin-top:4px}
-    .sol-hud .sunFaces{font-size:.8rem;margin-top:5px}
-    /* Termómetro por apartamento: visible y compacto, arriba a la derecha */
-    .sol-facades{display:block;top:54px;right:8px;left:auto;width:42vw;max-width:178px;padding:8px 9px;max-height:46vh}
-    .sol-facades .sf-title{font-size:.7rem;margin-bottom:6px}
-    .sol-facades .sf-note{display:none}
-    .sol-facades #liveWx{font-size:.62rem;margin-bottom:5px;line-height:1.3}
-    .sol-facades .thm-scale{font-size:.54rem}
-    .thm-row{gap:5px;margin:6px 0}
-    .thm-row .thermo{display:none}
-    .thm-floor{font-size:.58rem;padding:3px 2px}
-    .thm-val{width:auto;flex:1}
-    .thm-val b{font-size:.72rem}
-    .thm-h{font-size:.56rem}
-    /* Panel inferior compacto, con controles deslizables */
-    .sol-panel{left:8px;right:8px;bottom:8px;padding:9px 10px;max-height:42%}
-    .sun-months-row{gap:6px}
-    .sun-months-hint{display:none}
-    .sun-months{margin:8px 0;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px}
-    .sun-m{flex:none}
-    .sun-actions{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:3px;gap:7px}
-    .btn-mini,.shadow3d{flex:none;white-space:nowrap;padding:8px 13px;font-size:.74rem}
-    /* Modales casi a pantalla completa */
-    .tdet,.cmp{padding:8px;align-items:flex-start}
-    .tdet-card,.cmp-card{padding:16px 15px;max-height:96vh;border-radius:14px}
-    .tdet h2,.cmp-card h2{font-size:1.12rem}
-    .tdet-hero{flex-direction:column}
-    .tdet-hero img{width:100%;height:160px}
-    .tdet-kpi,.cmp-kpi{min-width:74px}
-    .cmp-tbl th,.cmp-tbl td{padding:5px 4px;font-size:.72rem}
-    .ici-num{font-size:1.8rem}
-    /* HUD compacto: solo hora + datos del sol en una línea */
-    .sol-hud{max-width:54%;padding:8px 11px}
-    .sol-hud .sunFaces{display:none}
-    /* Ocultar controles de autoría (girar/tamaño) al público */
-    .sol-adv{display:none}
-    /* Barra del sol más compacta y táctil */
-    .sun-ends span:nth-child(2){display:none}
-    .sun-ends{font-size:.66rem}
-    #sunTime{height:26px}
-    .sun-elev{margin-top:6px}
-  }
-  @media(max-width:480px){
-    .sol-hud .hud-time{font-size:1.2rem}
-    .sol-hud .hud-sub{font-size:.66rem}
-    .sol-facades{width:44vw;max-width:172px}
-    .sol-facades .sf-title{font-size:.64rem}
-    .thm-lbl{width:13px;font-size:.74rem}
-    .btn-mini,.shadow3d{padding:8px 12px;font-size:.72rem}
-  }
+
+
   /* ── Reporte imprimible / PDF ── */
   #printArea{display:none}
   @media print{
@@ -410,8 +444,6 @@
   .sun-actions{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
   .btn-mini{font-size:.78rem;font-weight:700;padding:9px 15px;border-radius:50px;border:1px solid var(--line);background:#fff;cursor:pointer}
   .btn-mini:hover{border-color:var(--accent);color:var(--accent)}
-  .shadow3d{display:inline-flex;align-items:center;gap:6px;font-size:.8rem;font-weight:700;color:#fff;background:#2b2b2b;padding:9px 15px;border-radius:50px}
-  .shadow3d:hover{background:#000}
   .sun-toggle{display:inline-flex;border:1px solid var(--line);border-radius:50px;overflow:hidden}
   .sun-toggle .bm{border:0;background:#fff;color:#666;font-size:.74rem;font-weight:700;padding:9px 14px;cursor:pointer}
   .sun-toggle .bm.active{background:var(--accent);color:#fff}
@@ -431,7 +463,61 @@
     .map-wrap{height:60vh;position:sticky;top:58px}
     .sidebar{border-right:0;border-top:1px solid var(--line)}
     #fitBtn{right:14px;top:62px}
+    #poiBtn{right:14px;top:110px}
     .an-grid{grid-template-columns:1fr}
+  }
+  /* ── Móvil (al final para ganar la cascada CSS) ── */
+  @media(max-width:860px){
+    /* Vista 3D inmersiva a pantalla completa en móvil */
+    .sol3d-pane.show{position:fixed;inset:0;z-index:1500}
+    .mode-toggle{top:10px;padding:9px 16px;font-size:.82rem}
+    .sol-hud{top:54px;left:8px;padding:9px 12px;min-width:0;max-width:52%}
+    .sol-hud .hud-time{font-size:1.45rem}
+    .sol-hud .hud-sub{font-size:.72rem;margin-top:4px}
+    .sol-hud .sunFaces{font-size:.8rem;margin-top:5px}
+    /* Termómetro: oculto por defecto; se abre como hoja con el botón flotante 🌡️ */
+    .sol-facades{display:none}
+    .sol-facades.mob-show{display:block;position:absolute;top:auto;left:8px;right:8px;bottom:8px;width:auto;max-width:none;max-height:72vh;padding:14px 16px 18px;border-radius:16px 16px 12px 12px;box-shadow:0 -8px 40px rgba(0,0,0,.6);z-index:760}
+    .sol-facades .sf-title{font-size:.88rem}
+    .thm-row{gap:10px;margin:11px 0;padding:6px 6px}
+    .thm-floor{font-size:.72rem;padding:6px 4px}
+    .thm-val b{font-size:.86rem}
+    .thm-h{font-size:.68rem}
+    .thm-close{display:flex!important}
+    .thm-fab{display:flex!important}
+    /* Panel inferior mínimo: solo slider + meses + botones deslizables */
+    .sol-panel{left:8px;right:8px;bottom:8px;padding:8px 10px;max-height:31%}
+    .sol-panel .sun-elev{display:none}
+    .sun-months-row{gap:6px}
+    .sun-months-hint{display:none}
+    .sun-months{margin:8px 0;flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:2px}
+    .sun-m{flex:none}
+    .sun-actions{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;padding-bottom:3px;gap:7px}
+    .btn-mini{flex:none;white-space:nowrap;padding:8px 13px;font-size:.74rem}
+    /* Modales casi a pantalla completa */
+    .tdet,.cmp{padding:8px;align-items:flex-start}
+    .tdet-card,.cmp-card{padding:16px 15px;max-height:96vh;border-radius:14px}
+    .tdet h2,.cmp-card h2{font-size:1.12rem}
+    .tdet-hero{flex-direction:column}
+    .tdet-hero img{width:100%;height:160px}
+    .tdet-kpi,.cmp-kpi{min-width:74px}
+    .cmp-tbl th,.cmp-tbl td{padding:5px 4px;font-size:.72rem}
+    .ici-num{font-size:1.8rem}
+    /* HUD compacto: solo hora + datos del sol en una línea */
+    .sol-hud{max-width:54%;padding:8px 11px}
+    .sol-hud .sunFaces{display:none}
+    /* Ocultar controles de autoría (girar/tamaño) al público */
+    .sol-adv{display:none}
+    /* Barra del sol más compacta y táctil */
+    .sun-ends span:nth-child(2){display:none}
+    .sun-ends{font-size:.66rem}
+    #sunTime{height:26px}
+    .sun-elev{margin-top:6px}
+  }
+  @media(max-width:480px){
+    .sol-hud .hud-time{font-size:1.2rem}
+    .sol-hud .hud-sub{font-size:.66rem}
+    .btn-mini{padding:8px 12px;font-size:.72rem}
   }
 </style>
 </head>
@@ -439,7 +525,7 @@
 
 <header>
   <div class="logo">Inmo<span>RD</span></div>
-  <div class="head-meta"><b id="countN">0</b> propiedad · análisis completo · Santo Domingo · <b style="color:#e0663d">móvil v5</b></div>
+  <div class="head-meta"><b id="countN">0</b> propiedad · análisis completo · Santo Domingo · <b style="color:#e0663d">móvil v21</b></div>
 </header>
 
 <div class="app">
@@ -454,7 +540,8 @@
     <div id="map"></div>
     <button class="map-ctrl" id="fitBtn" onclick="fitAll()">🔍 Ver todas</button>
     <button class="map-ctrl" id="locateBtn" onclick="locateMe()">📍 Mi ubicación</button>
-    <button class="mode-toggle" id="modeBtn" onclick="toggleMapMode()"><span class="mt-ico">☀️</span> Estudio Solar 3D</button>
+    <button class="map-ctrl" id="poiBtn" onclick="togglePois()">🏙️ Entorno</button>
+    <button class="mode-toggle" id="modeBtn" onclick="toggleMapMode()"><span class="mt-sun"></span> Vive el Sol en 3D</button>
 
     <div class="sol3d-pane" id="sol3d">
       <div id="sun3d"><div id="sun3dMsg" style="position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#8fb3c2;font-size:.85rem;text-align:center;padding:20px">Cargando modelo 3D…</div></div>
@@ -463,7 +550,12 @@
         <div class="hud-sub" id="sunRead">—</div>
         <div class="sunFaces" id="sunFaces">—</div>
       </div>
+      <button class="thm-fab" id="thmFab" onclick="toggleThmSheet()">🌡️ Termómetro</button>
+      <button class="cmp-fab" id="cmpFab" onclick="openCmp()">🏢 Comparar modelos</button>
+      <button class="trv-fab" id="trvFab" onclick="openTrv()">💡 Trivias del edificio</button>
+      <button class="rec-fab" id="recFab" onclick="openRec()">🎯 Recomiéndame</button>
       <div class="sol-facades" id="solFacades">
+        <button class="thm-close" onclick="toggleThmSheet()">×</button>
         <div id="liveWx" style="font-size:.72rem;color:#bcd8e6;font-weight:700;margin-bottom:8px">🌤️ Cargando clima de hoy…</div>
         <div class="sf-title">🌡️ Termómetro solar por apartamento</div>
         <div id="solTypesBody"></div>
@@ -480,10 +572,7 @@
           <button class="btn-mini" onclick="sunNow()">🕒 Ahora</button>
           <button class="btn-mini" id="sunFsBtn" onclick="sunFullscreen()">⛶ Pantalla completa</button>
           <button class="btn-mini" id="facModeBtn" onclick="toggleFacadeMode()">🎨 Plasmar tipo de apartamento</button>
-          <button class="btn-mini" id="cmpBtn" onclick="openCmp()">🏢 Comparar modelos</button>
-          <button class="btn-mini" id="recBtn" onclick="openRec()">🎯 Recomiéndame</button>
           <button class="btn-mini" id="shareBtn" onclick="shareSite()">📤 Compartir</button>
-          <a class="shadow3d" id="shadowmapLink" target="_blank" rel="noopener">🌆 Shadowmap ↗</a>
         </div>
         <details class="sol-adv">
           <summary>⚙︎ Ajustar edificio (orientación y tamaño)</summary>
@@ -500,6 +589,7 @@
 <div class="tdet" id="typeDetail"><div class="tdet-card"><button class="close" onclick="closeTypeDetail()">×</button><div id="typeDetailBody"></div></div></div>
 <div class="cmp" id="cmpModal"><div class="cmp-card"><button class="close" onclick="closeCmp()">×</button><div id="cmpBody"></div></div></div>
 <div class="cmp" id="recModal"><div class="cmp-card"><button class="close" onclick="closeRec()">×</button><div id="recBody"></div></div></div>
+<div class="cmp" id="trvModal"><div class="cmp-card"><button class="close" onclick="closeTrv()">×</button><div id="trvBody"></div></div></div>
 <div id="printArea"></div>
 <div class="plan-lb" id="planLB">
   <button class="lb-close" onclick="closePlan()">×</button>
@@ -520,7 +610,7 @@
    Para añadir más, copia el bloque { ... } separado por comas.
    tone: "good" (verde) | "warn" (ámbar) | "bad" (rojo) | "info" (azul)
    ───────────────────────────────────────────── */
-const WHATSAPP = "18098154749"; // Juan Chalas (agente Plusval)
+const WHATSAPP = "18299603344"; // Laura Rúa (asociada Plusval)
 const CDN = "https://cdn.plusval.com.do/properties/";
 
 const PROPS = [
@@ -545,20 +635,20 @@ const PROPS = [
       CDN+"CIZRu1637588766-full.jpg", CDN+"WWUoa1637588770-full.jpg", CDN+"rz6xZ1635778369-full.jpg",
       CDN+"DsjBo1635778374-full.jpg", CDN+"UPKza1635778378-full.jpg"
     ],
-    desc: "Majestuosa torre en el centro de Serrallés de 19 niveles, diseñada por el Arq. Joan Marcano. Diseño muy contemporáneo, al estilo de las modernas torres del centro de Miami.\n\nMás de 700 m² de área social: piscina infinity con dos amplias terrazas de apoyo, dos jacuzzis con terrazas, gimnasio equipado, salas ejecutivas, conference room, áreas de juego para niños y un lobby de 70 m² en doble altura con dos recepciones en mármol y climatizado.\n\nSolo 6 apartamentos por piso, de 1 y 2 habitaciones (1 hab. de 40 y 45 m²; 2 habs. de 66 y 121 m²). Terminaciones: sistema de purificación de agua, acceso automático y video portero, iluminación automatizada en área común y parqueos, pozo de agua y cerraduras digitales.",
+    desc: "Majestuosa torre en el centro de Serrallés de 20 niveles y 5 niveles de parqueos soterrados, diseñada por el Arq. Joan Marcano. Diseño muy contemporáneo, al estilo de las modernas torres del centro de Miami.\n\nMás de 900 m² de área social: piscina infinity con dos amplias terrazas de apoyo, dos jacuzzis con terrazas, gimnasio equipado, salas ejecutivas, conference room, áreas de juego para niños y un lobby de 70 m² en doble altura con dos recepciones en mármol y climatizado.\n\nSolo 6 apartamentos por piso, de 1 y 2 habitaciones (1 hab. de 40 y 45 m²; 2 habs. de 66 y 121 m²). Terminaciones: sistema de purificación de agua, acceso automático y video portero, iluminación automatizada en área común y parqueos, pozo de agua y cerraduras digitales.",
     amenities: ["Piscina infinity","Gimnasio","Lobby doble altura","2 ascensores","Terraza privada","Área de juegos","Locker","Bar y BBQ","Sauna","Salón climatizado","Video portero","CCTV","Pozo de agua","WiFi área común"],
-    agent: { name: "Juan Chalas", role: "Broker / Fundador · Plusval", avatar: "https://cdn.plusval.com.do/users/16/78pMV1771418653.jpg" },
+    agent: { name: "Laura Rúa", role: "Asociada inmobiliaria · Plusval", avatar: "https://cdn.plusval.com.do/users/951/nLwdy1752158803.jpg", url: "https://plusval.com.do/asociado/laura-rua" },
     analysis: {
       seismic: { value: "Zona II · PGA ≈ 0.22 g", chip: "Sismicidad moderada", tone: "warn", scale: 2, scaleMax: 4,
-                 note: "Distrito Nacional en zona sísmica moderada según el Reglamento R-001 (MOPC). Torre de hormigón armado de 19 niveles con diseño sismorresistente." },
+                 note: "Distrito Nacional en zona sísmica moderada según el Reglamento R-001 (MOPC). Torre de hormigón armado de 20 niveles (más 5 niveles de parqueos soterrados) con diseño sismorresistente." },
       rain:    { value: "≈ 1,450 mm/año", chip: "Pluviometría media", tone: "info", scale: 2, scaleMax: 4,
                  note: "Clima tropical húmedo; temporada lluviosa en mayo y de sep–nov. Sector urbano consolidado con buen drenaje pluvial. (Estimado de sector.)" },
-      sun:     { orientation: "Según unidad / piso", chip: "Torre de 19 niveles", tone: "info",
+      sun:     { orientation: "Según unidad / piso", chip: "Torre de 20 niveles", tone: "info",
                  note: "La incidencia solar varía por apartamento y altura. Con solo 6 unidades por piso, la mayoría tiene fachadas con buena iluminación. Horas calculadas para la ubicación de la torre." },
       level:   { value: "≈ 35 msnm", chip: "Riesgo de inundación bajo", tone: "good", scale: 1, scaleMax: 4,
                  note: "Serrallés es un sector urbano elevado del Distrito Nacional, sin antecedentes de inundación. (Estimado de sector.)" },
-      parking: { value: "2 parqueos", chip: "Asignados", tone: "good",
-                 note: "Dos parqueos por apartamento, con iluminación automatizada y control de acceso en el edificio." }
+      parking: { value: "2 parqueos", chip: "5 niveles soterrados", tone: "good",
+                 note: "Parqueos asignados por apartamento en 5 niveles soterrados, con iluminación automatizada y control de acceso en el edificio." }
     }
   }
 ];
@@ -1047,7 +1137,7 @@ function toggleMapMode(){
   const on = !pane.classList.contains("show");
   pane.classList.toggle("show", on);
   ["fitBtn","locateBtn"].forEach(id=>{ const e=document.getElementById(id); if(e) e.style.display = on ? "none" : ""; });
-  if(btn){ btn.classList.toggle("active", on); btn.innerHTML = on ? "🗺️ Ver mapa" : '<span class="mt-ico">☀️</span> Estudio Solar 3D'; }
+  if(btn){ btn.classList.toggle("active", on); btn.innerHTML = on ? "🗺️ Ver mapa" : '<span class="mt-sun"></span> Vive el Sol en 3D'; }
   if(on){ solProp = solProp || PROPS[0]; initSun(solProp); }
   else { stopSunAnim(); dispose3D(); }
 }
@@ -1077,8 +1167,6 @@ function initSun(p){
                 if(sv.len) sunState.footLen = sv.len; if(sv.wid) sunState.footWid = sv.wid; } } catch(e){}
   const mm = document.getElementById("sunMonths");
   if(mm) mm.innerHTML = MONTHS.map((m,i)=>`<button class="sun-m${i===sunState.month?" active":""}" onclick="sunMonth(${i})">${m}</button>`).join("");
-  const link = document.getElementById("shadowmapLink");
-  if(link) link.href = `https://app.shadowmap.org/?lat=${p.lat}&lng=${p.lng}&zoom=17.5&basemap=map&elevation=nextzen&hud=true`;
   const fr = document.getElementById("footRot");
   if(fr){ fr.value = sunState.footBearing; const lb=document.getElementById("footRotVal"); if(lb) lb.textContent = sunState.footBearing + "°"; }
   const flr = document.getElementById("footLenR");
@@ -1328,6 +1416,207 @@ function buildCompareTable(p, hl){
 }
 function closeTypeDetail(){ const e=document.getElementById("typeDetail"); if(e) e.classList.remove("open"); }
 
+/* Coloca el botón "Comparar modelos" debajo del termómetro (panel en escritorio, botón flotante en móvil) */
+function placeCmpFab(){
+  const b=document.getElementById("cmpFab"), tv=document.getElementById("trvFab"), rc=document.getElementById("recFab"); if(!b) return;
+  if(window.innerWidth<=860){ b.style.top="104px"; if(tv) tv.style.top="152px"; if(rc) rc.style.top="200px"; return; }
+  const p=document.getElementById("solFacades"), host=document.getElementById("sol3d");
+  if(!p||!host) return;
+  const r=p.getBoundingClientRect(), h=host.getBoundingClientRect();
+  const top=Math.min(r.bottom-h.top+10, h.height-160);
+  b.style.top=top+"px";
+  if(tv) tv.style.top=(top+48)+"px";
+  if(rc) rc.style.top=(top+96)+"px";
+}
+window.addEventListener("resize", ()=>setTimeout(placeCmpFab,80));
+
+/* ── Entorno y servicios cercanos (coordenadas verificadas en OpenStreetMap) ── */
+const POIS=[
+  {n:"Blue Mall",              c:"🛍️ Compras",      lat:18.47278, lng:-69.94102},
+  {n:"Acrópolis Center",       c:"🛍️ Compras",      lat:18.46960, lng:-69.93927},
+  {n:"Ágora Mall",             c:"🛍️ Compras",      lat:18.48351, lng:-69.93928},
+  {n:"Supermercado Nacional (27 de Feb.)",c:"🛒 Supermercado", lat:18.46557, lng:-69.92928},
+  {n:"Clínica Corazones Unidos",c:"🏥 Salud",        lat:18.47777, lng:-69.92289},
+  {n:"Hosp. Plaza de la Salud",c:"🏥 Salud",         lat:18.48877, lng:-69.92194},
+  {n:"Saint George School",    c:"🎓 Colegio",       lat:18.46996, lng:-69.93370},
+  {n:"Zona gastronómica Piantini",c:"🍽️ Restaurantes",lat:18.47344, lng:-69.93720},
+  {n:"Parque Mirador Sur",     c:"🌳 Parque",        lat:18.44447, lng:-69.94929},
+  {n:"Malecón (Adrián Tropical)",c:"🌊 Mar",         lat:18.46026, lng:-69.90327}
+];
+let poiLayer=null;
+function havM(a,b,c,d){const R=6371000,p=Math.PI/180,x=(c-a)*p/2,y=(d-b)*p/2,s=Math.sin(x)**2+Math.cos(a*p)*Math.cos(c*p)*Math.sin(y)**2;return 2*R*Math.asin(Math.sqrt(s));}
+function togglePois(){
+  const btn=document.getElementById("poiBtn"), T=PROPS[0];
+  if(poiLayer){ map.removeLayer(poiLayer); poiLayer=null; if(btn)btn.classList.remove("on"); return; }
+  poiLayer=L.layerGroup(POIS.map(p=>{
+    const d=havM(T.lat,T.lng,p.lat,p.lng);
+    const walk=Math.max(1,Math.round(d/83)), drive=Math.max(1,Math.round(d/375));
+    const ic=L.divIcon({className:"",html:`<div class="poi-pin" title="${p.n}">${p.c.split(" ")[0]}</div>`,iconSize:[36,36],iconAnchor:[18,18]});
+    return L.marker([p.lat,p.lng],{icon:ic}).bindPopup(
+      `<div style="padding:10px 12px;min-width:170px"><b>${p.n}</b><br><span style="font-size:.78rem;color:#666">${p.c}</span><br>`+
+      `<span style="font-size:.8rem">📏 ${(d/1000).toFixed(1)} km · 🚶 ${walk} min · 🚗 ${drive} min</span><br>`+
+      `<span style="font-size:.68rem;color:#999">desde Torre Serrallés 305 · fuente: OpenStreetMap</span></div>`,{minWidth:180});
+  })).addTo(map);
+  if(btn)btn.classList.add("on");
+  const bounds=L.latLngBounds([[T.lat,T.lng],...POIS.map(p=>[p.lat,p.lng])]);
+  map.flyToBounds(bounds,{padding:[46,46],duration:.8});
+}
+
+/* ── Trivias del edificio: ~50 análisis generados con los cálculos reales ── */
+let trvList=null, trvIdx=0;
+function buildTrivia(){
+  const P=cmpBaseState(); if(typeof SunCalc==="undefined"||!P) return [];
+  const T=[], types=Object.keys(PLAN_FACES), B=P.footBearing||0;
+  const plans=window.PLANS||[], areaOf=t=>parseFloat((plans.find(x=>x.t===t)||{}).area)||60;
+  const hbA=heatByType(P,null)||[];                       // promedio anual por tipo
+  const g=t=>hbA.find(z=>z.t===t)||{v:0,hours:0};
+  const byHot=[...hbA].sort((a,b)=>b.v-a.v), hot=byHot[0], cool=byHot[byHot.length-1];
+  const byHours=[...hbA].sort((a,b)=>b.hours-a.hours);
+  const vents=types.map(t=>{const v=ventByType(P,t); return {t, s:v.score, cross:v.cross, faces:v.faces.join("/"), crossType:v.crossType};});
+  const byWind=[...vents].sort((a,b)=>b.s-a.s), windy=byWind[0], calm=byWind[byWind.length-1];
+  const ff10=floorFactor(10), aug=7, feb=1;
+  const hiOf=(t,m,f)=>Math.round(SD_TEMP[m][0]+ (heatByType(P,m).find(z=>z.t===t)||{v:0}).v*floorFactor(f)*5);
+  const acOf=(t,m)=>acEstimate(areaOf(t), (heatByType(P,m).find(z=>z.t===t)||{v:0}).v*ff10, hiOf(t,m,10));
+  const acAnnual=t=>{let k=0; for(let m=0;m<12;m++) k+=acOf(t,m).kwh; return Math.round(k*AC_RATE);};
+  const acs=types.map(t=>({t,c:acAnnual(t)})).sort((a,b)=>b.c-a.c);
+  const ics=types.map(t=>{const vs=Math.min(1,(vents.find(v=>v.t===t)||{s:0}).s*windFloorFactor(10)); return {t, ic:interiorComfort(hiOf(t,aug,10), SD_HUM[aug], vs)};}).sort((a,b)=>b.ic.idx-a.ic.idx);
+  const fmt=n=>n.toLocaleString("en-US");
+  const jun21=SunCalc.getTimes(new Date(2026,5,21,12), P.lat, P.lng), dec21=SunCalc.getTimes(new Date(2026,11,21,12), P.lat, P.lng);
+  const hhmm=d=>d.toLocaleTimeString("es-DO",{hour:"numeric",minute:"2-digit"});
+  const dayLen=t=>((t.sunset-t.sunrise)/3.6e6);
+  const noonJun=SunCalc.getPosition(jun21.solarNoon,P.lat,P.lng).altitude*180/Math.PI;
+  const meses=["enero","febrero","marzo","abril","mayo","junio","julio","agosto","septiembre","octubre","noviembre","diciembre"];
+  const add=(c,q,a)=>T.push({c,q,a});
+  // ── récords del edificio ──
+  add("🌡️ Calor","¿Cuál es el apartamento más cálido del edificio?",`El <b>Tipo ${hot.t}</b> (fachada ${vents.find(v=>v.t===hot.t).faces}): recibe ${hot.hours.toFixed(1)} h de sol al día en promedio y llega a ~<b>${hiOf(hot.t,aug,10)}°C</b> en agosto (piso 10).`);
+  add("🌡️ Calor","¿Y el más fresco?",`El <b>Tipo ${cool.t}</b>: su exposición solar es la menor del edificio y en agosto ronda ~<b>${hiOf(cool.t,aug,10)}°C</b>, unos ${hiOf(hot.t,aug,10)-hiOf(cool.t,aug,10)}° menos que el más cálido.`);
+  add("💨 Brisa","¿Cuál apartamento recibe más viento?",`El <b>Tipo ${windy.t}</b> (fachada ${windy.faces}): capta los alisios del E/NE y tiene ventilación ${windy.crossType}. Puntuación ${Math.round(windy.s*100)}/100.`);
+  add("💨 Brisa","¿Cuál recibe menos brisa?",`El <b>Tipo ${calm.t}</b> (fachada ${calm.faces}): queda a sotavento de los vientos dominantes (${Math.round(calm.s*100)}/100). Ideal si prefieres ambientes resguardados.`);
+  add("☀️ Sol","¿Qué apartamento recibe más horas de sol directo?",`El <b>Tipo ${byHours[0].t}</b>, con ~<b>${byHours[0].hours.toFixed(1)} h/día</b> de promedio anual.`);
+  add("☀️ Sol","¿Y el de menos sol directo?",`El <b>Tipo ${byHours[byHours.length-1].t}</b>, con ~<b>${byHours[byHours.length-1].hours.toFixed(1)} h/día</b> — luminoso sin exceso de calor.`);
+  add("❄️ AC","¿Qué apartamento gasta más aire acondicionado al año?",`El <b>Tipo ${acs[0].t}</b>: ~<b>RD$${fmt(acs[0].c)}/año</b> estimado (por su tamaño y exposición al sol).`);
+  add("❄️ AC","¿Cuál es el más económico en aire acondicionado?",`El <b>Tipo ${acs[acs.length-1].t}</b>: ~<b>RD$${fmt(acs[acs.length-1].c)}/año</b>. Ahorra ~RD$${fmt(acs[0].c-acs[acs.length-1].c)} frente al de mayor consumo.`);
+  add("🏠 Confort","¿Cuál tiene el mejor confort interior en pleno agosto?",`El <b>Tipo ${ics[0].t}</b>: sensación interior de ~${ics[0].ic.feelsIn}° e índice <b>${ics[0].ic.idx}/100</b> gracias al balance sol/brisa.`);
+  add("🏠 Confort","¿Y el más retador en agosto?",`El <b>Tipo ${ics[ics.length-1].t}</b>: sensación interior ~${ics[ics.length-1].ic.feelsIn}° (${ics[ics.length-1].ic.idx}/100). Con buen AC y blackout se domestica.`);
+  // ── por tipo (6×4=24) ──
+  types.forEach(t=>{
+    const v=vents.find(x=>x.t===t), hrs=g(t).hours;
+    add("☀️ Sol",`¿Cuántas horas de sol directo recibe el Tipo ${t}?`,`~<b>${hrs.toFixed(1)} h/día</b> de promedio anual por su fachada ${v.faces}.`);
+    add("🌡️ Calor",`¿Qué tan caliente se pone el Tipo ${t} en agosto?`,`Máxima estimada de <b>${hiOf(t,aug,10)}°C</b> en el piso 10; en un piso 19 sube a ~${hiOf(t,aug,19)}° y en el piso 3 baja a ~${hiOf(t,aug,3)}°.`);
+    add("💨 Brisa",`¿Cómo es la ventilación del Tipo ${t}?`,`${Math.round(v.s*100)}/100 — ventilación ${v.crossType}${v.cross?" (aberturas en más de un frente: el aire cruza y refresca)":""}.`);
+    add("❄️ AC",`¿Cuánto costaría climatizar el Tipo ${t}?`,`~<b>RD$${fmt(acOf(t,aug).cost)}/mes</b> en agosto y ~RD$${fmt(acAnnual(t))}/año (${areaOf(t)} m², tarifa RD$${AC_RATE}/kWh).`);
+  });
+  // ── pisos ──
+  add("🏢 Pisos","¿Cuánto cambia la temperatura entre el piso 3 y el 19?",`Hasta <b>${hiOf(hot.t,aug,19)-hiOf(hot.t,aug,3)}°C</b> en el tipo más expuesto: los pisos 3–7 reciben sombra parcial de los edificios vecinos.`);
+  add("🏢 Pisos","¿Desde qué piso se recibe sol pleno?",`Desde el <b>piso 8</b>: por encima de las edificaciones vecinas ya no hay sombras que intercepten el sol.`);
+  add("🏢 Pisos","¿Cuál es el piso más fresco del edificio?",`El <b>piso 3</b>: la sombra de los vecinos reduce ~50% la ganancia solar. Perfecto si huyes del calor.`);
+  add("🏢 Pisos","¿Los pisos altos reciben más brisa?",`Sí: del piso 3 al 19 la exposición al viento crece ~30%. En un piso 15+, la brisa del E/NE es casi constante.`);
+  add("🏢 Pisos","¿Cuántos niveles tiene la torre?",`<b>20 niveles</b> sobre suelo (lobby doble altura, coworking, apartamentos del 3 al 19 y azotea con piscina infinity) más <b>5 niveles de parqueos soterrados</b>.`);
+  // ── meses y clima ──
+  add("📅 Meses","¿Cuál es el mes más caluroso en Serrallés?",`<b>${meses[6][0].toUpperCase()+meses[6].slice(1)} y agosto</b>: máximas ambiente de ${SD_TEMP[6][0]}–${SD_TEMP[7][0]}°C, y dentro de un apartamento expuesto pueden sentirse ${Math.max(0,Math.round(heatIndexC(SD_TEMP[7][0],SD_HUM[7])-SD_TEMP[7][0]))}° más por la humedad.`);
+  add("📅 Meses","¿Y el mes más fresco?",`<b>Enero-febrero</b>: máximas de ${SD_TEMP[0][0]}° y mínimas de ${SD_TEMP[0][1]}° — temporada perfecta de ventanas abiertas.`);
+  add("📅 Meses","¿Qué mes tiene la humedad más alta?",`<b>${meses[SD_HUM.indexOf(Math.max(...SD_HUM))]}</b> (${Math.max(...SD_HUM)}%): la sensación térmica sube hasta +${Math.min(4,Math.round((Math.max(...SD_HUM)-55)/10))}° sobre el termómetro.`);
+  add("📅 Meses","¿En qué mes conviene visitar el apartamento para 'estresarlo'?",`En <b>agosto a las 3 pm</b>: si te sientes cómodo en esa visita, el resto del año será mejor.`);
+  add("🕐 Horas","¿Cuál es la hora más caliente del día?",`Alrededor de las <b>3 pm</b>: el aire acumula el calor del mediodía y las fachadas oeste ya reciben sol directo.`);
+  add("🕐 Horas","¿Y la más fresca?",`Justo antes del amanecer (~<b>6 am</b>), con la mínima del día (${SD_TEMP[aug][1]}° en agosto, ${SD_TEMP[0][1]}° en enero).`);
+  // ── sol y geometría ──
+  add("☀️ Sol","¿A qué hora sale el sol en verano?",`El 21 de junio: amanece ${hhmm(jun21.sunrise)} y se pone ${hhmm(jun21.sunset)} — un día de ${dayLen(jun21).toFixed(1)} horas de luz.`);
+  add("☀️ Sol","¿Y en invierno?",`El 21 de diciembre: de ${hhmm(dec21.sunrise)} a ${hhmm(dec21.sunset)} (${dayLen(dec21).toFixed(1)} h). Santo Domingo solo 'pierde' ~${(dayLen(jun21)-dayLen(dec21)).toFixed(1)} h de luz entre estaciones.`);
+  add("☀️ Sol","¿Qué tan alto llega el sol al mediodía en verano?",`A <b>${noonJun.toFixed(0)}°</b> de elevación — casi vertical. Por eso al mediodía el sol golpea el techo más que las fachadas, y la azotea (piscina) recibe sol todo el día.`);
+  add("☀️ Sol","¿Qué fachada recibe el sol de la mañana?",`La <b>${cardinal((B+90)%360)}/${cardinal((B+180)%360)}</b> (tipos D y E): sol suave de 7 a 11 am, ideal para desayunar con luz sin calor.`);
+  add("☀️ Sol","¿Qué fachada recibe el sol de la tarde?",`La <b>${cardinal(B)}/${cardinal((B+270)%360)}</b> (tipos A, B y F): sol de 2 a 6 pm — más luz dorada, más ganancia de calor.`);
+  add("☀️ Sol","¿La calle Filomena Gómez de Cova hacia dónde mira?",`El frente de la torre da al <b>${cardinal((B+180)%360)==="SO"?"suroeste":cardinal((B+180)%360)}</b>${""} — los tipos A y B se asoman a la calle.`);
+  // ── brisa y física ──
+  add("💨 Brisa","¿De dónde viene el viento en Santo Domingo?",`Dos fuentes: los <b>alisios del E/NE</b> (constantes todo el año) y la <b>brisa marina del sur</b> que entra por las tardes desde el Caribe.`);
+  add("💨 Brisa","¿Cuánto refresca la brisa un apartamento?",`Hasta <b>−3.5°C</b> de sensación en los tipos mejor ventilados: el aire en movimiento evapora la humedad de la piel.`);
+  add("💨 Brisa","¿Qué es la ventilación cruzada?",`Aberturas en fachadas distintas (ej. esquinas como el Tipo ${vents.find(v=>v.cross)?vents.find(v=>v.cross).t:"D"}): el aire entra por un lado y sale por otro, renovándose sin ventiladores.`);
+  add("🏠 Confort","¿Por qué 32° se sienten como 36°?",`Por la humedad (${SD_HUM[aug]}% en agosto): el sudor no evapora bien y el cuerpo percibe más calor. Nuestro índice lo calcula para cada apartamento.`);
+  add("❄️ AC","¿Qué tamaño de aire acondicionado necesita el tipo más grande?",`El Tipo A (${areaOf("A")} m²) requiere ~<b>${(btuRecommend(areaOf("A"),g("A").v).unit/1000)}k BTU</b>; el más pequeño (Tipo F, ${areaOf("F")} m²) con ~${(btuRecommend(areaOf("F"),g("F").v).unit/1000)}k BTU basta.`);
+  add("❄️ AC","¿Cuánto se ahorra eligiendo bien la orientación?",`Hasta <b>RD$${fmt(acs[0].c-acs[acs.length-1].c)}/año</b> — la diferencia de AC entre el tipo más expuesto y el más protegido.`);
+  // ── estilo de vida ──
+  add("🏖️ Estilo","¿Cuál apartamento es ideal para amantes del sol?",`El <b>Tipo ${byHours[0].t}</b>: ${byHours[0].hours.toFixed(1)} h de sol al día. Plantas felices, tardes doradas.`);
+  add("🏖️ Estilo","¿Cuál conviene si trabajas de noche y duermes de día?",`El <b>Tipo ${cool.t}</b> en piso bajo (3–7): mínima radiación directa y ambiente estable para dormir.`);
+  add("🏖️ Estilo","¿Cuál es el mejor balance para teletrabajar?",`Los tipos de sol matutino (<b>D y E</b>): luz natural en horario laboral y tardes frescas sin resplandor en pantalla.`);
+  add("🏖️ Estilo","¿Dónde ver el atardecer?",`Desde la <b>piscina infinity de la azotea</b> (nivel 20) o los balcones ${cardinal((B+270)%360)}/${cardinal(B)} (tipos F, A y B): el sol se pone hacia el oeste ~${hhmm(jun21.sunset)} en verano.`);
+  add("🏖️ Estilo","¿La piscina de la azotea recibe sol todo el día?",`Sí: a 60 m de altura ningún vecino le hace sombra — sol de ${hhmm(jun21.sunrise)} a ${hhmm(jun21.sunset)} en verano. Solo la pérgola techada da sombra propia.`);
+  // ── más por tipo: sensación interior, orientación y horas fuera de confort ──
+  const loOf=(t,m,f)=>Math.round(SD_TEMP[m][1]+ (heatByType(P,m).find(z=>z.t===t)||{v:0}).v*floorFactor(f)*0.8);
+  types.forEach(t=>{
+    const icT=ics.find(z=>z.t===t).ic, v=vents.find(x=>x.t===t);
+    add("🏠 Confort",`¿Cómo se siente el Tipo ${t} por dentro en agosto?`,`Sensación interior de ~<b>${icT.feelsIn}°C</b> (índice ${icT.idx}/100 — ${icT.label.toLowerCase()}): máxima + humedad − ${icT.cooling}° de enfriamiento por brisa.`);
+    add("☀️ Sol",`¿Hacia dónde mira el Tipo ${t}?`,`Su(s) fachada(s) dan al <b>${v.faces}</b>${v.cross?", en esquina — dos frentes de luz y aire":""}. ${["NE","E","SE"].some(c=>v.faces.includes(c))?"Recibe el sol suave de la mañana.":"Recibe el sol dorado de la tarde."}`);
+    const oh=hourlyTemp(hiOf(t,aug,10), loOf(t,aug,10)).filter(x=>x>27).length;
+    add("🕐 Horas",`¿Cuántas horas al día está el Tipo ${t} fuera de la zona de confort en agosto?`,`~<b>${oh} h/día</b> por encima de 27°C (piso 10) — ese es el tiempo estimado de aire acondicionado encendido.`);
+  });
+  // ── récords y curiosidades extra ──
+  const decNoon=SunCalc.getPosition(dec21.solarNoon,P.lat,P.lng).altitude*180/Math.PI;
+  const azJun=(SunCalc.getPosition(jun21.sunrise,P.lat,P.lng).azimuth*180/Math.PI+180)%360;
+  const azDec=(SunCalc.getPosition(dec21.sunrise,P.lat,P.lng).azimuth*180/Math.PI+180)%360;
+  const bigA=plans.reduce((a,b)=>parseFloat(a.area)>parseFloat(b.area)?a:b), smaA=plans.reduce((a,b)=>parseFloat(a.area)<parseFloat(b.area)?a:b);
+  add("🏢 Pisos","¿Cuántos apartamentos hay por piso?",`<b>6 por piso</b> (tipos A–F), del piso 3 al 19: una torre de baja densidad con ~102 unidades.`);
+  add("🏢 Pisos","¿Cuál es el apartamento más grande y el más pequeño?",`El <b>Tipo ${bigA.t}</b> (${bigA.area} m², ${bigA.label}) y el <b>Tipo ${smaA.t}</b> (${smaA.area} m², ${smaA.label}).`);
+  add("🏢 Pisos","¿Dónde parqueo?",`En <b>5 niveles soterrados</b> con iluminación automatizada: ${bigA.park} parqueos los tipos grandes, 1–2 los demás.`);
+  add("🏢 Pisos","¿Qué hay en la azotea (nivel 20)?",`<b>Piscina infinity</b>, 2 jacuzzis con terrazas y pérgola techada — parte de los más de 900 m² de área social.`);
+  add("☀️ Sol","¿El sol siempre sale por el Este?",`Solo en los equinoccios (marzo y septiembre). En junio amanece por el <b>${cardinal(azJun)}</b> (${azJun.toFixed(0)}°) y en diciembre por el <b>${cardinal(azDec)}</b> (${azDec.toFixed(0)}°).`);
+  add("☀️ Sol","¿Qué tan alto llega el sol al mediodía en invierno?",`A <b>${decNoon.toFixed(0)}°</b> (vs ${noonJun.toFixed(0)}° en verano): en diciembre el sol 'se recuesta' al sur y entra más luz por las fachadas SE.`);
+  add("☀️ Sol","¿Cuántas horas de luz recibe la azotea al año?",`~<b>${Math.round(((dayLen(jun21)+dayLen(dec21))/2*365)).toLocaleString("en-US")} horas</b> de luz al año — sin un solo vecino que le haga sombra.`);
+  add("🌡️ Calor","¿Cuánto refresca la noche?",`~<b>${SD_TEMP[aug][0]-SD_TEMP[aug][1]}°C</b> entre la máxima de la tarde y la mínima del amanecer — las noches tropicales rondan los ${SD_TEMP[aug][1]}° en verano.`);
+  add("🌡️ Calor","¿Cuál es el rango de temperaturas del edificio en todo el año?",`Desde ~${loOf(cool.t,0,3)}° (Tipo ${cool.t}, piso 3, madrugada de enero) hasta ~${hiOf(hot.t,aug,19)}° (Tipo ${hot.t}, piso 19, tarde de agosto): <b>${hiOf(hot.t,aug,19)-loOf(cool.t,0,3)}° de rango</b>.`);
+  add("🌡️ Calor","¿Por qué usamos el piso 10 como referencia?",`Es el punto medio de la torre: sin sombra de vecinos pero sin la exposición extrema del 19. Puedes cambiar el piso en cada análisis.`);
+  add("❄️ AC","¿Cuánto ahorro por elegir un piso bajo?",`En el tipo más expuesto, bajar del piso 19 al 3 reduce la máxima ~${hiOf(hot.t,aug,19)-hiOf(hot.t,aug,3)}° y el AC ~RD$${fmt(acEstimate(areaOf(hot.t),g(hot.t).v*floorFactor(19),hiOf(hot.t,aug,19)).cost-acEstimate(areaOf(hot.t),g(hot.t).v*floorFactor(3),hiOf(hot.t,aug,3)).cost)}/mes en agosto.`);
+  add("❄️ AC","¿AC inverter o convencional?",`Inverter: con ${SD_HUM[aug]}% de humedad el compresor modula en vez de arrancar/parar — hasta 40% menos consumo en un clima que exige ~${hourlyTemp(SD_TEMP[aug][0],SD_TEMP[aug][1]).filter(x=>x>27).length} h/día de enfriamiento en agosto.`);
+  add("💨 Brisa","¿Por qué la brisa marina llega por la tarde?",`El sol calienta la tierra más rápido que el mar: al mediodía el aire urbano sube y el aire fresco del Caribe entra desde el sur — pico entre 1 y 5 pm.`);
+  add("💨 Brisa","¿Qué tipos aprovechan la brisa marina del sur?",`Los de fachada SE (<b>B, C y D</b>): la reciben de frente en las tardes, justo cuando más se necesita.`);
+  add("📅 Meses","¿Cuál es el mes con la humedad más baja?",`<b>${meses[SD_HUM.indexOf(Math.min(...SD_HUM))]}</b> (${Math.min(...SD_HUM)}%): el aire se siente más ligero y la sensación casi iguala al termómetro.`);
+  add("📅 Meses","¿En qué meses el día y la noche duran casi lo mismo?",`En los <b>equinoccios</b>: ~21 de marzo y ~22 de septiembre, con ~12 h de luz y el sol saliendo exactamente por el Este.`);
+  add("🏖️ Estilo","¿Cuál tipo tiene el mejor balance luz/frescura?",`El <b>Tipo ${byHours[Math.floor(byHours.length/2)].t}</b>: ni el más soleado ni el más oscuro (${byHours[Math.floor(byHours.length/2)].hours.toFixed(1)} h/día) — el punto dulce para la mayoría.`);
+  add("🏖️ Estilo","¿Dónde desayunar con sol?",`En los balcones <b>NE</b> (tipos D y E): sol suave desde ${hhmm(jun21.sunrise)} sin el calor de la tarde.`);
+  add("🏖️ Estilo","¿Un dato para presumir en la visita?",`Esta torre está a <b>18.48° del ecuador</b>: el sol pasa 2 veces al año exactamente sobre el edificio (mayo y julio) — al mediodía de esos días casi no hay sombras.`);
+  return T;
+}
+function openTrv(){
+  try{
+    if(!trvList||!trvList.length){ trvList=buildTrivia(); for(let i=trvList.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1)); [trvList[i],trvList[j]]=[trvList[j],trvList[i]];} trvIdx=0; }
+  }catch(e){ trvList=[]; }
+  const el=document.getElementById("trvModal");
+  const fsEl=document.fullscreenElement||document.webkitFullscreenElement;
+  const sol=document.getElementById("sol3d");
+  const root=fsEl||(sol&&sol.classList.contains("sun-faux-full")?sol:document.body);
+  if(el.parentElement!==root) root.appendChild(el);
+  renderTrv(false); el.classList.add("open");
+}
+function closeTrv(){ document.getElementById("trvModal").classList.remove("open"); }
+function trvNext(){ trvIdx=(trvIdx+1)%trvList.length; renderTrv(false); }
+function trvReveal(){ renderTrv(true); }
+const TRV_COLORS={"🌡️ Calor":"#ff6b4a","💨 Brisa":"#4ac6ff","☀️ Sol":"#ffc300","❄️ AC":"#7fd6e8","🏢 Pisos":"#b284f4","📅 Meses":"#66d98a","🕐 Horas":"#ffa94d","🏠 Confort":"#ff8ac2","🏖️ Estilo":"#ffd166"};
+function renderTrv(show){
+  const b=document.getElementById("trvBody"); if(!b) return;
+  if(!trvList||!trvList.length){ b.innerHTML="<p style='color:#9fc0d0'>Cargando datos solares… intenta de nuevo en unos segundos.</p>"; return; }
+  const x=trvList[trvIdx];
+  const col=TRV_COLORS[x.c]||"#b284f4";
+  const emoji=x.c.split(" ")[0], label=x.c.split(" ").slice(1).join(" ");
+  b.parentElement.style.setProperty("--trvc", col);
+  b.innerHTML=`
+    <div class="trv-head">
+      <div class="trv-emoji">${emoji}</div>
+      <div><h2 style="margin:0 0 4px">Trivias del edificio</h2><span class="trv-chip">${label}</span></div>
+    </div>
+    <div class="trv-q">${x.q}</div>
+    ${show?`<div class="trv-a">${x.a}</div>`:""}
+    <div class="trv-nav">
+      ${show?`<button class="trv-reveal" onclick="trvNext()">Siguiente trivia →</button>`:`<button class="trv-reveal" onclick="trvReveal()">🎁 Ver respuesta</button><button class="btn-mini" onclick="trvNext()">Saltar →</button>`}
+      <span class="trv-count">${trvIdx+1} / ${trvList.length}</span>
+    </div>
+    <div class="trv-bar"><span style="width:${((trvIdx+1)/trvList.length*100).toFixed(0)}%"></span></div>`;
+}
+
+/* ── Hoja del termómetro en móvil ── */
+function toggleThmSheet(){
+  const p=document.getElementById("solFacades"), f=document.getElementById("thmFab");
+  const open=p.classList.toggle("mob-show");
+  if(f) f.classList.toggle("hide", open);
+}
+
 /* ── Compartir el proyecto ── */
 function shareSite(){
   const url=location.href.split("#")[0];
@@ -1548,7 +1837,7 @@ function renderCmp(){
   const fbLo=Math.min(...allHi)-1, fbHi=Math.max(...allHi)+1, H=v=>((v-fbLo)/(fbHi-fbLo)*58+14).toFixed(0);
   const cA=TYPE_COLORS[t], cB=dual?TYPE_COLORS[tB]:null;
   const chart=sa.map((x,i)=>{
-    const bmax = dual?`${x.hi2}/${sb[i].hi2}°`:`${x.hi2}°`;
+    const bmax = dual?(x.n===cmpFloor?`${x.hi2}/${sb[i].hi2}°`:""):`${x.hi2}°`;   // en modo dual, etiqueta solo en el piso seleccionado (evita amontonamiento)
     const bars = dual
       ? `<div class="pair"><i style="height:${H(x.hi2)}px;background:${cA}"></i><i style="height:${H(sb[i].hi2)}px;background:${cB}"></i></div>`
       : `<i style="height:${H(x.hi2)}px;background:${heatColor(x.v2)}"></i>`;
@@ -1758,6 +2047,7 @@ function renderSolFacades(p){
     }).join("");
   }
   const note=document.querySelector("#solFacades .sf-note"); if(note) note.textContent = MONTHS[p.month] + " · horas de sol/día · sin obstrucciones";
+  setTimeout(placeCmpFab, 60);   // reubicar "Comparar modelos" bajo el panel del termómetro
 }
 function sunHoursCard(p){
   const r=sunHoursByFacade(p); if(!r) return "";
@@ -1798,7 +2088,7 @@ function buildAnalysis(p){
       ${a.sun?`<div class="an-card full">
         <div class="an-head"><span class="an-ico">☀️</span><span class="an-name">Rotación del sol e incidencia 3D</span></div>
         ${chip(a.sun)}
-        <div class="an-note">${esc(a.sun.note)} Para el simulador interactivo (sol, sombras y modelo 3D del edificio sobre el mapa) cierra esta ficha y pulsa el botón <b>☀️ Estudio Solar 3D</b> en el mapa.</div></div>`:""}
+        <div class="an-note">${esc(a.sun.note)} Para el simulador interactivo (sol, sombras y modelo 3D del edificio sobre el mapa) cierra esta ficha y pulsa el botón <b>🌞 Vive el Sol en 3D</b> en el mapa.</div></div>`:""}
 
       ${a.sun?sunHoursCard(p):""}
     </div>
@@ -1839,7 +2129,7 @@ function openDetail(id){
         <div class="disclaimer" style="margin:-12px 0 20px">Horas de sol directo (promedio anual) según la orientación asignada a cada tipo. La posición de cada unidad es un estimado — ajústala con el plano del piso tipo.</div>`:""}
       ${buildCompareTable(p)}
       ${buildAnalysis(p)}
-      ${ag?`<div class="agent"><div class="agent-av" style="background-image:url('${ag.avatar}')"></div><div><b>${esc(ag.name)}</b><span>${esc(ag.role)}</span></div></div>`:""}
+      ${ag?`<a class="agent" ${ag.url?`href="${ag.url}" target="_blank" rel="noopener" title="Ver perfil de ${esc(ag.name)} en Plusval"`:""} style="text-decoration:none;color:inherit;cursor:pointer"><div class="agent-av" style="background-image:url('${ag.avatar}')"></div><div><b>${esc(ag.name)}</b><span>${esc(ag.role)}</span></div>${ag.url?'<span style="margin-left:auto;font-size:.78rem;color:var(--accent);font-weight:700">Ver perfil ↗</span>':""}</a>`:""}
       <div class="contact">
         <button class="wa-btn" onclick="contactWA(${p.id})">📱 Contactar por WhatsApp</button>
         <button class="wa-btn outline" onclick="closeModal();focusProp(${p.id})">Ver en el mapa</button>
@@ -1869,10 +2159,11 @@ document.addEventListener("keydown", e => {
 renderList();
 renderMarkers();
 loadLiveWeather();
-// Intro al cargar: mostrar primero el mapa (centrado en la torre) y luego pasar al Estudio Solar 3D
+// PWA: registrar service worker (solo en HTTPS; ignora file://)
+if("serviceWorker" in navigator && location.protocol==="https:"){ navigator.serviceWorker.register("sw.js").catch(()=>{}); }
+// Al cargar: mapa centrado en la torre (el usuario decide cuándo abrir la Experiencia Solar 3D)
 setActive(PROPS[0].id);
 map.flyTo([PROPS[0].lat, PROPS[0].lng], 16, {duration:1.1});
-setTimeout(()=>{ if(!document.getElementById("sol3d").classList.contains("show")) toggleMapMode(); }, 2200);
 </script>
 </body>
 </html>

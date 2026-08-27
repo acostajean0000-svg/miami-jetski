@@ -194,23 +194,7 @@
 <section style="padding:24px;background:#0a1428;color:#cdd9e8;border-top:1px solid #1a2540;margin-top:32px;font-size:.85rem;line-height:1.8">
   <strong style="color:#9bb5d4">Related operators:</strong> <a href="/akumal-reef-turtles-cancun" style="color:#7fb4ff;text-decoration:none">AKUMAL REEF &amp; TURTLES</a> · <a href="/31ft-bertram-cancun" style="color:#7fb4ff;text-decoration:none">31ft. Bertram</a> · <a href="/amazonas-beach-club-albatros-islas-mujeres-cancun" style="color:#7fb4ff;text-decoration:none">Amazonas Beach Club Albatros (Islas Mujeres)</a>
 </section>
-<script>
-(function(){
-  // Find primary FH URL + name on this page
-  var primary = document.querySelector('a[href*="fareharbor.com/embeds/book/"][data-fh-name]');
-  if(!primary) return;
-  var url = primary.href;
-  var name = primary.getAttribute('data-fh-name') || document.title.replace(/\s*[·|].*$/,'').trim();
-  var price = (document.querySelector('[data-op-price]')||{}).getAttribute && document.querySelector('[data-op-price]').getAttribute('data-op-price');
-  var priceHtml = price ? '<div class="mob-cta-price">from <b>$'+price+'</b></div>' : '';
-  var bar = document.createElement('div');
-  bar.className = 'mob-cta';
-  bar.setAttribute('role','complementary');
-  bar.setAttribute('aria-label','Sticky booking bar');
-  bar.innerHTML = '<div class="mob-cta-row"><div class="mob-cta-info"><div class="mob-cta-name">'+name.replace(/[<>]/g,'')+'</div>'+priceHtml+'</div><a class="mob-cta-btn" href="'+url+'" target="_blank" rel="noopener nofollow sponsored" data-fh-name="'+name.replace(/"/g,'&quot;')+'">Book Now →</a></div>';
-  document.body.appendChild(bar);
-})();
-</script>
+
 <script>
 /* GA4 enhanced ecommerce — operator page */
 (function(){

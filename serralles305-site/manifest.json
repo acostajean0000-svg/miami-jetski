@@ -1,0 +1,16 @@
+{
+  "name": "InmoRD — Torre Serrallés 305",
+  "short_name": "Serrallés 305",
+  "description": "Análisis solar y térmico por apartamento de la Torre Serrallés 305, Santo Domingo.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#0b1f2a",
+  "theme_color": "#0b1f2a",
+  "lang": "es-DO",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
