@@ -1454,7 +1454,7 @@ const imgLoad = ci === 0 ? 'fetchpriority="high" loading="eager"' : 'loading="ea
       ${op.rating ? `<div class="op-stars"><span class="op-stars-val">${op.rating}</span><span class="op-stars-bar">${'★'.repeat(Math.round(op.rating))}${'☆'.repeat(5-Math.round(op.rating))}</span><span class="op-stars-count">(${op.reviews})</span></div>` : ''}
       <div class="op-footer">
         <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$${op.price.toLocaleString()}</div></div>
-        ${op.link ? `<a href="${escUrl(op.link)}" data-fh-name="${esc(op.name)}" data-fh-price="${op.price||100}" target="_blank" rel="noopener noreferrer" class="op-book" onclick="event.stopPropagation();trackBookNow('${esc(op.name)}',${op.price})">Book Now <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg></a>` : `<span class="op-book op-book-disabled" onclick="event.stopPropagation()" title="Contact operator directly to book">Contact for booking</span>`}
+        ${op.link ? `<a href="${escUrl(op.link)}" data-fh-name="${esc(op.name)}" data-fh-price="${op.price||100}" target="_blank" rel="noopener noreferrer" class="op-book" onclick="event.stopPropagation();trackBookNow('${jsq(op.name)}','${op.price||100}','${op.cat||"tour"}')">Book Now <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg></a>` : `<span class="op-book op-book-disabled" onclick="event.stopPropagation()" title="Contact operator directly to book">Contact for booking</span>`}
       </div>
       ${(window._OP_SLUG_MAP || {})[op.id] ? `<a href="/${(window._OP_SLUG_MAP || {})[op.id]}" target="_blank" rel="noopener noreferrer" class="op-detail-link" onclick="event.stopPropagation()">View details <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></a>` : `<a href="${escUrl(op.link)}" target="_blank" rel="noopener noreferrer" class="op-detail-link" onclick="event.stopPropagation()">View details <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></a>`}
     </div>
@@ -1908,7 +1908,7 @@ function renderDeals() {
           <div class="deal-badge" style="background:var(--teal);color:var(--dark)">⭐ ${op.rating} (${op.reviews})</div>
         </div>
         <div class="deal-actions">
-          <a href="${escUrl(op.link)}" data-fh-name="${esc(op.name)}" data-fh-price="${op.price||100}" target="_blank" rel="noopener noreferrer" class="deal-book-btn" onclick="event.stopPropagation();trackBookNow()">Book Now →</a>
+          <a href="${escUrl(op.link)}" data-fh-name="${esc(op.name)}" data-fh-price="${op.price||100}" target="_blank" rel="noopener noreferrer" class="deal-book-btn" onclick="event.stopPropagation();trackBookNow('${jsq(op.name)}','${op.price||100}','${op.cat||"tour"}')">Book Now →</a>
           <a href="${detailUrl}" class="deal-detail-btn" onclick="event.stopPropagation()">View details <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em;font-size:.65rem"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></a>
         </div>
       </div>
@@ -2000,11 +2000,12 @@ function updateCatCounts() {
     if (n === 0) btn.style.display = 'none';
   });
 }
-function trackBookNow(name, price) {
+function jsq(s){return String(s==null?'':s).replace(/\\/g,'\\\\').replace(/'/g,"\\'").replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');}
+function trackBookNow(name, price, cat) {
   if (typeof gtag === 'function') {
     gtag('event', 'conversion', {
       'send_to': 'AW-16509204378/Od7PCNePlKAcEJrvmcA9',
-      'value': price,
+      'value': parseFloat(price)||0,
       'currency': 'USD'
     });
   }

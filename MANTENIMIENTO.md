@@ -651,3 +651,78 @@ Corregido: 991 coords invertidas (Charleston/Hilton Head), 8.565 geo de páginas
 hreflang roto en 64 landings, traducción completa de /es/, JS roto en 4 páginas ({{ }}),
 550 rel-cards fantasma, slug-map corrupto (at119). Construido: 131 pares de landings bilingües,
 176 OG, carga en 2 fases del home (86% menos primer render), 77 CTAs de blog.
+
+---
+
+## ⚠️ CONVERSIONES DE GOOGLE ADS — las tres formas de perderlas
+
+Auditoría de ago 2026. El 65% del sitio no reportaba conversiones a Ads. Tres causas
+independientes, y hay que comprobar las tres por separado:
+
+**1. El evento sin `send_to`.** `gtag('event','conversion',{value,currency})` sin `send_to`
+NO llega a Google Ads. Se queda en GA4 como un evento suelto llamado "conversion".
+La llamada correcta lleva siempre la etiqueta:
+
+    gtag('event','conversion',{send_to:'AW-16509204378/Od7PCNePlKAcEJrvmcA9',
+                               value:parseFloat(p)||0,currency:'USD'});
+
+**2. El `config` que falta.** Aunque el evento lleve `send_to`, si la página nunca ejecuta
+`gtag('config','AW-16509204378')` no hay destino configurado. El bloque bueno lleva DOS
+config seguidos (GA4 y Ads) y el loader pide `?id=AW-16509204378`, no el de GA4.
+
+**3. `window.gtag` inexistente.** 1.146 páginas no cargaban gtag.js. Como el código va
+protegido con `if(window.gtag)`, no falla: **se salta en silencio**. No hay error en consola,
+no hay nada que ver. Solo se detecta contando páginas sin `G-CMH3XLRFH6`.
+
+### Comprobación de despliegue
+
+    páginas con G-CMH3XLRFH6                       == total
+    páginas con gtag('config','AW-16509204378')    == total   (y nunca >1 por página)
+    eventos 'conversion' sin send_to               == 0
+
+## ⚠️ APÓSTROFOS EN `onclick` — el fallo que ningún linter ve
+
+`onclick="trackBookNow('Focused Mahi Sailfish on 33' Stuart Angler','79','boat')"` es un
+**error de sintaxis**: el handler no compila, no se registra la conversión, y el enlace sigue
+funcionando — así que parece que todo va bien. 320 páginas lo tenían.
+
+Dos orígenes distintos, y el segundo se me escapó en la primera pasada:
+
+- **Apóstrofo sin escapar** en el JS: marcas de pies (`33'`, `63'`), posesivos
+  ("St. Augustine's", "World's"). Rompe la cadena JS.
+- **Comilla doble sin escapar** en el atributo HTML: `6'0" Libtech`, `"Sandy" • Captain
+  Included`. El JS es válido pero el navegador **cierra el atributo** en la comilla.
+  Un test que solo parsee el JS da estas por buenas. Hay que mirar además el HTML crudo.
+
+`node --check` NO sirve aquí (el handler no es un fichero JS). La prueba autoritativa es
+extraer cada `onclick`, deshacer las entidades y pasarlo por `new Function(code)`.
+
+**Al reconstruir un `onclick`, reconstruye el atributo entero** desde `operators.json`
+(clave estable `shortname/itemid` sacada del `href`). No parchees con regex: un patrón
+`trackBookNow\(.*?\)` se corta en el paréntesis de nombres como "(Walk Up)" y deja basura
+detrás — así pasé de 320 rotos a 904 y tuve que restaurar de copia.
+
+El escapador debe hacer las dos cosas, en este orden: primero JS (`\` y `'`), luego HTML
+(`&`, `<`, `>`, `"`). La función `esc()` de las portadas escapa `& < > "` pero **no el
+apóstrofo**, así que no vale para meter texto dentro de una cadena JS.
+
+## Valor y categoría de la conversión
+
+- `value` iba a **0 en el 30,6%** de las llamadas. Un 0 le enseña a Smart Bidding que ese
+  clic no vale nada. Se recupera de `operators.json` cruzando por `shortname/itemid`.
+- `boat` funcionaba como **categoría por defecto**: 62% de las llamadas. Tras corregir,
+  22% y 31 categorías reales. Un "Four Day Bike Rentals" declarado como `boat` contamina
+  cualquier segmentación por tipo de actividad.
+- Recuerda que `price` sigue siendo una **constante por categoría** salvo en 64 casos. El
+  valor enviado es un proxy, no el precio real, hasta que se cargue el export de FareHarbor.
+
+## Falsos positivos recurrentes al auditar (no los persigas)
+
+- `\bid="..."` captura también `data-id="..."` — el guion cuenta como límite de palabra.
+- `t.count('<head')` cuenta `<header`. Y en index.html hay un `<head>` dentro de un comentario.
+- `expand` invocado como `.map(expand)` no lo ve un patrón `expand\s*\(`.
+- Nombres de producto dentro de strings: `trackBookNow('Tour (Private)'...)` parece una
+  llamada a una función `Tour(`.
+- `/_vercel/insights/script.js` no existe en el repo: lo sirve Vercel en runtime.
+- `href="/'+slug+'"` dentro de JS parece un enlace interno roto.
+- `bookUrl` en `boat-rentals-florida.html` es una **variable local**, no la función global.
