@@ -794,3 +794,52 @@ simula un clic en el primer enlace de FareHarbor y comprueba:
 
 Sin esto no se detecta ninguno de los fallos de esta sección: todos se leen perfectamente
 bien en el HTML.
+
+---
+
+## ⚠️ MAPAS DE SLUGS DE ZONA — seis páginas clonadas sin cambiar el mapa
+
+`austin-activities`, `myrtle-beach-activities`, `lake-havasu-activities`,
+`lake-of-the-ozarks-activities`, `lake-mead-activities` y `nassau-activities` cargaban
+**`/slug-map/naples.js`**: se clonaron de la página de Naples y sólo se actualizó el
+`fetch(data/...)`, no el `<script src>` del mapa.
+
+Consecuencia: sin entrada en el mapa, el código genera el slug a partir del nombre y la zona,
+produciendo rutas como `/afternoon-charter-miss-b-haven-westfl` cuando la ficha real es
+`afternoon-charter-miss-b-haven-destin`. **587 tarjetas llevaban a un 404** — en Austin,
+las 388 de la página.
+
+Los seis mapas ni siquiera existían. Se generan desde el maestro filtrando por los ids del
+fichero de datos de la zona:
+
+    slug-map/<zona>.js  =  { id: MASTER[id] }  para cada id en data/<datos>.json
+
+**Regla al clonar una página de zona: hay que cambiar TRES cosas** — el `fetch(data/X.json)`,
+el `<script src="/slug-map/X.js">` y el mapa debe existir y cubrir todos los ids de X.
+
+### Comprobación (estática, sin navegador)
+
+Para cada página que cargue un mapa: todo id de su fichero de datos debe estar en el mapa, y
+todo slug del mapa debe existir como `.html`. Hoy: 132 páginas, 14.938 entradas, 0 huecos.
+
+Además había 344 operadores de `westfl` y algunos de `hawaii`, `keywest` y `puntacana`
+ausentes de su mapa, y 12 slugs que apuntaban a páginas inexistentes.
+
+## Cargar los `<script src>` locales al auditar con jsdom
+
+jsdom **no descarga** los scripts locales, así que `window._OP_SLUG_MAP` nunca existe y toda
+página de zona parece tener miles de enlaces rotos. Sin insertarlos me salían 1.860 destinos
+inexistentes; insertándolos, 362 (los reales); tras arreglarlos, 0.
+
+Antes de parsear hay que sustituir cada `<script src="/x.js"></script>` por su contenido.
+Y al comparar rutas con el disco, **decodifica antes**: hay una ficha con tilde
+(`rosé-fireworks-sail-hiltonhead.html`) que aparece como `%C3%A9` y parece rota sin serlo.
+
+## Lo que sí quedó verificado ejecutando
+
+- El iframe del modal carga la URL correcta de FareHarbor: mismo item, atribución intacta,
+  sin parámetros duplicados y sin calendario fijo (119/120 páginas; la restante no tiene
+  enlaces FH porque es un directorio que enlaza a fichas).
+- 26.550 enlaces internos generados en runtime: 0 rotos.
+- Las páginas tipo directorio (`san-diego-activities` y similares) no llevan botón de reserva
+  a propósito: la tarjeta va a la ficha del operador y allí se reserva. No es un fallo.

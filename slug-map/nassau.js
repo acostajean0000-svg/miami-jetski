@@ -1,0 +1,1 @@
+window._OP_SLUG_MAP=Object.assign(window._OP_SLUG_MAP||{},{"na1":"mansa-bay-private-island-beach-club-with-swimming-pigs-jet-ski-banana-boat-snork-nassau","na2":"swimming-pigs-and-snorkeling-tour-nassau","na3":"sail-snorkel-nassau","na4":"multi-day-custom-charters-nassau","na5":"day-charter-nassau","na6":"atlantis-exp-rience-nassau","na7":"discover-nassau-land-sea-the-bahamas"});
