@@ -39,7 +39,7 @@
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <!-- slug-map.js is large (~60 KB gz) and only needed for "View details" link routing.
          Lazy-load after window.load OR on first user interaction so it doesn't compete with first paint. -->
-    <script>(function(){var l=!1;function ld(){if(l)return;l=!0;var s=document.createElement('script');s.src='/slug-map.js';s.async=!0;document.head.appendChild(s);}if(document.readyState==='complete'){setTimeout(ld,50);}else{addEventListener('load',function(){setTimeout(ld,50);});}['scroll','mousemove','touchstart','click','keydown'].forEach(function(e){addEventListener(e,ld,{once:!0,passive:!0});});})();</script>
+    <script>window._OP_LINK_A='https://fareharbor.com/embeds/book/';window._OP_LINK_B='/items/';window._OP_LINK_C='/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no';window._OP_PH_A='https://cdn.filestackcontent.com/';window._OP_PH_B='/convert?cache=true&compress=true&quality=90&format=webp&rotate=exif&w=1000&fit=max';window._expandOp=function(o){var l=o.link;if(l&&l.lastIndexOf('http',0)!==0){var i=l.indexOf('/');if(i>0){o.link=window._OP_LINK_A+l.slice(0,i)+window._OP_LINK_B+l.slice(i+1)+window._OP_LINK_C}}var p=o.photo;if(p&&p.length<50&&p.lastIndexOf('http',0)!==0){o.photo=window._OP_PH_A+p+window._OP_PH_B}return o};(function(){var l=!1;function ld(){if(l)return;l=!0;var s=document.createElement('script');s.src='/slug-map.js';s.async=!0;document.head.appendChild(s);}if(document.readyState==='complete'){setTimeout(ld,50);}else{addEventListener('load',function(){setTimeout(ld,50);});}['scroll','mousemove','touchstart','click','keydown'].forEach(function(e){addEventListener(e,ld,{once:!0,passive:!0});});})();</script>
   <link rel="manifest" href="/manifest.json">
   <meta name="theme-color" content="#081525">
   <!-- GTM deferred past LCP to avoid forced reflow in critical window -->
@@ -2212,6 +2212,7 @@ function _applyLoadedData(data) {
   data.forEach(o => { if (typeof o.price !== 'number') { const s=String(o.price || '').replace(/[^0-9.]/g,''); o.price = s ? parseFloat(s) || 0 : 0; } });
   // Ensure zl/addr are always strings (prevents search crash)
   data.forEach(o => { if (!o.zl) o.zl=''; if (!o.addr) o.addr=''; });
+  if(window._expandOp)data.forEach(window._expandOp);
   allOperators = data;
   // Set price filter range dynamically based on actual max price
   const maxPrice = Math.max(0, ...data.map(o => o.price || 0));
@@ -2755,7 +2756,7 @@ document.head.appendChild(qvTooltipStyle);
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
     e.preventDefault();e.stopPropagation();
     var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Reservar';
-    openFhModal(a.href,name);
+    var _fhp=a.getAttribute('data-fh-price')||'0',_fhm=(a.getAttribute('onclick')||'').match(/,'([^']*)'\)\s*;?\s*$/);if(window.trackBookNow){try{trackBookNow(name,_fhp,_fhm?_fhm[1]:'');}catch(_e){}}openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;
 })();

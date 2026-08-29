@@ -40,7 +40,7 @@
 
 <meta property="og:title" content="Page Not Found — Florida WaterSports (4,800+ Operators)">
 <meta property="og:description" content="This page drifted out to sea. Browse 4,800+ verified Florida, Hawaii, Cancún & Punta Cana watersports operators — jet ski, boat charters, tours, fishing">
-</head>
+<script>function trackBookNow(n,p,c){if(window.dataLayer)window.dataLayer.push({event:'book_now_click',operator_name:n,operator_price:p,operator_category:c});if(window.gtag)gtag('event','conversion',{send_to:'AW-16509204378/Od7PCNePlKAcEJrvmcA9',value:parseFloat(p)||0,currency:'USD'});}</script></head>
 <body>
   <!-- Smart zone detection banner -->
   <div id="smart-banner" style="display:none;background:rgba(0,212,200,.12);border:1.5px solid rgba(0,212,200,.4);border-radius:14px;padding:18px 22px;margin-bottom:32px;max-width:560px;width:100%;">
@@ -222,7 +222,7 @@
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
     e.preventDefault();e.stopPropagation();
     var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Book Now';
-    openFhModal(a.href,name);
+    var _fhp=a.getAttribute('data-fh-price')||'0',_fhm=(a.getAttribute('onclick')||'').match(/,'([^']*)'\)\s*;?\s*$/);if(window.trackBookNow){try{trackBookNow(name,_fhp,_fhm?_fhm[1]:'');}catch(_e){}}openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;
 })();

@@ -198,7 +198,7 @@ document.addEventListener('click',function(e){
 <link rel="prefetch" href="/vendor/leaflet/leaflet.markercluster.js">
   <link rel="preconnect" href="https://a.basemaps.cartocdn.com">
   <link rel="preconnect" href="https://b.basemaps.cartocdn.com">
-</head>
+<script>function trackBookNow(n,p,c){if(window.dataLayer)window.dataLayer.push({event:'book_now_click',operator_name:n,operator_price:p,operator_category:c});if(window.gtag)gtag('event','conversion',{send_to:'AW-16509204378/Od7PCNePlKAcEJrvmcA9',value:parseFloat(p)||0,currency:'USD'});}</script></head>
 <body>
 <nav>
   <a href="/" class="nav-logo">💧 Florida<span>WaterSports</span></a><a href="/west-florida-tours" hreflang="en" style="display:inline-flex;align-items:center;gap:5px;background:rgba(255,255,255,.05);border:1px solid rgba(0,210,255,.2);color:#a8d4f0;padding:6px 12px;border-radius:50px;font-size:.78rem;font-weight:700;text-decoration:none">🇺🇸 EN</a><a href="/" aria-label="Inicio" style="display:inline-flex;align-items:center;gap:5px;background:rgba(0,210,255,.1);border:1px solid rgba(0,210,255,.3);color:#00d2ff;padding:6px 14px;border-radius:50px;font-size:.82rem;font-weight:700;text-decoration:none">🏠 Inicio</a>
@@ -454,7 +454,7 @@ function setupFilters(){
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;
     e.preventDefault();e.stopPropagation();
     var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Reservar';
-    openFhModal(a.href,name);
+    var _fhp=a.getAttribute('data-fh-price')||'0',_fhm=(a.getAttribute('onclick')||'').match(/,'([^']*)'\)\s*;?\s*$/);if(window.trackBookNow){try{trackBookNow(name,_fhp,_fhm?_fhm[1]:'');}catch(_e){}}openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;
 })();

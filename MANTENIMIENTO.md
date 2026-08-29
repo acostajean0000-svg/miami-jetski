@@ -726,3 +726,71 @@ apóstrofo**, así que no vale para meter texto dentro de una cadena JS.
 - `/_vercel/insights/script.js` no existe en el repo: lo sirve Vercel en runtime.
 - `href="/'+slug+'"` dentro de JS parece un enlace interno roto.
 - `bookUrl` en `boat-rentals-florida.html` es una **variable local**, no la función global.
+
+---
+
+## ⚠️ EL LISTENER EN CAPTURA QUE SE TRAGABA TODAS LAS CONVERSIONES
+
+El fallo más caro encontrado, y sólo aparece **ejecutando la página**, nunca leyéndola.
+
+En 11.139 páginas el listener del modal de FareHarbor está registrado así:
+
+    document.addEventListener('click', function(e){ ... e.preventDefault(); e.stopPropagation(); ... }, true);
+                                                                                                        ^^^^ captura
+
+Al ser **fase de captura sobre `document`**, corre *antes* de que el evento llegue al `<a>`.
+El `stopPropagation()` detiene ahí el evento, así que el `onclick="trackBookNow(...)"` del
+propio botón **nunca se ejecuta**. El modal abre, el cliente reserva, la comisión entra —
+y Google Ads no se entera de nada.
+
+Lección: `stopPropagation()` en captura **cancela a los handlers del propio destino**, no
+sólo a los ancestros. Si un handler global intercepta el clic, la analítica tiene que
+dispararse *dentro de ese handler*, no en el elemento.
+
+La corrección dispara la conversión dentro del propio handler, justo antes de abrir el modal,
+tomando el precio de `data-fh-price` y la categoría del `onclick` ya corregido.
+
+## Los cuatro caminos de conversión (no dupliques)
+
+Tras la auditoría hay exactamente un mecanismo por página. Antes de tocar nada, mira cuál usa:
+
+| Mecanismo | Páginas | Cómo dispara |
+|---|---|---|
+| Handler global en captura | 231 | Lee `data-fh-price` de cualquier enlace FH. **Ya lo cubre todo** |
+| Handler del modal | 11.139 | Llama a `trackBookNow` antes de `openFhModal` |
+| `onclick` en el botón | mayoría de páginas de operador | Sólo si nada intercepta el clic |
+| Listener delegado inyectado | 221 | Para páginas sin ninguno de los anteriores |
+
+**Regla: si la página ya tiene el handler global en captura, NO añadas nada más** — se cuenta
+dos veces. Me pasó en 22 landings de jet ski y en las 88 del blog, y sólo lo vi simulando el
+clic y contando cuántos eventos `conversion` salían. Un clic = exactamente una conversión.
+
+## El evento `lp_book` no es una conversión
+
+231 landings disparaban `gtag('event','lp_book',{op,value,currency})`. Nombre propio, sin
+`send_to`: **Google Ads no lo reconoce**. Sirve para GA4, no para pujar. Ahora esas páginas
+disparan además la conversión real.
+
+## ⚠️ La portada /es no expandía los enlaces
+
+`es/index.html` renderizaba `href="miamiaquatours/221278"` — URL **relativa**. Cada clic iba
+a `/es/miamiaquatours/221278` → 404. Los 20 botones y las 20 imágenes de la portada española
+estaban rotos. Causa: la home inglesa define `window._expandOp` (con `_OP_LINK_A/B/C` y
+`_OP_PH_A/B`) y lo aplica en `_applyLoadedData`; la española nunca recibió ese bloque.
+Recuerda que `operators-top.json` trae 1.111 de 1.114 enlaces en formato corto.
+
+**Comprobación:** tras cargar la home, ningún `a[data-fh-price]` debe tener un `href` que no
+empiece por `https://fareharbor.com/`, y ninguna `img` de tarjeta un `src` relativo.
+
+## Banco de pruebas en jsdom (lo único que ve los fallos de ejecución)
+
+`node run.js` carga páginas reales con jsdom, intercepta `fetch` sirviendo los JSON del disco,
+simula un clic en el primer enlace de FareHarbor y comprueba:
+
+- que no haya errores de ejecución (con polyfills de `matchMedia`, `IntersectionObserver` y Leaflet)
+- que el clic dispare **una** conversión, con `send_to` correcto y valor > 0
+- que el botón apunte de verdad a `fareharbor.com`
+- que el contenedor de tarjetas no quede vacío tras cargar los datos
+
+Sin esto no se detecta ninguno de los fallos de esta sección: todos se leen perfectamente
+bien en el HTML.

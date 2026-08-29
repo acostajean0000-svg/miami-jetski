@@ -125,7 +125,7 @@ document.addEventListener('click',function(e){
     <div class="section fh-widget" id="fh-avail">
       <h2>Check Availability & Book</h2>
       <iframe referrerpolicy="strict-origin-when-cross-origin" src="https://fareharbor.com/embeds/book/polyad-activities/items/280735/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no" loading="lazy" title="Book World War II Heroes Deluxe Pearl Harbor Tour with Lunch (39)"></iframe>
-      <div class="fh-fallback"><strong>Calendar not loading?</strong> <a class="fh-open" href="https://fareharbor.com/embeds/book/polyad-activities/items/280735/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no" target="_blank" rel="noopener nofollow sponsored">📅 Open booking →</a></div>
+      <div class="fh-fallback"><strong>Calendar not loading?</strong> <a data-fh-price="25" class="fh-open" href="https://fareharbor.com/embeds/book/polyad-activities/items/280735/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no" target="_blank" rel="noopener nofollow sponsored">📅 Open booking →</a></div>
     </div>
     <div class="section">
       </div>
@@ -134,7 +134,7 @@ document.addEventListener('click',function(e){
     <div class="book-card">
       <div class="price">From $45</div>
       <div class="price-sub">Per person · Honolulu</div>
-      <a data-fh-name="World War II Heroes Deluxe Pearl Harbor Tour with Lunch (39)" class="btn-book" href="https://fareharbor.com/embeds/book/polyad-activities/items/280735/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no" target="_blank" rel="noopener nofollow sponsored" onclick="trackBookNow('World War II Heroes Deluxe Pearl Harbor Tour with Lunch (39)','25','tour')">Book Now →</a>
+      <a data-fh-price="25" data-fh-name="World War II Heroes Deluxe Pearl Harbor Tour with Lunch (39)" class="btn-book" href="https://fareharbor.com/embeds/book/polyad-activities/items/280735/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no" target="_blank" rel="noopener nofollow sponsored" onclick="trackBookNow('World War II Heroes Deluxe Pearl Harbor Tour with Lunch (39)','25','tour')">Book Now →</a>
       <div class="guarantee">🔄 Free cancellation · Instant confirmation</div>
     </div>
     
@@ -221,7 +221,7 @@ document.addEventListener('click',function(e){
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
     e.preventDefault();e.stopPropagation();
     var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Book Now';
-    openFhModal(a.href,name);
+    var _fhp=a.getAttribute('data-fh-price')||'0',_fhm=(a.getAttribute('onclick')||'').match(/,'([^']*)'\)\s*;?\s*$/);if(window.trackBookNow){try{trackBookNow(name,_fhp,_fhm?_fhm[1]:'');}catch(_e){}}openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;
 })();

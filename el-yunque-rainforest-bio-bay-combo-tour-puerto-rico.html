@@ -165,7 +165,7 @@
     if(e.metaKey||e.ctrlKey||e.shiftKey)return;
     e.preventDefault();e.stopPropagation();
     var name=a.getAttribute('data-fh-name')||document.title.replace(/\s*[·|].*$/,'').trim()||'Book Now';
-    openFhModal(a.href,name);
+    var _fhp=a.getAttribute('data-fh-price')||'0',_fhm=(a.getAttribute('onclick')||'').match(/,'([^']*)'\)\s*;?\s*$/);if(window.trackBookNow){try{trackBookNow(name,_fhp,_fhm?_fhm[1]:'');}catch(_e){}}openFhModal(a.href,name);
   },true);
   window.openFhModal=openFhModal;
 })();

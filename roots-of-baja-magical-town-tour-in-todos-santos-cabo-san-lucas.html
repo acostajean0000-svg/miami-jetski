@@ -97,7 +97,7 @@
   function showU(){var i=document.getElementById('fhModalIframe');var u=document.getElementById('fhUnavailable');if(i)i.style.display='none';if(u)u.style.display='block';}
   window.closeFhModal=function(){var u=document.getElementById('fhUnavailable');if(u)u.style.display='none';var i=document.getElementById('fhModalIframe');if(i)i.style.display='';var m=document.getElementById('fhModal');m.classList.remove('open');document.body.style.overflow='';i=document.getElementById('fhModalIframe');i.src='about:blank';};
   document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeFhModal();});
-  document.addEventListener('click',function(e){if(e.defaultPrevented)return;var a=e.target.closest('a[href*="fareharbor.com/embeds/book/"]');if(!a)return;if(e.metaKey||e.ctrlKey||e.shiftKey)return;e.preventDefault();e.stopPropagation();var name=a.getAttribute('data-fh-name')||document.title.replace(/\s*[·|].*$/,'').trim()||'Book Now';openFhModal(a.href,name);},true);
+  document.addEventListener('click',function(e){if(e.defaultPrevented)return;var a=e.target.closest('a[href*="fareharbor.com/embeds/book/"]');if(!a)return;if(e.metaKey||e.ctrlKey||e.shiftKey)return;e.preventDefault();e.stopPropagation();var name=a.getAttribute('data-fh-name')||document.title.replace(/\s*[·|].*$/,'').trim()||'Book Now';var _fhp=a.getAttribute('data-fh-price')||'0',_fhm=(a.getAttribute('onclick')||'').match(/,'([^']*)'\)\s*;?\s*$/);if(window.trackBookNow){try{trackBookNow(name,_fhp,_fhm?_fhm[1]:'');}catch(_e){}}openFhModal(a.href,name);},true);
   window.openFhModal=openFhModal;
 })();
 </script>
