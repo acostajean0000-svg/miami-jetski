@@ -893,3 +893,17 @@ Reapuntados a `/west-florida-activities`, que cubre esa costa con 1.630 operador
   `404`, `offline`, `partners`, los índices servidos por otra ruta y las 4 canonicalizadas.
   Quedan 80 URLs repetidas entre sitemaps de zonas solapadas (Cancún/Playa del Carmen/Tulum/
   Isla Mujeres): Google lo tolera, es cosmético.
+
+## filepicker.io es el dominio MUERTO-EN-VIDA de Filestack
+
+898 URLs en 287 páginas usaban `www.filepicker.io/api/file/HANDLE` — el dominio antiguo de
+Filestack. Hoy aún resuelve, pero es legacy sin garantía. El handle es el mismo en ambos:
+
+    https://www.filepicker.io/api/file/HANDLE[/convert?...]  →  https://cdn.filestackcontent.com/HANDLE[/convert?...]
+
+Migradas las 898 (sustitución de prefijo, mismos parámetros de convert). Verificado cargando
+12 handles aleatorios en el CDN nuevo: 12/12 OK.
+
+Quedan 5 og:image en dominios de operadores ajenos (rippleeffectecotours, wsimg, floridawatertour,
+civitatis, luxepartyshop). Hoy cargan las 5 (verificado en navegador), pero dependen de sitios que
+no controlamos: si un operador rediseña su web, su og:image muere sin aviso. Candidatas a re-hostear.
