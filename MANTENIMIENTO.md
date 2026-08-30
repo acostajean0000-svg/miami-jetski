@@ -843,3 +843,53 @@ Y al comparar rutas con el disco, **decodifica antes**: hay una ficha con tilde
 - 26.550 enlaces internos generados en runtime: 0 rotos.
 - Las páginas tipo directorio (`san-diego-activities` y similares) no llevan botón de reserva
   a propósito: la tarjeta va a la ficha del operador y allí se reserva. No es un fallo.
+
+---
+
+## ⚠️ REDIRECTS QUE TAPAN PÁGINAS EXISTENTES
+
+**En Vercel los `redirects` se evalúan ANTES del sistema de ficheros; los `rewrites`, DESPUÉS.**
+De ahí se sigue todo lo demás:
+
+- Un **redirect** cuyo `source` coincide con una página existente **gana**: la página queda
+  inalcanzable aunque el `.html` esté ahí.
+- Un **rewrite** cuyo `source` coincide con una página existente es inofensivo: gana el fichero.
+
+Había **64 redirects tapando fichas de operador reales**. Las 64 tenían widget de reserva y
+estaban en el sitemap; 56 eran `permanent: true`. Google las rastreaba, recibía un 301 y las
+desindexaba cediendo autoridad a `/naples-activities` — que además era la zona equivocada
+(eran de Tampa y Destin). Restos de una limpieza de 404 anterior a que esas fichas existieran.
+
+**Regla: al generar páginas nuevas, comprueba que ningún redirect tenga ese slug como
+`source`.** Un redirect a una zona genérica es el patrón típico de limpieza de 404 y hay que
+retirarlo en cuanto la ficha exista.
+
+## Rewrites huérfanos: `gulf-activities` nunca existió
+
+40 rewrites apuntaban a `/gulf-activities`, una página que no existe — incluidos comodines
+`(.*)-destin`, `(.*)-tampa`, `(.*)-naples`, `(.*)-sarasota`, `(.*)-pensacola`, `(.*)-westfl`.
+Efecto: `/destin-activities`, `/tampa-activities` y `/fort-myers-activities` devolvían 404, y
+cualquier ruta inexistente terminada en `-tampa` servía una página rota en vez del 404 propio.
+Reapuntados a `/west-florida-activities`, que cubre esa costa con 1.630 operadores.
+
+### Comprobación de despliegue del enrutado
+
+    ningún redirect.source coincide con una página existente
+    todo redirect.destination y rewrite.destination existe como .html
+    0 bucles, 0 sources duplicados, 0 cadenas
+
+## Lo que estaba bien (no lo toques)
+
+- **Canónicas**: 11.546 páginas, 0 ausentes, 0 duplicadas, 0 relativas, 0 apuntando a un 404.
+  Las 4 de Cozumel que apuntan a otra URL lo hacen **a propósito**: existen las variantes
+  `-cancun` y `-cozumel` del mismo producto y la canónica consolida hacia una. Por eso el
+  sitemap las excluye. No es un fallo.
+- **hreflang**: 366 páginas, 0 destinos rotos, 0 idiomas duplicados, 0 sin `x-default`,
+  reciprocidad completa. Ojo: **no todo lo que está fuera de `/es/` es inglés** —
+  `xtreme-car-rental-punta-cana` es español en la raíz y su par inglés es `...-en`.
+  Una comprobación que asuma "raíz = inglés" da un falso positivo aquí.
+- **Sitemap**: `sitemap.xml` es un **índice** de 48 sitemaps hijos en `/sitemaps/`, no una
+  lista de URLs. Suman 11.538 URLs únicas para 11.546 páginas. Excluye correctamente
+  `404`, `offline`, `partners`, los índices servidos por otra ruta y las 4 canonicalizadas.
+  Quedan 80 URLs repetidas entre sitemaps de zonas solapadas (Cancún/Playa del Carmen/Tulum/
+  Isla Mujeres): Google lo tolera, es cosmético.
