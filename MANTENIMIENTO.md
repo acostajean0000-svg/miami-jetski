@@ -1018,3 +1018,17 @@ así que no hubo que tocar los generadores de tarjetas.
 conversión (el bloque multilínea `gtag('event','conversion',{`). En ellas el bloque del modal
 va **sin** la llamada a `trackBookNow`. La primera pasada solo limpió 91: mi regex no cruzaba
 el salto de línea de la variante en español. Comprobación: `PRE && '_fhp='` debe dar 0.
+
+## El enlace de referral modelo (ago 2026)
+
+    https://fareharbor.com/embeds/book/{sn}/items/{id}/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no
+
+`branding=no` se añadió a todas las superficies (12.113 estáticos, 17.770 en datos, 43.680
+apariciones en HTML/JS, las 2 plantillas y `_OP_LINK_C`). No afecta a la comisión — la
+atribución la llevan `asn`, `asn-ref` y `ref` — pero es el modelo que da FareHarbor.
+
+**Trampa al añadir un parámetro en masa:** `_OP_LINK_A='https://fareharbor.com/embeds/book/'`
+es un PREFIJO, no un enlace. Un regex de "URL de FareHarbor" lo captura y le cuelga
+`?branding=no`, y la portada genera `…/book/?branding=nowalksnyc/items/…` — rota. Excluye
+siempre las constantes `_OP_LINK_A/B/C` y `LINK_TPL`, y verifica en runtime (`brand.js`), no
+solo en el HTML.

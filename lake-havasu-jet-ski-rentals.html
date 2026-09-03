@@ -273,7 +273,7 @@ document.addEventListener('click',function(e){
 </footer>
 
 <script>
-var LINK_TPL='https://fareharbor.com/embeds/book/{sn}/items/{id}/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no';
+var LINK_TPL='https://fareharbor.com/embeds/book/{sn}/items/{id}/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no';
 var PHOTO_TPL='https://cdn.filestackcontent.com/{h}/convert?cache=true&compress=true&quality=85&format=webp&w=600&fit=max';
 function expand(o){
   if(o.link&&o.link.indexOf('http')!==0&&o.link.indexOf('/')>-1){var p=o.link.split('/');o.link=LINK_TPL.replace('{sn}',p[0]).replace('{id}',p[1]);}
