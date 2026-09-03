@@ -1110,3 +1110,28 @@ Recuento tras esto: 11.436 páginas HTML (10.916 raíz + 182 es + 88 blog + 60 l
 - Falsos positivos ya conocidos que reaparecen en cada batería: el prefijo `_OP_LINK_A` de las
   portadas, `ref=jhondoyle` en partners, "valor 0" en CTAs de portada sin precio, y rewrites
   con destino `/` (la home).
+
+## Retirada de slingshot Miami — slingshotmia.com gana la canibalización (sep 2026)
+
+Decisión de negocio: en "slingshot rental miami" y variantes gana **slingshotmia.com** (margen
+directo), no el marketplace (comisión). GSC confirmó que la posición media de slingshotmia pasó
+de ~7 a ~28 justo cuando el marketplace se expandió.
+
+Retirado del marketplace:
+- **8 páginas** borradas: las 7 de slingshot Miami/Broward + `es/miami-slingshot-rentals`.
+- **9 redirects 301** a slingshotmia (los dos slugs equivalentes van a su página homóloga:
+  `/6-seaters-slingshot-polaris-miami` → `/6-seaters-slingshot-miami`).
+- **27 registros** (sl47–sl52) fuera de operators.json, slim, top, data/ y data/cat/.
+- Slug-maps, sitemaps, chips de categoría en `miami-activities` (EN+ES) y enlaces internos.
+- Portada: título `Jet Ski, Slingshot & Boat Rentals Florida` → `Jet Ski, Boat & Water Sports
+  Rentals Florida`; "slingshots" fuera de metas y hero; los dos destacados de Miami Style
+  Rentals ahora enlazan a slingshotmia.com (dofollow, sin `nofollow sponsored`).
+
+**Lo que NO se tocó:** los 38 operadores de slingshot fuera de Miami (Galveston, West Florida,
+Seattle, NE Florida, Palm Beach, San Diego, Myrtle). La retirada es geográfica, no de categoría.
+
+**Error propio a recordar:** al borrar los `ListItem` del JSON-LD, mi patrón quitó el objeto
+`item` pero dejó el envoltorio → `{"@type":"ListItem","position":11,"item": }`, JSON inválido en
+23 páginas. Al eliminar un elemento de un `ItemList` hay que **quitar el ListItem entero,
+renumerar `position` y recalcular `numberOfItems`** (regla 19). Reparado y verificado: 0 JSON-LD
+rotos, 0 posiciones descuadradas en 11.428 páginas.
