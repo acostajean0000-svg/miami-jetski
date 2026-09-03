@@ -1005,3 +1005,16 @@ Modal v4:
   URL no cambia.
 
 Regla: **nunca reutilices un iframe cambiándole el `src`** si te importa el botón Atrás.
+
+## Modal en las landings dinámicas (312 páginas)
+
+`miami-jet-ski-rentals` y otras 242 landings abrían FareHarbor con `target="_blank"`; 69
+páginas de zona tenían el markup del modal sin su JS. Ahora las 312 llevan el paquete completo:
+`<style id="fh-modal-style">` (de `boat-rentals-florida`) + bloque `FH_BOOKING_MODAL_v2` con
+la función v4. El listener global en captura intercepta también los enlaces que el JS genera,
+así que no hubo que tocar los generadores de tarjetas.
+
+**Doble conteo evitado dos veces.** 143 de esas páginas ya tenían el handler global de
+conversión (el bloque multilínea `gtag('event','conversion',{`). En ellas el bloque del modal
+va **sin** la llamada a `trackBookNow`. La primera pasada solo limpió 91: mi regex no cruzaba
+el salto de línea de la variante en español. Comprobación: `PRE && '_fhp='` debe dar 0.

@@ -673,20 +673,7 @@ document.head.appendChild(styleEl);
 .fh-modal iframe{width:100%;height:100%;border:0;display:block;position:absolute;inset:0;background:#fff}
 @media(max-width:600px){.fh-modal{padding:0}.fh-modal-card{max-height:100vh;border-radius:0}}
 </style>
-<div class="fh-modal" id="fhModal" role="dialog" aria-modal="true" aria-labelledby="fhModalTitle" onclick="if(event.target===this)closeFhModal()">
-  <div class="fh-modal-card">
-    <div class="fh-modal-header">
-      <span class="fh-modal-title" id="fhModalTitle">Reservar Ahora</span>
-      <button class="fh-modal-close" type="button" onclick="closeFhModal()" aria-label="Cerrar reserva">✕</button>
-    </div>
-    <div class="fh-modal-body">
-      <div class="fh-modal-loading" id="fhModalLoading"><div class="fh-modal-spinner"></div><span>Cargando disponibilidad…</span></div>
-      <iframe id="fhModalIframe" title="FareHarbor Booking" loading="eager" allow="payment"></iframe>
-      <div style="padding:10px 20px;background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.08);font-size:.82rem;color:#9bb5d4;text-align:center">
-        ¿No ves disponibilidad? <a href="/" style="color:#00d4c8;text-decoration:underline">Ver operadores similares</a>
-      </div>
-    </div>
-  </div>
+
 </div>
 
 
@@ -824,5 +811,76 @@ document.head.appendChild(styleEl);
 </style>
 
 <script src="/js/zone-es.1a78b8c4.js"></script>
+
+<!-- FH_BOOKING_MODAL_v2 -->
+<style id="fh-modal-style">
+.fh-modal{position:fixed;inset:0;background:rgba(0,0,0,.7);display:none;align-items:center;justify-content:center;z-index:99999;padding:24px;box-sizing:border-box}
+.fh-modal.open{display:flex}
+.fh-modal-card{background:#fff;width:100%;max-width:1100px;height:100%;max-height:92vh;border-radius:12px;overflow:hidden;display:flex;flex-direction:column;box-shadow:0 20px 60px rgba(0,0,0,.5)}
+.fh-modal-header{display:flex;align-items:center;justify-content:space-between;padding:10px 16px;background:#0a0a0a;color:#fff;flex-shrink:0}
+.fh-modal-title{font-weight:600;font-size:.95rem;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;padding-right:12px}
+.fh-modal-close{background:none;border:none;color:#fff;font-size:1.6rem;cursor:pointer;line-height:1;padding:0 6px}
+.fh-modal-body{flex:1;position:relative;background:#fff}
+.fh-modal-loading{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;color:#555;font-size:.9rem;background:#fff;z-index:1}
+.fh-modal-spinner{width:36px;height:36px;border:3px solid #e6e6e6;border-top-color:#0a66c2;border-radius:50%;animation:fhspin 1s linear infinite}
+@keyframes fhspin{to{transform:rotate(360deg)}}
+.fh-modal iframe{width:100%;height:100%;border:0;display:block;position:absolute;inset:0;background:#fff}
+@media(max-width:600px){.fh-modal{padding:0}.fh-modal-card{max-height:100vh;border-radius:0}}
+</style>
+<div class="fh-modal" id="fhModal" role="dialog" aria-modal="true" aria-labelledby="fhModalTitle" onclick="if(event.target===this)closeFhModal()">
+  <div class="fh-modal-card">
+    <div class="fh-modal-header">
+      <span class="fh-modal-title" id="fhModalTitle">Reservar Ahora</span>
+      <button class="fh-modal-close" type="button" onclick="closeFhModal()" aria-label="Cerrar reserva">✕</button>
+    </div>
+    <div class="fh-modal-body">
+      <div class="fh-modal-loading" id="fhModalLoading"><div class="fh-modal-spinner"></div><span>Cargando disponibilidad…</span></div>
+      <iframe id="fhModalIframe" title="FareHarbor Booking" loading="eager" allow="payment"></iframe>
+      <div style="padding:10px 20px;background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.08);font-size:.82rem;color:#9bb5d4;text-align:center">
+        ¿No ves disponibilidad? <a href="/" style="color:#00d4c8;text-decoration:underline">Ver operadores similares</a>
+      </div>
+  <div id="fhUnavailable" style="display:none;padding:40px 28px;text-align:center;color:#cdd9e8"><div style="font-size:3rem;margin-bottom:12px">⏳</div><h3 style="color:#fff;font-size:1.2rem;margin-bottom:10px">La reserva está tardando en cargar</h3><p style="font-size:.95rem;line-height:1.6;margin-bottom:24px;color:#9bb5d4">Puedes abrirla directamente en una pestaña nueva — mismo operador, misma disponibilidad.</p><a href="#" target="_blank" rel="noopener" style="display:inline-block;background:linear-gradient(135deg,#00d4c8,#00eedd);color:#040d1a;padding:12px 28px;border-radius:50px;font-weight:700;text-decoration:none">Abrir la reserva en pestaña nueva →</a></div>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  function openFhModal(url,name){
+var modal=document.getElementById('fhModal');var loading=document.getElementById('fhModalLoading');var un=document.getElementById('fhUnavailable');
+document.getElementById('fhModalTitle').textContent=name||'Reservar';
+if(un)un.style.display='none';loading.style.display='flex';
+var old=document.getElementById('fhModalIframe');var iframe=document.createElement('iframe');
+iframe.id='fhModalIframe';iframe.title=old?old.title:'FareHarbor Booking';iframe.setAttribute('loading','eager');iframe.setAttribute('allow','payment');
+var done=false;function hideLoading(){if(!done){done=true;loading.style.display='none';}}
+iframe.onload=function(){hideLoading();};
+iframe.src=url;
+if(old){old.parentNode.replaceChild(iframe,old);}else{loading.parentNode.insertBefore(iframe,loading.nextSibling);}
+modal.classList.add('open');document.body.style.overflow='hidden';
+if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url});
+if(un){var fa=un.querySelector('a');if(fa){fa.href=url;fa.target='_blank';fa.rel='noopener';}}
+setTimeout(function(){if(!done){hideLoading();if(un){iframe.style.display='none';un.style.display='block';}}},12000);
+if(!window._fhHist){try{history.pushState({fhModal:1},'');window._fhHist=true;}catch(e){}}
+}
+  function showUnavailable(){
+    var i=document.getElementById('fhModalIframe');var u=document.getElementById('fhUnavailable');
+    if(i)i.style.display='none'; if(u)u.style.display='block';
+  }
+  window._fhTeardown=function(){var u=document.getElementById('fhUnavailable');if(u)u.style.display='none';var m=document.getElementById('fhModal');if(m)m.classList.remove('open');document.body.style.overflow='';var i=document.getElementById('fhModalIframe');if(i){var b=document.createElement('iframe');b.id='fhModalIframe';b.title=i.title;b.setAttribute('loading','eager');b.setAttribute('allow','payment');i.parentNode.replaceChild(b,i);}};
+window.closeFhModal=function(){if(window._fhHist){window._fhHist=false;try{history.back();return;}catch(e){}}window._fhTeardown();};
+window.addEventListener('popstate',function(){var m=document.getElementById('fhModal');if(m&&m.classList.contains('open')){window._fhHist=false;window._fhTeardown();}});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeFhModal();});
+  document.addEventListener('click',function(e){
+    if(e.defaultPrevented)return;
+    var a=e.target.closest('a[href*="fareharbor.com/embeds/book/"]');
+    if(!a)return;
+    if(e.metaKey||e.ctrlKey||e.shiftKey)return;  // honor cmd/ctrl/shift for new tab/window
+    e.preventDefault();e.stopPropagation();
+    var name=a.getAttribute('data-fh-name')||a.getAttribute('aria-label')||a.title||document.title.replace(/\s*[·|].*$/,'').replace(/\s*[–—]\s+(Boat|Jet Ski|Fishing|Water Sport|Watersports?|ATV|Aerial|Tour|Slingshot|Jet Car|Golf Cart|Bike|Scooter|Snorkel|Kayak|Yacht|Sunset|Airboat|Exotic)\b.*$/i,'').trim()||'Reservar';
+    openFhModal(a.href,name);
+  },true);
+  window.openFhModal=openFhModal;
+})();
+</script>
+<!-- /FH_BOOKING_MODAL_v2 -->
 </body>
 </html>
