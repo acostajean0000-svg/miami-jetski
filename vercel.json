@@ -144,7 +144,7 @@
     },
     {
       "source": "/private-charters-jax-cruise-st-augustine-2",
-      "destination": "/private-charter-jax-cruise-st-augustine-2",
+      "destination": "/jacksonville-activities",
       "permanent": true
     },
     {
@@ -4065,6 +4065,1806 @@
     {
       "source": "/lakemead-activities",
       "destination": "/lake-mead-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-ray-sundancer-45-breakin-rules-cabo-san-lucas",
+      "destination": "/cabo-san-lucas-activities",
+      "permanent": true
+    },
+    {
+      "source": "/2-hours-miami-private-boat-rental-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-strand-feeding-expedition-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/7-hours-of-offshore-fishing-thrills-ck-lite-canaveral-kings-sport-fishing-charters-port-ca",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/standard-open-bar-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lil-pirate-treasure-hunt-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/afternoon-family-sailing-camp-m24-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pirate-school-cruise-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-flight-northern-utah-parkcity",
+      "destination": "/park-city-activities",
+      "permanent": true
+    },
+    {
+      "source": "/diy-custom-candle-pouring-salt-lake-city-saltlakecity",
+      "destination": "/salt-lake-city-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aqua-trails-kayak-and-paddle-board-camp-capemay",
+      "destination": "/cape-may-activities",
+      "permanent": true
+    },
+    {
+      "source": "/premium-open-bar-2-hours-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-fishing-charter-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/night-snorkel-tour-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-jeep-tour-full-experience-and-atv-with-caverns-cedral-cozumel-2",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sport-fishing-charter-puerto-rico-puerto-rico",
+      "destination": "/puerto-rico-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-event-charter-rentals-gulf",
+      "destination": "/naples-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pershing-55-surface-driving-cabo-san-lucas",
+      "destination": "/cabo-san-lucas-activities",
+      "permanent": true
+    },
+    {
+      "source": "/elite-keel-regatta-san-francisco-yc-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fireworks-guaranteed-dolphin-tour-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/twister-all-inclusive-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clear-boat-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-royal-swim-in-cozumel-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-snorkeling-tour-on-a-yacht-to-the-star-sanctuary-el-cielo-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-boat-rental-w-captain-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/afternoon-sailing-experience-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-deluxe-shot-san-diego",
+      "destination": "/san-diego-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-haunted-speakeasy-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/heart-of-savannah-walking-tour-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aqua-trails-kayak-clinic-capemay",
+      "destination": "/cape-may-activities",
+      "permanent": true
+    },
+    {
+      "source": "/boat-tour-combo-deal-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/skyline-cruise-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sightseeing-cruise-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/beach-comber-vanishing-island-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/advanced-dinghy-sailing-for-teens-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atv-zipline-horse-riding-adventure-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/family-shark-fishing-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/learn-to-laser-for-adults-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adult-ticket-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-tour-on-catamaran-for-cozumel-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunseeker-super-hawk-50-in-debt-cabo-san-lucas",
+      "destination": "/cabo-san-lucas-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bucaneros-chankanaab-all-inclusive-experience-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sail-and-race-coaching-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jeep-off-road-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atv-zipline-adventure-by-awesome-fly-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/somethin-smells-good-floral-workshop-salt-lake-city-saltlakecity",
+      "destination": "/salt-lake-city-activities",
+      "permanent": true
+    },
+    {
+      "source": "/learn-to-sail-dinghies-for-adults-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/nite-sea-party-cruise-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/eco-nature-tours-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sandbar-shelling-excursion-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/extended-gulf-stream-trolling-10-hours-of-serious-fishing-canaveral-kings-sport-fishing-ch",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/glow-in-dark-i-san-diego",
+      "destination": "/san-diego-activities",
+      "permanent": true
+    },
+    {
+      "source": "/evening-sailing-experience-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/half-day-island-tour-with-mayan-experience-beach-break-cozumel-2",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/hardcore-bottom-fishing-10-hours-of-hot-action-canaveral-kings-sport-fishing-charters-port",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-bar-crawl-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-savannah-underground-show-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/5-hour-offshore-adventure-ck-lite-canaveral-kings-sport-fishing-charters-port-canaveral",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/shark-fishing-adventure-4-hours-of-thrills-canaveral-kings-sport-fishing-charters-port-can",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-pirate-cruise-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-encounter-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atv-horseback-riding-adventure-in-cozumel-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sightseeing-champagne-cruise-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/evening-sailing-camp-for-adults-m24-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/red-light-district-tour-galveston-to3231-2",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-heart-of-savannah-walking-tour-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atv-adventure-money-bar-beach-club-guided-snorkeling-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-starter-shot-san-diego",
+      "destination": "/san-diego-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ladies-night-sailing-experience-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/diving-for-the-first-time-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pirate-boat-sightseeing-cruise-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/learn-to-laser-camp-for-youth-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphin-swim-adventure-in-cozumel-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/melges-24-race-week-july-7-12-2026-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/andiamo-yacht-baia-43-cabo-san-lucas",
+      "destination": "/cabo-san-lucas-activities",
+      "permanent": true
+    },
+    {
+      "source": "/standard-open-bar-2-hour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/inshore-nearshore-fishing-charter-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunrise-balloon-ride-park-city-parkcity",
+      "destination": "/park-city-activities",
+      "permanent": true
+    },
+    {
+      "source": "/3-4-day-offshore-trip-7-hours-of-fun-canaveral-kings-sport-fishing-charters-port-canaveral",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/nearshore-fun-4-hours-of-fishing-ck-lite-canaveral-kings-sport-fishing-charters-port-canav",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tahoe-yacht-club-junior-race-team-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/monster-shark-fishing-big-trophy-sharks-canaveral-kings-sport-fishing-charters-port-canave",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cheeseburger-in-sarasota-paradise-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ultimate-offshore-trip-9-hour-full-day-adventure-canaveral-kings-sport-fishing-charters-po",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/romantic-experience-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lil-angler-fishing-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/special-guaranteed-dolphin-tour-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/half-day-offshore-excursion-5-hours-of-offshore-action-canaveral-kings-sport-fishing-chart",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-guaranteed-dolphin-tour-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/single-angler-fishing-enthusiast-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dolphins-sharks-shells-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/shared-flight-parkcity",
+      "destination": "/park-city-activities",
+      "permanent": true
+    },
+    {
+      "source": "/family-shell-hunt-dolphin-tour-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atvs-cozumel-jungle-adventure-on-4x4-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/champagne-cruise-pirate-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/guaranteed-dolphin-tour-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-cenote-expedition-cozumel-adventure-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/diving-in-two-reefs-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/pirate-adventure-cruise-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/atv-chulas-beach-club-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/isla-pasion-unique-by-nature-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/stamas-37-lovey-cabo-san-lucas",
+      "destination": "/cabo-san-lucas-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adult-private-cruise-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ft-lauderdale-executive-fxe-fresh-creek-asd-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ft-lauderdale-executive-fxe-new-bight-cat-island-tbi-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/savannah-live-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/water-ski-rental-temple-bar-marina",
+      "destination": "/lake-mead-activities",
+      "permanent": true
+    },
+    {
+      "source": "/shark-teeth-shells-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/mini-braid-appointment-newportbeach",
+      "destination": "/newport-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/crab-island-sunset-firework-private-charter-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-paddle-in-ormond-beach-pirate-bay-paddle-daytona-beach",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/harbor-tours-capecod",
+      "destination": "/cape-cod-activities",
+      "permanent": true
+    },
+    {
+      "source": "/40-golden-ticket-sea-ray-sundancer-sunset-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/vip-tickets-pirates-dinner-adventure-orlando-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/west-palm-beach-everglades-animal-encounter-vip-tour-transportation-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/women-s-circle-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/walk-to-the-waterfall-wednesdays-austin",
+      "destination": "/austin-activities",
+      "permanent": true
+    },
+    {
+      "source": "/mini-sunset-cruise-pensacola",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miracle-strip-pcb",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/island-head-inshore-fishing-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/2-hour-utv-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/2-hour-tour-of-lake-tahoe-emerald-bay-charter-with-captain-in-the-grateful-red-l",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-charter-jax-cruise-st-augustine-2",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ft-lauderdale-executive-fxe-staniel-cay-exumas-tym-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/treasure-tickets-pirates-dinner-adventure-orlando-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/snuba-hawaii",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-ray-sdx-250-rental-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kyc-40-golden-ticket-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wine-chocolate-tasting-experience-capemay",
+      "destination": "/cape-may-activities",
+      "permanent": true
+    },
+    {
+      "source": "/one-night-two-days-key-west",
+      "destination": "/keys-activities",
+      "permanent": true
+    },
+    {
+      "source": "/summer-storytime-at-the-davenport-house-brick-by-brick-by-charles-r-smith-jr-sav",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/mother-s-day-brunch-capemay",
+      "destination": "/cape-may-activities",
+      "permanent": true
+    },
+    {
+      "source": "/picnic-table-build-off-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/best-of-lake-tahoe-half-day-with-captain-on-the-grateful-red-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cape-cod-jig-n-pop-capecod",
+      "destination": "/cape-cod-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-dade-county-everglades-animal-encounter-vip-tour-transportation-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ft-lauderdale-executive-fxe-chub-cay-ccz-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bareboat-charter-bachelor-bachelorette-cruise-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/island-cat-charter-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/1-hour-utv-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/starlite-majesty-dining-yacht-daytime-cruise-with-music-clearwater",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/aqua-bikes-rental-puerto-rico",
+      "destination": "/puerto-rico-activities",
+      "permanent": true
+    },
+    {
+      "source": "/yoga-in-the-garden-with-savannah-yoga-center-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wod-tentacles-of-the-deep-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ft-lauderdale-executive-fxe-congo-town-cox-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/shack-n-up-on-the-happy-life-sunday-night-live-music-cruise-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/run-to-the-pass-pcb",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/peacock-guild-reading-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/after-dark-house-party-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sound-immersion-with-intuitive-essential-oil-technique-reiki-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/middleton-place-tour-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/spearfishing-excursion-key-west",
+      "destination": "/keys-activities",
+      "permanent": true
+    },
+    {
+      "source": "/spring-break-ocean-cruise-fort-lauderdale-boat-tour-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/20ft-bayliner-dx2000-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/psychic-palm-tarot-or-halloween-party-at-your-location-pensacola",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/1-hour-slingshot-automatic-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paddle-board-tour-austin",
+      "destination": "/austin-activities",
+      "permanent": true
+    },
+    {
+      "source": "/historic-schooner-hindu-independence-day-fireworks-sail-capecod",
+      "destination": "/cape-cod-activities",
+      "permanent": true
+    },
+    {
+      "source": "/red-snapper-may-22-jun-20-dirty-dolly-fish-company-port-canaveral",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/banana-boat-rides-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adult-story-time-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ft-lauderdale-executive-fxe-north-eleuthera-elh-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/starlite-majesty-dining-yacht-daytime-cruise-clearwater",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seaside-pcb",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/emerald-bay-on-grateful-red-2-hours-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/universal-studios-theme-park-express-fabulous-buses-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/am-guided-ebike-tour-of-the-acadia-carriage-roads-barharbor",
+      "destination": "/bar-harbor-activities",
+      "permanent": true
+    },
+    {
+      "source": "/love-libations-seattle",
+      "destination": "/seattle-activities",
+      "permanent": true
+    },
+    {
+      "source": "/july-4th-sunset-dinner-cruise-w-dj-aurelian-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/summer-sail-camp-argonauts-program-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wildlife-nature-cruise-2-5-hr-eco-tour-anne-kolb-state-park-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fireworks-pontoon-rental-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-paranormal-lock-in-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/four-nights-five-days-key-west",
+      "destination": "/keys-activities",
+      "permanent": true
+    },
+    {
+      "source": "/6-pack-charter-beach-day-anchor-swim-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fourth-of-july-fireworks-party-cruise-seattle",
+      "destination": "/seattle-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ft-lauderdale-executive-fxe-arthurs-town-cat-island-atc-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/half-day-offshore-fishing-charter-dirty-dolly-fish-company-port-canaveral",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/10-hour-slingshot-5-speed-manual-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/comedy-cruise-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bay-jetty-24-sea-hunt-captain-big-fish-blake-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/offshore-fishing-kai-fin-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bioluminescent-comb-jelly-glow-kayak-tour-centralfl",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/west-palm-beach-private-everglades-vip-tour-with-transportation-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fireworks-show-july-3rd-lake-austin-private-boat-austin",
+      "destination": "/austin-activities",
+      "permanent": true
+    },
+    {
+      "source": "/exclusive-travelers-departures-daufuskie-sc-29915-sav-ga-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/father-s-day-bourbon-and-bbq-sail-seattle",
+      "destination": "/seattle-activities",
+      "permanent": true
+    },
+    {
+      "source": "/house-1-windy-daze-outerbanks",
+      "destination": "/outer-banks-activities",
+      "permanent": true
+    },
+    {
+      "source": "/6-pack-charter-bachelor-bachelorette-cruise-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seafair-blue-angels-bbq-lunch-cruise-seattle",
+      "destination": "/seattle-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bareboat-charter-beach-day-anchor-swim-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/july-4th-harbor-fireworks-public-cruise-22-passenger-boat-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/electric-bike-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/broward-county-private-everglades-vip-tour-with-transportation-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/exodus-jax-cruise-st-augustine-3",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sail-stay-dockside-key-west",
+      "destination": "/keys-activities",
+      "permanent": true
+    },
+    {
+      "source": "/mens-7-speed-bikes-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/cocoa-beach-dolphin-boat-tour-booze-cruise-dirty-dolly-fish-company-port-canaveral",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/house-3-fire-island-outerbanks",
+      "destination": "/outer-banks-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fireworks-cruise-2026-osage-beach",
+      "destination": "/lake-of-the-ozarks-activities",
+      "permanent": true
+    },
+    {
+      "source": "/a-little-fun-in-the-sun-cruise-pensacola",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/marathon-7-mile-bridge-charter-stock-island",
+      "destination": "/keys-activities",
+      "permanent": true
+    },
+    {
+      "source": "/emerald-coast-pcb",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/conor-janda-newportri",
+      "destination": "/newport-ri-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sights-and-frights-combo-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/scooter-rental-key-west",
+      "destination": "/keys-activities",
+      "permanent": true
+    },
+    {
+      "source": "/connect-to-the-cosmos-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/6-pack-charter-harbor-cruise-sightseeing-tour-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sling-to-the-springs-seaside-adventures-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/self-guided-rental-glass-bottom-kayak-wet-rabbit-kayaks-silver-springs",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fireworks-cruise-destin-wf83",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/jetski-tour-departs-from-cow-key-marina-key-west",
+      "destination": "/keys-activities",
+      "permanent": true
+    },
+    {
+      "source": "/history-tour-drink-snack-options-seaside-adventures-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/60-foot-sunseeker-manhattan-cabo-san-lucas",
+      "destination": "/cabo-san-lucas-activities",
+      "permanent": true
+    },
+    {
+      "source": "/starlite-majesty-dining-yacht-evening-cruise-clearwater",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/20-kids-beach-cruiser-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/stars-stripes-celebration-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/4-seater-slingshot-automatic-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/16-kids-beach-cruiser-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ft-lauderdale-executive-fxe-stella-maris-long-island-sml-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/multi-day-rental-osage-beach-area-pickup-and-dropoff-eldon",
+      "destination": "/lake-of-the-ozarks-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-mermaid-transformation-experience-newportbeach",
+      "destination": "/newport-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seabreeze-custom-charter-key-west",
+      "destination": "/keys-activities",
+      "permanent": true
+    },
+    {
+      "source": "/father-s-day-bbq-dinner-cruise-seattle",
+      "destination": "/seattle-activities",
+      "permanent": true
+    },
+    {
+      "source": "/18-fishing-pontoon-boat-clearwater",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/1-hour-coastal-dolphin-sightings-tour-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/christmas-light-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/weekend-guided-tour-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/geechee-gullah-after-dark-with-chief-godfrey-khill-gullah-jack-black-featuring-t",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fourth-of-july-fireworks-dinner-cruise-seattle",
+      "destination": "/seattle-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-open-water-referral-certification-in2scuba-lahaina-hawaii",
+      "destination": "/hawaii-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunrise-adventure-raised-by-water-airboat-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/funeral-home-ghost-hunt-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/house-2-sound-adventure-outerbanks",
+      "destination": "/outer-banks-activities",
+      "permanent": true
+    },
+    {
+      "source": "/2-hour-segway-tour-clearwater",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/de-antonio-d28-sunset-sail-snorkel-3-hours-cozumel",
+      "destination": "/cozumel-activities",
+      "permanent": true
+    },
+    {
+      "source": "/july-4th-fireworks-party-cruise-with-dj-aurelian-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/flounder-expedition-24-sea-hunt-captain-big-fish-blake-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/intro-pcb",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ft-lauderdale-executive-fxe-rock-sound-eleuthera-rsd-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wod-bucket-brigade-beach-tours-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/calypso-queen-4th-of-july-evening-cruise-clearwater",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/water-sport-half-day-rental-newportbeach",
+      "destination": "/newport-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/a-celebration-of-voting-rights-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/clouds-and-penguin-s-retirement-luau-extravaganza-seattle",
+      "destination": "/seattle-activities",
+      "permanent": true
+    },
+    {
+      "source": "/water-sport-week-long-rental-newportbeach",
+      "destination": "/newport-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/mother-s-day-dinner-cruise-seattle",
+      "destination": "/seattle-activities",
+      "permanent": true
+    },
+    {
+      "source": "/supernova-celebration-cosmik-tiki-cocoa-beach",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/two-nights-three-days-key-west",
+      "destination": "/keys-activities",
+      "permanent": true
+    },
+    {
+      "source": "/adult-trike-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wild-life-adventure-in-palm-coast-pirate-bay-paddle-daytona-beach",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/walking-guided-history-tour-of-old-st-augustine-spyglass-travel-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/shell-island-pcb",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/26-low-step-thru-7-speed-bikes-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/broward-county-everglades-animal-encounter-vip-tour-transportation-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/santito-tun-tun-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tea-leaf-readings-fortune-cup-tea-party-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/blast-off-bash-cosmik-tiki-cocoa-beach",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/texas-trophy-adventure-24-sea-hunt-captain-big-fish-blake-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/all-day-skyline-and-swimming-hole-tour-austin",
+      "destination": "/austin-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-whale-dolphin-watching-tour-2-5-3-hrs-san-diego",
+      "destination": "/san-diego-activities",
+      "permanent": true
+    },
+    {
+      "source": "/summer-sail-camp-foundations-program-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/24-youth-small-adult-beach-cruiser-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-skiff-charter-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/father-s-day-fish-fry-capemay",
+      "destination": "/cape-may-activities",
+      "permanent": true
+    },
+    {
+      "source": "/horror-bus-scary-movie-edition-safety-harbor",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/walking-history-tour-of-st-augustines-historic-district-spyglass-travel-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/45-min-guided-atv-tourttttt45-min-guided-atv-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-fishing-charter-eider-barharbor",
+      "destination": "/bar-harbor-activities",
+      "permanent": true
+    },
+    {
+      "source": "/road-trip-tour-to-islamoradas-theater-of-the-sea-key-west",
+      "destination": "/keys-activities",
+      "permanent": true
+    },
+    {
+      "source": "/road-bike-rental-pcb",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/dioryacht-ultimate-luxury-yacht-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/mb-night-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/exodus-jax-cruise-st-augustine-2",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-ghosts-with-the-most-a-haunted-history-walking-tour-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/free-mermaid-story-time-newportbeach",
+      "destination": "/newport-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sound-side-house-4-outerbanks",
+      "destination": "/outer-banks-activities",
+      "permanent": true
+    },
+    {
+      "source": "/captain-jamieson-cronin-12-passengers-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/water-sport-full-day-rental-newportbeach",
+      "destination": "/newport-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/rush-3-blue-automatic-palm-beach",
+      "destination": "/palm-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/toddler-session-saltlakecity",
+      "destination": "/salt-lake-city-activities",
+      "permanent": true
+    },
+    {
+      "source": "/camping-equipment-demystified-may-2026-seattle",
+      "destination": "/seattle-activities",
+      "permanent": true
+    },
+    {
+      "source": "/planet-party-cosmik-tiki-cocoa-beach",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/26-men-s-beach-cruiser-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/everglades-airboat-wildlife-show-meet-in-the-everglades-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/beginner-scuba-dive-tour-adventure-rincon-puerto-rico",
+      "destination": "/puerto-rico-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fast-lap-pcb",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/mermaid-cove-funzone-grand-opening-newportbeach",
+      "destination": "/newport-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/waterproof-phone-bags-with-lanyard-gulf",
+      "destination": "/naples-activities",
+      "permanent": true
+    },
+    {
+      "source": "/have-fun-be-yourself-a-solo-show-newportri",
+      "destination": "/newport-ri-activities",
+      "permanent": true
+    },
+    {
+      "source": "/summer-sail-camp-argonauts-program-1-2-day-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/educational-wine-tasting-capemay",
+      "destination": "/cape-may-activities",
+      "permanent": true
+    },
+    {
+      "source": "/e-bike-rentals-daily-explorida-crystal-river",
+      "destination": "/central-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/parker-center-console-boat-rental-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/test-item-for-referee-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-charters-aboard-pride-of-maui-or-elua-hawaii",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-ancient-city-day-cruise-gone2sea-boat-rentals-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/6-pack-date-night-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ft-lauderdale-executive-fxe-great-harbour-cay-ghc-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/6-hour-12-pass-350-hp-luxury-tritoon-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/lowcountry-grubb-n-sunday-s-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/seafair-blue-angels-party-cruise-seattle",
+      "destination": "/seattle-activities",
+      "permanent": true
+    },
+    {
+      "source": "/luxury-sunset-cruise-nc-895-san-diego",
+      "destination": "/san-diego-activities",
+      "permanent": true
+    },
+    {
+      "source": "/andrews-memorial-chapel-ghost-hunt-dunedin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/exclusive-travelers-arrivals-savannah-ga-daufuskie-isl-sc-29915-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/full-wake-surfing-charter-austin",
+      "destination": "/austin-activities",
+      "permanent": true
+    },
+    {
+      "source": "/basic-day-pass-cosmik-tiki-cocoa-beach",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/outdoor-experiences-orlando-location-a-harrowing-escape-orlando",
+      "destination": "/orlando-activities",
+      "permanent": true
+    },
+    {
+      "source": "/monsta-hunt-24-sea-hunt-captain-big-fish-blake-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/bareboat-charter-harbor-cruise-sightseeing-tour-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/legends-landmarks-walking-tour-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fireworks-tour-airport-road-destin-destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-snorkeling-charters-in-st-pete-florida-tampa",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/mother-s-day-brunch-cruise-seattle",
+      "destination": "/seattle-activities",
+      "permanent": true
+    },
+    {
+      "source": "/ft-lauderdale-executive-fxe-san-andros-saq-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/1-hour-slingshot-rental-5-speed-manual-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/exodus-jax-cruise-st-augustine",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/paddleboarding-workout-sup-prone-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/21-tritoon-bennington-edition-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/private-custom-charter-special-events-newportri",
+      "destination": "/newport-ri-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sunset-dolphin-bioluminescent-comb-jelly-tour-cocoa-beach-area-sobe-surf-paddle-indian-har",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wakesurfing-chilling-charter-austin",
+      "destination": "/austin-activities",
+      "permanent": true
+    },
+    {
+      "source": "/e-bike-rental-laketahoe",
+      "destination": "/lake-tahoe-activities",
+      "permanent": true
+    },
+    {
+      "source": "/close-off-shore-excursion-24-sea-hunt-captain-big-fish-blake-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/miami-dade-county-private-everglades-vip-tour-with-transportation-fort-lauderdale",
+      "destination": "/broward-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tour-snorkel-en-playa-chileno-caborey-cabo-san-lucas",
+      "destination": "/cabo-san-lucas-activities",
+      "permanent": true
+    },
+    {
+      "source": "/schooner-hindu-summer-solstice-sail-capecod",
+      "destination": "/cape-cod-activities",
+      "permanent": true
+    },
+    {
+      "source": "/full-braids-appointment-newportbeach",
+      "destination": "/newport-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sea-ray-sundeck-290-newportbeach",
+      "destination": "/newport-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/the-intention-experience-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/port-canaveral-dolphin-boat-tour-grill-onboard-dirty-dolly-fish-company-port-canaveral",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/behind-the-waves-vip-unplugged-concert-series-aboard-happy-life-feat-mike-tramp--destin",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/fairy-house-decorating-and-tea-party-with-tinker-bell-friends-newportbeach",
+      "destination": "/newport-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/50-memory-maker-aquila-power-catamaran-sunset-sarasota",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/wrigley-island-tour-catalina",
+      "destination": "/catalina-island-activities",
+      "permanent": true
+    },
+    {
+      "source": "/premium-ticket-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/coastal-discovery-cruise-florida-boat-vacations-daytona-beach",
+      "destination": "/jacksonville-activities",
+      "permanent": true
+    },
+    {
+      "source": "/afternoon-guided-ebike-tour-of-the-acadia-carriage-roads-barharbor",
+      "destination": "/bar-harbor-activities",
+      "permanent": true
+    },
+    {
+      "source": "/breakfast-point-pcb",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/three-quarter-day-offshore-fishing-charter-dirty-dolly-fish-company-port-canaveral",
+      "destination": "/space-coast-activities",
+      "permanent": true
+    },
+    {
+      "source": "/gulf-lagoon-pcb",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/galveston-graduation-photography-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/kailua-beach-experience-kailua-beach-adventures-kailua-hawaii",
+      "destination": "/hawaii-activities",
+      "permanent": true
+    },
+    {
+      "source": "/drayton-hall-x-charleston-stroll-combo-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/26-unisex-beach-cruiser-hiltonhead",
+      "destination": "/hilton-head-activities",
+      "permanent": true
+    },
+    {
+      "source": "/starlite-infinity-dining-yacht-4th-of-july-evening-cruise-clearwater",
+      "destination": "/west-florida-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tata-sun-club-cancun",
+      "destination": "/cancun-activities",
+      "permanent": true
+    },
+    {
+      "source": "/it-s-a-monsta-shark-hunt-24-sea-hunt-captain-big-fish-blake-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/water-sport-equipment-2-hour-rental-newportbeach",
+      "destination": "/newport-beach-activities",
+      "permanent": true
+    },
+    {
+      "source": "/birdwatching-on-pleasant-bay-capecod",
+      "destination": "/cape-cod-activities",
+      "permanent": true
+    },
+    {
+      "source": "/combo-special-24-sea-hunt-captain-big-fish-blake-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/inshore-fishing-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/1-hour-guided-atv-tour-miami",
+      "destination": "/miami-activities",
+      "permanent": true
+    },
+    {
+      "source": "/captain-mike-matese-12-passengers-charleston",
+      "destination": "/charleston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/self-guided-tour-savannah",
+      "destination": "/savannah-activities",
+      "permanent": true
+    },
+    {
+      "source": "/acadia-national-park-afternoon-cruise-barharbor",
+      "destination": "/bar-harbor-activities",
+      "permanent": true
+    },
+    {
+      "source": "/sup-pups-san-diego",
+      "destination": "/san-diego-activities",
+      "permanent": true
+    },
+    {
+      "source": "/finger-labyrinth-workshop-galveston",
+      "destination": "/galveston-activities",
+      "permanent": true
+    },
+    {
+      "source": "/father-s-day-brunch-cruise-seattle",
+      "destination": "/seattle-activities",
+      "permanent": true
+    },
+    {
+      "source": "/tarot-card-readings-savannah",
+      "destination": "/savannah-activities",
       "permanent": true
     }
   ],

@@ -944,3 +944,47 @@ Nueva `openFhModal` (una sola variante para las 11.139 páginas, antes había 8)
 
 Queda el banner gris "Don't see availability? Browse similar operators" (11.205 páginas), que
 sigue enlazando a `/`. Es una fuga de conversión manual; candidato a apuntar a la misma URL.
+
+## ⚠️ OPERADORES MUERTOS EN FAREHARBOR ("Page not found" dentro del modal)
+
+FareHarbor no avisa cuando un operador se da de baja o archiva un producto. La ficha sigue
+viva en nuestro sitio, con su botón, y el cliente ve "Page not found" o un modal vacío.
+
+### Cómo comprobarlo (desde una pestaña abierta en fareharbor.com, mismo origen)
+
+- **Empresa:** `GET /embeds/book/{shortname}/items/` → 404 = empresa dada de baja.
+  (`fareharbor.com/{shortname}/` devuelve "Company not found".)
+- **Producto:** `GET /api/v1/companies/{shortname}/items/{id}/` → JSON. Campos que importan:
+  - `is_archived: true` → muerto
+  - `is_private: true` → **muerto para nosotros**: el embed de marketplace lo renderiza vacío
+    aunque exista (verificado con captura)
+  - `is_unlisted: true` solo → **vivo**, se reserva por enlace directo (verificado)
+- **NO uses el estado HTTP de `/embeds/book/.../items/{id}/`**: devuelve 200 aunque el ítem
+  no exista. Es una SPA que decide en el cliente.
+
+### Límite de peticiones
+FareHarbor bloquea con **WAF-429 tras ~3.400 peticiones rápidas**, sin `Retry-After`, durante
+varios minutos. Ritmo seguro: ~6 workers con 150 ms de pausa y retroceso exponencial al 429.
+Y **no navegues la pestaña mientras corre**: se pierde todo el estado en memoria (me pasó).
+
+### Retirar un operador toca ocho sitios (script: /tmp/retire.py, guárdalo en tools/)
+operators.json · operators-slim.json · operators-top.json · data/*.json · data/cat/*.json ·
+slug-map.js y slug-map/*.js · la página .html (mover, no borrar) · redirect 301 a su zona
+en vercel.json · sitemaps/*.xml · enlaces entrantes en tres formas (`rel-card`, lista
+"Related operators" con separador `·`, `<li>` de "Highest rated"). Tras retirar: biyección
+slug-map ↔ operators.json y cero `href` al slug retirado.
+
+Ago 2026: 23 empresas muertas de 2.030 (103 operadores), entre ellas Miami Aqua Tours (11).
+
+### Resultado del barrido completo (3 sep 2026)
+- 2.030 empresas: **23 dadas de baja** → 103 operadores
+- 10.964 productos: **118 archivados + 136 privados + 3 inexistentes** = 257
+- **Total retirados: 360 de 11.076 (3,3%)**. operators.json queda en 10.716, biyectivo con slug-map.js.
+- Cada uno tiene redirect 301 a su zona (la del **breadcrumb JSON-LD**, no el primer enlace
+  `-activities` de la página: ese suele ser el menú y mandaba 141 fichas de St. Augustine,
+  Charleston o Galveston a Miami).
+- Logs con ids, slugs y zona en `retired/_log_*.json`. HTML original en /tmp/retired (no versionado).
+- Script: `tools/retire-operators.py <ids.json> <motivo>`.
+
+**Esto hay que repetirlo periódicamente** (mensual): los operadores se dan de baja sin avisar.
+El script de comprobación corre desde una pestaña en fareharbor.com; ~20 min a ritmo seguro.
