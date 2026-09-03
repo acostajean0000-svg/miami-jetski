@@ -498,23 +498,28 @@ function setupFilters(){
 <script>
 (function(){
   function openFhModal(url,name){
-var modal=document.getElementById('fhModal');var iframe=document.getElementById('fhModalIframe');
-var loading=document.getElementById('fhModalLoading');var un=document.getElementById('fhUnavailable');
+var modal=document.getElementById('fhModal');var loading=document.getElementById('fhModalLoading');var un=document.getElementById('fhUnavailable');
 document.getElementById('fhModalTitle').textContent=name||'Reservar';
-if(un)un.style.display='none';iframe.style.display='';loading.style.display='flex';
+if(un)un.style.display='none';loading.style.display='flex';
+var old=document.getElementById('fhModalIframe');var iframe=document.createElement('iframe');
+iframe.id='fhModalIframe';iframe.title=old?old.title:'FareHarbor Booking';iframe.setAttribute('loading','eager');iframe.setAttribute('allow','payment');
+var done=false;function hideLoading(){if(!done){done=true;loading.style.display='none';}}
+iframe.onload=function(){hideLoading();};
+iframe.src=url;
+if(old){old.parentNode.replaceChild(iframe,old);}else{loading.parentNode.insertBefore(iframe,loading.nextSibling);}
 modal.classList.add('open');document.body.style.overflow='hidden';
 if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url});
-var done=false;function hideLoading(){if(!done){done=true;loading.style.display='none';}}
-iframe.onload=function(){if(iframe.getAttribute('src')===url)hideLoading();};
 if(un){var fa=un.querySelector('a');if(fa){fa.href=url;fa.target='_blank';fa.rel='noopener';}}
 setTimeout(function(){if(!done){hideLoading();if(un){iframe.style.display='none';un.style.display='block';}}},12000);
-iframe.src=url;
+if(!window._fhHist){try{history.pushState({fhModal:1},'');window._fhHist=true;}catch(e){}}
 }
   function showUnavailable(){
     var i=document.getElementById('fhModalIframe');var u=document.getElementById('fhUnavailable');
     if(i)i.style.display='none'; if(u)u.style.display='block';
   }
-  window.closeFhModal=function(){var u=document.getElementById('fhUnavailable');if(u)u.style.display='none';var i=document.getElementById('fhModalIframe');if(i)i.style.display='';var m=document.getElementById('fhModal');m.classList.remove('open');document.body.style.overflow='';var i=document.getElementById('fhModalIframe');i.src='about:blank';};
+  window._fhTeardown=function(){var u=document.getElementById('fhUnavailable');if(u)u.style.display='none';var m=document.getElementById('fhModal');if(m)m.classList.remove('open');document.body.style.overflow='';var i=document.getElementById('fhModalIframe');if(i){var b=document.createElement('iframe');b.id='fhModalIframe';b.title=i.title;b.setAttribute('loading','eager');b.setAttribute('allow','payment');i.parentNode.replaceChild(b,i);}};
+window.closeFhModal=function(){if(window._fhHist){window._fhHist=false;try{history.back();return;}catch(e){}}window._fhTeardown();};
+window.addEventListener('popstate',function(){var m=document.getElementById('fhModal');if(m&&m.classList.contains('open')){window._fhHist=false;window._fhTeardown();}});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeFhModal();});
   document.addEventListener('click',function(e){
     if(e.defaultPrevented)return;

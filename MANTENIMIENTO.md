@@ -988,3 +988,20 @@ Ago 2026: 23 empresas muertas de 2.030 (103 operadores), entre ellas Miami Aqua 
 
 **Esto hay que repetirlo periódicamente** (mensual): los operadores se dan de baja sin avisar.
 El script de comprobación corre desde una pestaña en fareharbor.com; ~20 min a ritmo seguro.
+
+## "Atrás" no retrocedía — el iframe del modal llenaba el historial
+
+Asignar `src` a un iframe **ya existente** añade una entrada al historial de sesión. El modal
+lo hacía dos veces por reserva (abrir = URL, cerrar = `about:blank`), más las navegaciones
+internas de FareHarbor. Al pulsar Atrás el navegador deshacía el iframe, no la página.
+
+Modal v4:
+- Cada apertura **crea un iframe nuevo** con `src` fijado antes de insertarlo (la carga inicial
+  de un iframe nuevo NO crea entrada). Al cerrar se reemplaza por uno vacío: al descartar el
+  iframe, sus entradas de historial desaparecen con él.
+- `history.pushState({fhModal:1})` al abrir → **Atrás cierra el modal** (comportamiento estándar).
+  El botón ✕ hace `history.back()`, y `popstate` desmonta. Sin bucles: `_fhHist` se apaga antes.
+- Verificado en jsdom: abrir +1 entrada, ✕ la consume, Atrás con modal abierto lo cierra y la
+  URL no cambia.
+
+Regla: **nunca reutilices un iframe cambiándole el `src`** si te importa el botón Atrás.
