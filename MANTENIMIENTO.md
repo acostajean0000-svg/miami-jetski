@@ -919,3 +919,28 @@ Al segundo clic FareHarbor carga en <3,5 s, el documento ya es cross-origin (ina
 Esa detección **nunca** puede ver un catálogo vacío real: FareHarbor siempre es cross-origin. Solo
 produce falsos positivos. Guarda añadida: si `contentDocument` es accesible y su `location` es
 `about:blank`, no evaluar. 11.089 páginas; las 50 restantes usan una variante sin detección.
+
+## ⚠️ MODAL v3 — determinista, sin temporizadores de "vacío"
+
+Tras desplegar la guarda anterior el usuario reportó que iba PEOR (hasta 4 clics). Al reproducirlo
+en vivo aparecieron dos cosas que el HTML no mostraba:
+
+1. **La CSP bloqueaba `analytics.google.com`, `stats.g.doubleclick.net` y `ad.doubleclick.net`**
+   (`connect-src` solo permitía `*.google-analytics.com`, el dominio antiguo). Todas las
+   conversiones reparadas en esta sesión morían en el navegador con "Refused to connect".
+   Nunca hubo error visible: la consola no la mira nadie. Añadidos a la CSP.
+2. `index.html` ya tenía escrito *"la auto-detección de iframe vacío se removió — daba falsos
+   positivos"*. Esa corrección se hizo una vez, en la portada, y nunca se propagó a las otras
+   11.138 páginas con modal. **Cuando arregles algo en la portada, búscalo en el resto.**
+
+Nueva `openFhModal` (una sola variante para las 11.139 páginas, antes había 8):
+- `iframe.src=url` directo. Sin `about:blank` previo ni `requestAnimationFrame` (que no se
+  ejecuta con la pestaña oculta y creaba la carrera de `onload`).
+- `onload` solo oculta el spinner si `src` es la URL pedida.
+- Sin detección de "catálogo vacío": FareHarbor es cross-origin, es físicamente imposible.
+- A los 12 s sin `onload`: panel "está tardando → abrir en pestaña nueva" con **la misma URL**
+  (atribución intacta). Antes mandaba a `/` con "Browse similar operators" — el cliente se
+  perdía y la comisión también.
+
+Queda el banner gris "Don't see availability? Browse similar operators" (11.205 páginas), que
+sigue enlazando a `/`. Es una fuga de conversión manual; candidato a apuntar a la misma URL.

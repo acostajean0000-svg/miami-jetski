@@ -496,18 +496,18 @@ function setupFilters(){
 <script>
 (function(){
   function openFhModal(url,name){
-    var modal=document.getElementById('fhModal');var iframe=document.getElementById('fhModalIframe');
-    var loading=document.getElementById('fhModalLoading');
-    document.getElementById('fhModalTitle').textContent=name||'Reservar';
-    loading.style.display='flex';iframe.src='about:blank';
-    modal.classList.add('open');document.body.style.overflow='hidden';
-    if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url});
-    var hidLoading=false;
-    function hideLoading(){if(!hidLoading){hidLoading=true;loading.style.display='none';}}
-    iframe.onload=function(){if(iframe.src!=='about:blank')hideLoading();};
-    setTimeout(hideLoading,4000);
-    setTimeout(function(){iframe.src=url;},80);
-  }
+var modal=document.getElementById('fhModal');var iframe=document.getElementById('fhModalIframe');
+var loading=document.getElementById('fhModalLoading');var un=document.getElementById('fhUnavailable');
+document.getElementById('fhModalTitle').textContent=name||'Reservar';
+if(un)un.style.display='none';iframe.style.display='';loading.style.display='flex';
+modal.classList.add('open');document.body.style.overflow='hidden';
+if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url});
+var done=false;function hideLoading(){if(!done){done=true;loading.style.display='none';}}
+iframe.onload=function(){if(iframe.getAttribute('src')===url)hideLoading();};
+if(un){var fa=un.querySelector('a');if(fa){fa.href=url;fa.target='_blank';fa.rel='noopener';}}
+setTimeout(function(){if(!done){hideLoading();if(un){iframe.style.display='none';un.style.display='block';}}},12000);
+iframe.src=url;
+}
   window.closeFhModal=function(){var m=document.getElementById('fhModal');m.classList.remove('open');document.body.style.overflow='';var i=document.getElementById('fhModalIframe');i.src='about:blank';};
   document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeFhModal();});
   document.addEventListener('click',function(e){
