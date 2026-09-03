@@ -1049,3 +1049,21 @@ Estructura: `name, url, description, image, sku, brand, aggregateRating, offers`
 
 Tras desplegar: pasar 3–4 fichas por la prueba de resultados enriquecidos de Google y vigilar
 en Search Console → Mejoras → "Fragmentos de producto".
+
+## El aviso de cookies salía dos veces
+
+La portada tenía DOS banners: `cookieBar` (viejo: guarda '1'/'0', no hace nada más) y
+`cookie-banner` (nuevo: alimenta Consent Mode v2 con `gtag('consent','update')`, aria, enlace a
+/privacy). Compartían la clave `cookie_consent`, así que en la primera visita salían los dos.
+
+Peor que la duplicidad: quien aceptó con la barra vieja tenía `'1'` guardado. El lector nuevo
+solo entiende `all`/`analytics`/`reject` → no reaplicaba el consentimiento **y** el banner
+tampoco volvía a preguntar. Analítica denegada para siempre en esos navegadores, en silencio.
+
+Corregido: barra vieja eliminada en ambas portadas; valores heredados migrados al leer
+(`'1'`→`all`, `'0'`→`reject`); el banner solo da por válido uno de los tres valores conocidos;
+`es/index.html` recibió el banner traducido Y el bloque de Consent Mode que solo tenía la inglesa.
+
+Pendiente de decisión: **solo las dos portadas tienen Consent Mode**. Las otras 11.544 páginas
+cargan gtag sin puerta de consentimiento. Es una inconsistencia legal (GDPR/CCPA) más que
+técnica; unificar significa poner el bloque de consent default + banner en todas.

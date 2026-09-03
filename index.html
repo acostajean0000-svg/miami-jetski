@@ -89,6 +89,7 @@ window._OP_LINK_A='https://fareharbor.com/embeds/book/';window._OP_LINK_B='/item
     // Lee consent existente
     try{
       var consent = localStorage.getItem('cookie_consent');
+if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}else if(consent==='0'){consent='reject';localStorage.setItem('cookie_consent','reject');}
       if(consent === 'all'){
         gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});
       } else if(consent === 'analytics'){
@@ -393,12 +394,12 @@ window._OP_LINK_A='https://fareharbor.com/embeds/book/';window._OP_LINK_B='/item
       .leaflet-control-attribution a{color:#00d4c8!important;}
     }
     /* COOKIE */
-    .cookie-bar{position:fixed;bottom:0;left:0;right:0;background:var(--dark2);border-top:1px solid var(--border);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:9999;transform:translateY(100%);transition:transform .4s;}
-    .cookie-bar.show{transform:translateY(0);}
+    
+    
     .cookie-bar p{font-size:.82rem;color:var(--text-muted);}
-    .cookie-btns{display:flex;gap:10px;flex-shrink:0;}
-    .cookie-accept{background:var(--teal);color:var(--dark);border:none;padding:8px 18px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;}
-    .cookie-decline{background:transparent;color:var(--text-muted);border:1px solid var(--border);padding:8px 18px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:600;cursor:pointer;}
+    
+    
+    
     /* RESPONSIVE */
     @media(max-width:1000px){
       .marketplace-body{flex-direction:column;height:auto;}
@@ -1279,13 +1280,7 @@ window._OP_LINK_A='https://fareharbor.com/embeds/book/';window._OP_LINK_B='/item
   </div>
 </footer>
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Top"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"/></svg></button>
-<div class="cookie-bar" id="cookieBar">
-  <p>🍪 We use cookies to analyze traffic. <a href="#" style="color:var(--teal);">Privacy Policy</a></p>
-  <div class="cookie-btns">
-    <button class="cookie-decline" onclick="cookieChoice(false)">Decline</button>
-    <button class="cookie-accept" onclick="cookieChoice(true)">Accept</button>
-  </div>
-</div>
+
 <script>
 // --- Escaping helpers (CWE-79: defense-in-depth for template literals) ---
 const _ESC_MAP={'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','`':'&#96;'};
@@ -2449,13 +2444,6 @@ function toggleMapView() {
   }
 }
 // ---- COOKIE ----
-function cookieChoice(accept) {
-  document.getElementById('cookieBar').classList.remove('show');
-  localStorage.setItem('cookie_consent', accept ? '1' : '0');
-}
-if(!localStorage.getItem('cookie_consent')) {
-  setTimeout(() => document.getElementById('cookieBar').classList.add('show'), 2000);
-}
 // ---- LEAFLET LAZY LOAD (with marker clustering for perf) ----
 let leafletLoaded = false;
 function loadLeafletThenMap() {
@@ -3136,7 +3124,7 @@ window.addEventListener('popstate',function(){var m=document.getElementById('fhM
   var banner = document.getElementById('cookie-banner');
   var existing;
   try { existing = localStorage.getItem('cookie_consent'); } catch(e) {}
-  if (!existing) {
+if (existing!=='all' && existing!=='analytics' && existing!=='reject') {
     setTimeout(function(){ banner.classList.add('visible'); }, 1500);
   }
 })();

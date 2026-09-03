@@ -1,6 +1,43 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
+<!-- GTM deferred past LCP + Google Consent Mode v2 (GDPR/CCPA compliant) -->
+  <script>
+    window.dataLayer=window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    // Consent Mode v2 — default DENIED until user accepts
+    gtag('consent','default',{
+      'ad_storage':'denied',
+      'ad_user_data':'denied',
+      'ad_personalization':'denied',
+      'analytics_storage':'denied',
+      'functionality_storage':'granted',
+      'security_storage':'granted',
+      'wait_for_update':500
+    });
+    // Lee consent existente
+    try{
+      var consent = localStorage.getItem('cookie_consent');
+if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}else if(consent==='0'){consent='reject';localStorage.setItem('cookie_consent','reject');}
+      if(consent === 'all'){
+        gtag('consent','update',{'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'});
+      } else if(consent === 'analytics'){
+        gtag('consent','update',{'analytics_storage':'granted'});
+      }
+    }catch(e){}
+    // Carga GA tras LCP (3s) — siempre se carga pero respeta consent
+    window.addEventListener('load',function(){
+      setTimeout(function(){
+        var s=document.createElement('script');
+        s.async=true;
+        s.src='https://www.googletagmanager.com/gtag/js?id=AW-16509204378';
+        document.head.appendChild(s);
+        gtag('js',new Date());
+        gtag('config','G-CMH3XLRFH6');
+        gtag('config','AW-16509204378');
+      },3000);
+    });
+  </script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Florida WaterSports — Actividades Acuáticas, Tours y Charters Verificados</title>
@@ -299,12 +336,12 @@
       .leaflet-control-attribution a{color:#00d4c8!important;}
     }
     /* COOKIE */
-    .cookie-bar{position:fixed;bottom:0;left:0;right:0;background:var(--dark2);border-top:1px solid var(--border);padding:14px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;z-index:9999;transform:translateY(100%);transition:transform .4s;}
-    .cookie-bar.show{transform:translateY(0);}
+    
+    
     .cookie-bar p{font-size:.82rem;color:var(--text-muted);}
-    .cookie-btns{display:flex;gap:10px;flex-shrink:0;}
-    .cookie-accept{background:var(--teal);color:var(--dark);border:none;padding:8px 18px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:700;cursor:pointer;}
-    .cookie-decline{background:transparent;color:var(--text-muted);border:1px solid var(--border);padding:8px 18px;border-radius:50px;font-family:'Montserrat',sans-serif;font-size:.78rem;font-weight:600;cursor:pointer;}
+    
+    
+    
     /* RESPONSIVE */
     @media(max-width:1000px){
       .marketplace-body{flex-direction:column;height:auto;}
@@ -1096,13 +1133,7 @@
   </div>
 </footer>
 <button class="back-top" id="backTop" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Arriba"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M240.971 130.524l194.343 194.343c9.373 9.373 9.373 24.569 0 33.941l-22.667 22.667c-9.357 9.357-24.522 9.375-33.901.04L224 227.495 69.255 381.516c-9.379 9.335-24.544 9.317-33.901-.04l-22.667-22.667c-9.373-9.373-9.373-24.569 0-33.941L207.03 130.525c9.372-9.373 24.568-9.373 33.941-.001z"/></svg></button>
-<div class="cookie-bar" id="cookieBar">
-  <p>🍪 We use cookies to analyze traffic. <a href="#" style="color:var(--teal);">Privacidad Policy</a></p>
-  <div class="cookie-btns">
-    <button class="cookie-decline" onclick="cookieChoice(false)">Decline</button>
-    <button class="cookie-accept" onclick="cookieChoice(true)">Accept</button>
-  </div>
-</div>
+
 <script>
 // --- Escaping helpers (CWE-79: defense-in-depth for template literals) ---
 const _ESC_MAP={'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;','`':'&#96;'};
@@ -2160,13 +2191,6 @@ function toggleMapaView() {
   }
 }
 // ---- COOKIE ----
-function cookieChoice(accept) {
-  document.getElementById('cookieBar').classList.remove('show');
-  localStorage.setItem('cookie_consent', accept ? '1' : '0');
-}
-if(!localStorage.getItem('cookie_consent')) {
-  setTimeout(() => document.getElementById('cookieBar').classList.add('show'), 2000);
-}
 // ---- LEAFLET LAZY LOAD (with marker clustering for perf) ----
 let leafletLoaded = false;
 function loadLeafletThenMapa() {
@@ -2794,6 +2818,59 @@ window.addEventListener('popstate',function(){var m=document.getElementById('fhM
     dataLayer.push({event:'begin_checkout',ecommerce:{items:[{item_name:name,currency:"USD"}]}});
   },true);
 })();
+</script>
+<style>
+#cookie-banner{position:fixed;bottom:0;left:0;right:0;background:rgba(8,21,37,.98);backdrop-filter:blur(12px);border-top:2px solid var(--teal,#00d4c8);padding:18px 20px;z-index:9999;box-shadow:0 -8px 32px rgba(0,0,0,.5);transform:translateY(100%);transition:transform .4s ease-out;font-family:'Open Sans',sans-serif;}
+#cookie-banner.visible{transform:translateY(0);}
+.cb-inner{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:20px;flex-wrap:wrap;}
+.cb-text{flex:1;min-width:280px;color:#c4ddf0;font-size:.86rem;line-height:1.5;}
+.cb-text strong{color:#fff;}
+.cb-text a{color:var(--teal,#00d4c8);text-decoration:underline;}
+.cb-actions{display:flex;gap:10px;flex-wrap:wrap;}
+.cb-btn{padding:10px 20px;border-radius:8px;font-family:'Montserrat',sans-serif;font-weight:600;font-size:.82rem;border:none;cursor:pointer;transition:all .2s;letter-spacing:.3px;white-space:nowrap;}
+.cb-btn-accept{background:linear-gradient(135deg,var(--teal,#00d4c8),var(--teal2,#00eedd));color:#081525;}
+.cb-btn-accept:hover{transform:translateY(-1px);box-shadow:0 4px 16px rgba(0,212,200,.4);}
+.cb-btn-reject{background:transparent;color:#9bbdd4;border:1px solid #1c3a58;}
+.cb-btn-reject:hover{border-color:#9bbdd4;color:#fff;}
+.cb-btn-analytics{background:transparent;color:#9bbdd4;border:1px solid var(--teal-dark,#009e99);}
+.cb-btn-analytics:hover{background:rgba(0,212,200,.08);color:var(--teal,#00d4c8);}
+@media(max-width:600px){.cb-actions{width:100%;}.cb-btn{flex:1;min-width:0;}}
+</style>
+<div id="cookie-banner" role="dialog" aria-labelledby="cb-title" aria-describedby="cb-desc">
+  <div class="cb-inner">
+    <div class="cb-text">
+      <strong id="cb-title">🍪 Usamos cookies</strong>
+      <div id="cb-desc">Usamos cookies para analítica y para personalizar tu experiencia. Al aceptar nos ayudas a mejorar el sitio. Consulta nuestra <a href="/privacy">Política de privacidad</a>.</div>
+    </div>
+    <div class="cb-actions">
+      <button class="cb-btn cb-btn-reject" onclick="cookieConsent('reject')" aria-label="Rechazar todas las cookies">Rechazar</button>
+      <button class="cb-btn cb-btn-analytics" onclick="cookieConsent('analytics')" aria-label="Solo cookies de analítica">Solo analítica</button>
+      <button class="cb-btn cb-btn-accept" onclick="cookieConsent('all')" aria-label="Aceptar todas las cookies">Aceptar todo</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var banner = document.getElementById('cookie-banner');
+  var existing;
+  try { existing = localStorage.getItem('cookie_consent'); } catch(e) {}
+if (existing!=='all' && existing!=='analytics' && existing!=='reject') {
+    setTimeout(function(){ banner.classList.add('visible'); }, 1500);
+  }
+})();
+function cookieConsent(choice){
+  try { localStorage.setItem('cookie_consent', choice); } catch(e) {}
+  var update = {};
+  if (choice === 'all') {
+    update = {'ad_storage':'granted','ad_user_data':'granted','ad_personalization':'granted','analytics_storage':'granted'};
+  } else if (choice === 'analytics') {
+    update = {'analytics_storage':'granted','ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied'};
+  } else {
+    update = {'ad_storage':'denied','ad_user_data':'denied','ad_personalization':'denied','analytics_storage':'denied'};
+  }
+  if (typeof gtag === 'function') gtag('consent','update',update);
+  document.getElementById('cookie-banner').classList.remove('visible');
+}
 </script>
 </body>
 </html>
