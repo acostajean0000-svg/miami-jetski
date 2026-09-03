@@ -1188,11 +1188,6 @@
       "permanent": true
     },
     {
-      "source": "/fort-lauderdale-activities",
-      "destination": "/broward-activities",
-      "permanent": true
-    },
-    {
       "source": "/operators/orlando-atv-polk-city-centralfl",
       "destination": "/orlando-atv-polk-city-centralfl",
       "permanent": true
@@ -5874,10 +5869,6 @@
       "destination": "/miami-activities"
     },
     {
-      "source": "/destin-activities",
-      "destination": "/west-florida-activities"
-    },
-    {
       "source": "/naples-activities",
       "destination": "/west-florida-activities"
     },
@@ -5890,16 +5881,8 @@
       "destination": "/central-florida-activities"
     },
     {
-      "source": "/key-west-activities",
-      "destination": "/keys-activities"
-    },
-    {
       "source": "/florida-keys-activities",
       "destination": "/keys-activities"
-    },
-    {
-      "source": "/tampa-activities",
-      "destination": "/west-florida-activities"
     },
     {
       "source": "/beach-activities-florida",

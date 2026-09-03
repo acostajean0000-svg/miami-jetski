@@ -1067,3 +1067,30 @@ Corregido: barra vieja eliminada en ambas portadas; valores heredados migrados a
 Pendiente de decisión: **solo las dos portadas tienen Consent Mode**. Las otras 11.544 páginas
 cargan gtag sin puerta de consentimiento. Es una inconsistencia legal (GDPR/CCPA) más que
 técnica; unificar significa poner el bloque de consent default + banner en todas.
+
+## SEO ago 2026 — cuatro piezas nuevas
+
+**Títulos.** 2.040 títulos >65 chars recortados por plantilla: `Nombre · Ciudad (4.8★, N reviews)`;
+sin "Book Now", sin estado. 59 quedaron duplicados al recortar → desempate por precio y reseñas;
+16 parejas casi idénticas (mismo nombre, precio y ciudad) reescritas a mano. Hoy: 0 >65, 0 dup.
+**Trampa:** recortar por longitud crea duplicados y "…" feos (`· Au`, `ack)`). Verifica siempre
+unicidad Y estética tras un recorte masivo.
+
+**FAQ "People Also Ask".** 323 páginas (106 zonas + 217 landings) llevan como PRIMERA pregunta
+"What are the best-rated activities in X?" con los 5 mejores operadores enlazados (≥4.5★ y ≥20
+reseñas, ordenados por rating y reseñas), en HTML y en FAQPage. 1.603 enlaces internos nuevos.
+25 landings sin 3 candidatos que cumplan el umbral se quedaron fuera: no se baja el listón.
+
+**Landings de localidad** (`tools-gen-localities.py`). 60 páginas `/{localidad}-activities` desde
+el campo `zl` (localidad real del operador), solo con ≥15 operadores y sin página previa.
+Tarjetas horneadas (≤48, por rating·log(reseñas)), chips de categoría, FAQ top-5, ItemList +
+BreadcrumbList + FAQPage, modal y trackBookNow. Enlazadas desde su zona ("Browse by town") y en
+`sitemaps/localities.xml`. 4 reglas de vercel.json que tapaban esos slugs (destin, tampa,
+key-west, fort-lauderdale) retiradas. Regenerar tras cambiar operators.json.
+
+**Paginación horneada** (`tools-gen-pagination.py`). 33 zonas con >60 operadores → 190 páginas
+`/{zona}/2 … /N`, 50 por página, canónica propia, `rel=prev/next`, ItemList con posiciones
+globales. La página 1 es la de zona (recibe la nav + `<link rel=next>`). `sitemaps/pagination.xml`.
+Fichero `zona.html` + directorio `zona/` conviven con cleanUrls; `trailingSlash:false` normaliza.
+
+Recuento tras esto: 11.436 páginas HTML (10.916 raíz + 182 es + 88 blog + 60 localidades + 190 paginación).
