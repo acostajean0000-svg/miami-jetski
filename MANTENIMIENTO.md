@@ -907,3 +907,15 @@ Migradas las 898 (sustitución de prefijo, mismos parámetros de convert). Verif
 Quedan 5 og:image en dominios de operadores ajenos (rippleeffectecotours, wsimg, floridawatertour,
 civitatis, luxepartyshop). Hoy cargan las 5 (verificado en navegador), pero dependen de sitios que
 no controlamos: si un operador rediseña su web, su og:image muere sin aviso. Candidatas a re-hostear.
+
+## El modal decía "catálogo vacío" al primer clic (y funcionaba al segundo)
+
+`openFhModal` pone el iframe en `about:blank`, luego asigna la URL de FareHarbor. El `onload`
+de `about:blank` se dispara cuando `src` ya es la URL real, pasa el filtro y arranca un timer de
+3,5 s que lee `iframe.contentDocument.body.innerText`. Si FareHarbor aún no cargó (primer clic,
+sin caché), lo que lee es **todavía el documento about:blank**: 0 caracteres → `showUnavailable()`.
+Al segundo clic FareHarbor carga en <3,5 s, el documento ya es cross-origin (inaccesible) y no salta.
+
+Esa detección **nunca** puede ver un catálogo vacío real: FareHarbor siempre es cross-origin. Solo
+produce falsos positivos. Guarda añadida: si `contentDocument` es accesible y su `location` es
+`about:blank`, no evaluar. 11.089 páginas; las 50 restantes usan una variante sin detección.

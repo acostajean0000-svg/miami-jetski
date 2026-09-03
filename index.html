@@ -3053,7 +3053,8 @@ document.head.appendChild(qvTooltipStyle);
     var hidLoading=false;
     function hideLoading(){if(!hidLoading){hidLoading=true;loading.style.display='none';}}
     iframe.onload=function(){
-      if(iframe.src==='about:blank'||iframe.src==='')return;
+if(iframe.src==='about:blank'||iframe.src==='')return;
+try{var _d=iframe.contentDocument;if(_d&&(!_d.location||_d.location.href==='about:blank'))return;}catch(_e){}
       hideLoading();
       // NOTA: la auto-detección de "iframe vacío" se removió — daba falsos positivos
       // por X-Frame-Options y CORS. El usuario tiene el banner gris "Browse similar

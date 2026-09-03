@@ -496,12 +496,14 @@ window.scrollToCalendar = function(e) {
     var hidLoading=false;
     function hideLoading(){if(!hidLoading){hidLoading=true;loading.style.display='none';}}
     iframe.onload=function(){
-      if(iframe.src==='about:blank'||iframe.src==='')return;
+if(iframe.src==='about:blank'||iframe.src==='')return;
+try{var _d=iframe.contentDocument;if(_d&&(!_d.location||_d.location.href==='about:blank'))return;}catch(_e){}
       hideLoading();
       // Detectar iframe vacío (operador zombie sin items): check después de render
       setTimeout(function(){
         try{
           var b=iframe.contentDocument&&iframe.contentDocument.body;
+try{if(iframe.contentDocument&&iframe.contentDocument.location&&iframe.contentDocument.location.href==='about:blank')return;}catch(_e){}
           var h=b?b.innerText.length:0;
           // Si el iframe tiene <500 chars de texto = catálogo vacío
           if(b&&h<500&&!/item|book|select|date/i.test(b.innerText)){showUnavailable();}
