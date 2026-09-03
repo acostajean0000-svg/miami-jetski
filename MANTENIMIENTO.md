@@ -1032,3 +1032,20 @@ es un PREFIJO, no un enlace. Un regex de "URL de FareHarbor" lo captura y le cue
 `?branding=no`, y la portada genera `…/book/?branding=nowalksnyc/items/…` — rota. Excluye
 siempre las constantes `_OP_LINK_A/B/C` y `LINK_TPL`, y verifica en runtime (`brand.js`), no
 solo en el HTML.
+
+## Fichas de operador: `Product` + `TouristTrip` (ago 2026)
+
+10.682 fichas pasaron de `TouristAttraction`/`LocalBusiness` a `["Product","TouristTrip"]`, el
+tipo que activa el rich result de precio + estrellas (el que usa GetYourGuide).
+
+Estructura: `name, url, description, image, sku, brand, aggregateRating, offers`.
+- `sku` = `shortname-itemid` (la clave estable).
+- `offers.url` = el enlace de reserva con atribución; `offers.price` del propio nodo o de `operators.json`.
+- `geo` y `address` NO son propiedades de `Product`: van dentro de `offers.availableAtOrFrom`
+  (`Place`), que sí es válido. `priceRange` y `areaServed` se eliminan por la misma razón.
+- Las 131 landings de categoría ya eran `Product` con `AggregateOffer`; no se tocan.
+- 916 fichas no tienen `aggregateRating` porque no tienen rating en los datos. Product sigue
+  siendo válido solo con `offers`; no se inventa rating.
+
+Tras desplegar: pasar 3–4 fichas por la prueba de resultados enriquecidos de Google y vigilar
+en Search Console → Mejoras → "Fragmentos de producto".
