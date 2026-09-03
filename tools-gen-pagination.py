@@ -27,7 +27,7 @@ def card(o, zname):
             ('<img src="%s" alt="%s" loading="lazy" width="600" height="400" onerror="this.style.display=\'none\'">' % (esc(img), esc(o['name']))) if img else '',
             esc(cat), s, esc(o['name']), ('<b>★ %s</b> (%s reviews) · ' % (o['rating'], o['reviews'])) if o.get('rating') and o.get('reviews') else '',
             esc(o.get('zl') or o.get('addr') or zname), ('From $%d' % price) if price else 'See prices',
-            esc(fh), price or '', esc(o['name']), esc(o['name']).replace("'", "\\'"), price or 0, esc(o.get('cat') or 'tour'))
+            esc(fh), price or '', esc(o['name']), esc(str(o['name']).replace('\\', '\\\\').replace("'", "\\'")), price or 0, esc(o.get('cat') or 'tour'))
 
 def nav(zpage, page, total):
     parts = []

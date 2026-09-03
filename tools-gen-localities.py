@@ -125,7 +125,7 @@ def build(loc, items):
                   esc(cat), s, esc(o['name']),
                   ('<b>★ %s</b> (%s reviews) · ' % (rating, rev)) if rating and rev else '', esc(o.get('addr') or loc),
                   ('From $%d' % price) if price else 'See prices',
-                  esc(fh), price or '', esc(o['name']), esc(o['name']).replace("'", "\\'"), price or 0, esc(o.get('cat') or 'tour')))
+                  esc(fh), price or '', esc(o['name']), esc(str(o['name']).replace('\\', '\\\\').replace("'", "\\'")), price or 0, esc(o.get('cat') or 'tour')))
     # chips de categoría -> landing de zona-categoría si existe
     chips = []
     for c, k in cats.most_common(10):

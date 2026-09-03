@@ -1094,3 +1094,19 @@ globales. La página 1 es la de zona (recibe la nav + `<link rel=next>`). `sitem
 Fichero `zona.html` + directorio `zona/` conviven con cleanUrls; `trailingSlash:false` normaliza.
 
 Recuento tras esto: 11.436 páginas HTML (10.916 raíz + 182 es + 88 blog + 60 localidades + 190 paginación).
+
+## Auditoría de cierre (sep 2026) — lo que la batería encontró tras el trabajo SEO
+
+- **Volví a cometer el fallo del apóstrofo** en los dos generadores nuevos: `esc(name).replace("'","\\'")`
+  no escapa nada porque `esc()` ya convirtió `'` en `&#x27;`; el navegador lo decodifica y el
+  `onclick` queda roto. Orden correcto: **primero escapar para JS (`\` y `'`), después para HTML.**
+  20 handlers rotos en 6 páginas nuevas; regenerado, 10.855 handlers válidos.
+- `<style id="fh-modal-style">` duplicado en 139 páginas ES (la referencia ES ya lo traía dentro
+  del bloque del modal y yo lo antepuse otra vez). Retirado el segundo.
+- Un "Similar in Space Coast" enlazaba a una ficha inexistente (operador borrado). Eliminado.
+- 360 fichas borradas respecto a HEAD, todas con redirect a su zona y sin enlaces entrantes:
+  consolidación de duplicados. El maestro `slug-map.js` quedó en 10.716 (antes 11.076), sin
+  slugs huérfanos. Es coherente, no una pérdida.
+- Falsos positivos ya conocidos que reaparecen en cada batería: el prefijo `_OP_LINK_A` de las
+  portadas, `ref=jhondoyle` en partners, "valor 0" en CTAs de portada sin precio, y rewrites
+  con destino `/` (la home).
