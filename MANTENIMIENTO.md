@@ -1198,3 +1198,19 @@ EN/ES y el botón Share acababan encima del contenido.
 Arreglado: `nowrap` en `.nav-inner` y `.nav-links`, gap y tipografía reducidos por debajo de
 1180px, y el punto de corte del hamburguesa subido de 900px a **1100px**. El `position:fixed`
 sobre el hero es intencional y no se toca.
+
+## Rating visible sobre el pliegue (oct 2026)
+
+El 4,8★ con 246 reseñas existía en el JSON-LD y en el cuerpo, pero aparecía en el **carácter 786
+del texto** — muy por debajo del pliegue en móvil, que es la mayoría del tráfico. En la primera
+pantalla el cliente veía precio, ciudad y aforo; ninguna prueba social.
+
+Añadido como primer elemento de la barra de datos en **9.761 fichas**, con el valor leído del
+propio JSON-LD de cada página (0 descuadres). Las 926 sin `ratingValue` se quedan sin él: no se
+inventa valoración.
+
+**Cuatro variantes de marcado** para la misma barra, encontradas una tras otra al verificar:
+`facts-bar` con `style="padding:0"`, `facts-bar` a secas, `facts-bar` con hijos sueltos, y
+`facts-inner` con `fact-icon`. Cada pasada parecía completa hasta volver a contar. Al tocar un
+componente a escala, **cuenta cuántas páginas deberían tenerlo y compara**, no te fíes de que la
+primera sustitución cubra todo.
