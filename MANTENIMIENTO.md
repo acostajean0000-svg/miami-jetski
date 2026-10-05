@@ -1235,3 +1235,23 @@ mover el mapa, 1 al cambiar de zona.
 **Nota de método:** el parche a `es/index.html` rompió el JS a la primera (sustituciones encadenadas
 sin comprobar). Restaurado de copia y rehecho **paso a paso con `node --check` después de cada
 sustitución**; solo se escribe el fichero si el último paso valida.
+
+## La home abre en Miami, ordenada por calidad con el agua primero (oct 2026)
+
+Antes: filtro en "All destinations" (contador 10.710) pero mapa y lista mostraban solo barcos de
+Miami **por precio ascendente** — un crucero de $16 y once barcos a $100 (precio de relleno).
+Mapa, lista y contador decían cosas distintas.
+
+Ahora: `activeZone = 'miami'` por defecto (botón Miami activo). Orden por defecto =
+`rating × log10(reseñas+1)`, y con categoría "all" las categorías de agua van primero
+(boat, jetski, yacht, sunset, watersports, snorkel, fishing, kayak, airboat, jetcar). Sin
+priorizar agua, las 12 primeras eran tours de donuts y paseos a caballo: bien valorados pero
+fuera de marca para "Jetski & Boat Rentals".
+
+Verificado ejecutando: home → Miami, 428 operadores, 12 primeras todas de agua; `?zone=hawaii`
+sigue mandando (Hawaii, 491); "All destinations" → 10.710 con el mismo orden; los órdenes por
+precio/rating/reseñas no cambian.
+
+`es/index.html` tiene identificadores corrompidos por la traducción (`activeOrdenarBy`,
+`getFiltrared`, `updateMapaMarkers`, `initMapa`, `compareLista`). Son coherentes dentro del
+fichero y funcionan; no renombrar sin probar. **Usa patrones que no dependan de esos nombres.**

@@ -890,8 +890,8 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
         <button class="cat-tab" onclick="filterCat('snorkel',this)"><span class="cat-emoji">🤿</span><span class="cat-label">Snorkel</span><span class="cat-count">(3)</span></button>
       </div>
       <div class="zone-tabs">
-        <button class="zone-tab active" data-zone="all" onclick="filterZone('all',this)">🗺️ All destinations</button>
-        <button class="zone-tab" onclick="filterZone('miami',this)">🏖️ Miami</button>
+        <button class="zone-tab" data-zone="all" onclick="filterZone('all',this)">🗺️ All destinations</button>
+        <button class="zone-tab active" onclick="filterZone('miami',this)">🏖️ Miami</button>
         <button class="zone-tab" onclick="filterZone('broward',this)">🌅 Broward</button>
         <button class="zone-tab" onclick="filterZone('keys',this)">🐠 Florida Keys</button>
         <button class="zone-tab" onclick="filterZone('gulf',this)">🌊 Gulf Coast</button>
@@ -1293,7 +1293,7 @@ let allOperators = [];
 const OP_SLUG_MAP = window._OP_SLUG_MAP || {};
 // ---- STATE ----
 let activeCat = 'all';
-let activeZone = 'all';
+let activeZone = 'miami';
 let activeSortBy = 'default';
 let activePax = 0; // 0 = any
 let priceMin = 0, priceMax = 1000;
@@ -1363,14 +1363,12 @@ function getFiltered() {
   } else if (activeSortBy === 'reviews_desc') {
     ops.sort((a,b) => (b.reviews || 0) - (a.reviews || 0));
   } else {
-    // Default sort: Miami boats first (price asc), then everything else
-    const isDefaultView = activeCat === 'all' && activeZone === 'all' && !searchQuery;
-    if (isDefaultView) {
-      const miamBoats = ops.filter(o => o.cat === 'boat' && o.zone === 'miami')
-                           .sort((a,b) => a.price - b.price);
-      const rest      = ops.filter(o => !(o.cat === 'boat' && o.zone === 'miami'));
-      ops = [...miamBoats, ...rest];
-    }
+    // Default: zona Miami por defecto; orden por calidad (rating × log reseñas).
+      // Con categoría 'all', las actividades de agua van primero (coherente con la marca).
+      const _WATER = {boat:1,jetski:1,yacht:1,sunset:1,watersports:1,snorkel:1,fishing:1,kayak:1,airboat:1,jetcar:1};
+      const _sc = o => (parseFloat(o.rating)||0) * Math.log10((parseFloat(o.reviews)||0) + 1);
+      const _waterFirst = activeCat === 'all' && !searchQuery;
+      ops.sort((a,b) => (_waterFirst ? ((_WATER[b.cat]?1:0) - (_WATER[a.cat]?1:0)) : 0) || (_sc(b) - _sc(a)));
   }
   return ops;
 }
