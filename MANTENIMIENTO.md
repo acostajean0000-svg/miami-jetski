@@ -1255,3 +1255,29 @@ precio/rating/reseñas no cambian.
 `es/index.html` tiene identificadores corrompidos por la traducción (`activeOrdenarBy`,
 `getFiltrared`, `updateMapaMarkers`, `initMapa`, `compareLista`). Son coherentes dentro del
 fichero y funcionan; no renombrar sin probar. **Usa patrones que no dependan de esos nombres.**
+
+## Navegación de la home reorganizada (oct 2026)
+
+Había **cinco sitios para elegir destino** (7 enlaces sueltos en la barra, 36 botones de zona y
+tres secciones de tarjetas: "37 Top Destinations", "Florida's Top Activity Hubs" y "Beyond
+Florida"), 73 controles antes del primer resultado y **dos secciones de FAQ**.
+
+1. **Barra:** los 7 destinos sueltos (que incluían Punta Cana con 87 y no Hawái con 491) pasan
+   a un desplegable **"Destinations ▾"** en tres columnas — Florida / Resto de EE. UU. / México y
+   Caribe, 6 por grupo — más Miami directo, Blog, Reviews y Book Now. Hover en escritorio, clic
+   en táctil, cierra al pulsar fuera. El menú móvil usa los mismos grupos (4 por grupo).
+2. **Una sola sección de destinos** (`#destinations`): los **37** destinos con ≥40 operadores
+   (justo los que promete el titular), agrupados en las mismas tres regiones con recuentos reales.
+   Retirados la rejilla `hp-zones-grid` de `hpAuthority` y la sección "Beyond Florida".
+3. **Filtros compactos:** 8 zonas visibles (All, Miami, Broward, Keys, West Florida, Orlando,
+   Hawaii, Cancún) + selector "More destinations…" con las 27 restantes; 8 categorías de agua +
+   "More categories…" con 13. Los botones ocultos **siguen existiendo** (clase `zone-extra`/
+   `cat-extra`): el selector les hace `.click()`, así toda la lógica de filtros queda intacta.
+4. **Una sola FAQ** con 13 preguntas, y el `FAQPage` JSON-LD reconstruido **idéntico** a lo
+   visible (antes declaraba 11 preguntas de las que 4 no aparecían en la página — Google exige
+   que coincidan). Reescrita honestamente "Are these prices the best available?": al reservar
+   pagas el precio del operador sin recargo; el precio de la tarjeta es orientativo. Retirada la
+   de "actividad más barata" (cifras inverificables). "¿Qué zonas de Florida cubren?" → 37 destinos.
+
+Scripts en `tools-navbuild/` (build.py, faq.py, tabs.py, extra_en/es.json). Cada paso valida
+JS con `node --check` y JSON-LD antes de escribir.
