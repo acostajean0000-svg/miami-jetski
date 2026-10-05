@@ -12,7 +12,7 @@
 <link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/savannah-walking-tours">
 <link rel="preload" href="/data/savannah-walking-tour.json" as="fetch" type="application/json" crossorigin="anonymous"><meta name="geo.region" content="US-GA"><meta name="geo.placename" content="Savannah, Georgia"><meta name="geo.position" content="32.0781;-81.0922"><meta name="ICBM" content="32.0781, -81.0922">
 <meta name="theme-color" content="#040d1a">
-<link rel="preconnect" href="https://fareharbor.com"><link rel="preconnect" href="https://cdn.filestackcontent.com"><link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossorigin>
+<link rel="preconnect" href="https://fareharbor.com"><link rel="preconnect" href="https://cdn.filestackcontent.com">
 <meta property="og:type" content="website"><meta property="og:site_name" content="FloridaWaterSports"><meta property="og:locale" content="es_US">
 <meta property="og:url" content="https://miamijetskiboatrentals.com/es/savannah-walking-tours"><meta property="og:title" content="Tours a Pie en Savannah desde $35 — Reserva Online"><meta property="og:description" content="Reserva tours a pie en Savannah desde $35. Compara 28 operadores verificados en un mapa en vivo por Savannah & Thunderbolt. Reserva online instantánea, cancelación gratis."><meta property="og:image" content="https://miamijetskiboatrentals.com/og/savannah-walking-tours.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Tours a Pie en Savannah desde $35"><meta name="twitter:description" content="Reserva tours a pie en Savannah desde $35. Compara 28 operadores verificados en un mapa en vivo por Savannah & Thunderbolt. Reserva online instantánea, cancelación gratis."><meta name="twitter:image" content="https://miamijetskiboatrentals.com/og/savannah-walking-tours.png">
@@ -276,7 +276,7 @@ function initMap(){
     document.getElementById('map').innerHTML='';
     map=L.map('map',{zoomControl:false,scrollWheelZoom:false}).setView([32.0781,-81.0922], 12);
     map.on('focus',function(){map.scrollWheelZoom.enable();});
-    baseLayer=L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap © CARTO',maxZoom:18,subdomains:'abcd'}).addTo(map);
+    baseLayer=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{attribution:'&copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',maxZoom:16}).addTo(map);
     cluster=L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:36,spiderfyOnMaxZoom:true});
     map.addLayer(cluster);
     drawMarkers(filtered());

@@ -144,7 +144,7 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
     .logo{display:flex;align-items:center;gap:10px;font-family:'Montserrat',sans-serif;font-weight:800;font-size:1.1rem;}
     .logo-icon{font-size:1.5rem;}
     .logo span{color:var(--teal);}
-    .nav-links{display:flex;align-items:center;gap:28px;}
+    .nav-links{display:flex;align-items:center;gap:28px;}/* FIX nav: evitar que la barra se parta en dos filas (900-1300px) */.nav-inner{flex-wrap:nowrap;gap:14px}.nav-links{flex-wrap:nowrap;white-space:nowrap}.logo{white-space:nowrap;flex:0 0 auto}.lang-switch{flex:0 0 auto}@media(max-width:1180px){.nav-links{gap:16px}.nav-links a{font-size:.74rem;letter-spacing:.2px}}@media(max-width:1100px){.nav-links{display:none}.hamburger{display:block}}
     .nav-links a{font-family:'Montserrat',sans-serif;font-size:.82rem;font-weight:600;color:var(--text-muted);transition:color .2s;letter-spacing:.5px;text-transform:uppercase;}
     .nav-links a:hover{color:var(--teal);}
     .nav-cta{background:linear-gradient(135deg,var(--teal),var(--teal2));color:var(--dark)!important;padding:10px 22px;border-radius:50px;font-weight:700!important;}
@@ -777,8 +777,8 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
 <link rel="prefetch" href="/vendor/leaflet/leaflet.markercluster.js">
 <link rel="preload" href="/operators-top.json" as="fetch" type="application/json" crossorigin="anonymous">
 <link rel="prefetch" href="/operators-slim.json" as="fetch" type="application/json" crossorigin="anonymous">
-  <link rel="preconnect" href="https://a.basemaps.cartocdn.com">
-  <link rel="preconnect" href="https://b.basemaps.cartocdn.com">
+  <link rel="preconnect" href="https://server.arcgisonline.com">
+  
 </head>
 <body>
 <!-- SKIP NAV (accessibility) -->
@@ -2080,10 +2080,7 @@ function initMap() {
   // Place zoom control out of the way on mobile (bottom-right), top-left on desktop
   L.control.zoom({ position: isMobile ? 'bottomright' : 'topleft' }).addTo(mapInstance);
   // CartoDB Voyager - light, crisp, mobile-friendly. {r} = retina @2x for HDPI.
-  L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-    attribution:'&copy; OpenStreetMap &copy; CARTO',
-    subdomains:'abcd', maxZoom:19, crossOrigin:true
-  }).addTo(mapInstance);
+  L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{attribution:'&copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors', maxZoom:16, crossOrigin:true}).addTo(mapInstance);
   // Cluster group (graceful fallback if plugin failed to load)
   if (typeof L.markerClusterGroup === 'function') {
     window.mapClusterGroup = L.markerClusterGroup({

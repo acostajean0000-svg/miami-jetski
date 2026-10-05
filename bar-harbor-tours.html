@@ -10,7 +10,7 @@
 <link rel="preload" href="/data/barharbor-tour.json" as="fetch" type="application/json" crossorigin="anonymous"><link rel="alternate" hreflang="en" href="https://miamijetskiboatrentals.com/bar-harbor-tours"><link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/bar-harbor-tours"><link rel="alternate" hreflang="x-default" href="https://miamijetskiboatrentals.com/bar-harbor-tours">
 <meta name="geo.region" content="US-ME"><meta name="geo.placename" content="Bar Harbor, Maine"><meta name="geo.position" content="44.3871;-68.2354"><meta name="ICBM" content="44.3871, -68.2354">
 <meta name="theme-color" content="#040d1a">
-<link rel="preconnect" href="https://fareharbor.com"><link rel="preconnect" href="https://cdn.filestackcontent.com"><link rel="preconnect" href="https://a.basemaps.cartocdn.com" crossorigin>
+<link rel="preconnect" href="https://fareharbor.com"><link rel="preconnect" href="https://cdn.filestackcontent.com">
 <meta property="og:type" content="website"><meta property="og:site_name" content="FloridaWaterSports"><meta property="og:locale" content="en_US">
 <meta property="og:url" content="https://miamijetskiboatrentals.com/bar-harbor-tours"><meta property="og:title" content="Bar Harbor Tours from $50 — Book Online"><meta property="og:description" content="Book Bar Harbor tours from $50. Compare 85 verified operators on a live map across Bar Harbor & Mount Desert. Instant online booking, free cancellation."><meta property="og:image" content="https://miamijetskiboatrentals.com/og/bar-harbor-tours.png">
 <meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Bar Harbor Tours from $50"><meta name="twitter:description" content="Book Bar Harbor tours from $50. Compare 85 verified operators on a live map across Bar Harbor & Mount Desert. Instant online booking, free cancellation."><meta name="twitter:image" content="https://miamijetskiboatrentals.com/og/bar-harbor-tours.png">
@@ -274,7 +274,7 @@ function initMap(){
     document.getElementById('map').innerHTML='';
     map=L.map('map',{zoomControl:false,scrollWheelZoom:false}).setView([44.3871,-68.2354], 12);
     map.on('focus',function(){map.scrollWheelZoom.enable();});
-    baseLayer=L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'© OpenStreetMap © CARTO',maxZoom:18,subdomains:'abcd'}).addTo(map);
+    baseLayer=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{attribution:'&copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',maxZoom:16}).addTo(map);
     cluster=L.markerClusterGroup({showCoverageOnHover:false,maxClusterRadius:36,spiderfyOnMaxZoom:true});
     map.addLayer(cluster);
     drawMarkers(filtered());

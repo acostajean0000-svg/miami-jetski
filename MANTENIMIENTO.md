@@ -1171,3 +1171,30 @@ el resto del catálogo se hace visible sin repositionar la marca.
 **Bug preexistente encontrado de paso:** el botón `gulf` no estaba en `SUBZONE_MATCH` ni era un
 `zone`, así que devolvía cero. Definido como `naples + westfl` (1.838 operadores). `gainesville`
 tenía 1 solo operador: botón retirado (la home ya ocultaba sola los chips vacíos).
+
+## El mapa dejó de funcionar: CARTO ahora exige API key (oct 2026)
+
+Las teselas `{s}.basemaps.cartocdn.com/rastertiles/voyager/` siguen devolviendo 200 pero con la
+marca de agua **"API KEY REQUIRED carto.com/basemaps/apikey"** estampada encima. No hay error en
+consola ni fallo de red: el mapa simplemente se ve inservible. Afectaba a **353 archivos**.
+
+Sustituido por **Esri Dark Gray Canvas** (sin clave, ya permitido en la CSP porque el satélite
+usa el mismo host):
+
+    https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}
+
+**⚠️ El orden de coordenadas es distinto:** CARTO usa `{z}/{x}/{y}`, Esri usa **`{z}/{y}/{x}`**.
+Invertirlo no da error — muestra teselas del lugar equivocado. Verificado: 619 capas Esri, 0 con
+el orden incorrecto. `subdomains` se elimina (Esri no los usa) y `maxZoom` baja a 16, que es el
+máximo de Dark Gray Canvas. Atribución actualizada a Esri/HERE/Garmin/OSM.
+
+## La cabecera se partía en dos filas entre 900 y 1300px
+
+`.nav-links` solo se ocultaba por debajo de 900px, pero los 10 enlaces (Miami, Cancún, Punta
+Cana, Puerto Rico, Cabo, Cozumel, San Diego, Blog, Reviews, Book Now) con `gap:28px` en
+mayúsculas no caben hasta ~1300px. Entre medias la barra envolvía a dos filas y el selector
+EN/ES y el botón Share acababan encima del contenido.
+
+Arreglado: `nowrap` en `.nav-inner` y `.nav-links`, gap y tipografía reducidos por debajo de
+1180px, y el punto de corte del hamburguesa subido de 900px a **1100px**. El `position:fixed`
+sobre el hero es intencional y no se toca.

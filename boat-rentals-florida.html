@@ -246,8 +246,8 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Home", "item": "https://miamijetskiboatrentals.com/"}, {"@type": "ListItem", "position": 2, "name": "Florida Boat Rentals", "item": "https://miamijetskiboatrentals.com/boat-rentals-florida"}]}</script>
 <link rel="prefetch" href="/vendor/leaflet/leaflet.js">
 <link rel="prefetch" href="/vendor/leaflet/leaflet.markercluster.js">
-  <link rel="preconnect" href="https://a.basemaps.cartocdn.com">
-  <link rel="preconnect" href="https://b.basemaps.cartocdn.com">
+  <link rel="preconnect" href="https://server.arcgisonline.com">
+  
 <script>function trackBookNow(n,p,c){if(window.dataLayer)window.dataLayer.push({event:'book_now_click',operator_name:n,operator_price:p,operator_category:c});if(window.gtag)gtag('event','conversion',{send_to:'AW-16509204378/Od7PCNePlKAcEJrvmcA9',value:parseFloat(p)||0,currency:'USD'});}</script></head>
 <body>
 <nav class="nav">
@@ -1987,7 +1987,7 @@ function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(
     var el=document.getElementById('cat-map');
     if(!el)return;
     mapInstance=L.map('cat-map',{center:[25.77,-80.19],zoom:7,zoomControl:true,scrollWheelZoom:true});
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png',{attribution:'&copy; OpenStreetMap &copy; CARTO',subdomains:'abcd',maxZoom:19}).addTo(mapInstance);
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Canvas/World_Dark_Gray_Base/MapServer/tile/{z}/{y}/{x}',{attribution:'&copy; Esri, HERE, Garmin, &copy; OpenStreetMap contributors',maxZoom:16}).addTo(mapInstance);
     // Build markers from cards
     var cards=document.querySelectorAll('.op-card');
     var bounds=[];
