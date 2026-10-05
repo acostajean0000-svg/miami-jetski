@@ -1150,3 +1150,24 @@ perderlo. Banner nuevo en 11.330 páginas, con dos salidas:
 
 Verificado en ejecución: `fhOpenNewTab.href === iframe.src`, con `ref`/`asn-ref`/`branding`
 correctos, en fichas, landings y páginas ES.
+
+## La home escondía el 60% del catálogo y mentía en los recuentos (oct 2026)
+
+**Recuentos erróneos** en ambas portadas, horneados en momentos distintos y nunca resincronizados:
+Cancún decía **7** operadores (reales 418), West Florida **299** (reales **1.576**), Florida Keys
+**1.448** (reales 450), Orlando 499 (177), Palm Beach 479 (109). Corregidos los 8 `loc-card` y las
+17 tarjetas de destino en EN, y los 10 de ES, leyendo cada `data/{zona}.json`.
+
+**Filtro de zonas solo-Florida.** Los 22 botones del mapa eran de Florida + Punta Cana, mientras
+14 destinos fuera de Florida superan los 200 operadores (San Diego 494, Hawái 491, Hilton Head
+478, Charleston 468, Puerto Rico 466, Lake Tahoe 434, Cancún 418, Savannah 415, Austin 382,
+Seattle 312, Cape Cod 305, Cabo 300, Galveston 280, Catalina 244). Añadidos los 14 (verificado:
+los 14 códigos devuelven operadores en `operators-slim.json`), más una sección "Beyond Florida"
+con sus tarjetas. "All Florida" → "All destinations".
+
+**Decisión de marca:** se mantiene Florida en `<title>` y H1 (donde ya hay posiciones ganadas);
+el resto del catálogo se hace visible sin repositionar la marca.
+
+**Bug preexistente encontrado de paso:** el botón `gulf` no estaba en `SUBZONE_MATCH` ni era un
+`zone`, así que devolvía cero. Definido como `naples + westfl` (1.838 operadores). `gainesville`
+tenía 1 solo operador: botón retirado (la home ya ocultaba sola los chips vacíos).

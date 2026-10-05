@@ -890,7 +890,7 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
         <button class="cat-tab" onclick="filterCat('snorkel',this)"><span class="cat-emoji">🤿</span><span class="cat-label">Snorkel</span><span class="cat-count">(3)</span></button>
       </div>
       <div class="zone-tabs">
-        <button class="zone-tab active" data-zone="all" onclick="filterZone('all',this)">🗺️ All Florida</button>
+        <button class="zone-tab active" data-zone="all" onclick="filterZone('all',this)">🗺️ All destinations</button>
         <button class="zone-tab" onclick="filterZone('miami',this)">🏖️ Miami</button>
         <button class="zone-tab" onclick="filterZone('broward',this)">🌅 Broward</button>
         <button class="zone-tab" onclick="filterZone('keys',this)">🐠 Florida Keys</button>
@@ -910,9 +910,9 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
         <button class="zone-tab" onclick="filterZone('ftmyers',this)">🌴 Fort Myers</button>
         <button class="zone-tab" onclick="filterZone('crystalriver',this)">🐟 Crystal River</button>
         <button class="zone-tab" onclick="filterZone('daytona',this)">🏁 Daytona</button>
-        <button class="zone-tab" onclick="filterZone('gainesville',this)">🎓 Gainesville</button>
+        
         <button class="zone-tab" onclick="filterZone('florida',this)">🌞 All FL</button>
-      </div>
+      <button class="zone-tab zone-beyond" onclick="filterZone('sandiego',this)">🏄 San Diego</button><button class="zone-tab zone-beyond" onclick="filterZone('hawaii',this)">🌺 Hawaii</button><button class="zone-tab zone-beyond" onclick="filterZone('hiltonhead',this)">🏌️ Hilton Head</button><button class="zone-tab zone-beyond" onclick="filterZone('charleston',this)">🏛️ Charleston</button><button class="zone-tab zone-beyond" onclick="filterZone('puertorico',this)">🇵🇷 Puerto Rico</button><button class="zone-tab zone-beyond" onclick="filterZone('laketahoe',this)">🏔️ Lake Tahoe</button><button class="zone-tab zone-beyond" onclick="filterZone('cancun',this)">🇲🇽 Cancún</button><button class="zone-tab zone-beyond" onclick="filterZone('savannah',this)">🌳 Savannah</button><button class="zone-tab zone-beyond" onclick="filterZone('austin',this)">🛶 Austin</button><button class="zone-tab zone-beyond" onclick="filterZone('seattle',this)">🌲 Seattle</button><button class="zone-tab zone-beyond" onclick="filterZone('capecod',this)">🦞 Cape Cod</button><button class="zone-tab zone-beyond" onclick="filterZone('cabo',this)">🌵 Cabo San Lucas</button><button class="zone-tab zone-beyond" onclick="filterZone('galveston',this)">⚓ Galveston</button><button class="zone-tab zone-beyond" onclick="filterZone('catalina',this)">🏝️ Catalina</button></div>
       <button class="nearme-btn" id="nearMeBtn" onclick="toggleNearMe()">📍 Near Me</button>
       <div class="price-filter">
         <span class="price-filter-label">💰 Price</span>
@@ -1010,30 +1010,30 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
   
   <h3>Top Destinations</h3>
   <div class="hp-zones-grid">
-    <a href="/miami-activities" class="hp-zone-card"><div class="hp-zone-name">🏖️ Miami</div><div class="hp-zone-meta">450+ operators</div></a>
-    <a href="/keys-activities" class="hp-zone-card"><div class="hp-zone-name">🐠 Florida Keys</div><div class="hp-zone-meta">460+ operators</div></a>
-    <a href="/cancun-activities" class="hp-zone-card"><div class="hp-zone-name">🇲🇽 Cancún</div><div class="hp-zone-meta">419+ operators</div></a>
-    <a href="/cabo-san-lucas-activities" class="hp-zone-card"><div class="hp-zone-name">🌵 Cabo San Lucas</div><div class="hp-zone-meta">307+ operators</div></a>
-    <a href="/punta-cana-activities" class="hp-zone-card"><div class="hp-zone-name">🇩🇴 Punta Cana</div><div class="hp-zone-meta">88+ operators</div></a>
-    <a href="/hawaii-activities" class="hp-zone-card"><div class="hp-zone-name">🌺 Hawaii</div><div class="hp-zone-meta">495+ operators</div></a>
-    <a href="/san-diego-activities" class="hp-zone-card"><div class="hp-zone-name">🏄 San Diego</div><div class="hp-zone-meta">500+ operators</div></a>
-    <a href="/charleston-activities" class="hp-zone-card"><div class="hp-zone-name">🏛️ Charleston</div><div class="hp-zone-meta">492+ operators</div></a>
-    <a href="/puerto-rico-activities" class="hp-zone-card"><div class="hp-zone-name">🇵🇷 Puerto Rico</div><div class="hp-zone-meta">469+ operators</div></a>
-    <a href="/austin-activities" class="hp-zone-card"><div class="hp-zone-name">🛶 Austin</div><div class="hp-zone-meta">388+ operators</div></a>
-    <a href="/myrtle-beach-activities" class="hp-zone-card"><div class="hp-zone-name">🏖️ Myrtle Beach</div><div class="hp-zone-meta">100+ operators</div></a>
+    <a href="/miami-activities" class="hp-zone-card"><div class="hp-zone-name">🏖️ Miami</div><div class="hp-zone-meta">428+ operators</div></a>
+    <a href="/keys-activities" class="hp-zone-card"><div class="hp-zone-name">🐠 Florida Keys</div><div class="hp-zone-meta">450+ operators</div></a>
+    <a href="/cancun-activities" class="hp-zone-card"><div class="hp-zone-name">🇲🇽 Cancún</div><div class="hp-zone-meta">418+ operators</div></a>
+    <a href="/cabo-san-lucas-activities" class="hp-zone-card"><div class="hp-zone-name">🌵 Cabo San Lucas</div><div class="hp-zone-meta">300+ operators</div></a>
+    <a href="/punta-cana-activities" class="hp-zone-card"><div class="hp-zone-name">🇩🇴 Punta Cana</div><div class="hp-zone-meta">87+ operators</div></a>
+    <a href="/hawaii-activities" class="hp-zone-card"><div class="hp-zone-name">🌺 Hawaii</div><div class="hp-zone-meta">491+ operators</div></a>
+    <a href="/san-diego-activities" class="hp-zone-card"><div class="hp-zone-name">🏄 San Diego</div><div class="hp-zone-meta">494+ operators</div></a>
+    <a href="/charleston-activities" class="hp-zone-card"><div class="hp-zone-name">🏛️ Charleston</div><div class="hp-zone-meta">468+ operators</div></a>
+    <a href="/puerto-rico-activities" class="hp-zone-card"><div class="hp-zone-name">🇵🇷 Puerto Rico</div><div class="hp-zone-meta">466+ operators</div></a>
+    <a href="/austin-activities" class="hp-zone-card"><div class="hp-zone-name">🛶 Austin</div><div class="hp-zone-meta">382+ operators</div></a>
+    <a href="/myrtle-beach-activities" class="hp-zone-card"><div class="hp-zone-name">🏖️ Myrtle Beach</div><div class="hp-zone-meta">102+ operators</div></a>
     <a href="/lake-havasu-activities" class="hp-zone-card"><div class="hp-zone-name">🚤 Lake Havasu</div><div class="hp-zone-meta">35+ operators</div></a>
-    <a href="/lake-mead-activities" class="hp-zone-card"><div class="hp-zone-name">⛵ Lake Mead</div><div class="hp-zone-meta">27+ operators</div></a>
+    <a href="/lake-mead-activities" class="hp-zone-card"><div class="hp-zone-name">⛵ Lake Mead</div><div class="hp-zone-meta">26+ operators</div></a>
     <a href="/nassau-activities" class="hp-zone-card"><div class="hp-zone-name">🏝️ Nassau</div><div class="hp-zone-meta">Bahamas</div></a>
-    <a href="/lake-of-the-ozarks-activities" class="hp-zone-card"><div class="hp-zone-name">🚤 Lake of the Ozarks</div><div class="hp-zone-meta">28+ operators</div></a>
-    <a href="/lake-tahoe-activities" class="hp-zone-card"><div class="hp-zone-name">🏔️ Lake Tahoe</div><div class="hp-zone-meta">452+ operators</div></a>
-    <a href="/savannah-activities" class="hp-zone-card"><div class="hp-zone-name">🌳 Savannah</div><div class="hp-zone-meta">436+ operators</div></a>
-    <a href="/hilton-head-activities" class="hp-zone-card"><div class="hp-zone-name">🏌️ Hilton Head</div><div class="hp-zone-meta">499+ operators</div></a>
+    <a href="/lake-of-the-ozarks-activities" class="hp-zone-card"><div class="hp-zone-name">🚤 Lake of the Ozarks</div><div class="hp-zone-meta">7+ operators</div></a>
+    <a href="/lake-tahoe-activities" class="hp-zone-card"><div class="hp-zone-name">🏔️ Lake Tahoe</div><div class="hp-zone-meta">434+ operators</div></a>
+    <a href="/savannah-activities" class="hp-zone-card"><div class="hp-zone-name">🌳 Savannah</div><div class="hp-zone-meta">415+ operators</div></a>
+    <a href="/hilton-head-activities" class="hp-zone-card"><div class="hp-zone-name">🏌️ Hilton Head</div><div class="hp-zone-meta">478+ operators</div></a>
   </div>
   
   <h2>Why Book Through Miami Jet Ski & Boat Rentals</h2>
   <p class="center">We're not a tour operator — we're a discovery and booking marketplace. We aggregate every verified water sports operator in each destination so you can compare prices, ratings, and availability in one place. Every booking is processed through FareHarbor's secure platform with the same protections you get booking directly with the operator.</p>
   
-  <h2>Frequently Asked Questions</h2>
+  <section style="margin:40px 0"><h2>Beyond Florida — 14 more destinations</h2><p style="color:#8baabf;max-width:760px">Same verified operators and instant FareHarbor booking across the US, Mexico and the Caribbean.</p><div class="loc-grid"><a href="/san-diego-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🏄</span><span class="loc-card-count">494 ops</span></div><div class="loc-card-name">San Diego</div><div class="loc-card-cta">Browse Activities →</div></a><a href="/hawaii-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🌺</span><span class="loc-card-count">491 ops</span></div><div class="loc-card-name">Hawaii</div><div class="loc-card-cta">Browse Activities →</div></a><a href="/hilton-head-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🏌️</span><span class="loc-card-count">478 ops</span></div><div class="loc-card-name">Hilton Head</div><div class="loc-card-cta">Browse Activities →</div></a><a href="/charleston-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🏛️</span><span class="loc-card-count">468 ops</span></div><div class="loc-card-name">Charleston</div><div class="loc-card-cta">Browse Activities →</div></a><a href="/puerto-rico-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🇵🇷</span><span class="loc-card-count">466 ops</span></div><div class="loc-card-name">Puerto Rico</div><div class="loc-card-cta">Browse Activities →</div></a><a href="/lake-tahoe-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🏔️</span><span class="loc-card-count">434 ops</span></div><div class="loc-card-name">Lake Tahoe</div><div class="loc-card-cta">Browse Activities →</div></a><a href="/cancun-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🇲🇽</span><span class="loc-card-count">418 ops</span></div><div class="loc-card-name">Cancún</div><div class="loc-card-cta">Browse Activities →</div></a><a href="/savannah-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🌳</span><span class="loc-card-count">415 ops</span></div><div class="loc-card-name">Savannah</div><div class="loc-card-cta">Browse Activities →</div></a><a href="/austin-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🛶</span><span class="loc-card-count">382 ops</span></div><div class="loc-card-name">Austin</div><div class="loc-card-cta">Browse Activities →</div></a><a href="/seattle-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🌲</span><span class="loc-card-count">312 ops</span></div><div class="loc-card-name">Seattle</div><div class="loc-card-cta">Browse Activities →</div></a><a href="/cape-cod-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🦞</span><span class="loc-card-count">305 ops</span></div><div class="loc-card-name">Cape Cod</div><div class="loc-card-cta">Browse Activities →</div></a><a href="/cabo-san-lucas-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🌵</span><span class="loc-card-count">300 ops</span></div><div class="loc-card-name">Cabo San Lucas</div><div class="loc-card-cta">Browse Activities →</div></a><a href="/galveston-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">⚓</span><span class="loc-card-count">280 ops</span></div><div class="loc-card-name">Galveston</div><div class="loc-card-cta">Browse Activities →</div></a><a href="/catalina-island-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🏝️</span><span class="loc-card-count">244 ops</span></div><div class="loc-card-name">Catalina</div><div class="loc-card-cta">Browse Activities →</div></a></div></section><h2>Frequently Asked Questions</h2>
   <div class="hp-faq-list">
     <details class="hp-faq-item"><summary class="hp-faq-q">How does Miami Jet Ski & Boat Rentals work?</summary><div class="hp-faq-a">We aggregate 11,000+ verified water sports and tour operators across 37 top destinations. Browse by location and category, compare prices and ratings, and book instantly through our partner FareHarbor's secure platform. We don't add fees — you pay the operator's listed price.</div></details>
     <details class="hp-faq-item"><summary class="hp-faq-q">Are these prices the best available?</summary><div class="hp-faq-a">Yes — our marketplace shows the operator's direct booking price with no markup. Many operators also offer last-minute deals and group discounts that are visible in their booking widget. We don't add hidden fees.</div></details>
@@ -1063,72 +1063,72 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
     <p class="section-sub">Click any destination to see all operators with real-time availability and instant booking.</p>
     <div class="loc-grid">
       <a href="/miami-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🌊</span><span class="loc-card-count">450 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🌊</span><span class="loc-card-count">428 ops</span></div>
         <div class="loc-card-name">Miami</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
       <a href="/broward-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">⛵</span><span class="loc-card-count">473 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">⛵</span><span class="loc-card-count">303 ops</span></div>
         <div class="loc-card-name">Fort Lauderdale</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
       <a href="/keys-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🗝️</span><span class="loc-card-count">1448 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🗝️</span><span class="loc-card-count">450 ops</span></div>
         <div class="loc-card-name">Florida Keys</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
       <a href="/west-florida-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🌴</span><span class="loc-card-count">299 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🌴</span><span class="loc-card-count">1576 ops</span></div>
         <div class="loc-card-name">West Florida</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
       <a href="/naples-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🐚</span><span class="loc-card-count">199 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🐚</span><span class="loc-card-count">262 ops</span></div>
         <div class="loc-card-name">Gulf Coast</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
       <a href="/orlando-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🎡</span><span class="loc-card-count">499 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🎡</span><span class="loc-card-count">177 ops</span></div>
         <div class="loc-card-name">Orlando Area</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
       <a href="/jacksonville-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🌊</span><span class="loc-card-count">138 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🌊</span><span class="loc-card-count">345 ops</span></div>
         <div class="loc-card-name">Jacksonville</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
       <a href="/palm-beach-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🌴</span><span class="loc-card-count">479 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🌴</span><span class="loc-card-count">109 ops</span></div>
         <div class="loc-card-name">Palm Beach</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
       <a href="/cancun-activities" class="loc-card" style="border-color:rgba(0,212,200,.25);">
-        <div class="loc-card-top"><span class="loc-card-emoji">🇲🇽</span><span class="loc-card-count">7 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🇲🇽</span><span class="loc-card-count">418 ops</span></div>
         <div class="loc-card-name">Cancún</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
       <a href="/punta-cana-activities" class="loc-card" style="border-color:rgba(0,212,200,.25);">
-        <div class="loc-card-top"><span class="loc-card-emoji">🇩🇴</span><span class="loc-card-count">6 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🇩🇴</span><span class="loc-card-count">87 ops</span></div>
         <div class="loc-card-name">Punta Cana</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
       <a href="/puerto-rico-activities" class="loc-card" style="border-color:rgba(0,212,200,.25);">
-        <div class="loc-card-top"><span class="loc-card-emoji">🇵🇷</span><span class="loc-card-count">469 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🇵🇷</span><span class="loc-card-count">466 ops</span></div>
         <div class="loc-card-name">Puerto Rico</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
       <a href="/cabo-san-lucas-activities" class="loc-card" style="border-color:rgba(0,212,200,.25);">
-        <div class="loc-card-top"><span class="loc-card-emoji">🇲🇽</span><span class="loc-card-count">307 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🇲🇽</span><span class="loc-card-count">300 ops</span></div>
         <div class="loc-card-name">Cabo San Lucas</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
       <a href="/cozumel-activities" class="loc-card" style="border-color:rgba(0,212,200,.25);">
-        <div class="loc-card-top"><span class="loc-card-emoji">🇲🇽</span><span class="loc-card-count">151 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🇲🇽</span><span class="loc-card-count">127 ops</span></div>
         <div class="loc-card-name">Cozumel</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
       <a href="/san-diego-activities" class="loc-card" style="border-color:rgba(0,212,200,.25);">
-        <div class="loc-card-top"><span class="loc-card-emoji">🇺🇸</span><span class="loc-card-count">500 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🇺🇸</span><span class="loc-card-count">494 ops</span></div>
         <div class="loc-card-name">San Diego</div>
         <div class="loc-card-cta">Browse Activities →</div>
       </a>
@@ -1920,6 +1920,7 @@ const SUBCAT_MATCH = {
   scooter: o => o.cat==='bikerental'  && /scooter|moke|vespa|\b\d{2,3}cc\b/i.test(o.name),
 };
 const SUBZONE_MATCH = {
+    gulf:         o => o.zone === 'naples' || o.zone === 'westfl',
   tampa:        o => /tampa/i.test(o.zl || ''),
   destin:       o => /destin/i.test(o.zl || ''),
   naples:       o => /naples/i.test(o.zl || ''),

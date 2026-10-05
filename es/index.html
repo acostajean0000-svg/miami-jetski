@@ -849,7 +849,7 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
         <button class="cat-tab" onclick="filterCat('snorkel',this)"><span class="cat-emoji">🤿</span><span class="cat-label">Snorkel</span><span class="cat-count">(3)</span></button>
       </div>
       <div class="zone-tabs">
-        <button class="zone-tab active" data-zone="all" onclick="filterZone('all',this)">🗺️ Toda Florida</button>
+        <button class="zone-tab active" data-zone="all" onclick="filterZone('all',this)">🗺️ Todos los destinos</button>
         <button class="zone-tab" onclick="filterZone('miami',this)">🏖️ Miami</button>
         <button class="zone-tab" onclick="filterZone('broward',this)">🌅 Broward</button>
         <button class="zone-tab" onclick="filterZone('keys',this)">🐠 Florida Keys</button>
@@ -869,9 +869,9 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
         <button class="zone-tab" onclick="filterZone('ftmyers',this)">🌴 Fort Myers</button>
         <button class="zone-tab" onclick="filterZone('crystalriver',this)">🐟 Crystal River</button>
         <button class="zone-tab" onclick="filterZone('daytona',this)">🏁 Daytona</button>
-        <button class="zone-tab" onclick="filterZone('gainesville',this)">🎓 Gainesville</button>
+        
         <button class="zone-tab" onclick="filterZone('florida',this)">🌞 Toda FL</button>
-      </div>
+      <button class="zone-tab zone-beyond" onclick="filterZone('sandiego',this)">🏄 San Diego</button><button class="zone-tab zone-beyond" onclick="filterZone('hawaii',this)">🌺 Hawái</button><button class="zone-tab zone-beyond" onclick="filterZone('hiltonhead',this)">🏌️ Hilton Head</button><button class="zone-tab zone-beyond" onclick="filterZone('charleston',this)">🏛️ Charleston</button><button class="zone-tab zone-beyond" onclick="filterZone('puertorico',this)">🇵🇷 Puerto Rico</button><button class="zone-tab zone-beyond" onclick="filterZone('laketahoe',this)">🏔️ Lake Tahoe</button><button class="zone-tab zone-beyond" onclick="filterZone('cancun',this)">🇲🇽 Cancún</button><button class="zone-tab zone-beyond" onclick="filterZone('savannah',this)">🌳 Savannah</button><button class="zone-tab zone-beyond" onclick="filterZone('austin',this)">🛶 Austin</button><button class="zone-tab zone-beyond" onclick="filterZone('seattle',this)">🌲 Seattle</button><button class="zone-tab zone-beyond" onclick="filterZone('capecod',this)">🦞 Cape Cod</button><button class="zone-tab zone-beyond" onclick="filterZone('cabo',this)">🌵 Cabo San Lucas</button><button class="zone-tab zone-beyond" onclick="filterZone('galveston',this)">⚓ Galveston</button><button class="zone-tab zone-beyond" onclick="filterZone('catalina',this)">🏝️ Catalina</button></div>
       <button class="nearme-btn" id="nearMeBtn" onclick="toggleNearMe()">📍 Cerca de mí</button>
       <div class="price-filter">
         <span class="price-filter-label">💰 Price</span>
@@ -939,52 +939,52 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
     <p class="section-sub">Pulsa cualquier destino para ver todos los operadores con disponibilidad en tiempo real y reserva instantánea.</p>
     <div class="loc-grid">
       <a href="/es/miami-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🌊</span><span class="loc-card-count">450 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🌊</span><span class="loc-card-count">428 ops</span></div>
         <div class="loc-card-name">Miami</div>
         <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/es/broward-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">⛵</span><span class="loc-card-count">473 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">⛵</span><span class="loc-card-count">303 ops</span></div>
         <div class="loc-card-name">Fort Lauderdale</div>
         <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/es/keys-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🗝️</span><span class="loc-card-count">1448 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🗝️</span><span class="loc-card-count">450 ops</span></div>
         <div class="loc-card-name">Florida Keys</div>
         <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/es/west-florida-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🌴</span><span class="loc-card-count">299 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🌴</span><span class="loc-card-count">1576 ops</span></div>
         <div class="loc-card-name">West Florida</div>
         <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/es/naples-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🐚</span><span class="loc-card-count">199 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🐚</span><span class="loc-card-count">262 ops</span></div>
         <div class="loc-card-name">Gulf Coast</div>
         <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/es/orlando-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🎡</span><span class="loc-card-count">499 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🎡</span><span class="loc-card-count">177 ops</span></div>
         <div class="loc-card-name">Orlando Area</div>
         <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/es/jacksonville-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🌊</span><span class="loc-card-count">138 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🌊</span><span class="loc-card-count">345 ops</span></div>
         <div class="loc-card-name">Jacksonville</div>
         <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/es/palm-beach-activities" class="loc-card">
-        <div class="loc-card-top"><span class="loc-card-emoji">🌴</span><span class="loc-card-count">479 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🌴</span><span class="loc-card-count">109 ops</span></div>
         <div class="loc-card-name">Palm Beach</div>
         <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/es/cancun-activities" class="loc-card" style="border-color:rgba(0,212,200,.25);">
-        <div class="loc-card-top"><span class="loc-card-emoji">🇲🇽</span><span class="loc-card-count">7 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🇲🇽</span><span class="loc-card-count">418 ops</span></div>
         <div class="loc-card-name">Cancún</div>
         <div class="loc-card-cta">Ver Actividades →</div>
       </a>
       <a href="/es/punta-cana-activities" class="loc-card" style="border-color:rgba(0,212,200,.25);">
-        <div class="loc-card-top"><span class="loc-card-emoji">🇩🇴</span><span class="loc-card-count">6 ops</span></div>
+        <div class="loc-card-top"><span class="loc-card-emoji">🇩🇴</span><span class="loc-card-count">87 ops</span></div>
         <div class="loc-card-name">Punta Cana</div>
         <div class="loc-card-cta">Ver Actividades →</div>
       </a>
@@ -1026,7 +1026,7 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
 <section class="faq-section" id="faq">
   <div class="container text-center">
     <div class="section-tag">FAQ</div>
-    <h2 class="section-title">Frequently Asked <span class="teal">Questions</span></h2>
+    <section style="margin:40px 0"><h2>Más allá de Florida — 14 destinos más</h2><p style="color:#8baabf;max-width:760px">Los mismos operadores verificados y reserva instantánea por FareHarbor en EE. UU., México y el Caribe.</p><div class="loc-grid"><a href="/es/san-diego-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🏄</span><span class="loc-card-count">494 ops</span></div><div class="loc-card-name">San Diego</div><div class="loc-card-cta">Ver actividades →</div></a><a href="/es/hawaii-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🌺</span><span class="loc-card-count">491 ops</span></div><div class="loc-card-name">Hawái</div><div class="loc-card-cta">Ver actividades →</div></a><a href="/es/hilton-head-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🏌️</span><span class="loc-card-count">478 ops</span></div><div class="loc-card-name">Hilton Head</div><div class="loc-card-cta">Ver actividades →</div></a><a href="/es/charleston-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🏛️</span><span class="loc-card-count">468 ops</span></div><div class="loc-card-name">Charleston</div><div class="loc-card-cta">Ver actividades →</div></a><a href="/es/puerto-rico-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🇵🇷</span><span class="loc-card-count">466 ops</span></div><div class="loc-card-name">Puerto Rico</div><div class="loc-card-cta">Ver actividades →</div></a><a href="/es/lake-tahoe-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🏔️</span><span class="loc-card-count">434 ops</span></div><div class="loc-card-name">Lake Tahoe</div><div class="loc-card-cta">Ver actividades →</div></a><a href="/es/cancun-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🇲🇽</span><span class="loc-card-count">418 ops</span></div><div class="loc-card-name">Cancún</div><div class="loc-card-cta">Ver actividades →</div></a><a href="/es/savannah-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🌳</span><span class="loc-card-count">415 ops</span></div><div class="loc-card-name">Savannah</div><div class="loc-card-cta">Ver actividades →</div></a><a href="/es/austin-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🛶</span><span class="loc-card-count">382 ops</span></div><div class="loc-card-name">Austin</div><div class="loc-card-cta">Ver actividades →</div></a><a href="/es/seattle-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🌲</span><span class="loc-card-count">312 ops</span></div><div class="loc-card-name">Seattle</div><div class="loc-card-cta">Ver actividades →</div></a><a href="/es/cape-cod-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🦞</span><span class="loc-card-count">305 ops</span></div><div class="loc-card-name">Cape Cod</div><div class="loc-card-cta">Ver actividades →</div></a><a href="/es/cabo-san-lucas-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🌵</span><span class="loc-card-count">300 ops</span></div><div class="loc-card-name">Cabo San Lucas</div><div class="loc-card-cta">Ver actividades →</div></a><a href="/es/galveston-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">⚓</span><span class="loc-card-count">280 ops</span></div><div class="loc-card-name">Galveston</div><div class="loc-card-cta">Ver actividades →</div></a><a href="/es/catalina-island-activities" class="loc-card"><div class="loc-card-top"><span class="loc-card-emoji">🏝️</span><span class="loc-card-count">244 ops</span></div><div class="loc-card-name">Catalina</div><div class="loc-card-cta">Ver actividades →</div></a></div></section><h2 class="section-title">Frequently Asked <span class="teal">Questions</span></h2>
     <div class="faq-list">
       <div class="faq-item" onclick="toggleFaq(this)">
         <div class="faq-q">¿Cómo reservo una moto acuática o un barco?<span class="faq-icon">+</span></div>
@@ -1760,6 +1760,7 @@ const SUBCAT_MATCH = {
   scooter: o => o.cat==='bikerental'  && /scooter|moke|vespa|\b\d{2,3}cc\b/i.test(o.name),
 };
 const SUBZONE_MATCH = {
+    gulf:         o => o.zone === 'naples' || o.zone === 'westfl',
   tampa:        o => /tampa/i.test(o.zl || ''),
   destin:       o => /destin/i.test(o.zl || ''),
   naples:       o => /naples/i.test(o.zl || ''),
