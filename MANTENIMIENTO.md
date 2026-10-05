@@ -1135,3 +1135,18 @@ Seattle, NE Florida, Palm Beach, San Diego, Myrtle). La retirada es geográfica,
 23 páginas. Al eliminar un elemento de un `ItemList` hay que **quitar el ListItem entero,
 renumerar `position` y recalcular `numberOfItems`** (regla 19). Reparado y verificado: 0 JSON-LD
 rotos, 0 posiciones descuadradas en 11.428 páginas.
+
+## El banner del modal mandaba a la portada (oct 2026)
+
+"Don't see availability? **Browse similar operators**" enlazaba a `href="/"` en 9.943 páginas
+(1.387 ya apuntaban a su zona). Aparece justo cuando el cliente duda: mandarlo a la portada es
+perderlo. Banner nuevo en 11.330 páginas, con dos salidas:
+
+- **"More in {Zona}"** → la zona real, sacada del `BreadcrumbList` (posición 2) de cada ficha.
+  Sin autoenlaces (292 retirados) y respetando el idioma (74 páginas `/es` iban a la zona EN).
+- **"Open booking in new tab ↗"** → `openFhModal` le fija la MISMA URL del iframe, con
+  atribución intacta. Resuelve el caso real más común: el iframe tarda y el cliente cree que
+  no hay disponibilidad.
+
+Verificado en ejecución: `fhOpenNewTab.href === iframe.src`, con `ref`/`asn-ref`/`branding`
+correctos, en fichas, landings y páginas ES.
