@@ -1515,7 +1515,8 @@ function filterCat(cat, btn) {
   pushDL('filter_category', {category: cat});
 }
 function filterZone(zone, btn) {
-  activeZone = zone;
+  _userMovedMap = false;
+      activeZone = zone;
   if(nearMeActive){ nearMeActive=false; userLat=userLng=null; const nb=document.getElementById('nearMeBtn'); if(nb){nb.classList.remove('active');nb.innerHTML='📍 Near Me';} }
   document.querySelectorAll('.zone-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -2060,6 +2061,11 @@ function makePhotoIcon(photoUrl, emoji, color) {
     + '</div>';
   return L.divIcon({html, className:'op-marker-photo', iconSize:[44,44], iconAnchor:[22,22], popupAnchor:[0,-22]});
 }
+
+// ---- Respetar el encuadre del usuario: si mueve/zoomea el mapa a mano,
+// los cambios de categoría NO lo reencuadran (sí los cambios de zona). ----
+var _userMovedMap = false, _progMove = 0;
+function _mapProg(fn){ _progMove++; try{ fn(); }catch(e){} setTimeout(function(){ _progMove=Math.max(0,_progMove-1); }, 600); }
 function initMap() {
   if (mapInstance) return; // prevent double-init
   const isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
@@ -2076,6 +2082,8 @@ function initMap() {
     worldCopyJump: false,
     preferCanvas: false
   });
+  mapInstance.on('dragend zoomend', function(){ if(_progMove===0) _userMovedMap = true; });
+  mapInstance.on('movestart', function(e){ if(e && e.hard) _userMovedMap = true; });
   window.jetskiMap = mapInstance;
   // Place zoom control out of the way on mobile (bottom-right), top-left on desktop
   L.control.zoom({ position: isMobile ? 'bottomright' : 'topleft' }).addTo(mapInstance);
@@ -2244,7 +2252,7 @@ function updateMapMarkers(visibleOps) {
     if(mk.setZIndexOffset) mk.setZIndexOffset(1000);
   }catch(e){}})();
   // Fit bounds solo si no hay un marker seleccionado
-  if (!selectedMarkerId) {
+  if (!selectedMarkerId && !_userMovedMap) {
     const focusOps = isDefaultView
       ? visibleOps.filter(o => miamiBoatIds.has(o.id))
       : visibleOps;
@@ -2252,14 +2260,14 @@ function updateMapMarkers(visibleOps) {
       if (isDefaultView) {
         // Default view: Miami metro (matches initial L.map center+zoom)
         const _isMob = window.matchMedia && window.matchMedia('(max-width:768px)').matches;
-        try { mapInstance.setView([25.79, -80.20], _isMob ? 10 : 11); } catch(e) {}
+        _mapProg(function(){ mapInstance.setView([25.79, -80.20], _isMob ? 10 : 11); });
       } else if (activeZone === 'all' || activeZone === 'florida') {
         // Vista "All Florida": fijar a bbox de Florida — ignorar Hawaii/Cancun/Punta Cana
         // (sino el fitBounds promedia Hawaii+FL+Caribe y centra sobre el Pacífico)
-        try { mapInstance.fitBounds([[24.4,-87.6],[31.0,-79.8]], {padding:[20,20], maxZoom:8}); } catch(e) {}
+        _mapProg(function(){ mapInstance.fitBounds([[24.4,-87.6],[31.0,-79.8]], {padding:[20,20], maxZoom:8}); });
       } else {
         const latlngs = focusOps.map(op => [op.lat, op.lng]);
-        try { mapInstance.fitBounds(latlngs, {padding:[40,40], maxZoom:12}); } catch(e) {}
+        _mapProg(function(){ mapInstance.fitBounds(latlngs, {padding:[40,40], maxZoom:12}); });
       }
     }
   }

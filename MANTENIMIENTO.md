@@ -1214,3 +1214,24 @@ inventa valoración.
 `facts-inner` con `fact-icon`. Cada pasada parecía completa hasta volver a contar. Al tocar un
 componente a escala, **cuenta cuántas páginas deberían tenerlo y compara**, no te fíes de que la
 primera sustitución cubra todo.
+
+## El mapa perdía tu encuadre al cambiar de categoría (oct 2026)
+
+`updateMapMarkers()` reencuadraba el mapa en **cada** cambio de filtro. Con la zona en "all", el
+usuario hacía zoom a Miami, pulsaba "Snorkel" y el mapa saltaba al bbox de Florida entero
+(`fitBounds([[24.4,-87.6],[31.0,-79.8]])`). Inutilizaba el mapa como herramienta de exploración.
+
+Arreglado distinguiendo quién movió el mapa:
+- `_userMovedMap` se activa en `dragend`/`zoomend` **solo si el movimiento no fue nuestro**
+  (contador `_progMove`, que `_mapProg()` incrementa alrededor de cada `setView`/`fitBounds`
+  propio y decrementa a los 600 ms).
+- Con la bandera activa, `updateMapMarkers` no reencuadra → **cambiar de categoría respeta la vista**.
+- `filterZone()` pone la bandera a `false`: **cambiar de zona sí reencuadra**, que es lo esperado
+  cuando el usuario pide ir a otro sitio.
+
+Verificado con un Leaflet simulado que registra cada reencuadre: 0 al cambiar de categoría tras
+mover el mapa, 1 al cambiar de zona.
+
+**Nota de método:** el parche a `es/index.html` rompió el JS a la primera (sustituciones encadenadas
+sin comprobar). Restaurado de copia y rehecho **paso a paso con `node --check` después de cada
+sustitución**; solo se escribe el fichero si el último paso valida.

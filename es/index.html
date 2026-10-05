@@ -1366,7 +1366,8 @@ function filterCat(cat, btn) {
   pushDL('filter_category', {category: cat});
 }
 function filterZone(zone, btn) {
-  activeZone = zone;
+  _userMovedMap = false;
+      activeZone = zone;
   if(nearMeActive){ nearMeActive=false; userLat=userLng=null; const nb=document.getElementById('nearMeBtn'); if(nb){nb.classList.remove('active');nb.innerHTML='📍 Cerca de mí';} }
   document.querySelectorAll('.zone-tab').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
@@ -1881,6 +1882,8 @@ function makeIcon(color, label) {
   </svg>`;
   return L.divIcon({html:svg, className:'', iconSize:[28,36], iconAnchor:[14,36], popupAnchor:[0,-38]});
 }
+var _userMovedMap = false, _progMove = 0;
+function _mapProg(fn){ _progMove++; try{ fn(); }catch(e){} setTimeout(function(){ _progMove = _progMove>0?_progMove-1:0; }, 600); }
 function initMapa() {
   if (mapInstance) return; // prevent double-init
   const isMobile = window.matchMedia && window.matchMedia('(max-width: 768px)').matches;
@@ -1897,6 +1900,7 @@ function initMapa() {
     worldCopyJump: false,
     preferCanvas: false
   });
+  mapInstance.on('dragend zoomend', function(){ if(_progMove===0) _userMovedMap = true; });
   window.jetskiMapa = mapInstance;
   // Place zoom control out of the way on mobile (bottom-right), top-left on desktop
   L.control.zoom({ position: isMobile ? 'bottomright' : 'topleft' }).addTo(mapInstance);
@@ -2014,17 +2018,17 @@ function updateMapaMarkers(visibleOps) {
     }
   });
   // Fit bounds solo si no hay un marker seleccionado
-  if (!selectedMarkerId) {
+  if (!selectedMarkerId && !_userMovedMap) {
     const focusOps = isDefaultView
       ? visibleOps.filter(o => miamiBoatIds.has(o.id))
       : visibleOps;
     if(focusOps.length > 0) {
       if (isDefaultView) {
         // Default view: show all of Florida (SW: Key West, NE: NW Florida)
-        try { mapInstance.fitBounds([[24.4,-87.6],[31.0,-79.8]], {padding:[20,20], maxZoom:8}); } catch(e) {}
+        _mapProg(function(){ mapInstance.fitBounds([[24.4,-87.6],[31.0,-79.8]], {padding:[20,20], maxZoom:8}); });
       } else {
         const latlngs = focusOps.map(op => [op.lat, op.lng]);
-        try { mapInstance.fitBounds(latlngs, {padding:[40,40], maxZoom:12}); } catch(e) {}
+        _mapProg(function(){ mapInstance.fitBounds(latlngs, {padding:[40,40], maxZoom:12}); });
       }
     }
   }
