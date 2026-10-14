@@ -1281,3 +1281,9 @@ Florida"), 73 controles antes del primer resultado y **dos secciones de FAQ**.
 
 Scripts en `tools-navbuild/` (build.py, faq.py, tabs.py, extra_en/es.json). Cada paso valida
 JS con `node --check` y JSON-LD antes de escribir.
+
+## Home: solo actividades de Miami por defecto (14 oct 2026)
+- 17 productos de Key West (day trips / "from Key West") estaban etiquetados `zone: miami`; movidos a `keywest` en operators*.json, data/miami*.json → data/keywest*.json, data/cat/snorkel.json y slug-map/miami.js → slug-map/keywest.js. Miami = 411, Florida Keys = 467. Backups en /tmp/bk_kw (sesión).
+- Contadores de categorías (`updateCatCounts`, EN/ES) ahora cuentan dentro de la zona activa y se recalculan en `filterZone`. Una pestaña activa nunca se oculta aunque su conteo sea 0.
+- Chips de categoría del mapa (SPRINT 14, solo EN): `applyMapCatFilter` usaba todos los operadores del país → el mapa saltaba a otras zonas. Ahora usa `zoneOpsLocal()` (respeta `activeZone`); conteos vía `window._mpChipCounts()`.
+- Pendiente (no tocado): fichas de esos 17 productos aún con breadcrumb/"Similar in Miami"; páginas de paginación de Miami/Keys (rerun `tools-gen-pagination.py`).
