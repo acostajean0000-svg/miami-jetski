@@ -2658,14 +2658,16 @@ document.head.appendChild(qvTooltipStyle);
       <div class="fh-modal-loading" id="fhModalLoading"><div class="fh-modal-spinner"></div><span>Cargando disponibilidad…</span></div>
       <iframe id="fhModalIframe" title="Reserva de FareHarbor" loading="eager" allow="payment"></iframe>
     </div>
+    <div class="fh-modal-foot" style="padding:10px 20px;background:#0a0a0a;border-top:1px solid rgba(255,255,255,.08);font-size:.85rem;color:#cdd9e8;text-align:center;flex-shrink:0">¿No ves disponibilidad? <a id="fhOpenNewTab" href="#" target="_blank" rel="noopener" style="color:#00d4c8;text-decoration:underline">Abrir la reserva en otra pestaña ↗</a></div>
   </div>
 </div>
 <script>
 (function(){
   function openFhModal(url,name){
+if((('ontouchstart' in window)||navigator.maxTouchPoints>0)&&Math.max(document.documentElement.clientWidth,window.innerWidth||0)<1100){if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url,booking_mode:'fullpage'});var _fu=url;if(!/[?&]back=/.test(_fu))_fu+=(_fu.indexOf('?')<0?'?':'&')+'back='+encodeURIComponent(location.href);setTimeout(function(){location.href=_fu;},150);return;}
 var modal=document.getElementById('fhModal');var loading=document.getElementById('fhModalLoading');var un=document.getElementById('fhUnavailable');
 document.getElementById('fhModalTitle').textContent=name||'Reservar';
-if(un)un.style.display='none';loading.style.display='flex';
+if(un)un.style.display='none';loading.style.display='flex';var _h0=loading.querySelector('.fh-slow');if(_h0)_h0.remove();var _nt=document.getElementById('fhOpenNewTab');if(_nt)_nt.href=url;
 var old=document.getElementById('fhModalIframe');var iframe=document.createElement('iframe');
 iframe.id='fhModalIframe';iframe.title=old?old.title:'FareHarbor Booking';iframe.setAttribute('loading','eager');iframe.setAttribute('allow','payment');
 var done=false;function hideLoading(){if(!done){done=true;loading.style.display='none';}}
@@ -2675,7 +2677,7 @@ if(old){old.parentNode.replaceChild(iframe,old);}else{loading.parentNode.insertB
 modal.classList.add('open');document.body.style.overflow='hidden';
 if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url});
 if(un){var fa=un.querySelector('a');if(fa){fa.href=url;fa.target='_blank';fa.rel='noopener';}}
-setTimeout(function(){if(!done){hideLoading();if(un){iframe.style.display='none';un.style.display='block';}}},12000);
+setTimeout(function(){if(!done){var h=loading.querySelector('.fh-slow');if(!h){h=document.createElement('a');h.className='fh-slow';h.target='_blank';h.rel='noopener';h.style.cssText='color:#0a66c2;font-weight:700;text-decoration:underline;font-size:.95rem';loading.appendChild(h);}h.href=url;h.textContent='Sigue cargando… abrir la reserva en otra pestaña ↗';}},5000);
 if(!window._fhHist){try{history.pushState({fhModal:1},'');window._fhHist=true;}catch(e){}}
 }
   window._fhTeardown=function(){var u=document.getElementById('fhUnavailable');if(u)u.style.display='none';var m=document.getElementById('fhModal');if(m)m.classList.remove('open');document.body.style.overflow='';var i=document.getElementById('fhModalIframe');if(i){var b=document.createElement('iframe');b.id='fhModalIframe';b.title=i.title;b.setAttribute('loading','eager');b.setAttribute('allow','payment');i.parentNode.replaceChild(b,i);}};
