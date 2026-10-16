@@ -127,28 +127,34 @@
 </div>
 <script>
 (function(){
+  function _fhLoad(url){var s=window._fhSt,cur=document.getElementById('fhModalIframe'),loading=document.getElementById('fhModalLoading');
+if(s&&s.url===url&&s.iframe===cur)return s;
+var iframe=document.createElement('iframe');iframe.id='fhModalIframe';iframe.title=cur?cur.title:'FareHarbor Booking';iframe.setAttribute('loading','eager');iframe.setAttribute('allow','payment');
+s={url:url,iframe:iframe,loaded:false,open:false};window._fhSt=s;
+iframe.onload=function(){s.loaded=true;if(s.open)loading.style.display='none';};
+iframe.src=url;
+if(cur){cur.parentNode.replaceChild(iframe,cur);}else{loading.parentNode.insertBefore(iframe,loading.nextSibling);}
+return s;}
+  var _pwT=null,_pwN=0;
+  document.addEventListener('pointerover',function(e){if(e.pointerType!=='mouse'||_pwN>=6)return;var a=e.target.closest&&e.target.closest('a[href*="fareharbor.com/embeds/book/"]');if(!a)return;var m=document.getElementById('fhModal');if(!m||m.classList.contains('open'))return;var u=a.href;if(window._fhSt&&window._fhSt.url===u)return;clearTimeout(_pwT);_pwT=setTimeout(function(){if(m.classList.contains('open'))return;_pwN++;_fhLoad(u);},200);},true);
+  document.addEventListener('pointerout',function(e){var a=e.target.closest&&e.target.closest('a[href*="fareharbor.com/embeds/book/"]');if(a&&!a.contains(e.relatedTarget))clearTimeout(_pwT);},true);
   function openFhModal(url,name){
-if((('ontouchstart' in window)||navigator.maxTouchPoints>0)&&Math.max(document.documentElement.clientWidth,window.innerWidth||0)<1100){if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url,booking_mode:'fullpage'});var _fu=url;if(!/[?&]back=/.test(_fu))_fu+=(_fu.indexOf('?')<0?'?':'&')+'back='+encodeURIComponent(location.href);setTimeout(function(){location.href=_fu;},150);return;}
+if((('ontouchstart' in window)||navigator.maxTouchPoints>0)&&Math.max(document.documentElement.clientWidth,window.innerWidth||0)<1100){if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url,booking_mode:'fullpage'});var _fu=url;if(!/[?&]back=/.test(_fu))_fu+=(_fu.indexOf('?')<0?'?':'&')+'back='+encodeURIComponent(location.href);setTimeout(function(){location.href=_fu;},40);return;}
 var modal=document.getElementById('fhModal');var loading=document.getElementById('fhModalLoading');var un=document.getElementById('fhUnavailable');
 document.getElementById('fhModalTitle').textContent=name||'Book Now';
 if(un)un.style.display='none';loading.style.display='flex';var _h0=loading.querySelector('.fh-slow');if(_h0)_h0.remove();
-var old=document.getElementById('fhModalIframe');var iframe=document.createElement('iframe');
-iframe.id='fhModalIframe';iframe.title=old?old.title:'FareHarbor Booking';iframe.setAttribute('loading','eager');iframe.setAttribute('allow','payment');
-var done=false;function hideLoading(){if(!done){done=true;loading.style.display='none';}}
-iframe.onload=function(){hideLoading();};
-iframe.src=url;
-if(old){old.parentNode.replaceChild(iframe,old);}else{loading.parentNode.insertBefore(iframe,loading.nextSibling);}
+var st=_fhLoad(url);st.open=true;if(st.loaded)loading.style.display='none';
 modal.classList.add('open');document.body.style.overflow='hidden';
 if(window.dataLayer)window.dataLayer.push({event:'book_now_click',item_name:name,page_url:location.href,booking_url:url});
 if(un){var fa=un.querySelector('a');if(fa){fa.href=url;fa.target='_blank';fa.rel='noopener';}}var nt=document.getElementById('fhOpenNewTab');if(nt){nt.href=url;}
-setTimeout(function(){if(!done){var h=loading.querySelector('.fh-slow');if(!h){h=document.createElement('a');h.className='fh-slow';h.target='_blank';h.rel='noopener';h.style.cssText='color:#0a66c2;font-weight:700;text-decoration:underline;font-size:.95rem';loading.appendChild(h);}h.href=url;h.textContent='Still loading… open booking in a new tab ↗';}},5000);
+setTimeout(function(){if(!st.loaded&&st.open){var h=loading.querySelector('.fh-slow');if(!h){h=document.createElement('a');h.className='fh-slow';h.target='_blank';h.rel='noopener';h.style.cssText='color:#0a66c2;font-weight:700;text-decoration:underline;font-size:.95rem';loading.appendChild(h);}h.href=url;h.textContent='Still loading… open booking in a new tab ↗';}},5000);
 if(!window._fhHist){try{history.pushState({fhModal:1},'');window._fhHist=true;}catch(e){}}
 }
   function showUnavailable(){
     var i=document.getElementById('fhModalIframe');var u=document.getElementById('fhUnavailable');
     if(i)i.style.display='none'; if(u)u.style.display='block';
   }
-  window._fhTeardown=function(){var u=document.getElementById('fhUnavailable');if(u)u.style.display='none';var m=document.getElementById('fhModal');if(m)m.classList.remove('open');document.body.style.overflow='';var i=document.getElementById('fhModalIframe');if(i){var b=document.createElement('iframe');b.id='fhModalIframe';b.title=i.title;b.setAttribute('loading','eager');b.setAttribute('allow','payment');i.parentNode.replaceChild(b,i);}};
+  window._fhTeardown=function(){if(window._fhSt)window._fhSt.open=false;var u=document.getElementById('fhUnavailable');if(u)u.style.display='none';var m=document.getElementById('fhModal');if(m)m.classList.remove('open');document.body.style.overflow='';var i=document.getElementById('fhModalIframe');if(i){var b=document.createElement('iframe');b.id='fhModalIframe';b.title=i.title;b.setAttribute('loading','eager');b.setAttribute('allow','payment');i.parentNode.replaceChild(b,i);}};
 window.closeFhModal=function(){if(window._fhHist){window._fhHist=false;try{history.back();return;}catch(e){}}window._fhTeardown();};
 window.addEventListener('popstate',function(){var m=document.getElementById('fhModal');if(m&&m.classList.contains('open')){window._fhHist=false;window._fhTeardown();}});
   document.addEventListener('keydown',function(e){if(e.key==='Escape')window.closeFhModal();});
