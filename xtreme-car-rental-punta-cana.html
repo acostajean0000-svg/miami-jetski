@@ -393,7 +393,7 @@ window.addEventListener('scroll',function(){
 <!-- ─── URGENCY BAR ─── -->
 <div class="urgency-bar">
   <span class="pulse-dot"></span>
-  <span>🔥 <strong>3 personas</strong> reservaron buggies en las últimas 24h ·</span>
+  <span>📅 Consulta disponibilidad para tus fechas ·</span>
   <a href="https://wa.me/18294296644?text=Hola%21%20Quiero%20saber%20disponibilidad%20esta%20semana." target="_blank" rel="noopener nofollow" data-cta-name="urgency-bar">Confirma fecha →</a>
 </div>
 <nav>
@@ -424,7 +424,7 @@ window.addEventListener('scroll',function(){
           🏁 Ver Tours
         </a>
       </div>
-      <div class="booking-counter">⚡ <span id="todayBookings">12</span> reservas hoy · Respuesta WhatsApp en minutos</div>
+      <div class="booking-counter">⚡ Respuesta WhatsApp en minutos</div>
     </div>
     <figure class="hero-photo">
       <img src="/images/xcr/cover-w800.jpg" alt="XTREME Car Rental Punta Cana — alquiler de buggies, ATVs, 4x4 y autos en Bávaro" fetchpriority="high" decoding="async" width="800" height="1422">
@@ -854,14 +854,6 @@ window.addEventListener('scroll',function(){
   <a class="sticky-cta-btn" href="https://wa.me/18294296644?text=Hola%21%20Quiero%20alquilar%20un%20veh%C3%ADculo%20en%20XTREME%20Car%20Rental." target="_blank" rel="noopener nofollow" data-cta-name="sticky-bottom">💬 Reservar</a>
 </div>
 
-<!-- ─── SOCIAL PROOF TOAST ─── -->
-<div class="sp-toast" id="spToast" role="status">
-  <div class="sp-toast-avatar" id="spAv">JS</div>
-  <div>
-    <strong id="spName">Juan</strong> de <span id="spCity">Madrid</span> acaba de reservar
-    <div class="sp-time" id="spProduct">Buggy Can-Am · hace 4 minutos</div>
-  </div>
-</div>
 
 <!-- ─── LEAD CAPTURE MODAL ─── -->
 <div class="lc-overlay" id="lcOverlay" role="dialog" aria-modal="true" aria-labelledby="lcTitle">
@@ -879,42 +871,6 @@ window.addEventListener('scroll',function(){
 </div>
 
 <script>
-// ─── Live booking counter (faux but realistic) ───
-(function(){
-  var el=document.getElementById('todayBookings');
-  if(!el) return;
-  var hour=new Date().getHours();
-  var base=hour<10?8:hour<14?12:hour<18?18:24;
-  el.textContent=base+Math.floor(Math.random()*4);
-})();
-
-// ─── Social proof toast (rotating) ───
-(function(){
-  var names=[
-    {n:'Carlos',c:'Miami',p:'Buggy Polaris 2 plazas',a:'CM'},
-    {n:'Ana',c:'Madrid',p:'Family Buggy (4 plazas)',a:'AM'},
-    {n:'Luis',c:'Bogotá',p:'Yamaha Raptor Tour Nocturno',a:'LB'},
-    {n:'María',c:'Buenos Aires',p:'Jeep Wrangler · 2 días',a:'MB'},
-    {n:'Roberto',c:'Toronto',p:'Cadillac Escalade · día completo',a:'RT'},
-    {n:'Sofía',c:'Lima',p:'Can-Am Maverick · 6 horas',a:'SL'},
-    {n:'Diego',c:'Santo Domingo',p:'ATV Honda Rincon · medio día',a:'DS'},
-    {n:'Emma',c:'Barcelona',p:'Family Buggy Tour Guiado',a:'EB'},
-  ];
-  var toast=document.getElementById('spToast');
-  var i=0,shown=false;
-  function show(){
-    var d=names[i%names.length];
-    document.getElementById('spName').textContent=d.n;
-    document.getElementById('spCity').textContent=d.c;
-    document.getElementById('spProduct').textContent=d.p+' · hace '+(2+Math.floor(Math.random()*8))+' minutos';
-    document.getElementById('spAv').textContent=d.a;
-    toast.classList.add('show');
-    setTimeout(function(){toast.classList.remove('show');},5500);
-    i++;
-  }
-  // Primer toast a los 12s, luego cada 25s
-  setTimeout(function(){show();var iv=setInterval(show,25000);},12000);
-})();
 
 // ─── Lead capture modal: 50% scroll OR 30s OR exit intent ───
 (function(){

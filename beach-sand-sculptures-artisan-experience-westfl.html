@@ -304,10 +304,6 @@
         <div class="cta-banner">
       <h3>Ready to Book?</h3>
       <p>Secure your spot in seconds — instant confirmation on all bookings.</p>
-            <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-size:.72rem;">
-        <span style="color:#00d4c8;font-weight:700;">🔥 <span id="weeklyBookings"></span> booked this week</span>
-        <span style="color:#7ba3c0;"><span id="viewingNow"></span> viewing now</span>
-      </div>
       <a data-fh-price="419" data-fh-name="Beach Sand Sculptures – Artisan Experience" href="https://fareharbor.com/embeds/book/beachsandsculptures/items/1317/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" rel="nofollow sponsored">Book Beach Sand Sculptures – Artisan Experience — From $419</a>
     </div>
 
@@ -393,14 +389,6 @@ document.querySelectorAll('.faq-q').forEach(btn => {
 </script>
 
 <script>
-// Urgency counters
-(function(){
-  var wb=document.getElementById('weeklyBookings');
-  var vn=document.getElementById('viewingNow');
-  if(wb) wb.textContent=Math.floor(Math.random()*9)+3;
-  if(vn) vn.textContent=Math.floor(Math.random()*16)+4;
-})();
-
 // Share button
 function shareOp(){
   var title=document.querySelector('.hero-title');

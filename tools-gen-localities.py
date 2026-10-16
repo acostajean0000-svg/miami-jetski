@@ -39,6 +39,7 @@ ops = ops if isinstance(ops, list) else sum([v for v in ops.values() if isinstan
 ops = [o for o in ops if isinstance(o, dict)]
 slugmap = json.loads(re.search(r'=\s*(\{.*\})', io.open('slug-map.js', encoding='utf-8').read(), re.S).group(1))
 pages = {os.path.splitext(f)[0] for f in glob.glob('*.html')}
+OPSLUGS = set(slugmap.values())
 # zona -> página de zona (la que hace fetch de data/{zone}.json y acaba en -activities)
 zone_page = {}
 for f in glob.glob('*-activities.html'):
@@ -129,7 +130,8 @@ def build(loc, items):
     # chips de categoría -> landing de zona-categoría si existe
     chips = []
     for c, k in cats.most_common(10):
-        cand = [p for p in pages if p.startswith(slugify(zname)) and c in p] if zname else []
+        # solo landings de categoría (nunca fichas de operador), la más corta primero
+        cand = sorted([p for p in pages if p.startswith(slugify(zname) + '-') and c in p and p not in OPSLUGS], key=len) if zname else []
         href = '/' + (cand[0] if cand else (zpage or ''))
         chips.append('<a class="chip" href="%s">%s (%d)</a>' % (href, esc(CAT.get(c, c)), k))
     # FAQ

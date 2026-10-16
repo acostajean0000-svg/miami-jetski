@@ -280,10 +280,6 @@
     <div class="cta-banner">
       <h3>Ready to Book?</h3>
       <p>Secure your spot in seconds — instant confirmation on all bookings.</p>
-      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:12px;font-size:.72rem;">
-        <span style="color:#00d4c8;font-weight:700;">🔥 <span id="weeklyBookings"></span> booked this week</span>
-        <span style="color:#7ba3c0;"><span id="viewingNow"></span> viewing now</span>
-      </div>
       <a data-fh-price="175" data-fh-name="Kawyre Creations" href="https://fareharbor.com/embeds/book/kawyrecreations/items/633848/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&bookable-only=yes&full-items=yes&marketplace=yes&flow=no&branding=no" rel="nofollow sponsored">Book Now — From $175</a>
     </div>
 
@@ -327,7 +323,7 @@ document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',(
 </script>
 <div class="mob-book-bar"><div><div class="mob-price">From $175</div><div class="mob-price-sub">total price from</div></div><a href="#fh-avail" class="mob-book-btn" onclick="scrollToCalendar(event)">Book Now →</a></div>
 <script>
-(function(){var wb=document.getElementById('weeklyBookings');var vn=document.getElementById('viewingNow');if(wb)wb.textContent=Math.floor(Math.random()*9)+3;if(vn)vn.textContent=Math.floor(Math.random()*16)+4;})();
+
 function shareOp(){var t=document.querySelector('.hero-title');var title=t?t.textContent:'This experience';if(navigator.share){navigator.share({title,url:window.location.href}).catch(()=>{});}else{navigator.clipboard.writeText(window.location.href).then(()=>{var btn=event.target.closest('button');if(btn){var old=btn.innerHTML;btn.innerHTML='✅ Link copied!';setTimeout(()=>{btn.innerHTML=old;},2000);}});}}
 (function(){var iframes=document.querySelectorAll('iframe[data-src-lazy-map]');if(!iframes.length)return;if('IntersectionObserver' in window){var obs=new IntersectionObserver((entries,o)=>{entries.forEach(e=>{if(e.isIntersecting){e.target.src=e.target.dataset.srcLazyMap;o.unobserve(e.target);}});},{rootMargin:'200px'});iframes.forEach(i=>obs.observe(i));}else{iframes.forEach(i=>{i.src=i.dataset.srcLazyMap;});}})();
 window.scrollToCalendar=function(e){if(e)e.preventDefault();var sec=document.getElementById('fh-avail');if(sec)sec.scrollIntoView({behavior:'smooth',block:'start'});setTimeout(()=>{var btn=document.querySelector('.fh-lb-btn');if(btn)btn.click();},600);};

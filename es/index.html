@@ -45,6 +45,7 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://miamijetskiboatrentals.com/es/">
 <link rel="preload" href="/operators-top.json" as="fetch" type="application/json" crossorigin="anonymous">
+<link rel="preload" href="/data/miami.json" as="fetch" type="application/json" crossorigin="anonymous">
 <link rel="prefetch" href="/operators-slim.json" as="fetch" type="application/json" crossorigin="anonymous">
   
   <link rel="alternate" hreflang="es" href="https://miamijetskiboatrentals.com/es/">
@@ -717,7 +718,6 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
     <div class="trust-item"><span aria-hidden="true">🛡️</span><span>Operadores Verificados</span></div>
     <div class="trust-item"><span aria-hidden="true">🔒</span><span>Pago Seguro vía FareHarbor</span></div>
     <div class="trust-item"><span aria-hidden="true">⭐</span><span>Calificación 4.8★ Promedio</span></div>
-    <div class="trust-item"><span aria-hidden="true">🔥</span><span class="booking-counter" id="bookingCounter">23 booked today</span></div>
     <div class="trust-item"><span aria-hidden="true">🎧</span><span>7-day Support</span></div>
   </div>
 </div>
@@ -784,15 +784,13 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
       </div>
     </div>
     <div class="hero-stats">
-      <div class="hero-stat"><div class="hero-stat-num" id="heroOpCount">652</div><div class="hero-stat-label">Operadores</div></div>
+      <div class="hero-stat"><div class="hero-stat-num" id="heroOpCount">10.700+</div><div class="hero-stat-label">Operadores</div></div>
       <div class="hero-stat"><div class="hero-stat-num">$4</div><div class="hero-stat-label">Starting From</div></div>
       <div class="hero-stat"><div class="hero-stat-num">13</div><div class="hero-stat-label">Categories</div></div>
       <div class="hero-stat"><div class="hero-stat-num">FL</div><div class="hero-stat-label">Statewide</div></div>
     </div>
     <div class="social-proof-bar" id="socialProofBar">
       <span class="sp-dot"></span>
-      <span id="spText">🔥 <strong id="spViewers">24</strong> personas viendo operadores ahora mismo</span>
-      <span class="sp-sep">·</span>
       <span>⭐ 4.7 avg rating</span>
       <span class="sp-sep">·</span>
       <span>✅ Reserva instantánea</span>
@@ -897,7 +895,7 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
         <a data-fh-name="Reservar →" href="https://fareharbor.com/embeds/book/miamistylerentals/items/?asn=fhdn&asn-ref=miamistylerentals&ref=miamistylerentals&flow=613885&full-items=yes&branding=no" target="_blank" rel="noopener noreferrer nofollow sponsored" class="featured-btn">Reservar →</a>
       </div>
       <div class="cards-toolbar">
-        <div class="cards-count" id="cardsCount">Mostrando 11.000+ operadores</div>
+        <div class="cards-count" id="cardsCount">Mostrando 411 operadores</div>
         <select class="sort-select" id="sortSelect" onchange="activeOrdenarBy=this.value;renderCards();pushDL('sort_operators',{sort_by:this.value})">
           <option value="default">Ordenar: Default</option>
           <option value="price_asc">Price: Low → High</option>
@@ -1586,6 +1584,23 @@ function closeShare(id) {
   const zone = params.get('zone');
   if (zone) window._preloadZone = zone;
 })();
+// ---- URL SYNC: guarda zona/categoría/búsqueda en la URL (volver atrás o compartir conserva los filtros) ----
+function _syncFilterUrl() {
+  try {
+    var p = new URLSearchParams(location.search);
+    if (typeof nearMeActive !== 'undefined' && nearMeActive) p.delete('zone');
+    else if (activeZone && activeZone !== 'miami') p.set('zone', activeZone); else p.delete('zone');
+    if (activeCat && activeCat !== 'all') p.set('cat', activeCat); else p.delete('cat');
+    if (searchQuery) p.set('q', searchQuery); else p.delete('q');
+    var s = p.toString(), u = location.pathname + (s ? '?' + s : '') + location.hash;
+    if (u !== location.pathname + location.search + location.hash) history.replaceState(history.state, '', u);
+  } catch (e) {}
+}
+(function() {
+  var _rc0 = window.renderCards;
+  if (typeof _rc0 !== 'function') return;
+  window.renderCards = function() { var r = _rc0.apply(this, arguments); _syncFilterUrl(); return r; };
+})();
 // ---- PRICE FILTER ----
 function updatePriceFiltrar() {
   // Read all values first (avoid interleaved read/write = forced reflow)
@@ -1765,16 +1780,7 @@ function submitNewsletter(e) {
   setTimeout(() => { btn.innerHTML = '<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 512 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M498.1 5.6c10.1 7 15.4 19.1 13.5 31.2l-64 416c-1.5 9.7-7.4 18.2-16 23s-18.9 5.4-28 1.6L284 427.7l-68.5 74.1c-8.9 9.7-22.9 12.9-35.2 8.1S160 493.2 160 480V396.4c0-4 1.5-7.8 4.2-10.7L331.8 202.8c5.8-6.3 5.6-16-.4-22s-15.7-6.4-22-.7L106 360.8 17.7 316.6C7.1 311.3 .3 300.7 0 288.9s5.9-22.8 16.1-28.7l448-256c10.7-6.1 23.9-5.5 34 1.4z"/></svg> Subscribe'; btn.style.background=''; }, 3000);
 }
 // ---- BOOKING COUNTER (live feel) ----
-function animateCounter() {
-  const el = document.getElementById('bookingCounter');
-  if (!el) return;
-  const base = 18 + Math.floor(Math.random() * 15);
-  el.textContent = base + ' booked today';
-  setInterval(() => {
-    const n = parseInt(el.textContent) + (Math.random() > 0.6 ? 1 : 0);
-    el.textContent = n + ' booked today';
-  }, 45000);
-}
+function animateCounter() { /* contador aleatorio 'booked today' eliminado (oct 2026): no mostrar actividad inventada */ }
 // ---- MAP ----
 function makeIcon(color, label) {
   const svg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 42" width="28" height="36">
@@ -1988,18 +1994,6 @@ function acKeyNav(e) {
   else if (e.key === 'Escape') { closeAC(); }
 }
 document.addEventListener('click', e => { if (!e.target.closest('.search-bar-wrap')) closeAC(); });
-// ---- SOCIAL PROOF COUNTER ----
-(function() {
-  const el = document.getElementById('spViewers');
-  if (!el) return;
-  function randInt(min, max) { return Math.floor(Math.random() * (max - min + 1)) + min; }
-  let cur = randInt(18, 34);
-  el.textContent = cur;
-  setInterval(() => {
-    cur = Math.max(8, Math.min(60, cur + randInt(-3, 4)));
-    el.textContent = cur;
-  }, 7000);
-})();
 // ---- RECENTLY VIEWED ----
 const RV_KEY = 'fl_recent';
 const RV_MAX = 5;
@@ -2176,9 +2170,10 @@ function _applyLoadedData(data) {
   computeBestValue(data);
   // Update mobile CTA count and hero operator count
   const mobCount = document.getElementById('mobCtaCount');
-  if (mobCount) mobCount.textContent = data.length;
+  // solo con el dataset completo (la fase 1 trae un subconjunto y el número saltaría)
+  if (mobCount && window._fullLoaded) mobCount.textContent = data.length.toLocaleString('es-ES');
   const heroOpCount = document.getElementById('heroOpCount');
-  if (heroOpCount) heroOpCount.textContent = data.length;
+  if (heroOpCount && window._fullLoaded) heroOpCount.textContent = data.length.toLocaleString('es-ES');
 }
 function _showLoadError() {
   const grid = document.getElementById('cardsGrid');
@@ -2206,8 +2201,12 @@ function fetchOperators(retry) {
       .then(r => r.json())
       .then(data => { window._fullLoaded = true; _applyLoadedData(data); });
   };
-  fetch('/operators-top.json', {signal, ...cacheOpt})
-    .then(r => { if(!r.ok) throw new Error('top '+r.status); return r.json(); })
+  // Fase 1 = muestra global (top) + la zona inicial completa (por defecto Miami), para que la lista inicial salga entera
+  var _z0 = String(window._preloadZone || (typeof activeZone !== 'undefined' ? activeZone : '') || '').replace(/[^a-z0-9-]/g, '');
+  if (_z0 === 'keys') _z0 = 'keywest';
+  var _zoneFetch = (_z0 && _z0 !== 'all' && _z0 !== 'florida') ? fetch('/data/' + _z0 + '.json', {signal, ...cacheOpt}).then(r => r.ok ? r.json() : []).catch(() => []) : Promise.resolve([]);
+  Promise.all([fetch('/operators-top.json', {signal, ...cacheOpt}).then(r => { if(!r.ok) throw new Error('top '+r.status); return r.json(); }), _zoneFetch])
+    .then(function(res) { var seen = {}, out = []; (Array.isArray(res[1]) ? res[1] : []).concat(res[0]).forEach(function(o) { if (o && o.id && !seen[o.id]) { seen[o.id] = 1; out.push(o); } }); return out; })
     .then(data => { _applyLoadedData(data);
       if ('requestIdleCallback' in window) requestIdleCallback(() => _loadFull(), {timeout: 2500});
       else setTimeout(_loadFull, 200);
@@ -2449,7 +2448,7 @@ function bwUpdate(){
 </div>
 <!-- MOBILE STICKY CTA -->
 <div class="mob-cta-bar" id="mobCtaBar" onclick="document.getElementById('marketplace').scrollIntoView({behavior:'smooth'});document.getElementById('mobCtaBar').classList.remove('show')">
-  🌊 Browse <span id="mobCtaCount">652</span> Operators ↓
+  🌊 Ver <span id="mobCtaCount">10.700+</span> operadores ↓
 </div>
 <!-- ── FAVORITES FAB ── -->
 <button class="fav-fab" id="favFab" onclick="openFavPanel()">
