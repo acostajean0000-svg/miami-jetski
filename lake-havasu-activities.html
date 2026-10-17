@@ -269,7 +269,7 @@ document.addEventListener('click',function(e){
 <h3>Featured operators</h3>
 <ul><li><strong>Fishing Charter</strong> — Lake Havasu City ·</li><li><strong>Jet Ski Rentals</strong> — Lake Havasu City ·</li><li><strong>Jet Ski Rental</strong> — Lake Havasu City ·</li><li><strong>Sunset Tour</strong> — Lake Havasu City ·</li></ul>
 <h3>Booking tips for Lake Havasu</h3>
-<ul><li><strong>Book early in peak season</strong> (March – October) — weekends sell out days ahead</li><li><strong>Prices start around $50</strong>, averaging $92 per person across categories</li><li><strong>Free cancellation</strong> applies to most listings 24–48h before departure — check each operator's policy at checkout</li><li><strong>Getting there:</strong> Lake Havasu City (HII) or Las Vegas (LAS, ~2.5h)</li><li>Arrive 15 minutes early with a valid ID; dress for the weather</li></ul>
+<ul><li><strong>Book early in peak season</strong> (March – October) — weekends sell out days ahead</li><li><strong>Prices start around $50</strong>, averaging $92 per person across categories</li><li><strong>Cancellation terms</strong> vary by listing; most are 24–48h before departure — check each operator's policy at checkout</li><li><strong>Getting there:</strong> Lake Havasu City (HII) or Las Vegas (LAS, ~2.5h)</li><li>Arrive 15 minutes early with a valid ID; dress for the weather</li></ul>
 <section id="by-town" style="margin:28px 0"><h2>Browse by town</h2><div style="display:flex;flex-wrap:wrap;gap:8px"><a href="/lake-havasu-city-activities" style="background:rgba(0,210,255,.08);border:1px solid rgba(0,210,255,.15);color:#00d2ff;padding:6px 12px;border-radius:50px;font-size:.82rem;text-decoration:none">Lake Havasu City (35)</a></div></section><h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><button class="faq-q" type="button">What water activities are popular at Lake Havasu?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>Jet ski and boat rentals, wakeboarding, tubing and Colorado River cruises — all bookable instantly online.</p></div></div><div class="faq-item"><button class="faq-q" type="button">How do I get to Lake Havasu?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>Fly into Lake Havasu City Airport (HII), or Las Vegas (LAS) about 2.5 hours away; operators line the lake and London Bridge channel.</p></div></div><div class="faq-item"><button class="faq-q" type="button">When is the best time to visit?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>March through October is peak with hot, dry weather; spring and fall are ideal for comfortable days on the water.</p></div></div></div></section>
 </main>
 <footer>
@@ -706,14 +706,14 @@ document.head.appendChild(styleEl);
   if(filters&&!document.querySelector('.trust-strip')){
     var t=document.createElement('div');
     t.className='trust-strip';
-    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Free cancellation</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
+    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Cancellation terms at checkout</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
     filters.insertAdjacentElement('afterend',t);
   }
   // Sticky bottom CTA
   if(!document.querySelector('.sticky-zone-cta')){
     var bar=document.createElement('div');
     bar.className='sticky-zone-cta';
-    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Find your perfect '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Free cancellation · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Browse Tours</a>';
+    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Find your perfect '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Browse Tours</a>';
     document.body.appendChild(bar);
   }
   // Track scroll milestones

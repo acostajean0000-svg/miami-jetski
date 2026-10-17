@@ -708,14 +708,14 @@ document.head.appendChild(styleEl);
   if(filters&&!document.querySelector('.trust-strip')){
     var t=document.createElement('div');
     t.className='trust-strip';
-    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> de valoración media</span><span class="trust-item">✓ Operadores verificados de FareHarbor</span><span class="trust-item">🔄 Cancelación gratis</span><span class="trust-item">⚡ Reserva instantánea</span><span class="trust-item">💳 Secure checkout</span>';
+    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> de valoración media</span><span class="trust-item">✓ Operadores verificados de FareHarbor</span><span class="trust-item">🔄 Cancelación: ver condiciones al reservar</span><span class="trust-item">⚡ Reserva instantánea</span><span class="trust-item">💳 Secure checkout</span>';
     filters.insertAdjacentElement('afterend',t);
   }
   // Sticky bottom CTA
   if(!document.querySelector('.sticky-zone-cta')){
     var bar=document.createElement('div');
     bar.className='sticky-zone-cta';
-    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Encuentra tu '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Cancelación gratis · Reserva instantánea</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Ver Tours</a>';
+    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Encuentra tu '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Reserva instantánea</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Ver Tours</a>';
     document.body.appendChild(bar);
   }
   // Track scroll milestones

@@ -341,7 +341,7 @@ document.addEventListener('click',function(e){
   <h3>Consejos de Reserva para Central Florida</h3>
   <ul>
     <li><strong>Reserva temprano en temporada alta</strong> (Year-round) — los tours populares se agotan con 1–2 semanas de antelación</li>
-    <li><strong>Revisa la política de cancelación</strong> — la mayoría de los operadores ofrecen cancelación gratis 24–48 horas antes</li>
+    <li><strong>Revisa la política de cancelación</strong> — las condiciones de cancelación varían según el operador</li>
     <li><strong>Lee las reseñas recientes</strong> — ordena por valoración para ver primero las mejor valoradas</li>
     <li><strong>Descuentos de grupo</strong> disponibles en muchos tours para 4+ passengers</li>
     <li><strong>Lleva protector solar, agua y un sombrero</strong> para tours al aire libre en clima subtropical</li>
@@ -352,7 +352,7 @@ document.addEventListener('click',function(e){
     <details class="faq-item"><summary class="faq-q">¿Cuáles son las actividades más populares en Central Florida?</summary><div class="faq-a">Las principales actividades en Central Florida son deportes acuáticos tours (38+ operators), tours turísticos (14+ operators), and ATV adventures (11+ operators). Listamos 86+ operadores verificados en 12 categorías.</div></details>
     <details class="faq-item"><summary class="faq-q">¿Cuánto cuestan los tours en Central Florida?</summary><div class="faq-a">Los precios en Central Florida parten de unos $57 por persona en la mayoría de tours. El snorkel, las salidas a bancos de arena y los cruceros en grupo suelen moverse entre $50 y $150, mientras que los chárters privados de barco y los alquileres de yate van de $300 a más de $2,000 según el tamaño y la duración.</div></details>
     <details class="faq-item"><summary class="faq-q">¿Cuál es la mejor época para visitar Central Florida?</summary><div class="faq-a">La temporada alta en Central Florida es Year-round, con el clima más agradable. El clima es subtropical. Conviene reservar con antelación en esos meses.</div></details>
-    <details class="faq-item"><summary class="faq-q">¿Necesito reservar las actividades en Central Florida con antelación?</summary><div class="faq-a">Sí — los tours populares en Central Florida se llenan con días o semanas de antelación, especialmente en temporada alta (Year-round). All operators support instant online booking through FareHarbor with cancelación gratis on most tours.</div></details>
+    <details class="faq-item"><summary class="faq-q">¿Necesito reservar las actividades en Central Florida con antelación?</summary><div class="faq-a">Sí — los tours populares en Central Florida se llenan con días o semanas de antelación, especialmente en temporada alta (Year-round). All operators support instant online booking through FareHarbor with cancellation terms shown before you pay.</div></details>
     <details class="faq-item"><summary class="faq-q">¿Cómo llego a Central Florida?</summary><div class="faq-a">El aeropuerto más cercano es Orlando (MCO). La mayoría de operadores están cerca de Crystal River, Silver Springs, Clermont, Dunnellon, Homosassa, Spring Hill, Tavares, Dade City.</div></details>
     <details class="faq-item"><summary class="faq-q">¿Los tours en Central Florida son aptos para familias y niños?</summary><div class="faq-a">Muchos operadores de Florida Central ofrecen tours para familias. Los paseos en barco, el snorkel en aguas tranquilas, los tours a pie y las experiencias de fauna son las opciones favoritas. Revisa siempre las restricciones de edad al reservar.</div></details>
   </div>
@@ -400,7 +400,7 @@ document.addEventListener('click',function(e){
    "name": "¿Necesito reservar las actividades en Central Florida con antelación?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Sí — los tours populares en Central Florida se llenan con días o semanas de antelación, especialmente en temporada alta (Year-round). All operators support instant online booking through FareHarbor with cancelación gratis on most tours."
+    "text": "Sí — los tours populares en Central Florida se llenan con días o semanas de antelación, especialmente en temporada alta (Year-round). All operators support instant online booking through FareHarbor with cancellation terms shown before you pay."
    }
   },
   {
@@ -757,14 +757,14 @@ document.head.appendChild(styleEl);
   if(filters&&!document.querySelector('.trust-strip')){
     var t=document.createElement('div');
     t.className='trust-strip';
-    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> de valoración media</span><span class="trust-item">✓ Operadores verificados de FareHarbor</span><span class="trust-item">🔄 Cancelación gratis</span><span class="trust-item">⚡ Reserva instantánea</span><span class="trust-item">💳 Secure checkout</span>';
+    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> de valoración media</span><span class="trust-item">✓ Operadores verificados de FareHarbor</span><span class="trust-item">🔄 Cancelación: ver condiciones al reservar</span><span class="trust-item">⚡ Reserva instantánea</span><span class="trust-item">💳 Secure checkout</span>';
     filters.insertAdjacentElement('afterend',t);
   }
   // Sticky bottom CTA
   if(!document.querySelector('.sticky-zone-cta')){
     var bar=document.createElement('div');
     bar.className='sticky-zone-cta';
-    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Encuentra tu '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Cancelación gratis · Reserva instantánea</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Ver Tours</a>';
+    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Encuentra tu '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Reserva instantánea</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Ver Tours</a>';
     document.body.appendChild(bar);
   }
   // Track scroll milestones

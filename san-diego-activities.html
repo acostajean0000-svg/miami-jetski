@@ -238,7 +238,7 @@ document.addEventListener('click',function(e){
    "name": "Do I need to book San Diego activities in advance?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Yes — popular San Diego tours fill up days or weeks in advance, especially during peak season (Mar-Nov). All operators on this page support instant online booking through FareHarbor with free cancellation on most tours. Booking 1-2 weeks ahead is recommended."
+    "text": "Yes — popular San Diego tours fill up days or weeks in advance, especially during peak season (Mar-Nov). All operators on this page support instant online booking through FareHarbor with cancellation terms shown before you pay. Booking 1-2 weeks ahead is recommended."
    }
   },
   {
@@ -375,7 +375,7 @@ document.addEventListener('click',function(e){
   <h3>Booking Tips for San Diego</h3>
   <ul>
     <li><strong>Book early during peak season</strong> (Mar-Nov) — popular tours sell out 1–2 weeks in advance</li>
-    <li><strong>Check cancellation policy</strong> — most operators offer free cancellation 24–48 hours before</li>
+    <li><strong>Check cancellation policy</strong> — cancellation terms vary by operator</li>
     <li><strong>Read recent reviews</strong> — sort by rating to see top-reviewed experiences first</li>
     <li><strong>Group discounts</strong> available on many tours for 4+ passengers — contact operators directly</li>
     <li><strong>Bring sunscreen, water, and a hat</strong> for water-based tours in Mediterranean climate</li>
@@ -387,7 +387,7 @@ document.addEventListener('click',function(e){
     <details class="faq-item"><summary class="faq-q">What are the most popular activities in San Diego?</summary><div class="faq-a">The top activities in San Diego are sightseeing tours (332+ operators), boat charters (45+ operators), and fishing charters (24+ operators). We list 500+ verified operators across 11 categories.</div></details>
     <details class="faq-item"><summary class="faq-q">How much do San Diego tours cost?</summary><div class="faq-a">Prices in San Diego start around $59 per person for most tours. Jet ski rentals, snorkeling, and group cruises tend to be in the $50–$150 range, while private boat charters and yacht rentals can range from $300 to $2,000+ depending on size and duration. Use the price filter to find tours that fit your budget.</div></details>
     <details class="faq-item"><summary class="faq-q">When is the best time to visit San Diego?</summary><div class="faq-a">The peak season in San Diego is Mar-Nov, with the most pleasant weather and longest daylight hours. The climate is Mediterranean. Booking early is recommended during peak months as the best tours fill up quickly. Off-season can offer better prices and smaller crowds.</div></details>
-    <details class="faq-item"><summary class="faq-q">Do I need to book San Diego activities in advance?</summary><div class="faq-a">Yes — popular San Diego tours fill up days or weeks in advance, especially during peak season (Mar-Nov). All operators on this page support instant online booking through FareHarbor with free cancellation on most tours. Booking 1-2 weeks ahead is recommended.</div></details>
+    <details class="faq-item"><summary class="faq-q">Do I need to book San Diego activities in advance?</summary><div class="faq-a">Yes — popular San Diego tours fill up days or weeks in advance, especially during peak season (Mar-Nov). All operators on this page support instant online booking through FareHarbor with cancellation terms shown before you pay. Booking 1-2 weeks ahead is recommended.</div></details>
     <details class="faq-item"><summary class="faq-q">How do I get to San Diego?</summary><div class="faq-a">The closest airport is San Diego International (SAN). Most operators are located near San Diego, Coronado, Rancho Santa Fe, Poway, El Cajon, Bonita, Encinitas. Once in San Diego, you can reach most tour operators by rental car, taxi, or rideshare. Many waterfront operators offer parking on-site.</div></details>
     <details class="faq-item"><summary class="faq-q">Are San Diego tours suitable for families and children?</summary><div class="faq-a">Many San Diego operators offer family-friendly tours suitable for children. Look for tours marked as family-friendly in the listings. Boat tours, snorkeling trips with calm waters, walking tours, and wildlife experiences are popular choices for families. Always check age restrictions when booking — minimum age and minimum height requirements vary by activity.</div></details>
   </div>
@@ -723,14 +723,14 @@ document.head.appendChild(styleEl);
   if(filters&&!document.querySelector('.trust-strip')){
     var t=document.createElement('div');
     t.className='trust-strip';
-    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Free cancellation</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
+    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Cancellation terms at checkout</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
     filters.insertAdjacentElement('afterend',t);
   }
   // Sticky bottom CTA
   if(!document.querySelector('.sticky-zone-cta')){
     var bar=document.createElement('div');
     bar.className='sticky-zone-cta';
-    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Find your perfect '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Free cancellation · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Browse Tours</a>';
+    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Find your perfect '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Browse Tours</a>';
     document.body.appendChild(bar);
   }
   // Track scroll milestones

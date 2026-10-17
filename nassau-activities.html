@@ -269,7 +269,7 @@ document.addEventListener('click',function(e){
 <h3>Featured operators</h3>
 <ul><li><strong>Mansa Bay Private Island Beach Club with Swimming </strong> — Nassau ·</li><li><strong>Atlantis Expérience</strong> — Nassau ·</li><li><strong>Discover Nassau Land & Sea</strong> — The Bahamas ·</li><li><strong>Swimming Pigs and Snorkeling Tour</strong> — Nassau ·</li></ul>
 <h3>Booking tips for Nassau & Paradise Island</h3>
-<ul><li><strong>Book early in peak season</strong> (December – April) — weekends sell out days ahead</li><li><strong>Prices start around $50</strong>, averaging $77 per person across categories</li><li><strong>Free cancellation</strong> applies to most listings 24–48h before departure — check each operator's policy at checkout</li><li><strong>Getting there:</strong> Lynden Pindling International (NAS) or cruise port</li><li>Arrive 15 minutes early with a valid ID; dress for the weather</li></ul>
+<ul><li><strong>Book early in peak season</strong> (December – April) — weekends sell out days ahead</li><li><strong>Prices start around $50</strong>, averaging $77 per person across categories</li><li><strong>Cancellation terms</strong> vary by listing; most are 24–48h before departure — check each operator's policy at checkout</li><li><strong>Getting there:</strong> Lynden Pindling International (NAS) or cruise port</li><li>Arrive 15 minutes early with a valid ID; dress for the weather</li></ul>
 <h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><button class="faq-q" type="button">What water activities are popular in Nassau?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>Snorkeling and reef tours, catamaran sails, jet ski rentals, private charters and dolphin swims are the most popular, all bookable instantly online.</p></div></div><div class="faq-item"><button class="faq-q" type="button">How do I get to Nassau?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>Most visitors arrive at Lynden Pindling International Airport (NAS) or by cruise ship; many tours offer pickup near the port and Cable Beach.</p></div></div><div class="faq-item"><button class="faq-q" type="button">When is the best time to visit?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>December through April brings the calmest seas and driest weather; summer is warm with lower prices.</p></div></div></div></section>
 </main>
 <footer>
@@ -706,14 +706,14 @@ document.head.appendChild(styleEl);
   if(filters&&!document.querySelector('.trust-strip')){
     var t=document.createElement('div');
     t.className='trust-strip';
-    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Free cancellation</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
+    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Cancellation terms at checkout</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
     filters.insertAdjacentElement('afterend',t);
   }
   // Sticky bottom CTA
   if(!document.querySelector('.sticky-zone-cta')){
     var bar=document.createElement('div');
     bar.className='sticky-zone-cta';
-    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Find your perfect '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Free cancellation · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Browse Tours</a>';
+    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Find your perfect '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Browse Tours</a>';
     document.body.appendChild(bar);
   }
   // Track scroll milestones

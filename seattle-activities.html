@@ -291,7 +291,7 @@ document.addEventListener('click',function(e){
     <div class="fo-body">
       <div class="fo-eyebrow">⭐ Featured Operator</div>
       <h2 class="fo-title">Miami Style Rentals</h2>
-      <div class="fo-perks">Jet skis · boats · tours — book direct ✓ Free cancellation</div>
+      <div class="fo-perks">Jet skis · boats · tours — book direct ✓ Clear cancellation terms</div>
     </div>
     <div class="fo-right">
       <div class="fo-price">From<b>$50</b></div>
@@ -373,7 +373,7 @@ document.addEventListener('click',function(e){
   <h3>Booking Tips for Seattle</h3>
   <ul>
     <li><strong>Book early during peak season</strong> (Jun-Sep) — popular tours sell out 1–2 weeks in advance</li>
-    <li><strong>Check cancellation policy</strong> — most operators offer free cancellation 24–48 hours before</li>
+    <li><strong>Check cancellation policy</strong> — cancellation terms vary by operator</li>
     <li><strong>Read recent reviews</strong> — sort by rating to see top-reviewed experiences first</li>
     <li><strong>Group discounts</strong> available on many tours for 4+ passengers — contact operators directly</li>
     <li><strong>Bring sunscreen, water, and a hat</strong> for water-based tours in temperate climate</li>
@@ -385,7 +385,7 @@ document.addEventListener('click',function(e){
     <details class="faq-item"><summary class="faq-q">What are the most popular activities in Seattle?</summary><div class="faq-a">The top activities in Seattle are sightseeing tours (192+ operators), boat charters (36+ operators), and walking tours (34+ operators). We list 324+ verified operators across 11 categories.</div></details>
     <details class="faq-item"><summary class="faq-q">How much do Seattle tours cost?</summary><div class="faq-a">Prices in Seattle start around $57 per person for most tours. Jet ski rentals, snorkeling, and group cruises tend to be in the $50–$150 range, while private boat charters and yacht rentals can range from $300 to $2,000+ depending on size and duration. Use the price filter to find tours that fit your budget.</div></details>
     <details class="faq-item"><summary class="faq-q">When is the best time to visit Seattle?</summary><div class="faq-a">The peak season in Seattle is Jun-Sep, with the most pleasant weather and longest daylight hours. The climate is temperate. Booking early is recommended during peak months as the best tours fill up quickly. Off-season can offer better prices and smaller crowds.</div></details>
-    <details class="faq-item"><summary class="faq-q">Do I need to book Seattle activities in advance?</summary><div class="faq-a">Yes — popular Seattle tours fill up days or weeks in advance, especially during peak season (Jun-Sep). All operators on this page support instant online booking through FareHarbor with free cancellation on most tours. Booking 1-2 weeks ahead is recommended.</div></details>
+    <details class="faq-item"><summary class="faq-q">Do I need to book Seattle activities in advance?</summary><div class="faq-a">Yes — popular Seattle tours fill up days or weeks in advance, especially during peak season (Jun-Sep). All operators on this page support instant online booking through FareHarbor with cancellation terms shown before you pay. Booking 1-2 weeks ahead is recommended.</div></details>
     <details class="faq-item"><summary class="faq-q">How do I get to Seattle?</summary><div class="faq-a">The closest airport is Seattle-Tacoma (SEA). Most operators are located near Seattle. Once in Seattle, you can reach most tour operators by rental car, taxi, or rideshare. Many waterfront operators offer parking on-site.</div></details>
     <details class="faq-item"><summary class="faq-q">Are Seattle tours suitable for families and children?</summary><div class="faq-a">Many Seattle operators offer family-friendly tours suitable for children. Look for tours marked as family-friendly in the listings. Boat tours, snorkeling trips with calm waters, walking tours, and wildlife experiences are popular choices for families. Always check age restrictions when booking — minimum age and minimum height requirements vary by activity.</div></details>
   </div>
@@ -437,7 +437,7 @@ document.addEventListener('click',function(e){
    "name": "Do I need to book Seattle activities in advance?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Yes — popular Seattle tours fill up days or weeks in advance, especially during peak season (Jun-Sep). All operators on this page support instant online booking through FareHarbor with free cancellation on most tours. Booking 1-2 weeks ahead is recommended."
+    "text": "Yes — popular Seattle tours fill up days or weeks in advance, especially during peak season (Jun-Sep). All operators on this page support instant online booking through FareHarbor with cancellation terms shown before you pay. Booking 1-2 weeks ahead is recommended."
    }
   },
   {
@@ -871,14 +871,14 @@ document.head.appendChild(styleEl);
   if(filters&&!document.querySelector('.trust-strip')){
     var t=document.createElement('div');
     t.className='trust-strip';
-    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Free cancellation</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
+    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Cancellation terms at checkout</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
     filters.insertAdjacentElement('afterend',t);
   }
   // Sticky bottom CTA
   if(!document.querySelector('.sticky-zone-cta')){
     var bar=document.createElement('div');
     bar.className='sticky-zone-cta';
-    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Find your perfect '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Free cancellation · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Browse Tours</a>';
+    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Find your perfect '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Browse Tours</a>';
     document.body.appendChild(bar);
   }
   // Track scroll milestones

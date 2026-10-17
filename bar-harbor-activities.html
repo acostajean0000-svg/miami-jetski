@@ -291,7 +291,7 @@ document.addEventListener('click',function(e){
     <div class="fo-body">
       <div class="fo-eyebrow">⭐ Featured Operator</div>
       <h2 class="fo-title">Miami Style Rentals</h2>
-      <div class="fo-perks">Jet skis · boats · tours — book direct ✓ Free cancellation</div>
+      <div class="fo-perks">Jet skis · boats · tours — book direct ✓ Clear cancellation terms</div>
     </div>
     <div class="fo-right">
       <div class="fo-price">From<b>$50</b></div>
@@ -367,7 +367,7 @@ document.addEventListener('click',function(e){
   <h3>Booking Tips for Bar Harbor & Acadia</h3>
   <ul>
     <li><strong>Book early during peak season</strong> (Jun-Sep) — popular tours sell out 1–2 weeks in advance</li>
-    <li><strong>Check cancellation policy</strong> — most operators offer free cancellation 24–48 hours before</li>
+    <li><strong>Check cancellation policy</strong> — cancellation terms vary by operator</li>
     <li><strong>Read recent reviews</strong> — sort by rating to see top-reviewed experiences first</li>
     <li><strong>Group discounts</strong> available on many tours for 4+ passengers</li>
     <li><strong>Bring sunscreen, water, and a hat</strong> for outdoor tours in temperate climate</li>
@@ -378,7 +378,7 @@ document.addEventListener('click',function(e){
     <details class="faq-item"><summary class="faq-q">What are the most popular activities in Bar Harbor & Acadia?</summary><div class="faq-a">The top activities in Bar Harbor & Acadia are sightseeing tours (102+ operators), boat charters (13+ operators), and bike rentals (6+ operators). We list 132+ verified operators across 9 categories.</div></details>
     <details class="faq-item"><summary class="faq-q">How much do Bar Harbor & Acadia tours cost?</summary><div class="faq-a">Prices in Bar Harbor & Acadia start around $55 per person for most tours. Jet ski rentals, snorkeling, and group cruises tend to be in the $50–$150 range, while private boat charters and yacht rentals can range from $300 to $2,000+ depending on size and duration.</div></details>
     <details class="faq-item"><summary class="faq-q">When is the best time to visit Bar Harbor & Acadia?</summary><div class="faq-a">The peak season in Bar Harbor & Acadia is Jun-Sep, with the most pleasant weather. The climate is temperate. Booking early is recommended during peak months.</div></details>
-    <details class="faq-item"><summary class="faq-q">Do I need to book Bar Harbor & Acadia activities in advance?</summary><div class="faq-a">Yes — popular Bar Harbor & Acadia tours fill up days or weeks in advance, especially during peak season (Jun-Sep). All operators support instant online booking through FareHarbor with free cancellation on most tours.</div></details>
+    <details class="faq-item"><summary class="faq-q">Do I need to book Bar Harbor & Acadia activities in advance?</summary><div class="faq-a">Yes — popular Bar Harbor & Acadia tours fill up days or weeks in advance, especially during peak season (Jun-Sep). All operators support instant online booking through FareHarbor with cancellation terms shown before you pay.</div></details>
     <details class="faq-item"><summary class="faq-q">How do I get to Bar Harbor & Acadia?</summary><div class="faq-a">The closest airport is Bangor (BGR). Most operators are located near Bar Harbor, Mount Desert.</div></details>
     <details class="faq-item"><summary class="faq-q">Are Bar Harbor & Acadia tours suitable for families and children?</summary><div class="faq-a">Many Bar Harbor & Acadia operators offer family-friendly tours. Boat tours, snorkeling with calm waters, walking tours, and wildlife experiences are popular family choices. Always check age restrictions when booking.</div></details>
   </div>
@@ -426,7 +426,7 @@ document.addEventListener('click',function(e){
    "name": "Do I need to book Bar Harbor & Acadia activities in advance?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Yes — popular Bar Harbor & Acadia tours fill up days or weeks in advance, especially during peak season (Jun-Sep). All operators support instant online booking through FareHarbor with free cancellation on most tours."
+    "text": "Yes — popular Bar Harbor & Acadia tours fill up days or weeks in advance, especially during peak season (Jun-Sep). All operators support instant online booking through FareHarbor with cancellation terms shown before you pay."
    }
   },
   {
@@ -860,14 +860,14 @@ document.head.appendChild(styleEl);
   if(filters&&!document.querySelector('.trust-strip')){
     var t=document.createElement('div');
     t.className='trust-strip';
-    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Free cancellation</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
+    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Cancellation terms at checkout</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
     filters.insertAdjacentElement('afterend',t);
   }
   // Sticky bottom CTA
   if(!document.querySelector('.sticky-zone-cta')){
     var bar=document.createElement('div');
     bar.className='sticky-zone-cta';
-    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Find your perfect '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Free cancellation · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Browse Tours</a>';
+    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Find your perfect '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Browse Tours</a>';
     document.body.appendChild(bar);
   }
   // Track scroll milestones

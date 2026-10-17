@@ -140,7 +140,7 @@ def build(loc, items):
         li = '; '.join('<a href="%s/%s">%s</a> (%.1f★, %s reviews)' % (DOM, slugmap[o['id']], esc(o['name']), float(o['rating']), o['reviews']) for o in top5 if slugmap.get(o['id']))
         faq.append(('What are the best-rated activities in %s?' % loc, 'Based on customer ratings, the top-rated options right now are: %s.' % li))
     faq.append(('How much do activities in %s cost?' % loc, ('Prices start around $%d. ' % pmin if pmin else '') + 'Every card shows the operator\'s starting price; final pricing and availability are confirmed on the FareHarbor booking page.'))
-    faq.append(('How do I book an activity in %s?' % loc, 'Pick an operator, tap Book Now and complete the reservation on FareHarbor — real-time availability, secure checkout and instant confirmation. Most operators offer free cancellation 24–48h before departure; check each listing\'s policy at checkout.'))
+    faq.append(('How do I book an activity in %s?' % loc, 'Pick an operator, tap Book Now and complete the reservation on FareHarbor — real-time availability, secure checkout and instant confirmation. Cancellation terms vary by operator; check each listing\'s policy at checkout.'))
     faq_html = ''.join('<details%s><summary>%s</summary><p>%s</p></details>' % (' open' if i == 0 else '', esc(q), a.replace(DOM + '/', '/')) for i, (q, a) in enumerate(faq))
     # JSON-LD
     ld_list = {'@context': 'https://schema.org', '@type': 'ItemList', 'name': '%s activities' % loc, 'numberOfItems': len(ch),

@@ -247,7 +247,7 @@ document.addEventListener('click',function(e){
    "name": "Do I need to book Florida Keys activities in advance?",
    "acceptedAnswer": {
     "@type": "Answer",
-    "text": "Yes — sandbar trips, snorkel tours, and sunset cruises sell out 1–2 weeks ahead during peak season. All operators on this page support instant FareHarbor booking with free cancellation on most tours."
+    "text": "Yes — sandbar trips, snorkel tours, and sunset cruises sell out 1–2 weeks ahead during peak season. All operators on this page support instant FareHarbor booking with cancellation terms shown before you pay."
    }
   },
   {
@@ -350,7 +350,7 @@ document.addEventListener('click',function(e){
 </style>
 <section class="content-authority">
   <h2>Complete Guide to Florida Keys Activities & Tours</h2>
-  <p>The Florida Keys host <strong>460+ verified tour operators</strong> across <strong>17 activity categories</strong>, making it the most diverse aquatic destination in the southeastern United States. From Key Largo to Key West, you'll find everything from world-class reef snorkeling and offshore fishing to sandbar trips, sunset cruises, and adrenaline-packed jet ski tours. Every operator on this page is verified through FareHarbor with instant booking and free cancellation on most tours.</p>
+  <p>The Florida Keys host <strong>460+ verified tour operators</strong> across <strong>17 activity categories</strong>, making it the most diverse aquatic destination in the southeastern United States. From Key Largo to Key West, you'll find everything from world-class reef snorkeling and offshore fishing to sandbar trips, sunset cruises, and adrenaline-packed jet ski tours. Every operator on this page is verified through FareHarbor with instant booking and cancellation terms shown before you pay.</p>
   <div class="fact-grid">
     <div class="fact-item"><div class="fact-label">Total Operators</div><div class="fact-value">460+</div></div>
     <div class="fact-item"><div class="fact-label">Categories</div><div class="fact-value">17</div></div>
@@ -379,7 +379,7 @@ document.addEventListener('click',function(e){
     <details class="faq-item"><summary class="faq-q">What are the most popular activities in the Florida Keys?</summary><div class="faq-a">The top activities in the Florida Keys are boat charters (124+ operators), fishing charters (69+ operators), and sightseeing tours (60+ operators). We list 460+ verified operators across 17 categories.</div></details>
     <details class="faq-item"><summary class="faq-q">How much do Florida Keys tours cost?</summary><div class="faq-a">Prices in the Florida Keys start around $91 per person for most tours. Snorkeling, sandbar trips, and group cruises tend to be in the $50–$150 range, while private boat charters, fishing trips, and yacht rentals range from $300 to $2,000+ depending on size and duration.</div></details>
     <details class="faq-item"><summary class="faq-q">When is the best time to visit the Florida Keys?</summary><div class="faq-a">Peak season is Dec–Apr with the most pleasant tropical weather and lowest humidity. Booking early is essential during these months. May–Oct has warmer water but higher heat, humidity, and hurricane risk; off-season can offer better deals.</div></details>
-    <details class="faq-item"><summary class="faq-q">Do I need to book Florida Keys activities in advance?</summary><div class="faq-a">Yes — sandbar trips, snorkel tours, and sunset cruises sell out 1–2 weeks ahead during peak season. All operators on this page support instant FareHarbor booking with free cancellation on most tours.</div></details>
+    <details class="faq-item"><summary class="faq-q">Do I need to book Florida Keys activities in advance?</summary><div class="faq-a">Yes — sandbar trips, snorkel tours, and sunset cruises sell out 1–2 weeks ahead during peak season. All operators on this page support instant FareHarbor booking with cancellation terms shown before you pay.</div></details>
     <details class="faq-item"><summary class="faq-q">How do I get to Key West and the Florida Keys?</summary><div class="faq-a">The closest airport is Key West International (EYW). Most operators are concentrated in Key West, Stock Island, Big Pine Key. You can also drive the famous Overseas Highway (US-1) from Miami — a 4-hour scenic drive crossing 42 bridges through the entire Keys archipelago.</div></details>
     <details class="faq-item"><summary class="faq-q">Are Florida Keys tours suitable for families with children?</summary><div class="faq-a">Yes — many Florida Keys operators offer family-friendly tours. Sandbar trips with shallow swimming water, glass-bottom boats, snorkeling at protected reefs, dolphin watching, and sunset cruises are all popular family choices. Always check age restrictions when booking.</div></details>
   </div>
@@ -702,14 +702,14 @@ document.head.appendChild(styleEl);
   if(filters&&!document.querySelector('.trust-strip')){
     var t=document.createElement('div');
     t.className='trust-strip';
-    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Free cancellation</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
+    t.innerHTML='<span class="trust-item">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item">✓ Verified FareHarbor operators</span><span class="trust-item">🔄 Cancellation terms at checkout</span><span class="trust-item">⚡ Instant booking</span><span class="trust-item">💳 Secure checkout</span>';
     filters.insertAdjacentElement('afterend',t);
   }
   // Sticky bottom CTA
   if(!document.querySelector('.sticky-zone-cta')){
     var bar=document.createElement('div');
     bar.className='sticky-zone-cta';
-    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Find your perfect '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Free cancellation · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Browse Tours</a>';
+    bar.innerHTML='<div class="sticky-zone-cta-info"><div class="sticky-zone-cta-title">Find your perfect '+ZONE_NAME+' tour</div><div class="sticky-zone-cta-sub">⭐ 4.7 · Instant booking</div></div><a href="#mapWrap" class="sticky-zone-cta-btn" onclick="if(window.gtag)gtag(\'event\',\'sticky_cta_click\',{zone:\''+ZONE_NAME+'\'});">🗺️ Browse Tours</a>';
     document.body.appendChild(bar);
   }
   // Track scroll milestones
