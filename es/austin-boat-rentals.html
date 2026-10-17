@@ -1386,7 +1386,7 @@ document.head.appendChild(styleEl);
     grid.innerHTML=ops.map(function(o){
       var photo=o.photo&&o.photo.includes('http')?o.photo:(o.photo?'https://cdn.filestackcontent.com/'+o.photo+'/convert?w=400&format=webp':'');
       var distanceHtml=userLoc&&o.lat?'<div class="mp-cmp-attr">📏 Distance <strong>'+haversineMi(userLoc.lat,userLoc.lng,o.lat,o.lng).toFixed(1)+' mi</strong></div>':'';
-      return '<div class="mp-cmp-card"><img src="'+photo+'" alt="'+(o.name||'').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'"><div class="mp-cmp-body"><h4>'+(o.name||'').slice(0,60)+'</h4><div class="mp-cmp-attr">⭐ Rating <strong>'+(o.rating||'4.7')+'/5</strong></div><div class="mp-cmp-attr">💬 Reviews <strong>'+(o.reviews||'100')+'+</strong></div><div class="mp-cmp-attr">💰 Price <strong>$'+(o.price||'50')+'+</strong></div><div class="mp-cmp-attr">📍 Location <strong>'+(o.zl||o.zone||'').slice(0,20)+'</strong></div>'+distanceHtml+'<a href="/'+getSlug(o)+'" class="mp-cmp-book">Ver Detalles →</a></div></div>';
+      return '<div class="mp-cmp-card"><img src="'+photo+'" alt="'+(o.name||'').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'"><div class="mp-cmp-body"><h4>'+(o.name||'').slice(0,60)+'</h4><div class="mp-cmp-attr">⭐ Rating <strong>'+(o.rating||'4.7')+'/5</strong></div><div class="mp-cmp-attr">💬 Reviews <strong>'+(o.reviews||'100')+'+</strong></div><div class="mp-cmp-attr">💰 Price <strong>'+(o.price?'$'+o.price+'+':'Ver precios')+'</strong></div><div class="mp-cmp-attr">📍 Location <strong>'+(o.zl||o.zone||'').slice(0,20)+'</strong></div>'+distanceHtml+'<a href="/'+getSlug(o)+'" class="mp-cmp-book">Ver Detalles →</a></div></div>';
     }).join('');
     modal.classList.add('show');
     if(window.gtag)gtag('event','map_compare_view',{count:ops.length});
@@ -1475,7 +1475,7 @@ document.head.appendChild(styleEl);
         var emoji='🌊';
         var cat=(o.cat||'').toLowerCase();
         if(cat==='jetski')emoji='🛥️';else if(cat==='boat')emoji='⛵';else if(cat==='fishing')emoji='🎣';else if(cat==='snorkel')emoji='🤿';else if(cat==='atv')emoji='🏍️';else if(cat==='tour')emoji='🚌';else if(cat==='exotic')emoji='💎';else if(cat==='slingshot')emoji='🏎️';else if(cat==='aerial')emoji='✈️';else if(cat==='sunset')emoji='🌅';else if(cat==='watersports')emoji='🏄';
-        html+='<a href="/'+slug+'" class="mp-result" style="display:block;text-decoration:none">'+emoji+' '+(o.name||'').slice(0,60)+'<span style="color:#7ba3c0;font-size:.72rem;margin-left:6px">⭐ '+(o.rating||'4.7')+' · $'+(o.price||'50')+'+</span></a>';
+        html+='<a href="/'+slug+'" class="mp-result" style="display:block;text-decoration:none">'+emoji+' '+(o.name||'').slice(0,60)+'<span style="color:#7ba3c0;font-size:.72rem;margin-left:6px">⭐ '+(o.rating||'4.7')+' · '+(o.price?'$'+o.price+'+':'Ver precios')+'</span></a>';
       });
     }
     if(placeResults.length){
@@ -1666,7 +1666,7 @@ document.head.appendChild(styleEl);
     } else {
       grid.innerHTML=ops.map(function(o){
         var photo=o.photo&&o.photo.includes('http')?o.photo:(o.photo?'https://cdn.filestackcontent.com/'+o.photo+'/convert?w=400&format=webp':'');
-        return '<div class="mp-cmp-card"><img src="'+photo+'" alt="'+(o.name||'').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'"><div class="mp-cmp-body"><h4>'+(o.name||'').slice(0,60)+'</h4><div class="mp-cmp-attr">⭐ <strong>'+(o.rating||'4.7')+'</strong> · 💰 $'+(o.price||'50')+'+</div><a href="/'+getSlug(o)+'" class="mp-cmp-book">Ver Detalles →</a></div></div>';
+        return '<div class="mp-cmp-card"><img src="'+photo+'" alt="'+(o.name||'').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'"><div class="mp-cmp-body"><h4>'+(o.name||'').slice(0,60)+'</h4><div class="mp-cmp-attr">⭐ <strong>'+(o.rating||'4.7')+'</strong> · 💰 '+(o.price?'$'+o.price+'+':'Ver precios')+'</div><a href="/'+getSlug(o)+'" class="mp-cmp-book">Ver Detalles →</a></div></div>';
       }).join('');
     }
     modal.classList.add('show');
@@ -1691,7 +1691,7 @@ document.head.appendChild(styleEl);
         (photo?'<img class="mp-popup-img" src="'+photo+'" alt="">':'')+
         '<div class="mp-popup-body">'+
         '<div class="mp-popup-name">'+(op.name||'').slice(0,80)+'</div>'+
-        '<div class="mp-popup-meta"><span class="mp-popup-rating">⭐ '+(op.rating||'4.7')+' ('+(op.reviews||'100')+'+)</span><span class="mp-popup-price">$'+(op.price||'50')+'+</span></div>'+
+        '<div class="mp-popup-meta"><span class="mp-popup-rating">⭐ '+(op.rating||'4.7')+' ('+(op.reviews||'100')+'+)</span><span class="mp-popup-price">'+(op.price?'$'+op.price+'+':'Ver precios')+'</span></div>'+
         ((function(){var t=[];var em=(window.CAT_EMOJI&&window.CAT_EMOJI[op.cat])||'';if(op.badge)t.push((em?em+' ':'')+op.badge);if(op.zl)t.push('📍 '+op.zl);if(op.pax)t.push('👥 hasta '+op.pax);return t.length?'<div class="mp-popup-tags">'+t.join(' · ')+'</div>':'';})())+(distance?'<div class="mp-popup-distance">📍 '+distance+'</div>':'')+
         '<div class="mp-popup-actions">'+
         ((op.link&&op.link.indexOf('http')===0)?'<a href="'+op.link+'" target="_blank" rel="noopener" class="mp-popup-btn">⚡ Reservar</a>':'<a href="/'+slug+'" class="mp-popup-btn">Ver detalles</a>')+

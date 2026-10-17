@@ -132,7 +132,6 @@
     <p>Watch the sun set from the water — 167 verified sunset cruises and sailing trips across Florida, Hawaii & the Caribbean. Catamarans, sailboats, party boats and champagne charters in Key West, Destin, Miami, Punta Cana, Cancún, Honolulu and more. Instant FareHarbor booking.</p>
     <div class="stats">
       <span class="stat"><strong>167</strong> operators</span>
-      <span class="stat">From <strong>$50</strong></span>
       <span class="stat">⭐ <strong>4.7</strong> avg rating</span>
     </div>
   </section>
@@ -170,7 +169,7 @@ function render(){
   grid.innerHTML = list.map((op,i) => {
     const slug = slugMap[op.id] || '';
     const href = slug ? '/'+encodeURIComponent(slug) : (op.link || '#');
-    const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'Contact for pricing';
+    const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'See prices';
     const eager = i < 4 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
     return `<a class="card" href="${esc(href)}">
       <div class="img"><img src="${esc(thumbUrl(op.photo))}" alt="${esc(op.name)}" ${eager} width="480" height="320" onerror="this.src=FALLBACK_IMG"><span class="badge">🌅 ${esc(op.zl || op.zone || '')}</span></div>

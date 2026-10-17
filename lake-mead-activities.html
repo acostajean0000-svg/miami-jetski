@@ -217,7 +217,7 @@ document.addEventListener('click',function(e){
   <section class="hero">
     <h1>Lake Mead Tours & Activities</h1>
     <p>Compare <strong>27</strong> verified operators in the Lake Mead area, Nevada & Arizona. Boat charters, jet ski, fishing, sunset cruises and more — instant booking via FareHarbor.</p>
-    <div class="stats"><span class="stat"><strong>27</strong> operators</span><span class="stat">From <strong>$50</strong></span><span class="stat">⚡ Instant booking</span></div>
+    <div class="stats"><span class="stat"><strong>27</strong> operators</span><span class="stat">⚡ Instant booking</span></div>
   </section>
   <div class="filters" id="filters"><span class="cat-chip active" data-cat="all">🌎 All (27)</span><span class="cat-chip" data-cat="boat">⛵ Boat (11)</span><span class="cat-chip" data-cat="watersports">🏄 Water Sports (8)</span><span class="cat-chip" data-cat="fishing">🎣 Fishing (4)</span><span class="cat-chip" data-cat="tour">🚌 Tour (3)</span><span class="cat-chip" data-cat="sunset">🌅 Sunset (1)</span></div>
     <div class="map-wrap" id="mapWrap"><div class="map-wrap-skeleton">Loading map…</div><div id="map"></div><button class="near-me-btn" id="nearMeBtn" type="button" aria-label="Show operators near me">📍 Near Me</button><div class="near-me-info" id="nearMeInfo"></div><button class="show-all-btn" id="showAllBtn" type="button" aria-label="Show all operators" style="display:none">&larr; Show all operators</button></div>
@@ -267,7 +267,7 @@ document.addEventListener('click',function(e){
 <h3>Where the operators are</h3>
 <p>Most departures run from Boulder City, Callville Bay and the Overton arm. Main areas by operator count: Boulder City (10), Overton (10), Temple Bar Marina (7). When choosing, check the meeting point against where you're staying — many operators offer flexible start times.</p>
 <h3>Featured operators</h3>
-<ul><li><strong>17' Mako Fish Skiff</strong> — Overton · from $150</li><li><strong>17' Mako Fish Skiff</strong> — Temple Bar Marina · from $150</li><li><strong>21' Ski Boat</strong> — Temple Bar Marina · from $150</li><li><strong>25' SunChaser Tritoon (150HP)</strong> — Temple Bar Marina · from $150</li></ul>
+<ul><li><strong>17' Mako Fish Skiff</strong> — Overton ·</li><li><strong>17' Mako Fish Skiff</strong> — Temple Bar Marina ·</li><li><strong>21' Ski Boat</strong> — Temple Bar Marina ·</li><li><strong>25' SunChaser Tritoon (150HP)</strong> — Temple Bar Marina ·</li></ul>
 <h3>Booking tips for Lake Mead</h3>
 <ul><li><strong>Book early in peak season</strong> (March – November) — weekends sell out days ahead</li><li><strong>Prices start around $50</strong>, averaging $89 per person across categories</li><li><strong>Free cancellation</strong> applies to most listings 24–48h before departure — check each operator's policy at checkout</li><li><strong>Getting there:</strong> Las Vegas Harry Reid International (LAS, ~35 min)</li><li>Arrive 15 minutes early with a valid ID; dress for the weather</li></ul>
 <h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><button class="faq-q" type="button">What water activities are popular at Lake Mead?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>Boat and pontoon rentals, jet ski, kayaking in Black Canyon and scenic cruises near Hoover Dam — bookable online.</p></div></div><div class="faq-item"><button class="faq-q" type="button">How do I get to Lake Mead?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>Fly into Las Vegas (LAS), about 30–45 minutes away; marinas are near Boulder City, Callville Bay and the Overton arm.</p></div></div><div class="faq-item"><button class="faq-q" type="button">When is the best time to visit?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>March through November is ideal; summer is hot but the water is warm, while spring and fall are most comfortable.</p></div></div></div></section>
@@ -310,7 +310,7 @@ function render(){
   grid.innerHTML = list.map((op,i) => {
     const slug = slugMap[op.id] || '';
     const href = '/' + encodeURIComponent(slug || (op.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)+'-'+(op.zone||''));
-    const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'Contact for pricing';
+    const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'See prices';
     const eager = i < 4 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
     return `<a class="card" href="${esc(href)}" data-op-id="${esc(op.id)}">
       <div class="img"><img src="${esc(thumbUrl(op.photo))}" alt="${esc(op.name)}" ${eager} width="480" height="320" onerror="this.src=FALLBACK_IMG"><span class="badge">${CAT_EMOJI[op.cat]||'🌊'} ${esc(CAT_LABELS[op.cat]||op.cat)}</span></div>

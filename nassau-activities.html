@@ -217,7 +217,7 @@ document.addEventListener('click',function(e){
   <section class="hero">
     <h1>Nassau & Paradise Island Tours & Activities</h1>
     <p>Compare <strong>7</strong> verified operators in Nassau & Paradise Island, The Bahamas. Boat charters, jet ski, fishing, sunset cruises and more — instant booking via FareHarbor.</p>
-    <div class="stats"><span class="stat"><strong>7</strong> operators</span><span class="stat">From <strong>$50</strong></span><span class="stat">⚡ Instant booking</span></div>
+    <div class="stats"><span class="stat"><strong>7</strong> operators</span><span class="stat">⚡ Instant booking</span></div>
   </section>
   <div class="filters" id="filters"><span class="cat-chip active" data-cat="all">🌎 All (7)</span><span class="cat-chip" data-cat="snorkel">🤿 Snorkel (2)</span><span class="cat-chip" data-cat="tour">🚌 Tour (2)</span><span class="cat-chip" data-cat="boat">⛵ Boat (2)</span><span class="cat-chip" data-cat="jetski">🛥️ Jet Ski (1)</span></div>
     <div class="map-wrap" id="mapWrap"><div class="map-wrap-skeleton">Loading map…</div><div id="map"></div><button class="near-me-btn" id="nearMeBtn" type="button" aria-label="Show operators near me">📍 Near Me</button><div class="near-me-info" id="nearMeInfo"></div><button class="show-all-btn" id="showAllBtn" type="button" aria-label="Show all operators" style="display:none">&larr; Show all operators</button></div>
@@ -267,7 +267,7 @@ document.addEventListener('click',function(e){
 <h3>Where the operators are</h3>
 <p>Most departures run from Nassau harbour, Paradise Island and Cable Beach. Main areas by operator count: Nassau (6), The Bahamas (1). When choosing, check the meeting point against where you're staying — many operators offer flexible start times.</p>
 <h3>Featured operators</h3>
-<ul><li><strong>Mansa Bay Private Island Beach Club with Swimming </strong> — Nassau · from $100</li><li><strong>Atlantis Expérience</strong> — Nassau · from $95</li><li><strong>Discover Nassau Land & Sea</strong> — The Bahamas · from $95</li><li><strong>Swimming Pigs and Snorkeling Tour</strong> — Nassau · from $75</li></ul>
+<ul><li><strong>Mansa Bay Private Island Beach Club with Swimming </strong> — Nassau ·</li><li><strong>Atlantis Expérience</strong> — Nassau ·</li><li><strong>Discover Nassau Land & Sea</strong> — The Bahamas ·</li><li><strong>Swimming Pigs and Snorkeling Tour</strong> — Nassau ·</li></ul>
 <h3>Booking tips for Nassau & Paradise Island</h3>
 <ul><li><strong>Book early in peak season</strong> (December – April) — weekends sell out days ahead</li><li><strong>Prices start around $50</strong>, averaging $77 per person across categories</li><li><strong>Free cancellation</strong> applies to most listings 24–48h before departure — check each operator's policy at checkout</li><li><strong>Getting there:</strong> Lynden Pindling International (NAS) or cruise port</li><li>Arrive 15 minutes early with a valid ID; dress for the weather</li></ul>
 <h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><button class="faq-q" type="button">What water activities are popular in Nassau?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>Snorkeling and reef tours, catamaran sails, jet ski rentals, private charters and dolphin swims are the most popular, all bookable instantly online.</p></div></div><div class="faq-item"><button class="faq-q" type="button">How do I get to Nassau?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>Most visitors arrive at Lynden Pindling International Airport (NAS) or by cruise ship; many tours offer pickup near the port and Cable Beach.</p></div></div><div class="faq-item"><button class="faq-q" type="button">When is the best time to visit?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>December through April brings the calmest seas and driest weather; summer is warm with lower prices.</p></div></div></div></section>
@@ -310,7 +310,7 @@ function render(){
   grid.innerHTML = list.map((op,i) => {
     const slug = slugMap[op.id] || '';
     const href = '/' + encodeURIComponent(slug || (op.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)+'-'+(op.zone||''));
-    const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'Contact for pricing';
+    const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'See prices';
     const eager = i < 4 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
     return `<a class="card" href="${esc(href)}" data-op-id="${esc(op.id)}">
       <div class="img"><img src="${esc(thumbUrl(op.photo))}" alt="${esc(op.name)}" ${eager} width="480" height="320" onerror="this.src=FALLBACK_IMG"><span class="badge">${CAT_EMOJI[op.cat]||'🌊'} ${esc(CAT_LABELS[op.cat]||op.cat)}</span></div>

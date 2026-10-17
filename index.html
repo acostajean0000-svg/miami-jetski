@@ -817,7 +817,7 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
     <p>Compare 10,700+ operators — jet ski rentals, boat charters, aerial tours, ATV, bike rentals, golf carts, fishing trips &amp; more. From Miami Beach to Key West, Gulf Coast to Space Coast. Book online instantly.</p>
     <div class="hero-stats">
       <div class="hero-stat"><div class="hero-stat-num" id="heroOpCount">10,700+</div><div class="hero-stat-label">Operators</div></div>
-      <div class="hero-stat"><div class="hero-stat-num">$4</div><div class="hero-stat-label">Starting From</div></div>
+      <div class="hero-stat"><div class="hero-stat-num">4.7★</div><div class="hero-stat-label">Avg Rating</div></div>
       <div class="hero-stat"><div class="hero-stat-num">13</div><div class="hero-stat-label">Categories</div></div>
       <div class="hero-stat"><div class="hero-stat-num">FL</div><div class="hero-stat-label">Statewide</div></div>
     </div>
@@ -1197,7 +1197,7 @@ function getFiltered() {
     ops = ops.map(op=>({...op, _dist:haversine(userLat,userLng,op.lat,op.lng)}))
              .sort((a,b)=>a._dist-b._dist);
   } else if (activeSortBy === 'price_asc') {
-    ops.sort((a,b) => a.price - b.price);
+    ops.sort((a,b) => (a.price||Infinity) - (b.price||Infinity));
   } else if (activeSortBy === 'price_desc') {
     ops.sort((a,b) => b.price - a.price);
   } else if (activeSortBy === 'rating_desc') {
@@ -1288,7 +1288,7 @@ const imgLoad = ci === 0 ? 'fetchpriority="high" loading="eager"' : 'loading="ea
       <div class="op-addr"><svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 384 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 256c-35.3 0-64-28.7-64-64s28.7-64 64-64 64 28.7 64 64-28.7 64-64 64z"/></svg> ${esc(op.zl)}${distBadge}</div>
       ${op.rating ? `<div class="op-stars"><span class="op-stars-val">${op.rating}</span><span class="op-stars-bar">${'★'.repeat(Math.round(op.rating))}${'☆'.repeat(5-Math.round(op.rating))}</span><span class="op-stars-count">(${op.reviews})</span></div>` : ''}
       <div class="op-footer">
-        <div class="op-price"><div class="op-price-from">From</div><div class="op-price-num">$${op.price.toLocaleString()}</div></div>
+        <div class="op-price">${op.price?`<div class="op-price-from">From</div><div class="op-price-num">$${op.price.toLocaleString()}</div>`:`<div class="op-price-num" style="font-size:.85rem">See prices</div>`}</div>
         ${op.link ? `<a href="${escUrl(op.link)}" data-fh-name="${esc(op.name)}" data-fh-price="${op.price||100}" target="_blank" rel="noopener noreferrer" class="op-book" onclick="event.stopPropagation();trackBookNow('${jsq(op.name)}','${op.price||100}','${op.cat||"tour"}')">Book Now <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 448 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M438.6 278.6l-160 160C272.4 444.9 264.2 448 256 448s-16.38-3.125-22.62-9.375c-12.5-12.5-12.5-32.75 0-45.25L338.8 288H32C14.33 288 .0016 273.7 .0016 256S14.33 224 32 224h306.8l-105.4-105.4c-12.5-12.5-12.5-32.75 0-45.25s32.75-12.5 45.25 0l160 160C451.1 245.9 451.1 266.1 438.6 278.6z"/></svg></a>` : `<span class="op-book op-book-disabled" onclick="event.stopPropagation()" title="Contact operator directly to book">Contact for booking</span>`}
       </div>
       ${(window._OP_SLUG_MAP || {})[op.id] ? `<a href="/${(window._OP_SLUG_MAP || {})[op.id]}" target="_blank" rel="noopener noreferrer" class="op-detail-link" onclick="event.stopPropagation()">View details <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></a>` : `<a href="${escUrl(op.link)}" target="_blank" rel="noopener noreferrer" class="op-detail-link" onclick="event.stopPropagation()">View details <svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 320 512" fill="currentColor" aria-hidden="true" style="vertical-align:-.125em"><path d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg></a>`}
@@ -1455,13 +1455,13 @@ function clearCompare(){
 }
 function openCompareModal(){
   if(compareList.length<2) return;
-  const minPrice=Math.min(...compareList.map(o=>o.price));
+  const minPrice=Math.min(...compareList.map(o=>o.price||Infinity));
   const fields=[
     {label:'Photo',    render:op=>op.photo?`<img src="${op.photo}" class="cmp-photo" onerror="this.style.display='none'" alt="${esc(op.name||'operator photo')}">`:'—'},
     {label:'Name',     render:op=>`<strong>${esc(op.name)}</strong>`},
     {label:'Type',     render:op=>`${catEmoji[op.cat]} ${catLabels[op.cat]}`},
     {label:'Location', render:op=>`📍 ${esc(op.zl)}`},
-    {label:'Price',    render:(op)=>op.price===minPrice?`<span class="cmp-best">From $${op.price.toLocaleString()} 🏆</span>`:`From $${op.price.toLocaleString()}`},
+    {label:'Price',    render:(op)=>!op.price?'See prices':op.price===minPrice?`<span class="cmp-best">From $${op.price.toLocaleString()} 🏆</span>`:`From $${op.price.toLocaleString()}`},
     {label:'Badge',    render:op=>op.badge || '—'},
     {label:'Book',     render:op=>`<a href="${escUrl(op.link)}" data-fh-name="${esc(op.name)}" data-fh-price="${op.price||100}" target="_blank" rel="noopener noreferrer" class="cmp-book-btn">Book Now →</a>`},
   ];
@@ -1541,7 +1541,7 @@ function favCardHTML(op) {
       <div class="fav-op-name">${esc(op.name)}</div>
       <div class="fav-op-loc">📍 ${esc(op.zl)}</div>
       <div class="fav-op-row">
-        <span class="fav-op-price">From $${op.price}</span>
+        <span class="fav-op-price">${op.price?'From $'+op.price:'See prices'}</span>
         <a href="${escUrl(op.link)}" data-fh-name="${esc(op.name)}" data-fh-price="${op.price||100}" target="_blank" rel="noopener noreferrer" class="fav-op-book">Book →</a>
       </div>
       <button class="fav-cmp-toggle${inCmp ? ' selected' : ''}" id="fav-cmp-${op.id}"
@@ -1632,7 +1632,7 @@ function shareWA(id) {
   const msg = encodeURIComponent(
     '🌊 Check this out: ' + op.name +
     '\n📍 ' + op.zl +
-    '\nFrom $' + op.price +
+    (op.price ? '\nFrom $' + op.price : '') +
     '\n👉 ' + siteUrl
   );
   window.open('https://wa.me/?text=' + msg, '_blank');
@@ -1759,7 +1759,7 @@ function renderDeals() {
         <div class="deal-name">${esc(op.name)}</div>
         <div class="deal-zone">📍 ${esc(op.zl)}</div>
         <div class="deal-footer">
-          <div class="deal-price">$${op.price}</div>
+          <div class="deal-price">${op.price?'$'+op.price:'See prices'}</div>
           <div class="deal-badge" style="background:var(--teal);color:var(--dark)">⭐ ${op.rating} (${op.reviews})</div>
         </div>
         <div class="deal-actions">
@@ -1979,7 +1979,7 @@ function makeOpMarker(op) {
   const opSlug = (window._OP_SLUG_MAP || {})[op.id] || '';
   const priceLabel = (op.price && op.price > 0)
     ? ('From $' + op.price.toLocaleString())
-    : 'Contact for pricing';
+    : 'See prices';
   const popupHTML = `<div class="map-popup">
       <div class="map-popup-name">${esc(op.name)}</div>
       <div class="map-popup-price">${esc(priceLabel)}</div>
@@ -2149,7 +2149,7 @@ function updateAC() {
     const slug = (window._OP_SLUG_MAP || {})[op.id] || '';
     return `<div class="ac-item" role="option" data-id="${op.id}" data-slug="${slug}" onclick="acSelect('${op.id}','${slug}')">
       <div><div class="ac-item-name">${esc(op.name)}</div><div class="ac-item-zone">📍 ${esc(op.zl)}</div></div>
-      <div class="ac-item-price">$${op.price}</div>
+      <div class="ac-item-price">${op.price?'$'+op.price:''}</div>
     </div>`;
   }).join('');
   dd.classList.add('open');
@@ -2196,7 +2196,7 @@ function renderRecentlyViewed() {
   rail.innerHTML = rv.map(o => {
     const url = o.slug ? `/${o.slug}` : '/';
     const img = o.photo ? `<img class="rv-card-img" src="${thumbUrl(o.photo)}" alt="${esc(o.name)}" loading="lazy" onerror="this.style.display='none'">` : '';
-    return `<a href="${url}" class="rv-card">${img}<div class="rv-card-name">${esc(o.name)}</div><div class="rv-card-price">From $${o.price}</div></a>`;
+    return `<a href="${url}" class="rv-card">${img}<div class="rv-card-name">${esc(o.name)}</div><div class="rv-card-price">${o.price?'From $'+o.price:'See prices'}</div></a>`;
   }).join('');
 }
 function cardClick(id) {
@@ -3558,7 +3558,7 @@ function cookieConsent(choice){
     grid.innerHTML=ops.map(function(o){
       var photo=o.photo&&o.photo.includes('http')?o.photo:(o.photo?'https://cdn.filestackcontent.com/'+o.photo+'/convert?w=400&format=webp':'');
       var distanceHtml=userLoc&&o.lat?'<div class="mp-cmp-attr">📏 Distance <strong>'+haversineMi(userLoc.lat,userLoc.lng,o.lat,o.lng).toFixed(1)+' mi</strong></div>':'';
-      return '<div class="mp-cmp-card"><img src="'+photo+'" alt="'+(o.name||'').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'"><div class="mp-cmp-body"><h4>'+(o.name||'').slice(0,60)+'</h4><div class="mp-cmp-attr">⭐ Rating <strong>'+(o.rating||'4.7')+'/5</strong></div><div class="mp-cmp-attr">💬 Reviews <strong>'+(o.reviews||'100')+'+</strong></div><div class="mp-cmp-attr">💰 Price <strong>$'+(o.price||'50')+'+</strong></div><div class="mp-cmp-attr">📍 Location <strong>'+(o.zl||o.zone||'').slice(0,20)+'</strong></div>'+distanceHtml+'<a href="/'+getSlug(o)+'" class="mp-cmp-book">View Details →</a></div></div>';
+      return '<div class="mp-cmp-card"><img src="'+photo+'" alt="'+(o.name||'').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'"><div class="mp-cmp-body"><h4>'+(o.name||'').slice(0,60)+'</h4><div class="mp-cmp-attr">⭐ Rating <strong>'+(o.rating||'4.7')+'/5</strong></div><div class="mp-cmp-attr">💬 Reviews <strong>'+(o.reviews||'100')+'+</strong></div><div class="mp-cmp-attr">💰 Price <strong>'+(o.price?'$'+o.price+'+':'See prices')+'</strong></div><div class="mp-cmp-attr">📍 Location <strong>'+(o.zl||o.zone||'').slice(0,20)+'</strong></div>'+distanceHtml+'<a href="/'+getSlug(o)+'" class="mp-cmp-book">View Details →</a></div></div>';
     }).join('');
     modal.classList.add('show');
     if(window.gtag)gtag('event','map_compare_view',{count:ops.length});
@@ -3647,7 +3647,7 @@ function cookieConsent(choice){
         var emoji='🌊';
         var cat=(o.cat||'').toLowerCase();
         if(cat==='jetski')emoji='🛥️';else if(cat==='boat')emoji='⛵';else if(cat==='fishing')emoji='🎣';else if(cat==='snorkel')emoji='🤿';else if(cat==='atv')emoji='🏍️';else if(cat==='tour')emoji='🚌';else if(cat==='exotic')emoji='💎';else if(cat==='slingshot')emoji='🏎️';else if(cat==='aerial')emoji='✈️';else if(cat==='sunset')emoji='🌅';else if(cat==='watersports')emoji='🏄';
-        html+='<a href="/'+slug+'" class="mp-result" style="display:block;text-decoration:none">'+emoji+' '+(o.name||'').slice(0,60)+'<span style="color:#7ba3c0;font-size:.72rem;margin-left:6px">⭐ '+(o.rating||'4.7')+' · $'+(o.price||'50')+'+</span></a>';
+        html+='<a href="/'+slug+'" class="mp-result" style="display:block;text-decoration:none">'+emoji+' '+(o.name||'').slice(0,60)+'<span style="color:#7ba3c0;font-size:.72rem;margin-left:6px">⭐ '+(o.rating||'4.7')+' · '+(o.price?'$'+o.price+'+':'See prices')+'</span></a>';
       });
     }
     if(placeResults.length){
@@ -3838,7 +3838,7 @@ function cookieConsent(choice){
     } else {
       grid.innerHTML=ops.map(function(o){
         var photo=o.photo&&o.photo.includes('http')?o.photo:(o.photo?'https://cdn.filestackcontent.com/'+o.photo+'/convert?w=400&format=webp':'');
-        return '<div class="mp-cmp-card"><img src="'+photo+'" alt="'+(o.name||'').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'"><div class="mp-cmp-body"><h4>'+(o.name||'').slice(0,60)+'</h4><div class="mp-cmp-attr">⭐ <strong>'+(o.rating||'4.7')+'</strong> · 💰 $'+(o.price||'50')+'+</div><a href="/'+getSlug(o)+'" class="mp-cmp-book">View Details →</a></div></div>';
+        return '<div class="mp-cmp-card"><img src="'+photo+'" alt="'+(o.name||'').replace(/"/g,'&quot;')+'" onerror="this.style.display=\'none\'"><div class="mp-cmp-body"><h4>'+(o.name||'').slice(0,60)+'</h4><div class="mp-cmp-attr">⭐ <strong>'+(o.rating||'4.7')+'</strong> · 💰 '+(o.price?'$'+o.price+'+':'See prices')+'</div><a href="/'+getSlug(o)+'" class="mp-cmp-book">View Details →</a></div></div>';
       }).join('');
     }
     modal.classList.add('show');
@@ -3863,7 +3863,7 @@ function cookieConsent(choice){
         (photo?'<img class="mp-popup-img" src="'+photo+'" alt="">':'')+
         '<div class="mp-popup-body">'+
         '<div class="mp-popup-name">'+(op.name||'').slice(0,80)+'</div>'+
-        '<div class="mp-popup-meta"><span class="mp-popup-rating">⭐ '+(op.rating||'4.7')+' ('+(op.reviews||'100')+'+)</span><span class="mp-popup-price">$'+(op.price||'50')+'+</span></div>'+
+        '<div class="mp-popup-meta"><span class="mp-popup-rating">⭐ '+(op.rating||'4.7')+' ('+(op.reviews||'100')+'+)</span><span class="mp-popup-price">'+(op.price?'$'+op.price+'+':'See prices')+'</span></div>'+
         (distance?'<div class="mp-popup-distance">📏 '+distance+'</div>':'')+
         '<div class="mp-popup-actions">'+
         '<a href="/'+slug+'" class="mp-popup-btn">View Details</a>'+

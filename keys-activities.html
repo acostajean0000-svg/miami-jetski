@@ -298,7 +298,6 @@ document.addEventListener('click',function(e){
     <p>Compare <strong>458</strong> verified operators in the Florida Keys — jet ski rentals, sunset sails, snorkel trips, fishing charters, Dry Tortugas day trips, boat charters and more. Instant booking via FareHarbor.</p>
     <div class="stats">
       <span class="stat"><strong>458</strong> operators</span>
-      <span class="stat">From <strong>$25</strong></span>
       <span class="stat">⭐ <strong>4.7</strong> avg rating</span>
       <span class="stat">🌴 <strong>Florida USA</strong></span>
     </div>
@@ -413,7 +412,7 @@ function render(){
   grid.innerHTML=list.map((op,i)=>{
     const slug=slugMap[op.id]||'';
     const href='/' + encodeURIComponent(slug || ((op.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)+'-'+(op.zone||'')));
-    const priceText=(op.price&&op.price>0)?('From $'+op.price):'Contact for pricing';
+    const priceText=(op.price&&op.price>0)?('From $'+op.price):'See prices';
     const eager = i < 4 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
     const ratingHtml=op.rating?`<div class="rating">⭐ ${op.rating} (${op.reviews||0})</div>`:'';
     return `<a class="card" href="${esc(href)}" data-op-id="${esc(op.id)}"><div class="img"><img src="${esc(thumbUrl(op.photo))}" alt="${esc(op.name)}" ${eager} width="480" height="320" onerror="this.src=FALLBACK_IMG"><span class="badge">${CAT_EMOJI[op.cat]||'🌊'} ${esc(CAT_LABELS[op.cat]||op.cat)}</span></div><div class="body"><div class="name">${esc(op.name)}</div><div class="zl">📍 ${esc(op.zl||'')}</div>${ratingHtml}<div class="price">${priceText}</div><div class="view-details">View details &rarr;</div></div></a>`;

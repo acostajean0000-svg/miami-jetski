@@ -217,7 +217,7 @@ document.addEventListener('click',function(e){
   <section class="hero">
     <h1>Lake of the Ozarks Tours & Activities</h1>
     <p>Compare <strong>28</strong> verified operators in Lake of the Ozarks, Missouri. Boat charters, jet ski, fishing, sunset cruises and more — instant booking via FareHarbor.</p>
-    <div class="stats"><span class="stat"><strong>28</strong> operators</span><span class="stat">From <strong>$50</strong></span><span class="stat">⚡ Instant booking</span></div>
+    <div class="stats"><span class="stat"><strong>28</strong> operators</span><span class="stat">⚡ Instant booking</span></div>
   </section>
   <div class="filters" id="filters"><span class="cat-chip active" data-cat="all">🌎 All (28)</span><span class="cat-chip" data-cat="boat">⛵ Boat (16)</span><span class="cat-chip" data-cat="watersports">🏄 Water Sports (6)</span><span class="cat-chip" data-cat="tour">🚌 Tour (4)</span><span class="cat-chip" data-cat="fishing">🎣 Fishing (1)</span><span class="cat-chip" data-cat="jetski">🛥️ Jet Ski (1)</span></div>
     <div class="map-wrap" id="mapWrap"><div class="map-wrap-skeleton">Loading map…</div><div id="map"></div><button class="near-me-btn" id="nearMeBtn" type="button" aria-label="Show operators near me">📍 Near Me</button><div class="near-me-info" id="nearMeInfo"></div><button class="show-all-btn" id="showAllBtn" type="button" aria-label="Show all operators" style="display:none">&larr; Show all operators</button></div>
@@ -267,7 +267,7 @@ document.addEventListener('click',function(e){
 <h3>Where the operators are</h3>
 <p>Most departures run from Osage Beach, Lake Ozark and Gravois Mills. Main areas by operator count: Lake Ozark (9), Osage Beach (9), Eldon (5), Gravois Mills (5). When choosing, check the meeting point against where you're staying — many operators offer flexible start times.</p>
 <h3>Featured operators</h3>
-<ul><li><strong>Multi Day Rental: Raven Marina</strong> — Eldon · from $150</li><li><strong>Wave Runner Rental</strong> — Gravois Mills · from $100</li><li><strong>The Hopper Bar Excursion</strong> — Lake Ozark · from $95</li><li><strong>Evening Cruise with Optional Dinner</strong> — Lake Ozark · from $95</li></ul>
+<ul><li><strong>Multi Day Rental: Raven Marina</strong> — Eldon ·</li><li><strong>Wave Runner Rental</strong> — Gravois Mills ·</li><li><strong>The Hopper Bar Excursion</strong> — Lake Ozark ·</li><li><strong>Evening Cruise with Optional Dinner</strong> — Lake Ozark ·</li></ul>
 <h3>Booking tips for Lake of the Ozarks</h3>
 <ul><li><strong>Book early in peak season</strong> (Memorial Day – Labor Day) — weekends sell out days ahead</li><li><strong>Prices start around $50</strong>, averaging $84 per person across categories</li><li><strong>Free cancellation</strong> applies to most listings 24–48h before departure — check each operator's policy at checkout</li><li><strong>Getting there:</strong> St. Louis (STL) or Kansas City (MCI), ~2.5–3h drive</li><li>Arrive 15 minutes early with a valid ID; dress for the weather</li></ul>
 <h2>Frequently Asked Questions</h2><div class="faq-list"><div class="faq-item"><button class="faq-q" type="button">What water activities are popular at Lake of the Ozarks?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>Pontoon and powerboat rentals, jet ski, wakeboarding, tubing, lake cruises and fishing charters — all bookable instantly online with free cancellation on most.</p></div></div><div class="faq-item"><button class="faq-q" type="button">How do I get to Lake of the Ozarks?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>Most visitors drive from St. Louis or Kansas City (about 2.5–3 hours) or fly into those airports; marinas line Osage Beach, Lake Ozark, Gravois Mills and Eldon.</p></div></div><div class="faq-item"><button class="faq-q" type="button">When is the best time to visit?<span class="faq-toggle">▼</span></button><div class="faq-a"><p>Memorial Day through Labor Day is peak season with warm water and the liveliest scene; May and September offer great weather and lower prices.</p></div></div></div></section>
@@ -310,7 +310,7 @@ function render(){
   grid.innerHTML = list.map((op,i) => {
     const slug = slugMap[op.id] || '';
     const href = '/' + encodeURIComponent(slug || (op.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)+'-'+(op.zone||''));
-    const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'Contact for pricing';
+    const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'See prices';
     const eager = i < 4 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
     return `<a class="card" href="${esc(href)}" data-op-id="${esc(op.id)}">
       <div class="img"><img src="${esc(thumbUrl(op.photo))}" alt="${esc(op.name)}" ${eager} width="480" height="320" onerror="this.src=FALLBACK_IMG"><span class="badge">${CAT_EMOJI[op.cat]||'🌊'} ${esc(CAT_LABELS[op.cat]||op.cat)}</span></div>

@@ -137,7 +137,6 @@
     </div>
     <div class="stats">
       <span class="stat"><strong>27</strong> exotic cars</span>
-      <span class="stat">From <strong>$50</strong>/hr</span>
       <span class="stat">⭐ <strong>4.6</strong> avg rating</span>
       <span class="stat"><strong>Miami</strong> &amp; Miami Beach</span>
     </div>
@@ -214,7 +213,7 @@ function render(){
   grid.innerHTML = list.map((op,i) => {
     const slug = slugMap[op.id] || '';
     const href = slug ? '/'+encodeURIComponent(slug) : (op.link || '#');
-    const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'Contact for pricing';
+    const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'See prices';
     const eager = i < 4 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
     return `<a class="card" href="${esc(href)}">
       <div class="img"><img src="${esc(thumbUrl(op.photo))}" alt="${esc(op.name)}" ${eager} width="480" height="320" onerror="this.src=FALLBACK_IMG"><span class="badge">💎 Exotic</span></div>

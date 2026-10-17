@@ -2147,7 +2147,7 @@ function escHtml(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(
       return{name,price,czone,bookUrl};
     }).filter(function(r){
       return r.price>0&&(zone==='all'||r.czone===zone)&&r.price<=budget;
-    }).sort(function(a,b){return a.price-b.price;}).slice(0,8);
+    }).sort(function(a,b){return (a.price||Infinity)-(b.price||Infinity);}).slice(0,8);
     if(!rows.length){results.innerHTML='<p style="color:#6b8fa8;text-align:center;">No operators under $'+budget+(zone!=='all'?' in '+zone:'')+'. Try higher budget.</p>';return;}
     results.innerHTML=rows.map(function(r){
       return '<div class="fl-calc-row"><span class="fl-calc-name">'+r.name+'</span><span class="fl-calc-price">$'+r.price+'</span><a href="'+r.bookUrl+'" target="_blank" rel="noopener" style="background:#00d4c8;color:#040d1a;padding:5px 12px;border-radius:7px;font-weight:700;font-size:.7rem;text-decoration:none;white-space:nowrap;">Book</a></div>';
