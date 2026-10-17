@@ -1334,3 +1334,23 @@ JS con `node --check` y JSON-LD antes de escribir.
 - Bug corregido en el paso de landings de precios (`tools-data/bakedprice.py`): `from $N.` al final de frase no se detectaba; 630 frases más quitadas en 222 landings (p. ej. "Book West Florida snorkeling tours from $65.").
 - Imágenes: 87 referencias a `www.filepicker.io/api/file/…` (dominio antiguo de Filestack) → `cdn.filestackcontent.com/…` en HTML y en los JSON de datos (comprobado que el CDN sirve las mismas imágenes y los mismos parámetros `/convert?…`).
 - Nota: tools-data/bakedprice.py, ownres.py y jsprice.py son copias de los scripts usados; leen /tmp/bkd/operators.json (datos originales) que no persiste — para reutilizarlos, extraer antes los precios originales de tools-data/price-defaults-2026-10-17.json.
+
+## Precios reales desde FareHarbor (GitHub Actions) — 17 oct 2026
+- Vercel Sandbox no está permitido en esta cuenta (403) y el entorno local no llega a fareharbor.com, así que la extracción corre en **GitHub Actions** (repo público acostajean0000-svg/miami-jetski).
+- Endpoint: `https://fareharbor.com/api/embed/{empresa}/price-preview/per-item/v2/?asn=fhdn&item_pks=…&include_breakdown=yes` (el mismo que usa el calendario; no está en las rutas prohibidas de robots.txt, que sí excluye /embeds/book/ y /api/v1/). Lotes de 40 items por empresa → ~2.022 peticiones para 1.992 empresas / 10.694 items, 1 cada ~1,5–2,5 s (≈1–1,5 h). Reanudable.
+- Precio "desde": el menor tipo de cliente que no sea niño/infante/senior/tasa/propina/extra (si solo hay de esos, el mayor; nunca una tasa de $1–2). Es el precio de la próxima fecha disponible, sin impuestos ni tasas de reserva.
+- Archivos: `tools-data/fh_build_items.py` (lista de items desde operators.json), `tools-data/fh_price_sync.py` (extracción). Workflow: `.github/workflows/fh-price-sync.yml`, autocontenido (lleva los dos scripts dentro; solo necesita operators.json del repo). Se crea desde la web de GitHub (Add file → Create new file; no se sube con la sincronización para no arriesgar el push por permisos de workflows). Salida: artefacto "fh-prices" (prices.json / prices.csv) y rama `fh-prices`; no toca main.
+- Para aplicar: copiar prices.json a tools-data/ y aplicar a datos + páginas (pendiente de escribir `fh_apply_prices.py` con los resultados reales).
+
+## Precios reales cargados (17 oct 2026, noche)
+- Ejecución #1 del workflow "FareHarbor price sync": 2 h, 7.576 items con precio (USD 7.021, MXN 508, EUR 24, AUD 15, CAD 8). Archivo: `tools-data/fh-prices-2026-10-17.json` (+ .csv).
+- Regla aplicada: precio solo si viene de FareHarbor, en USD y ≥ $8 (descarta "Basket $1", "Virtual Tip Jar", etc.). Las monedas no USD quedan como "See prices" (pendiente: mostrar MX$ si se quiere). Los 327 precios que habíamos conservado se sustituyen por los de FareHarbor; solo 51 coincidían ±10 %.
+- Resultado: **6.948 de 10.710 operadores con precio real**; 3.762 con "See prices".
+- Aplicación (en este orden):
+  1. `python3 tools-data/fh_apply_data.py tools-data/fh-prices-AAAA-MM-DD.json` (todos los JSON de datos; entiende enlaces largos y cortos `empresa/id`).
+  2. `python3 tools-gen-localities.py && python3 tools-gen-pagination.py && python3 tools-fix-modal-foot.py`
+  3. `python3 tools-data/fh_apply_html.py run` (fichas: dato "From", recuadro de reserva, barra móvil y Offer en JSON-LD; tarjetas con atribución estricta — mismo operador antes y después del precio, o dentro de su enlace).
+  4. `python3 tools-data/validate_site.py 240`
+- Verificación: 6.948/6.948 fichas con precio lo muestran; 0 fichas sin precio muestran uno; 30.618 tarjetas relacionadas, 10.848 tarjetas de listado y 5.534 recuadros de reserva comprobados contra los datos sin errores.
+- Para refrescar: Actions → FareHarbor price sync → Run workflow (≈2 h), descargar el artefacto y repetir los pasos 1–4 (mensual recomendado).
+- Pendiente de decisión: la tarjeta destacada de Miami Style Rentals en la home dice "From $100"; FareHarbor da $160 para "1 Hour Rent" (item 326919).
