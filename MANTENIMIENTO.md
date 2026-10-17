@@ -1327,3 +1327,10 @@ JS con `node --check` y JSON-LD antes de escribir.
 - **"Free cancellation" sustituido** (script: `tools-data/fix_cancellation_claims.py`, ~57.000 frases en ~11.200 páginas): cada operador de FareHarbor tiene su propia política y no tenemos el dato. Textos nuevos: "Clear Policies — Cancellation terms shown before you pay", "🔄 Cancellation policy shown at checkout · Instant confirmation", dato "Cancellation terms at checkout", FAQ "Cancellation terms vary by operator…"; en meta descriptions y JSON-LD simplemente se quitó la promesa. Se conservan textos que ya eran honestos ("Free cancellation policies are operator-specific but visible…", 797) y las políticas concretas escritas a mano en fichas como island-boat-adventures. Quedan ~320 menciones sueltas de cola larga.
 - Generador: `tools-gen-localities.py` ya no escribe "Most operators offer free cancellation 24–48h"; `tools-navbuild/faq_en.json` actualizado.
 - Backup previo de todo el HTML: bk_allhtml_pre_sections.tgz en la carpeta de trabajo de la sesión (no en el repo).
+
+## SEO de plantilla (17 oct 2026, tarde)
+- Títulos: 0 de más de 65 caracteres visibles (la cifra de 195 de la auditoría contaba entidades HTML como `&amp;`).
+- Meta descriptions: 76 recortadas a ≤160 (por frase, o por palabra + "…"; script `tools-data/trim_meta_descriptions.py`) y 23 que terminaban truncadas en "..." ("top-rated by v...") cerradas en la última frase completa. Hoy: 0 de más de 165.
+- Bug corregido en el paso de landings de precios (`tools-data/bakedprice.py`): `from $N.` al final de frase no se detectaba; 630 frases más quitadas en 222 landings (p. ej. "Book West Florida snorkeling tours from $65.").
+- Imágenes: 87 referencias a `www.filepicker.io/api/file/…` (dominio antiguo de Filestack) → `cdn.filestackcontent.com/…` en HTML y en los JSON de datos (comprobado que el CDN sirve las mismas imágenes y los mismos parámetros `/convert?…`).
+- Nota: tools-data/bakedprice.py, ownres.py y jsprice.py son copias de los scripts usados; leen /tmp/bkd/operators.json (datos originales) que no persiste — para reutilizarlos, extraer antes los precios originales de tools-data/price-defaults-2026-10-17.json.
