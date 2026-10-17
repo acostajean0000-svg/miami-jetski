@@ -821,12 +821,6 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
       <div class="hero-stat"><div class="hero-stat-num">13</div><div class="hero-stat-label">Categories</div></div>
       <div class="hero-stat"><div class="hero-stat-num">FL</div><div class="hero-stat-label">Statewide</div></div>
     </div>
-    <div class="social-proof-bar" id="socialProofBar">
-      <span class="sp-dot"></span>
-      <span>⭐ 4.7 avg rating</span>
-      <span class="sp-sep">·</span>
-      <span>✅ Instant booking</span>
-    </div>
   </div>
 </section>
 <!-- MARKETPLACE -->
@@ -974,7 +968,7 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
 
 <section class="hp-authority" id="hpAuthority">
   <h2>Book Verified Water Sports & Tours Across 37 Top Destinations</h2>
-  <p class="center">Miami Jet Ski & Boat Rentals connects you with <strong>10,700+ vetted local operators</strong> in 43 destinations across the US, Mexico, Caribbean, and beyond. Every operator on our marketplace is verified through FareHarbor with real-time availability, instant booking, and cancellation terms shown before you pay.</p>
+  <p class="center">Miami Jet Ski & Boat Rentals connects you with <strong>10,700+ vetted local operators</strong> in 37 destinations across the US, Mexico, Caribbean, and beyond. Every operator on our marketplace is verified through FareHarbor with real-time availability, instant booking, and cancellation terms shown before you pay.</p>
   
   <div class="hp-fact-grid">
     <div class="hp-fact-item"><div class="hp-fact-label">Verified Operators</div><div class="hp-fact-value"><strong>10,700+</strong></div></div>
@@ -996,7 +990,7 @@ if(consent==='1'){consent='all';localStorage.setItem('cookie_consent','all');}el
 
 
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"Organization","name":"Miami Jet Ski & Boat Rentals","url":"https://miamijetskiboatrentals.com","description":"Marketplace for 10,700+ verified water sports and tour operators across 43 destinations. Instant booking, secure checkout.","sameAs":["https://miamijetskiboatrentals.com"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"500000","bestRating":"5","worstRating":"1"}}
+{"@context":"https://schema.org","@type":"Organization","name":"Miami Jet Ski & Boat Rentals","url":"https://miamijetskiboatrentals.com","description":"Marketplace for 10,700+ verified water sports and tour operators across 37 destinations. Instant booking, secure checkout.","sameAs":["https://miamijetskiboatrentals.com"],"aggregateRating":{"@type":"AggregateRating","ratingValue":"4.7","reviewCount":"500000","bestRating":"5","worstRating":"1"}}
 </script>
 </main>
 <!-- MAP TOGGLE BUTTON (mobile) -->
@@ -1687,6 +1681,38 @@ function closeShare(id) {
   const zone = params.get('zone');
   if (zone) window._preloadZone = zone;
 })();
+// ---- ESTADO VACÍO: si los filtros no dan resultados, ofrecer ampliar la búsqueda ----
+function _emptyState() {
+  try {
+    if (typeof currentOps === 'undefined' || currentOps.length || !allOperators || !allOperators.length) return;
+    var g = document.getElementById('cardsGrid'); if (!g) return;
+    var es = (document.documentElement.lang || '').indexOf('es') === 0;
+    var q = searchQuery || '';
+    var m = function(o){ return !q || (o.name||'').toLowerCase().indexOf(q) >= 0 || (o.zl||'').toLowerCase().indexOf(q) >= 0 || (o.addr||'').toLowerCase().indexOf(q) >= 0 || ((catLabels[o.cat]||'') + '').toLowerCase().indexOf(q) >= 0; };
+    var nCat = (activeCat !== 'all') ? allOperators.filter(function(o){ return zoneMatches(activeZone,o) && m(o); }).length : 0;
+    var nZone = (activeZone !== 'all') ? allOperators.filter(function(o){ return m(o) && (activeCat === 'all' || catMatches(activeCat,o)); }).length : 0;
+    var nAll = allOperators.filter(m).length;
+    var b = [];
+    if (nCat) b.push('<button type="button" class="es-btn" data-act="cat">' + (es ? 'Ver ' + nCat + ' en todas las categorías' : 'See ' + nCat + ' in all categories') + '</button>');
+    if (nZone) b.push('<button type="button" class="es-btn" data-act="zone">' + (es ? 'Ver ' + nZone + ' en todos los destinos' : 'See ' + nZone + ' in all destinations') + '</button>');
+    if (!nCat && !nZone && nAll && (activeCat !== 'all' || activeZone !== 'all')) b.push('<button type="button" class="es-btn" data-act="both">' + (es ? 'Ver ' + nAll + ' resultados en todo el sitio' : 'See ' + nAll + ' results site-wide') + '</button>');
+    if (q) b.push('<button type="button" class="es-btn es-sec" data-act="clear">' + (es ? 'Borrar búsqueda' : 'Clear search') + '</button>');
+    g.innerHTML = '<div class="empty-state" style="grid-column:1/-1;text-align:center;padding:40px 16px;color:#9bb5d4">'
+      + '<div style="font-size:2rem;margin-bottom:8px">🔎</div><div style="font-weight:700;color:#fff;margin-bottom:6px">'
+      + (es ? 'No hay resultados con estos filtros' : 'No results with these filters') + '</div>'
+      + '<div style="display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-top:14px">' + b.join('') + '</div></div>';
+    g.querySelectorAll('.es-btn').forEach(function(x){
+      x.style.cssText = 'background:' + (x.classList.contains('es-sec') ? 'transparent' : '#00d2ff') + ';color:' + (x.classList.contains('es-sec') ? '#00d2ff' : '#040d1a') + ';border:1px solid #00d2ff;border-radius:50px;padding:8px 16px;font-weight:700;cursor:pointer';
+      x.onclick = function(){
+        var act = x.dataset.act;
+        var tab = function(sel, key){ return [].slice.call(document.querySelectorAll(sel)).filter(function(t){ return (t.getAttribute('onclick')||'').indexOf("'" + key + "'") >= 0; })[0] || document.createElement('button'); };
+        if (act === 'cat' || act === 'both') filterCat('all', tab('.cat-tab', 'all'));
+        if (act === 'zone' || act === 'both') filterZone('all', tab('.zone-tab', 'all'));
+        if (act === 'clear') { var i = document.getElementById('searchInput'); if (i) { i.value = ''; i.dispatchEvent(new Event('input', {bubbles:true})); } searchQuery = ''; renderCards(); }
+      };
+    });
+  } catch (e) {}
+}
 // ---- URL SYNC: guarda zona/categoría/búsqueda en la URL (volver atrás o compartir conserva los filtros) ----
 function _syncFilterUrl() {
   try {
@@ -1702,7 +1728,7 @@ function _syncFilterUrl() {
 (function() {
   var _rc0 = window.renderCards;
   if (typeof _rc0 !== 'function') return;
-  window.renderCards = function() { var r = _rc0.apply(this, arguments); _syncFilterUrl(); return r; };
+  window.renderCards = function() { var r = _rc0.apply(this, arguments); _syncFilterUrl(); _emptyState(); return r; };
 })();
 // ---- PRICE FILTER ----
 function updatePriceFilter() {
@@ -3038,7 +3064,7 @@ function cookieConsent(choice){
     if(!anchor)return;
     var t=document.createElement('div');
     t.className='trust-strip-hp';
-    t.innerHTML='<span class="trust-item-hp">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item-hp">✓ <strong>10,700+</strong> verified operators</span><span class="trust-item-hp">🌎 <strong>43</strong> destinations</span><span class="trust-item-hp">🔄 Cancellation terms at checkout</span><span class="trust-item-hp">⚡ Instant booking</span><span class="trust-item-hp">💳 Secure checkout</span>';
+    t.innerHTML='<span class="trust-item-hp">⭐ <strong>4.7</strong> avg rating</span><span class="trust-item-hp">✓ <strong>10,700+</strong> verified operators</span><span class="trust-item-hp">🌎 <strong>37</strong> destinations</span><span class="trust-item-hp">🔄 Cancellation terms at checkout</span><span class="trust-item-hp">⚡ Instant booking</span><span class="trust-item-hp">💳 Secure checkout</span>';
     anchor.insertAdjacentElement('afterend',t);
   }
   injectTrust();

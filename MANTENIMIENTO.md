@@ -1354,3 +1354,15 @@ JS con `node --check` y JSON-LD antes de escribir.
 - Verificación: 6.948/6.948 fichas con precio lo muestran; 0 fichas sin precio muestran uno; 30.618 tarjetas relacionadas, 10.848 tarjetas de listado y 5.534 recuadros de reserva comprobados contra los datos sin errores.
 - Para refrescar: Actions → FareHarbor price sync → Run workflow (≈2 h), descargar el artefacto y repetir los pasos 1–4 (mensual recomendado).
 - Pendiente de decisión: la tarjeta destacada de Miami Style Rentals en la home dice "From $100"; FareHarbor da $160 para "1 Hour Rent" (item 326919).
+
+## Auditoría de navegación (17 oct 2026)
+- Enlaces internos: 0 rotos en 129.908 enlaces de 11.440 páginas (script `tools-data/check_links.py`, emula redirects → archivos → rewrites de vercel.json). slug-map maestro (10.710) y por zona (14.274): todos con página. Sitemap: 11.499 URLs, 0 rotas, 0 que redirigen.
+- En vivo (escritorio y móvil emulado): menú Destinos abre/cierra, pestañas de zona/categoría filtran bien y escriben la URL, búsqueda con sugerencias, mapa (Esri) con marcadores, modal de reserva abre/cierra y el botón Atrás lo cierra, 404 con enlace a Home, menú hamburguesa (15 enlaces), sin desborde horizontal; sin errores JS propios en consola.
+- Corregido:
+  - Botón "Book Now" del menú superior de las 10.636 fichas llevaba a la home (`/#fh-avail`); ahora baja al calendario de la propia ficha (`#fh-avail`).
+  - Estado vacío en la home (EN/ES): si los filtros no dan resultados (p. ej. buscar "kayak" con la categoría Boats), se ofrecen botones "See N in all categories / in all destinations / Clear search".
+  - Cifras de operadores infladas en títulos, meta, h1 y texto principal de 50 páginas de zona (p. ej. Miami "449+" → "410+"): ahora redondeadas hacia abajo a partir de data/{zona}.json.
+  - "43 destinations" → "37 destinations" en la home (coincide con "All 37 destinations" del menú; 43 incluía zonas con < 40 operadores).
+  - Home ES: título SEO ("Florida WaterSports" → "Alquiler de Jet Ski, Barcos y Tours en Florida | Reserva Online"), contador "Mostrando N operadores", orden, filtros, "Destacado", "Ver detalles", "Preguntas frecuentes", CTA final y pie traducidos.
+  - Se quitó la barra duplicada "⭐ 4.7 · Instant booking" bajo el hero (repetía la franja de confianza) para acortar el scroll en móvil.
+- Pendiente de decisión: reseñas de clientes de plantilla ("— James P., verified booking", 13 autores y 174 textos repetidos en 9.753 páginas) y la sección "What Our Customers Say" de la home.
