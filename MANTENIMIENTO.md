@@ -1366,3 +1366,17 @@ JS con `node --check` y JSON-LD antes de escribir.
   - Home ES: título SEO ("Florida WaterSports" → "Alquiler de Jet Ski, Barcos y Tours en Florida | Reserva Online"), contador "Mostrando N operadores", orden, filtros, "Destacado", "Ver detalles", "Preguntas frecuentes", CTA final y pie traducidos.
   - Se quitó la barra duplicada "⭐ 4.7 · Instant booking" bajo el hero (repetía la franja de confianza) para acortar el scroll en móvil.
 - **Reseñas de plantilla eliminadas** (script `tools-data/remove_fake_reviews.py`): bloque "What Recent Customers Say" de 9.750 fichas (174 textos y 13 autores repetidos con "verified booking"), sección "What Our Customers Say" de la home EN/ES y sus 4 enlaces "Reviews/Opiniones" del menú. No hay Review en JSON-LD. Se conservan, pendientes de confirmar con cada cliente, las reseñas de XTREME Punta Cana (EN/ES, "4.8/5 en Google y TripAdvisor") y Miami Bloom Bar.
+
+## SEO "jet ski rentals Miami" (18 oct 2026)
+- Hub EN `/miami-jet-ski-rentals` (script `tools-data/seo_jetski_miami.py`, idempotente) y ES `/es/miami-jet-ski-rentals` (`tools-data/seo_jetski_miami_es.py`):
+  - Título "Jet Ski Rentals Miami (2026): Compare 19 Operators & Prices" / "Alquiler de Jet Ski en Miami (2026): 19 operadores y precios"; meta con precio real desde $120; H1 "Jet Ski Rentals in Miami".
+  - Conteos reales (19, antes "20"/"21"); tabla HTML comparativa (empresa, producto, zona, precio "desde" de FareHarbor con fecha, rating, botón Book) — visible sin JavaScript.
+  - Guía nueva: dónde montar (Biscayne Bay/Bayside, Miami Beach–Haulover–Sunny Isles, Key Biscayne), normas de Florida (18 para alquilar, 14 para conducir, Boating Safety ID/certificado temporal para nacidos desde 1-ene-1988, chaleco no inflable + cordón, nada de noche, zonas de manatíes) con enlace a myfwc.com, y consejos.
+  - FAQ reescrita con datos reales (precio $120–$165, mediana $142.50) y FAQPage idéntica; Product+AggregateRating agregado (no válido para listas) sustituido por ItemList de los 19 operadores.
+  - Palabras visibles: 724 → 1.546 (EN).
+- Canibalización interna: fichas con nombres genéricos ("Jet Ski Rentals", "Jetski Rentals", "Jet Ski Rental") ahora llevan la empresa en título/og y H1 ("Jet Ski Rentals by Flow VIP · Miami Beach"), así no compiten con el hub por la consulta exacta.
+- Enlazado: `/miami-activities` (EN) no enlazaba al hub; añadido bloque "Browse Miami by category". Anclas "Compare all 21…" → 19.
+- Zonas (todas): cifras de héroe/pie infladas corregidas, "From $5/hr" → mínimo real de FareHarbor, "🔥 Weekends sell out fast" → "📅 Weekends are the busiest…", "operadores in" → "operadores en".
+- Barra fija "Free cancellation · Instant confirmation" (129 páginas EN, 98 ES) → "Live prices · Instant confirmation" / "Precios en vivo · Confirmación inmediata".
+- Sitemap: lastmod 2026-10-18 para el hub y miami-activities (EN/ES).
+- Pendiente fuera de este sitio: slingshotmia.com/jet-ski-rentals-miami compite por la misma consulta (dueño común).
