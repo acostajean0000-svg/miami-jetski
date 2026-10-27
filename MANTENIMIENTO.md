@@ -1380,3 +1380,9 @@ JS con `node --check` y JSON-LD antes de escribir.
 - Barra fija "Free cancellation · Instant confirmation" (129 páginas EN, 98 ES) → "Live prices · Instant confirmation" / "Precios en vivo · Confirmación inmediata".
 - Sitemap: lastmod 2026-10-18 para el hub y miami-activities (EN/ES).
 - Pendiente fuera de este sitio: slingshotmia.com/jet-ski-rentals-miami compite por la misma consulta (dueño común).
+
+## Socios destacados: Bruschi y Altamar (27 oct 2026)
+- Los barcos de **Bruschi Boat Rental** (`bruschiboatrental`) y **Altamar** (`altamartrade`) van primero: 17 en Miami (16 barcos + 1 yate) y 3 en Fort Lauderdale.
+- Cómo: `tools-data/pin_partners.py` los pone al principio de todos los JSON de datos (ordenados por rating × reseñas) y les pone la etiqueta `badge: "⭐ Featured"` (visible en las tarjetas de la home); la home (EN/ES) los fija primero en orden por defecto con categoría Todas/Barcos/Yates/Atardecer (no en búsquedas ni en otras categorías); las 229 landings (p. ej. /miami-boat-rentals) los ordenan primero; los generadores de paginación y localidades les suman +1000 al score.
+- Para añadir o quitar socios: editar `PARTNERS` en pin_partners.py, la regex `bruschiboatrental|altamartrade` en index.html, es/index.html, las landings y los dos generadores, y volver a ejecutar.
+- Si se ejecuta `fh_apply_data.py` (precios), volver a ejecutar `pin_partners.py` después (no altera el orden, pero restaura la etiqueta si se pierde).

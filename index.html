@@ -1188,7 +1188,11 @@ function getFiltered() {
       const _WATER = {boat:1,jetski:1,yacht:1,sunset:1,watersports:1,snorkel:1,fishing:1,kayak:1,airboat:1,jetcar:1};
       const _sc = o => (parseFloat(o.rating)||0) * Math.log10((parseFloat(o.reviews)||0) + 1);
       const _waterFirst = activeCat === 'all' && !searchQuery;
-      ops.sort((a,b) => (_waterFirst ? ((_WATER[b.cat]?1:0) - (_WATER[a.cat]?1:0)) : 0) || (_sc(b) - _sc(a)));
+      // Socios destacados (Bruschi, Altamar) primero en la vista general y en barcos/yates
+      const _PIN = /(?:^|\/)(?:bruschiboatrental|altamartrade)\//;
+      const _pinOn = !searchQuery && ['all','boat','yacht','sunset'].indexOf(activeCat) >= 0;
+      const _pin = o => (_pinOn && _PIN.test(o.link || '')) ? 1 : 0;
+      ops.sort((a,b) => (_pin(b) - _pin(a)) || (_waterFirst ? ((_WATER[b.cat]?1:0) - (_WATER[a.cat]?1:0)) : 0) || (_sc(b) - _sc(a)));
   }
   return ops;
 }

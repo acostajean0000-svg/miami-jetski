@@ -14,7 +14,8 @@ for f in glob.glob('*-activities.html'):
 
 def score(o):
     r = float(o.get('rating') or 0); n = float(o.get('reviews') or 0)
-    return r * math.log10(n + 1) + (1 if gl.photo_url(o.get('photo')) else 0)
+    pin = 1000 if re.search(r'(?:^|/)(?:bruschiboatrental|altamartrade)/', o.get('link') or '') else 0  # socios destacados
+    return pin + r * math.log10(n + 1) + (1 if gl.photo_url(o.get('photo')) else 0)
 
 def card(o, zname):
     s = gl.slugmap.get(o['id']); fh = gl.fh_link(o)
