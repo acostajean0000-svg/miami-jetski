@@ -1393,3 +1393,9 @@ JS con `node --check` y JSON-LD antes de escribir.
 - Regla para el futuro: **no acortar enlaces cuyo asn no sea `fhdn`** (los expansores `_OP_LINK_C` / zone-*.js siempre ponen `asn=fhdn`).
 - En vivo: FareHarbor redirige a `/calendar/` conservando `asn`, `asn-ref` y `ref`; el modal y la apertura a pantalla completa en móvil conservan los parámetros (este último añade `back=`).
 - Conversión: 2.794 items no devolvieron precio en la extracción; en una muestra de 8, los 8 existen pero 5 no tienen fechas disponibles (`next_available_date: null`). Pendiente: detectar items sin disponibilidad y bajarlos en el orden.
+
+## Slingshots de Miami de vuelta en el marketplace (27 oct 2026)
+- Decisión del dueño: revertir la retirada de septiembre. Restaurados desde git (HEAD de junio) los 6 operadores `sl47`–`sl52` (5 Miami, 1 Fort Lauderdale) en operators.json, operators-slim.json, data/miami.json, data/miami-slingshot.json y data/broward.json, con precio "desde" real de FareHarbor (27-oct): Miami Style Rentals $100 (1 h) y $150 (6 plazas), vjetsmiami $300 (24 h), miamiteamparty $99, sfjetskirentals $80, slingshotandjetskirentals $90. Los 6 tienen fechas disponibles.
+- Aparecen en la home (pestaña Slingshot, 5 en Miami), en /miami-activities (chip Slingshot) y en el mapa. **No** se restauraron sus fichas ni la landing /miami-slingshot-rentals: siguen los 301 a slingshotmia.com, así que las tarjetas enlazan directo a la reserva de FareHarbor (con tu referido).
+- Chips de categoría de las 83 páginas de zona regenerados desde los datos (tenían conteos de septiembre, p. ej. "All (450)").
+- Conteos: Miami 411 → 416, Fort Lauderdale 303 → 304 (home y páginas de zona).
