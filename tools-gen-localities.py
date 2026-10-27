@@ -100,7 +100,7 @@ def build(loc, items):
     def score(o):
         r = float(o.get('rating') or 0); n = float(o.get('reviews') or 0)
         pin = 1000 if re.search(r'(?:^|/)(?:bruschiboatrental|altamartrade)/', o.get('link') or '') else 0  # socios destacados
-        return pin + r * math.log10(n + 1) + (1 if photo_url(o.get('photo')) else 0)
+        return pin - (500 if o.get('noAvail') else 0) + r * math.log10(n + 1) + (1 if photo_url(o.get('photo')) else 0)
     cards = sorted(items, key=score, reverse=True)[:MAXCARDS]
     top5 = [o for o in cards if float(o.get('rating') or 0) >= 4.5 and float(o.get('reviews') or 0) >= 20][:5]
     n = len(items)

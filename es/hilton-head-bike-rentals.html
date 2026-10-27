@@ -183,7 +183,7 @@ function bookUrl(o){return o.link&&o.link.indexOf('http')===0?o.link:'/miami-act
 var NOUN='bikes';var OPS=[],markersById={},map,cluster,userMarker=null,curArea='all',baseLayer=null,satLayer=null,isSat=false,radiusMi=null,radiusCircle=null;
 
 fetch('/data/hiltonhead-bikerental.json').then(function(r){return r.json();}).then(function(d){
-  OPS=d.filter(function(o){return o.lat&&o.lng;}).map(expand).sort(function(a,b){var P=/(?:^|\/)(?:bruschiboatrental|altamartrade)\//,pa=P.test(a.link||'')?1:0,pb=P.test(b.link||'')?1:0;return (pb-pa)||((b.reviews||0)-(a.reviews||0));});
+  OPS=d.filter(function(o){return o.lat&&o.lng;}).map(expand).sort(function(a,b){var P=/(?:^|\/)(?:bruschiboatrental|altamartrade)\//,pa=P.test(a.link||'')?1:0,pb=P.test(b.link||'')?1:0;return (pb-pa)||((a.noAvail?1:0)-(b.noAvail?1:0))||((b.reviews||0)-(a.reviews||0));});
   buildAreaChips();
   renderCards(OPS);
   initMap();
