@@ -4,6 +4,10 @@ import json,glob,io,re,sys,os
 os.chdir(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 P=json.load(open(sys.argv[1]))
 good={k:round(float(v['price']),2) for k,v in P.items() if v.get('price') and v.get('currency')=='USD' and float(v['price'])>=8}
+# precios encontrados después por fh_availability.py (items 'unlisted'), si no están en el archivo principal
+for fa in sorted(glob.glob('tools-data/fh-availability-*.json')):
+    for k,v in json.load(open(fa)).items():
+        if k not in good and v.get('price') and v.get('currency')=='USD' and float(v['price'])>=8: good[k]=round(float(v['price']),2)
 files=['operators.json','operators-slim.json','operators-top.json']+glob.glob('data/*.json')+glob.glob('data/cat/*.json')
 tot=up=zero=0
 for f in files:
