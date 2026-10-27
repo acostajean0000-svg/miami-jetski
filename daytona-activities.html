@@ -386,7 +386,7 @@ function render(){
   }
   grid.innerHTML = list.map((op,i) => {
     const slug = slugMap[op.id] || '';
-    const href = '/' + encodeURIComponent(slug || (op.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)+'-'+(op.zone||''));
+    const href = slug ? '/' + encodeURIComponent(slug) : (op.link || '#'); // sin ficha propia → directo a la reserva
     const priceText = (op.price && op.price > 0) ? ('from $'+op.price) : 'See prices';
     const eager = i < 4 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
     return `<a class="card" href="${esc(href)}" data-op-id="${esc(op.id)}">
@@ -919,6 +919,6 @@ document.head.appendChild(styleEl);
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,210,255,.18);border-color:rgba(0,210,255,.35)}
 </style>
 
-<script src="/js/zone-en.378d6638.js"></script>
+<script src="/js/zone-en.5fe4cf64.js"></script>
 </body>
 </html>

@@ -453,7 +453,7 @@ function render(){
   }
   grid.innerHTML = list.map((op,i) => {
     const slug = slugMap[op.id] || '';
-    const href = '/' + encodeURIComponent(slug || (op.name||'').toLowerCase().replace(/[^a-z0-9]+/g,'-').replace(/^-|-$/g,'').slice(0,80)+'-'+(op.zone||''));
+    const href = slug ? '/' + encodeURIComponent(slug) : (op.link || '#'); // sin ficha propia → directo a la reserva
     const priceText = (op.price && op.price > 0) ? ('From $'+op.price) : 'See prices';
     const eager = i < 6 ? 'fetchpriority="high" loading="eager"' : 'loading="lazy" decoding="async"';
     const ratingHtml = op.rating ? `<div class="rating">⭐ ${op.rating} (${op.reviews||0})</div>` : '';
@@ -840,7 +840,7 @@ document.head.appendChild(styleEl);
 .card:hover{transform:translateY(-4px);box-shadow:0 12px 32px rgba(0,210,255,.18);border-color:rgba(0,210,255,.35)}
 </style>
 
-<script src="/js/zone-en.378d6638.js"></script>
+<script src="/js/zone-en.5fe4cf64.js"></script>
 
 <!-- FH_BOOKING_MODAL_v2 -->
 
